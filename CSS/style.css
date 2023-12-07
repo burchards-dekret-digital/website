@@ -10,16 +10,16 @@
 
 @font-face {
   font-family: BrandonGrotesqueBlack;
-  src: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/fonts/Brandon_blk.otf");
+  src: url(Brandon_blk.otf);
 }
 
 @font-face {
     font-family: Montserrat-Regular;
-    src: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/fonts/Montserrat-Regular.ttf");
+    src: url(Montserrat-Regular.ttf);
 }
 @font-face {
     font-family: Montserrat-ExtraBold;
-    src: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/fonts/Montserrat-ExtraBold.ttf");
+    src: url(Montserrat-ExtraBold.ttf);
 }
 
 html{
@@ -294,7 +294,7 @@ td.bdd-ed-rec::after{
                 overflow: hidden; 
                 position: relative; 
                 width: 100%; 
-                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/Dekret_18-19.png"); 
+                background-image: url(../img/Dekret_18-19.png); 
                 background-attachment: fixed; 
                 background-size: cover; 
                 -moz-background-size: cover; 
@@ -309,7 +309,7 @@ td.bdd-ed-rec::after{
                 overflow: hidden; 
                 position: relative; 
                 width: 100%; 
-                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/Dekret_18-19.png"); 
+                background-image: url(../img/Dekret_18-19.png); 
                 background-attachment: fixed; 
                 background-size: cover; 
                 -moz-background-size: cover; 
@@ -324,7 +324,7 @@ td.bdd-ed-rec::after{
                 overflow: hidden; 
                 position: relative; 
                 width: 100%; 
-                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/xml_19.png"); 
+                background-image: url(../img/Dekret_18-19.png); 
                 background-attachment: fixed; 
                 background-size: cover; 
                 -moz-background-size: cover; 
@@ -339,7 +339,7 @@ td.bdd-ed-rec::after{
                 overflow: hidden; 
                 position: relative; 
                 width: 100%; 
-                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/xml_19.png"); 
+                background-image: url(../img/Dekret_18-19.png); 
                 background-attachment: fixed; 
                 background-size: cover; 
                 -moz-background-size: cover; 

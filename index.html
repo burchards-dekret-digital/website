@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title data-template="config:app-title">Designtest BDD - Transkription</title>
@@ -5,18 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
         <meta data-template="config:app-meta"/>
         
-        <!--5.0.2 Bootstrap
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"/>   
-        -->
-        <!--5.2.3 Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"/> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         
-        <!-- // CSS -->
-        <link rel="stylesheet" type="text/css" href="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/style-test.css" media="screen"/>
+
+       
+        
+        
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
         
         <!-- // External fonts -->
         <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet"/>
@@ -26,71 +30,70 @@
         <!-- // === Javascripts === -->
         <!-- // jquery -->
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>-->
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"/>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         
         
         <!-- // Leaflet -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         
         <!-- // Leaflet subgroup Plugin -->
-        <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"/>
+        <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
         
         <!-- // Leaflet cluster Plugin -->
-        <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" crossorigin=""/>
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" crossorigin=""/>
         
-        <!--Fontawesome-->
+        <!-- // Fontawesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
             
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index:2000">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/LogoGreen.png" alt="Burchards Dekret Digital" width="70"/>
-            </a>
-            <!--<a class="navbar-brand" href="index.html">BDD</a>-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"/>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mss.html">Handschriften</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="edition.html">Edition</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="projekt.html">Projekt</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/documentation/-/blob/main/bdd_dokumentation.md" target="_blank">Dokumentation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="overview.html">Kollationstabellen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="overview-tables.html">Transkriptionsübersicht</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="print-weblink.html">Druck-Web-Verknüpfung</a>
-                    </li>
-                    
-                </ul>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/LogoGreen.png" alt="Burchards Dekret Digital" width="70"/>
+                </a>
+                <!--<a class="navbar-brand" href="index.html">BDD</a>-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"/>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mss.html">Handschriften</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="edition.html">Edition</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="projekt.html">Projekt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/documentation/-/blob/main/bdd_dokumentation.md" target="_blank">Dokumentation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="overview.html">Kollationstabellen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="overview-tables.html">Transkriptionsübersicht</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="print-weblink.html">Druck-Web-Verknüpfung</a>
+                        </li>
+                        
+                    </ul>
+                </div>
             </div>
-        </div>
         </nav>
     
-        <div class="container-fluid p-0">
-            <button type="button" class="btn btn-outline-secondary btn-floating rounded-circle btn-lg btn-back-to-top">
-                <i class="fas fa-arrow-up"/>
-            </button>
+        <div>
+
             <div class="parallax-title">
                 <h1>Burchards</h1>
                 <h3>Dekret Digital</h3>
@@ -98,9 +101,9 @@
 
             <div class="parallax-one">
 
-                <section id="scroll-down" class="demo">
-                    <a href="#projekt"><span/></a>
-                </section>
+                <section id="scroll-down">
+                    <a href="#projekt"><span></span></a>
+                  </section>
             </div>
         
             <div class="container container-index" id="projekt">
@@ -109,7 +112,7 @@
                         <div class="col-md-8">
                             <h1>DAS PROJEKT</h1>
                             <p><span class="first-character light-blue">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus dolor dui, id ultricies sem laoreet ut. Mauris in fermentum purus, vel congue ipsum. Nullam ornare purus et risus auctor suscipit. Phasellus maximus ipsum laoreet velit maximus interdum. Vestibulum vel arcu sit amet ligula venenatis congue ac sed neque. Curabitur mauris magna, elementum vitae nisi nec, interdum dictum sapien. Nulla sed elementum tellus. Ut porttitor pretium nulla in gravida. Fusce accumsan auctor lacus et placerat. Sed sollicitudin eleifend posuere. Maecenas ac dictum odio. Nulla condimentum sollicitudin nibh, nec egestas lacus porttitor eu. Curabitur ac urna quis lacus vulputate dictum. Phasellus ex augue, pharetra nec pharetra eget, elementum ac leo. Vestibulum in ligula purus. Phasellus nec nisi leo.</p>
-                            <p class="line-break mt-4"/>
+                            <p class="line-break mt-4"></p>
                             <p class="mt-4">Vivamus id maximus elit. Nulla dapibus diam vitae elementum sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi velit dolor, sodales sed malesuada at, aliquet ut odio. Maecenas imperdiet viverra ipsum, porttitor dictum elit sodales ac. Praesent et pulvinar lectus. Phasellus eget accumsan nunc, sit amet pharetra nunc. Integer varius id mi quis tempor. Vestibulum lobortis tellus eu quam sollicitudin suscipit. Etiam pulvinar, velit vitae pellentesque mollis, mi lorem sollicitudin mi, sed convallis tellus orci ac massa. Mauris ac pellentesque diam, a suscipit velit. Mauris ultrices dui quam, rutrum sollicitudin erat ultrices volutpat.
                             Cras odio eros, congue sit amet risus et, eleifend fringilla lectus. Maecenas suscipit varius semper. Pellentesque feugiat, est vitae mattis consequat, est turpis lobortis dolor, nec sagittis quam magna sed orci. Mauris at dignissim massa, sit amet lobortis dui. Pellentesque vel consectetur tellus. Curabitur aliquam, sapien ut pulvinar ornare, justo nibh elementum odio, id imperdiet ipsum arcu id massa. Nullam commodo enim et sollicitudin finibus. Nam at faucibus metus. Donec fringilla porta ligula, ac porttitor velit convallis non. Sed posuere consequat interdum. Nulla convallis pretium nunc eget gravida. Cras nec justo pharetra, accumsan tellus sit amet, lacinia mauris. Ut lorem dui, dignissim sit amet erat at, tincidunt sollicitudin justo. Curabitur mollis, lacus eu porta lobortis, risus nisi congue ante, a mollis purus augue et tellus. Integer pretium lacus at auctor finibus. Proin non nisl convallis, laoreet libero vel, egestas erat.
                             Nam rutrum ligula eu orci suscipit fringilla. Nam eu ipsum ac nisi fringilla rutrum. Proin in ultrices dolor. Vestibulum ac laoreet enim. Etiam pellentesque venenatis porttitor. Proin finibus erat non dolor lobortis gravida. Curabitur pulvinar auctor dui, ut venenatis nisl porta non.
@@ -117,68 +120,64 @@
                         </div>
                     
                         <div class="col-md-4">
-                            <h1 class="full-text">INFORMATIONEN</h1>
-                            <hr/>
-                            <h3>LAUFZEIT</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <hr/>
-                            <h3>KONTAKTDETAILS</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            <hr/>
-                            <h3>PARTNERS</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            
+                                <h1 class="full-text">PROJEKTINFORMATIONEN</h1>
+                                <h1 class="short-text">INFORMATIONEN</h1>
+                                <hr/>
+                                <h3>LAUFZEIT</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                <hr/>
+                                <h3>KONTAKTDETAILS</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                <hr/>
+                                <h3>PARTNERS</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            
                         </div>
                     </div>
                 
             </div>
             
-            <div class="parallax-two"/>
-
+        
+            <div class="parallax-two">
+            </div>
+       
             <div class="container container-index">
                 <div class="row">
                     <div class="col-md-8">
                         <h1>DAS PROJEKT</h1>
                         <p><span class="first-character blue">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus dolor dui, id ultricies sem laoreet ut. Mauris in fermentum purus, vel congue ipsum. Nullam ornare purus et risus auctor suscipit. Phasellus maximus ipsum laoreet velit maximus interdum. Vestibulum vel arcu sit amet ligula venenatis congue ac sed neque. Curabitur mauris magna, elementum vitae nisi nec, interdum dictum sapien. Nulla sed elementum tellus. Ut porttitor pretium nulla in gravida. Fusce accumsan auctor lacus et placerat. Sed sollicitudin eleifend posuere. Maecenas ac dictum odio. Nulla condimentum sollicitudin nibh, nec egestas lacus porttitor eu. Curabitur ac urna quis lacus vulputate dictum. Phasellus ex augue, pharetra nec pharetra eget, elementum ac leo. Vestibulum in ligula purus. Phasellus nec nisi leo.</p>
-                        <p class="line-break mt-4"/>
+                        <p class="line-break mt-4"></p>
                         <p class="mt-4">Vivamus id maximus elit. Nulla dapibus diam vitae elementum sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi velit dolor, sodales sed malesuada at, aliquet ut odio. Maecenas imperdiet viverra ipsum, porttitor dictum elit sodales ac. Praesent et pulvinar lectus. Phasellus eget accumsan nunc, sit amet pharetra nunc. Integer varius id mi quis tempor. Vestibulum lobortis tellus eu quam sollicitudin suscipit. Etiam pulvinar, velit vitae pellentesque mollis, mi lorem sollicitudin mi, sed convallis tellus orci ac massa. Mauris ac pellentesque diam, a suscipit velit. Mauris ultrices dui quam, rutrum sollicitudin erat ultrices volutpat.</p>
                     </div>
-                    <div class="col-md-4 text-center px-0">
+                    <div class="col-md-4 text-center">
                         <figure class="figure">
-                            <img id="book-image" src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/BambergBook.jpg" class="figure-img img-fluid mt-5" style="height: 100%; object-fit: cover; width:90%;" alt="Bamberg Buch"/>
-                            <figcaption class="figure-caption">Einband des Bamberger Exemplars.</figcaption>
+                            <img id="book-image" src="img/BambergBook.jpg" class="figure-img img-fluid" style="height: 100%; object-fit: cover;" alt="Bamebrg Buch">
+                            <figcaption class="figure-caption">Bamberg Buch</figcaption>
                         </figure>
                         
                     </div>
                 </div>    
             </div>
         
-            <div class="parallax-three"/>
+            <div class="parallax-three"></div>
         
             <div class="container container-index">
                 <h1>PROJEKTZIELE</h1>
                 <p><span class="first-character light-brown">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus dolor dui, id ultricies sem laoreet ut. Mauris in fermentum purus, vel congue ipsum. Nullam ornare purus et risus auctor suscipit. Phasellus maximus ipsum laoreet velit maximus interdum. Vestibulum vel arcu sit amet ligula venenatis congue ac sed neque. Curabitur mauris magna, elementum vitae nisi nec, interdum dictum sapien. Nulla sed elementum tellus. Ut porttitor pretium nulla in gravida. Fusce accumsan auctor lacus et placerat. Sed sollicitudin eleifend posuere. Maecenas ac dictum odio. Nulla condimentum sollicitudin nibh, nec egestas lacus porttitor eu. Curabitur ac urna quis lacus vulputate dictum. Phasellus ex augue, pharetra nec pharetra eget, elementum ac leo. Vestibulum in ligula purus. Phasellus nec nisi leo.</p>
-                <p class="line-break mt-4"/>
+                <p class="line-break mt-4"></p>
                 <p class="mt-4">Vivamus id maximus elit. Nulla dapibus diam vitae elementum sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi velit dolor, sodales sed malesuada at, aliquet ut odio. Maecenas imperdiet viverra ipsum, porttitor dictum elit sodales ac. Praesent et pulvinar lectus. Phasellus eget accumsan nunc, sit amet pharetra nunc. Integer varius id mi quis tempor. Vestibulum lobortis tellus eu quam sollicitudin suscipit. Etiam pulvinar, velit vitae pellentesque mollis, mi lorem sollicitudin mi, sed convallis tellus orci ac massa. Mauris ac pellentesque diam, a suscipit velit. Mauris ultrices dui quam, rutrum sollicitudin erat ultrices volutpat.</p>
             </div>
         
-            <div class="parallax-four"/>
+            <div class="parallax-four"></div>
         
             <div class="container container-index text-center">
                 
                     <h1 style="margin-bottom:50px;">PROJEKTLEITER</h1>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card">
-                                <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
-                                <div class="card-body">
-                                    <h5 class="card-title">Name</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
                         <div class="card">
-                            <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Name</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -187,7 +186,16 @@
                         </div>
                         <div class="col-md-4">
                         <div class="card">
-                            <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">Name</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="card">
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Name</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -203,7 +211,7 @@
                     <div class="row">
                         <div class="col-md-3 d-flex">
                         <div class="card">
-                            <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Name</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -212,7 +220,7 @@
                         </div>
                         <div class="col-md-3 d-flex">
                         <div class="card">
-                            <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Name</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -221,7 +229,7 @@
                         </div>
                         <div class="col-md-3 d-flex">
                         <div class="card">
-                            <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Name</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -230,7 +238,7 @@
                         </div>
                         <div class="col-md-3 d-flex">
                         <div class="card">
-                            <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                            <img src="img/person.png" class="card-img-top h-100" alt="...">
                             <div class="card-body">
                             <h5 class="card-title">Name</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -242,7 +250,7 @@
                     <div class="row" style="margin-top:15px;">
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                                <img src="img/person.png" class="card-img-top h-100" alt="...">
                                 <div class="card-body">
                                 <h5 class="card-title">Name</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -251,7 +259,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                                <img src="img/person.png" class="card-img-top h-100" alt="...">
                                 <div class="card-body">
                                 <h5 class="card-title">Name</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -260,7 +268,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                                <img src="img/person.png" class="card-img-top h-100" alt="...">
                                 <div class="card-body">
                                 <h5 class="card-title">Name</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -269,7 +277,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/person.png" class="card-img-top h-100"/>
+                                <img src="img/person.png" class="card-img-top h-100" alt="...">
                                 <div class="card-body">
                                 <h5 class="card-title">Name</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -279,121 +287,128 @@
                         </div>
                 
             </div>
-        </div>
+        
+      
+    </div>
 
-        <footer class="text-center text-lg-start bg-light text-muted mt-5">
-            <!-- Section: Social media -->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
             <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                 <!-- Left -->
                 <div class="me-5 d-none d-lg-block">
-                    <span>Get connected with us:</span>
+                <span>Get connected with us:</span>
                 </div>
-                
+    
                 <!-- Right -->
                 <div>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-facebook-f"/>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-twitter"/>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-google"/>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-linkedin"/>
-                    </a>
-                    <a href="" class="me-4 text-reset">
-                        <i class="fab fa-github"/>
-                    </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
                 </div>
             </div>
-            
+    
             <!-- Section: Links  -->
             <div class="">
                 <div class="container text-center text-md-start mt-5">
-                    <div class="row mt-3">
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <!--<i class="fas fa-gem me-3"/>-->                       
-                                <a class="text-reset" href="index.html">Burchards Dekret Digital</a>
-                            </h6>
-                            <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Institutionen und Universitäten 
-                            </h6>
-                            <p>
-                                <a href="https://www.adwmainz.de/startseite.html" class="text-reset">Akademie der Wissenschaften und der Literatur</a>
-                            </p>
-                            <p>
-                                <a href="https://startseite.uni-mainz.de/" class="text-reset">Johannes Gutenberg - Universität Mainz</a>
-                            </p>
-                            <p>
-                                <a href="https://www.uni-kassel.de/uni/" class="text-reset">Universität Kassel</a>
-                            </p>
-                            <p>
-                                <a href="https://www.fau.eu/" class="text-reset">Friedrich-Alexander - Universität Erlangen-Nürnberg</a>
-                            </p>
-                        </div>
-                        
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Useful links
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                        </div>
-                        
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                            <p><i class="fas fa-home me-3"/> New York, NY 10012, US</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"/>
-                                info@example.com
-                            </p>
-                            <p><i class="fas fa-phone me-3"/> + 01 234 567 88</p>
-                            <p><i class="fas fa-print me-3"/> + 01 234 567 89</p>
-                        </div>
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Burchards Dekret Digital
+                    </h6>
+                    <p>
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum
+                        dolor sit amet, consectetur adipisicing elit.
+                    </p>
                     </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Institutionen und Universitäten 
+                    </h6>
+                    <p>
+                        <a href="https://www.adwmainz.de/startseite.html" class="text-reset">Akademie der Wissenschaften und der Literatur</a>
+                    </p>
+                    <p>
+                        <a href="https://startseite.uni-mainz.de/" class="text-reset">Johannes Gutenberg - Universität Mainz</a>
+                    </p>
+                    <p>
+                        <a href="https://www.uni-kassel.de/uni/" class="text-reset">Universität Kassel</a>
+                    </p>
+                    <p>
+                        <a href="https://www.fau.eu/" class="text-reset">Friedrich-Alexander - Universität Erlangen-Nürnberg</a>
+                    </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Test</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Test</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Test</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Test</a>
+                    </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                </div>
                 </div>
             </div>
             
-            
+    
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2023 Copyright:
-                <a class="text-reset fw-bold" href="index.html">BDD</a>
+                <a class="text-reset fw-bold" href="#!">BDD</a>
             </div>
-            
+           
         </footer>
+        <!-- Footer -->
+
+
+        <script>
+            $(function() {
+        $('a[href*=#]').on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+        });
+        });
+        </script>
     </body>
+    
+
 </html>
     
         
 
-<script>
-    $(function() {
-    $('a[href*=#]').on('click', function(e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-    });
-    });
-</script>
