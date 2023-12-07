@@ -1,0 +1,503 @@
+@font-face {
+  font-family: BrandonGrotesqueLight;
+  src: url(brandon-grotesque-light.otf);
+}
+
+@font-face {
+  font-family: BrandonGrotesqueRegular;
+  src: url(brandon-grotesque-regular.otf);
+}
+
+@font-face {
+  font-family: BrandonGrotesqueBlack;
+  src: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/fonts/Brandon_blk.otf");
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/fonts/Montserrat-ExtraBold.ttf");
+}
+
+html{
+    scroll-padding-top: 70px;
+}
+body {
+height:auto;
+    padding-top: 75px;
+	/* margin-bottom:30px; */
+	font-family: BrandonGrotesqueLight;
+	/* font-family:Montserrat-Regular;*/
+	font-size:14px;
+}
+
+ h1, h2, h3, h4, h5, h6 {
+	font-family: BrandonGrotesqueLight;
+	/*font-family:Montserrat-Regular;*/
+	text-transform: uppercase;
+}
+
+.navbar{
+    font-family: BrandonGrotesqueLight;
+	/*font-family:Montserrat-Regular;*/
+    font-size: 17px;
+    background-color:black!important;
+    top:0;
+    height:75px;
+}
+
+.collation-table{
+    font-family: BrandonGrotesqueLight;
+	/*font-family:Montserrat-Regular;*/
+}
+.accordion-header{
+    font-family: BrandonGrotesqueRegular;
+}
+
+.container-filters-top{
+    margin-top: 100px;
+}
+
+
+
+
+
+/* MAP */
+.mss-map-head {
+	grid-row:3;
+	grid-column: 2;
+}
+#map1 {
+	height: 70vh;
+	grid-row: 4;
+	grid-column: 2;
+}
+.map-controll {
+	grid-row:2;
+	grid-column: 1;
+}
+
+#map2 {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom:30px;
+    height: 600px;
+    width: 100%;
+    display: block;
+    
+    
+}
+
+
+.navbar-dark .navbar-nav .nav-link:focus, 
+.navbar-dark .navbar-nav .nav-link:hover {
+              color: #4CAF50 !important;
+              font-weight:900;
+}
+
+.navbar .navbar-nav .nav-link {
+              padding: 0.6em;
+              transition: all 0.5s;
+}
+.navbar .navbar-brand {
+                padding: 0 0.6em;
+                color: #4CAF50;
+                font-weight: bold;
+                letter-spacing: 1px;
+}
+            
+            
+@media only screen and (min-width: 960px) {
+                .navbar {
+                    padding: 0;
+                }
+                .navbar .navbar-nav .nav-link {
+                    padding: 1em 0.7em;
+                }
+                .navbar .navbar-brand {
+                    padding: 0 0.8em;
+                }
+}
+
+
+/* .MuiList is mirador class for styling annotation list*/
+ .MuiList-root {
+            background-color: white;
+        }
+      /*.mss-item-view {
+            display:flex;
+            flex-direction:row;
+            width:100%;
+            height:100%;
+        }*/
+
+.mss-data {
+            /*width:50%;*/
+            /*height:50%;*/
+            position:relative;
+            /*flex-basis: auto;*/
+}
+
+
+
+.fullscreen {
+            width: 100%;
+            height:100vh;
+            position:relative;
+            margin-top:30px;
+}
+        
+        .manuscript-title {
+           margin-bottom: 30px; 
+            text-align:center
+        }
+        
+
+/* .viewer class for dosplaying mirador viewer*/
+.viewer {
+        width: 50%;
+        height: 100%;
+        position: fixed;
+      }
+
+.btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index:1;
+}  
+
+
+.bdd-unin-lost{
+    border-style: solid;
+  border-color: #A9A9A9;
+  border-top: solid #A9A9A9;
+    background-color:#F8F8F8;
+}
+
+
+.bdd-ed-rec{
+    color:#b300b3;
+}
+
+.table-strukturansicht{
+        table-layout: fixed;
+        width: 100%;
+    }
+
+/* td[data-content~="bdd-unin-lost"]::after{
+content:"";
+    height: 25px;
+  width: 25px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block; 
+}
+
+td[data-content~="bdd-ed-rec"]::after{
+    content:"";
+    height: 25px;
+  width: 25px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+   
+} */
+
+td.bdd-unin-lost::after{
+    content:"aa";
+}
+
+td.bdd-ed-rec::after{
+    content:"bb";
+}
+
+
+
+/* INDEX CSS */
+    .container-index h1 {
+                /*  font-family: Montserrat-ExtraBold; */
+                font-family: BrandonGrotesqueBlack;
+                font-size:24px; 
+                font-weight:400; 
+                text-transform: uppercase; 
+                color:black; 
+                padding:0; 
+                margin-bottom:20px;
+                letter-spacing:2px; 
+            }
+
+            .container-index h2 {
+                font-family: Montserrat-Regular;
+                font-size:70px; 
+                letter-spacing:10px; 
+                text-align:center; 
+                color:white; 
+                font-weight:400; 
+                text-transform:uppercase; 
+                z-index:10; 
+                opacity:.9;
+            }
+
+            .container-index h3 {
+                font-family: BrandonGrotesqueLight;
+	/*font-family:Montserrat-Regular;*/
+                font-size:14px; 
+                line-height:0; 
+                font-weight:400; 
+                letter-spacing:2px; 
+                text-transform: uppercase; 
+                color:black;}
+
+            .container-index p {
+               font-family: BrandonGrotesqueLight;
+	/*font-family:Montserrat-Regular;*/
+                font-weight:400; 
+                font-size:16px; 
+                line-height:24px;
+            }
+
+            .first-character {
+                font-weight:900; 
+                float: left; 
+                font-size: 84px; 
+                line-height: 64px; 
+                padding-top: 4px; 
+                padding-right: 8px;
+                font-family: Montserrat-Regular;}
+
+            .light-blue {color: #3b8595;}
+            .blue {color: #004d99;}
+            .light-brown {color: #c48660;}
+
+            /* Title */
+            .parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; }
+            .parallax-title h1 {font-size:40px; color:white; font-weight:800; margin-bottom:0; font-family: Montserrat-ExtraBold; }
+            .parallax-title h3 {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }
+            
+            .short-text {display: none;}
+        
+            .container-index {
+                background: white; 
+                padding: 60px; 
+                
+                margin:0 auto; 
+                text-align:justify;}
+
+            /* Parallax */
+            .parallax-one {
+                padding-top: 200px; 
+                padding-bottom: 200px; 
+                overflow: hidden; 
+                position: relative; 
+                width: 100%; 
+                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/Dekret_18-19.png"); 
+                background-attachment: fixed; 
+                background-size: cover; 
+                -moz-background-size: cover; 
+                -webkit-background-size: cover; 
+                background-repeat: no-repeat; 
+                background-position: top center;
+            }
+
+            .parallax-two {
+                padding-top: 100px; 
+                padding-bottom: 100px; 
+                overflow: hidden; 
+                position: relative; 
+                width: 100%; 
+                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/Dekret_18-19.png"); 
+                background-attachment: fixed; 
+                background-size: cover; 
+                -moz-background-size: cover; 
+                -webkit-background-size: cover; 
+                background-repeat: no-repeat; 
+                background-position: center center;
+            }
+
+            .parallax-three {
+                padding-top: 200px; 
+                padding-bottom: 200px; 
+                overflow: hidden; 
+                position: relative; 
+                width: 100%; 
+                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/xml_19.png"); 
+                background-attachment: fixed; 
+                background-size: cover; 
+                -moz-background-size: cover; 
+                -webkit-background-size: cover; 
+                background-repeat: no-repeat; 
+                background-position: center center;
+            }
+
+            .parallax-four {
+                padding-top: 100px; 
+                padding-bottom: 100px; 
+                overflow: hidden; 
+                position: relative; 
+                width: 100%; 
+                background-image: url("https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/css/img/xml_19.png"); 
+                background-attachment: fixed; 
+                background-size: cover; 
+                -moz-background-size: cover; 
+                -webkit-background-size: cover; 
+                background-repeat: no-repeat; 
+                background-position: center center;}
+
+
+            /* Line-Break */
+            .line-break {
+                border-bottom:1px solid black; 
+                width: 150px; 
+                margin:0 auto;}
+
+            /* Media Queries*/ 
+            @media screen and (max-width: 959px) and (min-width: 768px) {
+            .container-index {padding: 40px;}
+            .container-index {padding: 30px;}
+            .container-index h2 {font-size:30px;}
+            .parallax-title h1 {letter-spacing: 1px;}
+            .parallax-title h3 {font-size: 20px;}
+            .container-indexh1 {letter-spacing: 0px; font-size:22px;}
+            .short-text { display: inline-block; }
+            .full-text { display: none; }
+            .parallax-one, .parallax-three {padding-top:200px; padding-bottom:200px; background-attachment: initial;}
+            .parallax-two, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
+            .card{margin-bottom:15px;}
+            #scroll-down{display:none;}
+            #book-image {height: 40%!important;}
+            .table-strukturansicht {table-layout: auto;}
+            }
+            
+            @media screen and (max-width: 767px) {
+            .container-index {padding: 30px;}
+            .container-index h2 {font-size:30px;}
+            .parallax-title h1 {letter-spacing: 1px;}
+            .parallax-title h3 {font-size: 18px;}
+            .container-index h1 {letter-spacing: 0px; font-size:22px;}
+            .short-text { display: inline-block; }
+            .full-text { display: none; }
+            .parallax-one, .parallax-two, .parallax-three, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
+            .card{margin-bottom:15px;}
+            #scroll-down{display:none;}
+            .manuscript-title h1{font-size:25px; margin-top:30px;}
+            .table-strukturansicht {table-layout: auto;}
+            .text-container-edition:not(:first-child){margin-top:50px;}
+            }
+            
+            
+            
+            @media screen and (max-width: 479px) {
+            .container-index {padding: 30px 15px;}
+            .container-index {padding: 30px;}
+            .container-index h2 {font-size:30px;}
+            .parallax-title h1 {letter-spacing: 1px; font-size: 30px;}
+            .parallax-title h3 {font-size: 13px;}
+            .container-index h1 {letter-spacing: 0px; font-size:22px;}
+            .short-text { display: inline-block; }
+            .full-text { display: none; }
+            .parallax-one, .parallax-two, .parallax-three, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
+            .card{margin-bottom:15px;}
+            #scroll-down{display:none;}
+            .navbar-brand img{width: 60px!important;}
+            .manuscript-title h1{font-size:25px; margin-top:30px;}
+            .back-button{display:none;}
+            }
+            
+
+
+/* INDEX SCROLL-DOWN */
+#scroll-down {
+           width: 100%;
+        }
+        #scroll-down::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 80%;
+            background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+        }
+        #scroll-down a {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            z-index: 2;
+            display: inline-block;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            color: #fff;
+            font : normal 400 20px/1;
+            font-family: Montserrat-Regular;
+            letter-spacing: .1em;
+            text-decoration: none;
+            transition: opacity .3s;
+        }
+        #scroll-down a:hover {
+            opacity: .5;
+        }
+
+        #scroll-down a {
+            padding-top: 60px;
+        }
+        #scroll-down a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: sdb04 2s infinite;
+            animation: sdb04 2s infinite;
+            box-sizing: border-box;
+        }
+        @-webkit-keyframes sdb04 {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+            }
+            20% {
+                -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+            }
+            40% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+            }
+        }
+        @keyframes sdb04 {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+            }
+            20% {
+                transform: rotate(-45deg) translate(-10px, 10px);
+            }
+            40% {
+                transform: rotate(-45deg) translate(0, 0);
+            }
+        }
+
+        
+@media (max-width: 767.98px) {
+            .fullscreen {
+            width: 95%;
+            margin-top: 30px;
+            margin-bottom:30px;
+            }
+            
+            .manuscript-title { 
+            text-align:left;
+            margin-left:20px;
+            }
+            
+            #map2 {
+    width: 90%;
+    
+}
+        }
