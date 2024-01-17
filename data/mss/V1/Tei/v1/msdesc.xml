@@ -1,0 +1,171 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-vatican-bav-pal-lat-585">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="ger">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal. Lat. 585</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Test Handschriftendatenbank</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="vatican-bav-pal-lat-585-msdesc">
+                    <msIdentifier xml:id="vatican-bav-pal-lat-585-ident">
+                        <repository ref="https://www.vaticanlibrary.va/">Biblioteca Apostolica Vaticana<location>
+                            <geo>41.90145492553711,12.458013534545898</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q237">Vatikanstadt</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q237">Vatikanstadt</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Pal. Lat. 585</idno>
+                        </collection>
+                        <altIdentifier type="old-signature">
+                            <idno type="shelfmark">unbekannt</idno>
+                        </altIdentifier>
+                        <msName type="full">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal. Lat. 585</msName>
+                        <msName type="sigle">V1</msName>
+                    </msIdentifier>
+                    
+                    <msContents>
+                        <summary>Wie auch in der Edition ist die Admonitio Synodalis hier in den Ordo de celebrando concilio integriert.</summary>
+                        
+                        <msItem n="1" corresp="#ordo-celebrando-concilio" class="begleittext" facs="#">
+                            <locusGrp>
+                                <locus from="1r" to="6r"/>
+                                <locus from="9v" to="10r"/>
+                            </locusGrp>
+                            <author>
+                                <persName ref="unbekannt">Unbekannt</persName>
+                            </author>
+                            <title xml:lang="lat">Ordo de celebrando concilio</title>
+                            <incipit>„Hora conuenienti quando episcopo uel eius uicario ut sum fuierit omnes expelluntur de acclesia; […]“</incipit>
+                            <explicit>„Et si synodus est uernalis, finitis istis pontifex inde procedens reconciliatisque poenitentibus more solito doceat populum et in fine prędicationis remissionem peccatorum faciat, quia dies illa dies indulgentiae uocatur“</explicit>
+                            <note type="textual-family">Handschriften BHP3VWMi</note>
+                            <note type="textual-subfamily"/>
+                            <note type="text-genre"/>
+                            <textLang>Latein</textLang>
+                        </msItem>
+
+                        <msItem n="2" corresp="#admonitio-synodalis" class="begleittext" facs="#">
+                            <locusGrp>
+                                <locus from="6r" to="9v"/>
+                            </locusGrp>
+                            <author>
+                                <persName ref="unbekannt">Unbekannt</persName>
+                            </author>
+                            <title xml:lang="lat">Admonitio Synodalis</title>
+                            <incipit>„Finito euangelio; episcopo et caeteris in ordine sedentibus; a diacono legatur hęc admonitio. Fratres presbiteri et sacerdotes domini cooperatores ordinis nostris estis.“</incipit>
+                            <explicit>„Praestante domino nostro Iesu Christo, qui cum patre et spiritu sancto uiuit et regnat deus. Per omnia saecula sęculorum.“</explicit>
+                            <note type="textual-family"/>
+                            <note type="textual-subfamily"/>
+                            <note type="text-genre"/>
+                            <textLang>Latein</textLang>
+                        </msItem>
+
+                        <msItem n="3" corresp="#decretum" class="main-text" facs="#">
+                            <locusGrp>
+                                <locus from="10v" to="330r"/>
+                            </locusGrp>
+                            <author>
+                                <persName ref="https://viaf.org/viaf/111045814/">Burchard von Worms</persName>
+                            </author>
+                            <title xml:lang="lat">Decretum</title>
+                            <incipit>„In nomine christi incipit pręfaciuncula istius libelli.“</incipit>
+                            <explicit>„Si abbas mulierem in monasterium suum ingredi permiserit aut festiuitates a liquas ibidem spectare tribus mensio in alio monasterio retrudatur pane et aqua tantum contentus.“</explicit>
+                            <note type="textual-family">Wormser Ordnung A</note>
+                            <note type="textual-subfamily"/>
+                            <note type="text-genre"/>
+                            <textLang>Latein</textLang>
+                        </msItem>
+    
+                        <msItemStruct xml:id="vatican-bav-pal-lat-585-msItemStruct-modern">
+                            <msItemStruct corresp="#ordo-celebrando-concilio"> 
+                                <locus from="1r" to="6r"/>
+                                <title xml:lang="lat">Ordo de celebrando concilio</title>
+                            </msItemStruct>
+                            <msItemStruct corresp="#admonitio-synodalis">
+                                <locus from="6r" to="9v"/>
+                                <title xml:lang="lat">Sermo Synodalis</title>
+                            </msItemStruct>
+                            <msItemStruct corresp="#ordo-celebrando-concilio">
+                                <locus from="9v" to="10r"/>
+                                <title xml:lang="lat">Ordo de celebrando concilio</title>
+                            </msItemStruct>
+                            <msItemStruct corresp="#decretum"> 
+                                <locus from="10v" to="330r"/>
+                                <title xml:lang="lat">Decretum</title>
+                            </msItemStruct>
+                        </msItemStruct>
+                    </msContents>
+                    
+                    <physDesc>
+                        <objectDesc form="codex">
+                            <supportDesc material="parchment">
+                                <extent>
+                                    <dimensions type="leaf">
+                                        <height quantity="34" unit="cm"/>
+                                        <width quantity="26" unit="cm"/>
+                                    </dimensions>
+                                    <measure unit="leaves" quantity="330"/>
+                                </extent>
+                                <condition>Das 5. Buch auf den Lagen XXXII )fol. 285–292) und die Lagen XXXIII (fol. 293–298) ist falsch eingebunden, sodass die Capitulatio des 5. Buches an dessen Ende steht, nicht an dessen Anfang.</condition>
+                            </supportDesc>
+                            
+                            <layoutDesc>
+                                <layout columns="2" writtenLines="22"/>
+                            </layoutDesc>
+                        </objectDesc>
+                        
+                        <!-- hand note needs to be inserted after preparring transcription files
+                        <handDesc hands="" xml:id="">
+                            <summary>Hand A schrieb die beiden Bände zuerst alleine und entspricht dem Hauptschreiber C der Handschrift F.</summary>
+                            <handNote xml:id="" script="" medium="" scope="" scribeRef="" source=""/>
+                        </handDesc>-->
+                        
+                        <scriptDesc>
+                            <scriptNote>Karolingische Minuskel</scriptNote>
+                        </scriptDesc>
+                    </physDesc>
+                    
+                    <history>
+                        <summary>Geschrieben in Worms im ¼ d. 11. Jahrhunderts. Stiftsbibliothek Heiliggeistkirche, Heidelberg.</summary>
+                        <origin>
+                            <origPlace ref="https://www.wikidata.org/wiki/Q3852">Worms<location>
+                                <geo>49.630167, 8.359789</geo>
+                                </location> <region ref="https://www.wikidata.org/wiki/Q1200">Rheinland-Pfalz</region> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </origPlace>
+                            <origDate notBefore="1000" notAfter="1025">¼ 11. Jh. </origDate>
+                        </origin>
+                        <provenance><name ref="https://www.ub.uni-heidelberg.de/" type="org">Stiftsbibliothek Heiliggeistkirche</name> <location>
+                            <geo>49.4093582,8.694724</geo>
+                            </location> <settlement ref="https://www.wikidata.org/wiki/Q2966">Heidelberg</settlement> <region ref="https://www.wikidata.org/wiki/Q985">Baden-Württemberg</region>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </provenance>
+                    </history>
+                    
+                    <additional>
+                        <surrogates> <bibl type="digi">
+                            <title xml:lang="ger">Digitalisat</title>
+                            <ref>https://digi.vatlib.it/view/MSS_Pal.lat.585</ref>
+                            </bibl> <bibl type="iiif-manifest">
+                            <title xml:lang="ger">iiif-Manifest</title>
+                            <ref/>
+                            </bibl> <bibl type="cat">
+                            <title xml:lang="ger">Katalogisat</title>
+                            <ref>https://opac.vatlib.it/mss/detail/Pal.lat.585</ref>
+                            </bibl> <bibl type="xml">
+                            <title xml:lang="ger">XML-Datei</title>
+                            <idno>vatican-bav-pal-lat-585</idno>
+                            </bibl>
+                        </surrogates> 
+                        <listBibl>
+                            <listBibl type="catalogue"/>
+                            <listBibl type="secondary-literature"/>
+                        </listBibl>
+                    </additional>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

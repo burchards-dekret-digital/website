@@ -1,0 +1,172 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-frankfurt-ub-b-50">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="ger">Frankfurt am Main, Stadt- und Universitätsbibliothek, Barth.
+                    50</title>
+            </titleStmt>
+
+            <publicationStmt>
+                <p>Test Handschriftendatenbank</p>
+            </publicationStmt>
+
+            <sourceDesc>
+                <msDesc xml:id="frankfurt-ub-b-50-msdesc">
+                    <msIdentifier xml:id="frankfurt-ub-b-50-ident">
+                        <repository ref="https://www.ub.uni-frankfurt.de/">Stadt- und
+                            Universitätsbibliothek<location> <geo>50.120524,8.653046</geo>
+                            </location> <settlement ref="https://www.wikidata.org/wiki/Q1794">Frankfurt am Main</settlement> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </repository>
+                        <collection>
+                            <idno type="shelfmark">Barth.50</idno>
+                        </collection>
+                        <altIdentifier type="old-signature">
+                            <idno type="shelfmark">F ix</idno>
+                        </altIdentifier>
+                        <msName type="full">Frankfurt am Main, Stadt - und Universitätsbibliothek,
+                            Barth. 50</msName>
+                        <msName type="sigle">F</msName>
+                    </msIdentifier>
+
+                    <msContents>
+                        <summary/>
+                        <msItem n="1" corresp="#decretum" class="main-text" facs="https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2035623">
+                            <locusGrp>
+                                <locus to="315v" from="1ra"/>
+                            </locusGrp>
+                            <author>
+                                <persName ref="https://viaf.org/viaf/111045814/">Burchard von
+                                    Worms</persName>
+                            </author>
+                            <title xml:lang="lat">Decretum</title>
+                            <incipit>„et in quo geniculo fideles et coniungi et separari debeant et
+                                de reuocatione et de poenitentia singulorum.“</incipit>
+                            <explicit>„Sed in hęc ignem conflagrationis illius pertimescent
+                                inmortales atque incorruptibiles facti sunt uiuerum trium
+                                corruptibilia corpora atque mortalia in camino ardenti inlesa uiuere
+                                non potuerunt.“</explicit>
+                            <note type="textual-family"/>
+                            <note type="textual-subfamily">Deutsche Handschriftengruppe</note>
+                            <note type="text-genre"/>
+                            <textLang>Latein</textLang>
+                        </msItem>
+
+                        <msItem n="2" corresp="#brief-isidors-von-sevilla" class="begleittext" facs="https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2036252">
+                            <locusGrp>
+                                <locus from="315v" to="315v"/>
+                            </locusGrp>
+                            <author>
+                                <persName ref="https://viaf.org/viaf/803890/">Isidors von
+                                    Sevilla</persName>
+                            </author>
+                            <title xml:lang="ger">Brief Isidors von Sevilla an Bischof Massona von
+                                Mérida</title>
+                            <incipit>„Incipit epistola ysidori episcopi ad massonem episcopum de
+                                restravrationis sacerdotis. Domino sancto […]“</incipit>
+                            <explicit>„Ergo ita est uterque derimanda sententia.“</explicit>
+                            <note type="textual-family"/>
+                            <note type="textual-subfamily"/>
+                            <note type="text-genre"/>
+                            <textLang>Latein</textLang>
+                        </msItem>
+
+
+                        <msItemStruct xml:id="frankfurt-ub-b-50-msItemStruct-modern">
+                            <msItemStruct corresp="#decretum">
+                                <locus from="1ra" to="315v"/>
+                                <title xml:lang="lat">Decretum</title>
+                            </msItemStruct>
+                            <msItemStruct corresp="#brief-isidors-von-sevilla">
+                                <locus from="315v" to="315v"/>
+                                <title xml:lang="ger">Brief Isidors von Sevilla an Bischof Massona
+                                    von Mérida</title>
+                            </msItemStruct>
+                        </msItemStruct>
+
+                    </msContents>
+
+
+                    <physDesc>
+                        <objectDesc form="codex">
+                            <supportDesc material="parchment">
+                                <extent>
+                                    <dimensions type="leaf">
+                                        <height quantity="33.2" unit="cm"/>
+                                        <width quantity="22.5" unit="cm"/>
+                                    </dimensions>
+                                    <measure unit="leaves" quantity="315"/>
+                                </extent>
+                                <condition>Einband der Handschrift stark beschädigt, 1964
+                                    restauriert; Lederbezug der Deckel, 2 Langriemenschließen und
+                                    Lederflechtung am Kapital erneuert. Schlussblatt der Handschrift
+                                    beschädigt mit leichtem Textverlust. </condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="2" writtenLines="30"/>
+                            </layoutDesc>
+                        </objectDesc>
+                        <!-- hand note needs to be inserted after preparring transcription files
+                        <handDesc hands="2" xml:id="frankfurt-ub-b-50-handDesc">
+                            <summary>Der Frankfurter Codex ist zum größten Teil von einer Hand C (entsprich A in V1 und V2), Unterschiede sind vor allem mit der engeren Schrift in F zu erklären. Die weiteren Schreiber arbeiteten vermutlich erst nach Vollendung des Dekrets für Überarbeitungen und Nachträge.</summary>
+                            <handNote xml:id="" medium="" scope="major" scribeRef="" source="" script=""/>
+                        </handDesc>-->
+                        <scriptDesc>
+                            <scriptNote>Karolingische Minuskel</scriptNote>
+                        </scriptDesc>
+                    </physDesc>
+
+                    <history>
+                        <summary>Geschrieben in Worms im ¼ d. 11. Jahrhunderts. Eigentum St.
+                            Bartholomäus, Frankfurt</summary>
+                        <origin>
+                            <origPlace ref="https://www.wikidata.org/wiki/Q3852">Worms<location>
+                                <geo>49.630167,8.359789</geo> </location> <region ref="https://www.wikidata.org/wiki/Q1200">Rheinland-Pfalz</region>
+                                <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </origPlace>
+                            <origDate notBefore="1000" notAfter="1025">¼ 11. Jh.</origDate>
+                        </origin>
+                        <provenance>
+                            <name ref="https://www.wikidata.org/wiki/Q57341" type="org">Stift St.
+                                Bartholomäus</name>
+                            <location>
+                                <geo>50.1213479,8.4964779</geo>
+                            </location>
+                            <settlement ref="https://www.wikidata.org/wiki/Q1794">Frankfurt am
+                                Main</settlement>
+                            <region ref="https://www.wikidata.org/wiki/Q1199">Hessen</region>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </provenance>
+                    </history>
+
+                    <additional>
+                        <surrogates>
+                            <bibl type="digi">
+                                <title xml:lang="ger">Digitalisat</title>
+                                <ref>http://sammlungen.ub.uni-frankfurt.de/msma/urn/urn:nbn:de:hebis:30:2-12488</ref>
+                            </bibl>
+                            <bibl type="iiif-manifest">
+                                <title xml:lang="ger">iiif-Manifest</title>
+                                <ref>https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/tests/manifests/frankfurt-ub-b-50-manifest.json</ref>
+                            </bibl>
+                            <bibl type="cat">
+                                <title xml:lang="ger">Katalogisat</title>
+                                <ref>https://sammlungen.ub.uni-frankfurt.de/kataloge/purn/urn:nbn:de:hebis:30:2-269-p0136-3</ref>
+                            </bibl>
+                            <bibl type="xml">
+                                <title xml:lang="ger">XML-Datei</title>
+                                <idno>frankfurt-ub-b-50</idno>
+                            </bibl>
+                        </surrogates>
+                        <listBibl>
+                            <listBibl type="catalogue"/>
+                            <listBibl type="secondary-literature"/>
+                        </listBibl>
+                    </additional>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body xml:lang="">
+            <p>test</p>
+        </body>
+    </text>
+</TEI>
