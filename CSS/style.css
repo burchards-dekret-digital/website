@@ -52,6 +52,10 @@ height:auto;
               font-weight:900;
 }
 
+.en { display: none; }
+.de { display: initial; }
+.language-button { cursor: pointer; margin-right: 10px; }
+
 @media only screen and (min-width: 960px) {
     .navbar {
         padding: 0;

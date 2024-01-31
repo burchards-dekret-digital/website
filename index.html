@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" translate="no" class="notranslate">
     <head>
         <title data-template="config:app-title">Designtest BDD - Transkription</title>
+        <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
         <meta data-template="config:app-meta"/>
-        <meta name="google" content="notranslate" />
+        <meta name="google" content="notranslate"/>
         
         <!--Bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -25,7 +26,6 @@
         <!-- // === Javascripts === -->
         <!-- // jquery -->
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>-->
-        
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         
         
@@ -43,67 +43,12 @@
         
         <!-- // Fontawesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-           
-        <style>
-            .en { display: none; }
-            .de { display: initial; }
-            .language-button { cursor: pointer; margin-right: 10px; }
-          </style>
+        
+        <script src="../js/language.js" defer></script>
+        
     </head>
     <body>
-        <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img src="img/LogoGreen.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-              Burchards Dekret Digital
-            </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link de" aria-current="page" href="index.html">Home</a>
-                    <a class="nav-link en" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link de" href="../website/html/mss.html">Handschriften</a>
-                    <a class="nav-link en" href="../website/html/mss.html">Manuscripts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link de" href="../website/html/edition.html">Edition</a>
-                    <a class="nav-link en" href="../website/html/edition.html">Edition</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled de" href="../website/html/projekt.html">Projekt</a>
-                    <a class="nav-link disabled en" href="../website/html/projekt.html">Project</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link de" href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/documentation/-/blob/main/bdd_dokumentation.md" target="_blank">Dokumentation</a>
-                    <a class="nav-link en" href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/documentation/-/blob/main/bdd_dokumentation.md" target="_blank">Documentation</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link de" href="../website/html/collation-table.html">Kollationstabellen</a>
-                    <a class="nav-link en" href="../website/html/collation-table.html">Collation tables</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link de" href="../website/html/overview-tables.html">Transkriptionsübersicht</a>
-                    <a class="nav-link en" href="../website/html/overview-tables.html">Transcription overview</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link de" href="../website/html/print-weblink.html">Druck-Web-Verknüpfung</a>
-                    <a class="nav-link en" href="../website/html/print-weblink.html">Print web link</a>
-                  </li>
-                </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <button class="btn btn-outline-success btn-sm language-button" type="submit" type="submit" onclick="changeLanguage('de')">DE</button>
-                  <button class="btn btn-outline-success btn-sm language-button" type="submit" type="submit" onclick="changeLanguage('en')">EN</button>
-                </ul>
-              </div>
-            </div>
-          </nav>-->
-
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="img/LogoGreen.png" alt="Burchards Dekret Digital" width="70"> Burchards Dekret Digital
@@ -138,23 +83,19 @@
                             <a class="nav-link en" href="../website/html/collation-table.html">Collation tables</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link de" href="../website/html/overview-tables.html">Transkriptionsübersicht</a>
-                            <a class="nav-link en" href="../website/html/overview-tables.html">Transcription overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link de" href="../website/html/print-weblink.html">Druck-Web-Verknüpfung</a>
-                            <a class="nav-link en" href="../website/html/print-weblink.html">Print web link</a>
+                            <a class="nav-link disabled de" href="../website/html/print-weblink.html">Druck-Web-Verkn&uuml;pfung</a>
+                            <a class="nav-link disabled en" href="../website/html/print-weblink.html">Print web link</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <button class="btn btn-outline-success btn-sm language-button" type="submit" type="submit" onclick="changeLanguage('de')">DE</button>
                         <button class="btn btn-outline-success btn-sm language-button" type="submit" type="submit" onclick="changeLanguage('en')">EN</button>
-                      </ul>
+                    </ul>
                 </div>
             </div>
-    </nav>
+        </nav>
         
-            <div>
+        <div>
                 <div class="parallax-title">
                     <h1 style="text-transform: uppercase;">Burchards</h1>
                     <h3 style="text-transform: uppercase;">Dekret Digital</h3>
@@ -265,9 +206,9 @@
                                             <img src="img/Baumgaertner1.jpg" class="card-img-top h-100" alt="Prof. Dr. Ingrid Baumgaertner">
                                             <div class="card-body">
                                             <h6>Prof. Dr.</h6>
-                                            <h5 class="card-title">INGRID BAUMGÄRTNER</h5>
-                                            <p class="card-text"><span class="de">Seniorprofessur für Mittelalterliche Geschichte<br/> <a href="https://www.uni-kassel.de/fb05/fachgruppen-und-institute/geschichte/seniorprofessur/prof-dr-ingrid-baumgaertner" target="_blank">Universität Kassel</a><br/> <a href= "mailto:ibaum@uni-kassel.de">ibaum@uni-kassel.de</a></span></p>
-                                            <p class="card-text"><span class="en">Senior Professorship for Medieval History<br/> <a href="https://www.uni-kassel.de/fb05/fachgruppen-und-institute/geschichte/seniorprofessur/prof-dr-ingrid-baumgaertner" target="_blank">University Kassel</a><br/> <a href= "mailto:ibaum@uni-kassel.de">ibaum@uni-kassel.de</a></span></p>
+                                            <h5 class="card-title">INGRID BAUMG&Auml;RTNER</h5>
+                                            <p class="card-text">Universit&auml;t Kassel<br/> <a href= "mailto:ibaum&#064;uni-kassel.de">ibaum&#064;uni-kassel.de</a></p>
+                                            
                                             </div>
                                         </div>
                                     </div>
@@ -277,8 +218,7 @@
                                             <div class="card-body">
                                             <h6>Prof. Dr.</h6>
                                             <h5 class="card-title">KLAUS HERBERS</h5>
-                                            <p class="card-text"><span class="de">Seniorprofessur für Mittelalterliche Geschichte<br/> <a href="https://www.geschichte.phil.fau.de/person/herbers-klaus/" target="_blank">Friedrich-Alexander-Universität Erlangen-Nürnberg</a><br/> <a href= "mailto:klaus.herbers@fau.de">klaus.herbers@fau.de</a></span></p>
-                                            <p class="card-text"><span class="en">Senior Professorship for Medieval History<br/> <a href="https://www.geschichte.phil.fau.de/person/herbers-klaus/" target="_blank">Friedrich-Alexander-University Erlangen-Nürnberg</a><br/> <a href= "mailto:klaus.herbers@fau.de">klaus.herbers@fau.de</a></span></p>
+                                            <p class="card-text">Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg<br/> <a href= "mailto:klaus.herbers&#064;fau.de">klaus.herbers&#064;fau.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -287,9 +227,8 @@
                                             <img src="img/Koerntgen1.jpg" class="card-img-top h-100" alt="Prof. Dr. Ludger Koerntgen">
                                             <div class="card-body">
                                             <h6>Prof. Dr.</h6>
-                                            <h5 class="card-title">LUDGER KÖRNTGEN</h5>
-                                            <p class="card-text"><span class="de">Seniorprofessur für Mittelalterliche Geschichte<br/> <a href="https://mittelalter.geschichte.uni-mainz.de/mitarbeiter-innen/professoren/prof-dr-ludger-koerntgen/" target="_blank">Johannes Gutenberg-Universität Mainz</a><br/> <a href= "mailto:koerntge@uni-mainz.de">koerntge@uni-mainz.de</a></span></p>
-                                            <p class="card-text"><span class="en">Senior Professorship for Medieval History<br/> <a href="https://mittelalter.geschichte.uni-mainz.de/mitarbeiter-innen/professoren/prof-dr-ludger-koerntgen/" target="_blank">Johannes Gutenberg-University Mainz</a><br/> <a href= "mailto:koerntge@uni-mainz.de">koerntge@uni-mainz.de</a></span></p>
+                                            <h5 class="card-title">LUDGER K&Ouml;RNTGEN</h5>
+                                            <p class="card-text">Johannes Gutenberg-Universit&auml;t Mainz<br/> <a href= "mailto:koerntge&#064;uni-mainz.de">koerntge&#064;uni-mainz.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -297,6 +236,7 @@
                             </div>
                             <div class="col-md-1"></div>
                         </div>
+
 
                         <h1 style="margin-top:100px;"><span class="de">PROJEKT MITARBEITER</span></h1>
                         <h1 style="margin-bottom:50px;"><span class="en">PROJECT STAFF</span></h1>
@@ -311,7 +251,7 @@
                                             <div class="card-body">
                                             <h6>M.A.</h6>
                                             <h5 class="card-title">HELENA GEITZ</h5>
-                                            <p class="card-text"><a href="https://mittelalter.geschichte.uni-mainz.de/forschung/mitarbeiter/helena-geitz/" target="_blank">Johannes Gutenberg-Universität Mainz</a><br/> <a href= "mailto:hegeitz@uni-mainz.de">hegeitz@uni-mainz.de</a></p>
+                                            <p class="card-text">Johannes Gutenberg-Universit&auml;t Mainz<br/> <a href= "mailto:hegeitz&#064;uni-mainz.de">hegeitz&#064;uni-mainz.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -321,7 +261,7 @@
                                             <div class="card-body">
                                                 <h6>M.A.</h6>
                                             <h5 class="card-title">DANIEL GNECKOW</h5>
-                                            <p class="card-text"><a href="https://www.uni-kassel.de/fb05/fachgruppen-und-institute/geschichte/seniorprofessur/team/daniel-gneckow-ma" target="_blank">Universität Kassel</a><br/> <a href= "mailto:daniel.gneckow@uni-kassel.de">daniel.gneckow@uni-kassel.de</a></p>
+                                            <p class="card-text">Universit&auml;t Kassel<br/> <a href= "mailto:daniel.gneckow&#064;uni-kassel.de">daniel.gneckow&#064;uni-kassel.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -331,7 +271,7 @@
                                             <div class="card-body">
                                             <h6>Dr.</h6>
                                             <h5 class="card-title">ANDREAS E.J. GROTE</h5> 
-                                            <p class="card-text"><a href="https://www.augustinus.de/zentrum-fuer-augustinusforschung/wir-ueber-uns/492-andreas-grotes" target="_blank">Augustinus-Lexikon</a><br/> <a href= "mailto:agrote@augustinus.de">agrote@augustinus.de</a></p>
+                                            <p class="card-text">Augustinus-Lexikon<br/> <a href= "mailto:agrote&#064;augustinus.de">agrote&#064;augustinus.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -345,17 +285,18 @@
                                             <div class="card-body">
                                             <h6>Dr.</h6>
                                             <h5 class="card-title">BIRGIT KYNAST</h5>
-                                            <p class="card-text"><a href="https://mittelalter.geschichte.uni-mainz.de/mitarbeiter-innen/wissenschaftliche-mitarbeiter/dr-birgit-kynast/" target="_blank">Johannes Gutenberg-Universität Mainz</a><br/> <a href= "mailto:kynast@uni-mainz.de">kynast@uni-mainz.de</a></p>
+                                            <p class="card-text">Johannes Gutenberg-Universit&auml;t Mainz<br/> <a href= "mailto:kynast&#064;uni-mainz.de">kynast&#064;uni-mainz.de</a></p>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-4">
                                         <div class="card">
                                             <img src="img/Parma1.jpg" class="card-img-top h-100" alt="Michela Parma">
                                             <div class="card-body">
                                             <h6>M.A.</h6>
                                             <h5 class="card-title">MICHELA PARMA</h5>
-                                            <p class="card-text"><a href="https://mittelalter.geschichte.uni-mainz.de/michela-parma/" target="_blank">Johannes Gutenberg-Universität Mainz</a><br/> <a href= "mailto:michela.parma@uni-mainz.de">michela.parma@uni-mainz.de</a></p>
+                                            <p class="card-text">Johannes Gutenberg-Universit&auml;t Mainz<br/> <a href= "mailto:michela.parma&#064;uni-mainz.de">michela.parma&#064;uni-mainz.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -365,7 +306,7 @@
                                             <div class="card-body">
                                             <h6>Dr.</h6>
                                             <h5 class="card-title">MELANIE PANSE-BUCHWALTER</h5>
-                                            <p class="card-text"><a href="https://www.uni-kassel.de/fb05/fachgruppen-und-institute/geschichte/seniorprofessur/team/dr-melanie-panse-buchwalter" target="_blank">Universität Kassel</a><br/> <a href="mailto:panse-buchwalter@uni-kassel.de">panse-buchwalter@uni-kassel.de</a></p>
+                                            <p class="card-text">Universit&auml;t Kassel<br/> <a href="mailto:panse-buchwalter&#064;uni-kassel.de">panse-buchwalter&#064;uni-kassel.de</a></p>
                                             </div>
                                         </div>
                                     </div>  
@@ -378,7 +319,7 @@
                                             <div class="card-body">
                                             <h6>Dr.</h6>
                                             <h5 class="card-title">CORNELIA SCHERER</h5>
-                                            <p class="card-text"><a href="https://www.geschichte.phil.fau.de/person/scherer-cornelia/" target="_blank">Friedrich-Alexander-Universität Erlangen-Nürnberg</a><br/> <a href="mailto:cornelia.scherer@fau.de">cornelia.scherer@fau.de</a></p>
+                                            <p class="card-text">Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg<br/> <a href="mailto:cornelia.scherer@fau.de">cornelia.scherer@fau.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -388,7 +329,7 @@
                                             <div class="card-body">
                                             <h6>Dr.</h6>
                                             <h5 class="card-title">MICHAEL SCHONHARDT</h5>
-                                            <p class="card-text"><a href="https://www.uni-kassel.de/fb05/fachgruppen-und-institute/geschichte/seniorprofessur/team/michael-schonhardt-ma" target="_blank">Universität Kassel</a><br/> <a href="mailto:m.schonhardt@uni-kassel.de">m.schonhardt@uni-kassel.de</a></p>
+                                            <p class="card-text">Universit&auml;t Kassel<br/> <a href="mailto:m.schonhardt&#064;uni-kassel.de">m.schonhardt&#064;uni-kassel.de</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -396,16 +337,37 @@
                                         <div class="card">
                                             <img src="img/Vanelli1.jpg" class="card-img-top h-100" alt="Elena Vanelli">
                                             <div class="card-body">
-                                            <h6>M.A.</h6>
+                                            <h6>Dr. des.</h6>
                                             <h5 class="card-title">ELENA VANELLI</h5>
-                                            <p class="card-text"><a href="https://www.uni-kassel.de/fb05/fachgruppen-und-institute/geschichte/fachgebiete/mittelalterliche-geschichte/team/elena-vanelli-ma" target="_blank">Universität Kassel</a><br/> <a href="elena.vanelli@uni-kassel.de">elena.vanelli@uni-kassel.de</a></p>
+                                            <p class="card-text">Universit&auml;t Kassel<br/> <a href="mailto:elena.vanelli&#64;uni-kassel.de">elena.vanelli&#64;uni-kassel.de</a></p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                             <div class="col-md-1"></div>
                         </div>
+
+
+                        <h1 style="margin-top:100px;"><span class="de">STUDENTISCHE HILFSKR&Auml;FTE</span></h1>
+                        <h1 style="margin-bottom:50px;"><span class="en">STUDENT ASSISTANTS</span></h1>
+
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><b>LEO-MALTE FELDER</b>, Universit&auml;t Kassel</li>
+                                            <li class="list-group-item"><b>CHRISTIAN HOWORKA</b>, Universit&auml;t Kassel</li>
+                                            <li class="list-group-item"><b>CHRISTOPHER OED</b>, Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg, <a href="mailto:christopher.oed&#064;fau.de">christopher.oed&#064;fau.de</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        
 
                         <h1 style="margin-top:100px;"><span class="de">EHEMALIGE MITARBEITER</span></h1>
                         <h1 style="margin-bottom:50px;"><span class="en">FORMER EMPLOYEES</span></h1>
@@ -416,170 +378,123 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><b>Prof. Dr. Lotte Kéry</b>, Rolle (Datum), Universität</li>
-                                            <li class="list-group-item"><b>Leo-Malte Felder</b>, Stud. Hilfskräfte (Datum), Universität</li>
-                                            <li class="list-group-item"><b>Christian Howorka</b>, Stud. Hilfskräfte (Datum), Universität</li>
-                                            <li class="list-group-item"><b>Christopher Oed</b>, Stud. Hilfskräfte (Datum), FAU Erlangen-Nürnberg, <a href= "mailto:christopher.oed@fau.de">christopher.oed@fau.de</a></li>
-                                            <li class="list-group-item"><b>Lars Nitzki</b>, Rolle (Datum), Universität</li>
+                                            <li class="list-group-item"><b>RESHNA HASSAN</b>, 2021-2022, Hilfskr&auml;fte, Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg</li>
+                                            <li class="list-group-item"><b>Prof. Dr. LOTTE K&Eacute;RY</b>, 2020-2021, Universit&auml;t Kassel</li>
+                                            <li class="list-group-item"><b>LARS NITZKI</b>, 2020, IT, Universit&auml;t Kassel</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2"></div>
-                        </div>
-
-                        
-                        
-                        
-                        
+                        </div>  
                 </div>  
-            </div>
+        </div>
 
-            <!-- Footer -->
-            <footer class="text-center text-lg-start bg-light text-muted">
-                <!-- Section: Social media -->
-                    <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                        <!-- Left -->
-                        <div class="me-5 d-none d-lg-block">
-                        <span>Get connected with us:</span>
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <!-- Section: Social media -->
+                <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                    <!-- Left -->
+                    <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us:</span>
+                    </div>
+        
+                    <!-- Right -->
+                    <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    </div>
+                </div>
+        
+                <!-- Section: Links  -->
+                <div class="">
+                    <div class="container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Burchards Dekret Digital
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
                         </div>
-            
-                        <!-- Right -->
-                        <div>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-github"></i>
-                        </a>
+
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Institutionen und Universit&auml;ten 
+                        </h6>
+                        <p>
+                            <a href="https://www.adwmainz.de/startseite.html" class="text-reset">Akademie der Wissenschaften und der Literatur</a>
+                        </p>
+                        <p>
+                            <a href="https://startseite.uni-mainz.de/" class="text-reset">Johannes Gutenberg - Universit&auml;t Mainz</a>
+                        </p>
+                        <p>
+                            <a href="https://www.uni-kassel.de/uni/" class="text-reset">Universit&auml;t Kassel</a>
+                        </p>
+                        <p>
+                            <a href="https://www.fau.eu/" class="text-reset">Friedrich-Alexander - Universit&auml;t Erlangen-N&uuml;rnberg</a>
+                        </p>
+                        </div>
+
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Test</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Test</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Test</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Test</a>
+                        </p>
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
                         </div>
                     </div>
-            
-                    <!-- Section: Links  -->
-                    <div class="">
-                        <div class="container text-center text-md-start mt-5">
-                        <div class="row mt-3">
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3"></i>Burchards Dekret Digital
-                            </h6>
-                            <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                            </div>
-
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Institutionen und Universitäten 
-                            </h6>
-                            <p>
-                                <a href="https://www.adwmainz.de/startseite.html" class="text-reset">Akademie der Wissenschaften und der Literatur</a>
-                            </p>
-                            <p>
-                                <a href="https://startseite.uni-mainz.de/" class="text-reset">Johannes Gutenberg - Universität Mainz</a>
-                            </p>
-                            <p>
-                                <a href="https://www.uni-kassel.de/uni/" class="text-reset">Universität Kassel</a>
-                            </p>
-                            <p>
-                                <a href="https://www.fau.eu/" class="text-reset">Friedrich-Alexander - Universität Erlangen-Nürnberg</a>
-                            </p>
-                            </div>
-
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Useful links
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Test</a>
-                            </p>
-                            </div>
-
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"></i>
-                                info@example.com
-                            </p>
-                            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                            </div>
-                        </div>
-                        </div>
                     </div>
-                    
-            
-                    <!-- Copyright -->
-                    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                        © 2023 Copyright:
-                        <a class="text-reset fw-bold" href="#!">BDD</a>
-                    </div>
+                </div>
                 
-            </footer>
-               
-
-
-        <script>
-            $(function() {
-        $('a[href*=#]').on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-        });
-        });
-        </script>
-
-        <script>
-            // Funzione per cambiare la lingua del contenuto
-    function changeLanguage(language) {
-      // Nascondi tutti gli elementi con classe "de"
-      var deElements = document.querySelectorAll('.de');
-      deElements.forEach(function(element) {
-        element.style.display = 'none';
-      });
-
-      // Nascondi tutti gli elementi con classe "en"
-      var enElements = document.querySelectorAll('.en');
-      enElements.forEach(function(element) {
-        element.style.display = 'none';
-      });
-
-      // Mostra gli elementi nella lingua desiderata
-      if (language === 'de') {
-        deElements.forEach(function(element) {
-          element.style.display = 'initial';
-        });
-      } else if (language === 'en') {
-        enElements.forEach(function(element) {
-          element.style.display = 'initial';
-        });
-      }
-    }
-        </script>
+        
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2023 Copyright:
+                    <a class="text-reset fw-bold" href="#!">BDD</a>
+                </div>
+            
+        </footer>
+      
     </body>
-    
-
 </html>
     
         
