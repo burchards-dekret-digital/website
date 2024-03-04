@@ -26,12 +26,12 @@ html{
     scroll-padding-top: 70px;
 }
 body {
-height:auto;
+    height:auto;
     padding-top: 75px;
 	/* margin-bottom:30px; */
 	font-family: BrandonGrotesqueLight;
 	/* font-family:Montserrat-Regular;*/
-	font-size:14px;
+	
 }
 
  h1, h2, h3, h4, h5, h6 {
