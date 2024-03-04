@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title data-template="config:app-title">Übersicht Korrekturkollationierung</title>
+        <title>Übersicht Korrekturkollationierung</title>
+        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta data-template="config:app-meta"/>
         <meta name="google" content="notranslate"/>
         
         <!--Bootstrap-->
@@ -21,18 +21,12 @@
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         
-        <!-- // Mirador -->
-        <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
-        
         <!-- // CSS -->
         <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
-        <!--<link rel="stylesheet" type="text/css" href="../resources/css/digitale_synopse.css" media="screen"/>-->
     
         <!--Fontawesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
-        <script src="../js/manuscript-view.js"></script>
-        <script src="../js/manuscript-view-synopse.js"></script>
         <script src="../js/language.js" defer></script>
     </head>
     <body>
@@ -42,8 +36,8 @@
             <div class="back-button" style="margin-top:40px;">
                 <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
             </div>
-            <h1 style="margin-top:30px; margin-bottom:40px;"><span class="de">KOLLATIONSTABELLEN</span></h1>
-            <h1 style="margin-top:20px; margin-bottom:40px;"><span class="en">COLLATION TABLES</span></h1>
+            <h1 style="margin-top:30px; margin-bottom:40px;"><span lang="de">KOLLATIONSTABELLEN</span></h1>
+            <h1 style="margin-top:20px; margin-bottom:40px;"><span lang="en">COLLATION TABLES</span></h1>
                     
             <div class="accordion" id="accordionKollationstabelle">
                 
@@ -1024,11 +1018,11 @@
     <!--Display Navbar and Footer-->
     <script>
         $(function(){
-        $("#navbar-placeholder").load("navbar.html");
+            $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
         });
 
         $(function(){
-            $("#footer-placeholder").load("footer.html");
+            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
         });
     </script>
 
@@ -1040,13 +1034,6 @@
         });
     </script>
 
-    <!-- // Digitale Synopse-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/css" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
-    <script src="resources/js/bdd_digitale_synopse.js"></script>
-    <script src="resources/js/bdd_digitale_edition.js"></script>
-    <script src="resources/js/bdd_mirador.js"></script>
-    <script src="resources/js/bdd_main_site.js"></script>
+    
+    
 </html>

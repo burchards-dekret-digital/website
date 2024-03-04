@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Die Decretorum Libri Viginti ded Burchard von Worms</title>
+        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="google" content="notranslate"/>
+        
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <!-- // External fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
+        
+        <!-- // === Javascripts === -->
+        <!-- // jquery -->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
+        <!-- // CSS -->
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+        
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <script src="../js/language.js" defer></script>
+    </head>
+    <body>
+        <div id="navbar-placeholder"></div>
+        
+        <div id="content" class="container">
+            <div class="back-button" style="margin-top:40px;">
+                <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+            </div>
+
+            <h1 style="margin-top:30px; margin-bottom:40px;"><span lang="de">DIE <i>DECRETORUM LIBRI VIGINTI</i> DES BURCHARD VON WORMS</span></h1>
+            <h1 style="margin-top:20px; margin-bottom:40px;"><span lang="en">THE <i>DECRETORUM LIBRI VIGINTI</i> OF BURCHARD OF WORMS</span></h1>
+            
+            
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="decr-tab" data-bs-toggle="tab" data-bs-target="#decr" type="button" role="tab" aria-controls="decr" aria-selected="true"><span lang="de">Decretorum Libri Viginti</span><span lang="en">Decretorum Libri Viginti</span></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="lit-tab" data-bs-toggle="tab" data-bs-target="#lit" type="button" role="tab" aria-controls="lit" aria-selected="false"><span lang="de">Literaturehinweise</span><span lang="en">Literature references</span></button>
+                </li>
+              </ul>
+              <!-- Contenuto delle tabs -->
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="decr" role="tabpanel" aria-labelledby="decr-tab">
+                    <div class="container" id="decretorum"></div>
+                </div>
+                <div class="tab-pane fade" id="lit" role="tabpanel" aria-labelledby="lit-tab">
+                    <div class="container" id="literature"></div>
+                </div>
+              </div>
+            
+        </div>
+
+        <div id="footer-placeholder"></div>
+        
+    </body>
+
+    <!--Display Navbar and Footer-->
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
+        });
+
+        $(function(){
+            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
+        });
+    </script>
+
+    <!-- back button-->
+    <script>
+        $(".hBack").on("click", function(e){
+            e.preventDefault();
+            window.history.back();
+        });
+    </script>
+
+<script>
+    $(document).ready(function() {
+        // Function to load XML file
+        function loadXMLDoc(filename) {
+            $.ajax({
+                type: "GET",
+                url: filename,
+                dataType: "xml",
+                success: function(xml) {
+                    displayXMLContent(xml);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error loading XML file:", error);
+                }
+            });
+        }
+    
+        // Function to display XML content in HTML
+        function displayXMLContent(xmlDoc) {
+            $("#decretorum").html($(xmlDoc).find('[id="decretorum"]').html());
+            $("#literature").html($(xmlDoc).find('[id="literature"]').html());
+            checkLanguage()
+        }
+    
+        // Load XML file
+        loadXMLDoc("../data/texts/decretorumTexts.xml"); // Adjust the path here
+    });
+    </script>
+
+
+
+
+
+    
+</html>

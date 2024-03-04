@@ -1,10 +1,10 @@
 <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-            <title data-template="config:app-title">Designtest BDD - Transkription</title>
+            <title>Designtest BDD - Transkription</title>
+            <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
             <meta charset="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <meta data-template="config:app-meta"/>    
             <meta name="google" content="notranslate"/>    
             
             <!--Bootstrap-->
@@ -284,11 +284,11 @@
         <!--Display Navbar ad Footer-->
         <script>
             $(function(){
-            $("#navbar-placeholder").load("navbar.html");
+                $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
             });
 
             $(function(){
-            $("#footer-placeholder").load("footer.html");
+            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
             });
         </script>
 
@@ -311,10 +311,7 @@
         </script>
         
         
-            
-            
-            <!--<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"/>-->
-            
+        
         <!-- back-to-top button-->
         <script>
             $(".btn-back-to-top").click(function () {

@@ -1,0 +1,65 @@
+<?xml-stylesheet type="text/css" href="test-text.css"?><form>
+    <title>Projektseite Texte</title>
+    
+
+    <div id="technicalDoc" class="block">
+        <span lang="de">    
+            <p class="mt-4">Burchards Dekret Digital erarbeitet eine Hybridedition (Druck- und Webedition), die den komplexen und mehrschichtigen Entstehungs- und Entwicklungsprozess des Dekrets in enger Rückbindung an kodikologische Phänomene erschließt. Hierfür greift das Projekt auf eine digitale Infrastruktur zurück, die auf den folgenden neun Säulen fußt:</p>
+
+            <div style="text-align: center;">
+                <figure class="figure">
+                    <img src="../img/pillars.png" class="figure-img img-fluid" style="height: 100%; object-fit: cover;" alt="The nine pillars"/>
+                    <figcaption class="figure-caption"><span lang="de">Die Neun Säulen</span></figcaption>  
+                    <figcaption class="figure-caption"><span lang="en">The nine pillars</span></figcaption> 
+                </figure>
+            </div>
+
+            <p>Auf Basis dieser Infrastruktur wurde hierfür ein modularer und halbautomatisierter Workflow entwickelt, der aus der automatisierten Layouterkennung und Transkription in Transkribus, Postprocessing, Speicherung in exist-db, Frameworkgestützter TEI-Codierung in OxygenXML sowie der Kollation in Collatex besteht. Daran schließt sich die Transformation der Daten für Druck und Webpräsentation an sowie die automatisierte Generierung (https://github.com/michaelscho/bdd-coordinates) Ground Truth für Finetuning und Neutraining von Deep Learning-Modellen für unterschiedliche Zusammenhänge. Die generierten TEI-Dateien werden über ein Datenrepositorium (https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data) vorgehalten und durch Javascript in die Webansicht der Edition geladen. Die Anzeige der Handschriften und erzeugter Annotationen erfolgt über IIIF in Mirador Viewer.</p>
+            <div style="text-align: center;">
+                <figure class="figure">
+                    <img src="../img/workflow.png" class="figure-img img-fluid" style="width: 50%; object-fit: cover;" alt="BDD process chart"/>
+                    <figcaption class="figure-caption"><span lang="de">Workflow</span></figcaption>  
+                    <figcaption class="figure-caption"><span lang="en">Workflow</span></figcaption> 
+                </figure>
+            </div>
+
+            <p>Im Zentrum des Workflows stehen damit die Kodierung der Textzeugen in OxygenXML sowie die automatisierte Texterkennung durch Transkribus, wobei sich gegenwärtig die Überführung des ATR-Workflows zu Kraken in Vorbereitung befindet. Da die autornahen Textzeugen alle dem Wormser Skriptorium entstammen und einer kleinen Gruppe von Schreibern zuzuordnen sind, konnte ein effizientes ATR-Modell mit einer Character Error Rate (CER) etwa 2 % durch das Training an ca. 100.000 Wörtern erreicht werden.</p>
+            <p>Dabei wurde bewusst ein Modell trainiert, das Abkürzungen und orthographische Varianz der Handschriften unter Rückgriff auf Mufi-Sonderzeichen (https://mufi.info/) beibehält. Die Auflösung der Abkürzungen erfolgt dann durch Pythonskripte (https://github.com/michaelscho/transpy) anhand festgelegter Regeln und Wortlisten, bzw. in Zukunft durch die Implementierung eines Deep Leraning-Verfahrens (https://github.com/michaelscho/MediAbbr), das anhand der im Projekt erzeugten Daten trainiert wird.</p>
+            <p>Das Layout der Handschriften wird ebenfalls automatisiert erkannt und annotiert. Hierfür wurde zunächst ein Pa2PaLa-Modell (https://readcoop.eu/de/transkribus/docu/p2pala/) trainiert, das Kopf- und Fußzeile der Handschrift, Spalten, Kapitelnummern und Inskriptionen identifiziert. Gegenwärtig erfolgt zudem das Training eines Kraken-Modells anhand des annotierten PageXML von sieben Handschriften, das nebst der verwendeten Daten auf Github zur Verfügung steht (https://github.com/michaelscho/bdd-segmentation-data).</p>
+            <p>Das so aufbereitete Material wird per API aus Transkribus als PageXML exportiert und im Rahmen einer Python Pipeline postprozessiert. Dies beinhaltet die Auflösung der Abkürzungen, Berechnung von IIIF-konformen Bildkoordinaten der Text-Zeilen sowie die Überführung in projektkonformes TEI. Diese Daten dienen dann als Ausgangspunkt für die editorische Erschließung, Korrektur und Anreicherung in OxygenXML. Nach Abschluss der editorischen Arbeiten wird das korrigierte Material erneut in einer Python Pipeline (https://github.com/michaelscho/bdd-coordinates) prozessiert und automatisiert in Ground Truth Material für das Training weiterer Deep Learning-Modelle überführt.</p>
+            <p>Die so kodierten Textzeugen können nun in einer projektinternen CollateX-Implementierung (https://github.com/michaelscho/Collation) kollationiert bzw. als Transkriptionsdateien nebst der generierten Ground Truth im Datenrepositorium (https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data) abgelegt werden.</p>
+            <p>Von dort werden die Daten durch Javascript abgefragt und in die Webedition gespielt, die über GitLab Pages gehostet wird. Dabei werden die im Zuge der Layouterkennung generieten und ins IIIF-Format transformierten Koordinaten genutzt, um wichtige Phänomene der Handschriften per IIIF-Schnittstelle im Bild darzustellen. Auf die gleiche Weise können Web Annotation (https://www.w3.org/TR/annotation-model/#annotations) generiert werden, um die Anzeige komplexer Phänomene in Mirador Viewer zu ermöglichen.</p>
+
+            <div style="text-align: center;">
+                <figure class="figure">
+                    <img src="../img/mirador.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Mirador viewer"/>
+                    <figcaption class="figure-caption"><span lang="de">Mirador viewer</span></figcaption>  
+                    <figcaption class="figure-caption"><span lang="en">Mirador viewer</span></figcaption> 
+                </figure>
+            </div>
+            
+
+        </span>
+        <span lang="en">
+            <p class="mt-4">to do</p> 
+        </span>
+    </div>
+
+    <div id="teiDoc" class="block">
+        <span lang="de">
+            <p class="mt-4">zu erledigen</p>
+        </span>
+        <span lang="en"> 
+            <p class="mt-4">to do</p>
+        </span>
+    </div>
+
+    <div id="webDoc" class="block">
+        <span lang="de">
+            <p class="mt-4">zu erledigen</p>
+        </span>
+        <span lang="en"> 
+            <p class="mt-4">to do</p>
+        </span>
+    </div>
+</form>

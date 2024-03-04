@@ -36,8 +36,25 @@ height:auto;
 
  h1, h2, h3, h4, h5, h6 {
 	font-family: BrandonGrotesqueLight;
-	/*font-family:Montserrat-Regular;*/
-	/*text-transform: uppercase;*/
+}
+
+
+
+h4{
+    font-family: BrandonGrotesqueLight;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: bold;
+}
+
+h5{
+    font-family: BrandonGrotesqueLight;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: black;
 }
 
 .navbar{
@@ -112,7 +129,12 @@ height:auto;
 
 
 
-
+li{
+    font-family: BrandonGrotesqueLight;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
 
 
             
@@ -212,6 +234,28 @@ td.bdd-ed-rec::after{
 }
 
 
+#projectDesc p{
+    font-family: BrandonGrotesqueLight;
+     font-weight:400; 
+     font-size:16px; 
+     line-height:24px;}
+#projectDesc h1{
+    font-family: BrandonGrotesqueBlack;
+    font-size:24px; 
+    font-weight:400; 
+    text-transform: uppercase; 
+    color:black; 
+    padding:0; 
+    letter-spacing:2px; 
+}
+#projectDesc h3 {
+    font-family: BrandonGrotesqueBlack;
+    font-size:14px; 
+    font-weight:400; 
+    letter-spacing:2px; 
+    text-transform: uppercase; 
+    color:black;
+    font-weight: bold;}
 
 /* INDEX CSS */
     .container-index h1 {
@@ -240,17 +284,15 @@ td.bdd-ed-rec::after{
 
             .container-index h3 {
                 font-family: BrandonGrotesqueLight;
-	/*font-family:Montserrat-Regular;*/
                 font-size:14px; 
-                line-height:0; 
                 font-weight:400; 
                 letter-spacing:2px; 
                 text-transform: uppercase; 
-                color:black;}
+                color:black;
+            font-weight: bold;}
 
             .container-index p {
                font-family: BrandonGrotesqueLight;
-	/*font-family:Montserrat-Regular;*/
                 font-weight:400; 
                 font-size:16px; 
                 line-height:24px;
@@ -315,8 +357,8 @@ td.bdd-ed-rec::after{
             }
 
             .parallax-three {
-                padding-top: 200px; 
-                padding-bottom: 200px; 
+                padding-top: 100px; 
+                padding-bottom: 100px; 
                 overflow: hidden; 
                 position: relative; 
                 width: 100%; 
@@ -330,8 +372,8 @@ td.bdd-ed-rec::after{
             }
 
             .parallax-four {
-                padding-top: 100px; 
-                padding-bottom: 100px; 
+                padding-top: 50px; 
+                padding-bottom: 50px; 
                 overflow: hidden; 
                 position: relative; 
                 width: 100%; 

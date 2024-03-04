@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Bibliographie</title>
+        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="google" content="notranslate"/>
+        
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <!-- // External fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
+        
+        <!-- // === Javascripts === -->
+        <!-- // jquery -->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
+        <!-- // CSS -->
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+        
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <script src="../js/language.js" defer></script>
+    </head>
+    <body>
+        <div id="navbar-placeholder"></div>
+        
+        <div id="content" class="container">
+            <div class="back-button" style="margin-top:40px;">
+                <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+            </div>
+
+            <h1 style="margin-top:30px; margin-bottom:40px;"><span lang="de">BDD ZOTERO BIBLIOGRAPHIE</span></h1>
+            <h1 style="margin-top:20px; margin-bottom:40px;"><span lang="en">BDD ZOTERO BIBLIOGRAPHY</span></h1>
+
+            <table style="width: 100%;" class="table" id="table">
+                <thead>
+                  <tr>
+                    <th style="width: 40%;" scope="col">Author</th>
+                    <th style="width: 40%;" scope="col">Title</th>
+                    <th style="width: 10%;" scope="col">Year</th>
+                    <th style="width: 10%;" scope="col">Link</th>
+                  </tr>
+                  <tr>
+                    <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter by Author.."></th>
+                    <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter by Title.."></th>
+                    <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter by Year.."></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+                  
+                  
+                </tbody>
+              </table>
+           
+            
+        </div>
+
+        <div id="footer-placeholder"></div>
+        
+    </body>
+
+    <!--Display Navbar and Footer-->
+    <script>
+        $(function(){
+            $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
+        });
+
+        $(function(){
+            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
+        });
+    </script>
+
+    <!-- back button-->
+    <script>
+        $(".hBack").on("click", function(e){
+            e.preventDefault();
+            window.history.back();
+        });
+    </script>
+
+<script>
+    const groupId = '148107';
+    fetch(`https://api.zotero.org/groups/${groupId}/items`, {
+headers: {
+'Zotero-API-Version': '3'
+}
+})
+.then(response => response.json())
+.then(data => {
+const itemsContainer = document.getElementById('table-body');
+
+
+// Create a row for each item and populate with metadata
+data.forEach(item => {
+console.log(item)
+const tr = document.createElement('tr');
+
+// Authors
+const authorsCell = document.createElement('td');
+author_list = []
+for (aut in item.data.creators){
+    author = item.data.creators[aut]
+    if (author.lastName){
+        author_list.push([author.lastName, author.firstName].join(', '))
+    }
+    else if (author.name){
+        author_list.push(author.name)
+    }
+}
+authorsCell.textContent = author_list.join('; ')
+tr.appendChild(authorsCell);
+
+// Title
+const titleCell = document.createElement('td');
+titleCell.textContent = item.data.title;
+tr.appendChild(titleCell);
+
+// Year
+const yearCell = document.createElement('td');
+yearCell.textContent = item.data.date ? item.data.date.substr(0, 4) : '';
+tr.appendChild(yearCell);
+
+// Link
+const linkCell = document.createElement('td');
+const link = document.createElement('a');
+link.href = `https://www.zotero.org/groups/${groupId}/items/${item.key}`;
+link.textContent = 'View';
+link.target = "_blank"; // Open link in a new tab
+linkCell.appendChild(link);
+tr.appendChild(linkCell);
+
+itemsContainer.appendChild(tr);
+});
+
+
+// Add search functionality
+const searchInputs = document.querySelectorAll('.search-input');
+searchInputs.forEach(input => {
+input.addEventListener('input', () => {
+    const searchText = input.value.trim().toLowerCase();
+    const filterColumn = input.dataset.column;
+    const rows = table.querySelectorAll('tr');
+
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        let found = false;
+        cells.forEach(cell => {
+            if (cell.dataset.column === filterColumn && cell.textContent.toLowerCase().includes(searchText)) {
+                found = true;
+            }
+        });
+        if (found) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
+});
+})
+.catch(error => {
+console.error('Error fetching Zotero data:', error);
+});
+
+
+</script>
+<script>
+    function filter(key) {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("filter"+key);
+      filter = input.value.toUpperCase();
+      table = document.getElementById("table");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[key];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
+
+
+    
+</html>

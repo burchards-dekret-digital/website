@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title data-template="config:app-title">Designtest BDD - Transkription</title>
+        <title>Designtest BDD - Transkription</title>
+        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
-        <meta data-template="config:app-meta"/>
         <meta name="google" content="notranslate"/>
         
         <!--Bootstrap-->        
@@ -43,7 +43,7 @@
 
         <script src="../js/map.js"></script>
         <script src="../js/bdd_manuscriptdb.js"></script>
-        <script src="../js/language.js" defer></script>
+        <script src="../js/language.js"></script>
     </head>
 
 
@@ -55,7 +55,8 @@
                 <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
             </div>
 
-            <h1 style="margin-top:30px; margin-bottom:40px">HANDSCHRIFTEN</h1>
+            <h1 style="margin-top:30px; margin-bottom:40px" lang="de">HANDSCHRIFTEN</h1>
+            <h1 style="margin-top:30px; margin-bottom:40px" lang="en">MANUSCRIPTS</h1>
         
             <div class="mss-table table-responsive">
                 <table id="mss-table-1" style="width:100%" class="table table-hover">
@@ -94,7 +95,8 @@
             </div>
             
             <div class="mss-map-head">
-                <h4 style="margin-top:40px; margin-bottom:40px">KARTENANSICHT</h4>
+                <h4 style="margin-top:40px; margin-bottom:40px" lang="de">KARTENANSICHT</h4>
+                <h4 style="margin-top:40px; margin-bottom:40px" lang="en">MAP VIEW</h4>
             </div>
             <div class="mss-map" id="map1"></div>
         </div>
@@ -104,11 +106,11 @@
         <!--Display Navbar and Footer-->
         <script>
             $(function(){
-                $("#navbar-placeholder").load("navbar.html");
+                $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
             });
 
             $(function(){
-                $("#footer-placeholder").load("footer.html");
+                $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
             });
         </script>
     </body>

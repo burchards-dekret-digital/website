@@ -1,18 +1,15 @@
-
-
-
     function changeLanguage(language) {
         // It remembers the selected language in the local storage
         localStorage.setItem('selectedLanguage', language);
 
         // Hide all elements with class "de"
-        var deElements = document.querySelectorAll('.de');
+        var deElements = document.querySelectorAll('[lang="de"]');
         deElements.forEach(function(element) {
             element.style.display = 'none';
         });
 
         // Hide all elements with class "en"
-        var enElements = document.querySelectorAll('.en');
+        var enElements = document.querySelectorAll('[lang="en"]');
         enElements.forEach(function(element) {
             element.style.display = 'none';
         });
@@ -20,44 +17,38 @@
         // Display elements in the selected language
         if (language === 'de') {
             deElements.forEach(function(element) {
-            element.style.display = 'initial';
+            element.style.display = 'block';
             });
         } else if (language === 'en') {
             enElements.forEach(function(element) {
-            element.style.display = 'initial';
+            element.style.display = 'block';
             });
         }
     }
 
-    // Verifica se c'è una lingua memorizzata nello storage locale al caricamento della pagina
+    // Checks whether there is a language stored in the local storage when the page is loaded
     document.addEventListener('DOMContentLoaded', function() {
+        var deElements = document.querySelectorAll('[lang="en"]');
+        deElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
         var storedLanguage = localStorage.getItem('selectedLanguage');
         if (storedLanguage) {
-            // Se la lingua è memorizzata, imposta la lingua
+            // If the language is stored, set the language
             changeLanguage(storedLanguage);
         }
     })
 
 
-    /*function changeLanguage(language) {
-    localStorage.setItem('selectedLanguage', language);
-    
-    var deElements = document.querySelectorAll('.de');
-    var enElements = document.querySelectorAll('.en');
-    
-    deElements.forEach(function(element) {
-        element.style.display = language === 'de' ? 'initial' : 'none';
-    });
-    
-    enElements.forEach(function(element) {
-        element.style.display = language === 'en' ? 'initial' : 'none';
-    });
+    function checkLanguage() {
+        var deElements = document.querySelectorAll('[lang="en"]');
+        deElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        var storedLanguage = localStorage.getItem('selectedLanguage');
+        if (storedLanguage) {
+            // If the language is stored, set the language
+            changeLanguage(storedLanguage);
+        }
     }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-    var storedLanguage = localStorage.getItem('selectedLanguage');
-    if (storedLanguage) {
-        changeLanguage(storedLanguage);
-    }
-    });*/
-      
+
