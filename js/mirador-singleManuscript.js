@@ -19,6 +19,9 @@ var mirador = Mirador.viewer({
                     
                ] },
             windows: [{
+                id: 'known-window-id',
+                manifestId: 'https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/manifest',
+
                 /* loadedManifest: <div data-template="app:iiif-manifest"/>,
                 canvasId: <div data-template="app:iiif-canvas-id-dekret"/> 
                  *  highlightAllAnnotations: true // Configure whether to display annotations on the canvas by default*/

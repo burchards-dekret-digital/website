@@ -46,8 +46,14 @@
                   <button class="nav-link active" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button" role="tab" aria-controls="technical" aria-selected="true"><span lang="de">Technische Dokumentation</span><span lang="en">Technical documentation</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="tei-tab" data-bs-toggle="tab" data-bs-target="#tei" type="button" role="tab" aria-controls="tei" aria-selected="false"><span lang="de">TEI Dokumentation</span><span lang="en">TEI Documentation</span></button>
+                  <button class="nav-link" id="teiTranskription-tab" data-bs-toggle="tab" data-bs-target="#teiTranskription" type="button" role="tab" aria-controls="tei" aria-selected="false"><span lang="de">TEI Transkription</span><span lang="en">TEI Transcription</span></button>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="teiHandschriftenDB-tab" data-bs-toggle="tab" data-bs-target="#teiHandschriftenDB" type="button" role="tab" aria-controls="tei" aria-selected="false"><span lang="de">TEI Handschriften DB</span><span lang="en">TEI Manuscripts DB</span></button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="teiEdition-tab" data-bs-toggle="tab" data-bs-target="#teiEdition" type="button" role="tab" aria-controls="tei" aria-selected="false"><span lang="de">TEI Edition</span><span lang="en">TEI Edition</span></button>
+                  </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false"><span lang="de">Webedition Dokumentation</span><span lang="en">Web Edition Documentation</span></button>
                 </li>
@@ -57,8 +63,14 @@
                 <div class="tab-pane fade show active" id="technical" role="tabpanel" aria-labelledby="technical-tab">
                     <div class="container" id="technicalDoc"></div>
                 </div>
-                <div class="tab-pane fade" id="tei" role="tabpanel" aria-labelledby="tei-tab">
-                    <div class="container" id="teiDoc"></div>
+                <div class="tab-pane fade" id="teiTranskription" role="tabpanel" aria-labelledby="teiTranskription-tab">
+                    <div class="container" id="teiTranskriptionDoc"></div>
+                </div>
+                <div class="tab-pane fade" id="teiHandschriftenDB" role="tabpanel" aria-labelledby="teiHandschriftenDB-tab">
+                    <div class="container" id="teiHandschriftenDBDoc"></div>
+                </div>
+                <div class="tab-pane fade" id="teiEdition" role="tabpanel" aria-labelledby="teiEdition-tab">
+                    <div class="container" id="teiEditionDoc"></div>
                 </div>
                 <div class="tab-pane fade" id="web" role="tabpanel" aria-labelledby="web-tab">
                     <div class="container" id="webDoc"></div>
@@ -73,14 +85,30 @@
 
     <!--Display Navbar and Footer-->
     <script>
-        $(function(){
-            $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
+        $(function() {
+            function setActiveNavItem() {
+                var path = window.location.pathname; 
+                var currentPage = path.split("/").pop();
+                $(".nav-item a").removeClass("active");
+                
+                $(".nav-item a").each(function() {
+                    var href = $(this).attr("href");
+                    if (href && currentPage === href.split("/").pop()) {
+                        $(this).addClass("active");
+                    }
+                });
+            }
+  
+            $("#navbar-placeholder").load("navbar.html", function() {
+                setActiveNavItem();
+                checkLanguage();
+            });
         });
-
-        $(function(){
-            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
-        });
-    </script>
+      
+          $(function(){
+              $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
+          });
+      </script>
 
     <!-- back button-->
     <script>
@@ -110,7 +138,9 @@
         // Function to display XML content in HTML
         function displayXMLContent(xmlDoc) {
             $("#technicalDoc").html($(xmlDoc).find('[id="technicalDoc"]').html());
-            $("#teiDoc").html($(xmlDoc).find('[id="teiDoc"]').html());
+            $("#teiTranskriptionDoc").html($(xmlDoc).find('[id="teiTranskriptionDoc"]').html());
+            $("#teiHandschriftenDBDoc").html($(xmlDoc).find('[id="teiHandschriftenDBDoc"]').html());
+            $("#teiEditionDoc").html($(xmlDoc).find('[id="teiEditionDoc"]').html());
             $("#webDoc").html($(xmlDoc).find('[id="webDoc"]').html());
             checkLanguage()
         }

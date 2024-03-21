@@ -3,13 +3,13 @@
         localStorage.setItem('selectedLanguage', language);
 
         // Hide all elements with class "de"
-        var deElements = document.querySelectorAll('[lang="de"]');
+        var deElements = document.querySelectorAll('[lang="de"]:not(.mirador-viewer)');
         deElements.forEach(function(element) {
             element.style.display = 'none';
         });
 
         // Hide all elements with class "en"
-        var enElements = document.querySelectorAll('[lang="en"]');
+        var enElements = document.querySelectorAll('[lang="en"]:not(.mirador-viewer)');
         enElements.forEach(function(element) {
             element.style.display = 'none';
         });
@@ -28,7 +28,7 @@
 
     // Checks whether there is a language stored in the local storage when the page is loaded
     document.addEventListener('DOMContentLoaded', function() {
-        var deElements = document.querySelectorAll('[lang="en"]');
+        var deElements = document.querySelectorAll('[lang="en"]:not(.mirador-viewer)');
         deElements.forEach(function(element) {
             element.style.display = 'none';
         });
@@ -41,7 +41,7 @@
 
 
     function checkLanguage() {
-        var deElements = document.querySelectorAll('[lang="en"]');
+        var deElements = document.querySelectorAll('[lang="en"]:not(.mirador-viewer)');
         deElements.forEach(function(element) {
             element.style.display = 'none';
         });

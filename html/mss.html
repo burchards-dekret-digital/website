@@ -103,17 +103,34 @@
 
         <div id="footer-placeholder"></div>
 
-        <!--Display Navbar and Footer-->
-        <script>
-            $(function(){
-                $("#navbar-placeholder").load("navbar.html", function(){checkLanguage()})
-            });
-
-            $(function(){
-                $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
-            });
-        </script>
     </body>
+    
+    <!--Display Navbar and Footer-->
+    <script>
+      $(function() {
+          function setActiveNavItem() {
+              var path = window.location.pathname; 
+              var currentPage = path.split("/").pop();
+              $(".nav-item a").removeClass("active");
+              
+              $(".nav-item a").each(function() {
+                  var href = $(this).attr("href");
+                  if (href && currentPage === href.split("/").pop()) {
+                      $(this).addClass("active");
+                  }
+              });
+          }
+
+          $("#navbar-placeholder").load("navbar.html", function() {
+              setActiveNavItem();
+              checkLanguage();
+          });
+      });
+    
+        $(function(){
+            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
+        });
+    </script>
 
     <!-- back button-->
         <script>

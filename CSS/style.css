@@ -101,6 +101,7 @@ h5{
 
 
 
+
 /* MAP */
 .mss-map-head {
 	grid-row:3;
@@ -145,6 +146,9 @@ li{
  .MuiList-root {
             background-color: white;
         }
+.MuiAppBar-root{
+    z-index: 1!important;
+}
       /*.mss-item-view {
             display:flex;
             flex-direction:row;
