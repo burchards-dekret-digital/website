@@ -1,0 +1,359 @@
+@font-face {
+  font-family: BrandonGrotesqueLight;
+  src: url(brandon-grotesque-light.otf);
+}
+
+
+#digital-synopsis {
+    font-family: 'Cardo', serif;
+    /* font-size: 120%; */
+    /* padding: 40px; */
+} 
+
+
+h2, h3, h4{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    /* text-transform: uppercase; */
+}
+
+msname[type="sigle"]{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    /* text-transform: uppercase; */
+}
+
+
+.tei_chapter-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    /* text-transform: uppercase; */
+}
+.tei_incipit{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    /* text-transform: uppercase; */
+}
+/* Css für Transkriptionen */
+
+
+@font-face {
+    font-family: 'Andron-Scriptor-Web';
+    src: url('https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/fonts/Andron-Scriptor-Web.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.tei_pb {
+    font-weight: bold;
+}
+
+.tei_pb::after {
+    font-weight: bold;
+    content: "]"
+}
+
+.tei_pb::before {
+    font-weight: bold;
+    content: "["
+}
+
+.tei_cb {
+    font-weight: bold;
+}
+
+.tei_cb::after {
+    font-weight: bold;
+    content: "]"
+}
+
+.tei_cb::before {
+    font-weight: bold;
+    content: "["
+}
+
+.tei_fw {
+    display: none;
+}
+
+
+.tei_hi-color-red {
+    color: red;
+}
+
+.tei_hi-color-red-initial {
+    color: red;
+    font-weight: bold;
+}
+
+.tei_abbr {
+    display: none;
+}
+
+.tei_expan {
+    background-color: white;
+}
+
+.tei_note-inscription {
+    font-style: italic;
+}
+
+.tei_note-editorial-comment {
+    font-style: italic;
+}
+
+.tei_note-editorial-question {
+    font-style: italic;
+}
+
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footnotes li {
+    float: none;
+    list-style-type: decimal;
+}
+
+
+.tei_g {
+    font-family: 'Andron-Scriptor-Web';
+}
+
+
+.tei_handShift-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tei_handShift-wrapper:hover .tei_handShift-info {
+    visibility: visible;
+}
+
+.ms_hand-name {
+    display: block;
+}
+
+.ms_scribe-name {
+    display: block;
+}
+
+.ms_source-name {
+    display: block;
+}
+
+.tei_handShift-info {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform:none;
+    font-size:small;
+    text-align: left;
+    border-radius: 3px;
+    padding: 0.5em;
+    /* Position the tooltip absolute*/
+    position: absolute!important;
+    z-index: 7!important;
+}
+
+.tei_note-editorial-comment-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tei_note-editorial-comment-asterix {
+    cursor: pointer;
+    font-family: 'Cardo', serif;
+    background: none;
+    border: none;
+    color: blue;
+}
+
+.tei_note-editorial-comment {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 3px;
+    padding: 0.5em;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tei_note-editorial-comment-wrapper:hover .tei_note-editorial-comment {
+    visibility: visible;
+}
+
+.tei_note-editorial-question-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tei_note-editorial-question-asterix {
+    cursor: pointer;
+    font-family: 'Cardo', serif;
+    background: none;
+    border: none;
+    color: blue;
+}
+
+.tei_note-editorial-question {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 3px;
+    padding: 0.5em;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tei_note-editorial-question-wrapper:hover .tei_note-editorial-question {
+    visibility: visible;
+}
+
+.tei_supplied {
+    color: CadetBlue;
+}
+
+
+.tei_delSpan-strikethrough {
+    text-decoration: line-through;
+}
+
+.tei_delSpan-written-on-erased {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.controlls {
+    position: sticky;
+    display: inline;
+    top: 50px;
+    left: 10px;
+}
+
+
+.tei_chapter-title {
+    text-transform: none;
+    font-family: 'Andron-Scriptor-Web';
+}
+
+.tei_add {
+    color: CadetBlue;
+}
+
+.tei_subst {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.tei_delSpan {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+
+}
+
+.tei_erasure-without-substitution {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+
+}
+
+.tei_del-strikethrough {
+    text-decoration: line-through;
+}
+
+.container {
+}
+
+.canvas {
+    display: flex;
+}
+
+.canvas > .container_ms {
+    flex-basis: 100%;
+    padding-right: 5%;
+}
+
+.canvas > .controlls {
+    padding-right: 5%;
+}
+
+
+
+.container_ms {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow: auto;
+}
+
+.button-edition {
+    font-family: BrandonGrotesqueLight!important;
+    /* background-color: white;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    margin-top: 5px;*/
+    margin-bottom: 5px;
+    width: 100% 
+} 
+
+.dropdown-item {
+    font-family: BrandonGrotesqueLight!important;
+}
+
+
+button[onclick^="bddRemoveMs"]{
+    font-family: BrandonGrotesqueLight!important;
+    width:100%;
+    color: #6c757d;
+    border-color: #6c757d;
+    background-color:transparent;
+    border: 1px solid;
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    border-radius: 0.2rem;
+}
+
+button[onclick^="bddRemoveMS"]:hover{
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+em{
+    font-style: normal;
+}
+
+.synch-menu-chapter-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.synch-menu-chapter{
+    position: absolute;
+    z-index: 10000;
+    width: 200px;
+    background: #1b1a1a;
+    border-radius: 5px;
+    display:block;
+}
+
+.synch-menu-chapter-item{
+    padding: 8px 10px;
+    font-size: 15px;
+    color: #eee;
+    cursor: pointer;
+    border-radius: inherit;
+}
+
+.synch-menu-chapter-item:hover{
+    background:#343434;
+}

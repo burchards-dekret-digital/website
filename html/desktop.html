@@ -25,6 +25,7 @@
         
         <!-- // CSS -->
         <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../CSS/digitaleSynopse.css" media="screen"/>
         
         <!--Fontawesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -78,113 +79,614 @@
             <!-- Modal for selecting resources -->
             <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="resourceModalLabel">Select Resources</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="resourceModalLabel">Select Resources</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
                         <div class="modal-body">
                             <h6>Load JSON</h6>
-                            <input type="file" class="form-control" id="jsonFileInput" accept=".json">
-                            
+                            <input type="file" class="form-control" id="jsonFileInput" accept=".json">   
                         </div>
                         <div class="accordion" id="accordionManuscripts">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="manuscriptAHeader">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManuscriptA" aria-expanded="true" aria-controls="collapseManuscriptA">
-                                    Manuscript A
-                                    </button>
-                                </h2>
-                                <div id="collapseManuscriptA" class="accordion-collapse collapse show" aria-labelledby="manuscriptAHeader" data-bs-parent="#accordionManuscripts">
-                                    <div class="accordion-body">
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="BambergHeader">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBamberg" aria-expanded="false" aria-controls="collapseBamberg">
+                                  Bamberg, Staatsbibliothek, Can. 6
+                                  </button>
+                              </h2>
+                              <div id="collapseBamberg" class="accordion-collapse collapse" aria-labelledby="BambergHeader" data-bs-parent="#accordionManuscripts">
+                                  <div class="accordion-body">
+                                    <div class="row">
+                                      <div class="col-md-6">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Manuscript A-Book 1" id="manuscriptABook1">
-                                            <label class="form-check-label" for="manuscriptABook1">
-                                            Book 1
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 00" id="BambergBook00">
+                                          <label class="form-check-label" for="BambergBook00">
+                                          Buch 00
+                                          </label>
+                                        </div>
+                                          <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 01" id="BambergBook01">
+                                              <label class="form-check-label" for="BambergBook01">
+                                              Buch 01
+                                              </label>
+                                          </div>
+                                          <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 02" id="BambergBook02">
+                                              <label class="form-check-label" for="BambergBook02">
+                                              Buch 02
+                                              </label>
+                                          </div>
+                                          <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 03" id="BambergBook03">
+                                              <label class="form-check-label" for="BambergBook03">
+                                              Buch 03
+                                              </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 04" id="BambergBook04">
+                                            <label class="form-check-label" for="BambergBook04">
+                                            Buch 04
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 05" id="BambergBook05">
+                                            <label class="form-check-label" for="BambergBook05">
+                                            Buch 05
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 06" id="BambergBook06">
+                                            <label class="form-check-label" for="BambergBook06">
+                                            Buch 06
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 07" id="BambergBook07">
+                                            <label class="form-check-label" for="BambergBook07">
+                                            Buch 07
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 08" id="BambergBook08">
+                                            <label class="form-check-label" for="BambergBook08">
+                                            Buch 08
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 09" id="BambergBook09">
+                                            <label class="form-check-label" for="BambergBook09">
+                                            Buch 09
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 10" id="BambergBook10">
+                                            <label class="form-check-label" for="BambergBook10">
+                                            Buch 10
+                                            </label>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 11" id="BambergBook11">
+                                          <label class="form-check-label" for="BambergBook11">
+                                          Buch 11
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 12" id="BambergBook12">
+                                          <label class="form-check-label" for="BambergBook12">
+                                          Buch 12
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 13" id="BambergBook13">
+                                          <label class="form-check-label" for="BambergBook13">
+                                          Buch 13
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 14" id="BambergBook14">
+                                          <label class="form-check-label" for="BambergBook14">
+                                          Buch 14
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 15" id="BambergBook15">
+                                          <label class="form-check-label" for="BambergBook15">
+                                          Buch 15
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 16" id="BambergBook16">
+                                          <label class="form-check-label" for="BambergBook16">
+                                          Buch 16
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 17" id="BambergBook17">
+                                          <label class="form-check-label" for="BambergBook17">
+                                          Buch 17
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 18" id="BambergBook18">
+                                          <label class="form-check-label" for="BambergBook18">
+                                          Buch 18
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 19" id="BambergBook19">
+                                          <label class="form-check-label" for="BambergBook19">
+                                          Buch 19
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 20" id="BambergBook20">
+                                          <label class="form-check-label" for="BambergBook20">
+                                          Buch 20
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="FrankfurtHeader">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFrankfurt" aria-expanded="false" aria-controls="collapseFrankfurt">
+                                Frankfurt am Main, Stadt - und Universitätsbibliothek, Barth. 50
+                                </button>
+                            </h2>
+                            <div id="collapseFrankfurt" class="accordion-collapse collapse" aria-labelledby="FrankfurtHeader" data-bs-parent="#accordionManuscripts">
+                                <div class="accordion-body">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 00" id="FrankfurtBook00">
+                                        <label class="form-check-label" for="FrankfurtBook0">
+                                        Buch 00
+                                        </label>
+                                      </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 01" id="FrankfurtBook01">
+                                            <label class="form-check-label" for="FrankfurtBook01">
+                                            Buch 01
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Manuscript A-Book 2" id="manuscriptABook2">
-                                            <label class="form-check-label" for="manuscriptABook2">
-                                            Book 2
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 02" id="FrankfurtBook02">
+                                            <label class="form-check-label" for="FrankfurtBook02">
+                                            Buch 02
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Manuscript A-Book 3" id="manuscriptABook3">
-                                            <label class="form-check-label" for="manuscriptABook3">
-                                            Book 3
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 03" id="FrankfurtBook03">
+                                            <label class="form-check-label" for="FrankfurtBook03">
+                                            Buch 03
                                             </label>
                                         </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 04" id="FrankfurtBook04">
+                                          <label class="form-check-label" for="FrankfurtBook04">
+                                          Buch 04
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 05" id="FrankfurtBook05">
+                                          <label class="form-check-label" for="FrankfurtBook05">
+                                          Buch 05
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 06" id="FrankfurtBook06">
+                                          <label class="form-check-label" for="FrankfurtBook06">
+                                          Buch 06
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 07" id="FrankfurtBook07">
+                                          <label class="form-check-label" for="FrankfurtBook07">
+                                          Buch 07
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 08" id="FrankfurtBook08">
+                                          <label class="form-check-label" for="FrankfurtBook08">
+                                          Buch 08
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 09" id="FrankfurtBook09">
+                                          <label class="form-check-label" for="FrankfurtBook09">
+                                          Buch 09
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 10" id="FrankfurtBook10">
+                                          <label class="form-check-label" for="FrankfurtBook10">
+                                          Buch 10
+                                          </label>
+                                        </div>
                                     </div>
-                                </div>
-                                </div>
-                                <div class="accordion-item">
-                                <h2 class="accordion-header" id="manuscriptBHeader">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManuscriptB" aria-expanded="false" aria-controls="collapseManuscriptB">
-                                    Manuscript B
-                                    </button>
-                                </h2>
-                                <div id="collapseManuscriptB" class="accordion-collapse collapse" aria-labelledby="manuscriptBHeader" data-bs-parent="#accordionManuscripts">
-                                    <div class="accordion-body">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manuscript B-Book 1" id="manuscriptBBook1">
-                                        <label class="form-check-label" for="manuscriptBBook1">
-                                        Book 1
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 11" id="FrankfurtBook11">
+                                        <label class="form-check-label" for="FrankfurtBook11">
+                                        Buch 11
                                         </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manuscript B-Book 2" id="manuscriptBBook2">
-                                        <label class="form-check-label" for="manuscriptBBook2">
-                                        Book 2
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 12" id="FrankfurtBook12">
+                                        <label class="form-check-label" for="FrankfurtBook12">
+                                        Buch 12
                                         </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manuscript B-Book 3" id="manuscriptBBook3">
-                                        <label class="form-check-label" for="manuscriptBBook3">
-                                        Book 3
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 13" id="FrankfurtBook13">
+                                        <label class="form-check-label" for="FrankfurtBook13">
+                                        Buch 13
                                         </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 14" id="FrankfurtBook14">
+                                        <label class="form-check-label" for="FrankfurtBook14">
+                                        Buch 14
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 15" id="FrankfurtBook15">
+                                        <label class="form-check-label" for="FrankfurtBook15">
+                                        Buch 15
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 16" id="FrankfurtBook16">
+                                        <label class="form-check-label" for="FrankfurtBook16">
+                                        Buch 16
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 17" id="FrankfurtBook17">
+                                        <label class="form-check-label" for="FrankfurtBook17">
+                                        Buch 17
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 18" id="FrankfurtBook18">
+                                        <label class="form-check-label" for="FrankfurtBook18">
+                                        Buch 18
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 19" id="FrankfurtBook19">
+                                        <label class="form-check-label" for="FrankfurtBook19">
+                                        Buch 19
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 20" id="FrankfurtBook20">
+                                        <label class="form-check-label" for="FrankfurtBook20">
+                                        Buch 20
+                                        </label>
+                                      </div>
                                     </div>
-                                    </div>
+                                  </div> 
                                 </div>
-                                </div>
-                                <div class="accordion-item">
-                                <h2 class="accordion-header" id="manuscriptCHeader">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManuscriptC" aria-expanded="false" aria-controls="collapseManuscriptC">
-                                    Manuscript C
-                                    </button>
-                                </h2>
-                                <div id="collapseManuscriptC" class="accordion-collapse collapse" aria-labelledby="manuscriptCHeader" data-bs-parent="#accordionManuscripts">
-                                    <div class="accordion-body">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manuscript C-Book 1" id="manuscriptCBook1">
-                                        <label class="form-check-label" for="manuscriptCBook1">
-                                        Book 1
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="KölnHeader">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKöln" aria-expanded="false" aria-controls="collapseKöln">
+                                  Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod. 119
+                                </button>
+                            </h2>
+                            <div id="collapseKöln" class="accordion-collapse collapse" aria-labelledby="KölnHeader" data-bs-parent="#accordionManuscripts">
+                                <div class="accordion-body">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 00" id="KölnBook00">
+                                        <label class="form-check-label" for="KölnBook00">
+                                        Buch 00
                                         </label>
+                                      </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 01" id="KölnBook01">
+                                            <label class="form-check-label" for="KölnBook01">
+                                            Buch 01
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 02" id="KölnBook02">
+                                            <label class="form-check-label" for="KölnBook02">
+                                            Buch 02
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 03" id="KölnBook03">
+                                            <label class="form-check-label" for="KölnBook03">
+                                            Buch 03
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 04" id="KölnBook04">
+                                          <label class="form-check-label" for="KölnBook04">
+                                          Buch 04
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 05" id="KölnBook05">
+                                          <label class="form-check-label" for="KölnBook05">
+                                          Buch 05
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 06" id="KölnBook06">
+                                          <label class="form-check-label" for="KölnBook06">
+                                          Buch 06
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 07" id="KölnBook07">
+                                          <label class="form-check-label" for="KölnBook07">
+                                          Buch 07
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 08" id="KölnBook08">
+                                          <label class="form-check-label" for="KölnBook08">
+                                          Buch 08
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 09" id="KölnBook09">
+                                          <label class="form-check-label" for="KölnBook09">
+                                          Buch 09
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 10" id="KölnBook10">
+                                          <label class="form-check-label" for="KölnBook10">
+                                          Buch 10
+                                          </label>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manuscript C-Book 2" id="manuscriptCBook2">
-                                        <label class="form-check-label" for="manuscriptCBook2">
-                                        Book 2
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 11" id="KölnBook11">
+                                        <label class="form-check-label" for="KölnBook11">
+                                        Buch 11
                                         </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Manuscript C-Book 3" id="manuscriptCBook3">
-                                        <label class="form-check-label" for="manuscriptCBook3">
-                                        Book 3
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 12" id="KölnBook12">
+                                        <label class="form-check-label" for="KölnBook12">
+                                        Buch 12
                                         </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 13" id="KölnBook13">
+                                        <label class="form-check-label" for="KölnBook13">
+                                        Buch 13
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 14" id="KölnBook14">
+                                        <label class="form-check-label" for="KölnBook14">
+                                        Buch 14
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 15" id="KölnBook15">
+                                        <label class="form-check-label" for="KölnBook15">
+                                        Buch 15
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 16" id="KölnBook16">
+                                        <label class="form-check-label" for="KölnBook16">
+                                        Buch 16
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 17" id="KölnBook17">
+                                        <label class="form-check-label" for="KölnBook17">
+                                        Buch 17
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 18" id="KölnBook18">
+                                        <label class="form-check-label" for="KölnBook18">
+                                        Buch 18
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 19" id="KölnBook19">
+                                        <label class="form-check-label" for="KölnBook19">
+                                        Buch 19
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 20" id="KölnBook20">
+                                        <label class="form-check-label" for="KölnBook20">
+                                        Buch 20
+                                        </label>
+                                      </div>
                                     </div>
-                                    <!-- Aggiungere qui le altre alternative per i libri -->
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="Vatikan1Header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVatikan1" aria-expanded="false" aria-controls="collapseVatikan1">
+                                  Vatikanstadt (V1), Biblioteca Apostolica Vaticana, Pal. Lat. 585
+                                </button>
+                            </h2>
+                            <div id="collapseVatikan1" class="accordion-collapse collapse" aria-labelledby="Vatikan1Header" data-bs-parent="#accordionManuscripts">
+                                <div class="accordion-body">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 00" id="Vatikan1Book00">
+                                        <label class="form-check-label" for="Vatikan1Book00">
+                                        Buch 00
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 01" id="Vatikan1Book01">
+                                          <label class="form-check-label" for="Vatikan1Book01">
+                                          Buch 01
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 02" id="Vatikan1Book02">
+                                          <label class="form-check-label" for="Vatikan1Book02">
+                                          Buch 02
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 03" id="Vatikan1Book03">
+                                          <label class="form-check-label" for="Vatikan1Book03">
+                                          Buch 03
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 04" id="Vatikan1Book04">
+                                        <label class="form-check-label" for="Vatikan1Book04">
+                                        Buch 04
+                                        </label>
+                                      </div>
                                     </div>
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 05" id="Vatikan1Book05">
+                                        <label class="form-check-label" for="Vatikan1Book05">
+                                        Buch 05
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 06" id="Vatikan1Book06">
+                                        <label class="form-check-label" for="Vatikan1Book06">
+                                        Buch 06
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 07" id="Vatikan1Book07">
+                                        <label class="form-check-label" for="Vatikan1Book07">
+                                        Buch 07
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 08" id="Vatikan1Book08">
+                                        <label class="form-check-label" for="Vatikan1Book08">
+                                        Buch 08
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h2 class="accordion-header" id="Vatikan2Header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVatikan2" aria-expanded="false" aria-controls="collapseVatikan2">
+                                    Vatikanstadt (V2), Biblioteca Apostolica Vaticana, Pal. Lat. 586
+                                  </button>
+                              </h2>
+                              <div id="collapseVatikan2" class="accordion-collapse collapse" aria-labelledby="Vatikan2Header" data-bs-parent="#accordionManuscripts">
+                                  <div class="accordion-body">
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 09" id="Vatikan2Book09">
+                                          <label class="form-check-label" for="Vatikan2Book09">
+                                          Buch 09
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 10" id="Vatikan2Book10">
+                                          <label class="form-check-label" for="Vatikan2Book10">
+                                          Buch 10
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 11" id="Vatikan2Book11">
+                                          <label class="form-check-label" for="Vatikan2Book11">
+                                          Buch 11
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 12" id="Vatikan2Book12">
+                                          <label class="form-check-label" for="Vatikan2Book12">
+                                          Buch 12
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 13" id="Vatikan2Book13">
+                                          <label class="form-check-label" for="Vatikan2Book13">
+                                          Buch 13
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 14" id="Vatikan2Book14">
+                                          <label class="form-check-label" for="Vatikan2Book14">
+                                          Buch 14
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 15" id="Vatikan2Book15">
+                                          <label class="form-check-label" for="Vatikan2Book15">
+                                          Buch 15
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 16" id="Vatikan2Book16">
+                                          <label class="form-check-label" for="Vatikan2Book16">
+                                          Buch 16
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 17" id="Vatikan2Book17">
+                                          <label class="form-check-label" for="Vatikan2Book17">
+                                          Buch 17
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 18" id="Vatikan2Book18">
+                                          <label class="form-check-label" for="Vatikan2Book18">
+                                          Buch 18
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 19" id="Vatikan2Book19">
+                                          <label class="form-check-label" for="Vatikan2Book19">
+                                          Buch 19
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 20" id="Vatikan2Book20">
+                                          <label class="form-check-label" for="Vatikan2Book20">
+                                          Buch 20
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="confirmSelectionBtn">Confirm Selection</button>
-                    </div>
-                </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="confirmSelectionBtn">Confirm Selection</button>
+                      </div>
+                  </div>
                 </div>
             </div>
 
@@ -194,7 +696,6 @@
         
     </body>
 
-    
     <script>
       //Display Navbar with active item 
       $(function() {
@@ -227,481 +728,283 @@
         });
     </script>
     
-   <!--CODICE DEL 12.03.24-->
-      <!--<script>
-        document.getElementById('addResourceBtn').addEventListener('click', function() {
-          $('#resourceModal').modal('show');
-        });
+    <script>
+      document.getElementById('addResourceBtn').addEventListener('click', function() {
+        $('#resourceModal').modal('show');
+      });
+
+      document.getElementById('jsonFileInput').addEventListener('change', function() {
+        const file = this.files[0];
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const jsonData = JSON.parse(event.target.result);
+          displayResourcesFromJson(jsonData);
+          saveResourceState(); // Save resource panel status after uploading data from Json
+        };
+        reader.readAsText(file);
+      });
+
+      document.getElementById('confirmSelectionBtn').addEventListener('click', function() {
+        $('#resourceModal').modal('hide');
+        displaySelectedResources();
+        saveResourceState(); // Save resource panel status after selection
+      });
+
       
-        document.getElementById('jsonFileInput').addEventListener('change', function() {
-          const file = this.files[0];
-          const reader = new FileReader();
-          reader.onload = function(event) {
-            const jsonData = JSON.parse(event.target.result);
-            displayResourcesFromJson(jsonData);
+
+      // After function displaySelectedResources() --> save resource panel status in local storage
+      function saveResourceState() {
+        const resourcePanels = document.querySelectorAll('.resource-panel-item');
+        const resourceState = [];
+
+        resourcePanels.forEach(panel => {
+          const bookId = panel.querySelector('.card-header span').textContent.split(' - ')[1];
+          const view = {
+            transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
+            structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
+            mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
           };
-          reader.readAsText(file);
-        });
-      
-        document.getElementById('confirmSelectionBtn').addEventListener('click', function() {
-          $('#resourceModal').modal('hide');
-          displaySelectedResources();
+          resourceState.push({ bookId, view });
         });
 
+        localStorage.setItem('resourceState', JSON.stringify(resourceState));
+      }
 
-        function displayResourcesFromJson(jsonData) {
-            const resourcePanel = document.getElementById('resourcePanel');
-            resourcePanel.innerHTML = '';
+      // Upload source panel status from local storage
+      function loadResourceState() {
+        const resourceState = JSON.parse(localStorage.getItem('resourceState'));
 
-            for (const [manuscriptId, data] of Object.entries(jsonData)) {
-                const { id: bookId, view } = data;
-                const title = `Manuscript - ${bookId}`;
-                const transcriptions = [];
-
-                if (view.transcription) transcriptions.push('Transcription');
-                if (view.structure) transcriptions.push('Structure');
-                if (view.mirador) transcriptions.push('Mirador');
-                
-                const panel = createResourcePanel(title, transcriptions);
-                resourcePanel.appendChild(panel);
-            }
-
-            adjustPanelWidth();
-            }
-
-
-      
-        function displaySelectedResources() {
-            const resourcePanel = document.getElementById('resourcePanel');
-
-            const manuscriptABooks = document.querySelectorAll('#collapseManuscriptA input[type="checkbox"]:checked');
-            const manuscriptBBooks = document.querySelectorAll('#collapseManuscriptB input[type="checkbox"]:checked');
-            const manuscriptCBooks = document.querySelectorAll('#collapseManuscriptC input[type="checkbox"]:checked');
-
-            // Add new panel without removing the ones already present
-            appendBooks(resourcePanel, manuscriptABooks);
-            appendBooks(resourcePanel, manuscriptBBooks);
-            appendBooks(resourcePanel, manuscriptCBooks);
-
-            adjustPanelWidth();
-        }
-
-        function appendBooks(container, books) {
-            books.forEach(book => {
-                const [manuscript, bookNumber] = book.value.split('-');
-                const panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription of ${bookNumber}`]);
-                container.appendChild(panel);
-            });
-        }
-
-      
-        function createResourcePanel(title, transcriptions) {
-          const panel = document.createElement('div');
-          panel.classList.add('resource-panel-item');
-      
-          const panelContent = `
-            <div class="card">
-              <div class="card-header d-flex justify-content-between align-items-center">
-                <span>${title}</span>
-                <div>
-                  <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transcription</button>
-                  <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Structure</button>
-                  <button type="button" class="btn btn-outline-primary btn-sm mirador-btn">Mirador</button>
-                </div>
-                <button type="button" class="btn-close" aria-label="Close"></button>
-              </div>
-              <div class="card-body row">
-                ${transcriptions.map(transcription => `
-                  <div class="col border m-1">${transcription}</div>
-                `).join('')}
-              </div>
-            </div>
-          `;
-          panel.innerHTML = panelContent;
-      
-          panel.querySelector('.btn-close').addEventListener('click', function() {
-            panel.remove();
-            adjustPanelWidth();
-          });
-      
-          let transcriptionAdded = true;
-          let structureAdded = false;
-          let miradorAdded = false;
-      
-          const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
-          addTranscriptionBtn.addEventListener('click', function() {
-            if (!transcriptionAdded) {
-              panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Transcription</div>';
-              transcriptionAdded = true;
-              addTranscriptionBtn.classList.remove('btn-outline-primary');
-              addTranscriptionBtn.classList.add('btn-primary');
-            } else {
-              panel.querySelector('.card-body .col:last-child').remove();
-              transcriptionAdded = false;
-              addTranscriptionBtn.classList.remove('btn-primary');
-              addTranscriptionBtn.classList.add('btn-outline-primary');
-            }
-          });
-      
-          const addStructureBtn = panel.querySelector('.add-structure-btn');
-          addStructureBtn.addEventListener('click', function() {
-            if (!structureAdded) {
-              panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Structure</div>';
-              structureAdded = true;
-              addStructureBtn.classList.remove('btn-outline-primary');
-              addStructureBtn.classList.add('btn-primary');
-            } else {
-              panel.querySelector('.card-body .col:last-child').remove();
-              structureAdded = false;
-              addStructureBtn.classList.remove('btn-primary');
-              addStructureBtn.classList.add('btn-outline-primary');
-            }
-          });
-      
-          const miradorBtn = panel.querySelector('.mirador-btn');
-          miradorBtn.addEventListener('click', function() {
-            if (!miradorAdded) {
-              panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Mirador Viewer</div>';
-              miradorAdded = true;
-              miradorBtn.classList.remove('btn-outline-primary');
-              miradorBtn.classList.add('btn-primary');
-            } else {
-              panel.querySelector('.card-body .col:last-child').remove();
-              miradorAdded = false;
-              miradorBtn.classList.remove('btn-primary');
-              miradorBtn.classList.add('btn-outline-primary');
-            }
-          });
-      
-          return panel;
-        }
-      
-        //panel width
-        function adjustPanelWidth() {
+        if (resourceState) {
           const resourcePanel = document.getElementById('resourcePanel');
-          const resourceCount = resourcePanel.children.length;
-          const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-      
-          if (resourceCount === 1) {
-            panels[0].classList.add('only-child');
-          } else {
-            Array.from(
-      
-      panels).forEach(panel => {
-              panel.classList.remove('only-child');
-            });
-          }
-        }
-      
-        //Upload json
-        document.getElementById('downloadJsonBtn').addEventListener('click', function() {
-          const resourceOptions = {};
-      
-          const resourcePanels = document.querySelectorAll('.resource-panel-item');
-      
-          resourcePanels.forEach((panel, index) => {
-            const manuscriptId = index + 1;
-            const bookId = panel.querySelector('.card-header span').textContent.split(' - ')[1];
-            const view = {
-              transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
-              structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
-              mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
-            };
-            resourceOptions[manuscriptId] = { id: bookId, view: view };
+          resourcePanel.innerHTML = '';
+
+          resourceState.forEach(state => {
+            const { bookId, view } = state;
+            const transcriptions = [];
+
+            if (view.transcription) transcriptions.push('Transcription');
+            if (view.structure) transcriptions.push('Structure');
+            if (view.mirador) transcriptions.push('Mirador');
+
+            const panel = createResourcePanel(`Manuscript - ${bookId}`, transcriptions);
+            resourcePanel.appendChild(panel);
           });
-      
-          downloadJson(resourceOptions);
+
+          adjustPanelWidth();
+        }
+      }
+
+      // Call function loadResourceState() when loading the page
+      window.addEventListener('load', loadResourceState);
+
+      function displayResourcesFromJson(jsonData) {
+        const resourcePanel = document.getElementById('resourcePanel');
+        resourcePanel.innerHTML = '';
+
+        for (const [manuscriptId, data] of Object.entries(jsonData)) {
+          const { id: bookId, view } = data;
+          const title = `Manuscript - ${bookId}`;
+          const transcriptions = [];
+
+          if (view.transcription) transcriptions.push('Transcription');
+          if (view.structure) transcriptions.push('Structure');
+          if (view.mirador) transcriptions.push('Mirador');
+
+          const panel = createResourcePanel(title, transcriptions);
+          resourcePanel.appendChild(panel);
+        }
+
+        adjustPanelWidth();
+      }
+
+      function displaySelectedResources() {
+        const resourcePanel = document.getElementById('resourcePanel');
+
+        const BambergBooks = document.querySelectorAll('#collapseBamberg input[type="checkbox"]:checked');
+        const FrankfurtBooks = document.querySelectorAll('#collapseFrankfurt input[type="checkbox"]:checked');
+        const KölnBooks = document.querySelectorAll('#collapseKöln input[type="checkbox"]:checked');
+        const Vatikan1Books = document.querySelectorAll('#collapseVatikan1 input[type="checkbox"]:checked');
+        const Vatikan2Books = document.querySelectorAll('#collapseVatikan2 input[type="checkbox"]:checked');
+
+        // Add new panel without removing the ones already present
+        appendBooks(resourcePanel, BambergBooks);
+        appendBooks(resourcePanel, FrankfurtBooks);
+        appendBooks(resourcePanel, KölnBooks);
+        appendBooks(resourcePanel, Vatikan1Books);
+        appendBooks(resourcePanel, Vatikan2Books);
+
+        adjustPanelWidth();
+      }
+
+
+      function appendBooks(container, books) {
+        books.forEach(book => {
+          const [manuscript, bookNumber] = book.value.split('-');
+          const panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription`]);
+          container.appendChild(panel);
         });
+      }
+      
+
+      function createResourcePanel(title, transcriptions) {
+        
+        const panel = document.createElement('div');
+        panel.classList.add('resource-panel-item');
+
+        const panelContent = `
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>${title}</span>
+              <div>
+                <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transcription</button>
+                <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Structure</button>
+                <button type="button" class="btn btn-outline-primary btn-sm mirador-btn">Mirador</button>
+              </div>
+              <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="card-body row">
+              ${transcriptions.map(transcription => `
+                <div class="col border m-1">${transcription}</div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        panel.innerHTML = panelContent;
+
+        panel.querySelector('.btn-close').addEventListener('click', function() {
+          panel.remove();
+          adjustPanelWidth();
+          saveResourceState(); //Save source panel status after removing one panel
+        });
+
+        let transcriptionAdded = true;
+        let structureAdded = false;
+        let miradorAdded = false;
+
+        const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
+        addTranscriptionBtn.addEventListener('click', function() {
+          if (!transcriptionAdded) {
+            panel.querySelector('.card-body').innerHTML += '<div class="col border m-1 transcription-section">Transcription</div>';
+            transcriptionAdded = true;
+            addTranscriptionBtn.classList.remove('btn-outline-primary');
+            addTranscriptionBtn.classList.add('btn-primary');
+          } else {
+            panel.querySelector('.card-body .col:last-child').remove();
+            transcriptionAdded = false;
+            addTranscriptionBtn.classList.remove('btn-primary');
+            addTranscriptionBtn.classList.add('btn-outline-primary');
+          }
+          saveResourceState(); // Save resource panel status after addition/deletion transcription
+        });
+
+        const addStructureBtn = panel.querySelector('.add-structure-btn');
+        addStructureBtn.addEventListener('click', function() {
+          if (!structureAdded) {
+            panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Structure</div>';
+            structureAdded = true;
+            addStructureBtn.classList.remove('btn-outline-primary');
+            addStructureBtn.classList.add('btn-primary');
+          } else {
+            panel.querySelector('.card-body .col:last-child').remove();
+            structureAdded = false;
+            addStructureBtn.classList.remove('btn-primary');
+            addStructureBtn.classList.add('btn-outline-primary');
+          }
+          saveResourceState(); //Save resource panel status after addtion/deletion structure
+        });
+
+        const miradorBtn = panel.querySelector('.mirador-btn');
+        miradorBtn.addEventListener('click', function() {
+          if (!miradorAdded) {
+            panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Mirador Viewer</div>';
+            miradorAdded = true;
+            miradorBtn.classList.remove('btn-outline-primary');
+            miradorBtn.classList.add('btn-primary');
+          } else {
+            panel.querySelector('.card-body .col:last-child').remove();
+            miradorAdded = false;
+            miradorBtn.classList.remove('btn-primary');
+            miradorBtn.classList.add('btn-outline-primary');
+          }
+          saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
+        });
+
+        return panel;
+      }
+
+
+      // Add a listener for messages from ms-item
+      window.addEventListener("message", receiveMessage, false);
+      function receiveMessage(event) {
+          if (event.origin !== window.location.origin) return;
+          if (event.data) {
+              // add new resource panel to desktop.html
+              var selectedBook = event.data;
+              appendSelectedBookToDesktop(selectedBook);
+          }
+      }
+
+      function appendSelectedBookToDesktop(selectedBook) {
+          var manuscript = selectedBook.split('-')[0];
+          var bookNumber = selectedBook.split('-')[1];
+          var panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription of ${bookNumber}`]);
+          var container = document.getElementById('resourcePanel');
+          container.appendChild(panel);
+          // Save updated state in localStorage
+          saveResourceState();
+      }
+
+      //panel width
+      function adjustPanelWidth() {
+        const resourcePanel = document.getElementById('resourcePanel');
+        const resourceCount = resourcePanel.children.length;
+        const panels = resourcePanel.getElementsByClassName('resource-panel-item');
+
+        if (resourceCount === 1) {
+          panels[0].classList.add('only-child');
+        } else {
+          Array.from(panels).forEach(panel => {
+            panel.classList.remove('only-child');
+          });
+        }
+      }
+
+
+      //Upload json
+      document.getElementById('downloadJsonBtn').addEventListener('click', function() {
+        const resourceOptions = {};
+
+        const resourcePanels = document.querySelectorAll('.resource-panel-item');
+
+        resourcePanels.forEach((panel, index) => {
+          const manuscriptId = index + 1;
+          const bookId = panel.querySelector('.card-header span').textContent.split(' - ')[1];
+          const view = {
+            transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
+            structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
+            mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
+          };
+          resourceOptions[manuscriptId] = { id: bookId, view: view };
+        });
+
+        downloadJson(resourceOptions);
+        saveResourceState(); //Save resource panel status before downloading json file
+      });
 
       //Download json
-        function downloadJson(data) {
-          const filename = 'resource_options.json';
-          const json = JSON.stringify(data, null, 2);
-          const blob = new Blob([json], { type: 'application/json' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        }
-      </script>-->
-
-
-  <script>
-  document.getElementById('addResourceBtn').addEventListener('click', function() {
-    $('#resourceModal').modal('show');
-  });
-
-  document.getElementById('jsonFileInput').addEventListener('change', function() {
-    const file = this.files[0];
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      const jsonData = JSON.parse(event.target.result);
-      displayResourcesFromJson(jsonData);
-      saveResourceState(); // Save resource panel status after uploading data from Json
-    };
-    reader.readAsText(file);
-  });
-
-  document.getElementById('confirmSelectionBtn').addEventListener('click', function() {
-    $('#resourceModal').modal('hide');
-    displaySelectedResources();
-    saveResourceState(); // Save resource panel status after selection
-  });
-
-  // After function displaySelectedResources() --> save resource panel status in local storage
-  function saveResourceState() {
-    const resourcePanels = document.querySelectorAll('.resource-panel-item');
-    const resourceState = [];
-
-    resourcePanels.forEach(panel => {
-      const bookId = panel.querySelector('.card-header span').textContent.split(' - ')[1];
-      const view = {
-        transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
-        structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
-        mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
-      };
-      resourceState.push({ bookId, view });
-    });
-
-    localStorage.setItem('resourceState', JSON.stringify(resourceState));
-  }
-
-  // Upload source panel status from local storage
-  function loadResourceState() {
-    const resourceState = JSON.parse(localStorage.getItem('resourceState'));
-
-    if (resourceState) {
-      const resourcePanel = document.getElementById('resourcePanel');
-      resourcePanel.innerHTML = '';
-
-      resourceState.forEach(state => {
-        const { bookId, view } = state;
-        const transcriptions = [];
-
-        if (view.transcription) transcriptions.push('Transcription');
-        if (view.structure) transcriptions.push('Structure');
-        if (view.mirador) transcriptions.push('Mirador');
-
-        const panel = createResourcePanel(`Manuscript - ${bookId}`, transcriptions);
-        resourcePanel.appendChild(panel);
-      });
-
-      adjustPanelWidth();
-    }
-  }
-
-  // Call function loadResourceState() when loading the page
-  window.addEventListener('load', loadResourceState);
-
-  function displayResourcesFromJson(jsonData) {
-    const resourcePanel = document.getElementById('resourcePanel');
-    resourcePanel.innerHTML = '';
-
-    for (const [manuscriptId, data] of Object.entries(jsonData)) {
-      const { id: bookId, view } = data;
-      const title = `Manuscript - ${bookId}`;
-      const transcriptions = [];
-
-      if (view.transcription) transcriptions.push('Transcription');
-      if (view.structure) transcriptions.push('Structure');
-      if (view.mirador) transcriptions.push('Mirador');
-
-      const panel = createResourcePanel(title, transcriptions);
-      resourcePanel.appendChild(panel);
-    }
-
-    adjustPanelWidth();
-  }
-
-  function displaySelectedResources() {
-    const resourcePanel = document.getElementById('resourcePanel');
-
-    const manuscriptABooks = document.querySelectorAll('#collapseManuscriptA input[type="checkbox"]:checked');
-    const manuscriptBBooks = document.querySelectorAll('#collapseManuscriptB input[type="checkbox"]:checked');
-    const manuscriptCBooks = document.querySelectorAll('#collapseManuscriptC input[type="checkbox"]:checked');
-
-    // Add new panel without removing the ones already present
-    appendBooks(resourcePanel, manuscriptABooks);
-    appendBooks(resourcePanel, manuscriptBBooks);
-    appendBooks(resourcePanel, manuscriptCBooks);
-
-    adjustPanelWidth();
-  }
-
-
-  function appendBooks(container, books) {
-    books.forEach(book => {
-      const [manuscript, bookNumber] = book.value.split('-');
-      const panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription of ${bookNumber}`]);
-      container.appendChild(panel);
-    });
-  }
-  
-
-  function createResourcePanel(title, transcriptions) {
-    const panel = document.createElement('div');
-    panel.classList.add('resource-panel-item');
-
-    const panelContent = `
-      <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <span>${title}</span>
-          <div>
-            <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transcription</button>
-            <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Structure</button>
-            <button type="button" class="btn btn-outline-primary btn-sm mirador-btn">Mirador</button>
-          </div>
-          <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <div class="card-body row">
-          ${transcriptions.map(transcription => `
-            <div class="col border m-1">${transcription}</div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-    panel.innerHTML = panelContent;
-
-    panel.querySelector('.btn-close').addEventListener('click', function() {
-      panel.remove();
-      adjustPanelWidth();
-      saveResourceState(); //Save source panel status after removing one panel
-    });
-
-    let transcriptionAdded = true;
-    let structureAdded = false;
-    let miradorAdded = false;
-
-    const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
-    addTranscriptionBtn.addEventListener('click', function() {
-      if (!transcriptionAdded) {
-        panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Transcription</div>';
-        transcriptionAdded = true;
-        addTranscriptionBtn.classList.remove('btn-outline-primary');
-        addTranscriptionBtn.classList.add('btn-primary');
-      } else {
-        panel.querySelector('.card-body .col:last-child').remove();
-        transcriptionAdded = false;
-        addTranscriptionBtn.classList.remove('btn-primary');
-        addTranscriptionBtn.classList.add('btn-outline-primary');
+      function downloadJson(data) {
+        const filename = 'resource_options.json';
+        const json = JSON.stringify(data, null, 2);
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }
-      saveResourceState(); // Save resource panel status after addition/deletion transcription
-    });
-
-    const addStructureBtn = panel.querySelector('.add-structure-btn');
-    addStructureBtn.addEventListener('click', function() {
-      if (!structureAdded) {
-        panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Structure</div>';
-        structureAdded = true;
-        addStructureBtn.classList.remove('btn-outline-primary');
-        addStructureBtn.classList.add('btn-primary');
-      } else {
-        panel.querySelector('.card-body .col:last-child').remove();
-        structureAdded = false;
-        addStructureBtn.classList.remove('btn-primary');
-        addStructureBtn.classList.add('btn-outline-primary');
-      }
-      saveResourceState(); //Save resource panel status after addtion/deletion structure
-    });
-
-    const miradorBtn = panel.querySelector('.mirador-btn');
-    miradorBtn.addEventListener('click', function() {
-      if (!miradorAdded) {
-        panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Mirador Viewer</div>';
-        miradorAdded = true;
-        miradorBtn.classList.remove('btn-outline-primary');
-        miradorBtn.classList.add('btn-primary');
-      } else {
-        panel.querySelector('.card-body .col:last-child').remove();
-        miradorAdded = false;
-        miradorBtn.classList.remove('btn-primary');
-        miradorBtn.classList.add('btn-outline-primary');
-      }
-      saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
-    });
-
-    return panel;
-  }
-
-
-  // Add a listener for messages from ms-item
-  window.addEventListener("message", receiveMessage, false);
-  function receiveMessage(event) {
-      if (event.origin !== window.location.origin) return;
-      if (event.data) {
-          // add new resource panel to desktop.html
-          var selectedBook = event.data;
-          appendSelectedBookToDesktop(selectedBook);
-      }
-  }
-
-  function appendSelectedBookToDesktop(selectedBook) {
-      var manuscript = selectedBook.split('-')[0];
-      var bookNumber = selectedBook.split('-')[1];
-      var panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription of ${bookNumber}`]);
-      var container = document.getElementById('resourcePanel');
-      container.appendChild(panel);
-      // Save updated state in localStorage
-      saveResourceState();
-  }
-
-  //panel width
-  function adjustPanelWidth() {
-    const resourcePanel = document.getElementById('resourcePanel');
-    const resourceCount = resourcePanel.children.length;
-    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-
-    if (resourceCount === 1) {
-      panels[0].classList.add('only-child');
-    } else {
-      Array.from(panels).forEach(panel => {
-        panel.classList.remove('only-child');
-      });
-    }
-  }
-
-
-  //Upload json
-  document.getElementById('downloadJsonBtn').addEventListener('click', function() {
-    const resourceOptions = {};
-
-    const resourcePanels = document.querySelectorAll('.resource-panel-item');
-
-    resourcePanels.forEach((panel, index) => {
-      const manuscriptId = index + 1;
-      const bookId = panel.querySelector('.card-header span').textContent.split(' - ')[1];
-      const view = {
-        transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
-        structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
-        mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
-      };
-      resourceOptions[manuscriptId] = { id: bookId, view: view };
-    });
-
-    downloadJson(resourceOptions);
-    saveResourceState(); //Save resource panel status before downloading json file
-  });
-
-  //Download json
-  function downloadJson(data) {
-    const filename = 'resource_options.json';
-    const json = JSON.stringify(data, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-</script>
-
-
+    </script>
 
 </html>
