@@ -37,10 +37,9 @@
                 <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
             </div>
 
-            <h1 style="margin-top:30px; margin-bottom:40px;"><span lang="de">BDD ZOTERO BIBLIOGRAPHIE</span></h1>
-            <h1 style="margin-top:20px; margin-bottom:40px;"><span lang="en">BDD ZOTERO BIBLIOGRAPHY</span></h1>
-
-            <table style="width: 100%;" class="table" id="table">
+            <h1 style="margin-top:30px; margin-bottom:40px;"><span lang="de">BIBLIOGRAPHIE</span><span lang="en">BIBLIOGRAPHY</span></h1>
+            
+           <!--<table style="width: 100%;" class="table" id="literatureTable">
                 <thead>
                   <tr>
                     <th style="width: 40%;" scope="col">Author</th>
@@ -55,20 +54,49 @@
                     <th scope="col"></th>
                   </tr>
                 </thead>
-                <tbody id="table-body">
-                  
-                  
+                <tbody id="table-body"> 
+                </tbody>
+              </table>-->
+
+              <table id="literatureTable" class="table" style="width: 100%;">
+                <thead>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Author/Editor</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">In</th>
+                   <!--<th scope="col">Edition</th>-->
+                    <th scope="col" style="width: 50%;">Year</th>
+                    <th scope="col">Publication Place</th>
+                    <!--<th scope="col">Publisher</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Note</th>-->
+                    <th scope="col" style="width: 50%;">Page range</th>
+                    <th scope="col">Series</th>
+                  </tr>
+                  <tr>
+                      <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter"></th>
+                      <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter"></th>
+                      <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter"></th>
+                      <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter"></th>
+                      <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" style="width: 80%;"></th>
+                      <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" style="width: 90%;"></th>
+                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter" style="width: 80%;"></th>
+                      <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Filter"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <!-- Table body content will be generated dynamically using JavaScript -->
                 </tbody>
               </table>
            
-            
         </div>
 
         <div id="footer-placeholder"></div>
         
     </body>
 
-    <!--Display Navbar and Footer-->
+    <!--Navbar, Footer, Back button-->
     <script>
         $(function() {
             function setActiveNavItem() {
@@ -90,112 +118,229 @@
             });
         });
       
-          $(function(){
-              $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
-          });
-      </script>
-
-    <!-- back button-->
-    <script>
+        $(function(){
+            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
+        });
+      
+    //back button
         $(".hBack").on("click", function(e){
             e.preventDefault();
             window.history.back();
         });
     </script>
 
-<script>
+
+<!--SCRIPT TO RETRIEVE LIST FROM ZOTERO-->
+<!--<script>
     const groupId = '148107';
     fetch(`https://api.zotero.org/groups/${groupId}/items`, {
-headers: {
-'Zotero-API-Version': '3'
-}
-})
-.then(response => response.json())
-.then(data => {
-const itemsContainer = document.getElementById('table-body');
-
-
-// Create a row for each item and populate with metadata
-data.forEach(item => {
-console.log(item)
-const tr = document.createElement('tr');
-
-// Authors
-const authorsCell = document.createElement('td');
-author_list = []
-for (aut in item.data.creators){
-    author = item.data.creators[aut]
-    if (author.lastName){
-        author_list.push([author.lastName, author.firstName].join(', '))
-    }
-    else if (author.name){
-        author_list.push(author.name)
-    }
-}
-authorsCell.textContent = author_list.join('; ')
-tr.appendChild(authorsCell);
-
-// Title
-const titleCell = document.createElement('td');
-titleCell.textContent = item.data.title;
-tr.appendChild(titleCell);
-
-// Year
-const yearCell = document.createElement('td');
-yearCell.textContent = item.data.date ? item.data.date.substr(0, 4) : '';
-tr.appendChild(yearCell);
-
-// Link
-const linkCell = document.createElement('td');
-const link = document.createElement('a');
-link.href = `https://www.zotero.org/groups/${groupId}/items/${item.key}`;
-link.textContent = 'View';
-link.target = "_blank"; // Open link in a new tab
-linkCell.appendChild(link);
-tr.appendChild(linkCell);
-
-itemsContainer.appendChild(tr);
-});
-
-
-// Add search functionality
-const searchInputs = document.querySelectorAll('.search-input');
-searchInputs.forEach(input => {
-input.addEventListener('input', () => {
-    const searchText = input.value.trim().toLowerCase();
-    const filterColumn = input.dataset.column;
-    const rows = table.querySelectorAll('tr');
-
-    rows.forEach(row => {
-        const cells = row.querySelectorAll('td');
-        let found = false;
-        cells.forEach(cell => {
-            if (cell.dataset.column === filterColumn && cell.textContent.toLowerCase().includes(searchText)) {
-                found = true;
-            }
-        });
-        if (found) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
+        headers: {
+        'Zotero-API-Version': '3'
         }
-    });
-});
-});
-})
+    })
+
+    .then(response => response.json())
+    .then(data => {
+        const itemsContainer = document.getElementById('table-body');
+
+
+        // Create a row for each item and populate with metadata
+        data.forEach(item => {
+            console.log(item)
+            const tr = document.createElement('tr');
+
+            // Authors
+            const authorsCell = document.createElement('td');
+            author_list = []
+            for (aut in item.data.creators){
+                author = item.data.creators[aut]
+                if (author.lastName){
+                    author_list.push([author.lastName, author.firstName].join(', '))
+                }
+                else if (author.name){
+                    author_list.push(author.name)
+                }
+            }
+            authorsCell.textContent = author_list.join('; ')
+            tr.appendChild(authorsCell);
+
+            // Title
+            const titleCell = document.createElement('td');
+            titleCell.textContent = item.data.title;
+            tr.appendChild(titleCell);
+
+            // Year
+            const yearCell = document.createElement('td');
+            yearCell.textContent = item.data.date ? item.data.date.substr(0, 4) : '';
+            tr.appendChild(yearCell);
+
+            // Link
+            const linkCell = document.createElement('td');
+            const link = document.createElement('a');
+            link.href = `https://www.zotero.org/groups/${groupId}/items/${item.key}`;
+            link.textContent = 'View';
+            link.target = "_blank"; // Open link in a new tab
+            linkCell.appendChild(link);
+            tr.appendChild(linkCell);
+
+            itemsContainer.appendChild(tr);
+        });
+
+
+        // Add search functionality
+        const searchInputs = document.querySelectorAll('.search-input');
+        searchInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const searchText = input.value.trim().toLowerCase();
+                const filterColumn = input.dataset.column;
+                const rows = table.querySelectorAll('tr');
+
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    let found = false;
+                    cells.forEach(cell => {
+                        if (cell.dataset.column === filterColumn && cell.textContent.toLowerCase().includes(searchText)) {
+                            found = true;
+                        }
+                    });
+                    if (found) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    })
+
 .catch(error => {
 console.error('Error fetching Zotero data:', error);
 });
+</script>-->
+
+<!--NEW SCRIPT BIBL-TABLE-->
+<script>
+    $(document).ready(function() {
+      // Load XML data
+      $.ajax({
+        type: "GET",
+        url: "../data/register/literature.xml",
+        dataType: "xml",
+        success: function(xml) {
+          // Generate table rows
+          var tableRows = "";
+            $(xml).find('biblStruct').each(function() {
+                // Map type values to labels
+                var typeLabels = {
+                "book": "Book",
+                "journalArticle": "Journal article",
+                "bookSection": "Book section",
+                "encyclopediaArticle": "Encyclopedia article"
+                };
+            var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
+            var title, authorEditor, inValue, edition, year, pubPlace, publisher, id, note, biblScope, series;
+
+            if (type === "Book") {
+              title = $(this).find("monogr > title").text();
+              var editorNames = [];
+              $(this).find("monogr > editor").each(function() {
+                editorNames.push($(this).find("forename").text() + " " + $(this).find("surname").text());
+              });
+              authorEditor = editorNames.join(", ");
+              inValue = "";
+            } else {
+              title = $(this).find("analytic > title").text();
+              var authorNames = [];
+              $(this).find("analytic > author").each(function() {
+                authorNames.push($(this).find("forename").text() + " " + $(this).find("surname").text());
+              });
+              authorEditor = authorNames.join(", ");
+              var monogr = $(this).find("monogr");
+              inValue = $(monogr).find("title").text() + " - " + $(monogr).find("editor").text();
+            }
+
+           // edition = $(this).find("edition").text();
+            year = $(this).find("imprint > date").text();
+            console.log(year)
+            pubPlace = $(this).find("imprint > pubPlace").text();
+            console.log(pubPlace)
+           // publisher = $(this).find("imprint > publisher").text();
+           // id = $(this).find("monogr > idno").attr("type") + ": " + $(this).find("monogr > idno").text();
+           // note = $(this).find("imprint > note").text();
+            
+           
+           //biblScope = $(this).find("imprint > biblScope").attr("unit") + ": " + $(this).find("imprint > biblScope").text();
+
+            var biblScopeUnit = $(this).find("imprint > biblScope").attr("unit");
+            var biblScopeValue = $(this).find("imprint > biblScope").text();
+            biblScope = biblScopeUnit === "page" ? biblScopeValue : "";
+
+            series = $(this).find("series > title").text() 
+            //+ " - " + $(this).find("series > biblScope").text(); //To add  the volume number
 
 
-</script>
+        // Construct table row
+            tableRows += "<tr>";
+            tableRows += "<td>" + type + "</td>";
+            tableRows += "<td>" + authorEditor + "</td>";
+            tableRows += "<td>" + title + "</td>"; 
+            tableRows += "<td>" + inValue + "</td>";
+           // tableRows += "<td>" + edition + "</td>";
+            tableRows += "<td>" + year + "</td>";
+            tableRows += "<td>" + pubPlace + "</td>";
+           // tableRows += "<td>" + publisher + "</td>";
+           // tableRows += "<td>" + id + "</td>";
+           // tableRows += "<td>" + note + "</td>";
+            tableRows += "<td>" + biblScope + "</td>";
+            tableRows += "<td>" + series + "</td>";
+            tableRows += "</tr>";
+          });
+
+          // Append table rows to table body
+          $("#literatureTable tbody").append(tableRows);
+        },
+
+        
+        error: function(xhr, status, error) {
+          console.error("Error loading XML file:", error);
+        }
+      });
+    });
+
+    // Add search functionality
+    const searchInputs = document.querySelectorAll('.search-input');
+        searchInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const searchText = input.value.trim().toLowerCase();
+                const filterColumn = input.dataset.column;
+                const rows = table.querySelectorAll('tr');
+
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    let found = false;
+                    cells.forEach(cell => {
+                        if (cell.dataset.column === filterColumn && cell.textContent.toLowerCase().includes(searchText)) {
+                            found = true;
+                        }
+                    });
+                    if (found) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+  </script>
+
+
 <script>
     function filter(key) {
       // Declare variables
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("filter"+key);
       filter = input.value.toUpperCase();
-      table = document.getElementById("table");
+      table = document.getElementById("literatureTable");
       tr = table.getElementsByTagName("tr");
     
       // Loop through all table rows, and hide those who don't match the search query
@@ -211,9 +356,5 @@ console.error('Error fetching Zotero data:', error);
         }
       }
     }
-    </script>
-
-
-
-    
+</script>
 </html>

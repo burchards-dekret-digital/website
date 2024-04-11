@@ -44,8 +44,8 @@
             <!--Fontawesome-->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
            
-            <script src="../js/manuscript-view.js"></script>
-            <script src="../js/manuscript-view-synopse.js"></script>
+            <!--<script src="../js/manuscript-view.js"></script>-->
+            <!--<script src="../js/manuscript-view-synopse.js"></script>-->
             <script src="../js/language.js"></script>
         </head>
         <body>
@@ -411,37 +411,42 @@
             //keep track of desktop.html window
             var desktopWindow = null;
 
-            function appendSelectedBookToDesktop(selectedBook) {
-                // add resource panel for the selected book
-                //var manuscriptName = document.getElementById('ms-title').innerText;
-                var manuscript = selectedBook.split('-')[0];
-                var bookNumber = selectedBook.split('-')[1];
-                var panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription of ${bookNumber}`]);
-                
-                // add panel to desktop
-                if (desktopWindow && !desktopWindow.closed) {
-                    desktopWindow.appendBooks(panel);
-                }
-            }
-
             //Redirect to Schreibtisch after clicking the button
             function redirectToTranscription() {
-                var selectedBook = document.querySelector("#book-selector").value;
-                if (selectedBook) {
+                let selectedMs = new URLSearchParams(window.location.search).get('document');
+                let selectedBook = document.querySelector("#book-selector").value;
+                let selected = selectedMs + "-" + selectedBook
+                if (selected) {
                     if (desktopWindow && !desktopWindow.closed) {
                         // if the window is already open
                         desktopWindow.focus();
                         // send message to desktop.html
-                        desktopWindow.postMessage(selectedBook, "*");
+                        desktopWindow.postMessage(selected, "*");
                     } else {
                         // if not open, open a new one
                         desktopWindow = window.open('desktop.html', '_blank');
                         desktopWindow.onload = function() {
-                            desktopWindow.postMessage(selectedBook, "*");
+                            desktopWindow.postMessage(selected, "*");
                         };
                     }
                 }
             }
+
+
+//new function to redirect to desktop.html - doesn't pass the info
+            /*function redirectToTranscription() {
+                let selectedMs = new URLSearchParams(window.location.search).get('document');
+                let selectedBook = document.querySelector("#book-selector").value;
+                let selected = selectedMs + "-" + selectedBook;
+
+                if (selected) {
+                    // Redirect to desktop.html
+                    window.location.href = 'desktop.html';
+                    // Send message to desktop.html
+                    window.postMessage(selected, "*");
+                }
+            }*/
+
 
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;

@@ -22,8 +22,6 @@
 /* Css für Transkriptionen */
 
 
-
-
 .tei_pb {
     font-weight: bold;
 }
@@ -99,7 +97,7 @@ ol {
 
 
 .tei_g {
-    font-family: 'Andron-Scriptor-Web';
+    font-family: 'Andron-Scriptor-Web'!important;
 }
 
 
@@ -221,7 +219,7 @@ ol {
 
 .tei_chapter-title {
     text-transform: none;
-    font-family: 'Andron-Scriptor-Web';
+    font-family: 'Andron-Scriptor-Web'!important;
 }
 
 .tei_chapter{
@@ -273,7 +271,7 @@ ol {
 .container_ms {
     height: 100vh;
     margin-top:30px;
-    font-family: 'Andron-Scriptor-Web';
+    font-family: 'Andron-Scriptor-Web'!important;
     overflow-y: scroll;
 }
 

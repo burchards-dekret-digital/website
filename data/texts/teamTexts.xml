@@ -7,7 +7,7 @@
     <p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">LEO-MALTE FELDER, Universität Kassel</li>
-            <li class="list-group-item">CHRISTIAN HOWORKA, Universität Kassel</li>
+            <li class="list-group-item">TORBEN JORDAN, Universität Kassel</li>
             <li class="list-group-item">CHRISTOPHER OED, Friedrich-Alexander-Universität Erlangen-Nürnberg</li>
         </ul>
     </p>
@@ -17,6 +17,7 @@
     <div id="formerEmployees" class="block">
     <p>
       <ul class="list-group list-group-flush">
+        <li class="list-group-item">CHRISTIAN HOWORKA, 2023, Universität Kassel</li>
           <li class="list-group-item">RESHNA HASSAN, 2021-2022, Hilfskräfte, Friedrich-Alexander-Universität Erlangen-Nürnberg</li>
           <li class="list-group-item">Prof. Dr. LOTTE KÉRY, 2020-2021, Universität Kassel</li>
           <li class="list-group-item">LARS NITZKI, 2020, IT, Universität Kassel</li>

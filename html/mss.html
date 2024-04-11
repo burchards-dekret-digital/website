@@ -146,23 +146,7 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
     </script>
-
-    
-    
-    
-    <!-- script for making menu item active -->
-    <!--  Make menu items active -> TODO implement in xquery -->
-    <script type="text/javascript">
-    $(document).ready(function () {
-    var url = window.location;
-    $('nav a[href="'+ url +'"]').parent().addClass('active');
-    $('nav a').filter(function() {
-            return this.href == url;
-    }).parent().addClass('active');
-    });
-    </script>
-
-    
+   
 
     <!--data in ms-table-->
     <script>

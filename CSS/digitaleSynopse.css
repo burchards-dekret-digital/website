@@ -3,6 +3,13 @@
   src: url(brandon-grotesque-light.otf);
 }
 
+@font-face {
+    font-family: 'Andron-Scriptor-Web';
+    src: url('https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/fonts/Andron-Scriptor-Web.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 #digital-synopsis {
     font-family: 'Cardo', serif;
@@ -24,28 +31,24 @@ msname[type="sigle"]{
 }
 
 
-.tei_chapter-title{
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.3em;
-    /* text-transform: uppercase; */
-}
+
 .tei_incipit{
     font-family: 'Oswald', sans-serif;
     font-size: 1.3em;
     /* text-transform: uppercase; */
 }
-/* Css für Transkriptionen */
 
 
-@font-face {
-    font-family: 'Andron-Scriptor-Web';
-    src: url('https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/fonts/Andron-Scriptor-Web.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+
+.tei_{
+    font-family: Andron-Scriptor-Web !important;
 }
+
+
 
 .tei_pb {
     font-weight: bold;
+    font-family: Andron-Scriptor-Web !important;
 }
 
 .tei_pb::after {
@@ -79,11 +82,23 @@ msname[type="sigle"]{
 
 .tei_hi-color-red {
     color: red;
+    font-family: Andron-Scriptor-Web !important;
 }
 
 .tei_hi-color-red-initial {
     color: red;
     font-weight: bold;
+    font-family: Andron-Scriptor-Web !important;
+}
+
+.tei_chapter{
+    margin-top: 3%;
+}
+
+.tei_chapter-title {
+    text-transform: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
 }
 
 .tei_abbr {
@@ -96,6 +111,7 @@ msname[type="sigle"]{
 
 .tei_note-inscription {
     font-style: italic;
+    font-family: Andron-Scriptor-Web !important;
 }
 
 .tei_note-editorial-comment {
@@ -106,10 +122,12 @@ msname[type="sigle"]{
     font-style: italic;
 }
 
-ol {
+ol li{
     list-style: none;
-    padding-left: 0;
-}
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    font-family: Andron-Scriptor-Web !important;}
+
 
 .footnotes li {
     float: none;
@@ -118,7 +136,7 @@ ol {
 
 
 .tei_g {
-    font-family: 'Andron-Scriptor-Web';
+    font-family: 'Andron-Scriptor-Web'!important;
 }
 
 
@@ -220,7 +238,6 @@ ol {
     color: CadetBlue;
 }
 
-
 .tei_delSpan-strikethrough {
     text-decoration: line-through;
 }
@@ -238,10 +255,6 @@ ol {
 }
 
 
-.tei_chapter-title {
-    text-transform: none;
-    font-family: 'Andron-Scriptor-Web';
-}
 
 .tei_add {
     color: CadetBlue;
