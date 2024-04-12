@@ -57,8 +57,8 @@
                 <tbody id="table-body"> 
                 </tbody>
               </table>-->
-
-              <table id="literatureTable" class="table" style="width: 100%;">
+            
+              <table id="literatureTable" class="table table-hover" style="width: 100%;">
                 <thead>
                   <tr>
                     <th scope="col">Type</th>
@@ -70,8 +70,8 @@
                     <th scope="col">Publication Place</th>
                     <!--<th scope="col">Publisher</th>
                     <th scope="col">ID</th>
-                    <th scope="col">Note</th>-->
-                    <th scope="col" style="width: 50%;">Page range</th>
+                    <th scope="col">Note</th>
+                    <th scope="col" style="width: 50%;">Page range</th>-->
                     <th scope="col">Series</th>
                   </tr>
                   <tr>
@@ -81,15 +81,15 @@
                       <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter"></th>
                       <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" style="width: 80%;"></th>
                       <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" style="width: 90%;"></th>
-                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter" style="width: 80%;"></th>
-                      <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Filter"></th>
+                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter"></th>
+                      
                     </tr>
                 </thead>
                 <tbody>
                   <!-- Table body content will be generated dynamically using JavaScript -->
                 </tbody>
               </table>
-           
+            
         </div>
 
         <div id="footer-placeholder"></div>
@@ -238,7 +238,7 @@ console.error('Error fetching Zotero data:', error);
                 "encyclopediaArticle": "Encyclopedia article"
                 };
             var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
-            var title, authorEditor, inValue, edition, year, pubPlace, publisher, id, note, biblScope, series;
+            var title, authorEditor, inValue, edition, year, pubPlace, series;
 
             if (type === "Book") {
               title = $(this).find("monogr > title").text();
@@ -256,7 +256,7 @@ console.error('Error fetching Zotero data:', error);
               });
               authorEditor = authorNames.join(", ");
               var monogr = $(this).find("monogr");
-              inValue = title + ", Volume " + $(monogr).find("biblScope[unit='volume']").text() + ", Page " + $(monogr).find("biblScope[unit='page']").text();
+              inValue = $(this).find("monogr > title").text() + ", Volume " + $(monogr).find("biblScope[unit='volume']").text() + ", Page " + $(monogr).find("biblScope[unit='page']").text();
 
             }
 
@@ -272,9 +272,9 @@ console.error('Error fetching Zotero data:', error);
            
            //biblScope = $(this).find("imprint > biblScope").attr("unit") + ": " + $(this).find("imprint > biblScope").text();
 
-            var biblScopeUnit = $(this).find("imprint > biblScope").attr("unit");
+            /*var biblScopeUnit = $(this).find("imprint > biblScope").attr("unit");
             var biblScopeValue = $(this).find("imprint > biblScope").text();
-            biblScope = biblScopeUnit === "page" ? biblScopeValue : "";
+            biblScope = biblScopeUnit === "page" ? biblScopeValue : "";*/
 
             series = $(this).find("series > title").text() 
             //+ " - " + $(this).find("series > biblScope").text(); //To add  the volume number
@@ -292,7 +292,7 @@ console.error('Error fetching Zotero data:', error);
            // tableRows += "<td>" + publisher + "</td>";
            // tableRows += "<td>" + id + "</td>";
            // tableRows += "<td>" + note + "</td>";
-            tableRows += "<td>" + biblScope + "</td>";
+          //tableRows += "<td>" + biblScope + "</td>";
             tableRows += "<td>" + series + "</td>";
             tableRows += "</tr>";
           });
