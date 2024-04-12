@@ -43,8 +43,8 @@ BDD is innovative in terms of digital cataloguing as well as in its focus on the
         <div class="col-md-4 text-center">
           <figure class="figure">
             <img src="img/BambergBook.jpg" class="figure-img img-fluid" style="width:60%; object-fit: cover;" alt="Bamebrg Buch"></img>
-            <figcaption class="figure-caption"><span lang="de">Bamberg Buch</span></figcaption>  
-            <figcaption class="figure-caption"><span lang="en">Book of Bamberg</span></figcaption> 
+            <figcaption class="figure-caption"><span lang="de">Bamberg Codex</span></figcaption>  
+            <figcaption class="figure-caption"><span lang="en">Bamberg Codex</span></figcaption> 
           </figure>
         </div>
       </div>

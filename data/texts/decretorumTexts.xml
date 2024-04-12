@@ -4,7 +4,7 @@
     
     <div id="decretorum" class="block">
       <span lang="de">
-        <p class="mt-4">Die umfangreiche Kirchenrechtssammlung Decretorum libri viginti bzw. Decretum Burchardi entstanden unter Federführung Burchards von Worms im ersten Viertel des 11. Jahrhunderts. Sie entstand auf der Basis vorhandener Sammlungen und sollte eine gut benutzbare, aber auch autoritativ fundierte Sammlung des tradierten Kirchenrechts sein – dazu möglichst widerspruchsfrei. Diese Kompilation aus mehr als 1785 Kapiteln, die sich in 20 thematisch geordnete Bücher gliedern, war offenbar so erfolgreich, dass sie sich in kürzester Zeit nördlich und südlich der Alpen weit verbreitete. </p>
+        <p class="mt-4">Die umfangreiche Kirchenrechtssammlung Decretorum libri viginti bzw. Decretum Burchardi entstanden unter Federführung Burchards von Worms im ersten Viertel des 11. Jahrhunderts. Sie basiert auf vorhandenen Sammlungen und sollte eine gut benutzbare, aber auch autoritativ fundierte Sammlung des tradierten Kirchenrechts sein – dazu möglichst widerspruchsfrei. Diese Kompilation aus mehr als 1785 Kapiteln, die sich in 20 thematisch geordnete Bücher gliedern, war offenbar so erfolgreich, dass sie sich in kürzester Zeit nördlich und südlich der Alpen weit verbreitete. </p>
         <p>Als systematische Sammlung versucht sie, die gesamte Breite des kanonischen Rechts abzudecken. Jedem Buch ist eine Capitulatio vorangestellt, der eine Kurzbeschreibung des Buchinhalts folgt (Argumentum libri). Die Bücher befassen sich mit nachstehenden Themen (oft in einem weiteren Sinne):</p>
         <p>
           <ul style="list-style-type:none;">
@@ -35,7 +35,7 @@
         <p>Interessanterweise änderte Burchard bei seiner Arbeit häufig die Inscriptiones gerade der aus dem weltlichen Recht stammenden Texte und wies sie Konzilien oder Päpsten zu. Auch tilgte er Hinweise auf bestimmte Diözesen, wenn er Kapitel bischöflicher Kapitularien verwendete. Teilweise änderte er zudem vorliegende Texte ab, verfasste aber wohl eher selten neue.</p>
         <p>Ivo von Chartres rezipierte Burchards Sammlung direkt und sehr ausführlich, wodurch dann Gratian beeinflusst wurde. Wenn auch dieser eher die Ivo zugeschriebenen Sammlungen seiner Concordia discordantium canonum zugrundelegte, so bestehen doch die Paleae bezeichneten Ergänzungen zu einem erheblichen Teil aus Kapiteln des Decretum Burchardi. Die Wirkungsgeschichte reicht daher bis in das bis 1917 geltende Corpus Iuris Canonici. </p>
         <p>Heute sind noch mehr als 80 Handschriften des Dekrets erhalten, die meisten bieten den vollständigen Text. Hinzu kommen 24 Fragmente sowie ca. 15 Teilüberlieferungen, die verkürzte Fassungen mit Exzerpten aus mehreren Büchern oder einzelne Bücher des Dekrets enthalten. Das Bußfragen in theoretischer wie praktischer Hinsicht gewidmete 19. Buch kursierte wegen seiner seelsorgerlichen Bedeutung auch selbständig und nimmt eine Sonderstellung ein. </p>
-        <p>Aufgrund unterschiedlicher Anordnung einzelner Kapitel sowie wegen späterer Ergänzungen werden mehrere Hauptüberlieferungsgruppen des Werkes unterschieden. Die Editio princeps wurde 1548 auf der Basis einer Handschrift die dem vatikanischen Doppelkodex nahestand in Köln veranstaltet (nachgedruckt 1992). 1549/50 erfolgte ein weiterer Druck der Editio princeps, der insgesamt weniger zuverlässig ist, den aber Migne für seine Ausgabe des Dekrets in der Patrologia Latina nutzte. Die heute vorliegende Fassung in PL 140 basiert jedoch auf der späteren Ausgabe von 1868, die einen noch unzuverlässigeren Text bietet.</p>
+        <p>Aufgrund unterschiedlicher Anordnung einzelner Kapitel sowie wegen späterer Ergänzungen werden mehrere Hauptüberlieferungsgruppen des Werkes unterschieden. Die Editio princeps wurde 1548 auf der Basis einer Handschrift, die dem vatikanischen Doppelkodex nahestand in Köln veranstaltet (nachgedruckt 1992). 1549/50 erfolgte ein weiterer Druck der Editio princeps, der insgesamt weniger zuverlässig ist, den aber Migne für seine Ausgabe des Dekrets in der Patrologia Latina nutzte. Die heute vorliegende Fassung in PL 140 basiert jedoch auf der späteren Ausgabe von 1868, die einen noch unzuverlässigeren Text bietet.</p>
         <p>Das Projekt Burchards Dekret Digital wird daher die gesamte Breite der handschriftlichen Überlieferung erschließen, erstmals eine belastbare, kritische Edition erarbeiten sowie die reichen Rezeptionsspuren in Deutschland, Italien, Frankreich und Spanien sichten.</p>         
       </span>
 
@@ -49,11 +49,12 @@
         <p class="mt-4">
             <ul>
                 <li>GRETA AUSTIN, Shaping Church Law Around the Year 1000. The Decretum of Burchard of Worms (Church, Faith and Culture in the Medieval West), Famham, Surrey 2009.</li>
-                <li>PAUL FOURNIER, Études critiques sur le Décret de Burchard de Worms, in: Nouvelle revue historique de droit français et étranger 34 (1910) 41-112.213-221.289-331.564-584. –, Le décret de Burchard de Worms. Ses caractères, son influence, in: Revue d’histoire écclesiastique 12 (1911) 451-473.670-701.
+                <li>PAUL FOURNIER, Études critiques sur le Décret de Burchard de Worms, in: Nouvelle revue historique de droit français et étranger 34 (1910) 41-112.213-221.289-331.564-584.
                 </li>
-                <li>GÉRARD FRANSEN, Les sources de la Préface du Décret de Burchard de Worms, in: Bulletin of Medieval Canon Law NS 3 (1973) 1-6.
-                –, Le Décret de Burchard de Worms. Valeur du texte de l’édition. Essai de classement des manuscrits, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abttelung 63 (1977) 1-19.
-                –-, Le Décret de Burchard, in: Decretorum Libri XX. Ergänzter Neudruck der Editio princeps Köln 1548 (hrsg. von GÉRARD FRANSEN/THEO KÖLZER), Aalen 1992, 25-42.
+                <li>PAUL FOURNIER, Le décret de Burchard de Worms. Ses caractères, son influence, in: Revue d’histoire écclesiastique 12 (1911) 451-473.670-701.</li>
+                <li>GÉRARD FRANSEN, Les sources de la Préface du Décret de Burchard de Worms, in: Bulletin of Medieval Canon Law NS 3 (1973) 1-6.</li>
+                <li>GÉRARD FRANSEN, Le Décret de Burchard de Worms. Valeur du texte de l’édition. Essai de classement des manuscrits, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abteilung 63 (1977) 1-19.</li>
+                <li>GÉRARD FRANSEN, Le Décret de Burchard, in: Decretorum Libri XX. Ergänzter Neudruck der Editio princeps Köln 1548 (hrsg. von GÉRARD FRANSEN/THEO KÖLZER), Aalen 1992, 25-42.
                 </li>
                 <li>WILFRIED HARTMANN (Hrsg.), Bischof Burchard von Worms, 1000-1025 (Quellen und Abhandlungen zur mittelrheinischen Kirchengeschichte 100), Mainz 2000.</li>
                 <li>HARTMUT HOFFMANN/RUDOLF POKORNY, Das Dekret des Bischofs Burchard von Worms. Textstufen – Frühe Verbreitung – Vorlagen (MGH Hilfsmittel 12), München 1991.</li>
@@ -61,7 +62,7 @@
                 <li>MAX KERNER/FRANZ KERFF/RUDOLF POKORNY/KARL GEORG SCHON/HUBERT TILLS, Textidentifikation und Provenienzanalyse im Decretum Burchardi, in: Mélanges G. Fransen, Bd. 2 (Studia Gratiana 20), Rom 1976, 17-63.</li>
                 <li>LOTTE KÉRY, Canonical Collections of the Early Middle Ages, ca. 400-1140: A Biographical Guide to the Manuscripts and Literature (History of Medieval Canon Law), Washington, D.C. 1999.</li>
                 <li>BIRGIT KYNAST, Tradition und Innovation im kirchlichen Recht. Das Bußbuch im Dekret des Bischofs Burchard von Worms (Quellen und Forschungen zum Recht im Mittelalter 10), Ostfildern 2020.</li>
-                <li>OTTO MEYER, Überlieferung und Verbreitung des Dekrets des Bischofs Burchard von Worms, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abttelung 24 (1935) 141-183.</li>
+                <li>OTTO MEYER, Überlieferung und Verbreitung des Dekrets des Bischofs Burchard von Worms, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abteilung 24 (1935) 141-183.</li>
                 <li>ÉMILE VAN BALBERGHE: Les éditions du Décret de Burchard de Worms. Avatars d’un texte, in: Recherches de théologie ancienne et médiévale 37 (1970) 5-22.</li>
             </ul>  
         </p>      
