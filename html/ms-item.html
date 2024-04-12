@@ -433,6 +433,20 @@
             }
 
 
+//new function to redirect to desktop.html - doesn't pass the info
+            /*function redirectToTranscription() {
+                let selectedMs = new URLSearchParams(window.location.search).get('document');
+                let selectedBook = document.querySelector("#book-selector").value;
+                let selected = selectedMs + "-" + selectedBook;
+
+                if (selected) {
+                    // Redirect to desktop.html
+                    window.location.href = 'desktop.html';
+                    // Send message to desktop.html
+                    window.postMessage(selected, "*");
+                }
+            }*/
+
 
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;

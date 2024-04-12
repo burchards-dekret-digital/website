@@ -130,7 +130,7 @@
     </script>
 
 
-<!--SCRIPT TO RETRIEVE LIST FROM ZOTERO-->
+<!--SCRIPT TO RETRIEVE BIBL-LIST FROM ZOTERO-->
 <!--<script>
     const groupId = '148107';
     fetch(`https://api.zotero.org/groups/${groupId}/items`, {
@@ -256,7 +256,8 @@ console.error('Error fetching Zotero data:', error);
               });
               authorEditor = authorNames.join(", ");
               var monogr = $(this).find("monogr");
-              inValue = $(monogr).find("title").text() + " - " + $(monogr).find("editor").text();
+              inValue = title + ", Volume " + $(monogr).find("biblScope[unit='volume']").text() + ", Page " + $(monogr).find("biblScope[unit='page']").text();
+
             }
 
            // edition = $(this).find("edition").text();
