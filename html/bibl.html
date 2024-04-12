@@ -61,18 +61,18 @@
               <table id="literatureTable" class="table table-hover" style="width: 100%;">
                 <thead>
                   <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">Author/Editor</th>
-                    <th scope="col">Title</th>
+                    <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
+                    <th scope="col"><span lang="de">Autor/Editor</span><span lang="en">Author/Editor</span></th>
+                    <th scope="col"><span lang="de">Titel</span><span lang="en">Title</span></th>
                     <th scope="col">In</th>
                    <!--<th scope="col">Edition</th>-->
-                    <th scope="col" style="width: 50%;">Year</th>
-                    <th scope="col">Publication Place</th>
+                    <th scope="col" style="width: 50%;"><span lang="de">Jahr</span><span lang="en">Year</span></th>
+                    <th scope="col"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span></th>
                     <!--<th scope="col">Publisher</th>
                     <th scope="col">ID</th>
                     <th scope="col">Note</th>
                     <th scope="col" style="width: 50%;">Page range</th>-->
-                    <th scope="col">Series</th>
+                    <th scope="col"><span lang="de">Serie</span><span lang="en">Series</span></th>
                   </tr>
                   <tr>
                       <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter"></th>
@@ -82,7 +82,6 @@
                       <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" style="width: 80%;"></th>
                       <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" style="width: 90%;"></th>
                       <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter"></th>
-                      
                     </tr>
                 </thead>
                 <tbody>
@@ -232,10 +231,10 @@ console.error('Error fetching Zotero data:', error);
             $(xml).find('biblStruct').each(function() {
                 // Map type values to labels
                 var typeLabels = {
-                "book": "Book",
-                "journalArticle": "Journal article",
-                "bookSection": "Book section",
-                "encyclopediaArticle": "Encyclopedia article"
+                "book": "Buch",
+                "journalArticle": "Zeitschriftenartikel",
+                "bookSection": "Buchbeitrag",
+                "encyclopediaArticle": "Lexikonartikel"
                 };
             var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
             var title, authorEditor, inValue, edition, year, pubPlace, series;
@@ -256,10 +255,17 @@ console.error('Error fetching Zotero data:', error);
               });
               authorEditor = authorNames.join(", ");
               var monogr = $(this).find("monogr");
-              inValue = $(this).find("monogr > title").text() + ", Volume " + $(monogr).find("biblScope[unit='volume']").text() + ", Page " + $(monogr).find("biblScope[unit='page']").text();
+              //inValue = $(this).find("monogr > title").text() + ", Band " + $(monogr).find("biblScope[unit='volume']").text() + ", Seiten " + $(monogr).find("biblScope[unit='page']").text();
 
+
+              var volume = $(monogr).find("biblScope[unit='volume']").text();
+              var page = $(monogr).find("biblScope[unit='page']").text();
+              var volumeText = volume ? ", Band " + volume : "";
+              var pageText = page ? ", Seiten " + page : "";
+              inValue = $(this).find("monogr > title").text() + volumeText + pageText;
             }
 
+            id = $(this).attr("xml:id");
            // edition = $(this).find("edition").text();
             year = $(this).find("imprint > date").text();
             console.log(year)
@@ -281,7 +287,7 @@ console.error('Error fetching Zotero data:', error);
 
 
         // Construct table row
-            tableRows += "<tr>";
+            tableRows += "<tr id='" + id + "'>";
             tableRows += "<td>" + type + "</td>";
             tableRows += "<td>" + authorEditor + "</td>";
             tableRows += "<td>" + title + "</td>"; 
