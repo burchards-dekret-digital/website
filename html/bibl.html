@@ -66,7 +66,7 @@
                     <th scope="col"><span lang="de">Titel</span><span lang="en">Title</span></th>
                     <th scope="col">In</th>
                    <!--<th scope="col">Edition</th>-->
-                    <th scope="col" style="width: 50%;"><span lang="de">Jahr</span><span lang="en">Year</span></th>
+                    <th scope="col"><span lang="de">Jahr</span><span lang="en">Year</span></th>
                     <th scope="col"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span></th>
                     <!--<th scope="col">Publisher</th>
                     <th scope="col">ID</th>
@@ -75,13 +75,21 @@
                     <th scope="col"><span lang="de">Serie</span><span lang="en">Series</span></th>
                   </tr>
                   <tr>
-                      <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter"></th>
-                      <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter"></th>
-                      <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter"></th>
-                      <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter"></th>
-                      <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" style="width: 80%;"></th>
-                      <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" style="width: 90%;"></th>
-                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter"></th>
+                      <th scope="col">
+                        <select id="filter0" onchange="filter(0)" class="form-select" aria-label="Search type">
+                          <option value=""></option>
+                          <option value="Buch">Buch</option>
+                          <option value="Zeitschriftenartikel">Zeitschriftenartikel</option>
+                          <option value="Buchbeitrag">Buchbeitrag</option>
+                          <option value="Lexikonartikel">Lexikonartikel</option>
+                        </select>
+                      </th>
+                      <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Search" class="form-control" aria-label="Search Author/Editor"></th>
+                      <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Search" class="form-control" aria-label="Search Title"></th>
+                      <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Search" class="form-control" aria-label="Search In"></th>
+                      <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Search" class="form-control" aria-label="Search Year"></th>
+                      <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Search" class="form-control" aria-label="Search Publication Place"></th>
+                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Search" class="form-control" aria-label="Search Series"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -239,7 +247,7 @@ console.error('Error fetching Zotero data:', error);
             var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
             var title, authorEditor, inValue, edition, year, pubPlace, series;
 
-            if (type === "Book") {
+            if (type === "Buch") {
               title = $(this).find("monogr > title").text();
               var editorNames = [];
               $(this).find("monogr > editor").each(function() {
@@ -257,7 +265,7 @@ console.error('Error fetching Zotero data:', error);
               var monogr = $(this).find("monogr");
               //inValue = $(this).find("monogr > title").text() + ", Band " + $(monogr).find("biblScope[unit='volume']").text() + ", Seiten " + $(monogr).find("biblScope[unit='page']").text();
 
-
+              //Display Band and/or Seiten only if present
               var volume = $(monogr).find("biblScope[unit='volume']").text();
               var page = $(monogr).find("biblScope[unit='page']").text();
               var volumeText = volume ? ", Band " + volume : "";
@@ -342,15 +350,13 @@ console.error('Error fetching Zotero data:', error);
 
 
 <script>
-    function filter(key) {
-      // Declare variables
+    /*function filter(key) {
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("filter"+key);
       filter = input.value.toUpperCase();
       table = document.getElementById("literatureTable");
       tr = table.getElementsByTagName("tr");
     
-      // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[key];
         if (td) {
@@ -362,6 +368,28 @@ console.error('Error fetching Zotero data:', error);
           }
         }
       }
+    }*/
+
+    function filter(key) {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("filter"+key);
+      filter = input.value.toUpperCase();
+      table = document.getElementById("literatureTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[key];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (filter === "" || txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
     }
+
 </script>
 </html>
