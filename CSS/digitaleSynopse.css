@@ -11,27 +11,6 @@
 }
 
 
-#digital-synopsis {
-    font-family: 'Cardo', serif;
-    /* font-size: 120%; */
-    /* padding: 40px; */
-} 
-
-
-h2, h3, h4{
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5em;
-    /* text-transform: uppercase; */
-}
-
-msname[type="sigle"]{
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5em;
-    /* text-transform: uppercase; */
-}
-
-
-
 .tei_incipit{
     font-family: 'Oswald', sans-serif;
     font-size: 1.3em;
@@ -306,44 +285,18 @@ ol li{
     overflow: auto;
 }
 
-.button-edition {
-    font-family: BrandonGrotesqueLight!important;
-    /* background-color: white;
-    color: black;
-    border: 2px solid black;
-    cursor: pointer;
-    text-align: left;
-    margin-top: 5px;*/
-    margin-bottom: 5px;
-    width: 100% 
-} 
+
 
 .dropdown-item {
     font-family: BrandonGrotesqueLight!important;
 }
 
 
-button[onclick^="bddRemoveMs"]{
-    font-family: BrandonGrotesqueLight!important;
-    width:100%;
-    color: #6c757d;
-    border-color: #6c757d;
-    background-color:transparent;
-    border: 1px solid;
-    padding: 0.25rem 0.5rem;
-    font-size: .875rem;
-    border-radius: 0.2rem;
-}
-
-button[onclick^="bddRemoveMS"]:hover{
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
 
 em{
     font-style: normal;
 }
+
 
 .synch-menu-chapter-wrapper {
     position: relative;
