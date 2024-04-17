@@ -354,7 +354,9 @@
     <biblScope unit="volume">93</biblScope>
     <biblScope unit="page">1-33</biblScope>
     <date>2007</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="94Q26BC7" corresp="http://zotero.org/groups/2856754/items/94Q26BC7"> <analytic> <title level="a">La magia
+    </imprint> </monogr> </biblStruct> 
+    
+    <biblStruct type="journalArticle" xml:id="94Q26BC7" corresp="http://zotero.org/groups/2856754/items/94Q26BC7"> <analytic> <title level="a">La magia
     erótica en el Corrector sive medicus de Burchard von Worms</title> <author>
     <forename>Andrea Vanina</forename>
     <surname>Neyra</surname>
@@ -547,20 +549,33 @@
     <biblScope unit="issue">1</biblScope>
     <biblScope unit="page">19-36</biblScope>
     <date>2016</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="5J24Q4SV" corresp="http://zotero.org/groups/2856754/items/5J24Q4SV"> <analytic> <title level="a">Tradition
-    und Innovation im Dekret des Bischofs Burchard von Worms</title> <author>
-    <forename>Birgit</forename>
-    <surname>Kynast</surname>
-    </author> </analytic> <monogr> <title level="m">"Über den Gebrauch der Vernunft" - Theologie,
-    Philosophie und Kunst im Zentrum Europas um 1000</title> <idno type="ISBN">978-3-944380-89-6</idno> <editor>
-    <forename>Volker</forename>
-    <surname>Gallé</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Worms</pubPlace>
-    <biblScope unit="page">141-166</biblScope>
-    <publisher>Worms-Verlag</publisher>
-    <date>2020</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="94A36TKC" corresp="http://zotero.org/groups/2856754/items/94A36TKC"> <monogr> <title level="m">Bischof
+    </imprint> </monogr> </biblStruct> 
+    
+    <biblStruct type="bookSection" xml:id="5J24Q4SV" corresp="http://zotero.org/groups/2856754/items/5J24Q4SV"> 
+        <analytic> 
+            <title level="a">Tradition und Innovation im Dekret des Bischofs Burchard von Worms</title> 
+            <author>
+                <forename>Birgit</forename>
+                <surname>Kynast</surname>
+            </author> 
+        </analytic> 
+        <monogr> 
+            <title level="m">"Über den Gebrauch der Vernunft" - Theologie, Philosophie und Kunst im Zentrum Europas um 1000</title> <idno type="ISBN">978-3-944380-89-6</idno> 
+            <editor>
+                <forename>Volker</forename>
+                <surname>Gallé</surname>
+            </editor> 
+            <edition>1</edition> 
+            <imprint>
+                <pubPlace>Worms</pubPlace>
+                <biblScope unit="page">141-166</biblScope>
+                <publisher>Worms-Verlag</publisher>
+                <date>2020</date>
+            </imprint> 
+        </monogr> 
+    </biblStruct> 
+    
+    <biblStruct type="book" xml:id="94A36TKC" corresp="http://zotero.org/groups/2856754/items/94A36TKC"> <monogr> <title level="m">Bischof
     Burchard I. in seiner Zeit. Tagungsband zum biographisch-landeskundlichen Kolloquium vom 13. bis
     15. Oktober 2000 in Heilbad Heiligenstadt</title> <idno type="ISBN">978-3-929413-55-7</idno> <editor>
     <forename>Thomas T.</forename>
@@ -2801,19 +2816,27 @@
     </imprint> </monogr> <series>
     <title level="s">Mediaevalia Lovaniensia</title>
     <biblScope unit="volume">47</biblScope>
-    </series> </biblStruct> <biblStruct type="book" xml:id="3R6Q3Z9R" corresp="http://zotero.org/groups/2856754/items/3R6Q3Z9R"> <monogr> <title level="m">Tradition
-    und Innovation im kirchlichen Recht. Das Bußbuch im Dekret des Bischofs Burchard von
-    Worms</title> <idno type="ISBN">978-3-7995-6090-0</idno> <author>
-    <forename>Birgit</forename>
-    <surname>Kynast</surname>
-    </author> <imprint>
-    <pubPlace>Ostfildern</pubPlace>
-    <publisher>Jan Thorbecke Verlag</publisher>
-    <date>2020</date>
-    </imprint> </monogr> <series>
-    <title level="s">Quellen und Forschungen zum Recht im Mittelalter</title>
-    <biblScope unit="volume">10</biblScope>
-    </series> </biblStruct> <biblStruct type="book" xml:id="3WCIRZ4D" corresp="http://zotero.org/groups/2856754/items/3WCIRZ4D"> <monogr> <title level="m">Pastoral
+    </series> </biblStruct> 
+    
+    <biblStruct type="book" xml:id="3R6Q3Z9R" corresp="http://zotero.org/groups/2856754/items/3R6Q3Z9R"> 
+        <monogr> 
+            <title level="m">Tradition und Innovation im kirchlichen Recht. Das Bußbuch im Dekret des Bischofs Burchard von Worms</title> 
+            <idno type="ISBN">978-3-7995-6090-0</idno> 
+            <author>
+                <forename>Birgit</forename>
+                <surname>Kynast</surname>
+            </author> 
+            <imprint>
+                <pubPlace>Ostfildern</pubPlace>
+                <publisher>Jan Thorbecke Verlag</publisher>
+                <date>2020</date>
+            </imprint> 
+        </monogr> 
+        <series>
+            <title level="s">Quellen und Forschungen zum Recht im Mittelalter</title>
+            <biblScope unit="volume">10</biblScope>
+        </series> 
+    </biblStruct> <biblStruct type="book" xml:id="3WCIRZ4D" corresp="http://zotero.org/groups/2856754/items/3WCIRZ4D"> <monogr> <title level="m">Pastoral
     eschatological exegesis in Burchard of Worms' Decretum</title> <author>
     <forename>George David Capability</forename>
     <surname>House</surname>
@@ -3872,14 +3895,19 @@
     </imprint> </monogr> <series>
     <title level="s">Europäische Hochschulschriften Reihe III - Geschichte und ihre
         Hilfswissenschaften</title>
-    </series> </biblStruct> <biblStruct type="book" xml:id="X25FUV2K" corresp="http://zotero.org/groups/2856754/items/X25FUV2K"> <monogr> <title level="m">Das Dekret
-    des Bischofs Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen</title> <author>
-    <forename>Hartmut</forename>
-    <surname>Hoffmann</surname>
-    </author> <author>
-    <forename>Rudolf</forename>
-    <surname>Pokorny</surname>
-    </author> <imprint>
+    </series> </biblStruct> 
+    <biblStruct type="book" xml:id="X25FUV2K" corresp="http://zotero.org/groups/2856754/items/X25FUV2K"> 
+        <monogr> 
+            <title level="m">Das Dekret des Bischofs Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen</title> 
+            <author>
+                <forename>Hartmut</forename>
+                <surname>Hoffmann</surname>
+            </author> 
+            <author>
+                <forename>Rudolf</forename>
+                <surname>Pokorny</surname>
+            </author> 
+            <imprint>
     <pubPlace>München</pubPlace>
     <date>1991</date>
     </imprint> </monogr> <series>

@@ -62,7 +62,8 @@
                 <thead>
                   <tr>
                     <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
-                    <th scope="col"><span lang="de">Autor/Editor</span><span lang="en">Author/Editor</span></th>
+                    <th scope="col"><span lang="de">Autor</span><span lang="en">Author</span></th>
+                    <th scope="col"><span lang="de">Editor</span><span lang="en">Editor</span></th>
                     <th scope="col"><span lang="de">Titel</span><span lang="en">Title</span></th>
                     <th scope="col">In</th>
                    <!--<th scope="col">Edition</th>-->
@@ -84,12 +85,13 @@
                           <option value="Lexikonartikel">Lexikonartikel</option>
                         </select>
                       </th>
-                      <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Search" class="form-control" aria-label="Search Author/Editor"></th>
-                      <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Search" class="form-control" aria-label="Search Title"></th>
-                      <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Search" class="form-control" aria-label="Search In"></th>
-                      <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Search" class="form-control" aria-label="Search Year"></th>
-                      <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Search" class="form-control" aria-label="Search Publication Place"></th>
-                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Search" class="form-control" aria-label="Search Series"></th>
+                      <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Search" class="form-control" aria-label="Search Author"></th>
+                      <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Search" class="form-control" aria-label="Search Editor"></th>
+                      <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Search" class="form-control" aria-label="Search Title"></th>
+                      <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Search" class="form-control" aria-label="Search In"></th>
+                      <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Search" class="form-control" aria-label="Search Year"></th>
+                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Search" class="form-control" aria-label="Search Publication Place"></th>
+                      <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Search" class="form-control" aria-label="Search Series"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -245,23 +247,66 @@ console.error('Error fetching Zotero data:', error);
                 "encyclopediaArticle": "Lexikonartikel"
                 };
             var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
-            var title, authorEditor, inValue, edition, year, pubPlace, series;
+            var title, authorNames, editorNames, inValue, edition, year, pubPlace, series;
 
             if (type === "Buch") {
               title = $(this).find("monogr > title").text();
-              var editorNames = [];
-              $(this).find("monogr > editor").each(function() {
-                editorNames.push($(this).find("forename").text() + " " + $(this).find("surname").text());
-              });
-              authorEditor = editorNames.join(", ");
-              inValue = "";
-            } else {
-              title = $(this).find("analytic > title").text();
-              var authorNames = [];
-              $(this).find("analytic > author").each(function() {
-                authorNames.push($(this).find("forename").text() + " " + $(this).find("surname").text());
-              });
-              authorEditor = authorNames.join(", ");
+                  authorNames = [];
+                  $(this).find("monogr > author").each(function () {
+                      var forename = $(this).find("forename").text();
+                      var surname = $(this).find("surname").text();
+                      if (forename && surname) {
+                          authorNames.push(forename + " " + surname);
+                      } else {
+                          var name = $(this).find("name").text();
+                          if (name) {
+                              authorNames.push(name);
+                          }
+                      }
+                  });
+                  editorNames = [];
+                  $(this).find("monogr > editor").each(function () {
+                      var forename = $(this).find("forename").text();
+                      var surname = $(this).find("surname").text();
+                      if (forename && surname) {
+                          editorNames.push(forename + " " + surname);
+                      } else {
+                          var name = $(this).find("name").text();
+                          if (name) {
+                              editorNames.push(name);
+                          }
+                      }
+                  });
+                  inValue = "";
+              }
+              else {
+                  title = $(this).find("analytic > title").text();
+                  authorNames = [];
+                  $(this).find("analytic > author").each(function () {
+                      var forename = $(this).find("forename").text();
+                      var surname = $(this).find("surname").text();
+                      if (forename && surname) {
+                          authorNames.push(forename + " " + surname);
+                      } else {
+                          var name = $(this).find("name").text();
+                          if (name) {
+                              authorNames.push(name);
+                          }
+                      }
+                  });
+                  editorNames = [];
+                  $(this).find("monogr > editor").each(function () {
+                      var forename = $(this).find("forename").text();
+                      var surname = $(this).find("surname").text();
+                      if (forename && surname) {
+                          editorNames.push(forename + " " + surname);
+                      } else {
+                          var name = $(this).find("name").text();
+                          if (name) {
+                              editorNames.push(name);
+                          }
+                      }
+                  });
               var monogr = $(this).find("monogr");
               //inValue = $(this).find("monogr > title").text() + ", Band " + $(monogr).find("biblScope[unit='volume']").text() + ", Seiten " + $(monogr).find("biblScope[unit='page']").text();
 
@@ -297,7 +342,8 @@ console.error('Error fetching Zotero data:', error);
         // Construct table row
             tableRows += "<tr id='" + id + "'>";
             tableRows += "<td>" + type + "</td>";
-            tableRows += "<td>" + authorEditor + "</td>";
+            tableRows += "<td>" + authorNames.join(", ") + "</td>";
+            tableRows += "<td>" + editorNames.join(", ") + "</td>";
             tableRows += "<td>" + title + "</td>"; 
             tableRows += "<td>" + inValue + "</td>";
            // tableRows += "<td>" + edition + "</td>";
