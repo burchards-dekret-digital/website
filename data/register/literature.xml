@@ -135,8 +135,9 @@
     </imprint> </monogr> <series>
     <title level="s">MGH Studien und Texte</title>
     <biblScope unit="volume">39</biblScope>
-    </series> </biblStruct> <biblStruct type="book" xml:id="676ML2JW" corresp="http://zotero.org/groups/2856754/items/676ML2JW"> <monogr> <title level="m">Decretorum
-    Libri XX</title> <idno type="callNumber">F 166</idno> <editor>
+    </series> </biblStruct> <biblStruct type="book" xml:id="676ML2JW" corresp="http://zotero.org/groups/2856754/items/676ML2JW"> 
+    <monogr> 
+    <title level="m">Decretorum Libri XX</title> <idno type="callNumber">F 166</idno> <editor>
     <forename>Gérard</forename>
     <surname>Fransen</surname>
     </editor> <editor>
