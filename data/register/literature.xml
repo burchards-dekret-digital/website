@@ -14,45 +14,26 @@
     </teiHeader>
     <text>
         <body>
-    <!-- number of last modified zotero version --> 
-    <listBibl xml:id="4526"> 
-    <biblStruct type="journalArticle" xml:id="D3V7KEU9" corresp="http://zotero.org/groups/2856754/items/D3V7KEU9"> 
-        <analytic> 
-            <title level="a">Handschriftenforschung in Italien. I. Zur Überlieferung des Dekrets Bischof Burchards von Worms</title> 
-            <author>
-                <forename>Hubert</forename>
-                <surname>Mordek</surname>
-            </author> 
-        </analytic> 
-        <monogr> 
-            <title level="j">Quellen und Forschungen aus italienischen Archiven und Bibliotheken</title> 
-            <imprint>
-                <biblScope unit="volume">51</biblScope>
-                <biblScope unit="page">626-651</biblScope>
-                <date>1971</date>
-            </imprint> 
-        </monogr> 
-    </biblStruct> 
-    
-    <biblStruct type="book" xml:id="8L7D28F8" corresp="http://zotero.org/groups/2856754/items/8L7D28F8"> 
-        <monogr> 
-            <title level="m">Epistolae Romanorum pontificum genuinae et quae ad eos scriptae sunt a s. Hilario usque ad Pelagium II.</title> 
-            <editor>
-                <forename>Andreas</forename>
-                <surname>Thiel</surname>
-            </editor> 
-            <imprint>
-                <pubPlace>Braunsberg</pubPlace>
-                <publisher>Peter</publisher>
-                <date>1868</date>
-            </imprint> 
-        </monogr> 
-    </biblStruct> 
-    
-    <biblStruct type="book" xml:id="EM85N2BN" corresp="http://zotero.org/groups/2856754/items/EM85N2BN"> 
-        <monogr> 
-            <title level="m">Pachomiana Latina</title> 
-            <editor>
+    <!-- number of last modified zotero version --> <listBibl xml:id="4931"> <biblStruct type="journalArticle" xml:id="D3V7KEU9" corresp="http://zotero.org/groups/2856754/items/D3V7KEU9"> <analytic> <title level="a">Handschriftenforschung in Italien. I. Zur Überlieferung des Dekrets Bischof Burchards von
+    Worms</title> <author>
+    <forename>Hubert</forename>
+    <surname>Mordek</surname>
+    </author> </analytic> <monogr> <title level="j">Quellen und Forschungen aus italienischen
+    Archiven und Bibliotheken</title> <imprint>
+    <biblScope unit="volume">51</biblScope>
+    <biblScope unit="page">626-651</biblScope>
+    <date>1971</date>
+    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="8L7D28F8" corresp="http://zotero.org/groups/2856754/items/8L7D28F8"> <monogr> <title level="m">Epistolae
+    Romanorum pontificum genuinae et quae ad eos scriptae sunt a s. Hilario usque ad Pelagium
+    II.</title> <editor>
+    <forename>Andreas</forename>
+    <surname>Thiel</surname>
+    </editor> <imprint>
+    <pubPlace>Braunsberg</pubPlace>
+    <publisher>Peter</publisher>
+    <date>1868</date>
+    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="EM85N2BN" corresp="http://zotero.org/groups/2856754/items/EM85N2BN"> <monogr> <title level="m">Pachomiana
+    Latina</title> <editor>
     <forename>Amand</forename>
     <surname>Boon</surname>
     </editor> <imprint>
@@ -61,9 +42,7 @@
     <date>1932</date>
     </imprint> </monogr> <series>
     <title level="s">Bibliothèque de la revue d'historie ecclésiastique</title>
-    </series> </biblStruct> 
-    
-    <biblStruct type="book" xml:id="BBCCJBGK" corresp="http://zotero.org/groups/2856754/items/BBCCJBGK"> <monogr> <title level="m">Concilia
+    </series> </biblStruct> <biblStruct type="book" xml:id="BBCCJBGK" corresp="http://zotero.org/groups/2856754/items/BBCCJBGK"> <monogr> <title level="m">Concilia
     Galliae a. 314-a. 506</title> <editor>
     <forename>Charles</forename>
     <surname>Munier</surname>
@@ -73,10 +52,7 @@
     <date>1963</date>
     </imprint> </monogr> <series>
     <title level="s">Corpus Christianorum, Series Latina</title>
-    </series> </biblStruct> 
-    
-    
-    <biblStruct type="book" xml:id="JBBHE4XN" corresp="http://zotero.org/groups/2856754/items/JBBHE4XN"> <monogr> <title level="m">Ambrosiastri qui dicitur comentarius in epistolas Paulinas 3: In epistvlas ad Galata, ad
+    </series> </biblStruct> <biblStruct type="book" xml:id="JBBHE4XN" corresp="http://zotero.org/groups/2856754/items/JBBHE4XN"> <monogr> <title level="m">Ambrosiastri qui dicitur comentarius in epistolas Paulinas 3: In epistvlas ad Galata, ad
     Efesios, ad Filippenses, ad Colosenses, ad Thessalonicenses, ad Timothevm, ad Titvm, ad
     Filemonem</title> <editor>
     <forename>Heinrich Josef</forename>
@@ -135,21 +111,7 @@
     </imprint> </monogr> <series>
     <title level="s">MGH Studien und Texte</title>
     <biblScope unit="volume">39</biblScope>
-    </series> </biblStruct> <biblStruct type="book" xml:id="676ML2JW" corresp="http://zotero.org/groups/2856754/items/676ML2JW"> 
-    <monogr> 
-    <title level="m">Decretorum Libri XX</title> <idno type="callNumber">F 166</idno> <editor>
-    <forename>Gérard</forename>
-    <surname>Fransen</surname>
-    </editor> <editor>
-    <forename>Theo</forename>
-    <surname>Kölzer</surname>
-    </editor> <editor>
-    <name>Burchard von Worms</name>
-    </editor> <imprint>
-    <pubPlace>Aalen</pubPlace>
-    <publisher>Scientia Verlag</publisher>
-    <date>1992</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="TLXGDVTL" corresp="http://zotero.org/groups/2856754/items/TLXGDVTL"> <monogr> <title level="m">Lex Romana
+    </series> </biblStruct> <biblStruct type="book" xml:id="TLXGDVTL" corresp="http://zotero.org/groups/2856754/items/TLXGDVTL"> <monogr> <title level="m">Lex Romana
     Visigothorum</title> <author>
     <forename>Gustav Friedrich</forename>
     <surname>Haenel</surname>
@@ -179,41 +141,22 @@
     <pubPlace>New Haven</pubPlace>
     <publisher>Yale University Press</publisher>
     <date>1950</date>
-    </imprint> </monogr> </biblStruct> 
-    
-    <biblStruct type="book" xml:id="END3NDXA" corresp="http://zotero.org/groups/2856754/items/END3NDXA"> 
-        <monogr> 
-            <title level="m">El Epítome hispánico</title> 
-            <author>
-                <forename>Gonzalo</forename>
-                <surname>Martínez Díez</surname>
-            </author> 
-            <imprint>
-                <pubPlace>Santander</pubPlace>
-                <date>1962</date>
-            </imprint> 
-        </monogr> 
-    </biblStruct> 
-    
-    <biblStruct type="journalArticle" xml:id="CBA8ZU63" corresp="http://zotero.org/groups/2856754/items/CBA8ZU63"> 
-        <analytic> 
-            <title level="a">Die Regula Macharii</title> 
-            <author>
-                <forename>Helga</forename>
-                <surname>Styblo</surname>
-            </author> 
-        </analytic> 
-        <monogr> 
-            <title level="j">Wiener Studien</title> 
-            <imprint>
-                <biblScope unit="volume">76</biblScope>
-                <biblScope unit="page">124-158</biblScope>
-                <date>1963</date>
-            </imprint> 
-        </monogr> 
-    </biblStruct> 
-    
-    <biblStruct type="book" xml:id="WG6XHYSY" corresp="http://zotero.org/groups/2856754/items/WG6XHYSY"> <monogr> <title level="m">Mélanges
+    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="END3NDXA" corresp="http://zotero.org/groups/2856754/items/END3NDXA"> <monogr> <title level="m">El Epítome
+    hispánico</title> <author>
+    <forename>Gonzalo</forename>
+    <surname>Martínez Díez</surname>
+    </author> <imprint>
+    <pubPlace>Santander</pubPlace>
+    <date>1962</date>
+    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="CBA8ZU63" corresp="http://zotero.org/groups/2856754/items/CBA8ZU63"> <analytic> <title level="a">Die
+    Regula Macharii</title> <author>
+    <forename>Helga</forename>
+    <surname>Styblo</surname>
+    </author> </analytic> <monogr> <title level="j">Wiener Studien</title> <imprint>
+    <biblScope unit="volume">76</biblScope>
+    <biblScope unit="page">124-158</biblScope>
+    <date>1963</date>
+    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="WG6XHYSY" corresp="http://zotero.org/groups/2856754/items/WG6XHYSY"> <monogr> <title level="m">Mélanges
     Roger Aubenas</title> <author>
     <name>Société d'Histoire du Droit et des Institutions des anciens pays de droit écrit</name>
     </author> <imprint>
@@ -245,39 +188,24 @@
     <forename>Andrea Vanina</forename>
     <surname>Neyra</surname>
     </author> </analytic> <monogr> <title level="j">Mirabilia. Revista Eletrônica de História Antiga
-    e Medieval</title> <idno type="ISSN">1676-5818</idno> <imprint><biblScope unit="volume">3</biblScope> <biblScope unit="page">130-145</biblScope> <date>2003</date> <note type="url">http://dialnet.unirioja.es/servlet/articulo?codigo=2226969&amp;orden=103711&amp;info=link</note>
-    </imprint> </monogr> </biblStruct> 
-    
-    <biblStruct type="bookSection" xml:id="DPMB6X43" corresp="http://zotero.org/groups/2856754/items/DPMB6X43"> 
-        <analytic> 
-            <title level="a">Würde des Menschen. Die mittelalterliche Begründung eines modernen Konzepts</title> 
-            <author>
-                <forename>Matthias</forename>
-                <surname>Perkams</surname>
-            </author> 
-        </analytic> 
-        <monogr> 
-            <title level="m">Friedensethik im frühen Mittelalter. Theologie zwischen Kritik und Legitimation von Gewalt</title> 
-            <idno type="ISBN">978-3-402-11690-6</idno> 
-            <editor>
-                <forename>Gerhard</forename>
-                <surname>Beestermöller</surname>
-            </editor> 
-            <edition>1</edition> 
-            <imprint>
-                <pubPlace>Münster</pubPlace>
-                <biblScope unit="page">305-326</biblScope>
-                <publisher>Nomos, Aschendorff</publisher>
-                <date>2014</date>
-            </imprint> 
-        </monogr> 
-        <series>
-            <title level="s">Studien zur Friedensethik</title>
-            <biblScope unit="volume">46</biblScope>
-        </series> 
-    </biblStruct> 
-        
-        <biblStruct type="book" xml:id="G5PKVIT5" corresp="http://zotero.org/groups/2856754/items/G5PKVIT5"> <monogr> <title level="m">Sex and the
+    e Medieval</title> <idno type="ISSN">1676-5818</idno> <imprint> <biblScope unit="volume">3</biblScope> <biblScope unit="page">130-145</biblScope> <date>2003</date> <note type="url">http://dialnet.unirioja.es/servlet/articulo?codigo=2226969&amp;orden=103711&amp;info=link</note>
+    </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="DPMB6X43" corresp="http://zotero.org/groups/2856754/items/DPMB6X43"> <analytic> <title level="a">Würde des
+    Menschen. Die mittelalterliche Begründung eines modernen Konzepts</title> <author>
+    <forename>Matthias</forename>
+    <surname>Perkams</surname>
+    </author> </analytic> <monogr> <title level="m">Friedensethik im frühen Mittelalter. Theologie
+    zwischen Kritik und Legitimation von Gewalt</title> <idno type="ISBN">978-3-402-11690-6</idno> <editor>
+    <forename>Gerhard</forename>
+    <surname>Beestermöller</surname>
+    </editor> <edition>1</edition> <imprint>
+    <pubPlace>Münster</pubPlace>
+    <biblScope unit="page">305-326</biblScope>
+    <publisher>Nomos, Aschendorff</publisher>
+    <date>2014</date>
+    </imprint> </monogr> <series>
+    <title level="s">Studien zur Friedensethik</title>
+    <biblScope unit="volume">46</biblScope>
+    </series> </biblStruct> <biblStruct type="book" xml:id="G5PKVIT5" corresp="http://zotero.org/groups/2856754/items/G5PKVIT5"> <monogr> <title level="m">Sex and the
     Penitentials. The Development of a Sexual Code, 550-1150</title> <idno type="ISBN">978-0-8020-5649-8</idno> <author>
     <forename>Pierre J.</forename>
     <surname>Payer</surname>
@@ -285,15 +213,6 @@
     <pubPlace>Toronto, Buffalo, London</pubPlace>
     <publisher>University of Toronto Press</publisher>
     <date>1984</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="3QVN6BC5" corresp="http://zotero.org/groups/2856754/items/3QVN6BC5"> <analytic> <title level="a">Early
-    medieval regulations concerning marital sexual relations</title> <author>
-    <forename>Pierre J.</forename>
-    <surname>Payer</surname>
-    </author> </analytic> <monogr> <title level="j">Journal of Medieval History</title> <idno type="ISSN">0304-4181</idno> <imprint>
-    <biblScope unit="volume">6</biblScope>
-    <biblScope unit="issue">4</biblScope>
-    <biblScope unit="page">353-376</biblScope>
-    <date>1980</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="CZ2FIJE6" corresp="http://zotero.org/groups/2856754/items/CZ2FIJE6"> <monogr> <title level="m">Law, sex,
     and christian society in medieval Europe</title> <idno type="ISBN">0-226-07783-7</idno> <author>
     <forename>James A.</forename>
@@ -355,9 +274,7 @@
     <biblScope unit="volume">93</biblScope>
     <biblScope unit="page">1-33</biblScope>
     <date>2007</date>
-    </imprint> </monogr> </biblStruct> 
-    
-    <biblStruct type="journalArticle" xml:id="94Q26BC7" corresp="http://zotero.org/groups/2856754/items/94Q26BC7"> <analytic> <title level="a">La magia
+    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="94Q26BC7" corresp="http://zotero.org/groups/2856754/items/94Q26BC7"> <analytic> <title level="a">La magia
     erótica en el Corrector sive medicus de Burchard von Worms</title> <author>
     <forename>Andrea Vanina</forename>
     <surname>Neyra</surname>
@@ -453,21 +370,6 @@
     <biblScope unit="volume">26</biblScope>
     <biblScope unit="page">27-42</biblScope>
     <date>1976</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="IZTCQ2GM" corresp="http://zotero.org/groups/2856754/items/IZTCQ2GM"> <analytic> <title level="a">Das
-    Wormser Hofrecht Bischof Burchards</title> <author>
-    <name>Knut Schulz</name>
-    </author> </analytic> <monogr> <title level="m">Die Freiheit des Bürgers. Städtische
-    Gesellschaft im Hoch- und Spätmittelalter</title> <idno type="ISBN">978-3-534-21350-4</idno> <editor>
-    <forename>Knut</forename>
-    <surname>Schulz</surname>
-    </editor> <editor>
-    <forename>Matthias</forename>
-    <surname>Krüger</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Darmstadt</pubPlace>
-    <biblScope unit="page">17-40</biblScope>
-    <publisher>Wissenschaftliche Buchgesellschaft</publisher>
-    <date>2008</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="JU8MRZHR" corresp="http://zotero.org/groups/2856754/items/JU8MRZHR"> <analytic> <title level="a">Editing
     the Canon-Law Collections between Burchard and Gratian</title> <author>
     <forename>Martin</forename>
@@ -550,33 +452,20 @@
     <biblScope unit="issue">1</biblScope>
     <biblScope unit="page">19-36</biblScope>
     <date>2016</date>
-    </imprint> </monogr> </biblStruct> 
-    
-    <biblStruct type="bookSection" xml:id="5J24Q4SV" corresp="http://zotero.org/groups/2856754/items/5J24Q4SV"> 
-        <analytic> 
-            <title level="a">Tradition und Innovation im Dekret des Bischofs Burchard von Worms</title> 
-            <author>
-                <forename>Birgit</forename>
-                <surname>Kynast</surname>
-            </author> 
-        </analytic> 
-        <monogr> 
-            <title level="m">"Über den Gebrauch der Vernunft" - Theologie, Philosophie und Kunst im Zentrum Europas um 1000</title> <idno type="ISBN">978-3-944380-89-6</idno> 
-            <editor>
-                <forename>Volker</forename>
-                <surname>Gallé</surname>
-            </editor> 
-            <edition>1</edition> 
-            <imprint>
-                <pubPlace>Worms</pubPlace>
-                <biblScope unit="page">141-166</biblScope>
-                <publisher>Worms-Verlag</publisher>
-                <date>2020</date>
-            </imprint> 
-        </monogr> 
-    </biblStruct> 
-    
-    <biblStruct type="book" xml:id="94A36TKC" corresp="http://zotero.org/groups/2856754/items/94A36TKC"> <monogr> <title level="m">Bischof
+    </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="5J24Q4SV" corresp="http://zotero.org/groups/2856754/items/5J24Q4SV"> <analytic> <title level="a">Tradition
+    und Innovation im Dekret des Bischofs Burchard von Worms</title> <author>
+    <forename>Birgit</forename>
+    <surname>Kynast</surname>
+    </author> </analytic> <monogr> <title level="m">"Über den Gebrauch der Vernunft" - Theologie,
+    Philosophie und Kunst im Zentrum Europas um 1000</title> <idno type="ISBN">978-3-944380-89-6</idno> <editor>
+    <forename>Volker</forename>
+    <surname>Gallé</surname>
+    </editor> <edition>1</edition> <imprint>
+    <pubPlace>Worms</pubPlace>
+    <biblScope unit="page">141-166</biblScope>
+    <publisher>Worms-Verlag</publisher>
+    <date>2020</date>
+    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="94A36TKC" corresp="http://zotero.org/groups/2856754/items/94A36TKC"> <monogr> <title level="m">Bischof
     Burchard I. in seiner Zeit. Tagungsband zum biographisch-landeskundlichen Kolloquium vom 13. bis
     15. Oktober 2000 in Heilbad Heiligenstadt</title> <idno type="ISBN">978-3-929413-55-7</idno> <editor>
     <forename>Thomas T.</forename>
@@ -673,15 +562,7 @@
     </imprint> </monogr> <series>
     <title level="s">Bayreuther Beiträge zur Literaturwissenschaft</title>
     <biblScope unit="volume">34</biblScope>
-    </series> </biblStruct> <biblStruct type="journalArticle" xml:id="BVL62RG3" corresp="http://zotero.org/groups/2856754/items/BVL62RG3"> <analytic> <title level="a">Burchard
-    von Worms</title> <author>
-    <forename>Mathilde</forename>
-    <surname>Hain</surname>
-    </author> </analytic> <monogr> <title level="j">Hessische Blätter für Volkskunde</title> <idno type="ISSN">0342-1260</idno> <imprint>
-    <biblScope unit="volume">47/48</biblScope>
-    <biblScope unit="page">39-50</biblScope>
-    <date>1956</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="SI7EMSVK" corresp="http://zotero.org/groups/2856754/items/SI7EMSVK"> <analytic> <title level="a">Ehe und
+    </series> </biblStruct> <biblStruct type="bookSection" xml:id="SI7EMSVK" corresp="http://zotero.org/groups/2856754/items/SI7EMSVK"> <analytic> <title level="a">Ehe und
     Familie im frühen 11. Jahrhundert im Spiegel des "Hofrechts" des Bischofs Burchard von
     Worms</title> <author>
     <forename>Hans-Werner</forename>
@@ -704,25 +585,7 @@
     présentation, traduction et commentaire ethno-historique</title> <author>
     <forename>Francois</forename>
     <surname>Gagnon</surname>
-    </author> <imprint> <pubPlace>Montréal</pubPlace> <date>2010</date> <note type="accessed">2022-08-11</note> <note type="url">http://hdl.handle.net/1866/4915</note> <note type="thesisType">Mémoire de maîtrise</note> </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="GW8I8USF" corresp="http://zotero.org/groups/2856754/items/GW8I8USF">
-    <analytic> <title level="a">Kanonistische Konzilsüberlieferung und Archetyp. Zur Qualität von
-    Burchardtexten</title> <author>
-    <forename>Horst</forename>
-    <surname>Fuhrmann</surname>
-    </author> </analytic> <monogr> <title level="m">Proceedings of the eighth international congress
-    of medieval canon law, San Diego, University of California at La Jolla, 21-27 August
-    1988</title> <idno type="ISBN">978-88-210-0634-0</idno> <editor>
-    <forename>Stanley A.</forename>
-    <surname>Chodorow</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Città del Vaticano</pubPlace>
-    <biblScope unit="page">57-61</biblScope>
-    <publisher>Biblioteca Apostolica Vaticana</publisher>
-    <date>1992</date>
-    </imprint> </monogr> <series>
-    <title level="s">Monumenta iuris canonici, Series C: Subsidia</title>
-    <biblScope unit="volume">9</biblScope>
-    </series> </biblStruct> <biblStruct type="journalArticle" xml:id="WD4H95PC" corresp="http://zotero.org/groups/2856754/items/WD4H95PC"> <analytic> <title level="a">Canon law
+    </author> <imprint> <pubPlace>Montréal</pubPlace> <date>2010</date> <note type="accessed">2022-08-11</note> <note type="url">http://hdl.handle.net/1866/4915</note> <note type="thesisType">Mémoire de maîtrise</note> </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="WD4H95PC" corresp="http://zotero.org/groups/2856754/items/WD4H95PC"> <analytic> <title level="a">Canon law
     and the practice of penance: Burchard of Worms's penitential</title> <idno type="DOI">https://doi.org/10.1111/j.1468-0254.2006.00176.x</idno> <author>
     <forename>Ludger</forename>
     <surname>Körntgen</surname>
@@ -1196,22 +1059,6 @@
     </imprint> </monogr> <series>
     <title level="s">Forschungen zur Kirchenrechtswissenschaft</title>
     <biblScope unit="volume">12</biblScope>
-    </series> </biblStruct> <biblStruct type="bookSection" xml:id="3X7MGQUS" corresp="http://zotero.org/groups/2856754/items/3X7MGQUS"> <analytic> <title level="a">Sovereignty and tabu. Evolution of the sanction against communication with
-    excommunicates</title> <author>
-    <forename>Elisabeth</forename>
-    <surname>Vodola</surname>
-    </author> </analytic> <monogr> <title level="m">Studia in honorem Eminentissimi Cardinalis
-    Alphonsi M. Stickler</title> <idno type="ISBN">88-213-0215-6</idno> <editor>
-    <forename>Rosalio José</forename>
-    <surname>Castillo Lara</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Rom</pubPlace>
-    <biblScope unit="page">581-598</biblScope>
-    <publisher>LAS</publisher>
-    <date>1992</date>
-    </imprint> </monogr> <series>
-    <title level="s">Studia et textus historiae juris canonici</title>
-    <biblScope unit="volume">7</biblScope>
     </series> </biblStruct> <biblStruct type="journalArticle" xml:id="KJKQKQTK" corresp="http://zotero.org/groups/2856754/items/KJKQKQTK"> <analytic> <title level="a">Die drei
     Versionen der Triburer Synodalakten von 895. Eine Neubewertung</title> <author>
     <forename>Rudolf</forename>
@@ -1234,22 +1081,6 @@
     </imprint> </monogr> <series>
     <title level="s">Monumenta iuris canonici, Series C: Subsidia</title>
     <biblScope unit="volume">9</biblScope>
-    </series> </biblStruct> <biblStruct type="bookSection" xml:id="KK4QJR57" corresp="http://zotero.org/groups/2856754/items/KK4QJR57"> <analytic> <title level="a">La
-    primauté pontificale dans le Décret de Gratien</title> <author>
-    <forename>Jean</forename>
-    <surname>Gaudemet</surname>
-    </author> </analytic> <monogr> <title level="m">Studia in honorem Eminentissimi Cardinalis
-    Alphonsi M. Stickler</title> <idno type="ISBN">88-213-0215-6</idno> <editor>
-    <forename>Rosalio José</forename>
-    <surname>Castillo Lara</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Rom</pubPlace>
-    <biblScope unit="page">137-156</biblScope>
-    <publisher>LAS</publisher>
-    <date>1992</date>
-    </imprint> </monogr> <series>
-    <title level="s">Studia et textus historiae juris canonici</title>
-    <biblScope unit="volume">7</biblScope>
     </series> </biblStruct> <biblStruct type="bookSection" xml:id="KHNXP4BM" corresp="http://zotero.org/groups/2856754/items/KHNXP4BM"> <analytic> <title level="a">Jacopo
     della Marca e le streghe</title> <author>
     <forename>Franco</forename>
@@ -1495,30 +1326,6 @@
     </imprint> </monogr> <series>
     <title level="s">Quellen und Forschungen zum Recht im Mittelalter</title>
     <biblScope unit="volume">5</biblScope>
-    </series> </biblStruct> <biblStruct type="journalArticle" xml:id="TJKZPALV" corresp="http://zotero.org/groups/2856754/items/TJKZPALV"> <analytic> <title level="a">Burchardauszüge in Dekrethandschriften und ihre Verwendung bei Rufin und als Paleae im Dekret
-    Gratians</title> <author>
-    <forename>Rudolf</forename>
-    <surname>Weigand</surname>
-    </author> </analytic> <monogr> <title level="j">Archiv für katholisches Kirchenrecht</title>
-    <idno type="ISSN">00039160</idno> <imprint>
-    <biblScope unit="volume">158</biblScope>
-    <biblScope unit="page">429-451</biblScope>
-    <date>1989</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="X9385GCX" corresp="http://zotero.org/groups/2856754/items/X9385GCX"> <monogr> <title level="m">Manoscritti
-    vaticani latini 14666-15203. Catalogo sommario</title> <idno type="ISBN">978-88-210-0618-0</idno> <extent>1</extent> <editor>
-    <forename>Ambrogio M.</forename>
-    <surname>Piazzoni</surname>
-    </editor> <editor>
-    <forename>Paolo</forename>
-    <surname>Vian</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Vatican City</pubPlace>
-    <biblScope unit="volume">1</biblScope>
-    <publisher>Biblioteca Apostolica Vaticana</publisher>
-    <date>1989</date>
-    </imprint> </monogr> <series>
-    <title level="s">Studi e testi</title>
-    <biblScope unit="volume">332</biblScope>
     </series> </biblStruct> <biblStruct type="bookSection" xml:id="D73GFSBW" corresp="http://zotero.org/groups/2856754/items/D73GFSBW"> <analytic> <title level="a">Bemerkungen zu der Kirchenrechtswissenschaft um das Jahr 1000</title> <author>
     <forename>Georg</forename>
     <surname>May</surname>
@@ -1699,26 +1506,7 @@
     </imprint> </monogr> <series>
     <title level="s">MGH Concilia</title>
     <biblScope unit="volume">6,1</biblScope>
-    </series> </biblStruct> <biblStruct type="book" xml:id="S4C457AM" corresp="http://zotero.org/groups/2856754/items/S4C457AM"> <monogr> <title level="m">ABC Saint
-    Claude, Bibliothèque municipale, Ms. 3 (17), Initiaalvariaties en een XIIe euuws handschrift:
-    Variétés des initiales d'un manuscrit du XIIe siecle: Variety of Initials in a Twelfth-Century
-    Manuscript</title> <author>
-    <forename>Emile</forename>
-    <surname>Van Balberghe</surname>
-    </author> <respStmt> <resp>translator</resp> <persName>
-    <forename>D.</forename>
-    <surname>Van den Auweele</surname>
-    </persName> </respStmt> <respStmt> <resp>translator</resp> <persName>
-    <forename>M.</forename>
-    <surname>Oppitz</surname>
-    </persName> </respStmt> <respStmt> <resp>translator</resp> <persName>
-    <forename>K.</forename>
-    <surname>Jordá</surname>
-    </persName> </respStmt> <edition>1</edition> <imprint>
-    <pubPlace>Leuven</pubPlace>
-    <publisher>Leuven Ceuterick</publisher>
-    <date>1987</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="UHWERAHS" corresp="http://zotero.org/groups/2856754/items/UHWERAHS"> <analytic> <title level="a">Zur
+    </series> </biblStruct> <biblStruct type="bookSection" xml:id="UHWERAHS" corresp="http://zotero.org/groups/2856754/items/UHWERAHS"> <analytic> <title level="a">Zur
     Ausbildung eines kirchlichen Judenrechts bei Burchard von Worms und Ivo von Chartres</title> <author>
     <forename>Friedrich</forename>
     <surname>Lotter</surname>
@@ -1762,14 +1550,6 @@
     <biblScope unit="volume">3</biblScope>
     <biblScope unit="page">1-7</biblScope>
     <date>1973</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="PEDZWUIM" corresp="http://zotero.org/groups/2856754/items/PEDZWUIM"> <analytic> <title level="a">La
-    Préface du Décret et la 'Collectio XII Partium'</title> <author>
-    <forename>Emile</forename>
-    <surname>Van Balberghe</surname>
-    </author> </analytic> <monogr> <title level="j">Bulletin of Medieval Canon Law NS</title> <idno type="ISSN">01462989</idno> <imprint>
-    <biblScope unit="volume">3</biblScope>
-    <biblScope unit="page">7-9</biblScope>
-    <date>1973</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="P786K6H3" corresp="http://zotero.org/groups/2856754/items/P786K6H3"> <analytic> <title level="a">Admoneatur Imperator. Altchristliche und frühmittelalterliche Texte zur
     Herrscherparänese</title> <author>
     <forename>Norbert</forename>
@@ -1795,24 +1575,6 @@
     </imprint> </monogr> <series>
     <title level="s">Medioevo. Facciamo parlare i protagonisti. Collana di documenti, testi e
         saggi</title>
-    </series> </biblStruct> <biblStruct type="bookSection" xml:id="Z9XDRE4T" corresp="http://zotero.org/groups/2856754/items/Z9XDRE4T"> <analytic> <title level="a">Observations on 'De consecratione'</title> <author>
-    <forename>John H.</forename>
-    <surname>Van Engen</surname>
-    </author> </analytic> <monogr> <title level="m">Proceedings of the Sixth International Congress
-    of Medieval Canon Law. Berkeley, California, 28 July-2 August 1980</title> <idno type="ISBN">978-88-210-0570-1</idno> <editor>
-    <forename>Stephan</forename>
-    <surname>Kuttner</surname>
-    </editor> <editor>
-    <forename>Kenneth</forename>
-    <surname>Pennington</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Vatikanstadt</pubPlace>
-    <biblScope unit="page">309-320</biblScope>
-    <publisher>Biblioteca Apostolica Vaticana</publisher>
-    <date>1985</date>
-    </imprint> </monogr> <series>
-    <title level="s">Monumenta iuris canonici, Series C: Subsidia</title>
-    <biblScope unit="volume">7</biblScope>
     </series> </biblStruct> <biblStruct type="book" xml:id="FZ6ZZNR9" corresp="http://zotero.org/groups/2856754/items/FZ6ZZNR9"> <monogr> <title level="m">Teufelsglaube und Hexenwahn</title> <author>
     <forename>Bruno</forename>
     <surname>Gloger</surname>
@@ -1935,14 +1697,6 @@
     <biblScope unit="volume">28</biblScope>
     <biblScope unit="page">157-166</biblScope>
     <date>1978</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="MB3H4T45" corresp="http://zotero.org/groups/2856754/items/MB3H4T45"> <analytic> <title level="a">Kurzformen des Dekrets Bischof Burchards von Worms</title> <author>
-    <forename>Peter</forename>
-    <surname>Brommer</surname>
-    </author> </analytic> <monogr> <title level="j">Jahrbuch für westdeutsche
-    Landesgeschichte</title> <idno type="ISSN">01702025</idno> <imprint>
-    <biblScope unit="volume">1</biblScope>
-    <biblScope unit="page">19-46</biblScope>
-    <date>1975</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="RXV38BGG" corresp="http://zotero.org/groups/2856754/items/RXV38BGG"> <analytic> <title level="a">Le
     manuscrit de Burchard de Worms conservé à la Bibliothèque municipale de Montpellier</title> <author>
     <forename>Gérard</forename>
@@ -2211,15 +1965,6 @@
     <biblScope unit="page">Sp. 1121-1127</biblScope>
     <publisher>Walter de Gruyter</publisher>
     <date>1978</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="NK5KBW9D" corresp="http://zotero.org/groups/2856754/items/NK5KBW9D"> <monogr> <title level="m">Die
-    Klerikerehe in der Gesetzgebung der Kirche unter besonderer Berücksichtigung der Strafe: Eine
-    rechtsgeschichtliche Untersuchung von den Anfängen der Kirche bis zum Jahre 1139</title> <author>
-    <forename>Martin</forename>
-    <surname>Boelens</surname>
-    </author> <edition>1</edition> <imprint>
-    <pubPlace>Paderborn</pubPlace>
-    <publisher>Ferdinan Schöningh</publisher>
-    <date>1968</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="3AJAIXMK" corresp="http://zotero.org/groups/2856754/items/3AJAIXMK"> <analytic> <title level="a">History
     and Tradition in Eleventh-Century Rome</title> <author>
     <forename>Uta-Renate</forename>
@@ -2458,14 +2203,6 @@
     <pubPlace>München</pubPlace>
     <publisher>C. H. Beck</publisher>
     <date>2018</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="journalArticle" xml:id="I3J33QJG" corresp="http://zotero.org/groups/2856754/items/I3J33QJG"> <analytic> <title level="a">Die
-    Rechtslehre des Magisters Gratianus</title> <idno type="DOI">1971-4726</idno> <author>
-    <forename>Franz</forename>
-    <surname>Arnold</surname>
-    </author> </analytic> <monogr> <title level="j">Studia Gratiana</title> <imprint>
-    <biblScope unit="volume">1</biblScope>
-    <biblScope unit="page">451-482</biblScope>
-    <date>1953</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="X8XP3M7L" corresp="http://zotero.org/groups/2856754/items/X8XP3M7L"> <analytic> <title level="a">Textidentifikation und Provenienzanalyse im Decretum Burchardi</title> <author>
     <forename>Max</forename>
     <surname>Kerner</surname>
@@ -2502,14 +2239,6 @@
     <pubPlace>Stuttgart</pubPlace>
     <publisher>Kohlhammer</publisher>
     <date>2001</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="YPRUICEP" corresp="http://zotero.org/groups/2856754/items/YPRUICEP"> <monogr> <title level="m">Zölibat.
-    Ursprung und Geltung</title> <idno type="ISBN">978-3-88096-000-8</idno> <author>
-    <forename>Anton</forename>
-    <surname>Antweiler</surname>
-    </author> <edition>1</edition> <imprint>
-    <pubPlace>München</pubPlace>
-    <publisher>Max Hueber Verlag</publisher>
-    <date>1969</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="bookSection" xml:id="KILAUKRY" corresp="http://zotero.org/groups/2856754/items/KILAUKRY"> <analytic> <title level="a">“Diuersa
     sed non aduersa”: Anselm of Laon, Twelfth-Century Biblical Hermeneutics, and the Difference a
     Letter Makes</title> <author>
@@ -2817,27 +2546,19 @@
     </imprint> </monogr> <series>
     <title level="s">Mediaevalia Lovaniensia</title>
     <biblScope unit="volume">47</biblScope>
-    </series> </biblStruct> 
-    
-    <biblStruct type="book" xml:id="3R6Q3Z9R" corresp="http://zotero.org/groups/2856754/items/3R6Q3Z9R"> 
-        <monogr> 
-            <title level="m">Tradition und Innovation im kirchlichen Recht. Das Bußbuch im Dekret des Bischofs Burchard von Worms</title> 
-            <idno type="ISBN">978-3-7995-6090-0</idno> 
-            <author>
-                <forename>Birgit</forename>
-                <surname>Kynast</surname>
-            </author> 
-            <imprint>
-                <pubPlace>Ostfildern</pubPlace>
-                <publisher>Jan Thorbecke Verlag</publisher>
-                <date>2020</date>
-            </imprint> 
-        </monogr> 
-        <series>
-            <title level="s">Quellen und Forschungen zum Recht im Mittelalter</title>
-            <biblScope unit="volume">10</biblScope>
-        </series> 
-    </biblStruct> <biblStruct type="book" xml:id="3WCIRZ4D" corresp="http://zotero.org/groups/2856754/items/3WCIRZ4D"> <monogr> <title level="m">Pastoral
+    </series> </biblStruct> <biblStruct type="book" xml:id="3R6Q3Z9R" corresp="http://zotero.org/groups/2856754/items/3R6Q3Z9R"> <monogr> <title level="m">Tradition
+    und Innovation im kirchlichen Recht. Das Bußbuch im Dekret des Bischofs Burchard von
+    Worms</title> <idno type="ISBN">978-3-7995-6090-0</idno> <author>
+    <forename>Birgit</forename>
+    <surname>Kynast</surname>
+    </author> <imprint>
+    <pubPlace>Ostfildern</pubPlace>
+    <publisher>Jan Thorbecke Verlag</publisher>
+    <date>2020</date>
+    </imprint> </monogr> <series>
+    <title level="s">Quellen und Forschungen zum Recht im Mittelalter</title>
+    <biblScope unit="volume">10</biblScope>
+    </series> </biblStruct> <biblStruct type="book" xml:id="3WCIRZ4D" corresp="http://zotero.org/groups/2856754/items/3WCIRZ4D"> <monogr> <title level="m">Pastoral
     eschatological exegesis in Burchard of Worms' Decretum</title> <author>
     <forename>George David Capability</forename>
     <surname>House</surname>
@@ -3296,15 +3017,6 @@
     <pubPlace>Paris</pubPlace>
     <biblScope unit="page">189-214</biblScope>
     <date>1902</date>
-    </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="BE9MZATC" corresp="http://zotero.org/groups/2856754/items/BE9MZATC"> <monogr> <title level="m">Geschichte
-    der rheinischen Städtekultur</title> <extent>4</extent> <author>
-    <forename>Heinrich</forename>
-    <surname>Boos</surname>
-    </author> <edition>2</edition> <imprint>
-    <pubPlace>Berlin</pubPlace>
-    <biblScope unit="volume">1</biblScope>
-    <publisher>J.A. Stargardt</publisher>
-    <date>1897</date>
     </imprint> </monogr> </biblStruct> <biblStruct type="book" xml:id="W98KWPG4" corresp="http://zotero.org/groups/2856754/items/W98KWPG4"> <monogr> <title level="m">Die
     Cluniacenser in ihrer kirchlichen und allgemeingeschichtlichen Wirksamkeit bis zur Mitte des
     elften Jahrhunderts</title> <extent>2</extent> <author>
@@ -3896,19 +3608,14 @@
     </imprint> </monogr> <series>
     <title level="s">Europäische Hochschulschriften Reihe III - Geschichte und ihre
         Hilfswissenschaften</title>
-    </series> </biblStruct> 
-    <biblStruct type="book" xml:id="X25FUV2K" corresp="http://zotero.org/groups/2856754/items/X25FUV2K"> 
-        <monogr> 
-            <title level="m">Das Dekret des Bischofs Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen</title> 
-            <author>
-                <forename>Hartmut</forename>
-                <surname>Hoffmann</surname>
-            </author> 
-            <author>
-                <forename>Rudolf</forename>
-                <surname>Pokorny</surname>
-            </author> 
-            <imprint>
+    </series> </biblStruct> <biblStruct type="book" xml:id="X25FUV2K" corresp="http://zotero.org/groups/2856754/items/X25FUV2K"> <monogr> <title level="m">Das Dekret
+    des Bischofs Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen</title> <author>
+    <forename>Hartmut</forename>
+    <surname>Hoffmann</surname>
+    </author> <author>
+    <forename>Rudolf</forename>
+    <surname>Pokorny</surname>
+    </author> <imprint>
     <pubPlace>München</pubPlace>
     <date>1991</date>
     </imprint> </monogr> <series>
@@ -4007,22 +3714,8 @@
     </imprint> </monogr> <series>
     <title level="s">Collection Haut Moyen Âge</title>
     <biblScope unit="volume">42</biblScope>
-    </series> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/7EK6HB7T" type="encyclopediaArticle" xml:id="7EK6HB7T"> <analytic> <title level="a">Burchard von Worms
-    (965-1025)</title> <author>
-    <forename>Jörg</forename>
-    <surname>Müller</surname>
-    </author> </analytic> <monogr> <title level="m">Handwörterbuch zur deutschen
-    Rechtsgeschichte</title> <idno type="ISBN">978-3-503-07912-4</idno> <extent>6</extent> <editor>
-    <forename>Albrecht</forename>
-    <surname>Cordes</surname>
-    </editor> <edition>2</edition> <imprint>
-    <pubPlace>Berlin</pubPlace>
-    <biblScope unit="volume">1</biblScope>
-    <biblScope unit="page">Sp. 734-736</biblScope>
-    <publisher>Erich Schmidt Verlag</publisher>
-    <date>2008</date>
-    </imprint> </monogr> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/IR6TESEQ" type="bookSection" xml:id="IR6TESEQ">
-    <analytic> <title level="a">Collectio Duodecim Partium und Decretum Burchardi</title> <author>
+    </series> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/IR6TESEQ" type="bookSection" xml:id="IR6TESEQ"> <analytic> <title level="a">Collectio Duodecim Partium und
+    Decretum Burchardi</title> <author>
     <forename>Jörg</forename>
     <surname>Müller</surname>
     </author> </analytic> <monogr> <title level="m">Proceedings of the eighth international congress
@@ -4038,22 +3731,6 @@
     </imprint> </monogr> <series>
     <title level="s">Monumenta iuris canonici, Series C: Subsidia</title>
     <biblScope unit="volume">9</biblScope>
-    </series> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/H3SFH5UE" type="book" xml:id="H3SFH5UE"> <monogr> <title level="m">Medieval and Renaissance manuscripts at
-    the University of California, Los Angeles</title> <idno type="ISBN">978-0-520-09687-5</idno>
-    <extent>1</extent> <author>
-    <forename>Mirella</forename>
-    <surname>Ferrari</surname>
-    </author> <editor>
-    <forename>Richard Hunter</forename>
-    <surname>Rouse</surname>
-    </editor> <edition>1</edition> <imprint>
-    <pubPlace>Berkeley u.a.</pubPlace>
-    <biblScope unit="volume">1</biblScope>
-    <publisher>University of California Press</publisher>
-    <date>1991</date>
-    </imprint> </monogr> <series>
-    <title level="s">Medieval and Renaissance manuscripts in California libraries</title>
-    <biblScope unit="volume">2</biblScope>
     </series> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/SNIXHT8C" type="journalArticle" xml:id="SNIXHT8C"> <analytic> <title level="a">Consideraciones sobre la
     tipología del pecado en el Corrector de Burchard von Worms</title> <author>
     <forename>Andrea Vanina</forename>
@@ -4186,25 +3863,7 @@
     <biblScope unit="volume">34</biblScope>
     <biblScope unit="page">41-112, 213,221, 289-331, 564-584</biblScope>
     <date>1910</date>
-    </imprint> </monogr> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/DI92EU4F" type="encyclopediaArticle" xml:id="DI92EU4F"><analytic><title level="a">Encyclopedia of the Middle Ages</title><author>
-    <forename>Brigitte</forename>
-    <surname>Basdevant-Gaudemet</surname>
-    </author></analytic><monogr><title level="m">Burchard of Worms (c. 965-1025)</title><idno type="ISBN">9781579582821</idno><extent>2</extent><editor>
-    <forename>André</forename>
-    <surname>Vauchez</surname>
-    </editor><editor>
-    <forename>Richard Barrie</forename>
-    <surname>Dobson</surname>
-    </editor><editor>
-    <forename>Michael</forename>
-    <surname>Lapidge</surname>
-    </editor><edition>1</edition><imprint>
-    <pubPlace>Cambridge</pubPlace>
-    <biblScope unit="volume">1</biblScope>
-    <biblScope unit="page">207</biblScope>
-    <publisher>Routledge</publisher>
-    <date>2001</date>
-    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/ZDB6DJFU" type="book" xml:id="ZDB6DJFU"><monogr><title level="m">Die Collectio Francofurtana: eine französische Decretalensammlung.
+    </imprint> </monogr> </biblStruct> <biblStruct corresp="http://zotero.org/groups/2856754/items/ZDB6DJFU" type="book" xml:id="ZDB6DJFU"><monogr><title level="m">Die Collectio Francofurtana: eine französische Decretalensammlung.
     Analyse beruhend auf Vorarbeiten von Walther Holtzmann</title><idno type="ISBN">9788821008207</idno><editor>
     <forename>Giesela</forename>
     <surname>Drossbach</surname>
@@ -4223,39 +3882,7 @@
     <forename>George</forename>
     <surname>House</surname>
     </author><edition>1</edition><imprint><pubPlace>Exeter</pubPlace><publisher>University of
-    Exeter</publisher><date>2014</date><note type="url">http://hdl.handle.net/10871/19524</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/M8FUVV82" type="bookSection" xml:id="M8FUVV82"><analytic><title level="a">Burchard of Worms</title><author>
-    <forename>Greta</forename>
-    <surname>Austin</surname>
-    </author></analytic><monogr><title level="m">Great Christian Jurists and Legal Collections in
-    the First Millennium</title><idno type="ISBN">9781108471718</idno><editor>
-    <forename>Philip Lyndon</forename>
-    <surname>Reynolds</surname>
-    </editor><edition>1</edition><imprint>
-    <pubPlace>Cambridge, New York, Port Melbourne, New Delhi</pubPlace>
-    <biblScope unit="page">458-470</biblScope>
-    <publisher>Cambridge University Press</publisher>
-    <date>2019</date>
-    </imprint></monogr><series>
-    <title level="s">Cambridge studies in law and christianity</title>
-    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/TI3WI5LZ" type="bookSection" xml:id="TI3WI5LZ"><analytic><title level="a">Arti e fate a banchetto, e i
-    loro doni. Per la storia del reimpiego dottrinale di un motivo folklorico</title><author>
-    <forename>Gabriella</forename>
-    <surname>Moretti</surname>
-    </author></analytic><monogr><title level="m">Testi e modelli antropologici. Seminario del Centro
-    di ricerche in scienza della letteratura</title><idno type="ISBN">978-88-7695-069-8</idno><extent>1</extent><editor>
-    <forename>Massimo</forename>
-    <surname>Bonafin</surname>
-    </editor><edition>1</edition><imprint>
-    <pubPlace>Mailand</pubPlace>
-    <biblScope unit="volume">1</biblScope>
-    <biblScope unit="page">137-165</biblScope>
-    <publisher>Arcipelago</publisher>
-    <date>1989</date>
-    </imprint></monogr><series>
-    <title level="s">Linee</title>
-    <biblScope unit="volume">2</biblScope>
-    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/ZSWZ8X5V" type="bookSection" xml:id="ZSWZ8X5V"><analytic><title level="a">Der Reichsbischof in ottonischer
-    und frühsalischer Zeit</title><author>
+    Exeter</publisher><date>2014</date><note type="url">http://hdl.handle.net/10871/19524</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/ZSWZ8X5V" type="bookSection" xml:id="ZSWZ8X5V"><analytic><title level="a">Der Reichsbischof in ottonischer und frühsalischer Zeit</title><author>
     <forename>Odilo</forename>
     <surname>Engels</surname>
     </author></analytic><monogr><title level="m">Beiträge zu Geschichte und Struktur der
@@ -4270,17 +3897,8 @@
     </imprint></monogr><series>
     <title level="s">Veröffentlichungen des Max-Planck-Instituts für Geschichte</title>
     <biblScope unit="volume">93</biblScope>
-    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/KL4PECNI" type="journalArticle" xml:id="KL4PECNI"><analytic><title level="a">Neue Erkenntnisse zum Dekret
-    Burchards von Worms</title><author>
-    <forename>Rudolf</forename>
-    <surname>Weigand</surname>
-    </author></analytic><monogr><title level="j">Archiv für katholisches Kirchenrecht</title><idno type="ISSN">00039160</idno><imprint>
-    <biblScope unit="volume">162</biblScope>
-    <biblScope unit="issue">1</biblScope>
-    <biblScope unit="page">125-134</biblScope>
-    <date>1993</date>
-    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/WDM22YHJ" type="bookSection" xml:id="WDM22YHJ"><analytic><title level="a">Singing canon law. Neumes in manuscripts of the Decretum of Burchard
-    of Worms</title><author>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/WDM22YHJ" type="bookSection" xml:id="WDM22YHJ"><analytic><title level="a">Singing canon law. Neumes in
+    manuscripts of the Decretum of Burchard of Worms</title><author>
     <forename>Stephan</forename>
     <surname>Dusil</surname>
     </author><author>
@@ -4313,54 +3931,6 @@
     </imprint></monogr><series>
     <title level="s">Studien zur Europäischen Rechtsgeschichte</title>
     <biblScope unit="volume">142</biblScope>
-    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/3IIKZSCH" type="bookSection" xml:id="3IIKZSCH"><analytic><title level="a">Omtrent de 'Speculator' van
-    Burchard van Worms ( 1025): Een naschrift bij de historische millenniumdrukte</title><author>
-    <forename>Dirk M. J. van den</forename>
-    <surname>Auweele</surname>
-    </author></analytic><monogr><title level="m">In de voetsporen van Jacob van Maerlant: Liber
-    amicorum Raf De Keyser Verzameling opstellen over middeleeuwse geschiedenis en
-    geschiedenisdidactiek</title><idno type="ISBN">978-9058672568</idno><editor>
-    <forename>Raoul</forename>
-    <surname>Bauer</surname>
-    </editor><edition>1</edition><imprint>
-    <pubPlace>Lueven</pubPlace>
-    <biblScope unit="page">90-100</biblScope>
-    <publisher>Universitaire Pers</publisher>
-    <date>2002</date>
-    </imprint></monogr><series>
-    <title level="s">Symbolae Facultatis Litterarum Lovaniensis A</title>
-    <biblScope unit="volume">30</biblScope>
-    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/G2J3DDHQ" type="bookSection" xml:id="G2J3DDHQ"><analytic><title level="a">Burchard of Worms (c.
-    965-1025)</title><author>
-    <forename>William</forename>
-    <surname>Schipper</surname>
-    </author></analytic><monogr><title level="m">The rise of the medieval world, 500-1300. A
-    biographical dictionary</title><idno type="ISBN">9780313308178</idno><editor>
-    <forename>Jana K.</forename>
-    <surname>Schulman</surname>
-    </editor><edition>1</edition><imprint>
-    <pubPlace>Westport (Connecticut)</pubPlace>
-    <biblScope unit="page">86-87</biblScope>
-    <publisher>Greenwood Publishing Group</publisher>
-    <date>2002</date>
-    </imprint></monogr><series>
-    <title level="s">The great cultural eras of the Western world</title>
-    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/JMLP88S6" type="bookSection" xml:id="JMLP88S6"><analytic><title level="a">Canon law and litigation. The
-    Century before Gratian</title><author>
-    <forename>Martin</forename>
-    <surname>Brett</surname>
-    </author></analytic><monogr><title level="m">Medieval ecclesiastical studies. In honour of
-    Dorothy M. Owen</title><idno type="ISBN">978-0-85115-384-1</idno><editor>
-    <forename>Christopher</forename>
-    <surname>Harper-Bill</surname>
-    </editor><edition>1</edition><imprint>
-    <pubPlace>Woodbridge</pubPlace>
-    <biblScope unit="page">21-40</biblScope>
-    <publisher>Boydell &amp; Brewer</publisher>
-    <date>1995</date>
-    </imprint></monogr><series>
-    <title level="s">Studies in the history of medieval religion</title>
-    <biblScope unit="volume">7</biblScope>
     </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/J7YFHV2W" type="book" xml:id="J7YFHV2W"><monogr><title level="m">Medieval Canon Law</title><idno type="ISBN">978-0-582-09356-0</idno><author>
     <forename>James A</forename>
     <surname>Brundage</surname>
@@ -4421,6 +3991,482 @@
     </imprint></monogr><series>
     <title level="s">Monumenta iuris canonici C</title>
     <biblScope unit="volume">15</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/95K4SJXT" type="book" xml:id="95K4SJXT"><monogr><title level="m">The Early Councils of Pope Paschal II
+    1100-1110</title><idno type="ISBN">088844043X</idno><author>
+    <forename>Ute-Renate</forename>
+    <surname>Blumenthal</surname>
+    </author><imprint>
+    <pubPlace>Toronto</pubPlace>
+    <publisher>Pontifical Institute of Medieval Studies</publisher>
+    <date>1978</date>
+    </imprint></monogr><series>
+    <title level="s">Studies and Texts</title>
+    <biblScope unit="volume">43</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/676ML2JW" type="book" xml:id="676ML2JW"><monogr><title level="m">Decretorum Libri XX</title><idno type="callNumber">F 166</idno><editor>
+    <forename>Gérard</forename>
+    <surname>Fransen</surname>
+    </editor><editor>
+    <forename>Theo</forename>
+    <surname>Kölzer</surname>
+    </editor><author>
+    <name>Burchard von Worms</name>
+    </author><imprint>
+    <pubPlace>Aalen</pubPlace>
+    <publisher>Scientia Verlag</publisher>
+    <date>1992</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/DTEFQT5P" type="journalArticle" xml:id="DTEFQT5P"><analytic><title level="a">Rezension zu: Wolfgang P. Müller, Marriage
+    Litigation in the Western Church, 1215–1517, Cambridge 2021</title><idno type="DOI">https://doi.org/10.1515/hzhz-2023-1082</idno><author>
+    <name>Antenhofer, Christina</name>
+    </author></analytic><monogr><title level="j">Historische Zeitschrift</title><idno type="ISSN">0018-2613</idno><imprint>
+    <biblScope unit="volume">316</biblScope>
+    <biblScope unit="issue">2</biblScope>
+    <biblScope unit="page">449-450</biblScope>
+    <date>2023</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/PEDZWUIM" type="journalArticle" xml:id="PEDZWUIM"><analytic><title level="a">La Préface du Décret et la 'Collectio XII
+    Partium'</title><author>
+    <forename>Emile</forename>
+    <surname>van Balberghe</surname>
+    </author></analytic><monogr><title level="j">Bulletin of Medieval Canon Law NS</title><idno type="ISSN">01462989</idno><imprint>
+    <biblScope unit="volume">3</biblScope>
+    <biblScope unit="page">7-9</biblScope>
+    <date>1973</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/Z9XDRE4T" type="bookSection" xml:id="Z9XDRE4T"><analytic><title level="a">Observations on 'De consecratione'</title><author>
+    <forename>John H.</forename>
+    <surname>van Engen</surname>
+    </author></analytic><monogr><title level="m">Proceedings of the Sixth International Congress of
+    Medieval Canon Law. Berkeley, California, 28 July-2 August 1980</title><idno type="ISBN">978-88-210-0570-1</idno><editor>
+    <forename>Stephan</forename>
+    <surname>Kuttner</surname>
+    </editor><editor>
+    <forename>Kenneth</forename>
+    <surname>Pennington</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Vatikanstadt</pubPlace>
+    <biblScope unit="page">309-320</biblScope>
+    <publisher>Biblioteca Apostolica Vaticana</publisher>
+    <date>1985</date>
+    </imprint></monogr><series>
+    <title level="s">Monumenta iuris canonici, Series C: Subsidia</title>
+    <biblScope unit="volume">7</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/S4C457AM" type="book" xml:id="S4C457AM"><monogr><title level="m">ABC Saint Claude, Bibliothèque
+    municipale, Ms. 3 (17), Initiaalvariaties en een XIIe euuws handschrift: Variétés des initiales
+    d'un manuscrit du XIIe siecle: Variety of Initials in a Twelfth-Century Manuscript</title><author>
+    <forename>Emile</forename>
+    <surname>van Balberghe</surname>
+    </author><respStmt><resp>translator</resp><persName>
+    <forename>D.</forename>
+    <surname>Van den Auweele</surname>
+    </persName></respStmt><respStmt><resp>translator</resp><persName>
+    <forename>M.</forename>
+    <surname>Oppitz</surname>
+    </persName></respStmt><respStmt><resp>translator</resp><persName>
+    <forename>K.</forename>
+    <surname>Jordá</surname>
+    </persName></respStmt><edition>1</edition><imprint>
+    <pubPlace>Leuven</pubPlace>
+    <publisher>Leuven Ceuterick</publisher>
+    <date>1987</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/IZTCQ2GM" type="bookSection" xml:id="IZTCQ2GM"><analytic><title level="a">Das Wormser Hofrecht Bischof Burchards</title><author>
+    <name>Schulz, Knut</name>
+    </author></analytic><monogr><title level="m">Die Freiheit des Bürgers. Städtische Gesellschaft
+    im Hoch- und Spätmittelalter</title><idno type="ISBN">978-3-534-21350-4</idno><editor>
+    <forename>Knut</forename>
+    <surname>Schulz</surname>
+    </editor><editor>
+    <forename>Matthias</forename>
+    <surname>Krüger</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Darmstadt</pubPlace>
+    <biblScope unit="page">17-40</biblScope>
+    <publisher>Wissenschaftliche Buchgesellschaft</publisher>
+    <date>2008</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/CZUCR46U" type="webpage" xml:id="CZUCR46U"><analytic>
+    <title level="a">Pal.lat.586</title>
+    </analytic><monogr><title level="m">BAV Online Catalogue</title><imprint><date/><note type="url">https://opac.vatlib.it/mss/detail/Pal.lat.586</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/4RB4AETH" type="webpage" xml:id="4RB4AETH"><analytic>
+    <title level="a">Pal.lat.585</title>
+    </analytic><monogr><title level="m">BAV Online Catalogue</title><imprint><date/><note type="url">https://opac.vatlib.it/mss/detail/Pal.lat.585</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/HFKDBBV5" type="book" xml:id="HFKDBBV5"><monogr><title level="m">Handschriftencensus Rheinland: Erfassung mittelalterlicher
+    Handschriften im rheinischen Landesteil von Nordrhein-Westfalen</title><author>
+    <forename>Heinz</forename>
+    <surname>Finger</surname>
+    </author><author>
+    <forename>Marianne</forename>
+    <surname>Riethmüller</surname>
+    </author><imprint><pubPlace>Wiesbaden</pubPlace><publisher>Günter
+    Gattermann</publisher><date>1993</date><note type="url">https://digital.dombibliothek-koeln.de/hs/content/description/333890</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/ZJBTC6PV" type="book" xml:id="ZJBTC6PV"><monogr><title level="m">Glaube und Wissen im Mittelalter. Katalogbuch zur Ausstellung</title><author>
+    <forename>Anton von</forename>
+    <surname>Euw</surname>
+    </author><imprint><pubPlace>München</pubPlace><date>1998</date><note type="url">https://digital.dombibliothek-koeln.de/hs/content/description/333889</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/5BQWHI4G" type="book" xml:id="5BQWHI4G"><monogr><title level="m">Ecclesiae Metropolitanae Coloniensis codices manuscripti
+    descripserunt</title><author>
+    <forename>Philip</forename>
+    <surname>Jaffé</surname>
+    </author><author>
+    <forename>Wilhelm</forename>
+    <surname>Wattenbach</surname>
+    </author><imprint>
+    <pubPlace>Berlin</pubPlace>
+    <date>1874</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/WEXXBHSM" type="webpage" xml:id="WEXXBHSM"><analytic>
+    <title level="a">Beschreibung von Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod.
+        119</title>
+    </analytic><monogr><title level="m">Diözesanbibliothek Köln Digitale
+    Sammlung</title><imprint><date/><note type="accessed">2024-04-08</note><note type="url">https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/UTEWENMG" type="book" xml:id="UTEWENMG"><monogr><title level="m">Die Handschriften des Bartholomaeusstifts und des Karmeliterklosters
+    in Frankfurt am Main (Kataloge der Stadt- und Universitätsbibliothek Frankfurt am Main
+    3,II)</title><author>
+    <forename>Gerhardt</forename>
+    <surname>Powitz</surname>
+    </author><author>
+    <forename>Herbert</forename>
+    <surname>Buck</surname>
+    </author><imprint><pubPlace>Frankfurt am Main</pubPlace><biblScope unit="volume">3,
+    II</biblScope><publisher>Clemens Köttelwesch</publisher><date>1974</date><note type="url">https://sammlungen.ub.uni-frankfurt.de/kataloge/content/thumbview/1552737</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/S4SDIXUE" type="book" xml:id="S4SDIXUE"><monogr><title level="m">Katalog der Handschriften der Königlichen Bibliothek zu
+    Bamberg</title><author>
+    <forename>Friedrich</forename>
+    <surname>Leitschuh</surname>
+    </author><author>
+    <forename>Hans</forename>
+    <surname>Fischer</surname>
+    </author><imprint><pubPlace>Wiesbaden</pubPlace><biblScope unit="volume">1. Band, 1.
+    Abteilung</biblScope><publisher>Otto Harrassowitz</publisher><date>1966</date><note type="url">http://bilder.manuscripta-mediaevalia.de/hs//kataloge/HSK0600.htm</note></imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/3X7MGQUS" type="bookSection" xml:id="3X7MGQUS"><analytic><title level="a">Sovereignty and tabu. Evolution of the sanction against
+    communication with excommunicates</title><author>
+    <forename>Elisabeth</forename>
+    <surname>Vodola</surname>
+    </author></analytic><monogr><title level="m">Studia in honorem Eminentissimi Cardinalis Alphonsi
+    M. Stickler</title><idno type="ISBN">88-213-0215-6</idno><editor>
+    <forename>Rosalio José</forename>
+    <surname>Castillo Lara</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Rom</pubPlace>
+    <biblScope unit="page">581-598</biblScope>
+    <publisher>LAS</publisher>
+    <date>1992</date>
+    </imprint></monogr><series>
+    <title level="s">Studia et textus historiae juris canonici</title>
+    <biblScope unit="volume">7</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/KK4QJR57" type="bookSection" xml:id="KK4QJR57"><analytic><title level="a">La primauté pontificale dans le
+    Décret de Gratien</title><author>
+    <forename>Jean</forename>
+    <surname>Gaudemet</surname>
+    </author></analytic><monogr><title level="m">Studia in honorem Eminentissimi Cardinalis Alphonsi
+    M. Stickler</title><idno type="ISBN">88-213-0215-6</idno><editor>
+    <forename>Rosalio José</forename>
+    <surname>Castillo Lara</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Rom</pubPlace>
+    <biblScope unit="page">137-156</biblScope>
+    <publisher>LAS</publisher>
+    <date>1992</date>
+    </imprint></monogr><series>
+    <title level="s">Studia et textus historiae juris canonici</title>
+    <biblScope unit="volume">7</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/I3J33QJG" type="journalArticle" xml:id="I3J33QJG"><analytic><title level="a">Die Rechtslehre des Magisters
+    Gratianus</title><idno type="DOI">1971-4726</idno><author>
+    <forename>Franz</forename>
+    <surname>Arnold</surname>
+    </author></analytic><monogr><title level="j">Studia Gratiana</title><imprint>
+    <biblScope unit="volume">1</biblScope>
+    <biblScope unit="page">451-482</biblScope>
+    <date>1953</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/YPRUICEP" type="book" xml:id="YPRUICEP"><monogr><title level="m">Zölibat. Ursprung und Geltung</title><idno type="ISBN">978-3-88096-000-8</idno><author>
+    <forename>Anton</forename>
+    <surname>Antweiler</surname>
+    </author><edition>1</edition><imprint>
+    <pubPlace>München</pubPlace>
+    <publisher>Max Hueber Verlag</publisher>
+    <date>1969</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/7EK6HB7T" type="encyclopediaArticle" xml:id="7EK6HB7T"><analytic><title level="a">Burchard von Worms (965-1025)</title><author>
+    <forename>Jörg</forename>
+    <surname>Müller</surname>
+    </author></analytic><monogr><title level="m">Handwörterbuch zur deutschen
+    Rechtsgeschichte</title><idno type="ISBN">978-3-503-07912-4</idno><extent>6</extent><editor>
+    <forename>Albrecht</forename>
+    <surname>Cordes</surname>
+    </editor><edition>2</edition><imprint>
+    <pubPlace>Berlin</pubPlace>
+    <biblScope unit="volume">1</biblScope>
+    <biblScope unit="page">Sp. 734-736</biblScope>
+    <publisher>Erich Schmidt Verlag</publisher>
+    <date>2008</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/X9385GCX" type="book" xml:id="X9385GCX"><monogr><title level="m">Manoscritti vaticani latini 14666-15203. Catalogo
+    sommario</title><idno type="ISBN">978-88-210-0618-0</idno><extent>1</extent><editor>
+    <forename>Ambrogio M.</forename>
+    <surname>Piazzoni</surname>
+    </editor><editor>
+    <forename>Paolo</forename>
+    <surname>Vian</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Vatican City</pubPlace>
+    <biblScope unit="volume">1</biblScope>
+    <publisher>Biblioteca Apostolica Vaticana</publisher>
+    <date>1989</date>
+    </imprint></monogr><series>
+    <title level="s">Studi e testi</title>
+    <biblScope unit="volume">332</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/X4249USG" type="book" xml:id="X4249USG"><monogr><title level="m">Master of Penance. Gratian and the
+    Development of Penitential Thought and Law in the Twelfth Century</title><idno type="ISBN">978-0-8132-2168-7</idno><author>
+    <forename>Atria A.</forename>
+    <surname>Larson</surname>
+    </author><edition>1</edition><imprint>
+    <pubPlace>Washington D.C.</pubPlace>
+    <publisher>Catholic University of America Press</publisher>
+    <date>2014</date>
+    </imprint></monogr><series>
+    <title level="s">Studies in Medieval and Early Modern Canon Law</title>
+    <biblScope unit="volume">11</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/BE9MZATC" type="book" xml:id="BE9MZATC"><monogr><title level="m">Geschichte der rheinischen
+    Städtekultur</title><extent>4</extent><author>
+    <forename>Heinrich</forename>
+    <surname>Boos</surname>
+    </author><edition>2</edition><imprint>
+    <pubPlace>Berlin</pubPlace>
+    <biblScope unit="volume">1</biblScope>
+    <publisher>J.A. Stargardt</publisher>
+    <date>1897</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/TJKZPALV" type="journalArticle" xml:id="TJKZPALV"><analytic><title level="a">Burchardauszüge in Dekrethandschriften und ihre
+    Verwendung bei Rufin und als Paleae im Dekret Gratians</title><author>
+    <forename>Rudolf</forename>
+    <surname>Weigand</surname>
+    </author></analytic><monogr><title level="j">Archiv für katholisches Kirchenrecht</title><idno type="ISSN">00039160</idno><imprint>
+    <biblScope unit="volume">158</biblScope>
+    <biblScope unit="page">429-451</biblScope>
+    <date>1989</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/MB3H4T45" type="journalArticle" xml:id="MB3H4T45"><analytic><title level="a">Kurzformen des Dekrets Bischof Burchards von
+    Worms</title><author>
+    <forename>Peter</forename>
+    <surname>Brommer</surname>
+    </author></analytic><monogr><title level="j">Jahrbuch für westdeutsche
+    Landesgeschichte</title><idno type="ISSN">01702025</idno><imprint>
+    <biblScope unit="volume">1</biblScope>
+    <biblScope unit="page">19-46</biblScope>
+    <date>1975</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/P4BXFB2E" type="journalArticle" xml:id="P4BXFB2E"><analytic><title level="a">The Earliest Form and Function of the 'Admonitio
+    synodalis'</title><idno type="DOI">10.1515/fmst-2023-0019</idno><author>
+    <forename>Charles</forename>
+    <surname>West</surname>
+    </author></analytic><monogr><title level="j">Frühmittelalterliche Studien</title><imprint>
+    <biblScope unit="volume">53</biblScope>
+    <biblScope unit="issue">1</biblScope>
+    <biblScope unit="page">347-380</biblScope>
+    <date>2023</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/H3SFH5UE" type="book" xml:id="H3SFH5UE"><monogr><title level="m">Medieval and Renaissance manuscripts at the University of California,
+    Los Angeles</title><idno type="ISBN">978-0-520-09687-5</idno><extent>1</extent><author>
+    <forename>Mirella</forename>
+    <surname>Ferrari</surname>
+    </author><editor>
+    <forename>Richard Hunter</forename>
+    <surname>Rouse</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Berkeley u.a.</pubPlace>
+    <biblScope unit="volume">1</biblScope>
+    <publisher>University of California Press</publisher>
+    <date>1991</date>
+    </imprint></monogr><series>
+    <title level="s">Medieval and Renaissance manuscripts in California libraries</title>
+    <biblScope unit="volume">2</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/8SNPFXBU" type="book" xml:id="8SNPFXBU"><monogr><title level="m">Marriage Litigation in the Western
+    Church, 1215–1517</title><idno type="ISBN">978-1-108-84542-7</idno><author>
+    <forename>Wolfgang P.</forename>
+    <surname>Müller</surname>
+    </author><edition>1</edition><imprint>
+    <pubPlace>Cambridge</pubPlace>
+    <publisher>Cambridge University Press</publisher>
+    <date>2021</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/K29I873V" type="journalArticle" xml:id="K29I873V"><analytic><title level="a">Rezension zu: Atria A. Larson, Master of Penance.
+    Gratian and the Development of Penitential Thought and Law in the Twelfth Century (Studies in
+    Medieval and Early Modern Canon Law 11), Washington D.C. 2014</title><author>
+    <forename>Peter D.</forename>
+    <surname>Clark</surname>
+    </author></analytic><monogr><title level="j">Mitteilungen des Instituts für Österreichische
+    Geschichtsforschung</title><idno type="ISSN">2307-2903</idno><imprint>
+    <biblScope unit="volume">131</biblScope>
+    <biblScope unit="issue">1</biblScope>
+    <biblScope unit="page">150-153</biblScope>
+    <date>2023</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/5STZSMGP" type="book" xml:id="5STZSMGP"><monogr><title level="m">Bischof Burchard 1000-1025. Tausend Jahre Romanik in
+    Worms</title><idno type="ISBN">3-9806754-1-6</idno><author>
+    <forename>Gerold</forename>
+    <surname>Bönnen</surname>
+    </author><imprint>
+    <pubPlace>Worms</pubPlace>
+    <publisher>Verlag Stadtarchiv Worms</publisher>
+    <date>2000</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/8NDVG9JP" type="bookSection" xml:id="8NDVG9JP"><analytic><title level="a">Rechtsfindung und Rechtsvermittlung durch Bischöfe im 11.
+    Jahrhundert: Drei Beispiele aus dem nordfranzösischen Raum</title><author>
+    <forename>Lotte</forename>
+    <surname>Kéry</surname>
+    </author></analytic><monogr><title level="m">Proceedings of the Fifteenth International Congress
+    of Medieval Canon Law. Paris, 17 – 23 July 2016</title><idno type="ISBN">978-88-210-1095-8</idno><editor>
+    <forename>Florence</forename>
+    <surname>Demoulin-Auzary</surname>
+    </editor><editor>
+    <forename>Nicolas</forename>
+    <surname>Laurent-Bonne</surname>
+    </editor><editor>
+    <forename>Franck</forename>
+    <surname>Roumy</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Vatikanstadt</pubPlace>
+    <biblScope unit="page">387-408</biblScope>
+    <publisher>Biblioteca Apostolica Vaticana</publisher>
+    <date>2022</date>
+    </imprint></monogr><series>
+    <title level="s">Monumenta iuris canonici. Series C: Subsidia</title>
+    <biblScope unit="volume">16</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/ZSWP37JA" type="book" xml:id="ZSWP37JA"><monogr><title level="m">Papal Jurisprudence, 385-1234. Social
+    Origins and Medieval Reception of Canon Law</title><idno type="ISBN">978-1-108-47300-2</idno><author>
+    <forename>David L.</forename>
+    <surname>d’Avray</surname>
+    </author><edition>1</edition><imprint>
+    <pubPlace>Cambridge</pubPlace>
+    <publisher>Cambridge University Press</publisher>
+    <date>2022</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/DI92EU4F" type="encyclopediaArticle" xml:id="DI92EU4F"><analytic><title level="a">Burchard of Worms (c. 965-1025)</title><author>
+    <forename>Brigitte</forename>
+    <surname>Basdevant-Gaudemet</surname>
+    </author></analytic><monogr><title level="m">Encyclopedia of the Middle Ages</title><idno type="ISBN">978-1-57958-282-1</idno><extent>2</extent><editor>
+    <forename>André</forename>
+    <surname>Vauchez</surname>
+    </editor><editor>
+    <forename>Richard Barrie</forename>
+    <surname>Dobson</surname>
+    </editor><editor>
+    <forename>Michael</forename>
+    <surname>Lapidge</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Cambridge</pubPlace>
+    <biblScope unit="volume">1</biblScope>
+    <biblScope unit="page">207</biblScope>
+    <publisher>Routledge</publisher>
+    <date>2000</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/NK5KBW9D" type="book" xml:id="NK5KBW9D"><monogr><title level="m">Die Klerikerehe in der Gesetzgebung der Kirche unter besonderer
+    Berücksichtigung der Strafe: Eine rechtsgeschichtliche Untersuchung von den Anfängen der Kirche
+    bis zum Jahre 1139</title><author>
+    <forename>Martin</forename>
+    <surname>Boelens</surname>
+    </author><edition>1</edition><imprint>
+    <pubPlace>Paderborn</pubPlace>
+    <publisher>Ferdinan Schöningh</publisher>
+    <date>1968</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/3QVN6BC5" type="journalArticle" xml:id="3QVN6BC5"><analytic><title level="a">Early medieval regulations concerning marital
+    sexual relations</title><author>
+    <forename>Pierre J.</forename>
+    <surname>Payer</surname>
+    </author></analytic><monogr><title level="j">Journal of Medieval History</title><idno type="ISSN">0304-4181</idno><imprint>
+    <biblScope unit="volume">6</biblScope>
+    <biblScope unit="issue">4</biblScope>
+    <biblScope unit="page">353-376</biblScope>
+    <date>1980</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/BVL62RG3" type="journalArticle" xml:id="BVL62RG3"><analytic><title level="a">Burchard von Worms</title><author>
+    <forename>Mathilde</forename>
+    <surname>Hain</surname>
+    </author></analytic><monogr><title level="j">Hessische Blätter für Volkskunde</title><idno type="ISSN">0342-1260</idno><imprint>
+    <biblScope unit="volume">47/48</biblScope>
+    <biblScope unit="page">39-50</biblScope>
+    <date>1956</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/M8FUVV82" type="bookSection" xml:id="M8FUVV82"><analytic><title level="a">Burchard of Worms</title><author>
+    <forename>Greta</forename>
+    <surname>Austin</surname>
+    </author></analytic><monogr><title level="m">Great Christian Jurists and Legal Collections in
+    the First Millennium</title><idno type="ISBN">978-1-108-47171-8</idno><editor>
+    <forename>Philip Lyndon</forename>
+    <surname>Reynolds</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Cambridge, New York, Port Melbourne, New Delhi</pubPlace>
+    <biblScope unit="page">458-470</biblScope>
+    <publisher>Cambridge University Press</publisher>
+    <date>2019</date>
+    </imprint></monogr><series>
+    <title level="s">Cambridge studies in law and christianity</title>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/TI3WI5LZ" type="bookSection" xml:id="TI3WI5LZ"><analytic><title level="a">Arti e fate a banchetto, e i
+    loro doni. Per la storia del reimpiego dottrinale di un motivo folklorico</title><author>
+    <forename>Gabriella</forename>
+    <surname>Moretti</surname>
+    </author></analytic><monogr><title level="m">Testi e modelli antropologici. Seminario del Centro
+    di ricerche in scienza della letteratura</title><idno type="ISBN">978-88-7695-069-8</idno><extent>1</extent><editor>
+    <forename>Massimo</forename>
+    <surname>Bonafin</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Mailand</pubPlace>
+    <biblScope unit="volume">1</biblScope>
+    <biblScope unit="page">137-165</biblScope>
+    <publisher>Arcipelago</publisher>
+    <date>1989</date>
+    </imprint></monogr><series>
+    <title level="s">Linee</title>
+    <biblScope unit="volume">2</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/KL4PECNI" type="journalArticle" xml:id="KL4PECNI"><analytic><title level="a">Neue Erkenntnisse zum Dekret
+    Burchards von Worms</title><author>
+    <forename>Rudolf</forename>
+    <surname>Weigand</surname>
+    </author></analytic><monogr><title level="j">Archiv für katholisches Kirchenrecht</title><idno type="ISSN">00039160</idno><imprint>
+    <biblScope unit="volume">162</biblScope>
+    <biblScope unit="issue">1</biblScope>
+    <biblScope unit="page">125-134</biblScope>
+    <date>1993</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/GW8I8USF" type="bookSection" xml:id="GW8I8USF"><analytic><title level="a">Kanonistische Konzilsüberlieferung und Archetyp. Zur Qualität von
+    Burchardtexten</title><author>
+    <forename>Horst</forename>
+    <surname>Fuhrmann</surname>
+    </author></analytic><monogr><title level="m">Proceedings of the eighth international congress of
+    medieval canon law, San Diego, University of California at La Jolla, 21-27 August
+    1988</title><idno type="ISBN">978-88-210-0634-0</idno><editor>
+    <forename>Stanley A.</forename>
+    <surname>Chodorow</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Città del Vaticano</pubPlace>
+    <biblScope unit="page">57-61</biblScope>
+    <publisher>Biblioteca Apostolica Vaticana</publisher>
+    <date>1992</date>
+    </imprint></monogr><series>
+    <title level="s">Monumenta iuris canonici, Series C: Subsidia</title>
+    <biblScope unit="volume">9</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/3IIKZSCH" type="bookSection" xml:id="3IIKZSCH"><analytic><title level="a">Omtrent de 'Speculator' van
+    Burchard van Worms ( 1025): Een naschrift bij de historische millenniumdrukte</title><author>
+    <forename>Dirk M. J. van den</forename>
+    <surname>Auweele</surname>
+    </author></analytic><monogr><title level="m">In de voetsporen van Jacob van Maerlant: Liber
+    amicorum Raf De Keyser Verzameling opstellen over middeleeuwse geschiedenis en
+    geschiedenisdidactiek</title><idno type="ISBN">978-9058672568</idno><editor>
+    <forename>Raoul</forename>
+    <surname>Bauer</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Lueven</pubPlace>
+    <biblScope unit="page">90-100</biblScope>
+    <publisher>Universitaire Pers</publisher>
+    <date>2002</date>
+    </imprint></monogr><series>
+    <title level="s">Symbolae Facultatis Litterarum Lovaniensis A</title>
+    <biblScope unit="volume">30</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/G2J3DDHQ" type="bookSection" xml:id="G2J3DDHQ"><analytic><title level="a">Burchard of Worms (c.
+    965-1025)</title><author>
+    <forename>William</forename>
+    <surname>Schipper</surname>
+    </author></analytic><monogr><title level="m">The rise of the medieval world, 500-1300. A
+    biographical dictionary</title><idno type="ISBN">9780313308178</idno><editor>
+    <forename>Jana K.</forename>
+    <surname>Schulman</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Westport (Connecticut)</pubPlace>
+    <biblScope unit="page">86-87</biblScope>
+    <publisher>Greenwood Publishing Group</publisher>
+    <date>2002</date>
+    </imprint></monogr><series>
+    <title level="s">The great cultural eras of the Western world</title>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/JMLP88S6" type="bookSection" xml:id="JMLP88S6"><analytic><title level="a">Canon law and litigation. The
+    Century before Gratian</title><author>
+    <forename>Martin</forename>
+    <surname>Brett</surname>
+    </author></analytic><monogr><title level="m">Medieval ecclesiastical studies. In honour of
+    Dorothy M. Owen</title><idno type="ISBN">978-0-85115-384-1</idno><editor>
+    <forename>Christopher</forename>
+    <surname>Harper-Bill</surname>
+    </editor><edition>1</edition><imprint>
+    <pubPlace>Woodbridge</pubPlace>
+    <biblScope unit="page">21-40</biblScope>
+    <publisher>Boydell &amp; Brewer</publisher>
+    <date>1995</date>
+    </imprint></monogr><series>
+    <title level="s">Studies in the history of medieval religion</title>
+    <biblScope unit="volume">7</biblScope>
     </series></biblStruct></listBibl> </body>
     </text>
 </TEI>
