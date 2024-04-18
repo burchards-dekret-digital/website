@@ -23,7 +23,9 @@
             
             <!-- // === Javascripts === -->
             <!-- // jquery -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
             
             <!-- // Mirador -->
             <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
@@ -339,7 +341,13 @@
 
 
                     const msHistory = document.createElement('div');
-                    msHistory.innerHTML += "<b>Schriftheimat: </b>"+ xmlDoc.querySelectorAll('origPlace')[0].innerHTML +"<br/>"
+                    const origPlaceElement = xmlDoc.querySelector('origPlace');
+                    const origPlaceText = Array.from(origPlaceElement.childNodes)
+                        .filter(node => node.nodeName !== 'location' || node.nodeName === 'location' && node.childNodes.length === 0)
+                        .map(node => node.textContent.trim())
+                        .join(' ');
+                    msHistory.innerHTML += "<b>Schriftheimat: </b>"+ origPlaceText +"<br/>";
+
                     msHistory.innerHTML += "<b>Entstehungszeitraum: </b>"+ xmlDoc.querySelectorAll('origDate')[0].innerHTML +"<br/>"
                     msHistory.innerHTML += "<b>Provenienz: </b>"+ xmlDoc.querySelectorAll('provenance settlement')[0].innerHTML + ", "+
                         xmlDoc.querySelectorAll('provenance name')[0].innerHTML +"<br/>"
@@ -349,7 +357,18 @@
 
 
                     const msDesc = document.createElement('div');
-                    msDesc.innerHTML += "<b>Beschreibstoff: </b>"+ xmlDoc.querySelectorAll('supportDesc')[0].getAttribute("material") +"<br/>"
+
+                    var materialLabel;
+                    var material = xmlDoc.querySelectorAll('supportDesc')[0].getAttribute("material");
+
+                    if (material === "parchment") {
+                        materialLabel = "Pergament";
+                    } else {
+                        // If there are other materials, you can add more conditions here
+                        // or provide a default label if no condition matches.
+                        materialLabel = material; // default behavior: keep the original material
+                    }
+                    msDesc.innerHTML += "<b>Beschreibstoff: </b>" + materialLabel + "<br/>";
                     msDesc.innerHTML += "<b>Größe: </b>"+ xmlDoc.querySelectorAll('extent dimensions[type="leaf"] height')[0].getAttribute("quantity") + " cm x " +xmlDoc.querySelectorAll('extent dimensions[type="leaf"] width')[0].getAttribute("quantity") +"<br/>"
                     msDesc.innerHTML += "<b>Blatt: </b>"+ xmlDoc.querySelectorAll('extent measure')[0].getAttribute("quantity") + "<br/>"
                     msDesc.innerHTML += "<b>Layout: </b>"+ xmlDoc.querySelectorAll('layout')[0].getAttribute("columns") + " Spalten, " + xmlDoc.querySelectorAll('layout')[0].getAttribute("writtenLines") + " Zeilen <br/>"

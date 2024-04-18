@@ -105,7 +105,7 @@
 
     </body>
     
-    <!--Display Navbar and Footer-->
+    <!--Display Navbar, Footer, back button-->
     <script>
       $(function() {
           function setActiveNavItem() {
@@ -130,10 +130,7 @@
         $(function(){
             $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
         });
-    </script>
-
-    <!-- back button-->
-        <script>
+    
             $(".hBack").on("click", function(e){
                 e.preventDefault();
                 window.history.back();
@@ -163,7 +160,14 @@
 
                     const msNameFull = xmlDoc.querySelectorAll('msName[type="full"]')[0].innerHTML
                     const msNameSigle = xmlDoc.querySelectorAll('msName[type="sigle"]')[0].innerHTML
-                    const origPlace = xmlDoc.querySelectorAll('origPlace')[0].textContent
+                    //const origPlace = xmlDoc.querySelectorAll('origPlace')[0].textContent 
+                    //const origPlace = xmlDoc.querySelector('origPlace').childNodes[0].textContent.trim(); //This shows only Worms
+                    const origPlaceElement = xmlDoc.querySelector('origPlace');
+                    const origPlaceText = Array.from(origPlaceElement.childNodes)
+                        .filter(node => node.nodeName !== 'location' || node.nodeName === 'location' && node.childNodes.length === 0)
+                        .map(node => node.textContent.trim())
+                        .join(' ');
+
                     const origDate = xmlDoc.querySelectorAll('origDate')[0].innerHTML
             
                     const tableBody = document.getElementById('table-body');
@@ -176,7 +180,7 @@
             
                     cell1.innerHTML = "<a href='ms-item.html?document="+ list_ms[ms] + "'>" + msNameFull + "</a>";
                     cell2.textContent = msNameSigle;
-                    cell3.textContent = origPlace;
+                    cell3.textContent = origPlaceText;
                     cell4.textContent = origDate;
             
                     row.appendChild(cell1);
