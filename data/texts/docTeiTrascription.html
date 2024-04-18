@@ -1,0 +1,452 @@
+<div id="teiTranskriptionDoc" class="block"><span lang="ger">
+   <h1 class="mt-4">Allgemeine Beschreibung</h1>
+   <p>Die Basis digitaler Editionen stellt die sorgfältige Erhebung und Codierung der
+      Datengrundlage dar. Im Projekt BDD liegen diese Daten in zwei aufeinander
+      aufbauenden Kategorien vor: <i>deskriptive Daten</i> und <i>interpretative Daten</i>. Während die Ebene der deskriptiven
+      Daten die quellennahe Transkription und Beschreibung der Textzeugen (und damit
+      mehrere Dateien) umfasst, beinhalten die interpretativen Daten die Erschließung
+      des Materials in einem konstituierten Text, der durch Register erschlossen ist.
+      Auf der Ebene der Textzeugen wird das vorliegende Material deskriptiv erfasst,
+      was jeweils eine Beschreibung der Handschrift sowie Transkriptionen des
+      enthaltenen Textes umfasst, die aufgrund des Umfangs in einzelne TEI-Dateien pro
+      Buch aufgeteilt sind. Die graphemischen Transkriptionen sichern den Text der
+      Textzeugen vollumfänglich und werden sukzessive in drei zunehmend angereicherten
+      Versionen veröffentlicht, die sich durch eine zunehmend umfangreichere Codierung
+      unterscheiden.</p>
+   <p><b>Version 1</b> ist eine umfassende Sicherung des Textes der
+      jeweiligen Handschrift. Sie enthält neben Text, codierten Textbearbeitungen und
+      Strukturelementen auch Wormser Glossen. Jede einzelne Capitulatio und jedes
+      einzelne Kapitel hat eine ID, über die sie mit anderen Transkriptionen der
+      Handschriften des Dekrets synchronisiert ist. Ausgezeichnet sind in dieser
+      Version Korrekturen und Rasuren sowie durch Platzmangel verschobene
+      Textfragmente. IIIF-Daten ermöglichen die Rückbindung an Digitalisate.</p>
+   <p><b>Version 2</b> ist eine textgesicherte Transkription des
+      Dokuments mit codierten kodikologischen Phänomen, zum Beispiel Handwechseln, die
+      über eine Taxonomie klassifiziert und per IIIF-Daten im Digitalisat adressierbar
+      sind.</p>
+   <p><b>Version 3</b> ist eine textgesicherte Transkription mit
+      kodikologischen Phänomenen, in der externe IDs referenziert sind.
+      Rezeptionsspuren, z.B. nota-Zeichen, sind ausgezeichnet. Auf sinntragende
+      Varianten in anderen Handschriften des Decretum Burchardi wird hingewiesen. Die
+      Transkriptionen sind überdies mit der Digitalen Edition synchronisiert.</p>
+   <h1>Datenrepositorien</h1>
+   <p>Alle Transkriptionen werden mit dazugehörenden Datenderivaten auf dem
+      Projekteigenen Gitlab-Repositorium (<a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data</a>)
+      gespeichert. Nach Abschluss der jeweiligen Versionen werden die Dateien
+      ebenfalls über Zenodo archiviert. Neben den Transkriptionen enthalt dieses
+      Repositorium außerdem entsprechendes PageXML sowie daraus generiete Datensätze
+      zur Verwendung im Kontext von Machine Learning. </p>
+   <h1>Auszeichnungsrichtlinien</h1>
+   <p>In den folgenden Abschnitten werden die Auszeichnungsrichtlinien geschildert.
+      Eine formalisierte Auslistung der Verwendeten Elemente, Attribute und Werte
+      findet sich unter dem Abschnitt <i>schemaSpec</i> am Ende des
+      Dokuments.</p>
+   <h2>TEI Header</h2>
+   <p>Der TEI-Header jedes Transkripts umfasst eine Beschreibung des Dokuments
+      (<code>fileDesc</code>), eine Darlegung der Codierung (<code>encodingDesc</code>)
+      und eine Angabe über Version und Datierung der Datei
+      (<code>revisionDesc</code>).</p>
+   <p>Die <code>fileDesc</code> umfasst folgende Elemente: 
+      <ul>
+         <li><code>titleStmt</code> enthält den Namen der Quelle (‚Decretum
+            Burchardi‘), den Bibliotheksort der transkribierten Handschrift, das
+            wiedergegebene Buch und im Untertitel den Hinweis, dass es sich um eine
+            Transkription handelt, </li>
+         <li><code>funder</code> nennt die Akademie der
+            Wissenschaften und Literatur Mainz, die das Projekt finanziert,</li>
+         <li><code>principal</code> enthält die Projektleiter, identifiziert mit
+            Projekt-ID orcid-ID oder gnd-Normdaten, Name und Institution,</li>
+         <li><code>respStmt</code> enthält die Mitarbeiter, identifiziert mit
+            Projekt-ID, orcid-ID, Name und Institution sowie ihren spezifizierten
+            Beitrag zur Datei, z.B. Transkription oder Strukturauzeichnung, </li>
+         <li><code>editionStmt</code> beschreibt die drei
+            Transkriptions-Versionen.</li>
+         <li><code>publicationStmt</code> enthält das
+            Projekt als <code>publisher</code>, die Lizenz (<code>licence</code>, CC BY 4.0) und
+            das Publikationsdatum,</li>
+         <li><code>sourceDesc</code> enthält die
+            wichtigsten Eckdaten zur Handschrift wie Projekt-ID (<code>msIdentifier</code>),
+            Bibliotheksort (<code>repository</code>), Sammlung und Signatur
+            (<code>collection</code> und <code>idno</code>), eine kurze Beschreibung
+            (<code>physDesc</code>), die Nennung der beiteiligten Hände (<code>handDesc</code>)
+            und zentrale Daten zur Geschichte des Textzeugen (<code>history</code>) mit
+            Entstehungsort (<code>origPlace</code>) und Zeit (<code>origDate</code>).</li>
+      </ul>
+   </p>
+   <p>Die <code>encodingDesc</code> unterteilt sich nach einer Beschreibung der
+      Transkription, Hinweise auf den verwendeten Zeichensatz sowie Hinweisen zur
+      korrekten Darstellung, in drei Teile:</p>
+   <ul>
+      <li><code>charDecl</code> listet die benutzten Sonderzeichen auf.</li>
+      <li><code>editorialDecl</code> enthält die Transkriptionsrichtlinien mit den
+         Punkten <code>normalization</code>, <code>correction</code>,
+         <code>hyphenation</code>, <code>segmentation</code>, <code>interpretation</code>,
+         <code>punctuation</code> und <code>stdVals</code> zur Codierung von
+         Zahlen.</li>
+      <li><code>projectDesc</code> beschreibt das 'Decretum Burchardi' als Quelle
+         und das Projekt 'Burchards Dekret Digital'.</li>
+   </ul>
+   <p>Die <code>revisionDesc</code> besteht aus einer Liste, die alle Änderungen der
+      Datei dokumentiert (<code>listChange</code>). Die aufgeführten Änderungen
+      betreffen die Version der Daten und Korrekturen, immer versehen mit dem
+      Datum der Änderung.</p>
+   <h2>Transkriptionsrichtlinien</h2>
+   <p>Die Transkriptionen zielen in erster Linie auf die Textsicherung des Dekrets,
+      daher wird weitestgehend auf editorische Eingriffe und Interpretation
+      verzichtet. Sie geben den Befund der einzelnen Textzeugen möglichst genau
+      wieder, der sowohl den Text mit allen Bearbeitungen als auch das Layout
+      umfasst.</p>Orthographie
+   <p>Die Transkription folgt der Orthographie der Handschrift. Fehler im Text
+      werden nicht korrigiert und nur in Einzelfällen durch <code>sic</code>
+      hervorgehoben. Auch Groß- und Kleinschreibung folgt der Handschrift,
+      jedoch nicht die Zusammen- und Getrenntschreibung. Hier wird jedes
+      sinntragende Wort abgetrennt. Sollten sowohl Zusammen- als auch
+      Getrenntschreibung korrekt sein, wird sich am Usus des Wormser
+      Skriptoriums orientiert, den die dort entstandenen Handschriften
+      abbilden. Abkürzungen werden über ein definiertes Set an Sonderzeichen
+      codiert und aufgelöst. Ligaturen werden stillschweigend aufgelöst.</p>Interpunktion
+   <p>Die transkribierten Handschriften verwenden in der Regel eine
+      einheitliche und genuin mittelalterliche Interpunktion, die auf sechs
+      unterscheidbaren Zeichen basiert mit denen Sprechpausen gekennzeichnet
+      werden: Distinctio, Punctus versus, Punctus elevatus, Punctus flexus,
+      Punctus interrogativus und eine Kombination mit Positura. Die
+      Interpunktion der Textzeugen wird als <code>pc</code> Element übernommen und
+      durch entsprechende Unicode-Zeichen nachempfunden. Durch das Attribut
+      <code>type</code> kann das jeweilige Zeichen durch die Werte
+      <code>distinctio</code>,<code>p-versus</code>, <code>p-elevatus</code>,
+      <code>p-flexus</code>, <code>p-interrogativus</code> oder
+      <code>p-interrogativus-positura</code> näher spezifiziert werden.</p>
+   <h2>Auszeichnung Textstruktur/Layout</h2>
+   <p>Das Layout der Handschriften ist ein wichtiger Informationsträger und
+      gliedert den Text in verschiedene Hierarchiestufen. Daher wird es in den
+      Transkriptionen ausgezeichnet. Neben der Auszeichnung der textimmanenten
+      Gliederung verfolgt die Transkription das Ziel einer möglichst getreuen
+      Auszeichnung der codeximmanenten Struktur und des Layouts, um in der
+      digitalen Edition Umschaltmöglichkeiten zwischen den verschiedenen Ansichten
+      zu ermöglichen sowie das Training von Handschriftenmodellen und
+      Maschinenlesbarkeit zu ermöglichen.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image2.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Typisches Seitenlayout, Auszeichnung in Transkribus"><figcaption class="figure-caption">Typisches Seitenlayout, Auszeichnung in Transkribus</figcaption>
+      </figure>
+   </div>
+   <p>Zu den Layoutinformationen zählen Zeilenumbrüche, Spalten- und Seitenwechsel,
+      rubrizierte Kapitelzahlen, rubrizierte Initialen der Capitulationes und der
+      Kapitel, nachträgliche Rubrizierung von Majuskeln, Versalien am Beginn eines
+      Abschnitts sowie Kopf- und Fußzeilen. Textteile, die aus Platzgründen in die
+      vorhergehende oder nachfolgende Zeile geschrieben und mit einem
+      Hinzufügungszeichen markiert sind, werden mit <code>supplied</code> und
+      <code>seg</code> ausgezeichnet.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (, fol. 27rb)"><figcaption class="figure-caption">Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (F, fol. 27rb)</figcaption>
+      </figure>
+   </div>
+   <p>Darüberhinausgehende Text-/Bildinformationen können per <code>xml:id</code> des
+      jeweiligen Elements im über das referenzierte PageXML der jeweiligen Seite
+      abgefragt werden, das sich im Datenrepositorium befindet. Das
+      Bild-Digitalisat der jeweiligen Seite ist im <code>facs</code> Attribut des
+      Elements <code>pb</code> als IIIF-query hinterlegt, <code>corresp</code> enthält
+      den Link zur IIIF-Canvas. IIIF-fähige Koordinaten zu jedem Layoutelement
+      sind im jeweiligen Attribut @facs hinterlegt und erlauben das Abrufen des
+      entsprechenden Bildausschnitts über in Verbindung mit der IIIF-query-URL der
+      jeweiligen Seite.</p>
+   <h2>Spalten- und Seitenwechsel, Zeilenumbrüche</h2>
+   <p>Zur Codierung des Layouts wird auf die leeren Elemente <code>pb</code>
+      (Seitenumbruch), <code>cb</code> (Spaltenumbruch), <code>lb</code> (Zeilenumbruch)
+      sowie auf das Element <code>fw</code> (Seitenlayout) zurückgegriffen. Diese
+      Elemente können die textimmanente Struktur durchbrechen, also sowohl
+      zwischen als auch innerhalb von <code>div</code> und anderen Elementen stehen.
+      Jeder Seitenumbruch wird mit @n mit einer dazugehörigen Folioangabe, z.B.
+      204r|v, versehen. Optional wird die dazugehörige Bilddatei als
+      <code>facs</code> hinterlegt. Bei Spaltenumbrüchen wird die Spalte in
+      <code>n</code> durch <code>a|b</code> markiert. Kopfzeilen bekommen im Element
+      <code>fw</code> die Spezifizierungen <code>fw type="page-header"
+         place="top"</code> zugeordnet. Sämtliche Zeilenumbrüche werden durch
+      <code>lb</code> ausgewiesen und ggf. durch <code>lb break="no"</code>
+      gekennzeichnet, wenn sie innerhalb von Wörtern erfolgen. Alle Elemente
+      erhalten außerdem eine referenzierbare <code>xml:id</code>, die im Falle von
+      Layoutelementen aus dem Dateinamen des dazugehörenden PageXML sowie einem
+      spezifischen Suffix gebildet wird, z.B. <code>"B_0015_header"</code>. Diese ID
+      erlaubt das Auffinden des entsprechenden Elements im PageXML, das dort durch
+      dieselbe ID referenziert ist.</p>
+   <h2>Silbentrennung</h2>
+   <p>Die Worttrennung erfolgt nach Wortsinn und weicht vom Befund der Handschrift
+      ab. Da besonders die frühen Handschriften des Dekrets keine zeitgenössischen
+      Bindestriche zur Worttrennung nutzen, erfolgt die Angabe eines
+      Zeilenumbruchs ausschließlich durch das leere Element <code>lb</code> und ggf.
+      dem Attribut <code>lb break="no"</code>.</p>
+   <h2>Synchronisierte Textstruktur (IDs, Synchronisation und Taxonomie)</h2>
+   <p>Die Textzeugen der Wormser Redaktion können vielfältige Abweichungen in der
+      Binnengliederung sowie der Textstruktur aufweisen. Dies umfasst bewusste
+      Umstrukturierungen ebenso wie Fehler durch Schreiber und nachträglichen
+      Textverlust. So können Textelemente einer Handschrift fehlerhaft nummeriert,
+      verschoben, verlorengegangen oder gelöscht worden sein und Varianzen in der
+      Struktur des Dekrets erzeugen, die mal intendiert, mal zufällig sind. Daher
+      ist es wichtig, diese textgenetischen Phänomene durch eine entsprechende
+      Codierung transparent und maschinenlesbar zu halten. </p>
+   <p>Hierfür werden alle Textzeugen einer Synchronisation unterzogen und Elemente,
+      die Auskunft über die Textstruktur und ihre Entstehung geben können,
+      detailliert ausgezeichnet. Hierfür erhält jede Capitulatio (codiert als
+      <code>item</code>) und jedes einzelne Kapitel (codiert als <code>div</code>) eine
+      über die gesamte Überlieferung eindeutige ID, die aus der Handschrift, dem
+      jeweiligen Buch und der laufenden Nummer des Elements gebildet wird, etwa
+      <code>bamberg-sb-c-6-01-toc-001</code> für die erste Capitulatio in Buch 13 in
+      der Bamberger Handschrift oder <code>bamberg-sb-c-6-01-con-001</code> für das
+      erste Kapitel der gleichen Handschrift. Im Attribut <code>corresp</code> wird
+      die jeweils entsprechende Stelle der anderen Handschriften referenziert.</p>
+   <p>Capitulatio und Kapitel erhalten jeweils eine laufende Nummer im Attribut
+      <code>n</code>, die sich nicht an der intendierten Zählung orientiert, sondern
+      den tatsächlichen Befund der Handschrift wiedergibt. Fehlen etwa die ersten
+      zehn Kapitel eines Buches aufgrund von Blattverlust, erhält das erste
+      überlieferte Kapitel den Wert <code>1</code>.</p>
+   <p>Gleichzeitig wird die in der Handschrift angegebene Zählung als
+      <code>label</code><code>type</code> chapter-number übernommen und in zweierlei
+      Hinsicht codiert: Einerseits erhält auch hier jedes <code>label</code> Element
+      eine laufende Nummer in <code>n</code>, andererseits werden die angegebenen
+      römischen Ziffern als <code>num</code> ausgezeichnet und im Attribut
+      <code>value</code> maschinenlesbar verzeichnet.</p>
+   <p>Zusätzlich werden diese Vorgänge dort, wo es erforderlich ist, auch
+      qualitativ über eine kontinuierlich weiterzuentwickelnde Taxonomie
+      erschlossen, über die Struktureingriffe näher erläutert werden können. Dies
+      umfasst beispielsweise bewussten oder zufälligen Verlust von Kapiteln,
+      Hinweise auf verlorene Elemente (wie z.B. nur noch teilweise sichtbare
+      Inskriptionen), Markierungen von Kanones, die gelöscht werden sollten,
+      Hinzufügungen von Schreibern, Umstellungen, Änderungen der Reihenfolge der
+      Capitulationes oder Kapitel, fehlende Kapitelnummern und editorisch
+      vorgenommene Rekonstruktionen. Die jeweiligen Einträge der Taxonomie sind in
+      der Datei <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/lists/taxonomy.xml" target="_blank">https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/lists/taxonomy.xml</a>
+      hinterlegt und über entsprechende IDs im Attribut <code>ana</code> hinterlegt.
+      Auf diese Weise lassen sich die vielfachen Eingriffe in die Textstruktur im
+      Spiegel der Überlieferung maschinenlesbar analysieren und darstellen.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image4.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Nur noch teilweise sichtbare Inskriptionen auf herausgetrennter&#xA;                            Seite (, nach fol. 80v)"><figcaption class="figure-caption">Nur noch teilweise sichtbare Inskriptionen auf herausgetrennter
+            Seite (Va2, nach fol. 80v)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image5.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Markierte und durchgestrichenes Kapitel (, fol. 34rb)"><figcaption class="figure-caption">Markierte und durchgestrichenes Kapitel (F, fol. 34rb)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Fehlende Kapitelnummer (, fol. 44vb)"><figcaption class="figure-caption">Fehlende Kapitelnummer (B, fol. 44vb)</figcaption>
+      </figure>
+   </div>
+   <h2>Text-Bildverknüpfung</h2>
+   <p>Da die Edition des Decretum Burchardi besonderes Augenmerk auf kodikologische
+      Spuren der Textgenese wirft, kommt der Verschränkung von Text und Bild eine
+      herausgehobene Bedeutung zu. Zum einen ermöglicht eine solche Verschränkung
+      die direkte Visualisierung einschlägiger Phänomene am
+      Handschriften-Digitalisat, zum anderen erlaubt sie die Anwendung der im
+      Rahmen der editorischen Arbeit gewonnenen Daten für Image2Text und Feature
+      Extraction Applikationen im Kontext des maschinellen Lernens. Daher erfolgt
+      die Text-Bild-Verknüpfung im Rahmen der editorischen Aufbereitung des
+      Dekrets auf zwei Ebenen mit unterschiedlichem technologischem Hintergrund:
+      Auf Basis von IIIF sowie durch die Generierung von referenziertem
+      PageXML.</p>
+   <p><b>IIIF</b>: <a href="https://iiif.io/" target="_blank">IIIF</a> ist eine
+      Schnittstelle der digitalen Bildauslieferung, die die Abfrage von
+      Bilddateien in unterschiedlicher Qualitätsstufe, Auflösung und Ausschnitt
+      von einem Bildserver ermöglicht. Technisch erlaubt der Standard außerdem die
+      Verknüpfung dieser Dateien mit Annotationen, die eine Anzeige des
+      annotierten Bildes im Mirador Viewer oder anderen Lösungen erlaubt. Im
+      Zentrum steht dabei eine Abfrage-Syntax, über die Bilder in entsprechender
+      Form vom Bildserver abgefragt werden können. Entsprechend enthält jedes
+      <code>pb</code> Element einen Abfragelink zur dazugehörigen Bilddatei im
+      Attribut <code>facs</code> bzw. den Link zur IIIF-canvas im Attribut
+      <code>corresp</code>. Das Attribut <code>ana</code> enthält in diesem Kontext
+      den Link zur Annotationsdatei der jeweiligen Seite. Layoutelemente unterhalb
+      der Seitenebene enthalten im Attribut <code>facs</code> jeweils ihre aus der
+      Layouterkennung transformierten IIIF-Koordinaten und können darüber in
+      Verbindung mit dem Abfragelink zur Seite gezielt angesteuert werden.</p>
+   <p><b>PageXML:</b> Zur Nachnutzung der Daten im Kontext von
+      Machine Learning werden darüber hinaus alle TEI-Dateien der Transkriptionen
+      in PageXML transformiert, das im Datenrepositorium im Ordner PageXML
+      vorgehalten wird und gegenwärtig in den Versionen abbr (mit Abkürzungen) und
+      expan (mit Auflösung) vorliegt. Die Elemente des PageXML lassen sich über
+      geteilte IDs mit den Layoutelementen der TEI-Transkriptionen referenzieren.
+      Auf diese Weise können in Zukunft auch weitergehende Phänomene, etwa
+      Rasuren, in PageXML transformiert werden.</p>
+   <h2>Initialen, Majuskel, Versalien, Hervorhebungen (graphische
+      Auszeichnungen)</h2>
+   <p>Ein wichtiges Strukturelement stellen die vielfachen Auszeichnungen dar, die
+      den Text in verschiedene Hierarchien gliedern. Diese graphischen
+      Hervorhebungen betreffen in besonders Kapitelzahlen, Initialen der
+      Capitulationes und der Kapitel. Mitunter wurden auch Majuskeln nachträglich
+      rubriziert. Auch Versalien innerhalb von Kapiteln gehören dazu. Graphische
+      Hervorhebungen werden mit dem Element <code>hi</code> gekennzeichnet und ihre
+      graphische Ausgestaltung durch das Attribut <code>rend</code> spezifiziert.
+      Die dazugehörigen Werte sind <code>color:red</code>, <code>initial</code>,
+      <code>deluxe-initial</code>, <code>versal</code> und <code>color-stroked</code>.
+      Zu beachten ist, dass ggf. eine Verschachtelung verschiedener <code>hi</code>
+      Elemente oder die Kombination mehrerer <code>rend</code>-Werte notwendig ist.
+      Majuskeln am Kapitelanfang werden transkribiert, aber nicht kodiert.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image7.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Beginn Buch 1 mit verschiedenen Auszeichnungen (, fol. 10va)"><figcaption class="figure-caption">Beginn Buch 1 mit verschiedenen Auszeichnungen (B, fol. 10va)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Versalie (, fol. 11rb)"><figcaption class="figure-caption">Versalie (B, fol. 11rb)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Rubrizierte Majuskeln (, fol. 56rb)"><figcaption class="figure-caption">Rubrizierte Majuskeln (K, fol. 56rb)</figcaption>
+      </figure>
+   </div>
+   <h2>Schreibereingriffe: getilgter Text, Korrekturen, Hinzufügungen</h2>
+   <p>Korrekturen durch Schreiber werden durch entsprechende Codierung kenntlich
+      gemacht. Dabei ist zwischen Löschungen <code>del</code> Ergänzungen <code>add</code>
+      und Ersetzungen <code>subst</code> zur unterscheiden. Löschungen werden
+      unabhängig von ihrer konkreten Ausgestaltung mit dem Element <code>del</code>
+      ausgezeichnet. Löschungen über mehrere Zeilen / Seiten / Spalten, werden
+      durch das Element <code>delSpan</code> ausgezeichnet, dessen Ende mit dem
+      Element <code>anchor</code> markiert wird. Eine Spezifizierung der konkreten
+      Ausgestaltung der Löschung erfolgt durch das Attribut rend und kann durch
+      die Werte <code>erased</code>, <code>strikethrough</code>, <code>blackout</code>,
+      <code>expunctuation</code> und <code>underlined</code> ausgedrückt werden.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image10.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Korrektur eines &#34;l&#34; (, fol. 133rb)"><figcaption class="figure-caption">Korrektur eines "l" (B, fol. 133rb)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image11.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Streichung in Capitulatio Buch 13 (, fol. 203va)"><figcaption class="figure-caption">Streichung in Capitulatio Buch 13 (B, fol. 203va)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Expunktiertes a (, fol. 44ra)"><figcaption class="figure-caption">Expunktiertes a (B, fol. 44ra)</figcaption>
+      </figure>
+   </div>
+   <p>Eine Ersetzung liegt vor, wenn eine getilgte oder gelöschte Stelle ergänzt
+      wird. Dies erfolgt in einem <code>subst</code>-Element unter Rückgriff auf die
+      Elemente <code>del</code> und <code>add</code> mit ihren dazugehörigen Attributen
+      (s.o.). Marginalien oder Interlinearglossen werden als <code>note</code>-Element
+      erfasst und durch das Attribut <code>type</code> und den dazugehörenden Werten
+      <code>contemporary-marginalia</code>, <code>later-marginalia</code>,
+      <code>contemporary-interlinear</code> und <code>later-interlinear</code> einer
+      Anlageschicht zugeordnet sowie durch <code>hand</code> einer Hand zugeordnet
+      und nachträglich mit einer <code>xml:id</code> versehen. Marginalia werden am
+      Ort ihres Auftretens, also am Anfang bzw. Ende einer Zeile, im Fließtext
+      verzeichnet und mit dem Attribut <code>place</code> und dem Wert <code>margin
+         left|right</code> verortet.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image13.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Spätere Marginalie (, fol. 263v)"><figcaption class="figure-caption">Spätere Marginalie (F, fol. 263v)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image14.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Glosse in I.26 (, fol. 14rb)"><figcaption class="figure-caption">Glosse in I.26 (B, fol. 14rb)</figcaption>
+      </figure>
+   </div>
+   <p>Wurden einzelne Buchstaben oder ganze Satzteile beim Abschreiben übersehen,
+      so werden sie in der Regel am Rand oder über der Zeile nachgetragen. Solche
+      Hinzufügungen werden durch das Element <code>add</code> verzeichnet, das über
+      die Attribute <code>type</code> mit den Werten
+      <code>contemporary</code>|<code>later</code>|<code>modern</code> näher bestimmt
+      wird. Darüber hinaus muss der Ort der Zufügung mit <code>place</code> und den
+      Werten <code>inline</code>, <code>below</code>, <code>above</code>,
+      <code>bottom</code>, <code>margin left|right</code>, <code>overleaf</code>,
+      <code>overstrike</code> oder <code>top</code> konkretisiert werden.
+      Hinzufügungen von anderer Hand werden mit <code>hand</code> ausgezeichnet.
+      Dieses Element erhält nachträglich eine <code>xml:id</code>.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image15.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Zwei unterschiedlich umfangreiche Hinzufügung (, fol. 115ra)"><figcaption class="figure-caption">Zwei unterschiedlich umfangreiche Hinzufügung (K, fol. 115ra)</figcaption>
+      </figure>
+   </div>
+   <p>Das häufige Phänomen, dass über die Zeile reichende Wortteile in einer
+      anderen Zeile nachgetragen wurden, wird über die Elemente <code>supplied</code>
+      und <code>seg</code> dargestellt. Dabei ist zu beachten, dass das verschobene
+      Wort zunächst durch <code>seg</code> am Ort des tatsächlichen Auftretens
+      verzeichnet wird. Dann wird es durch <code>supplied</code> am Ort seiner
+      logischen Zugehörigkeit eingefügt. Das Element <code>supplied</code> enthält
+      dabei zwingend den <code>type</code> mit dem Wert <code>displaced</code>, einem
+      Attribut <code>reason</code> mit dem Wert <code>over-the-line</code> sowie eine
+      eindeutige <code>xml:id</code>, die von Hand eingetragen werden muss. Das
+      Element <code>seg</code> enthält das Attribut <code>corresp</code>, indem auf die
+      zuvor gesetzte supplied-ID verwiesen wird (<code>#supplied-ID</code>) sowie
+      <code>type</code> mit dem Wert <code>pos-of-displaced</code>.</p>
+   <h2>Unklare Lesarten, beschädigte oder fragmentierte Textstellen</h2>
+   <p>Ist ein Text nicht sicher zu entziffern, wird dieser durch das Element
+      <code>unclear</code> ausgezeichnet und so nachvollziehbar gehalten. Dabei muss
+      das Element <code>unclear</code> die Attribute <code>resp</code> (mit der
+      jeweiligen Personen-ID als Wert) und <code>cert</code> (mit den Werten
+      <code>low</code>, <code>middle</code> oder <code>high</code> enthalten sowie eine
+      <code>reason</code> durch die Werte <code>tight-binding</code>,
+      <code>rubbed</code>, <code>erased</code> oder <code>folded-parchment</code>
+      spezifiziert werden. Unleserlicher Text wird in den Transkriptionen nicht
+      ergänzt.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image16.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Eingebundene Nummerierung und Inskription (, fol. 20ra)"><figcaption class="figure-caption">Eingebundene Nummerierung und Inskription (F, fol. 20ra)</figcaption>
+      </figure>
+   </div>
+   <p>Häufig resultiert eine schwere Lesbarkeit oder gar Unleserlichkeit
+      betroffener Textstellen aus Beschädigungen, die durch das Element
+      <code>damage</code> zu dokumentieren ist. Textverluste oder -fragmentierungen
+      werden Zeile für Zeile über das Element <code>gap</code> unter Angabe einer
+      <code>reason</code><code>cut-out</code>, <code>torn-out</code>, <code>burned</code>
+      oder <code>trimmed</code>. Der verloren gegangene Text wird an dieser Stelle
+      nicht ergänzt. Trennt der Textverlust ein Wort, so wird der folgende
+      Zeilenumbruch als <code>lb break="no"</code> gesetzt. Ist der Text zumindest
+      teilweise lesbar, so wird er über das im vorhergehenden Abschnitt
+      dokumentierte Element <code>unclear</code> ausgezeichnet, ggf. in Kombination
+      mit dem Element <code>gap</code>. Ist der Text eindeutig lesbar, wird lediglich
+      das Element <code>damage</code> um die beschädigte Stelle gesetzt, um den
+      Schaden zu dokumentieren.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image17.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Ausgeschnittener Wortteil, , fol. 8ra"><figcaption class="figure-caption">Ausgeschnittener Wortteil, B, fol. 8ra</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image18.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Verblasste Textstelle mit Korrekturen (, fol. 28vb)"><figcaption class="figure-caption">Verblasste Textstelle mit Korrekturen (B, fol. 28vb)</figcaption>
+      </figure>
+   </div>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Unleserlicher Text (, fol. 136vb)"><figcaption class="figure-caption">Unleserlicher Text (B, fol. 136vb)</figcaption>
+      </figure>
+   </div>
+   <h2>Schreiber, Schrift- und Schriftbildwechsel</h2>
+   <p>Wechselt der Schreiber im Text, so wird an der Position des Wechsels das
+      Element <code>handShift</code> eingefügt. Es verweist durch das Attribut
+      <code>new</code> durch entsprechende ID auf eine der im Element
+      <code>handNote</code> aufgeführten Hände. Daneben werden durch die Attribute
+      <code>cert</code> und <code>source</code> die Sicherheit und Herkunft der Angabe
+      verzeichnet. Aufgrund der Aufteilung der Transkription in einzelne Dateien
+      pro Buch, wird ein im vorangegangenen Buch erfolgter Handwechsel über ein
+      <code>ptr</code> Element referenziert. Bedeutungstragende Änderungen des
+      Schriftbildes, etwa eine Verdopplung der Zeilenzahl über einen bestimmten
+      Abschnitt, werden über das Attribut <code>ana</code> mit der Taxonomie
+      verknüpft und so gekennzeichnet. Nach Möglichkeit / Notwendigkeit ist auf
+      die jeweiligen Schreiber bestimmter Elemente und Abschnitte über
+      <code>hand</code> auf die entsprechenden <code>xml:id</code> in der
+      dazugehörenden <code>handDesc</code> im <code>teiHeader</code> zu verweisen, um eine
+      textgenetische Analyse der Kodizes zu ermöglichen.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/image20.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Schreiberwechsel (,&#xA;                            fol. 102rb)"><figcaption class="figure-caption">Schreiberwechsel (Va3,
+            fol. 102rb)</figcaption>
+      </figure>
+   </div>
+   <p>Die <code>handnote</code> verlinkt auf ein zentrales Schreiberregister, welches
+      die von <a href="https://www.burchards-dekret-digital.de/html/bibl.html#X25FUV2K" target="_blank">Hoffmann
+         und Pokorny 1991</a> identifizierten Schreiber zur weiteren Verwendung
+      innerhalb des Projekts verzeichnet. Die Auflistung der Schreiber erfolgt
+      innerhalb einer <code>listPerson</code> mit dem Attribut <code>listPerson
+         type="scribes"</code> sowie der <code>xml:id="RegScribes"</code>, wobei
+      zusammengehörende Schreiber als <code>personGrp</code> gesammelt werden, z.B.
+      Schreiber des Wormser Skriptoriums. Die Unterscheidung erfolgt über ein
+      Attribut <code>xml:id</code>, z.B. <code>xml:id="Wos"</code>. Die einzelnen
+      Schreiber werden als <code>person</code> ausgezeichnet, wobei zu beachten ist,
+      dass hier nicht Hände, sondern ausschließlich tatsächliche Schreiber
+      aufgeführt werden. Auch diese Schreiber erhalten eine eindeutige
+      <code>xml:id</code>. Außerdem wird eine Bezeichnung als <code>name</code> sowie,
+      wenn bekannt, eine <code>affiliation</code> verbalisiert.</p>
+   <h2>Zahlen</h2>
+   <p>Das in den Handschriften weitgehend genutzte römische Zahlensystem wird in
+      der Transkription übernommen und in Kleinbuchstaben wiedergegeben. Unlesbare
+      Kapitelzählungen werden ergänzt. Die laufende Kapitelnummer wird dort durch
+      <code>n</code> Attribut ausgedrückt, im Text auftretende Ziffern und
+      verbalisierte Zahlen werden durch das Element <code>num</code> unter Angabe des
+      Zahlenwertes im Attribut <code>value</code> ausgezeichnet.</p></span><span lang="en"></span><span lang="">BDD Transkription: schemaSpec
+   <p>Auf TEI All basierende Anpassung für Transkriptionen im Projekt Burchards
+      Dekret Digital zur Generierung von relaxng Validierungsdateien.</p>Custom addition by BDD not allowed in
+   regular TEI. Added because some items are written by other
+   hands that need to be specified. Datatype was changed from
+   URI to string, as multiple hands need to markedup.Custom addition by BDD not allowed in
+   regular TEI. Added because some items are written by other
+   hands that need to be specified. Datatype was changed from
+   URI to string, as multiple hands need to markedup.</span></div>
