@@ -35,9 +35,9 @@
        
 
         <style>
-           .resource-panel-item {
-                flex: 0 0 calc(50% - 10px); 
-                max-width: calc(50% - 10px); 
+           /*.resource-panel-item {
+                flex: 0 0 calc(100% - 10px); 
+                max-width: calc(100% - 10px); 
                 margin-right: 10px;
                 margin-bottom: 20px;
             }
@@ -45,7 +45,57 @@
             .resource-panel-item .only-child {
                 flex: 0 0 100%;
                 max-width: 100%!important;
+            }*/
+
+           /* .row {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
             }
+
+            #resourcePanel {
+                display: flex;
+            }
+
+            .resource-panel-item {
+                flex: 0 0 auto; 
+                margin-right: 10px; 
+            }
+
+            .only-child {
+                flex: 1; 
+            }*/
+
+            .row {
+                overflow-x: auto;
+            }
+
+            #resourcePanel {
+                display: flex;
+            }
+
+            .resource-panel-item {
+                flex: 0 0 auto; /* Prevent panels from growing */
+                margin-right: 10px; /* Adjust margin between panels */
+            }
+
+            .resource-panel-item.only-child {
+                flex: 1; /* Expand the single panel to fill the space */
+            }
+
+            .resource-panel-item.full-width {
+                width: 100%;
+            }
+
+            .resource-panel-item.three-quarter-width {
+                width: 75%;
+            }
+
+            .resource-panel-item.half-width {
+                width: 50%;
+            }
+
+
 
             .btn-outline-primary {
             background-color: transparent;
@@ -72,6 +122,7 @@
                     <div class="d-flex" id="resourcePanel"></div>
                 </div>
             </div>
+          
 
 
             <!-- Modal for selecting resources -->
@@ -759,6 +810,7 @@
       document.getElementById('confirmSelectionBtn').addEventListener('click', function() {
         $('#resourceModal').modal('hide');
         displaySelectedResources();
+        adjustPanelWidth()
       });
 
       
@@ -778,6 +830,7 @@
         });
 
         localStorage.setItem('resourceState', JSON.stringify(resourceState));
+        adjustPanelWidth()
       }
 
       // Upload source panel status from local storage
@@ -786,6 +839,7 @@
         if (resourceState) {
           displayResourcesFromJson(resourceState)
         }
+        adjustPanelWidth()
       }
 
       // Call function loadResourceState() when loading the page
@@ -858,6 +912,7 @@
             let panel = createResourcePanel(book.value, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
             container.appendChild(panel);
             saveResourceState(); // Save resource panel status after selection
+            adjustPanelWidth()
           }
         };
       }
@@ -934,6 +989,7 @@
             addTranscriptionBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); // Save resource panel status after addition/deletion transcription
+          adjustPanelWidth()
         });
 
         addStructureBtn.addEventListener('click', function() {
@@ -949,6 +1005,7 @@
             addStructureBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); //Save resource panel status after addtion/deletion structure
+          adjustPanelWidth()
         });
 
         miradorBtn.addEventListener('click', function() {
@@ -964,6 +1021,7 @@
             miradorBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
+          adjustPanelWidth()
         });
 
         return panel;
@@ -1000,17 +1058,18 @@
             msViews.push(await response.text())
             msViews.push("STRUCTURE")
             msViews.push("MIRADOR")
-            //todo push mirador an structure in msViews
+            //todo push mirador and structure in msViews
             let selectedViews = [true, false, false]
             let panel = createResourcePanel(`${msName}_${msAbbr}_${bookN}`, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
             var container = document.getElementById('resourcePanel');    
             container.appendChild(panel);
             saveResourceState(); // Save resource panel status after selection
+            adjustPanelWidth()
           }
       }
 
       //panel width
-      function adjustPanelWidth() {
+      /*function adjustPanelWidth() {
         const resourcePanel = document.getElementById('resourcePanel');
         const resourceCount = resourcePanel.children.length;
         const panels = resourcePanel.getElementsByClassName('resource-panel-item');
@@ -1022,7 +1081,54 @@
             panel.classList.remove('only-child');
           });
         }
-      }
+      }*/
+
+      //alternative 2 - didn't work
+      /*function adjustPanelWidth() {
+        const resourcePanel = document.getElementById('resourcePanel');
+        const panels = resourcePanel.getElementsByClassName('resource-panel-item');
+
+        Array.from(panels).forEach(panel => {
+            const cardBody = panel.querySelector('.card-body');
+            const hiddenDivs = cardBody.querySelectorAll('.d-none');
+
+            if (panels.length === 1) {
+                panel.classList.add('only-child');
+                panel.style.width = '100%';
+            } else {
+                panel.classList.remove('only-child');
+                if (hiddenDivs.length === 2) {
+                    panel.style.width = '50%';
+                } else if (hiddenDivs.length === 1) {
+                    panel.style.width = '75%';
+                } else {
+                    panel.style.width = '100%';
+                }
+            }
+        });
+    }*/
+    //new function to handle panel width behaviour
+    function adjustPanelWidth() {
+    const resourcePanel = document.getElementById('resourcePanel');
+    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
+      Array.from(panels).forEach(panel => {
+          const cardBody = panel.querySelector('.card-body');
+          const hiddenDivs = cardBody.querySelectorAll('.d-none');
+
+          if (panels.length === 1) {
+              panel.classList.add('only-child', 'full-width');
+          } else {
+              panel.classList.remove('only-child', 'full-width', 'three-quarter-width', 'half-width');
+              if (hiddenDivs.length === 2) {
+                  panel.classList.add('half-width');
+              } else if (hiddenDivs.length === 1) {
+                  panel.classList.add('three-quarter-width');
+              } else {
+                  panel.classList.add('full-width');
+              }
+          }
+      });
+    }
 
 
       //Upload json
