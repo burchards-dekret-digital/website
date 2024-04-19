@@ -335,8 +335,26 @@
                     msSignatur.innerHTML += "<b>Signatur: </b>"+ xmlDoc.querySelectorAll('msName[type="full"]')[0].innerHTML +"<br/>"
                     msSignatur.innerHTML += "<b>Alte Signatur: </b>"+ xmlDoc.querySelectorAll('altIdentifier[type="old-signature"] idno')[0].innerHTML +"<br/>"
                     msSignatur.innerHTML += "<b>Sigle: </b>"+ xmlDoc.querySelectorAll('msName[type="sigle"]')[0].innerHTML +"<br/>"
-                    msSignatur.innerHTML += "<b>Textfamilie: </b>"+ xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-family"]')[0].innerHTML + ", "+
-                        xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-subfamily"]')[0].innerHTML +"<br/>"
+
+                    var textualFamily = xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-family"]');
+                    var textualSubfamily = xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-subfamily"]');
+
+                    var textualFamily = xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-family"]')[0].innerHTML.trim();
+                    var textualSubfamily = xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-subfamily"]')[0].innerHTML.trim();
+                    if (textualFamily) {
+                        msSignatur.innerHTML += "<b>Textfamilie (nach Hoffmann und Pokorny): </b>" + textualFamily;
+                        if (textualSubfamily) {
+                            // If both textualFamily and textualSubfamily have content, add the comma
+                            msSignatur.innerHTML += ", " + textualSubfamily;
+                        }
+                        msSignatur.innerHTML += "<br/>";
+                    } 
+                    else {
+                        // If there is no textual content in textualFamily, only add textualSubfamily
+                        msSignatur.innerHTML += "<b>Textfamilie (nach Hoffmann und Pokorny): </b>" + textualSubfamily + "<br/>";
+                    }
+                    //msSignatur.innerHTML += "<b>Textfamilie (nach Hoffmann und Pokorny): </b>"+ xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-family"]')[0].innerHTML + ", "+
+                        //xmlDoc.querySelectorAll('msItem[class="main-text"] note[type="textual-subfamily"]')[0].innerHTML +"<br/>"
                     document.getElementById("mss-signatur").appendChild(msSignatur)
 
 
@@ -364,9 +382,9 @@
                     if (material === "parchment") {
                         materialLabel = "Pergament";
                     } else {
-                        // If there are other materials, you can add more conditions here
-                        // or provide a default label if no condition matches.
-                        materialLabel = material; // default behavior: keep the original material
+                        // add here other materials if need
+                        // or provide a default label if no condition matches
+                        materialLabel = material; // default: keep the original material
                     }
                     msDesc.innerHTML += "<b>Beschreibstoff: </b>" + materialLabel + "<br/>";
                     msDesc.innerHTML += "<b>Größe: </b>"+ xmlDoc.querySelectorAll('extent dimensions[type="leaf"] height')[0].getAttribute("quantity") + " cm x " +xmlDoc.querySelectorAll('extent dimensions[type="leaf"] width')[0].getAttribute("quantity") +"<br/>"
@@ -398,7 +416,6 @@
                         msContentStructModern.innerHTML += "<b>Titel: </b>"+ titleArray[i].querySelectorAll('title')[0].innerHTML +"<br/>"
                         document.getElementById("mss-content-struct-modern").appendChild(msContentStructModern)
                     }
-
 
                     document.getElementById("webResourceDigitalisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="digi"] ref')[0].innerHTML
                     document.getElementById("webResourceKatalogisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="cat"] ref')[0].innerHTML
