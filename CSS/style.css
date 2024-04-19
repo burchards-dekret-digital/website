@@ -79,6 +79,12 @@ h5{
 .de { display: initial; }
 .language-button { cursor: pointer; margin-right: 10px; }
 
+
+.footer{
+    bottom: 0;
+    width: 100%;
+}
+
 @media only screen and (min-width: 960px) {
     .navbar {
         padding: 0;
@@ -143,6 +149,11 @@ li{
     line-height: 24px;
 }
 
+.section-main-title{
+    margin-top:30px; 
+    margin-bottom:40px
+}
+
 
             
 
@@ -178,10 +189,10 @@ li{
             margin-top:30px;
 }
         
-        .manuscript-title {
-           margin-bottom: 30px; 
-            text-align:center
-        }
+.manuscript-title {
+    margin-bottom: 30px; 
+    text-align:center
+}
         
 
 /* .viewer class for dosplaying mirador viewer*/
@@ -434,6 +445,12 @@ td.bdd-ed-rec::after{
             .manuscript-title h1{font-size:25px; margin-top:30px;}
             .table-strukturansicht {table-layout: auto;}
             .text-container-edition:not(:first-child){margin-top:50px;}
+            .section-main-title{
+                margin-top:60px; 
+                margin-bottom:10px;
+                margin-left:10px;
+            }
+            
             }
             
             
@@ -452,6 +469,12 @@ td.bdd-ed-rec::after{
             #scroll-down{display:none;}
             .navbar-brand img{width: 60px!important;}
             .manuscript-title h1{font-size:25px; margin-top:30px;}
+            .section-main-title{
+                margin-top:60px; 
+                margin-bottom:10px;
+                margin-left:10px;
+            }
+            
             .back-button{display:none;}
             }
             
@@ -543,6 +566,12 @@ td.bdd-ed-rec::after{
             text-align:left;
             margin-left:20px;
             }
+            .section-main-title{
+                margin-top:60px; 
+                margin-bottom:10px;
+                margin-left:10px;
+            }
+            
             
             #map2 {
     width: 90%;
