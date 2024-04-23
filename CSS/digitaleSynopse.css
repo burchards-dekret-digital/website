@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'Andron-Scriptor-Web';
-    src: url('https://burchard.adwmainz.net/exist/webdav/db/apps/bdd/resources/fonts/Andron-Scriptor-Web.ttf') format('truetype');
+    src: url(Andron-Scriptor-Web.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,22 +29,22 @@
 }
 
 br.tei_lb + br {
-    display:none;
+    display:none!important;
 }
 li + br.tei_lb {
-    display:none;
+    display:none!important;
 }
 h5 + br.tei_lb {
-    display:none;
+    display:none!important;
 }
 h6 + br.tei_lb {
-    display:none;
+    display:none!important;
 }
 span[class="tei_note-inscription"] > br.tei_lb {
-    display: none;
+    display: none!important;
 }
 .tei_praefatiuncula + br.tei_lb {
-    display: none;
+    display: none!important;
 }
 
 

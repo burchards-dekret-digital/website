@@ -44,7 +44,7 @@ function synchWitnessesUpDown(currentElement, direction) {
     });
 }
 
-function contextMenuChapter(currentElement) {
+/*function contextMenuChapter(currentElement) {
     if (document.getElementById('context-menu') === null) {
         var menuHTML = document.createElement('div');
         menuHTML.className = 'synch-menu-chapter-wrapper';
@@ -73,7 +73,7 @@ function contextMenuChapter(currentElement) {
         });
     } else {
     }
-}
+}*/
 
 
 
@@ -104,17 +104,7 @@ function openHandShiftInMirador(targetId, sigla) {
 
 // 3. Steuerung der angezeigten Elemente
 
-// 3.1 Anzeige der originalen Zeilenumbrüche
 
-$('#diplomatic').on('click', function () {
-    $('li').css('display', 'inline');
-});
-
-// 3.2 Anzeige eines Fließtextes
-
-$('#flowing').on('click', function () {
-    $('li').css('display', 'block');
-});
 
 // 3.3 Ausblenden eines Elements (z.B. abbr)
 
@@ -133,6 +123,7 @@ function showElement(className) {
         all[i].style.display = 'inline';
     }
 }
+
 
 
 // 4.1 Hervorheben von seg displaced Elementen bei hover auf korrespondierendes supplied Element
@@ -172,6 +163,22 @@ function endHighlightCorrespElement(currentID, correspID) {
         correspElement.children[i].style.backgroundColor = "";
     }
 };
+
+// 4.3 Generische Hervorhebung von Auszeichnungen mit Hintergrundfarbe
+/*function highlightElement(className, color) {
+    stl = document.getElementsByClassName(className)[0];
+    if (stl.style.backgroundColor !== color) {
+        var all = document.getElementsByClassName(className);
+        for (var i = 0; i < all.length; i++) {
+            all[i].style.backgroundColor = color;
+        }
+    } else {
+        var all = document.getElementsByClassName(className);
+        for (var i = 0; i < all.length; i++) {
+            all[i].style.backgroundColor = 'white';
+        }
+    }
+}*/
 
 
 

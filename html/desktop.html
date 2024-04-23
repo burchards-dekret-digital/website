@@ -905,6 +905,21 @@
                 <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn"><span lang="de">Transkription</span></button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
                 <button type="button" class="btn btn-outline-primary btn-sm mirador-btn">Mirador</button>
+                <div class="dropdown">
+                  <button class="btn btn-primary btn-sm me-2 dropdown-toggle mt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Transkriptionsansichten
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" id="diplomatic" onclick="showElement('tei_lb')">Original</a></li>
+                    <li><a class="dropdown-item" href="#" id="flowing" onclick="hideElement('tei_lb')">Lesefassung</a></li>
+                    <hr/>
+                    <li><a class="dropdown-item" href="#" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
+                    <hr/>
+                    <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>
+                  </ul>
+                </div>
               </div>
               <button type="button" class="btn-close" aria-label="Close"></button>
             </div>

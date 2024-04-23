@@ -220,9 +220,7 @@
             id = $(this).attr("xml:id");
            // edition = $(this).find("edition").text();
             year = $(this).find("imprint > date").text();
-            console.log(year)
             pubPlace = $(this).find("imprint > pubPlace").text();
-            console.log(pubPlace)
            // publisher = $(this).find("imprint > publisher").text();
            // id = $(this).find("monogr > idno").attr("type") + ": " + $(this).find("monogr > idno").text();
            // note = $(this).find("imprint > note").text();
@@ -256,7 +254,7 @@
             tableRows += "</tr>";
           });
 
-          $("#literatureTable tbody").append(tableRows);
+          $("#literatureTable tbody").append(tableRows);          
         },
 
         error: function(xhr, status, error) {
