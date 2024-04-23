@@ -11,6 +11,11 @@
 }
 
 
+/*Structure*/
+#accordionStructure table tbody tr {
+    font-family: Andron-Scriptor-Web!important;
+}
+
 .tei_incipit{
     font-family: 'Oswald', sans-serif;
     font-size: 1.3em;

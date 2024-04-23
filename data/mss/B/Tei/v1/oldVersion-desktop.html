@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>BDD Schreibtisch</title>
+        <title>Schreibtisch</title>
         <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -31,47 +31,30 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
         <script src="../js/language.js" defer></script>
-        <script src="../js//digitaleSynopse.js" defer></script>
 
        
 
         <style>
-                       .row {
-                overflow-x: auto;
+           /*.resource-panel-item {
+                flex: 0 0 calc(50% - 10px); 
+                max-width: calc(50% - 10px); 
+                margin-right: 10px;
+                margin-bottom: 20px;
             }
 
-            #resourcePanel {
-                display: flex;
-            }
-
-            .resource-panel-item {
-                flex: 0 0 auto; /* Prevent panels from growing */
-                margin-right: 10px; /* Adjust margin between panels */
-            }
-
-            .resource-panel-item.only-child {
-                flex: 1; /* Expand the single panel to fill the space */
-            }
-
-            .resource-panel-item.full-width {
-                width: 100%;
-            }
-
-            .resource-panel-item.three-quarter-width {
-                width: 75%;
-            }
-
-            .resource-panel-item.half-width {
-                width: 50%;
-            }
-
-
+            .resource-panel-item .only-child {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }*/
 
             .btn-outline-primary {
             background-color: transparent;
             color: #0d6efd;
             border-color: #0d6efd;
             }
+
+            
+
         </style>
     </head>
     <body>
@@ -83,16 +66,16 @@
                 <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
             </div>
 
-            <h1 class="section-main-title"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
+            <h1 style="margin-top:30px; margin-bottom:40px;"><span lang="de">SCHREIBTISCH</span></h1>
+            <h1 style="margin-top:20px; margin-bottom:40px;"><span lang="en">DESKTOP</span></h1>
 
-            <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
-            <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>
-            <div class="row mt-3" style="overflow-x: auto;">
+            <button class="btn btn-primary" id="addResourceBtn">Add Resource</button>
+            <button class="btn btn-success" id="downloadJsonBtn">Download JSON</button>
+            <div class="row mt-3">
                 <div class="col">
-                    <div class="d-flex" id="resourcePanel"></div>
+                    <div class="d-flex" id="resourcePanel" style="overflow-x: scroll; overflow-y: hidden;"></div>
                 </div>
             </div>
-          
 
 
             <!-- Modal for selecting resources -->
@@ -100,12 +83,12 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="resourceModalLabel"><span lang="de">Ressourcen auswählen</span><span lang="en">Select Resources</span></h5>
+                        <h5 class="modal-title" id="resourceModalLabel">Select Resources</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <div class="modal-body">
-                            <h6><span lang="de">JSON Hochladen</span><span lang="en">Load JSON</span></h6>
+                            <h6>Load JSON</h6>
                             <input type="file" class="form-control" id="jsonFileInput" accept=".json">   
                         </div>
                         <div class="accordion" id="accordionManuscripts">
@@ -120,67 +103,67 @@
                                     <div class="row">
                                       <div class="col-md-6">
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_00" id="BambergBook00">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 00" id="BambergBook00">
                                           <label class="form-check-label" for="BambergBook00">
                                           Buch 00
                                           </label>
                                         </div>
                                           <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="Bamberg_B_01" id="BambergBook01">
+                                              <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 01" id="BambergBook01">
                                               <label class="form-check-label" for="BambergBook01">
                                               Buch 01
                                               </label>
                                           </div>
                                           <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="Bamberg_B_02" id="BambergBook02">
+                                              <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 02" id="BambergBook02">
                                               <label class="form-check-label" for="BambergBook02">
                                               Buch 02
                                               </label>
                                           </div>
                                           <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="Bamberg_B_03" id="BambergBook03">
+                                              <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 03" id="BambergBook03">
                                               <label class="form-check-label" for="BambergBook03">
                                               Buch 03
                                               </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_04" id="BambergBook04">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 04" id="BambergBook04">
                                             <label class="form-check-label" for="BambergBook04">
                                             Buch 04
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_05" id="BambergBook05">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 05" id="BambergBook05">
                                             <label class="form-check-label" for="BambergBook05">
                                             Buch 05
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_06" id="BambergBook06">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 06" id="BambergBook06">
                                             <label class="form-check-label" for="BambergBook06">
                                             Buch 06
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_07" id="BambergBook07">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 07" id="BambergBook07">
                                             <label class="form-check-label" for="BambergBook07">
                                             Buch 07
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_08" id="BambergBook08">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 08" id="BambergBook08">
                                             <label class="form-check-label" for="BambergBook08">
                                             Buch 08
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_09" id="BambergBook09">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 09" id="BambergBook09">
                                             <label class="form-check-label" for="BambergBook09">
                                             Buch 09
                                             </label>
                                           </div>
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_10" id="BambergBook10">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 10" id="BambergBook10">
                                             <label class="form-check-label" for="BambergBook10">
                                             Buch 10
                                             </label>
@@ -188,61 +171,61 @@
                                       </div>
                                       <div class="col-md-6">
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_11" id="BambergBook11">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 11" id="BambergBook11">
                                           <label class="form-check-label" for="BambergBook11">
                                           Buch 11
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_012" id="BambergBook12">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 12" id="BambergBook12">
                                           <label class="form-check-label" for="BambergBook12">
                                           Buch 12
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_13" id="BambergBook13">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 13" id="BambergBook13">
                                           <label class="form-check-label" for="BambergBook13">
                                           Buch 13
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_14" id="BambergBook14">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 14" id="BambergBook14">
                                           <label class="form-check-label" for="BambergBook14">
                                           Buch 14
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_15" id="BambergBook15">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 15" id="BambergBook15">
                                           <label class="form-check-label" for="BambergBook15">
                                           Buch 15
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_16" id="BambergBook16">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 16" id="BambergBook16">
                                           <label class="form-check-label" for="BambergBook16">
                                           Buch 16
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_17" id="BambergBook17">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 17" id="BambergBook17">
                                           <label class="form-check-label" for="BambergBook17">
                                           Buch 17
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_18" id="BambergBook18">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 18" id="BambergBook18">
                                           <label class="form-check-label" for="BambergBook18">
                                           Buch 18
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_19" id="BambergBook19">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 19" id="BambergBook19">
                                           <label class="form-check-label" for="BambergBook19">
                                           Buch 19
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_20" id="BambergBook20">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Bamberg-Book 20" id="BambergBook20">
                                           <label class="form-check-label" for="BambergBook20">
                                           Buch 20
                                           </label>
@@ -263,67 +246,67 @@
                                   <div class="row">
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_00" id="FrankfurtBook00">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 00" id="FrankfurtBook00">
                                         <label class="form-check-label" for="FrankfurtBook0">
                                         Buch 00
                                         </label>
                                       </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Frankfurt_F_01" id="FrankfurtBook01">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 01" id="FrankfurtBook01">
                                             <label class="form-check-label" for="FrankfurtBook01">
                                             Buch 01
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Frankfurt_F_02" id="FrankfurtBook02">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 02" id="FrankfurtBook02">
                                             <label class="form-check-label" for="FrankfurtBook02">
                                             Buch 02
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Frankfurt_F_03" id="FrankfurtBook03">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 03" id="FrankfurtBook03">
                                             <label class="form-check-label" for="FrankfurtBook03">
                                             Buch 03
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_04" id="FrankfurtBook04">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 04" id="FrankfurtBook04">
                                           <label class="form-check-label" for="FrankfurtBook04">
                                           Buch 04
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_05" id="FrankfurtBook05">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 05" id="FrankfurtBook05">
                                           <label class="form-check-label" for="FrankfurtBook05">
                                           Buch 05
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_06" id="FrankfurtBook06">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 06" id="FrankfurtBook06">
                                           <label class="form-check-label" for="FrankfurtBook06">
                                           Buch 06
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_07" id="FrankfurtBook07">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 07" id="FrankfurtBook07">
                                           <label class="form-check-label" for="FrankfurtBook07">
                                           Buch 07
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_08" id="FrankfurtBook08">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 08" id="FrankfurtBook08">
                                           <label class="form-check-label" for="FrankfurtBook08">
                                           Buch 08
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_09" id="FrankfurtBook09">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 09" id="FrankfurtBook09">
                                           <label class="form-check-label" for="FrankfurtBook09">
                                           Buch 09
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_10" id="FrankfurtBook10">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 10" id="FrankfurtBook10">
                                           <label class="form-check-label" for="FrankfurtBook10">
                                           Buch 10
                                           </label>
@@ -331,61 +314,61 @@
                                     </div>
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_11" id="FrankfurtBook11">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 11" id="FrankfurtBook11">
                                         <label class="form-check-label" for="FrankfurtBook11">
                                         Buch 11
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_12" id="FrankfurtBook12">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 12" id="FrankfurtBook12">
                                         <label class="form-check-label" for="FrankfurtBook12">
                                         Buch 12
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_13" id="FrankfurtBook13">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 13" id="FrankfurtBook13">
                                         <label class="form-check-label" for="FrankfurtBook13">
                                         Buch 13
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_14" id="FrankfurtBook14">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 14" id="FrankfurtBook14">
                                         <label class="form-check-label" for="FrankfurtBook14">
                                         Buch 14
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_15" id="FrankfurtBook15">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 15" id="FrankfurtBook15">
                                         <label class="form-check-label" for="FrankfurtBook15">
                                         Buch 15
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_16" id="FrankfurtBook16">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 16" id="FrankfurtBook16">
                                         <label class="form-check-label" for="FrankfurtBook16">
                                         Buch 16
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_17" id="FrankfurtBook17">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 17" id="FrankfurtBook17">
                                         <label class="form-check-label" for="FrankfurtBook17">
                                         Buch 17
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_18" id="FrankfurtBook18">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 18" id="FrankfurtBook18">
                                         <label class="form-check-label" for="FrankfurtBook18">
                                         Buch 18
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_19" id="FrankfurtBook19">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 19" id="FrankfurtBook19">
                                         <label class="form-check-label" for="FrankfurtBook19">
                                         Buch 19
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_20" id="FrankfurtBook20">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Frankfurt-Book 20" id="FrankfurtBook20">
                                         <label class="form-check-label" for="FrankfurtBook20">
                                         Buch 20
                                         </label>
@@ -406,67 +389,67 @@
                                   <div class="row">
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_00" id="KölnBook00">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 00" id="KölnBook00">
                                         <label class="form-check-label" for="KölnBook00">
                                         Buch 00
                                         </label>
                                       </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Köln_K_01" id="KölnBook01">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 01" id="KölnBook01">
                                             <label class="form-check-label" for="KölnBook01">
                                             Buch 01
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Köln_K_02" id="KölnBook02">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 02" id="KölnBook02">
                                             <label class="form-check-label" for="KölnBook02">
                                             Buch 02
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Köln_K_03" id="KölnBook03">
+                                            <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 03" id="KölnBook03">
                                             <label class="form-check-label" for="KölnBook03">
                                             Buch 03
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_04" id="KölnBook04">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 04" id="KölnBook04">
                                           <label class="form-check-label" for="KölnBook04">
                                           Buch 04
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_05" id="KölnBook05">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 05" id="KölnBook05">
                                           <label class="form-check-label" for="KölnBook05">
                                           Buch 05
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_06" id="KölnBook06">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 06" id="KölnBook06">
                                           <label class="form-check-label" for="KölnBook06">
                                           Buch 06
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_07" id="KölnBook07">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 07" id="KölnBook07">
                                           <label class="form-check-label" for="KölnBook07">
                                           Buch 07
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_08" id="KölnBook08">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 08" id="KölnBook08">
                                           <label class="form-check-label" for="KölnBook08">
                                           Buch 08
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_09" id="KölnBook09">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 09" id="KölnBook09">
                                           <label class="form-check-label" for="KölnBook09">
                                           Buch 09
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_10" id="KölnBook10">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 10" id="KölnBook10">
                                           <label class="form-check-label" for="KölnBook10">
                                           Buch 10
                                           </label>
@@ -474,61 +457,61 @@
                                     </div>
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_11" id="KölnBook11">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 11" id="KölnBook11">
                                         <label class="form-check-label" for="KölnBook11">
                                         Buch 11
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_12" id="KölnBook12">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 12" id="KölnBook12">
                                         <label class="form-check-label" for="KölnBook12">
                                         Buch 12
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_13" id="KölnBook13">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 13" id="KölnBook13">
                                         <label class="form-check-label" for="KölnBook13">
                                         Buch 13
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_14" id="KölnBook14">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 14" id="KölnBook14">
                                         <label class="form-check-label" for="KölnBook14">
                                         Buch 14
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_15" id="KölnBook15">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 15" id="KölnBook15">
                                         <label class="form-check-label" for="KölnBook15">
                                         Buch 15
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_16" id="KölnBook16">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 16" id="KölnBook16">
                                         <label class="form-check-label" for="KölnBook16">
                                         Buch 16
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_17" id="KölnBook17">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 17" id="KölnBook17">
                                         <label class="form-check-label" for="KölnBook17">
                                         Buch 17
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_18" id="KölnBook18">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 18" id="KölnBook18">
                                         <label class="form-check-label" for="KölnBook18">
                                         Buch 18
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_19" id="KölnBook19">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 19" id="KölnBook19">
                                         <label class="form-check-label" for="KölnBook19">
                                         Buch 19
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_20" id="KölnBook20">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Köln-Book 20" id="KölnBook20">
                                         <label class="form-check-label" for="KölnBook20">
                                         Buch 20
                                         </label>
@@ -549,31 +532,31 @@
                                   <div class="row">
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_00" id="Vatikan1Book00">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 00" id="Vatikan1Book00">
                                         <label class="form-check-label" for="Vatikan1Book00">
                                         Buch 00
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_01" id="Vatikan1Book01">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 01" id="Vatikan1Book01">
                                           <label class="form-check-label" for="Vatikan1Book01">
                                           Buch 01
                                           </label>
                                       </div>
                                       <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_02" id="Vatikan1Book02">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 02" id="Vatikan1Book02">
                                           <label class="form-check-label" for="Vatikan1Book02">
                                           Buch 02
                                           </label>
                                       </div>
                                       <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_03" id="Vatikan1Book03">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 03" id="Vatikan1Book03">
                                           <label class="form-check-label" for="Vatikan1Book03">
                                           Buch 03
                                           </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_04" id="Vatikan1Book04">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 04" id="Vatikan1Book04">
                                         <label class="form-check-label" for="Vatikan1Book04">
                                         Buch 04
                                         </label>
@@ -581,25 +564,25 @@
                                     </div>
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_05" id="Vatikan1Book05">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 05" id="Vatikan1Book05">
                                         <label class="form-check-label" for="Vatikan1Book05">
                                         Buch 05
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_06" id="Vatikan1Book06">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 06" id="Vatikan1Book06">
                                         <label class="form-check-label" for="Vatikan1Book06">
                                         Buch 06
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_07" id="Vatikan1Book07">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 07" id="Vatikan1Book07">
                                         <label class="form-check-label" for="Vatikan1Book07">
                                         Buch 07
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_V1_08" id="Vatikan1Book08">
+                                        <input class="form-check-input" type="checkbox" value="Manuscript Vatikan1-Book 08" id="Vatikan1Book08">
                                         <label class="form-check-label" for="Vatikan1Book08">
                                         Buch 08
                                         </label>
@@ -620,37 +603,37 @@
                                     <div class="row">
                                       <div class="col-md-6">
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_09" id="Vatikan2Book09">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 09" id="Vatikan2Book09">
                                           <label class="form-check-label" for="Vatikan2Book09">
                                           Buch 09
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_10" id="Vatikan2Book10">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 10" id="Vatikan2Book10">
                                           <label class="form-check-label" for="Vatikan2Book10">
                                           Buch 10
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_11" id="Vatikan2Book11">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 11" id="Vatikan2Book11">
                                           <label class="form-check-label" for="Vatikan2Book11">
                                           Buch 11
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_12" id="Vatikan2Book12">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 12" id="Vatikan2Book12">
                                           <label class="form-check-label" for="Vatikan2Book12">
                                           Buch 12
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_13" id="Vatikan2Book13">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 13" id="Vatikan2Book13">
                                           <label class="form-check-label" for="Vatikan2Book13">
                                           Buch 13
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_14" id="Vatikan2Book14">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 14" id="Vatikan2Book14">
                                           <label class="form-check-label" for="Vatikan2Book14">
                                           Buch 14
                                           </label>
@@ -658,37 +641,37 @@
                                       </div>
                                       <div class="col-md-6">
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_15" id="Vatikan2Book15">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 15" id="Vatikan2Book15">
                                           <label class="form-check-label" for="Vatikan2Book15">
                                           Buch 15
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_16" id="Vatikan2Book16">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 16" id="Vatikan2Book16">
                                           <label class="form-check-label" for="Vatikan2Book16">
                                           Buch 16
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_17" id="Vatikan2Book17">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 17" id="Vatikan2Book17">
                                           <label class="form-check-label" for="Vatikan2Book17">
                                           Buch 17
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_18" id="Vatikan2Book18">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 18" id="Vatikan2Book18">
                                           <label class="form-check-label" for="Vatikan2Book18">
                                           Buch 18
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_19" id="Vatikan2Book19">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 19" id="Vatikan2Book19">
                                           <label class="form-check-label" for="Vatikan2Book19">
                                           Buch 19
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_V2_20" id="Vatikan2Book20">
+                                          <input class="form-check-input" type="checkbox" value="Manuscript Vatikan2-Book 20" id="Vatikan2Book20">
                                           <label class="form-check-label" for="Vatikan2Book20">
                                           Buch 20
                                           </label>
@@ -702,8 +685,8 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
-                        <button type="button" class="btn btn-primary" id="confirmSelectionBtn"><span lang="de">Auswahl bestätigen</span><span lang="en">Confirm Selection</span></button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="confirmSelectionBtn">Confirm Selection</button>
                       </div>
                   </div>
                 </div>
@@ -716,13 +699,6 @@
     </body>
 
     <script>
-      /* document.addEventListener("visibilitychange", function() {
-          if (document.visibilityState === 'visible') {
-              // Page is visible, reload
-              location.reload();
-          }
-      });*/
-
       //Display Navbar with active item 
       $(function() {
           function setActiveNavItem() {
@@ -755,7 +731,14 @@
     </script>
     
     <script>
-    //open the modal to select books        
+      const msAbbr = {
+          "Bamberg": "B",
+          "Frankfurt": "F",
+          "Köln": "K",
+          "Vatikan1": "V1",
+          "Vatikan2": "V2"
+        }
+        
       document.getElementById('addResourceBtn').addEventListener('click', function() {
         $('#resourceModal').modal('show');
 
@@ -779,8 +762,8 @@
 
       document.getElementById('confirmSelectionBtn').addEventListener('click', function() {
         $('#resourceModal').modal('hide');
+        saveResourceState(); // Save resource panel status after selection
         displaySelectedResources();
-        adjustPanelWidth()
       });
 
       
@@ -789,8 +772,11 @@
       function saveResourceState() {
         const resourcePanels = document.querySelectorAll('.resource-panel-item');
         const resourceState = [];
+        console.log(resourcePanels)
+
+
         resourcePanels.forEach(panel => {
-          const bookId = panel.getAttribute("data-ms");
+          const bookId = panel.querySelector('.card-header span').textContent;
           const view = {
             transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
             structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
@@ -800,7 +786,6 @@
         });
 
         localStorage.setItem('resourceState', JSON.stringify(resourceState));
-        adjustPanelWidth()
       }
 
       // Upload source panel status from local storage
@@ -809,42 +794,29 @@
         if (resourceState) {
           displayResourcesFromJson(resourceState)
         }
-        adjustPanelWidth()
       }
 
       // Call function loadResourceState() when loading the page
       window.addEventListener('load', loadResourceState);
 
-      async function displayResourcesFromJson(jsonData) {
-        let resourcePanel = document.getElementById('resourcePanel');
+      function displayResourcesFromJson(jsonData) {
+        const resourcePanel = document.getElementById('resourcePanel');
         resourcePanel.innerHTML = '';
-        for (resource of jsonData) {
-          let [msName, msAbbr, bookN] = resource.bookId.split('_');
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-          let response = await fetch(folderPath);
-          let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
-            let msViews = []
-            msViews.push(await response.text())
-            msViews.push(await responseStructure.text())
-            msViews.push("MIRADOR")
-            //todo push mirador an structure in msViews
-            let selectedViews = [false, false, false]
-            if (resource.view.transcription) {
-              selectedViews[0] = true
-            }
-            if (resource.view.structure) {
-              selectedViews[1] = true
-            }
-            if (resource.view.mirador) {
-              selectedViews[2] = true
-            }
-            let panel = createResourcePanel(resource.bookId, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
-            resourcePanel.appendChild(panel);
-            saveResourceState(); // Save resource panel status after selection
-          }
+        
+        for (const [manuscriptId, data] of Object.entries(jsonData)) {
+          console.log(manuscriptId, data)
+          const { id: bookId, view } = data;
+          const title = `${bookId}`;
+          const transcriptions = [];
+
+          if (view.transcription) transcriptions.push('Transcription'); //todo1
+          if (view.structure) transcriptions.push('Structure');
+          if (view.mirador) transcriptions.push('Mirador');
+
+          const panel = createResourcePanel(title, transcriptions);
+          resourcePanel.appendChild(panel);
         }
+
         adjustPanelWidth();
       }
 
@@ -870,56 +842,44 @@
 
       async function appendBooks(container, books) {
         for (book of books) {
-          let [msName, msAbbr, bookN] = book.value.split('_');
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-          let response = await fetch(folderPath);
-          let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
-            let msViews = []
-            msViews.push(await response.text())
-            msViews.push(await responseStructure.text())
-            msViews.push("MIRADOR")
-            //todo push mirador an structure in msViews
-
-            let selectedViews = [true, false, false]
-            let panel = createResourcePanel(book.value, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
+          let [manuscript, bookNumber] = book.value.split('-');
+          let ms = msAbbr[manuscript.split(" ")[1]]
+          let bookN = bookNumber.split(" ")[1]
+          let folderPath = '../data/mss/' + ms + '/Tei/v1/';
+          let response = await fetch(folderPath + bookN +'.html');
+          if (response.ok) {
+            let msTranscription = await response.text()
+            let panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [msTranscription]); //todo
             container.appendChild(panel);
-            saveResourceState(); // Save resource panel status after selection
-            adjustPanelWidth()
           }
         };
       }
       
 
-      function createResourcePanel(idVal, title, views, selectedViews) {
+      function createResourcePanel(title, transcriptions) {
         
         const panel = document.createElement('div');
         panel.classList.add('resource-panel-item');
-        panel.setAttribute('data-ms', idVal);
+
         const panelContent = `
           <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center" style="font-weight:bold">
+            <div class="card-header d-flex justify-content-between align-items-center">
               <span>${title}</span>
               <div>
-                <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn"><span lang="de">Transkription</span></button>
-                <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
+                <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transcription</button>
+                <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Structure</button>
                 <button type="button" class="btn btn-outline-primary btn-sm mirador-btn">Mirador</button>
               </div>
               <button type="button" class="btn-close" aria-label="Close"></button>
             </div>
             <div class="card-body row">
-              <div class="col border m-1 transcription-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap"></div>
-              <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap"></div>
-              <div class="col border m-1 mirador-col d-none"></div>
+              ${transcriptions.map(transcription => `
+                <div class="col border m-1">${transcription}</div>
+              `).join('')}
             </div>
           </div>
-        `
+        `;
         panel.innerHTML = panelContent;
-
-        panel.querySelector('.transcription-col').innerHTML = views[0]
-        panel.querySelector('.structure-col').innerHTML = views[1]
-        panel.querySelector('.mirador-col').innerHTML = views[2]
 
         panel.querySelector('.btn-close').addEventListener('click', function() {
           panel.remove();
@@ -927,75 +887,56 @@
           saveResourceState(); //Save source panel status after removing one panel
         });
 
-        let [transcriptionAdded, structureAdded, miradorAdded] = selectedViews
+        let transcriptionAdded = true;
+        let structureAdded = false;
+        let miradorAdded = false;
 
-        var viewsElements = panel.getElementsByClassName('col');
         const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
-        const addStructureBtn = panel.querySelector('.add-structure-btn');
-        const miradorBtn = panel.querySelector('.mirador-btn');
-
-        if (transcriptionAdded){
-            viewsElements[0].classList.remove('d-none');
-            addTranscriptionBtn.classList.remove('btn-outline-primary');
-            addTranscriptionBtn.classList.add('btn-primary');
-        }
-        if (structureAdded){
-          viewsElements[1].classList.remove('d-none');
-          addStructureBtn.classList.remove('btn-outline-primary');
-          addStructureBtn.classList.add('btn-primary');
-        }
-        if (miradorAdded){
-          viewsElements[2].classList.remove('d-none');
-          miradorBtn.classList.remove('btn-outline-primary');
-          miradorBtn.classList.add('btn-primary');
-        }
-
         addTranscriptionBtn.addEventListener('click', function() {
           if (!transcriptionAdded) {
-            viewsElements[0].classList.remove('d-none');
+            panel.querySelector('.card-body').innerHTML += '<div class="col border m-1 transcription-section">Transcription</div>';
             transcriptionAdded = true;
             addTranscriptionBtn.classList.remove('btn-outline-primary');
             addTranscriptionBtn.classList.add('btn-primary');
           } else {
-            viewsElements[0].classList.add('d-none');
+            panel.querySelector('.card-body .col:last-child').remove();
             transcriptionAdded = false;
             addTranscriptionBtn.classList.remove('btn-primary');
             addTranscriptionBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); // Save resource panel status after addition/deletion transcription
-          adjustPanelWidth()
         });
 
+        const addStructureBtn = panel.querySelector('.add-structure-btn');
         addStructureBtn.addEventListener('click', function() {
           if (!structureAdded) {
-            viewsElements[1].classList.remove('d-none');
+            panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Structure</div>';
             structureAdded = true;
             addStructureBtn.classList.remove('btn-outline-primary');
             addStructureBtn.classList.add('btn-primary');
           } else {
-            viewsElements[1].classList.add('d-none');
+            panel.querySelector('.card-body .col:last-child').remove();
             structureAdded = false;
             addStructureBtn.classList.remove('btn-primary');
             addStructureBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); //Save resource panel status after addtion/deletion structure
-          adjustPanelWidth()
         });
 
+        const miradorBtn = panel.querySelector('.mirador-btn');
         miradorBtn.addEventListener('click', function() {
           if (!miradorAdded) {
-            viewsElements[2].classList.remove('d-none');
+            panel.querySelector('.card-body').innerHTML += '<div class="col border m-1">Mirador Viewer</div>';
             miradorAdded = true;
             miradorBtn.classList.remove('btn-outline-primary');
             miradorBtn.classList.add('btn-primary');
           } else {
-            viewsElements[2].classList.add('d-none');
+            panel.querySelector('.card-body .col:last-child').remove();
             miradorAdded = false;
             miradorBtn.classList.remove('btn-primary');
             miradorBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
-          adjustPanelWidth()
         });
 
         return panel;
@@ -1009,43 +950,22 @@
           if (event.data) {
               // add new resource panel to desktop.html
               var selectedBook = event.data;
-              console.log(selectedBook)
               appendSelectedBookToDesktop(selectedBook);
           }
       }
 
-      async function appendSelectedBookToDesktop(selectedBook) {
-        const msAbbrList = {
-          "B": "Bamberg",
-          "F": "Frankfurt",
-          "K": "Köln",
-          "V1": "Vatikan1",
-          "V2": "Vatikan2"
-        } 
-        var msAbbr = selectedBook.split('-')[0];
-        var bookN = selectedBook.split('-')[1];
-        let msName = msAbbrList[msAbbr]
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-          let response = await fetch(folderPath);
-          let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
-            let msViews = []
-            msViews.push(await response.text())
-            msViews.push(await responseStructure.text())
-            msViews.push("MIRADOR")
-            //todo push mirador and structure in msViews
-            let selectedViews = [true, false, false]
-            let panel = createResourcePanel(`${msName}_${msAbbr}_${bookN}`, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
-            var container = document.getElementById('resourcePanel');    
-            container.appendChild(panel);
-            saveResourceState(); // Save resource panel status after selection
-            adjustPanelWidth()
-          }
+      function appendSelectedBookToDesktop(selectedBook) {
+          var manuscript = selectedBook.split('-')[0];
+          var bookNumber = selectedBook.split('-')[1];
+          var panel = createResourcePanel(`${manuscript} - ${bookNumber}`, [`Transcription of ${bookNumber}`]);
+          var container = document.getElementById('resourcePanel');
+          container.appendChild(panel);
+          // Save updated state in localStorage
+          saveResourceState();
       }
 
       //panel width
-      /*function adjustPanelWidth() {
+      function adjustPanelWidth() {
         const resourcePanel = document.getElementById('resourcePanel');
         const resourceCount = resourcePanel.children.length;
         const panels = resourcePanel.getElementsByClassName('resource-panel-item');
@@ -1057,66 +977,33 @@
             panel.classList.remove('only-child');
           });
         }
-      }*/
-
-      //alternative 2 - didn't work
-      /*function adjustPanelWidth() {
-        const resourcePanel = document.getElementById('resourcePanel');
-        const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-
-        Array.from(panels).forEach(panel => {
-            const cardBody = panel.querySelector('.card-body');
-            const hiddenDivs = cardBody.querySelectorAll('.d-none');
-
-            if (panels.length === 1) {
-                panel.classList.add('only-child');
-                panel.style.width = '100%';
-            } else {
-                panel.classList.remove('only-child');
-                if (hiddenDivs.length === 2) {
-                    panel.style.width = '50%';
-                } else if (hiddenDivs.length === 1) {
-                    panel.style.width = '75%';
-                } else {
-                    panel.style.width = '100%';
-                }
-            }
-        });
-    }*/
-    //new function to handle panel width behaviour
-    function adjustPanelWidth() {
-    const resourcePanel = document.getElementById('resourcePanel');
-    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-      Array.from(panels).forEach(panel => {
-          const cardBody = panel.querySelector('.card-body');
-          const hiddenDivs = cardBody.querySelectorAll('.d-none');
-
-          if (panels.length === 1) {
-              panel.classList.add('only-child', 'full-width');
-          } else {
-              panel.classList.remove('only-child', 'full-width', 'three-quarter-width', 'half-width');
-              if (hiddenDivs.length === 2) {
-                  panel.classList.add('half-width');
-              } else if (hiddenDivs.length === 1) {
-                  panel.classList.add('three-quarter-width');
-              } else {
-                  panel.classList.add('full-width');
-              }
-          }
-      });
-    }
+      }
 
 
       //Upload json
       document.getElementById('downloadJsonBtn').addEventListener('click', function() {
-        saveResourceState(); // Save resource panel status after selection
-        resourceState = JSON.parse(localStorage.getItem('resourceState'));
-        downloadJson(resourceState);
+        const resourceOptions = {};
+
+        const resourcePanels = document.querySelectorAll('.resource-panel-item');
+
+        resourcePanels.forEach((panel, index) => {
+          const manuscriptId = index + 1;
+          const bookId = panel.querySelector('.card-header span').textContent.split(' - ')[1];
+          const view = {
+            transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
+            structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
+            mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
+          };
+          resourceOptions[manuscriptId] = { id: bookId, view: view };
+        });
+
+        downloadJson(resourceOptions);
+        saveResourceState(); //Save resource panel status before downloading json file
       });
 
       //Download json
       function downloadJson(data) {
-        const filename = 'resources.json';
+        const filename = 'resource_options.json';
         const json = JSON.stringify(data, null, 2);
         const blob = new Blob([json], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
