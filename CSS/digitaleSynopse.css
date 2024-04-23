@@ -23,6 +23,24 @@
     font-family: Andron-Scriptor-Web !important;
 }
 
+br.tei_lb + br {
+    display:none;
+}
+li + br.tei_lb {
+    display:none;
+}
+h5 + br.tei_lb {
+    display:none;
+}
+h6 + br.tei_lb {
+    display:none;
+}
+span[class="tei_note-inscription"] > br.tei_lb {
+    display: none;
+}
+.tei_praefatiuncula + br.tei_lb {
+    display: none;
+}
 
 
 .tei_pb {
@@ -67,6 +85,10 @@
 .tei_hi-color-red-initial {
     color: red;
     font-weight: bold;
+    font-family: Andron-Scriptor-Web !important;
+}
+.tei_seg_displaced{
+    color: red;
     font-family: Andron-Scriptor-Web !important;
 }
 
