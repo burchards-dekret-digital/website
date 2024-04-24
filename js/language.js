@@ -2,12 +2,11 @@
         // It remembers the selected language in the local storage
         localStorage.setItem('selectedLanguage', language);
 
-    
-
+        // Hide all elements with class "de"
         var deElements = document.querySelectorAll('[lang="de"]:not(.mirador-viewer), [lang="ger"]:not(.mirador-viewer)');
-deElements.forEach(function(element) {
-    element.style.display = 'none';
-});
+            deElements.forEach(function(element) {
+                element.style.display = 'none';
+        });
 
 
         // Hide all elements with class "en"

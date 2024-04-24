@@ -106,7 +106,7 @@
             </div>
 
             
-            <div class="row mt-3" style="overflow-x: auto;">
+            <div class="row mt-3 panelsWindow" style="overflow-x: auto;">
                 <div class="col">
                     <div class="d-flex" id="resourcePanel"></div>
                 </div>
@@ -1078,46 +1078,7 @@
           }
       }
 
-      //panel width
-      /*function adjustPanelWidth() {
-        const resourcePanel = document.getElementById('resourcePanel');
-        const resourceCount = resourcePanel.children.length;
-        const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-
-        if (resourceCount === 1) {
-          panels[0].classList.add('only-child');
-        } else {
-          Array.from(panels).forEach(panel => {
-            panel.classList.remove('only-child');
-          });
-        }
-      }*/
-
-      //alternative 2 - didn't work
-      /*function adjustPanelWidth() {
-        const resourcePanel = document.getElementById('resourcePanel');
-        const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-
-        Array.from(panels).forEach(panel => {
-            const cardBody = panel.querySelector('.card-body');
-            const hiddenDivs = cardBody.querySelectorAll('.d-none');
-
-            if (panels.length === 1) {
-                panel.classList.add('only-child');
-                panel.style.width = '100%';
-            } else {
-                panel.classList.remove('only-child');
-                if (hiddenDivs.length === 2) {
-                    panel.style.width = '50%';
-                } else if (hiddenDivs.length === 1) {
-                    panel.style.width = '75%';
-                } else {
-                    panel.style.width = '100%';
-                }
-            }
-        });
-    }*/
-    //new function to handle panel width behaviour
+    //function to handle panel width behaviour
     function adjustPanelWidth() {
     const resourcePanel = document.getElementById('resourcePanel');
     const panels = resourcePanel.getElementsByClassName('resource-panel-item');
@@ -1162,6 +1123,15 @@
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
       }
+
+
+      //Clear all button 
+      document.getElementById('clearAll').addEventListener('click', function() {
+          document.getElementById('resourcePanel').innerHTML = '';
+          saveResourceState()
+      });
     </script>
+
+
 
 </html>
