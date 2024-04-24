@@ -9,8 +9,7 @@
             <div style="text-align: center;">
                 <figure class="figure">
                     <img src="../img/pillars.png" class="figure-img img-fluid" style="height: 100%; object-fit: cover;" alt="The nine pillars"/>
-                    <figcaption class="figure-caption"><span lang="de">Die Neun Säulen</span></figcaption>  
-                    <figcaption class="figure-caption"><span lang="en">The nine pillars</span></figcaption> 
+                    <figcaption class="figure-caption"><span lang="de">Die Neun Säulen</span></figcaption>
                 </figure>
             </div>
 
@@ -42,6 +41,15 @@
         </span>
         <span lang="en">
             <p class="mt-4">to do</p> 
+        </span>
+    </div>
+
+    <div id="teiTranskriptionDoc" class="block">
+        <span lang="de">
+            <p class="mt-4">zu erledigen</p>
+        </span>
+        <span lang="en"> 
+            <p class="mt-4">to do</p>
         </span>
     </div>
 
