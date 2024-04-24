@@ -84,9 +84,28 @@
             </div>
 
             <h1 class="section-main-title"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
-
+            
             <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
             <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>
+            <button class="btn btn-warning" id="clearAll"><span lang="de">Alle löschen</span><span lang="en">Clear all</span></button>
+            
+            <div class="dropdown" style="float: right;">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Transkriptionsansichten
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" id="diplomatic" onclick="showElement('tei_lb')">Original</a></li>
+                <li><a class="dropdown-item" href="#" id="flowing" onclick="hideElement('tei_lb')">Lesefassung</a></li>
+                <hr/>
+                <li><a class="dropdown-item" href="#" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
+                <li><a class="dropdown-item" href="#" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
+                <hr/>
+                <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
+                <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>
+              </ul>
+            </div>
+
+            
             <div class="row mt-3" style="overflow-x: auto;">
                 <div class="col">
                     <div class="d-flex" id="resourcePanel"></div>

@@ -45,15 +45,6 @@
         </span>
     </div>
 
-    <div id="teiTranskriptionDoc" class="block">
-        <span lang="de">
-            <p class="mt-4">zu erledigen</p>
-        </span>
-        <span lang="en"> 
-            <p class="mt-4">to do</p>
-        </span>
-    </div>
-
     <div id="teiHandschriftenDBDoc" class="block">
         <span lang="de">
             <p class="mt-4">zu erledigen</p>
