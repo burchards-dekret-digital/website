@@ -127,7 +127,7 @@ function showElement(className) {
 
 
 // 4.1 Hervorheben von seg displaced Elementen bei hover auf korrespondierendes supplied Element
-function highlightCorrespElement(currentID, correspID) {
+/*function highlightCorrespElement(currentID, correspID) {
     // highlight current element at hover
     let currentElement = document.getElementById(currentID);
     currentElement.style.backgroundColor = "LightGreen";
@@ -162,7 +162,7 @@ function endHighlightCorrespElement(currentID, correspID) {
     for (let i = 0; i < correspElement.children.length; i++) {
         correspElement.children[i].style.backgroundColor = "";
     }
-};
+};*/
 
 // 4.3 Generische Hervorhebung von Auszeichnungen mit Hintergrundfarbe
 /*function highlightElement(className, color) {
