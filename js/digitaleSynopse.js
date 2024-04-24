@@ -115,6 +115,8 @@ function hideElement(className) {
     }
 }
 
+
+
 // 3.4 Einblenden eines Elements (z.B. abbr)
 
 function showElement(className) {
