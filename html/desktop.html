@@ -11,7 +11,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         
-        
+        <!-- // Mirador -->
+        <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
 
         <!-- // External fonts -->
         <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet"/>
@@ -851,7 +852,7 @@
             msViews.push(await response.text())
             msViews.push(await responseStructure.text())
             msViews.push("MIRADOR")
-            //todo push mirador an structure in msViews
+            //todo push mirador in msViews
             let selectedViews = [false, false, false]
             if (resource.view.transcription) {
               selectedViews[0] = true
@@ -902,7 +903,7 @@
             msViews.push(await response.text())
             msViews.push(await responseStructure.text())
             msViews.push("MIRADOR")
-            //todo push mirador an structure in msViews
+            //todo push mirador in msViews
 
             let selectedViews = [true, false, false]
             let panel = createResourcePanel(book.value, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
@@ -1057,7 +1058,7 @@
             msViews.push(await response.text())
             msViews.push(await responseStructure.text())
             msViews.push("MIRADOR")
-            //todo push mirador and structure in msViews
+            //todo push mirador in msViews
             let selectedViews = [true, false, false]
             let panel = createResourcePanel(`${msName}_${msAbbr}_${bookN}`, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
             var container = document.getElementById('resourcePanel');    

@@ -20,7 +20,8 @@ var mirador = Mirador.viewer({
                ] },
             windows: [{
                 id: 'known-window-id',
-                manifestId: 'https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/manifest',
+                /*manifestId: 'https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/manifest',*/
+                manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json',
 
                 /* loadedManifest: <div data-template="app:iiif-manifest"/>,
                 canvasId: <div data-template="app:iiif-canvas-id-dekret"/> 
