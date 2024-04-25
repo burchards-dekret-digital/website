@@ -80,7 +80,6 @@
                             <div class="col-sm-6">
                                 
                                 <div id="mirador-singleMS"></div>
-                                <script src="../js/mirador-singleManuscript.js"></script>                                            
                             </div>
 
                             <!--COLUMN 2: CONTENT-->
@@ -328,6 +327,8 @@
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
 
+                    initializeMirador(document_id)
+
                     const msNameFull = xmlDoc.querySelectorAll('msName[type="full"]')[0].innerHTML
                     document.getElementById("ms-title").innerHTML = msNameFull
 
@@ -482,6 +483,53 @@
                     window.postMessage(selected, "*");
                 }
             }*/
+            function initializeMirador(doc_id){
+                const doc_sigle = { 'F':'../data/manifests/frankfurt-ub-b-50-manifest.json',
+                                    'V1': '../data/manifests/vatican-bav-pl-585-manifest.json',
+                                    'V2': '../data/manifests/vatican-bav-pl-586-manifest.json',
+                                    'B' : '../data/manifests/bamberg-sb-c-6.json',
+                                    'K' : '../data/manifests/koeln-edd-119-manifest.json'}
+                Mirador.viewer({
+                    id: "mirador-singleMS",
+                    language: 'de',
+                    window: { //global window defaults
+                        allowClose: true, // Configure if windows can be closed or not
+                        defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
+                        highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
+                        panels: { // Configure which panels are visible in WindowSideBarButtons
+                            info: true,
+                            attribution: true,
+                            canvas: true,
+                            annotations: true,
+                            search: true,
+                            layers: true
+                        },
+                        views: [
+                            { key: 'single', behaviors: ['individuals'] },
+                            { key: 'book', behaviors: ['paged'] }
+                            
+                    ] },
+                    windows: [{
+                        id: 'known-window-id',
+                        manifestId: doc_sigle[doc_id],
+                    }],
+                    
+                    thumbnails: {
+                            preferredFormats: ['jpg', 'png', 'webp', 'tif']
+                            },
+                    thumbnailNavigation: {
+                        defaultPosition: 'far-bottom', // Which position for the thumbnail navigation to be be displayed. Other possible values are "far-bottom" or "far-right"
+                        displaySettings: true // Display the settings for this in WindowTopMenu
+                        },
+                    catalog: [
+                        { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
+                        { sigle: 'V1', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
+                        { sigle: 'V2', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json'},
+                        { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json'},
+                        { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json'}
+                    ]
+                });
+            }
 
 
             document.addEventListener("DOMContentLoaded", function() {                
@@ -497,4 +545,9 @@
                 })
             });
         </script>
+        
+        
+                                               
+
+
 </html>
