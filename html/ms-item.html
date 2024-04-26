@@ -28,7 +28,7 @@
         
             
             <!-- // Mirador -->
-            <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+            <script src="https://unpkg.com/mirador@3.3.0/dist/mirador.min.js"></script>
             
                         
             <!-- // Leaflet-->
@@ -427,7 +427,7 @@
 
 
                     //script for book selection
-                    for (var i = 0; i <= 20; i++) { 
+                    /*for (var i = 0; i <= 20; i++) { 
                         document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
                         var optionBook = document.createElement('option')
                         if (i<=9){
@@ -439,7 +439,32 @@
                             optionBook.innerHTML = "Buch " + i
                         }
                         document.querySelector("#book-selector").appendChild(optionBook)
+                    }*/
+
+
+                    //Book selection: display the correct number of book in V1 and V2
+                    var startBook = 0;
+                    var endBook = 20;
+
+                    switch(document_id) {
+                        case "V1":
+                            endBook = 8;
+                            break;
+                        case "V2":
+                            startBook = 9;
+                            break;
+                        default:
+                            break;
                     }
+
+                    for (var i = startBook; i <= endBook; i++) { 
+                        document.querySelector("#collapseWebressourcen li:nth-child("+(i-startBook+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml";
+                        var optionBook = document.createElement('option');
+                        optionBook.value = (i < 10) ? "0" + i : i;
+                        optionBook.innerHTML = "Buch " + ((i < 10) ? "0" + i : i);
+                        document.querySelector("#book-selector").appendChild(optionBook);
+                    }
+
                 }
             }
             // Invoke the function when the page loads
@@ -483,17 +508,19 @@
                     window.postMessage(selected, "*");
                 }
             }*/
+
+            //Mirador
             function initializeMirador(doc_id){
                 const doc_sigle = { 'F':'../data/manifests/frankfurt-ub-b-50-manifest.json',
                                     'V1': '../data/manifests/vatican-bav-pl-585-manifest.json',
                                     'V2': '../data/manifests/vatican-bav-pl-586-manifest.json',
                                     'B' : '../data/manifests/bamberg-sb-c-6.json',
                                     'K' : '../data/manifests/koeln-edd-119-manifest.json'}
-                Mirador.viewer({
+                var miradorInstance = Mirador.viewer({
                     id: "mirador-singleMS",
                     language: 'de',
                     window: { //global window defaults
-                        allowClose: true, // Configure if windows can be closed or not
+                        allowClose: false, // Configure if windows can be closed or not
                         defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
                         highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
                         panels: { // Configure which panels are visible in WindowSideBarButtons
@@ -531,19 +558,21 @@
                 });
             }
 
-
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;
                 document.querySelector("#book-selector").addEventListener("change", function() {
                     document.querySelector("#addToDesk").removeAttribute('disabled');
 
-                    var action = Mirador.actions.setCanvas('known-window-id', "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/410")
-                    mirador.store.dispatch(action);
+                    var action = Mirador.actions.setCanvas('known-window-id', "https://digi.vatlib.it/iiif/MSS_Pal.lat.586/canvas/p0177")
+                    miradorInstance.store.dispatch(action);
+                    
                 });
                 document.querySelector("#addToDesk").addEventListener("click", function() {
                     redirectToTranscription()
                 })
             });
+            
+
         </script>
         
         

@@ -188,6 +188,14 @@ li{
             position:relative;
             margin-top:30px;
 }
+
+.mirDesktop > .fullscreen {
+    width: 100%;
+    height:600px;
+    position:relative;
+    margin-top:0px;
+}
+
         
 .manuscript-title {
     margin-bottom: 30px; 

@@ -141,7 +141,7 @@ var origDate = $(this).find("origDate").text();
     var name = $(this).find("msName");
     name = name[0].innerHTML;
     var geodata = $(this).find("geo");
-    console.log(geodata);
+    //console.log(geodata);
     geodata = geodata[1].textContent.split(",");
 
     // Prüfen der Familienzugehörigkeit und Zuteilung der Farbe
