@@ -846,11 +846,15 @@
           let [msName, msAbbr, bookN] = resource.bookId.split('_');
           let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
           let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
+
           let response = await fetch(folderPath);
+          let htmlContent = await response.text();
+
           let responseStructure = await fetch(folderPathStructure);
           if (response.ok && responseStructure.ok) {
             let msViews = []
-            msViews.push(await response.text())
+            //msViews.push(await response.text())
+            msViews.push(htmlContent);
             msViews.push(await responseStructure.text())
 
             //TODO 
@@ -863,6 +867,12 @@
                 { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
                 { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
             ];
+
+            //select data-canvas from html trascription
+            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
+            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
+
+            
             // Iterate over catalog to find a matching sigle
             for (let i = 0; i < catalog.length; i++) {
                 if (catalog[i].sigle === msAbbr) {
@@ -887,7 +897,7 @@
 
             // Delay execution to ensure Mirador can properly initialize
             await new Promise(resolve => setTimeout(resolve, 100));
-            Mirador.viewer({
+            var miradorInstance = Mirador.viewer({
                     id: mirID,
                     language: 'de',
                     window: { //global window defaults
@@ -910,6 +920,7 @@
                     windows: [{
                         id: mirID + Date.now(),
                         manifestId: manifestId,
+                        canvasId: canvasId
                     }],
                     
                     thumbnails: {
@@ -920,7 +931,12 @@
                         displaySettings: true // Display the settings for this in WindowTopMenu
                         },
                     catalog: catalog
-                });
+              });
+              console.log(mirID + Date.now())
+              console.log(manifestId)
+              // We create the action first. Note we are using a specified `windowId` here. This could be accessed from the store instead of specifying upfront.
+              /*var action = Mirador.actions.setCanvas('miradorB131714405499068', 'https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/410')
+              miradorInstance.store.dispatch(action);*/
             saveResourceState(); // Save resource panel status after selection
           }
         }
@@ -952,11 +968,14 @@
           let [msName, msAbbr, bookN] = book.value.split('_');
           let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
           let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
+
           let response = await fetch(folderPath);
+          let htmlContent = await response.text();
+
           let responseStructure = await fetch(folderPathStructure);
           if (response.ok && responseStructure.ok) {
             let msViews = []
-            msViews.push(await response.text())
+            msViews.push(htmlContent)
             msViews.push(await responseStructure.text())
             
             //TODO
@@ -969,6 +988,12 @@
                 { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
                 { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
             ];
+
+             //select data-canvas from html trascription
+            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
+            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
+
+
             // Iterate over catalog to find a matching sigle
             for (let i = 0; i < catalog.length; i++) {
                 if (catalog[i].sigle === msAbbr) {
@@ -1008,6 +1033,7 @@
                     windows: [{
                         id: mirID + Date.now(),
                         manifestId: manifestId,
+                        canvasId : canvasId
                     }],
                     
                     thumbnails: {
@@ -1162,11 +1188,14 @@
         let msName = msAbbrList[msAbbr]
           let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
           let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
+
           let response = await fetch(folderPath);
+          let htmlContent = await response.text();
+
           let responseStructure = await fetch(folderPathStructure);
           if (response.ok && responseStructure.ok) {
             let msViews = []
-            msViews.push(await response.text())
+            msViews.push(htmlContent)
             msViews.push(await responseStructure.text())
 
             //TODO
@@ -1179,6 +1208,13 @@
                 { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
                 { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
             ];
+
+             //select data-canvas from html trascription
+            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
+            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
+
+
+
             // Iterate over catalog to find a matching sigle
             for (let i = 0; i < catalog.length; i++) {
                 if (catalog[i].sigle === msAbbr) {
@@ -1218,6 +1254,7 @@
                     windows: [{
                         id: mirID + Date.now(),
                         manifestId: manifestId,
+                        canvasId : canvasId
                     }],
                     
                     thumbnails: {
