@@ -80,12 +80,11 @@
     <body>
 
         <div id="navbar-placeholder"></div>
-                
-        <div id="content" class="container">
-            <div class="back-button" style="margin-top:40px;">
-                <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
-            </div>
+        <div class="back-button ps-4" style="margin-top:40px;">
+          <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+        </div>
 
+        <div id="content" class="container">
             <h1 class="section-main-title"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
             
             <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
@@ -864,7 +863,6 @@
                 { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
                 { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
             ];
-
             // Iterate over catalog to find a matching sigle
             for (let i = 0; i < catalog.length; i++) {
                 if (catalog[i].sigle === msAbbr) {
@@ -874,7 +872,7 @@
             }
             msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
           
-            let selectedViews = [false, false, false]
+            let selectedViews = [false, false, false] //check this
             if (resource.view.transcription) {
               selectedViews[0] = true
             }

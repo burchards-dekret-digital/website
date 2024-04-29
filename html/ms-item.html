@@ -52,17 +52,19 @@
         </head>
         <body>
             <div id="navbar-placeholder"></div>
+
+            <div class="back-button ps-4" style="margin-top:40px;">
+                <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+            </div>
             
             <div class="container mss-item-view">
                 <div class="mss-data">
-                    <div class="back-button" style="margin-top:40px;">
-                        <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
-                    </div>
-                    <div class="manuscript-title">
-                        <h1 style="text-transform:uppercase"><div id="ms-title"></div></h1>
-                    </div>
                     
-                    <div class="row mt-5 pt-4">
+                    <!--<div class="manuscript-title">
+                        <h1 style="text-transform:uppercase"><div id="ms-title"></div></h1>
+                    </div>-->
+                    
+                    <!--<div class="row mt-5 pt-4">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <div style="display: flex; align-items: center;">
@@ -74,16 +76,24 @@
                             </div>
                         </div>
                         <div class="col-md-3"></div>
-                    </div>
-                        <div class="row mt-5">
-                            <!--COLUMN 1: MIRADOR VIEWER-->
-                            <div class="col-sm-6">
-                                
-                                <div id="mirador-singleMS"></div>
-                            </div>
+                    </div>-->
 
-                            <!--COLUMN 2: CONTENT-->
-                            <div class="col-sm-6 mt-4">
+                        <div class="row">
+                            
+                            <!--COLUMN 1: CONTENT-->
+                            <div class="col-sm-6">
+                                <div class="mb-3">
+                                    <h1 style="text-transform:uppercase"><div id="ms-title"></div></h1>
+                                </div>
+
+                                <div class="mb-3" style="display: flex; align-items: center;">
+                                    <h4 class="mt-2 me-2" style="text-transform: uppercase;">Buch auswählen</h4>
+                                    <select class="form-select" id="book-selector" style="width: 20%;">
+                                        <option val="" disabled="" selected=""></option>
+                                    </select>
+                                    <button id="addToDesk" type="button" class="btn btn-primary ms-3" disabled>Buch zum Schreibtisch hinzufügen</button>
+                                </div>
+
                                 <div class="accordion" id="accordionInfo">
                                     
                                     <!--SIGNATUR-->
@@ -239,7 +249,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>  
+                            </div> 
+                            
+                            <!--COLUMN 2: MIRADOR VIEWER-->
+                            <div class="col-sm-6">
+                                <div id="mirador-singleMS"></div>
+                            </div>
                         </div>
 
                         <div id="map2"></div>
