@@ -333,10 +333,12 @@
 
         <!--Populate accordion in Info tab-->
         <script>
+            var miradorInstance
             async function fetchDataAndPopulate() {
-                const document_id = new URLSearchParams(window.location.search).get('document');
-                const folderPath = '../data/mss/' + document_id + '/Tei/v1'; // Update this with your XML folder path
-                const response = await fetch(folderPath + '/msdesc.xml'); // Fetch the XML file
+                let document_id = new URLSearchParams(window.location.search).get('document');
+                let folderPath = '../data/mss/' + document_id + '/Tei/v1'; // Update this with your XML folder path
+                let response = await fetch(folderPath + '/msdesc.xml'); // Fetch the XML file
+                
                 if (response.ok) {
                     const xmlText = await response.text();
                     const parser = new DOMParser();
@@ -441,7 +443,7 @@
                     }
 
 
-                    //script for book selection
+                    //old script for book selection
                     /*for (var i = 0; i <= 20; i++) { 
                         document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
                         var optionBook = document.createElement('option')
@@ -531,7 +533,7 @@
                                     'V2': '../data/manifests/vatican-bav-pl-586-manifest.json',
                                     'B' : '../data/manifests/bamberg-sb-c-6.json',
                                     'K' : '../data/manifests/koeln-edd-119-manifest.json'}
-                var miradorInstance = Mirador.viewer({
+                miradorInstance = Mirador.viewer({
                     id: "mirador-singleMS",
                     language: 'de',
                     window: { //global window defaults
@@ -554,6 +556,7 @@
                     windows: [{
                         id: 'known-window-id',
                         manifestId: doc_sigle[doc_id],
+                        canvasId: ''
                     }],
                     
                     thumbnails: {
@@ -575,10 +578,17 @@
 
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;
-                document.querySelector("#book-selector").addEventListener("change", function() {
+                document.querySelector("#book-selector").addEventListener("change", async function() {
                     document.querySelector("#addToDesk").removeAttribute('disabled');
+                    let selectedMs = new URLSearchParams(window.location.search).get('document');
+                    let selectedBook = document.querySelector("#book-selector").value;
+                    let ms_path = '../data/mss/' + selectedMs + '/Tei/v1/' + selectedBook + ".html";
+                    let response = await fetch(ms_path);
+                    let htmlContent = await response.text();
+                    let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
+                    let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
 
-                    var action = Mirador.actions.setCanvas('known-window-id', "https://digi.vatlib.it/iiif/MSS_Pal.lat.586/canvas/p0177")
+                    var action = Mirador.actions.setCanvas('known-window-id', canvasId)
                     miradorInstance.store.dispatch(action);
                     
                 });
