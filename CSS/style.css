@@ -110,7 +110,9 @@ h5{
     margin-top: 100px;
 }
 
-
+#book-selector option[disabled]{
+    color:lightgrey;
+}
 
 
 

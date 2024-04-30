@@ -104,9 +104,9 @@
                 <hr/>
                 <li><a class="dropdown-item" href="#" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
                 <li><a class="dropdown-item" href="#" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
-                <hr/>
+                <!--<hr/>
                 <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
-                <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>
+                <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>-->
               </ul>
             </div>
 
@@ -779,11 +779,17 @@
     
     <script>
     //open the modal to select books  
+      const activeOptions = ["13", "06"]
+      document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
+        if (!activeOptions.some(element => checkbox.value.includes(element))){ //todo remove "!" when active options will be longer than non active options
+          checkbox.disabled = true;
+        }
+      })
       document.getElementById('addResourceBtn').addEventListener('click', function() {
         $('#resourceModal').modal('show');
 
         // Deselect all checkboxes
-        var checkboxes = document.querySelectorAll('#resourceModal input[type="checkbox"]');
+        let checkboxes = document.querySelectorAll('#resourceModal input[type="checkbox"]');
         checkboxes.forEach(function(checkbox) {
             checkbox.checked = false;
         });
@@ -1431,10 +1437,25 @@
 
 
       //Clear all button 
-      document.getElementById('clearAll').addEventListener('click', function() {
+      /*document.getElementById('clearAll').addEventListener('click', function() {
           document.getElementById('resourcePanel').innerHTML = '';
           saveResourceState()
-      });
+      });*/
+      // Function to confirm deletion
+        function confirmDelete() {
+          return confirm("Are you sure you want to delete all content?");
+        }
+
+        // Clear all button
+        document.getElementById('clearAll').addEventListener('click', function() {
+          // Ask for confirmation before deleting
+          if (confirmDelete()) {
+            // If user confirms, delete all content
+            document.getElementById('resourcePanel').innerHTML = '';
+            saveResourceState();
+          }
+        });
+      
 
       //text-wrap:wrap
         function toggleTextWrap() {
