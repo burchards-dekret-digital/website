@@ -842,7 +842,7 @@
       async function displayResourcesFromJson(jsonData) {
         let resourcePanel = document.getElementById('resourcePanel');
         resourcePanel.innerHTML = '';
-        for (resource of jsonData) {
+        for (let resource of jsonData) {
           let [msName, msAbbr, bookN] = resource.bookId.split('_');
           let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
           let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
@@ -895,9 +895,7 @@
             let panel = createResourcePanel(resource.bookId, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
             resourcePanel.appendChild(panel);
 
-            // Delay execution to ensure Mirador can properly initialize
-            await new Promise(resolve => setTimeout(resolve, 100));
-            var miradorInstance = Mirador.viewer({
+            Mirador.viewer({
                     id: mirID,
                     language: 'de',
                     window: { //global window defaults
@@ -1006,7 +1004,7 @@
             container.appendChild(panel);  
 
             // Delay execution to ensure Mirador can properly initialize
-            await new Promise(resolve => setTimeout(resolve, 100));
+            //await new Promise(resolve => setTimeout(resolve, 100));
             Mirador.viewer({
                     id: mirID,
                     language: 'de',
@@ -1227,7 +1225,7 @@
             container.appendChild(panel);
             
             // Delay execution to ensure Mirador can properly initialize
-            await new Promise(resolve => setTimeout(resolve, 100));
+            //await new Promise(resolve => setTimeout(resolve, 100));
             Mirador.viewer({
                     id: mirID,
                     language: 'de',
