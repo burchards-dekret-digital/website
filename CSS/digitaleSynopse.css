@@ -107,6 +107,42 @@ span[class="tei_note-inscription"] > br.tei_lb {
     font-size: 1.3em;
 }
 
+  
+  .icon-chapter-mirador:focus {
+    outline: none; /* Optional: Removes focus outline */
+  }
+
+  .icon-chapter-mirador {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icon-chapter-mirador:hover::after {
+    content: "See in Mirador";
+    font-family: BrandonGrotesqueLight;
+    font-size: 15px;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    bottom: 100%; /* Position it above the icon */
+    text-transform: none!important;
+    white-space: nowrap; /* Prevent line breaks */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .icon-chapter-mirador:hover::after {
+    opacity: 1;
+  }
+  
+  
+  
+
+
 .tei_abbr {
     display: none;
 }

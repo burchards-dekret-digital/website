@@ -862,100 +862,7 @@
           await initializeMirador(container, resource.bookId, selectedViews)
         }
       }
-          /*let [msName, msAbbr, bookN] = resource.bookId.split('_');
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-
-          let response = await fetch(folderPath);
-          let htmlContent = await response.text();
-
-          let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
-            let msViews = []
-            //msViews.push(await response.text())
-            msViews.push(htmlContent);
-            msViews.push(await responseStructure.text())
-
-            //TODO 
-            let mirID = "mirador"+ msAbbr + bookN
-            let manifestId = '';
-            let catalog = [
-                { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-                { sigle: 'V1', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-                { sigle: 'V2', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
-                { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
-                { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
-            ];
-
-            //select data-canvas from html trascription
-            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
-            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
-
-            
-            // Iterate over catalog to find a matching sigle
-            for (let i = 0; i < catalog.length; i++) {
-                if (catalog[i].sigle === msAbbr) {
-                    manifestId = catalog[i].manifestId;
-                    
-                }
-            }
-            msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
-          
-            let selectedViews = [false, false, false] //check this
-            if (resource.view.transcription) {
-              selectedViews[0] = true
-            }
-            if (resource.view.structure) {
-              selectedViews[1] = true
-            }
-            if (resource.view.mirador) {
-              selectedViews[2] = true
-            }
-            let panel = createResourcePanel(resource.bookId, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
-            resourcePanel.appendChild(panel);
-
-            Mirador.viewer({
-                    id: mirID,
-                    language: 'de',
-                    window: { //global window defaults
-                        allowClose: false, // Configure if windows can be closed or not
-                        defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
-                        highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
-                        panels: { // Configure which panels are visible in WindowSideBarButtons
-                            info: true,
-                            attribution: true,
-                            canvas: true,
-                            annotations: true,
-                            search: true,
-                            layers: true
-                        },
-                        views: [
-                            { key: 'single', behaviors: ['individuals'] },
-                            { key: 'book', behaviors: ['paged'] }
-                            
-                    ] },
-                    windows: [{
-                        id: mirID + Date.now(),
-                        manifestId: manifestId,
-                        canvasId: canvasId
-                    }],
-                    
-                    thumbnails: {
-                            preferredFormats: ['jpg', 'png', 'webp', 'tif']
-                            },
-                    thumbnailNavigation: {
-                        defaultPosition: 'far-bottom', // Which position for the thumbnail navigation to be be displayed. Other possible values are "far-bottom" or "far-right"
-                        displaySettings: true // Display the settings for this in WindowTopMenu
-                        },
-                    catalog: catalog
-              });
-              console.log(mirID + Date.now())
-              console.log(manifestId)
-            saveResourceState(); // Save resource panel status after selection
-          }
-        }
-        adjustPanelWidth();
-      }*/
+       
 
       //display resources after selecting them in the modal
       function displaySelectedResources() {
@@ -1021,7 +928,8 @@
 
             // Delay execution to ensure Mirador can properly initialize
             setTimeout(() => {
-              Mirador.viewer({
+              let windowsID = mirID + Date.now()
+              let miradorInstance = Mirador.viewer({
                       id: mirID,
                       language: 'de',
                       window: { //global window defaults
@@ -1042,7 +950,7 @@
                               
                       ] },
                       windows: [{
-                          id: mirID + Date.now(),
+                          id: windowsID,
                           manifestId: manifestId,
                           canvasId : canvasId
                       }],
@@ -1052,6 +960,14 @@
                           },
                       catalog:catalog
                   });
+              //eye icon: open the chapter in mirador 
+              document.querySelectorAll(".icon-chapter-mirador").forEach(function(icon) {
+                icon.addEventListener("click", function() {
+                  let canvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
+                  let action = Mirador.actions.setCanvas(windowsID, canvasId)
+                  miradorInstance.store.dispatch(action);
+                });
+              });
               saveResourceState(); // Save resource panel status after selection
               adjustPanelWidth()
               resolve();
@@ -1069,93 +985,7 @@
           await initializeMirador(container, book.value, selectedViews);
         }
       }
-          /*let [msName, msAbbr, bookN] = book.value.split('_');
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-
-          let response = await fetch(folderPath);
-          let htmlContent = await response.text();
-
-          let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
-            let msViews = []
-            msViews.push(htmlContent)
-            msViews.push(await responseStructure.text())
-            
-            //TODO
-            let mirID = "mirador"+ msAbbr + bookN
-            let manifestId = '';
-            let catalog = [
-                { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-                { sigle: 'V1', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-                { sigle: 'V2', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
-                { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
-                { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
-            ];
-
-             //select data-canvas from html trascription
-            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
-            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
-
-
-            // Iterate over catalog to find a matching sigle
-            for (let i = 0; i < catalog.length; i++) {
-                if (catalog[i].sigle === msAbbr) {
-                    manifestId = catalog[i].manifestId;
-                    
-                }
-            }
-            msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
-           
-            let selectedViews = [true, false, true]
-            console.log("async", book.value)
-            let panel = createResourcePanel(book.value, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
-            container.appendChild(panel);  
-
-            // Delay execution to ensure Mirador can properly initialize
-            await new Promise(resolve => setTimeout(resolve, 300));
-            Mirador.viewer({
-                    id: mirID,
-                    language: 'de',
-                    window: { //global window defaults
-                        allowClose: false, // Configure if windows can be closed or not
-                        defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
-                        highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
-                        panels: { // Configure which panels are visible in WindowSideBarButtons
-                            info: true,
-                            attribution: true,
-                            canvas: true,
-                            annotations: true,
-                            search: true,
-                            layers: true
-                        },
-                        views: [
-                            { key: 'single', behaviors: ['individuals'] },
-                            { key: 'book', behaviors: ['paged'] }
-                            
-                    ] },
-                    windows: [{
-                        id: mirID + Date.now(),
-                        manifestId: manifestId,
-                        canvasId : canvasId
-                    }],
-                    
-                    thumbnails: {
-                            preferredFormats: ['jpg', 'png', 'webp', 'tif']
-                            },
-                    thumbnailNavigation: {
-                        defaultPosition: 'far-bottom', // Which position for the thumbnail navigation to be be displayed. Other possible values are "far-bottom" or "far-right"
-                        displaySettings: true // Display the settings for this in WindowTopMenu
-                        },
-                    catalog:catalog
-                });
-            saveResourceState(); // Save resource panel status after selection
-            adjustPanelWidth()
-          }
-        };
-      }*/
-      
-
+        
       function createResourcePanel(idVal, title, views, selectedViews) {
         
         const panel = document.createElement('div');
@@ -1294,101 +1124,7 @@
         let selectedViews = [true, false, true]
         await initializeMirador(container, book, selectedViews)
       }
-        /*const msAbbrList = {
-          "B": "Bamberg",
-          "F": "Frankfurt",
-          "K": "Köln",
-          "V1": "Vatikan1",
-          "V2": "Vatikan2"
-        } 
-        var msAbbr = selectedBook.split('-')[0];
-        var bookN = selectedBook.split('-')[1];
-        let msName = msAbbrList[msAbbr]
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-
-          let response = await fetch(folderPath);
-          let htmlContent = await response.text();
-
-          let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
-            let msViews = []
-            msViews.push(htmlContent)
-            msViews.push(await responseStructure.text())
-
-            //TODO
-            let mirID = "mirador"+ msAbbr + bookN
-            let manifestId = '';
-            let catalog = [
-                { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-                { sigle: 'V1', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-                { sigle: 'V2', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
-                { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
-                { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
-            ];
-
-             //select data-canvas from html trascription
-            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
-            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
-
-
-
-            // Iterate over catalog to find a matching sigle
-            for (let i = 0; i < catalog.length; i++) {
-                if (catalog[i].sigle === msAbbr) {
-                    manifestId = catalog[i].manifestId;
-                    
-                }
-            }
-            msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
-            
-            let selectedViews = [true, false, true]
-            let panel = createResourcePanel(`${msName}_${msAbbr}_${bookN}`, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);
-            var container = document.getElementById('resourcePanel');    
-            container.appendChild(panel);
-            
-            // Delay execution to ensure Mirador can properly initialize
-            //await new Promise(resolve => setTimeout(resolve, 100));
-            Mirador.viewer({
-                    id: mirID,
-                    language: 'de',
-                    window: { //global window defaults
-                        allowClose: false, // Configure if windows can be closed or not
-                        defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
-                        highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
-                        panels: { // Configure which panels are visible in WindowSideBarButtons
-                            info: true,
-                            attribution: true,
-                            canvas: true,
-                            annotations: true,
-                            search: true,
-                            layers: true
-                        },
-                        views: [
-                            { key: 'single', behaviors: ['individuals'] },
-                            { key: 'book', behaviors: ['paged'] }
-                            
-                    ] },
-                    windows: [{
-                        id: mirID + Date.now(),
-                        manifestId: manifestId,
-                        canvasId : canvasId
-                    }],
-                    
-                    thumbnails: {
-                            preferredFormats: ['jpg', 'png', 'webp', 'tif']
-                            },
-                    thumbnailNavigation: {
-                        defaultPosition: 'far-bottom', // Which position for the thumbnail navigation to be be displayed. Other possible values are "far-bottom" or "far-right"
-                        displaySettings: true // Display the settings for this in WindowTopMenu
-                        },
-                    catalog: catalog
-                });
-            saveResourceState(); // Save resource panel status after selection
-            adjustPanelWidth()
-          }
-      }*/
-
+        
     //function to handle panel width behaviour
     function adjustPanelWidth() {
     const resourcePanel = document.getElementById('resourcePanel');
@@ -1468,6 +1204,7 @@
             }
           });
         }
+
     </script>
     
 </html>
