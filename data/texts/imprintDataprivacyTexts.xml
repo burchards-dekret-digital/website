@@ -1,0 +1,63 @@
+<?xml-stylesheet type="text/css" href="test-text.css"?>
+<form>
+    <title>Datenschutz und Imprint Texte</title>
+
+    <div id="dataprivacy" class="block">
+        <span lang="de">  
+            <h3 class="mt-4">Urheberrecht</h3>  
+            <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt. Abweichend davon werden die Inhalte und Daten der Digitalen Edition unter einer freien Lizenz (<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons BY 4.0</a>) angeboten und dürfen bei Nennung des Urhebers heruntergeladen, weitergenutzt, bearbeitet und weiterverbeitet werden.</p>
+            
+            <h3 class="mt-4">Links</h3>
+            <p>Wir haben keinen Einfluss auf den Inhalt der von dieser Seite verlinkten externen Internetseiten und haften nicht für diesen. Für den Inhalt fremder verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich. Eine Prüfung bei der Verlinkung ergab keine strafbaren Inhalte auf diesen Seiten. Alle Linkangaben ohne Gewähr. Seitenaufrufe externer Seiten über diese Links erfolgen auf eigene Gefahr. Dies gilt für alle Links auf dieser Internetseite.</p>
+
+            <h3 class="mt-4">Karten (LeafLet)</h3>
+            <p>Auf dieser Webseite werden Karten des externen Service der OpenSource JavaScript Bibliothek Leaflet genutzt. Die Einbindung der Informationen erfolgt über einen Server von Leaflet in den USA. Folgende Informationen werden dabei an Leaflet und OpenStreetMap übermittelt: aktueller Seitenaufruf und IP-Adresse. Nähere Informationen hierüber finden Sie auf folgender Seite: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank">https://wiki.osmfoundation.org/wiki/Privacy_Policy</a></p>
+
+            <h3 class="mt-4">Haftungsausschluss</h3>
+            <p>Die Inhalte dieses Internetangebotes wurden sorgfältig geprüft, nach bestem Wissen erstellt und laufend aktualisiert. Trotz aller Sorgfalt können sich Daten inzwischen veraltet sein. Eine Haftung oder Garantie für die Aktualität, Richtigkeit und Vollständigkeit der zur Verfügung gestellten Informationen und Daten ist kann daher nicht übernommen werden. In keinem Fall wird für Schäden, die sich aus der Verwendung der abgerufenen Informationen ergeben, eine Haftung übernommen.</p>
+
+            <h3 class="mt-4">Seitenhinweise</h3>
+            <p>Diese Webseiten wurden gemäß den Richtlinen für Internetmedien des <a href="https://www.w3.org/" target="_blank">World Wide Web Consortiums</a> entwickelt. Sollten Sie Probleme bei der Wiedergabe der Seiten haben (Seitenstruktur, graphische Darstellung, Anordnung der Navigation), so könnte dies daran liegen, dass Sie einen älteren Browser benutzen, der die heute gängigen Techniken nicht oder nur fehlerhaft interpretieren kann.</p>
+        </span>
+        <span lang="en"> 
+        </span>
+    </div>
+
+    <div id="imprint" class="block">
+        <span lang="de">    
+            <h1 class="mt-5">Kontakte des Akademieprojektes</h1>
+            <h3 class="mt-4">Arbeitsstelle Erlangen</h3>
+            <p>Prof. Dr. Klaus Herbers<br/>
+            Senior Professor of Medieval History<br/>
+            Postadresse: Kochstraße 4 BK 9<br/>
+            91054 Erlangen<br/>
+            </p>
+
+            <h3 class="mt-4">Arbeitsstelle Kassel</h3>
+            <p>Prof. Dr. Ingrid Baumgärtner<br/>
+            Seniorprofessur für Mittelalterliche Geschichte<br/>
+            Untere Königsstr. 86<br/>
+            34125 Kassel<br/>
+            Tel.: <a href="tel:+49 561 804-3104">+49 561 804-3104</a>
+            </p>
+
+            <h3 class="mt-4">Arbeitsstelle Mainz</h3>
+            <p>Prof. Dr. Ludger Körntgen<br/>
+            Historisches Seminar<br/>
+            Mittelalterliche Geschichte<br/>
+            Jakob-Welder-Weg 18<br/>
+            55128 Mainz<br/>
+            </p>
+
+            <h3 class="mt-4">Sekretariat</h3>
+            <p>Corinna Axt<br/>
+                Tel.:<a href="tel:06131 / 39 - 2 27 75">06131 / 39 - 2 27 75</a> 
+                Fax: <a href="fax:06131 / 39 - 2 54 80">06131 / 39 - 2 54 80</a>
+            </p>
+        </span>
+
+
+        <span lang="en"> 
+        </span>
+    </div>
+</form>
