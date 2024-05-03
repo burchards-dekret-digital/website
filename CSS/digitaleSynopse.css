@@ -2,7 +2,6 @@
   font-family: BrandonGrotesqueLight;
   src: url(brandon-grotesque-light.otf);
 }
-
 @font-face {
     font-family: 'Andron-Scriptor-Web';
     src: url(Andron-Scriptor-Web.ttf) format('truetype');
@@ -17,11 +16,10 @@
 }
 
 .tei_incipit{
-    font-family: 'Oswald', sans-serif;
+    font-family: Andron-Scriptor-Web;
     font-size: 1.3em;
-    /* text-transform: uppercase; */
+    color: red;
 }
-
 
 
 .tei_{
@@ -43,6 +41,7 @@ h6 + br.tei_lb {
 span[class="tei_note-inscription"] > br.tei_lb {
     display: none!important;
 }
+
 .tei_praefatiuncula + br.tei_lb {
     display: none!important;
 }
@@ -92,21 +91,30 @@ span[class="tei_note-inscription"] > br.tei_lb {
     font-weight: bold;
     font-family: Andron-Scriptor-Web !important;
 }
+
+.tei_hi-versal{
+    font-weight: bold; /*check this*/
+}
+
 .tei_seg_displaced{
-    color: red;
+    color: #e40ffc;
     font-family: Andron-Scriptor-Web !important;
 }
 
-.tei_chapter{
-    margin-top: 3%;
-}
+/*.tei_chapter{
+    margin-top:15px;
+}*/
 
 .tei_chapter-title {
     text-transform: none;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.3em;
+    font-family: 'Andron-Scriptor-Web'!important;
+    font-size: initial;
+    letter-spacing: initial;
 }
 
+.tei_sic::after{
+    content: "[sic!]";
+}
   
   .icon-chapter-mirador:focus {
     outline: none; /* Optional: Removes focus outline */
@@ -117,6 +125,8 @@ span[class="tei_note-inscription"] > br.tei_lb {
     background: none;
     border: none;
     cursor: pointer;
+    margin-top:5px;
+    padding-left:0;
   }
   
   .icon-chapter-mirador:hover::after {
@@ -138,6 +148,13 @@ span[class="tei_note-inscription"] > br.tei_lb {
   .icon-chapter-mirador:hover::after {
     opacity: 1;
   }
+
+  .icon-chapter-mirador, .tei_chapter-title{
+  display: inline-block;
+  vertical-align: baseline; /* Align vertically in the middle */
+}
+
+
   
   
   
@@ -154,15 +171,9 @@ span[class="tei_note-inscription"] > br.tei_lb {
 .tei_note-inscription {
     font-style: italic;
     font-family: Andron-Scriptor-Web !important;
+    display: block;
 }
 
-.tei_note-editorial-comment {
-    font-style: italic;
-}
-
-.tei_note-editorial-question {
-    font-style: italic;
-}
 
 ol li{
     list-style: none;
@@ -184,7 +195,7 @@ ol li{
 
 .tei_handShift-wrapper {
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .tei_handShift-wrapper:hover .tei_handShift-info {
@@ -218,6 +229,8 @@ ol li{
     z-index: 7!important;
 }
 
+
+
 .tei_note-editorial-comment-wrapper {
     position: relative;
     display: inline-block;
@@ -232,6 +245,7 @@ ol li{
 }
 
 .tei_note-editorial-comment {
+    font-style: italic;
     visibility: hidden;
     background-color: black;
     color: #fff;
@@ -261,6 +275,7 @@ ol li{
 }
 
 .tei_note-editorial-question {
+    font-style: italic;
     visibility: hidden;
     background-color: black;
     color: #fff;
@@ -277,17 +292,9 @@ ol li{
 }
 
 .tei_supplied {
-    color: CadetBlue;
+    color: #e40ffc;
 }
 
-.tei_delSpan-strikethrough {
-    text-decoration: line-through;
-}
-
-.tei_delSpan-written-on-erased {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-}
 
 .controlls {
     position: sticky;
@@ -307,24 +314,62 @@ ol li{
     text-decoration-style: wavy;
 }
 
-.tei_delSpan {
+
+
+.tei_delSpan-written-on-erased {
     text-decoration: underline;
     text-decoration-style: wavy;
+}
 
+.tei_delSpan-start-written-on-erased{
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+.tei_delSpan-written-on-erased-end{
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.tei_delSpan-strikethrough {
+    text-decoration: line-through;
+}
+
+.tei_delSpan-start-strikethrough{
+    text-decoration: line-through;
+}
+.tei_delSpan-strikethrough-end{
+    text-decoration: line-through;
 }
 
 .tei_erasure-without-substitution {
+    color: white;
     text-decoration: underline;
     text-decoration-style: wavy;
-
+    text-decoration-color: black;
 }
 
 .tei_del-strikethrough {
     text-decoration: line-through;
 }
 
-.container {
+/*.tei_del-blackout{
+TODO
+}*/
+
+.tei_del-expunctuation{
+    /*border-style: dotted;*/
+    text-decoration: underline;
+    text-decoration-style:dotted;
 }
+
+.tei_del-underlined{
+    text-decoration: underline;
+}
+
+/*.tei_damage-cut-out{content:"Reason of damage: cut-out"}
+.tei_damage-torn-out{content:"Reason of damage: torn-out"}
+.tei_damage-burned{content:"Reason of damage: burned"}
+.tei_damage-trimmed{content:"Reason of damage: trimmed"}*/
 
 .canvas {
     display: flex;
@@ -348,41 +393,10 @@ ol li{
     overflow: auto;
 }
 
-
-
 .dropdown-item {
     font-family: BrandonGrotesqueLight!important;
 }
 
-
-
 em{
     font-style: normal;
-}
-
-
-.synch-menu-chapter-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.synch-menu-chapter{
-    position: absolute;
-    z-index: 10000;
-    width: 200px;
-    background: #1b1a1a;
-    border-radius: 5px;
-    display:block;
-}
-
-.synch-menu-chapter-item{
-    padding: 8px 10px;
-    font-size: 15px;
-    color: #eee;
-    cursor: pointer;
-    border-radius: inherit;
-}
-
-.synch-menu-chapter-item:hover{
-    background:#343434;
 }
