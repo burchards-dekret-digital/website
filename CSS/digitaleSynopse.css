@@ -97,7 +97,6 @@ span[class="tei_note-inscription"] > br.tei_lb {
 }
 
 .tei_seg_displaced{
-    color: #e40ffc;
     font-family: Andron-Scriptor-Web !important;
 }
 
@@ -155,11 +154,6 @@ span[class="tei_note-inscription"] > br.tei_lb {
 }
 
 
-  
-  
-  
-
-
 .tei_abbr {
     display: none;
 }
@@ -172,6 +166,19 @@ span[class="tei_note-inscription"] > br.tei_lb {
     font-style: italic;
     font-family: Andron-Scriptor-Web !important;
     display: block;
+}
+
+tei_note-contemporary-marginalia{
+    font-size: smaller;
+}
+tei_note-later-marginalia{
+    font-size: smaller;
+}
+tei_note-contemporary-interlinear{
+    font-size: smaller;
+}
+tei_note-later-interlinear{
+    font-size: smaller;
 }
 
 
@@ -291,6 +298,8 @@ ol li{
     visibility: visible;
 }
 
+
+
 .tei_supplied {
     color: #e40ffc;
 }
@@ -352,9 +361,9 @@ ol li{
     text-decoration: line-through;
 }
 
-/*.tei_del-blackout{
-TODO
-}*/
+.tei_del-blackout{
+ background-color: #000;
+}
 
 .tei_del-expunctuation{
     /*border-style: dotted;*/
@@ -366,10 +375,15 @@ TODO
     text-decoration: underline;
 }
 
-/*.tei_damage-cut-out{content:"Reason of damage: cut-out"}
-.tei_damage-torn-out{content:"Reason of damage: torn-out"}
-.tei_damage-burned{content:"Reason of damage: burned"}
-.tei_damage-trimmed{content:"Reason of damage: trimmed"}*/
+.tei_damage-cut-out{background-color: lightgray;}
+.tei_damage-torn-out{background-color: lightgray;}
+.tei_damage-burned{background-color: lightgray;}
+.tei_damage-trimmed{background-color: lightgray;}
+
+.tei_damage-cut-out::after{content:"[Reason of damage: cut-out]"; background-color: lightgray;}
+.tei_damage-torn-out::after{content:"[Reason of damage: torn-out]"; background-color: lightgray;}
+.tei_damage-burned::after{content:"[Reason of damage: burned]"; background-color: lightgray;}
+.tei_damage-trimmed::after{content:"[Reason of damage: trimmed]"; background-color: lightgray;}
 
 .canvas {
     display: flex;
