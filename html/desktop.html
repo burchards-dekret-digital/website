@@ -824,7 +824,8 @@
           let view = {
             transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
             structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
-            mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary')
+            mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary'),
+            editor: panel.querySelector('.editor-btn').classList.contains('btn-primary')
           };
           resourceState.push({ bookId, view });
         });
@@ -849,7 +850,7 @@
         let container = document.getElementById('resourcePanel');
         container.innerHTML = '';
         for (let resource of jsonData) {
-          let selectedViews = [false, false, false]
+          let selectedViews = [false, false, false, false]
           if (resource.view.transcription) {
             selectedViews[0] = true
           }
@@ -858,6 +859,9 @@
           }
           if (resource.view.mirador) {
             selectedViews[2] = true
+          }
+          if (resource.view.editor) {
+            selectedViews[3] = true
           }
           await initializeMirador(container, resource.bookId, selectedViews)
         }
@@ -888,12 +892,14 @@
           let [msName, msAbbr, bookN] = book.split('_');
           let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
           let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
+          let folderPathEditor = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'editor.html';
 
           let response = await fetch(folderPath);
           let htmlContent = await response.text();
-
           let responseStructure = await fetch(folderPathStructure);
-          if (response.ok && responseStructure.ok) {
+          let responseEditor = await fetch(folderPathEditor);
+
+          if (response.ok && responseStructure.ok && responseEditor.ok) {
             let msViews = []
             msViews.push(htmlContent)
             msViews.push(await responseStructure.text())
@@ -908,10 +914,9 @@
                 { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
             ];
 
-              //select data-canvas from html trascription
+            //select data-canvas from html trascription
             let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
             let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
-
 
             // Iterate over catalog to find a matching sigle
             for (let i = 0; i < catalog.length; i++) {
@@ -921,10 +926,32 @@
                 }
             }
             msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
-            
+
+            msViews.push(await responseEditor.text())
+
             console.log("async", book)
             let panel = createResourcePanel(book, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
-            container.appendChild(panel);  
+            container.appendChild(panel);
+
+            //Script for show/hide columns in Structure accordions
+                var dropdownsStruct = document.querySelectorAll('.dropdown-structure');
+                dropdownsStruct.forEach(dropdown => {
+                  var checkboxes = dropdown.querySelectorAll('.toggle-column');
+                  var table = dropdown.nextElementSibling;
+                  checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                      console.log("Checkbox changed. Checked:", checkbox.checked);
+                      var columnIndex = parseInt(checkbox.dataset.column);
+                      var cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
+                      cells.forEach(cell => {
+                        cell.style.display = checkbox.checked ? '' : 'none';
+                      });
+                      if (!checkbox.checked) {
+                        console.log("Column deselected");
+                      }
+                    });
+                  });
+                });
 
             // Delay execution to ensure Mirador can properly initialize
             setTimeout(() => {
@@ -972,6 +999,8 @@
               adjustPanelWidth()
               resolve();
             }, 1000);
+
+            
           }
           else{
             resolve()
@@ -981,10 +1010,11 @@
 
       async function appendBooks(container, books) {
         for (let book of books) {
-          let selectedViews = [true, false, true]
+          let selectedViews = [true, false, true, false]
           await initializeMirador(container, book.value, selectedViews);
         }
       }
+
         
       function createResourcePanel(idVal, title, views, selectedViews) {
         
@@ -998,15 +1028,16 @@
               <div>
                 <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transkription</button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
-                <button type="button" class="btn btn-outline-primary btn-sm mirador-btn">Mirador</button>
-                
+                <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn">Mirador</button>
+                <button type="button" class="btn btn-outline-primary btn-sm editor-btn">Editor</button>
               </div>
               <button type="button" class="btn-close" aria-label="Close"></button>
             </div>
             <div class="card-body row">
               <div class="col border m-1 transcription-col d-none" style="overflow-y: scroll; max-height: 600px; white-space: nowrap"></div>
-              <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap"></div>
+              <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap; padding-left:0;"></div>
               <div class="col m-1 mirador-col d-none" style="max-height: 600px;"></div>
+              <div class="col border m-1 editor-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: wrap"></div>
             </div>
           </div>
         `
@@ -1015,6 +1046,7 @@
         panel.querySelector('.transcription-col').innerHTML = views[0]
         panel.querySelector('.structure-col').innerHTML = views[1]
         panel.querySelector('.mirador-col').innerHTML = views[2]
+        panel.querySelector('.editor-col').innerHTML = views[3]
 
         panel.querySelector('.btn-close').addEventListener('click', function() {
           panel.remove();
@@ -1022,12 +1054,13 @@
           saveResourceState(); //Save source panel status after removing one panel
         });
 
-        let [transcriptionAdded, structureAdded, miradorAdded] = selectedViews
+        let [transcriptionAdded, structureAdded, miradorAdded, editorAdded] = selectedViews
 
         var viewsElements = panel.getElementsByClassName('col');
         const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
         const addStructureBtn = panel.querySelector('.add-structure-btn');
         const miradorBtn = panel.querySelector('.mirador-btn');
+        const editorBtn = panel.querySelector('.editor-btn');
 
         if (transcriptionAdded){
             viewsElements[0].classList.remove('d-none');
@@ -1043,6 +1076,12 @@
           viewsElements[2].classList.remove('d-none');
           miradorBtn.classList.remove('btn-outline-primary');
           miradorBtn.classList.add('btn-primary');
+        }
+
+        if (editorAdded){
+          viewsElements[3].classList.remove('d-none');
+          editorBtn.classList.remove('btn-outline-primary');
+          editorBtn.classList.add('btn-primary');
         }
 
         addTranscriptionBtn.addEventListener('click', function() {
@@ -1090,6 +1129,22 @@
             miradorBtn.classList.add('btn-outline-primary');
           }
           saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
+          adjustPanelWidth()
+        });
+
+        editorBtn.addEventListener('click', function() {
+          if (!editorAdded) {
+            viewsElements[3].classList.remove('d-none');
+            editorAdded = true;
+            editorBtn.classList.remove('btn-outline-primary');
+            editorBtn.classList.add('btn-primary');
+          } else {
+            viewsElements[3].classList.add('d-none');
+            editorAdded = false;
+            editorBtn.classList.remove('btn-primary');
+            editorBtn.classList.add('btn-outline-primary');
+          }
+          saveResourceState(); //Save resource panel status after addtion/deletion structure
           adjustPanelWidth()
         });
 
@@ -1172,25 +1227,19 @@
       }
 
 
-      //Clear all button 
-      /*document.getElementById('clearAll').addEventListener('click', function() {
-          document.getElementById('resourcePanel').innerHTML = '';
-          saveResourceState()
-      });*/
       // Function to confirm deletion
-        function confirmDelete() {
-          return confirm("Are you sure you want to delete all content?");
+      function confirmDelete() {
+        return confirm("Are you sure you want to delete all content?");
+      }
+      // Clear all button
+      document.getElementById('clearAll').addEventListener('click', function() {
+        // Ask for confirmation before deleting
+        if (confirmDelete()) {
+          // If user confirms, delete all content
+          document.getElementById('resourcePanel').innerHTML = '';
+          saveResourceState();
         }
-
-        // Clear all button
-        document.getElementById('clearAll').addEventListener('click', function() {
-          // Ask for confirmation before deleting
-          if (confirmDelete()) {
-            // If user confirms, delete all content
-            document.getElementById('resourcePanel').innerHTML = '';
-            saveResourceState();
-          }
-        });
+      });
       
 
       //text-wrap:wrap
@@ -1203,8 +1252,10 @@
               div.style.whiteSpace = 'nowrap';
             }
           });
-        }
+        };
+
+        
 
     </script>
-    
+
 </html>
