@@ -933,7 +933,7 @@
             let panel = createResourcePanel(book, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
             container.appendChild(panel);
 
-            //Script for show/hide columns in Structure accordions
+            //show/hide columns in Structure tables
                 var dropdownsStruct = document.querySelectorAll('.dropdown-structure');
                 dropdownsStruct.forEach(dropdown => {
                   var checkboxes = dropdown.querySelectorAll('.toggle-column');
@@ -1029,7 +1029,7 @@
                 <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transkription</button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn">Mirador</button>
-                <button type="button" class="btn btn-outline-primary btn-sm editor-btn">Editor</button>
+                <button type="button" class="btn btn-outline-primary btn-sm editor-btn">Info</button>
               </div>
               <button type="button" class="btn-close" aria-label="Close"></button>
             </div>

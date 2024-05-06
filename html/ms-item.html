@@ -49,6 +49,12 @@
             <!--<script src="../js/manuscript-view.js"></script>-->
             <!--<script src="../js/manuscript-view-synopse.js"></script>-->
             <script src="../js/language.js"></script>
+
+            <style>
+                .fa-arrow-up-right-from-square {
+                    margin-left: 5px;
+                }
+            </style>
         </head>
         <body>
             <div id="navbar-placeholder"></div>
@@ -179,7 +185,9 @@
                                         <div id="collapseKataloge" class="accordion-collapse collapse" aria-labelledby="headingKataloge">
                                             <div class="accordion-body">
                                                 <div class="ms_desc">
-                                                    <p></p>
+                                                    <div id="mss-catalogue">
+                                                        <ul id="catalogue-list"></ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -195,7 +203,9 @@
                                         <div id="collapseLiterature" class="accordion-collapse collapse" aria-labelledby="headingLiterature">
                                             <div class="accordion-body">
                                                 <div class="ms_desc">
-                                                    <p></p>
+                                                    <div id="mss-literature">
+                                                        <ul id="literature-list"></ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -435,29 +445,69 @@
                         document.getElementById("mss-content-struct-modern").appendChild(msContentStructModern)
                     }
 
+
+                    // Retrieve the catalogue items
+                    var catalogueItems = xmlDoc.querySelectorAll('listBibl[type="catalogue"] bibl');
+                    var ulElement = document.getElementById("catalogue-list");
+
+                    catalogueItems.forEach(function(item) {
+                        var catalogueText = item.textContent;
+                        var citedRange = item.querySelector('citedRange').textContent;
+                        var copyOfValue = item.getAttribute('copyOf');
+                        var finalText = catalogueText + ", Seitenbereich: " + citedRange;
+
+                        // Create an <i> element for the icon
+                        var icon = document.createElement('i');
+                        icon.className = 'fas fa-arrow-up-right-from-square';
+                        var linkElement = document.createElement('a');
+                        linkElement.setAttribute('href', 'bibl.html#' + copyOfValue);
+                        linkElement.setAttribute('target', '_blank');
+                        linkElement.appendChild(icon);
+
+                        // Create an <li> element to hold each literature item
+                        var liElement = document.createElement('li');
+                        liElement.textContent = finalText;
+                        liElement.appendChild(linkElement);
+                        ulElement.appendChild(liElement);
+                    });
+
+
+                    // Retrieve the secondary literature items
+                    var literatureItems = xmlDoc.querySelectorAll('listBibl[type="secondary-literature"] bibl');
+                    var ulElement = document.getElementById("literature-list");
+
+                    literatureItems.forEach(function(item) {
+                        var literatureText = item.textContent;
+                        var citedRange = item.querySelector('citedRange').textContent;
+                        var copyOfValue = item.getAttribute('copyOf');
+                        var finalText = literatureText + ", Seitenbereich: " + citedRange;
+
+                        // Create an <i> element for the icon
+                        var icon = document.createElement('i');
+                        icon.className = 'fas fa-arrow-up-right-from-square';
+                        var linkElement = document.createElement('a');
+                        linkElement.setAttribute('href', 'bibl.html#' + copyOfValue);
+                        linkElement.setAttribute('target', '_blank');
+                        linkElement.appendChild(icon);
+
+                        // Create an <li> element to hold each literature item
+                        var liElement = document.createElement('li');
+                        liElement.textContent = finalText;
+                        liElement.appendChild(linkElement);
+                        ulElement.appendChild(liElement);
+                    });
+
+
+
+
+
+
                     document.getElementById("webResourceDigitalisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="digi"] ref')[0].innerHTML
                     document.getElementById("webResourceKatalogisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="cat"] ref')[0].innerHTML
 
                     for (var i = 0; i <= 20; i++) { 
                         document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
                     }
-
-
-                    //old script for book selection
-                    /*for (var i = 0; i <= 20; i++) { 
-                        document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
-                        var optionBook = document.createElement('option')
-                        if (i<=9){
-                            optionBook.value = "0" + i
-                            optionBook.innerHTML = "Buch 0" + i
-                        }
-                        else {
-                            optionBook.value = i
-                            optionBook.innerHTML = "Buch " + i
-                        }
-                        document.querySelector("#book-selector").appendChild(optionBook)
-                    }*/
-
 
                     //Book selection: display the correct number of book in V1 and V2
                     var startBook = 0;
@@ -515,21 +565,6 @@
                     }
                 }
             }
-
-
-//new function to redirect to desktop.html - doesn't pass the info
-            /*function redirectToTranscription() {
-                let selectedMs = new URLSearchParams(window.location.search).get('document');
-                let selectedBook = document.querySelector("#book-selector").value;
-                let selected = selectedMs + "-" + selectedBook;
-
-                if (selected) {
-                    // Redirect to desktop.html
-                    window.location.href = 'desktop.html';
-                    // Send message to desktop.html
-                    window.postMessage(selected, "*");
-                }
-            }*/
 
             //Mirador
             function initializeMirador(doc_id){
