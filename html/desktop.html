@@ -80,7 +80,7 @@
           <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
         </div>
 
-        <div id="content" class="container">
+        <div id="content" class="container" style="flex:1">
             <h1 class="section-main-title"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
             
             <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
@@ -929,20 +929,37 @@
             container.appendChild(panel);
 
             //show/hide columns in Structure tables
-                let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
-                dropdownsStruct.forEach(dropdown => {
-                  let checkboxes = dropdown.querySelectorAll('.toggle-column');
-                  let table = dropdown.nextElementSibling;
-                  checkboxes.forEach(checkbox => {
-                    checkbox.addEventListener('change', function() {
-                      let columnIndex = parseInt(checkbox.dataset.column);
-                      let cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
-                      cells.forEach(cell => {
-                        cell.style.display = checkbox.checked ? '' : 'none';
-                      })
-                    });
-                  });
+            let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
+            dropdownsStruct.forEach(dropdown => {
+              let checkboxes = dropdown.querySelectorAll('.toggle-column');
+              let table = dropdown.nextElementSibling;
+              checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                  let columnIndex = parseInt(checkbox.dataset.column);
+                  let cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
+                  cells.forEach(cell => {
+                    cell.style.display = checkbox.checked ? '' : 'none';
+                  })
                 });
+              });
+            });
+
+            panel.querySelectorAll('.move-left').forEach(function(element) {
+                element.addEventListener('click', function() {
+                  let card = $(this).closest('.card').parent();
+                  card.insertBefore(card.prev());
+                  saveResourceState()
+                });
+            });
+
+            panel.querySelectorAll('.move-right').forEach(function(element) {
+                element.addEventListener('click', function() {
+                  let card = $(this).closest('.card').parent();
+                  card.insertAfter(card.next());
+                  saveResourceState()
+                });
+            });
+
 
             // Delay execution to ensure Mirador can properly initialize
             setTimeout(() => {
@@ -1015,7 +1032,9 @@
         const panelContent = `
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center" style="font-weight:bold">
+              <i class="fas fa-arrow-left move-left"></i>
               <span>${title}</span>
+              <i class="fas fa-arrow-right move-right"></i>
               <div>
                 <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transkription</button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
