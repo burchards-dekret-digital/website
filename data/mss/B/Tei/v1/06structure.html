@@ -4,8 +4,16 @@
          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#structureToc" aria-expanded="false" aria-controls="structureToc">
                Capitula
                </button></h2>
-         <div id="structureToc" class="accordion-collapse collapse" data-bs-parent="#accordionStructure">
+         <div id="structureToc" class="accordion-collapse collapse">
             <div class="accordion-body">
+               <div class="dropdown dropdown-structure"><button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-plus-minus"></i></button><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     <p class="ms-3" style="font-weight: bold;">Spalten ein-/ausblenden</p>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="0" checked="true"> Kapitel nach Handschrift</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="1" checked="true"> Laufende Nummer</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="2" checked="true"> Überlieferung</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="3" checked="true"> Incipit</label></li>
+                  </ul>
+               </div>
                <table class="table">
                   <thead>
                      <tr>
@@ -516,8 +524,18 @@
          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#structureCorpus" aria-expanded="false" aria-controls="structureCorpus">
                Corpus
                </button></h2>
-         <div id="structureCorpus" class="accordion-collapse collapse" data-bs-parent="#accordionStructure">
+         <div id="structureCorpus" class="accordion-collapse collapse">
             <div class="accordion-body">
+               <div class="dropdown dropdown-structure"><button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-plus-minus"></i></button><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     <p class="ms-3" style="font-weight: bold;">Spalten ein-/ausblenden</p>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="0" checked="true"> Kapitel nach Handschrift</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="1" checked="true"> Laufende Nummer</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="2" checked="true"> Überlieferung</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="3" checked="true"> Rubrik</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="4" checked="true"> Inskription</label></li>
+                     <li><label class="dropdown-item"><input type="checkbox" class="form-check-input toggle-column" data-column="5" checked="true"> Incipit</label></li>
+                  </ul>
+               </div>
                <table class="table">
                   <thead>
                      <tr>

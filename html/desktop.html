@@ -929,21 +929,17 @@
             container.appendChild(panel);
 
             //show/hide columns in Structure tables
-                var dropdownsStruct = document.querySelectorAll('.dropdown-structure');
+                let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
                 dropdownsStruct.forEach(dropdown => {
-                  var checkboxes = dropdown.querySelectorAll('.toggle-column');
-                  var table = dropdown.nextElementSibling;
+                  let checkboxes = dropdown.querySelectorAll('.toggle-column');
+                  let table = dropdown.nextElementSibling;
                   checkboxes.forEach(checkbox => {
                     checkbox.addEventListener('change', function() {
-                      console.log("Checkbox changed. Checked:", checkbox.checked);
-                      var columnIndex = parseInt(checkbox.dataset.column);
-                      var cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
+                      let columnIndex = parseInt(checkbox.dataset.column);
+                      let cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
                       cells.forEach(cell => {
                         cell.style.display = checkbox.checked ? '' : 'none';
-                      });
-                      if (!checkbox.checked) {
-                        console.log("Column deselected");
-                      }
+                      })
                     });
                   });
                 });
