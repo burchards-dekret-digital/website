@@ -71,6 +71,16 @@
             color: #0d6efd;
             border-color: #0d6efd;
             }
+
+            .move-left, .move-right {
+                transition: all 0.3s; /* Add transition for smooth effect */
+            }
+            .move-left:hover, .move-right:hover {
+                transform: scale(1.1); /* Make the icon slightly bigger on hover */
+                color: blue; /* Change the color to blue on hover */
+                cursor: pointer; /* Change cursor to pointer on hover */
+                filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.2));
+            }
         </style>
     </head>
     <body>
