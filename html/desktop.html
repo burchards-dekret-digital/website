@@ -935,7 +935,7 @@
             msViews.push(await responseEditor.text())
 
             console.log("async", book)
-            let panel = createResourcePanel(book, `Handschrift ${msName} - Buch ${bookN}`, msViews, selectedViews);           
+            let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);           
             container.appendChild(panel);
 
             //show/hide columns in Structure tables
