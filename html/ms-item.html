@@ -450,12 +450,27 @@
                     var ulElement = document.getElementById("catalogue-list");
 
                     catalogueItems.forEach(function(item) {
-                        var catalogueText = item.textContent;
+                        //var catalogueText = item.textContent;
+                        // Exclude <citedRange> from catalogueText
+                        var catalogueText = Array.from(item.childNodes)
+                        .filter(node => node.nodeName !== 'citedRange')
+                        .map(node => node.textContent.trim())
+                        .join(' ');
+                        
+
+                        var catalogueText = Array.from(item.childNodes)
+                        .filter(node => node.nodeName !== 'citedRange')
+                        .map(node => node.textContent.trim())
+                        .join(' ')
+                        .replace(/<\/citedRange>[^<]*/, ''); // Remove content after </citedRange>, including the period
+
+
+
                         var citedRange = item.querySelector('citedRange').textContent;
                         var copyOfValue = item.getAttribute('copyOf');
-                        var finalText = catalogueText + ", Seitenbereich: " + citedRange;
+                        var finalText = catalogueText + ", S. " + citedRange;
 
-                        // Create an <i> element for the icon
+                        // Create an <i> element for the link icon
                         var icon = document.createElement('i');
                         icon.className = 'fas fa-arrow-up-right-from-square';
                         var linkElement = document.createElement('a');
@@ -476,10 +491,16 @@
                     var ulElement = document.getElementById("literature-list");
 
                     literatureItems.forEach(function(item) {
-                        var literatureText = item.textContent;
+                        //var literatureText = item.textContent;
+                        var literatureText = Array.from(item.childNodes)
+                        .filter(node => node.nodeName !== 'citedRange')
+                        .map(node => node.textContent.trim())
+                        .join(' ');
+
+
                         var citedRange = item.querySelector('citedRange').textContent;
                         var copyOfValue = item.getAttribute('copyOf');
-                        var finalText = literatureText + ", Seitenbereich: " + citedRange;
+                        var finalText = literatureText + ", S. " + citedRange;
 
                         // Create an <i> element for the icon
                         var icon = document.createElement('i');

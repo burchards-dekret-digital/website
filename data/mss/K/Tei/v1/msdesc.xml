@@ -113,11 +113,11 @@
                             </bibl> 
                         </surrogates> 
                         <listBibl>
-                            <listBibl type="catalogue"></listBibl>
+                            <listBibl type="catalogue"/>
                             <listBibl type="secondary-literature">
                                 <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs
                                     Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.
-                                    München 1991<citedRange>20-21</citedRange>.</bibl>
+                                    München 1991<citedRange>20-21</citedRange></bibl>
                             </listBibl>
                         </listBibl>
                     </additional>
