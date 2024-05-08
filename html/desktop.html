@@ -91,7 +91,38 @@
         </div>
 
         <div id="content" class="container" style="flex:1">
-            <h1 class="section-main-title"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
+            <h1 class="section-main-title" style="margin-bottom:20px!important;">
+              <span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span> 
+              <span style="vertical-align: super;"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#desktopModal" style="padding: 0;">
+                <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
+            </h1>
+
+          <!-- Modal -->
+          <div class="modal fade" id="desktopModal" tabindex="-1" aria-labelledby="desktopModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="desktopModalLabel"><span lang="de">Modal title</span><span lang="en">Modal title</span></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p style="font-size:17px;">
+                    <span lang="de">Der Bereich „Schreibtisch" bietet einen Arbeitsbereich, der an Burchards Schreibtisch während der Abfassung des Dekrets erinnert. Hier können derzeit über die Schaltfläche „Ressource hinzufügen" die Transkriptionen der Bücher aus den Handschriften aus Bamberg, Frankfurt, Köln und dem Vatikan hinzugefügt werden, die Sie einsehen und vergleichen möchten. Jedes Buch ist mit einer Transkription des Textes, einer Ansicht seiner Struktur, digitalisierten Bildern der Handschrift und Metadateninformationen angereichert. Über die Schaltfläche „Transkriptionsansichten" kann die Darstellung des Textes geändert und zwischen der ursprünglichen Textstruktur und einer vereinfachten Version (Lesefassung) ausgewählt werden. Dabei besteht die Möglichkeit Abkürzungen ein- oder auszublenden. Über die Schaltfläche „JSON herunterladen" kann eine eine JSON-Datei heruntergeladen werden, die die zu „Schreibtisch" hinzugefügten Bücher und die auf jeder Tafel aktivierten Ansichten (Transkription, Struktur, Mirador, Info) enthält. Auf diese Weise können Arbeiten über einen längeren Zeitraum aufbewahrt werden und auch nach mehreren Tagen wieder aufgenommen oder mit einem Kollegen geteilt werden. Die JSON-Datei kann über die Schaltfläche "Ressource hinzufügen" hochgeladen werden; dann die Datei zum Öffnen im Abschnitt „JSON hochladen" oben auswählen.</span>
+                    <span lang="en">The "Desk" area offers a workspace inspired by Burchard's desk during the writing of the decree. Here, using the "Add resource" button, you can add the transcriptions of the books from the Bamberg, Frankfurt, Cologne and Vatican manuscripts that you wish to view and compare. Each book is enriched with a transcription of the text, a view of its structure, digitized images of the manuscript and metadata information. Using the "Transcription views" button, you can change the presentation of the text and choose between the original text structure and a simplified version (reading version). It is also possible to show or hide abbreviations. The "Download JSON" button can be used to download a JSON file containing the books added to "Desktop" and the views activated on each panel (transcription, structure, Mirador, info). In this way, work can be stored over a longer period of time and can also be resumed after several days or shared with a colleague. The JSON file can be uploaded via the "Add resource" button; then select the file to open in the "Upload JSON" section.</span>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <p class="mb-5" style="font-size:18px;">
+              <span lang="de">Der Bereich „Schreibtisch" bietet einen Arbeitsbereich, der an Burchards Schreibtisch während der Abfassung des Dekrets erinnert. Hier können derzeit über die Schaltfläche „Ressource hinzufügen" die Transkriptionen der Bücher aus den Handschriften aus Bamberg, Frankfurt, Köln und dem Vatikan hinzugefügt werden, die Sie einsehen und vergleichen möchten. Jedes Buch ist mit einer Transkription des Textes, einer Ansicht seiner Struktur, digitalisierten Bildern der Handschrift und Metadateninformationen angereichert. Über die Schaltfläche „Transkriptionsansichten" kann die Darstellung des Textes geändert und zwischen der ursprünglichen Textstruktur und einer vereinfachten Version (Lesefassung) ausgewählt werden. Dabei besteht die Möglichkeit Abkürzungen ein- oder auszublenden. Über die Schaltfläche „JSON herunterladen" kann eine eine JSON-Datei heruntergeladen werden, die die zu „Schreibtisch" hinzugefügten Bücher und die auf jeder Tafel aktivierten Ansichten (Transkription, Struktur, Mirador, Info) enthält. Auf diese Weise können Arbeiten über einen längeren Zeitraum aufbewahrt werden und auch nach mehreren Tagen wieder aufgenommen oder mit einem Kollegen geteilt werden. Die JSON-Datei kann über die Schaltfläche "Ressource hinzufügen" hochgeladen werden; dann die Datei zum Öffnen im Abschnitt „JSON hochladen" oben auswählen.</span>
+              <span lang="en">The "Desk" area offers a workspace inspired by Burchard's desk during the writing of the decree. Here, using the "Add resource" button, you can add the transcriptions of the books from the Bamberg, Frankfurt, Cologne and Vatican manuscripts that you wish to view and compare. Each book is enriched with a transcription of the text, a view of its structure, digitized images of the manuscript and metadata information. Using the "Transcription views" button, you can change the presentation of the text and choose between the original text structure and a simplified version (reading version). It is also possible to show or hide abbreviations. The "Download JSON" button can be used to download a JSON file containing the books added to "Desktop" and the views activated on each panel (transcription, structure, Mirador, info). In this way, work can be stored over a longer period of time and can also be resumed after several days or shared with a colleague. The JSON file can be uploaded via the "Add resource" button; then select the file to open in the "Upload JSON" section.</span>
+            </p>
             
             <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
             <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>

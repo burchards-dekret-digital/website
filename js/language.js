@@ -18,11 +18,11 @@
         // Display elements in the selected language
         if (language === 'de') {
             deElements.forEach(function(element) {
-            element.style.display = 'block';
+            element.style.display = 'inline-block';
             });
         } else if (language === 'en') {
             enElements.forEach(function(element) {
-            element.style.display = 'block';
+            element.style.display = 'inline-block';
             });
         }
     }
