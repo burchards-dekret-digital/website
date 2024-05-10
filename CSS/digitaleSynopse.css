@@ -186,7 +186,10 @@ ol li{
     list-style: none;
     padding-left: 0 !important;
     margin-left: 0 !important;
-    font-family: Andron-Scriptor-Web !important;}
+    font-family: Andron-Scriptor-Web !important;
+    font-size:initial;
+}
+    
 
 
 .footnotes li {
