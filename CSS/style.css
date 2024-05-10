@@ -35,24 +35,26 @@ body {
     min-height: 100vh;
 }
 
+p{font-size:18px;}
+
  h1, h2, h3, h4, h5, h6 {
 	font-family: BrandonGrotesqueLight;
 }
 
 h4{
     font-family: BrandonGrotesqueLight;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: black;
     font-weight: bold;
 }
 
 h5{
     font-family: BrandonGrotesqueLight;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: black;
 }
 
@@ -105,9 +107,6 @@ h5{
     font-family: BrandonGrotesqueLight;
 	/*font-family:Montserrat-Regular;*/
 }
-.accordion-header{
-    font-family: BrandonGrotesqueRegular;
-}
 
 .container-filters-top{
     margin-top: 100px;
@@ -151,8 +150,7 @@ h5{
 li{
     font-family: BrandonGrotesqueLight;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
     text-align: left;
 }
 
@@ -198,8 +196,6 @@ li{
             /*flex-basis: auto;*/
 }
 
-
-
 .fullscreen {
             width: 100%;
             height:100vh;
@@ -218,7 +214,7 @@ li{
 
         
 
-/* .viewer class for dosplaying mirador viewer*/
+/* .viewer class for dosplaying mirador viewer
 .viewer {
         width: 50%;
         height: 100%;
@@ -250,7 +246,7 @@ li{
         width: 100%;
     }
 
-/* td[data-content~="bdd-unin-lost"]::after{
+td[data-content~="bdd-unin-lost"]::after{
 content:"";
     height: 25px;
   width: 25px;
@@ -267,7 +263,7 @@ td[data-content~="bdd-ed-rec"]::after{
   border-radius: 50%;
   display: inline-block;
    
-} */
+} 
 
 td.bdd-unin-lost::after{
     content:"aa";
@@ -276,30 +272,8 @@ td.bdd-unin-lost::after{
 td.bdd-ed-rec::after{
     content:"bb";
 }
+*/
 
-
-#projectDesc p{
-    font-family: BrandonGrotesqueLight;
-     font-weight:400; 
-     font-size:16px; 
-     line-height:24px;}
-#projectDesc h1{
-    font-family: BrandonGrotesqueBlack;
-    font-size:24px; 
-    font-weight:400; 
-    text-transform: uppercase; 
-    color:black; 
-    padding:0; 
-    letter-spacing:2px; 
-}
-#projectDesc h3 {
-    font-family: BrandonGrotesqueBlack;
-    font-size:14px; 
-    font-weight:400; 
-    letter-spacing:2px; 
-    text-transform: uppercase; 
-    color:black;
-    font-weight: bold;}
 
 /* INDEX CSS */
     .container-index h1 {
@@ -328,32 +302,17 @@ td.bdd-ed-rec::after{
 
             .container-index h3 {
                 font-family: BrandonGrotesqueLight;
-                font-size:14px; 
-                font-weight:400; 
-                letter-spacing:2px; 
+                font-size:17px; 
+                letter-spacing:1px; 
                 text-transform: uppercase; 
                 color:black;
-            font-weight: bold;}
+                font-weight: bold;}
 
             .container-index p {
                font-family: BrandonGrotesqueLight;
                 font-weight:400; 
-                font-size:18px; 
-                line-height:24px;
+                font-size:18px;
             }
-
-            .first-character {
-                font-weight:900; 
-                float: left; 
-                font-size: 84px; 
-                line-height: 64px; 
-                padding-top: 4px; 
-                padding-right: 8px;
-                font-family: Montserrat-Regular;}
-
-            .light-blue {color: #3b8595;}
-            .blue {color: #004d99;}
-            .light-brown {color: #c48660;}
 
             /* Title */
             .parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; }
@@ -364,8 +323,8 @@ td.bdd-ed-rec::after{
         
             .container-index {
                 background: white; 
-                padding: 60px; 
-                
+                padding-top: 60px; 
+                padding-bottom: 60px; 
                 margin:0 auto; 
                 text-align:justify;}
 
@@ -430,16 +389,10 @@ td.bdd-ed-rec::after{
                 background-position: center center;}
 
 
-            /* Line-Break */
-            .line-break {
-                border-bottom:1px solid black; 
-                width: 150px; 
-                margin:0 auto;}
-
             /* Media Queries*/ 
             @media screen and (max-width: 959px) and (min-width: 768px) {
-            .container-index {padding: 40px;}
-            .container-index {padding: 30px;}
+            .container-index {padding-top: 40px; padding-bottom: 40px;}
+            .container-index {padding-top: 30px; padding-bottom: 30px;}
             .container-index h2 {font-size:30px;}
             .parallax-title h1 {letter-spacing: 1px;}
             .parallax-title h3 {font-size: 20px;}
@@ -455,7 +408,7 @@ td.bdd-ed-rec::after{
             }
             
             @media screen and (max-width: 767px) {
-            .container-index {padding: 30px;}
+            .container-index {padding-top: 30px; padding-bottom: 30px;}
             .container-index h2 {font-size:30px;}
             .parallax-title h1 {letter-spacing: 1px;}
             .parallax-title h3 {font-size: 18px;}
@@ -480,7 +433,7 @@ td.bdd-ed-rec::after{
             
             @media screen and (max-width: 479px) {
             .container-index {padding: 30px 15px;}
-            .container-index {padding: 30px;}
+            .container-index {padding-top: 30px; padding-bottom: 30px;}
             .container-index h2 {font-size:30px;}
             .parallax-title h1 {letter-spacing: 1px; font-size: 30px;}
             .parallax-title h3 {font-size: 13px;}

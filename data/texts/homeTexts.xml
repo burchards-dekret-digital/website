@@ -45,29 +45,60 @@
                         darüber hinaus die zeitlich und regional zu gruppierenden Zeugnisse der
                         Gesamtüberlieferung. BDD analysiert die Rezeption des Dekrets in
                         europäischer Perspektive. Im Rahmen der digitalen Edition entsteht eine
-                        Arbeitsumgebung, die zukünftige Projekte nachnutzen können. </p>      
+                        Arbeitsumgebung, die zukünftige Projekte nachnutzen können. </p>  
+            <h1 style="margin-top:40px;">MATERIALIEN</h1>
+            <p>Die Basis der Edition stellen die Transkriptionen der 20 Bücher von Burchards Dekret dar.
+                    Sie sind über die jeweilige <a href="html/mss.html">Handschrift</a> aufrufbar. Die
+                    Transkription eines Buches kann aber auch virtuell auf den <a href="html/desktop.html">Schreibtisch</a> 
+                    gelegt werden zum Vergleich mit anderen
+                    Textzeugen – entweder Kapitel für Kapitel oder Inskription für Inskription. 
+                    Die <a href="html/documentation.html">Dokumentation</a> gibt Auskunft über die technische
+                    Infrastruktur des Projektes und die TEI-Codierung der Daten. Unter <a href="html/mss.html">Handschriften</a> findet sich die im Entstehen
+                    begriffene Handschriftendatenbank alle Textzeugen des Decretum Burchardi. Die
+                    kuratierte <a href="html/bibl.html">Bibliographie</a> umfasst fast 400 Beiträge.
+                    Einen ersten thematischen Einstieg zum Dekret mit weiterführender Literatur findet
+                    sich unter <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.</p>    
           </span>
       
-          <span lang="en"> <h1>PROJECT GOALS</h1> <p/>BDD is developing a historical-critical
+          <span lang="en"> 
+            <h1>PROJECT GOALS</h1> 
+            <p>BDD is developing a historical-critical
                     edition based on the manuscripts of the decree produced in Worms at the
                     beginning of the 11th century (print edition and digital edition). The digital
                     edition also presents the chronologically and regionally grouped evidence of the
                     entire tradition. BDD analyses the reception of the decree from a European
                     perspective. The digital edition creates a working environment that can be
-                    utilised in future projects.</span>
+                    utilised in future projects.</p>
+            <h1 style="margin-top:40px;">RESOURCES</h1>
+            <p>The transcriptions of the 20 books of Burchard's decree form the basis of the edition. 
+                They can be accessed via the <a href="html/mss.html">manuscripts</a>. The transcription of a book can also be 
+                placed virtually on the <a href="html/desktop.html">desk</a> for comparison with other textual witnesses - either 
+                chapter by chapter or inscription by inscription. The <a href="html/documentation.html">documentation</a> provides 
+                information about the technical infrastructure of the project, the TEI coding of the 
+                data and the <a href="html/mss.html">manuscript database</a> currently being created . In addition to the 
+                history, description and further information on the Worms manuscripts recorded to 
+                date, all accompanying texts are also clearly listed there. The curated <a href="html/bibl.html">bibliography</a> 
+                contains almost 400 articles. A first thematic introduction to the decree with 
+                further literature can be found under <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.
+            </p>
+          </span>
         </div>                        
-        <div class="col-md-4 text-center">
+        
+        <div class="col-md-4 text-center justify-content-center align-items-center d-flex">
           <figure class="figure">
             <img src="img/BambergBook.jpg" class="figure-img img-fluid" style="width:60%; object-fit: cover;" alt="Bamebrg Buch"/>
             <figcaption class="figure-caption">Bamberger Handschrift des Decretum Burchardi
                         (Bamberg, Staatsbibliothek, Can. 6)</figcaption> 
           </figure>
         </div>
+
+        
+
       </div>
     </div>
 
     
-    <div id="material" class="block">
+    <!--<div id="material" class="block">
       <span lang="de">
         <h1>MATERIALIEN</h1>
         <p>Die Basis der Edition stellen die Transkriptionen der 20 Bücher von Burchards Dekret dar.
@@ -97,7 +128,7 @@
             further literature can be found under <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.
         </p>
       </span>
-    </div>
+    </div>-->
     
     <!--INFO BLOCK-->
     <div id="summaryTable" class="block">
