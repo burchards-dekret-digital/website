@@ -10,8 +10,8 @@ $(document).ready(function () {
   async function fetchDataAndPopulateData() {
       const list_ms = ["B", "F", "K", "V1", "V2"]
       for (var ms in list_ms){
-          const folderPath = '../data/mss/' + list_ms[ms] + '/Tei/v1'; // Update this with your XML folder path
-          const response = await fetch(folderPath + '/msdesc.xml'); // Fetch the XML file
+          const folderPath = '../data/mss/' + list_ms[ms] + '/Tei/v1';
+          const response = await fetch(folderPath + '/msdesc.xml');
           if (response.ok) {
               const xmlText = await response.text();
               const parser = new DOMParser();
@@ -115,10 +115,10 @@ function parseXml (xml) {
     
     // Bildung von Markergruppe
     if (color){
-            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b>'+name+'</b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
+            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup("<b>"+name+"</b><br>Entstehungsort: "+origPlace+"<br>Entstehungszeit: "+origDate);
     }
     else{
-            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: greyIcon}).bindPopup('<b>'+name+'</b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
+            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: greyIcon}).bindPopup("<b>"+name+"</b><br>Entstehungsort: "+origPlace+"<br>Entstehungszeit: "+origDate);
     }
     libraryList.push(mapPoint);
   });
@@ -137,7 +137,7 @@ function parseXml (xml) {
   $(xml).find("msDesc").each(function() {
     var origPlace = $(this).find("origPlace").text();
     origPlace = origPlace.split(/(\d+)/)[0];
-var origDate = $(this).find("origDate").text();
+  var origDate = $(this).find("origDate").text();
     var name = $(this).find("msName");
     name = name[0].innerHTML;
     var geodata = $(this).find("geo");

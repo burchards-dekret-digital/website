@@ -40,11 +40,11 @@ Die Synode von Seligenstadt dürfte ursprünglich am Ende des Codex gestanden ha
                             <author> <persName ref="https://viaf.org/viaf/111045814/">Burchard von
                                 Worms</persName> </author>
                             <title xml:lang="lat">Decretum</title>
-                            <incipit>„Bvrchardus solo nomine vvormaciinsis episcopvs.“</incipit>
-                            <explicit>„Sed in hęc ignem conflagrationis illius pertimescent
+                            <incipit>Bvrchardus solo nomine vvormaciinsis episcopvs.</incipit>
+                            <explicit>Sed in hęc ignem conflagrationis illius pertimescent
                                     inmortales atque in corruptibiles facti sunt uiuorum trium
                                     corruptibilia corpora atque mortalia in camino ardenti inlęsa
-                                    uiuere non potuerunt.“</explicit>
+                                    uiuere non potuerunt.</explicit>
                             <note type="textual-family">Wormser Ordnung B</note>
                             <note type="textual-subfamily">Deutsche Handschriftengruppe</note>
                             <note type="text-genre"/>
@@ -56,12 +56,12 @@ Die Synode von Seligenstadt dürfte ursprünglich am Ende des Codex gestanden ha
                             </locusGrp>
                             <author> <persName ref="unbekannt">Unbekannt</persName> </author>
                             <title xml:lang="lat">Admonitio synodalis</title>
-                            <incipit>„Sermo synodalis qui in singulis synodis parrochianis synodus presbiteris est enunciandus. Fratres
+                            <incipit>Sermo synodalis qui in singulis synodis parrochianis synodus presbiteris est enunciandus. Fratres
                                     presbiteri et sacerdotes domini cooperatores ordinis nostri
-                                    estis [...].“</incipit>
-                            <explicit>„[…] praestante domino nostro iesu christo qui cum patre
+                                    estis [...].</incipit>
+                            <explicit>[…] praestante domino nostro iesu christo qui cum patre
                                     et spiritu sancto uiuit et regnat deus per omnia
-                                    saecula.“</explicit>
+                                    saecula.</explicit>
                             <note type="textual-family"/>
                             <note type="textual-subfamily"/>
                             <note type="text-genre"/>
@@ -73,8 +73,8 @@ Die Synode von Seligenstadt dürfte ursprünglich am Ende des Codex gestanden ha
                             </locusGrp>
                             <author> <persName ref="unbekannt">Unbekannt</persName> </author>
                             <title xml:lang="lat">Synode von Seligenstadt</title>
-                            <incipit>„In dei nomine ego Aribo mogontinę sedis archiepiscopus quamuis indignus cum cęteris confribus nostris atque coepiscopus Burghardo Wormaciense quo Werinhario argentino Brunone augustense Eberhardo babenbergensi […]“</incipit>
-                            <explicit>„Decretum est in eodem concilio ut omnis penitens dum carrinam ieiunet de loco ad locum non migregt [...]”</explicit>
+                            <incipit>In dei nomine ego Aribo mogontinę sedis archiepiscopus quamuis indignus cum cęteris confribus nostris atque coepiscopus Burghardo Wormaciense quo Werinhario argentino Brunone augustense Eberhardo babenbergensi […]“</incipit>
+                            <explicit>Decretum est in eodem concilio ut omnis penitens dum carrinam ieiunet de loco ad locum non migregt [...]</explicit>
                             <note type="textual-family"/>
                             <note type="textual-subfamily">Erste Rezension</note>
                             <note type="text-genre"/>

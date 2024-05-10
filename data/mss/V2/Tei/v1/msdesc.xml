@@ -35,8 +35,8 @@
                                     Worms</persName>
                             </author>
                             <title xml:lang="lat">Decretum</title>
-                            <incipit>„Incipit capitvla libri noni.“</incipit>
-                            <explicit>„Sed in hęc ignem conflagrationis illius pertimescent inmortales atque incorruptibiles facti sunt uiuorum trium corruptibilia corpora atque mortalia in camino ardenti inlesa uiuere non potuerunt.“</explicit>
+                            <incipit>Incipit capitvla libri noni.</incipit>
+                            <explicit>Sed in hęc ignem conflagrationis illius pertimescent inmortales atque incorruptibiles facti sunt uiuorum trium corruptibilia corpora atque mortalia in camino ardenti inlesa uiuere non potuerunt.</explicit>
                             <note type="textual-family">Wormser Ordnung A</note>
                             <note type="textual-subfamily"/>
                             <note type="text-genre"/>
@@ -51,8 +51,8 @@
                                 <persName ref="unbekannt">Unbekannt</persName>
                             </author>
                             <title xml:lang="ger">Synode von Seligenstadt a. 1023</title>
-                            <incipit>„In dei nomine ego Aribo mogontinę sedis archiepiscopus quamuis indignus cum cęteris confribus nostris et coepiscopus Burghardo uuormatiense Werinhario argentino Brunone augustensi Eberhardo babenbergensi […]“</incipit>
-                            <explicit>„In eodem quoque concilio decretum es tut nullus presbiterorum quemquam nisi iussu episcopi ęcclesiam introducere praesumat cui pro aliquo delicto illam ingredi non liceat.“</explicit>
+                            <incipit>In dei nomine ego Aribo mogontinę sedis archiepiscopus quamuis indignus cum cęteris confribus nostris et coepiscopus Burghardo uuormatiense Werinhario argentino Brunone augustensi Eberhardo babenbergensi […]</incipit>
+                            <explicit>In eodem quoque concilio decretum es tut nullus presbiterorum quemquam nisi iussu episcopi ęcclesiam introducere praesumat cui pro aliquo delicto illam ingredi non liceat.</explicit>
                             <note type="textual-family">Zweite Rezension</note>
                             <note type="textual-subfamily">Deutsche Handschriftengruppe<note type="text-genre"/></note>
                             <textLang>Latein</textLang>

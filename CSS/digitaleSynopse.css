@@ -321,6 +321,7 @@ ol li{
 .tei_subst {
     text-decoration: underline;
     text-decoration-style: wavy;
+    color: #000;
 }
 
 
@@ -328,15 +329,18 @@ ol li{
 .tei_delSpan-written-on-erased {
     text-decoration: underline;
     text-decoration-style: wavy;
+    color: #000;
 }
 
 .tei_delSpan-start-written-on-erased{
     text-decoration: underline;
     text-decoration-style: wavy;
+    color: #000;
 }
 .tei_delSpan-written-on-erased-end{
     text-decoration: underline;
     text-decoration-style: wavy;
+    color: #000;
 }
 
 .tei_delSpan-strikethrough {

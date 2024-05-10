@@ -214,7 +214,7 @@ li{
 
         
 
-/* .viewer class for dosplaying mirador viewer
+/* .viewer class for dosplaying mirador viewer*/
 .viewer {
         width: 50%;
         height: 100%;
@@ -272,7 +272,7 @@ td.bdd-unin-lost::after{
 td.bdd-ed-rec::after{
     content:"bb";
 }
-*/
+
 
 
 /* INDEX CSS */

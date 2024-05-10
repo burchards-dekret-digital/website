@@ -34,8 +34,8 @@
                                 <persName ref="unbekannt">Unbekannt</persName>
                             </author>
                             <title xml:lang="lat">Ordo de celebrando concilio</title>
-                            <incipit>„Hora conuenienti quando episcopo uel eius uicario ut sum fuierit omnes expelluntur de acclesia; […]“</incipit>
-                            <explicit>„Et si synodus est uernalis, finitis istis pontifex inde procedens reconciliatisque poenitentibus more solito doceat populum et in fine prędicationis remissionem peccatorum faciat, quia dies illa dies indulgentiae uocatur“</explicit>
+                            <incipit>Hora conuenienti quando episcopo uel eius uicario ut sum fuierit omnes expelluntur de acclesia; […]</incipit>
+                            <explicit>Et si synodus est uernalis, finitis istis pontifex inde procedens reconciliatisque poenitentibus more solito doceat populum et in fine prędicationis remissionem peccatorum faciat, quia dies illa dies indulgentiae uocatur</explicit>
                             <note type="textual-family">Handschriften BHP3VWMi</note>
                             <note type="textual-subfamily"/>
                             <note type="text-genre"/>
@@ -50,8 +50,8 @@
                                 <persName ref="unbekannt">Unbekannt</persName>
                             </author>
                             <title xml:lang="lat">Admonitio Synodalis</title>
-                            <incipit>„Finito euangelio; episcopo et caeteris in ordine sedentibus; a diacono legatur hęc admonitio. Fratres presbiteri et sacerdotes domini cooperatores ordinis nostris estis.“</incipit>
-                            <explicit>„Praestante domino nostro Iesu Christo, qui cum patre et spiritu sancto uiuit et regnat deus. Per omnia saecula sęculorum.“</explicit>
+                            <incipit>Finito euangelio; episcopo et caeteris in ordine sedentibus; a diacono legatur hęc admonitio. Fratres presbiteri et sacerdotes domini cooperatores ordinis nostris estis.</incipit>
+                            <explicit>Praestante domino nostro Iesu Christo, qui cum patre et spiritu sancto uiuit et regnat deus. Per omnia saecula sęculorum.</explicit>
                             <note type="textual-family"/>
                             <note type="textual-subfamily"/>
                             <note type="text-genre"/>
@@ -66,8 +66,8 @@
                                 <persName ref="https://viaf.org/viaf/111045814/">Burchard von Worms</persName>
                             </author>
                             <title xml:lang="lat">Decretum</title>
-                            <incipit>„In nomine christi incipit pręfaciuncula istius libelli.“</incipit>
-                            <explicit>„Si abbas mulierem in monasterium suum ingredi permiserit aut festiuitates a liquas ibidem spectare tribus mensio in alio monasterio retrudatur pane et aqua tantum contentus.“</explicit>
+                            <incipit>In nomine christi incipit pręfaciuncula istius libelli.</incipit>
+                            <explicit>Si abbas mulierem in monasterium suum ingredi permiserit aut festiuitates a liquas ibidem spectare tribus mensio in alio monasterio retrudatur pane et aqua tantum contentus.</explicit>
                             <note type="textual-family">Wormser Ordnung A</note>
                             <note type="textual-subfamily"/>
                             <note type="text-genre"/>

@@ -2,7 +2,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title xml:lang="ger">Frankfurt am Main, Stadt- und Universitätsbibliothek, Barth.
+                <title xml:lang="ger">Frankfurt am Main, Universitätsbibliothek Johann Christian Senckenberg, Barth.
                     50</title>
             </titleStmt>
 
@@ -13,8 +13,7 @@
             <sourceDesc>
                 <msDesc xml:id="frankfurt-ub-b-50-msdesc">
                     <msIdentifier xml:id="frankfurt-ub-b-50-ident">
-                        <repository ref="https://www.ub.uni-frankfurt.de/">Stadt- und
-                            Universitätsbibliothek<location> <geo>50.120524,8.653046</geo>
+                        <repository ref="https://www.ub.uni-frankfurt.de/">Universitätsbibliothek Johann Christian Senckenberg<location> <geo>50.120524,8.653046</geo>
                             </location> <settlement ref="https://www.wikidata.org/wiki/Q1794">Frankfurt am Main</settlement> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </repository>
                         <collection>
                             <idno type="shelfmark">Barth.50</idno>
@@ -22,7 +21,7 @@
                         <altIdentifier type="old-signature">
                             <idno type="shelfmark">F ix</idno>
                         </altIdentifier>
-                        <msName type="full">Frankfurt am Main, Stadt - und Universitätsbibliothek,
+                        <msName type="full">Frankfurt am Main, Universitätsbibliothek Johann Christian Senckenberg,
                             Barth. 50</msName>
                         <msName type="sigle">F</msName>
                     </msIdentifier>
@@ -31,26 +30,37 @@
                         <summary/>
                         <msItem n="1" corresp="#decretum" class="main-text" facs="https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2035623">
                             <locusGrp>
-                                <locus to="315v" from="1ra"/>
+                                <locus from="1ra" to="5v"/>
+                                <locus from="6v" to="315v"/>
                             </locusGrp>
-                            <author>
-                                <persName ref="https://viaf.org/viaf/111045814/">Burchard von
-                                    Worms</persName>
-                            </author>
+                            <author> <persName ref="https://viaf.org/viaf/111045814/">Burchard von
+                                Worms</persName> </author>
                             <title xml:lang="lat">Decretum</title>
-                            <incipit>„et in quo geniculo fideles et coniungi et separari debeant et
-                                de reuocatione et de poenitentia singulorum.“</incipit>
-                            <explicit>„Sed in hęc ignem conflagrationis illius pertimescent
+                            <incipit>et in quo geniculo fideles et coniungi et separari debeant et
+                                de reuocatione et de poenitentia singulorum.</incipit>
+                            <explicit>Sed in hęc ignem conflagrationis illius pertimescent
                                 inmortales atque incorruptibiles facti sunt uiuerum trium
                                 corruptibilia corpora atque mortalia in camino ardenti inlesa uiuere
-                                non potuerunt.“</explicit>
+                                non potuerunt.</explicit>
                             <note type="textual-family"/>
                             <note type="textual-subfamily">Deutsche Handschriftengruppe</note>
                             <note type="text-genre"/>
                             <textLang>Latein</textLang>
                         </msItem>
-
-                        <msItem n="2" corresp="#brief-isidors-von-sevilla" class="begleittext" facs="https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2036252">
+                        <msItem n="2" class="begleittext" facs="" corresp="#concilium-guastallense">
+                            <locusGrp>
+                                <locus from="5v" to="5v"/>
+                            </locusGrp>
+                            <author><persName ref="unbekannt">Paschalis II.</persName></author>
+                            <title xml:lang="lat">Concilium Guastallense</title>
+                            <incipit>Per multos iam annos regni teutonici [...]</incipit>
+                            <explicit>[...] quos uita scientiaque commendant.</explicit>
+                            <textLang>Latein</textLang>
+                            <note type="textual-family"/>
+                            <note type="textual-subfamily"/>
+                            <note type="text-genre">Kirchenrechtlicher Text</note>
+                        </msItem>
+                        <msItem n="3" corresp="#brief-isidors-von-sevilla" class="begleittext" facs="https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2036252">
                             <locusGrp>
                                 <locus from="315v" to="315v"/>
                             </locusGrp>
@@ -60,22 +70,32 @@
                             </author>
                             <title xml:lang="ger">Brief Isidors von Sevilla an Bischof Massona von
                                 Mérida</title>
-                            <incipit>„Incipit epistola ysidori episcopi ad massonem episcopum de
-                                restravrationis sacerdotis. Domino sancto […]“</incipit>
-                            <explicit>„Ergo ita est uterque derimanda sententia.“</explicit>
+                            <incipit>Incipit epistola ysidori episcopi ad massonem episcopum de
+                                restravrationis sacerdotis. Domino sancto […]</incipit>
+                            <explicit>Ergo ita est uterque derimanda sententia.</explicit>
                             <note type="textual-family"/>
                             <note type="textual-subfamily"/>
                             <note type="text-genre"/>
                             <textLang>Latein</textLang>
                         </msItem>
+                        
 
 
                         <msItemStruct xml:id="frankfurt-ub-b-50-msItemStruct-modern">
-                            <msItemStruct corresp="#decretum">
-                                <locus from="1ra" to="315v"/>
+                            <msItemStruct corresp="#decretum" n="1">
+                                <locus from="1ra" to="5v"/>
+                                <title xml:lang="lat">Prolog und Capitulatio Kapitel 1
+                                    Decretum</title>
+                            </msItemStruct>
+                            <msItemStruct corresp="#concilium-guastallense" n="2">
+                                <locus from="5v" to="5v"/>
+                                <title xml:lang="lat">Concilium Guastallense</title>
+                            </msItemStruct>
+                            <msItemStruct corresp="#decretum" n="3">
+                                <locus from="6v" to="315v"/>
                                 <title xml:lang="lat">Decretum</title>
                             </msItemStruct>
-                            <msItemStruct corresp="#brief-isidors-von-sevilla">
+                            <msItemStruct corresp="#brief-isidors-von-sevilla" n="4">
                                 <locus from="315v" to="315v"/>
                                 <title xml:lang="ger">Brief Isidors von Sevilla an Bischof Massona
                                     von Mérida</title>
@@ -157,7 +177,23 @@
                         </surrogates>
                         <listBibl>
                             <listBibl type="catalogue"/>
-                            <listBibl type="secondary-literature"/>
+                            <listBibl type="secondary-literature">
+                                <bibl copyOf="KGED5JZ6">Mordek: Kirchenrecht und Reform im
+                                    Frankenreich. Die Collecto Vetus Gallica, die älteste
+                                    systematische Kanonessammlung des fränkischen Gallien. Studien
+                                    und Edition.. Berlin 1975<citedRange>227 Anm.
+                                    62</citedRange>.</bibl>
+                                <bibl copyOf="VXCBCPL3">Maassen: Zur Geschichte der Quellen des
+                                    Kirchenrechts und des römischen Rechts im Mittelalter, in: Zur
+                                    Geschichte der Quellen des Kirchenrechts und des römischen
+                                    Rechts im Mittelalter (1863), S.
+                                    <citedRange>381</citedRange>.</bibl>
+                                <bibl copyOf="6ETJJBME">Migne: Sancti Isidori Hispalensis Episcopi.
+                                    Turnholti 1878<citedRange>899-900</citedRange>.</bibl>
+                                <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs
+                                    Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.
+                                    München 1991<citedRange>S. 37-39</citedRange>.</bibl>
+                            </listBibl>
                         </listBibl>
                     </additional>
                 </msDesc>

@@ -160,7 +160,7 @@
                                                     <h5>INHALT</h5>
                                                     <div id="mss-content"></div>
                                                     
-                                                    <h5>MODERNE BINDUNG</h5>
+                                                    <h5 class="mt-5">MODERNE BINDUNG</h5>
                                                     <div id="mss-content-struct-modern"></div>
                                                     
                                                     
@@ -427,7 +427,14 @@
                     for (let i = 0; i < mDescArray.length; i++) {
                         const msContent = document.createElement('p');
                         msContent.innerHTML += "<b>Text: </b>"+ mDescArray[i].getAttribute("n") +"<br/>"
-                        msContent.innerHTML += "<b>Folio: </b>"+ mDescArray[i].querySelectorAll('locusGrp locus')[0].getAttribute("from") + "-" + mDescArray[i].querySelectorAll('locusGrp locus')[0].getAttribute("to") +"<br/>"
+                        var locusElements = mDescArray[i].querySelectorAll('locusGrp locus');
+                        var locusString = "";
+                        for (var j = 0; j < locusElements.length; j++) {
+                            var locus = locusElements[j].getAttribute("from") + "-" + locusElements[j].getAttribute("to");
+                            locusString += (j > 0 ? "; " : "") + locus;
+                        }
+                        msContent.innerHTML += "<b>Folio: </b>" + locusString + "<br/>";
+
                         msContent.innerHTML += "<b>Titel: </b>"+ mDescArray[i].querySelectorAll('title')[0].innerHTML +"<br/>"
                         msContent.innerHTML += "<b>Autor: </b>"+ mDescArray[i].querySelectorAll('author')[0].innerHTML +"<br/>"
                         msContent.innerHTML += "<b>Incipit: </b>"+ mDescArray[i].querySelectorAll('incipit')[0].innerHTML +"<br/>"
