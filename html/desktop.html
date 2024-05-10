@@ -768,6 +768,27 @@
 
         </div>
 
+        <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
+        <div class="modal fade" id="legendModal" tabindex="-1" aria-labelledby="legendModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="legendModalLabel" style="font-weight: bold;"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h1>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <span lang="de"></span>
+
+                  <span lang="en"></span>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div id="footer-placeholder"></div>
         
     </body>
@@ -1071,9 +1092,10 @@
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center" style="font-weight:bold">
               <i class="fas fa-arrow-left move-left"></i>
-              <span>${title}</span>
+              <span>${title}<button type="button" class="btn ms-2" data-bs-toggle="modal" data-bs-target="#legendModal" style="padding: 0;"><i class="fa-solid fa-circle-info fa-lg text-primary"></i></button></span>
               <i class="fas fa-arrow-right move-right"></i>
-              <div>
+              <div> 
+                
                 <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transkription</button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
                 <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn">Mirador</button>
