@@ -14,7 +14,7 @@
     </teiHeader>
     <text>
         <body>
-    <!-- number of last modified zotero version --> <listBibl xml:id="5174"> <biblStruct type="book" xml:id="8L7D28F8" corresp="http://zotero.org/groups/2856754/items/8L7D28F8"> <monogr> <title level="m">Epistolae Romanorum pontificum genuinae et quae ad eos scriptae sunt a s. Hilario
+    <!-- number of last modified zotero version --> <listBibl xml:id="5203"> <biblStruct type="book" xml:id="8L7D28F8" corresp="http://zotero.org/groups/2856754/items/8L7D28F8"> <monogr> <title level="m">Epistolae Romanorum pontificum genuinae et quae ad eos scriptae sunt a s. Hilario
     usque ad Pelagium II.</title> <editor>
     <forename>Andreas</forename>
     <surname>Thiel</surname>
@@ -4542,6 +4542,26 @@
     <biblScope unit="volume">1</biblScope>
     <publisher>J.A. Stargardt</publisher>
     <date>1897</date>
+    </imprint></monogr></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/3AW9AXWF" type="book" xml:id="3AW9AXWF"><monogr><title level="m">Die Handschriften des Bartholomaeusstifts und des Karmeliterklosters
+    in Frankfurt am Main</title><idno type="ISBN">3465017986</idno><author>
+    <forename>Gerhard</forename>
+    <surname>Powitz</surname>
+    </author><author>
+    <forename>Herbert</forename>
+    <surname>Buck</surname>
+    </author><imprint>
+    <pubPlace>Frankfurt a. M.</pubPlace>
+    <publisher>Clemens Köttelwesch</publisher>
+    <date>1974</date>
+    </imprint></monogr><series>
+    <title level="s">Die Handschriften der Stadt- und Universitätsbibliothek Frankfurt am Main /
+        Kataloge der Stadt- und Universitätsbibliothek Frankfurt am Main</title>
+    <biblScope unit="volume">2 / 3</biblScope>
+    </series></biblStruct><biblStruct corresp="http://zotero.org/groups/2856754/items/8B2KAU8F" type="book" xml:id="8B2KAU8F"><monogr><title level="m">Synodus</title><author>
+    <forename>Jaques P.</forename>
+    <surname>Migne</surname>
+    </author><edition>Jaques P. Migne</edition><imprint>
+    <date/>
     </imprint></monogr></biblStruct></listBibl> </body>
     </text>
 </TEI>
