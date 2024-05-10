@@ -148,10 +148,10 @@ span[class="tei_note-inscription"] > br.tei_lb {
     opacity: 1;
   }
 
-  .icon-chapter-mirador, .tei_chapter-title{
+  /*.icon-chapter-mirador, .tei_chapter-title{
   display: inline-block;
-  vertical-align: baseline; /* Align vertically in the middle */
-}
+  vertical-align: baseline; 
+}*/
 
 
 .tei_abbr {
