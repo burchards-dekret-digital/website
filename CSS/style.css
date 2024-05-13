@@ -22,6 +22,13 @@
     src: url(Montserrat-ExtraBold.ttf);
 }
 
+@font-face {
+    font-family: 'Andron-Scriptor-Web';
+    src: url(Andron-Scriptor-Web.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html{
     scroll-padding-top: 70px;
     height: 100%;
@@ -273,7 +280,9 @@ td.bdd-ed-rec::after{
     content:"bb";
 }
 
-
+.legendFont{
+font-family: Andron-Scriptor-Web;
+}
 
 /* INDEX CSS */
     .container-index h1 {
