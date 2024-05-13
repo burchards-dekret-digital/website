@@ -52,7 +52,7 @@
                     <button class="nav-link" id="teiEdition-tab" data-bs-toggle="tab" data-bs-target="#teiEdition" type="button" role="tab" aria-controls="tei" aria-selected="false" disabled style="color:grey"><span lang="de">TEI Edition</span><span lang="en">TEI Edition</span></button>
                   </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false"><span lang="de">Webedition</span><span lang="en">Web Edition Documentation</span></button>
+                  <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false"><span lang="de">Webedition</span><span lang="en">Web Edition</span></button>
                 </li>
               </ul>
               <!-- Contenuto delle tabs -->
@@ -70,7 +70,7 @@
                     <div class="container" id="teiEditionDoc"></div>
                 </div>
                 <div class="tab-pane fade" id="web" role="tabpanel" aria-labelledby="web-tab">
-                    <div class="container" id="webDoc"></div>
+                    <div class="container" id="webEditionDoc"></div>
                 </div>
               </div>
             
@@ -132,7 +132,7 @@
             $("#technicalDoc").html($(xmlDoc).find('[id="technicalDoc"]').html());
             $("#teiHandschriftenDBDoc").html($(xmlDoc).find('[id="teiHandschriftenDBDoc"]').html());
             $("#teiEditionDoc").html($(xmlDoc).find('[id="teiEditionDoc"]').html());
-            $("#webDoc").html($(xmlDoc).find('[id="webDoc"]').html());
+            $("#webEditionDoc").html($(xmlDoc).find('[id="webEditionDoc"]').html());
             checkLanguage()
         }
         loadXMLDoc("../data/texts/documentationTexts.xml"); // Adjust the path here

@@ -176,23 +176,29 @@
                             </bibl>
                         </surrogates>
                         <listBibl>
-                            <listBibl type="catalogue"/>
+                            <listBibl type="catalogue">
+                                <bibl copyOf="UTEWENMG">Powitz/Buck: Die Handschriften des
+                                    Bartholomaeusstifts und des Karmeliterklosters in Frankfurt am
+                                    Main (Kataloge der Stadt- und Universitätsbibliothek Frankfurt
+                                    am Main 3,II). Frankfurt am Main
+                                    1974<citedRange>104-105</citedRange></bibl>
+                            </listBibl>
                             <listBibl type="secondary-literature">
                                 <bibl copyOf="KGED5JZ6">Mordek: Kirchenrecht und Reform im
                                     Frankenreich. Die Collecto Vetus Gallica, die älteste
                                     systematische Kanonessammlung des fränkischen Gallien. Studien
-                                    und Edition.. Berlin 1975<citedRange>227 Anm.
-                                    62</citedRange>.</bibl>
+                                    und Edition. Berlin 1975<citedRange>227 Anm.
+                                    62</citedRange></bibl>
                                 <bibl copyOf="VXCBCPL3">Maassen: Zur Geschichte der Quellen des
                                     Kirchenrechts und des römischen Rechts im Mittelalter, in: Zur
                                     Geschichte der Quellen des Kirchenrechts und des römischen
-                                    Rechts im Mittelalter (1863), S.
-                                    <citedRange>381</citedRange>.</bibl>
+                                    Rechts im Mittelalter (1863)
+                                    <citedRange>381</citedRange></bibl>
                                 <bibl copyOf="6ETJJBME">Migne: Sancti Isidori Hispalensis Episcopi.
-                                    Turnholti 1878<citedRange>899-900</citedRange>.</bibl>
+                                    Turnholti 1878<citedRange>899-900</citedRange></bibl>
                                 <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs
                                     Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.
-                                    München 1991<citedRange>S. 37-39</citedRange>.</bibl>
+                                    München 1991<citedRange>37-39</citedRange></bibl>
                             </listBibl>
                         </listBibl>
                     </additional>
