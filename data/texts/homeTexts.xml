@@ -96,39 +96,6 @@
 
       </div>
     </div>
-
-    
-    <!--<div id="material" class="block">
-      <span lang="de">
-        <h1>MATERIALIEN</h1>
-        <p>Die Basis der Edition stellen die Transkriptionen der 20 Bücher von Burchards Dekret dar.
-                Sie sind über die jeweilige <a href="html/mss.html">Handschrift</a> aufrufbar. Die
-                Transkription eines Buches kann aber auch virtuell auf den <a href="html/desktop.html">Schreibtisch</a> 
-                gelegt werden zum Vergleich mit anderen
-                Textzeugen – entweder Kapitel für Kapitel oder Inskription für Inskription. 
-                Die <a href="html/documentation.html">Dokumentation</a> gibt Auskunft über die technische
-                Infrastruktur des Projektes und die TEI-Codierung der Daten. Unter <a href="html/mss.html">Handschriften</a> findet sich die im Entstehen
-                begriffene Handschriftendatenbank alle Textzeugen des Decretum Burchardi. Die
-                kuratierte <a href="html/bibl.html">Bibliographie</a> umfasst fast 400 Beiträge.
-                Einen ersten thematischen Einstieg zum Dekret mit weiterführender Literatur findet
-                sich unter <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.</p>
-            
-      </span>
-      <span lang="en">
-        <h1>RESOURCES</h1>
-        <p>The transcriptions of the 20 books of Burchard's decree form the basis of the edition. 
-            They can be accessed via the <a href="html/mss.html">manuscripts</a>. The transcription of a book can also be 
-            placed virtually on the <a href="html/desktop.html">desk</a> for comparison with other textual witnesses - either 
-            chapter by chapter or inscription by inscription. The <a href="html/documentation.html">documentation</a> provides 
-            information about the technical infrastructure of the project, the TEI coding of the 
-            data and the <a href="html/mss.html">manuscript database</a> currently being created . In addition to the 
-            history, description and further information on the Worms manuscripts recorded to 
-            date, all accompanying texts are also clearly listed there. The curated <a href="html/bibl.html">bibliography</a> 
-            contains almost 400 articles. A first thematic introduction to the decree with 
-            further literature can be found under <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.
-        </p>
-      </span>
-    </div>-->
     
     <!--INFO BLOCK-->
     <div id="summaryTable" class="block">
