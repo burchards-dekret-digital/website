@@ -28,6 +28,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
         <script src="../js/language.js" defer></script>
+
+        <style>
+            .fa-arrow-up-right-from-square {
+                margin-left: 5px;
+            }
+        </style>
     </head>
     <body>
         <div id="navbar-placeholder"></div>
@@ -40,25 +46,6 @@
             <h1 class="section-main-title"><span lang="de">DIE <i>DECRETORUM LIBRI VIGINTI</i> DES BURCHARD VON WORMS</span><span lang="en">THE <i>DECRETORUM LIBRI VIGINTI</i> OF BURCHARD OF WORMS</span></h1>
             
             <div class="container" id="decretorum"></div>
-
-            <!--TABS
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="decr-tab" data-bs-toggle="tab" data-bs-target="#decr" type="button" role="tab" aria-controls="decr" aria-selected="true"><span lang="de">Decretorum Libri Viginti</span><span lang="en">Decretorum Libri Viginti</span></button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="lit-tab" data-bs-toggle="tab" data-bs-target="#lit" type="button" role="tab" aria-controls="lit" aria-selected="false"><span lang="de">Literaturhinweise</span><span lang="en">Literature references</span></button>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="decr" role="tabpanel" aria-labelledby="decr-tab">
-                    <div class="container" id="decretorum"></div>
-                </div>
-                <div class="tab-pane fade" id="lit" role="tabpanel" aria-labelledby="lit-tab">
-                    <div class="container" id="literature"></div>
-                </div>
-            </div>-->
-            
         </div>
 
         <div id="footer-placeholder"></div>
@@ -90,10 +77,10 @@
           $(function(){
               $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
           });
-      </script>
+      
 
-    <!-- back button-->
-    <script>
+    //back button
+   
         $(".hBack").on("click", function(e){
             e.preventDefault();
             window.history.back();
@@ -121,17 +108,41 @@
         function displayXMLContent(xmlDoc) {
             $("#decretorum").html($(xmlDoc).find('[id="decretorum"]').html());
             $("#literature").html($(xmlDoc).find('[id="literature"]').html());
+            
             checkLanguage()
+
+            biblLink(); // Call the biblLink function here
         }
     
         // Load XML file
         loadXMLDoc("../data/texts/decretorumTexts.xml"); // Adjust the path here
+
+        
+
+        function biblLink() {
+            var liElements = document.querySelectorAll('ul li');
+
+            liElements.forEach(function(li) {
+                var biblElement = li.querySelector('bibl');
+                if (biblElement) { // Check if biblElement is not null
+                    var copyOfValue = biblElement.getAttribute('copyOf');
+                    if (copyOfValue) { // Check if copyOfValue has a value
+                        var linkElement = document.createElement('a');
+                        linkElement.setAttribute('href', 'bibl.html#' + copyOfValue);
+                        linkElement.setAttribute('target', '_blank');
+                        var icon = document.createElement('i');
+                        icon.className = 'fas fa-arrow-up-right-from-square';
+                        linkElement.appendChild(icon);
+                        biblElement.insertAdjacentElement('afterend', linkElement);
+                    }
+                }
+            });
+        }
+
+        
+
     });
-    </script>
-
-
-
-
-
+    </script> 
+    
     
 </html>
