@@ -116,6 +116,16 @@ function hideElement(className) {
 }
 
 
+//wrap text in Lesefassung
+function toggleTextWrap() {
+    var transcriptionDivs = document.querySelectorAll('.transcription-col');
+    transcriptionDivs.forEach(function(div) {
+        div.style.whiteSpace = 'normal';
+    });
+}
+
+
+
 
 // 3.4 Einblenden eines Elements (z.B. abbr)
 

@@ -133,11 +133,11 @@
                 Transcription views
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" id="diplomatic" onclick="showElement('tei_lb')">Original</a></li>
-                <li><a class="dropdown-item" href="#" id="flowing" onclick="hideElement('tei_lb'); hideElement('tei_seg_displaced'); toggleTextWrap()">Lesefassung</a></li>
+                <li><a class="dropdown-item" onclick="showElement('tei_lb')">Original</a></li>
+                <li><a class="dropdown-item" onclick="hideElement('tei_lb'); hideElement('tei_seg_displaced'); toggleTextWrap()">Lesefassung</a></li>
                 <hr/>
-                <li><a class="dropdown-item" href="#" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
-                <li><a class="dropdown-item" href="#" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
+                <li><a class="dropdown-item" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
+                <li><a class="dropdown-item" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
                 <!--<hr/>
                 <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
                 <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>-->
@@ -908,7 +908,7 @@
     
     <script>
     //open the modal to select books  
-      const activeOptions = ["13", "06"]
+      const activeOptions = ["13"]
       document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
         if (!activeOptions.some(element => checkbox.value.includes(element))){ //todo remove "!" when active options will be longer than non active options
           checkbox.disabled = true;
@@ -1380,27 +1380,10 @@
       document.getElementById('clearAll').addEventListener('click', function() {
         // Ask for confirmation before deleting
         if (confirmDelete()) {
-          // If user confirms, delete all content
           document.getElementById('resourcePanel').innerHTML = '';
           saveResourceState();
         }
-      });
-      
-
-      //text-wrap:wrap
-        function toggleTextWrap() {
-          var transcriptionDivs = document.querySelectorAll('.transcription-col');
-          transcriptionDivs.forEach(function(div) {
-            if (div.style.whiteSpace === 'nowrap') {
-              div.style.whiteSpace = 'normal';
-            } else {
-              div.style.whiteSpace = 'nowrap';
-            }
-          });
-        };
-
-        
-
+      });      
     </script>
 
 </html>

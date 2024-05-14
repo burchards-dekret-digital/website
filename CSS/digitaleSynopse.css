@@ -19,6 +19,7 @@
     font-family: Andron-Scriptor-Web;
     font-size: 1.3em;
     color: red;
+    margin-bottom:0;
 }
 
 
@@ -26,26 +27,28 @@
     font-family: Andron-Scriptor-Web !important;
 }
 
-br.tei_lb + br {
-    display:none!important;
+br:not(.tei_lb):not(.tei_lb.nobreak) {
+    display: none;
 }
-li + br.tei_lb {
-    display:none!important;
-}
+
 h5 + br.tei_lb {
     display:none!important;
 }
 h6 + br.tei_lb {
     display:none!important;
 }
-span[class="tei_note-inscription"] > br.tei_lb {
+span.tei_note-inscription + br.tei_lb {
     display: none!important;
 }
-
 .tei_praefatiuncula + br.tei_lb {
     display: none!important;
 }
-
+br.tei_lb + br {
+    display:none!important;
+}
+li + br.tei_lb {
+    display:none!important;
+}
 
 .tei_pb {
     font-weight: bold;
@@ -124,7 +127,7 @@ span[class="tei_note-inscription"] > br.tei_lb {
     background: none;
     border: none;
     cursor: pointer;
-    margin-top:5px;
+    margin-top:30px;
     padding-left:0;
   }
   
