@@ -541,10 +541,10 @@
                     var endBook = 20;
 
                     switch(document_id) {
-                        case "V1":
+                        case "Va2":
                             endBook = 8;
                             break;
-                        case "V2":
+                        case "Va3":
                             startBook = 9;
                             break;
                         default:
@@ -596,8 +596,8 @@
             //Mirador
             function initializeMirador(doc_id){
                 const doc_sigle = { 'F':'../data/manifests/frankfurt-ub-b-50-manifest.json',
-                                    'V1': '../data/manifests/vatican-bav-pl-585-manifest.json',
-                                    'V2': '../data/manifests/vatican-bav-pl-586-manifest.json',
+                                    'Va2': '../data/manifests/vatican-bav-pl-585-manifest.json',
+                                    'Va3': '../data/manifests/vatican-bav-pl-586-manifest.json',
                                     'B' : '../data/manifests/bamberg-sb-c-6.json',
                                     'K' : '../data/manifests/koeln-edd-119-manifest.json'}
                 miradorInstance = Mirador.viewer({
@@ -635,8 +635,8 @@
                         },
                     catalog: [
                         { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-                        { sigle: 'V1', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-                        { sigle: 'V2', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json'},
+                        { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
+                        { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json'},
                         { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json'},
                         { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json'}
                     ]

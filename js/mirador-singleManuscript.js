@@ -33,8 +33,8 @@ var mirador = Mirador.viewer({
         },
     catalog: [
         { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-        { sigle: 'V1', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-        { sigle: 'V2', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json'},
+        { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
+        { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json'},
         { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json'},
         { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json'}
     ]

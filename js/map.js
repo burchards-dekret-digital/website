@@ -1,14 +1,13 @@
+//original code that works
+
 /* Michael Schonhardt, Projekt BDD, m.schonhardtATuni-kassel.de
 Laden der Handschriften Koordinaten, besser in eigenes js file, da sonst escapes benutzt werden müssen */
 
-// Abfragen der Daten aus collection
-
-
-
 $(document).ready(function () {
+  
   const xmldata = document.createElement('data')
   async function fetchDataAndPopulateData() {
-      const list_ms = ["B", "F", "K", "V1", "V2"]
+      const list_ms = ["B", "F", "K", "Va2", "Va3"]
       for (var ms in list_ms){
           const folderPath = '../data/mss/' + list_ms[ms] + '/Tei/v1';
           const response = await fetch(folderPath + '/msdesc.xml');
@@ -23,6 +22,7 @@ $(document).ready(function () {
     }
     fetchDataAndPopulateData()
 });
+
 
 // parseXml zum parsen der Daten nach Abfrag
 
@@ -89,12 +89,17 @@ function parseXml (xml) {
   var libraryList =[];
   // Hier muss statt msIdentifier msDesc genommen werden, damit alle Infos ausgelesen werdenkönnen. Irgendwie mit der doppelten geo in Einklang bringen
   $(xml).find("msDesc").each(function(){
+
     var name = $(this).find("msName");
     name = name[0].innerHTML;
-    //console.log(name);
+
+    var sigle = $(this).find('msName[type="sigle"]');
+    console.log(sigle)
+    sigle = sigle[0].innerHTML;
+
     var origPlace = $(this).find("origPlace").text();
     origPlace = origPlace.split(/(\d+)/)[0];
-    //console.log(origPlace)
+
     var origDate = $(this).find("origDate").text();
     var geodata = $(this).find("geo");
     geodata = geodata[0].textContent.split(",");
@@ -115,10 +120,10 @@ function parseXml (xml) {
     
     // Bildung von Markergruppe
     if (color){
-            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup("<b>"+name+"</b><br>Entstehungsort: "+origPlace+"<br>Entstehungszeit: "+origDate);
+            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
     }
     else{
-            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: greyIcon}).bindPopup("<b>"+name+"</b><br>Entstehungsort: "+origPlace+"<br>Entstehungszeit: "+origDate);
+            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: greyIcon}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
     }
     libraryList.push(mapPoint);
   });
@@ -137,11 +142,16 @@ function parseXml (xml) {
   $(xml).find("msDesc").each(function() {
     var origPlace = $(this).find("origPlace").text();
     origPlace = origPlace.split(/(\d+)/)[0];
-  var origDate = $(this).find("origDate").text();
+
+    var origDate = $(this).find("origDate").text();
+
     var name = $(this).find("msName");
     name = name[0].innerHTML;
+
+    var sigle = $(this).find('msName[type="sigle"]');
+    sigle = sigle[0].innerHTML;
+
     var geodata = $(this).find("geo");
-    //console.log(geodata);
     geodata = geodata[1].textContent.split(",");
 
     // Prüfen der Familienzugehörigkeit und Zuteilung der Farbe
@@ -158,7 +168,7 @@ function parseXml (xml) {
     });
 
     // Bildung von Markergruppe
-    mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b>'+name+'</b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
+    /*mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);*/
     provenanceList.push(mapPoint);
   });
 
@@ -172,7 +182,7 @@ function parseXml (xml) {
   // Bildung der Layer
   var overlayMaps = {
     "Aufbewahrungsort": libraryMarkers,
-    "Entstehungsort": provenanceMarkers
+    /*"Entstehungsort": provenanceMarkers*/
   };
 
   // Erstellung der Layercontroll
