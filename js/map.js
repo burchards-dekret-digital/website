@@ -168,7 +168,7 @@ function parseXml (xml) {
     });
 
     // Bildung von Markergruppe
-    /*mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);*/
+    mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
     provenanceList.push(mapPoint);
   });
 
@@ -182,7 +182,7 @@ function parseXml (xml) {
   // Bildung der Layer
   var overlayMaps = {
     "Aufbewahrungsort": libraryMarkers,
-    /*"Entstehungsort": provenanceMarkers*/
+    "Entstehungsort": provenanceMarkers
   };
 
   // Erstellung der Layercontroll
