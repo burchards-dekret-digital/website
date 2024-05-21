@@ -8,7 +8,7 @@
                 20 Büchern mit über 1785 Kapiteln detaillierte Regeln und Verhaltensanweisungen für
                 Kleriker und Laien. Für die Sammlung sortierte und vereinheitlichte der Bischof von
                 Worms das bestehende kirchliche Recht richtungsweisend.</p>
-            <p>BDD erschließt die handschriftliche Überlieferung des Decretum Burchardi mit über 80 Manuskripten und Fragmenten, erarbeitet erstmals eine belastbare, kritische Edition und sichtet die weite Verbreitung sowie Rezeption v.a. in Deutschland, Italien, Frankreich und Spanien.</p>
+            <p>BDD erschließt die handschriftliche Überlieferung des Decretum Burchardi mit über 80 Manuskripten und Fragmenten, erarbeitet erstmals eine belastbare, kritische Edition und sichtet die weite Verbreitung sowie Rezeption vor allem in Deutschland, Italien, Frankreich und Spanien.</p>
             <div style="text-align: center;">
                 <figure class="figure">
                     <img src="../img/BDD_Karte.jpg" class="figure-img img-fluid" style="width: 60%; object-fit: cover;" alt="BDD-Karte"/>
@@ -16,20 +16,20 @@
                 </figure>
             </div>
             <p>In der <a href="#phase1">ersten Projektphase</a> entsteht eine Edition der Sammlung
-                auf der Basis der in Worms entstandenen Handschriften. Sie erscheint zunächst
+                auf Basis der in Worms entstandenen Handschriften. Sie erscheint zunächst
                 gedruckt im Rahmen der <a href="https://mgh.de/de/" target="_blank">Monumenta
                 Germaniae Historica</a> und wird dann in fortlaufender Arbeit auch auf der digitalen
-                Plattform publiziert. Die Digitale Edition erfasst dann in der <a href="#phase2">zweiten Projektphase</a> die gesamte handschriftliche Überlieferung des Dekrets und
-                die Rezeptionsgeschichte. Die Erforschung des Einflusses des Decretum Burchardi auf
-                das europäische Recht steht im Zentrum der <a href="#phase3">dritten
-                Projektphase</a>.</p>
+                Plattform publiziert. Die Digitale Edition erfasst in der <a href="#phase2">zweiten Projektphase</a> die gesamte handschriftliche Überlieferung des Dekrets und
+                die Rezeptionsgeschichte. Im Zentrum der der <a href="#phase3">dritten
+                Projektphase</a> steht die Erforschung des Einflusses des Decretum Burchardi auf
+                das europäische Recht steht im Zentrum .</p>
             <p>Die digitale Arbeitsplattform wird in dreifacher Hinsicht zu nutzen sein: (1) als
                 digitale Ressource für die Aufbereitung und projektinterne wie externe Verfügbarkeit
-                der verschiedenen Materialien; (2) als Publikationsort für die Digitale Edition; (3)
+                der verschiedenen Materialien, (2) als Publikationsort für die Digitale Edition, (3)
                 als virtueller Knotenpunkt für die internationale Forschung zu Quellen und Rezeption
                 des mittelalterlichen Kirchenrechts und ihrer digitalen Angebote sowie deren
                 Vernetzung. </p>
-            <p>BDD ist Teil des Akademienprogramms und wird von der Akademie der Wissenschaften und der Literatur | Mainz betreut. Es wird an den Standorten Erlangen, Kassel und Mainz erarbeitet.</p>
+            <p>BDD ist Teil des Akademienprogramms und wird von der Akademie der Wissenschaften und der Literatur | Mainz betreut. Standorte sind Erlangen, Kassel und Mainz.</p>
         </span>
         <span lang="en"> 
         </span>
@@ -43,33 +43,32 @@
                     <p>Im ersten Projektabschnitt wird ein kritischer Text erarbeitet, der die
                     Sammlungs- und Redaktionsarbeiten Burchards und seiner Mitarbeiter transparent
                     macht. Ausgangspunkt sind die ältesten Textzeugen aus dem Wormser Skriptorium
-                    sowie die von Wormser Vorlagen abhängigen Handschriften. Eine, den bisherigen
+                    sowie die von Wormser Vorlagen abhängigen Handschriften. Die erste Projektphase beinhaltet auch eine, den bisherigen
                     Forschungsstand sichernde, präzisierende und ergänzende Ermittlung und
-                    Unterscheidung der Quellen und Vorlagen ist ebenfalls Teil der ersten
-                    Projektphase. An ihrem Ende steht die Edition im Rahmen des Programms der
+                    Unterscheidung der Quellen und Vorlagen.
+                    An ihrem Ende steht die Edition im Rahmen des Programms der
                     Monumenta Germaniae Historica (MGH) zum früh- und hochmittelalterlichen
                     Kirchenrecht (<a href="https://www.mgh.de/de/publikationen/reihen-der-mgh/collectiones-canonum/" target="_blank">MGH Collectiones canonum</a>). Die Print-Edition wird
                     anschließend mit einer Moving Wall im Rahmen der digitalen MGH als PDF online
                     zur Verfügung gestellt.</p>
-                    <p>BDD baut auf den grundlegenden Arbeiten auf, die <a href="bibl.html#X25FUV2K" target="_blank">Hartmut Hoffmann und Rudolf Pokorny 1991</a> vorgelegt haben.
-                    Sie konnten durch Autopsie der verschiedenen Wormser Handschriften intensive
-                    Überarbeitungen feststellen. Die dynamische Arbeit des Wormser Skriptoriums
-                    zeigt sich in Streichungen, Ergänzungen und Textumstellungen, welche in mehreren
-                    Bearbeitungsstufen erfolgten und sich auch in der Rezeptionsgeschichte
-                    manifestieren. Die von Hoffmann erforschte Unterscheidung der einzelnen
-                    Schreiber, die an der Herstellung der einzelnen Handschriften beteiligt waren,
-                    ermöglichen zudem Aussagen über Zuständigkeiten und Abläufe bei der
-                    Textentstehung. Bei der Quellenanalyse, die Pokorny größtenteils erfolgreich
-                    erledigt hat, besteht für die noch nicht oder nicht sicher identifizierten
-                    Quellen die Herausforderung darin, dass für die Formulierung einzelner Kapitel
-                    häufig verschiedene Quellen herangezogen wurden, darunter auch verschiedene
-                    Textzeugen desselben Textes. Ziel von BDD ist eine genauere Bestimmung der
-                    Vorlage und die anschauliche Präsentation der Quellennutzung Burchards in der
-                    Edition.</p>
+                    <p>BDD baut auf den grundlegenden Arbeiten auf, die <a href="bibl.html#X25FUV2K" target="_blank">Hartmut Hoffmann und Rudolf Pokorny 1991</a> vorgelegt haben und
+                    bei denen sie durch Autopsie der verschiedenen Wormser Handschriften intensive
+                    Überarbeitungen feststellen konnten. Die dynamische Arbeit des Wormser
+                    Skriptoriums zeigt sich in Streichungen, Ergänzungen und Textumstellungen,
+                    welche in mehreren Bearbeitungsstufen erfolgten und sich auch in der
+                    Rezeptionsgeschichte manifestieren. Die von Hoffmann erforschte Unterscheidung
+                    der einzelnen Schreiber, die an der Herstellung der einzelnen Handschriften
+                    beteiligt waren, ermöglichen zudem Aussagen über Zuständigkeiten und Abläufe bei
+                    der Textentstehung. Bei der Quellenanalyse, deren bisherigen Stand Pokorny
+                    aufgebereitet hat, besteht für die noch nicht oder nicht sicher identifizierten
+                    Passagen die Herausforderung, dass für die Formulierung einzelner Kapitel häufig
+                    verschiedene Quellen herangezogen wurden, darunter auch verschiedene Textzeugen
+                    desselben Textes. Ziel von BDD ist eine genauere Bestimmung der Vorlage und die
+                    anschauliche Präsentation der Quellennutzung Burchards in der Edition.</p>
                     <p>Eine zentrale Funktion kommt der Datenbank der handschriftlichen
-                    Überlieferung des Dekrets zu. Sie ist Vorlage für den Handschriftenkatalog der
-                    Print-Edition und enthält Angaben zur Identifikation, dem Inhalt, der
-                    physikalischen Beschreibung, der Provenienz sowie weitere Informationen zu den
+                    Überlieferung des Dekrets zu. Sie dient als Vorlage für den Handschriftenkatalog der
+                    Print-Edition und enthält vor allem Angaben zur Identifikation, zum Inhalt, zur
+                    physikalischen Beschreibung und zur Provenienz der
                     Handschriften. Sie wird sukzessive erweitert und in Phase 2 mit der Digitalen
                     Edition verknüpft.</p>
                     
@@ -80,7 +79,7 @@
             <div id="phase2">
                 <span lang="de">
                     <h3 class="mt-4">Phase 2 – Digitale Edition aller Textzeugen</h3>
-                    <p>Die Repräsentation der zeitlich und regional zu gruppierenden Zeugnisse der Gesamtüberlieferung bleibt der digitalen Edition vorbehalten. Den geographischen Schwerpunkt der handschriftlichen Überlieferung bilden Deutschland, Italien, Frankreich und Spanien. Ziel der Digitalen Edition ist es, diese Überlieferung des Dekrets vollständig zu erschließen und seine Entwicklung grundsätzlich nachvollziehbar zu machen.</p>
+                    <p>Die Repräsentation der zeitlich und regional zu gruppierenden Zeugnisse der Gesamtüberlieferung bleibt der Digitalen Edition vorbehalten. Ihr Ziel ist es, diese Überlieferung des Dekrets vollständig zu erschließen und seine Entwicklung grundsätzlich nachvollziehbar zu machen.</p>
                     <p>Die Digitale Edition wird daher als Kombination von ineinander verschränkten Dimensionen gestaltet:
                         <ol>
                         <li>Ansicht des Textus constitutus</li>
@@ -92,13 +91,13 @@
                     <p>Der Wechsel auf die Ansicht ‚Digitale Synopse‘ ermöglicht nicht nur die
                     vergleichende Darstellung der verschiedenen Textzeugen in ihrer diplomatischen
                     Transkription, sondern auch eine detaillierte Darstellung der verschiedenen
-                    Phänomene, insbesondere der unterschiedlichen Bearbeitungsstufen. Hinsichtlich
+                    Phänomene, insbesondere der diversen Bearbeitungsstufen. Hinsichtlich
                     der Handwechsel werden für jede einzelne Handschrift nicht nur Einsatzorte und
                     Reichweite eines Schreibers ermittelt, sondern auch zu jedem Schreiber
                     Charakteristika angezeigt. Die Beteiligung eines Schreibers wird durch die
                     gesamte Wormser Redaktion nachvollziehbar und quantitativ messbar. So lassen
                     sich genauere Aussagen über die arbeitsteiligen Prozesse im Wormser Skriptorium
-                    machen, die bedeutsam für die Abhängigkeiten der Handschriften sind.</p>
+                    treffen, die bedeutsam für die Abhängigkeiten der Handschriften untereinander sind.</p>
                 </span>
                 <span lang="en"/>
             </div>
@@ -106,20 +105,20 @@
             <div id="phase3">
                 <span lang="de">
                     <h3 class="mt-4">Phase 3 – Rezeption in europäischer Dimension</h3>
-                    <p>Die Rezeption des Decretum Burchardi steht zusammen mit vertiefenden Analysen zu rechts- und kulturgeschichtlich bedeutsamen Sachkomplexen im Mittelpunkt der dritten Projektphase. Denn die breit gestreute Überlieferung ist auch als Zeugnis der Rezeption zu werten, die damit das Werk zugleich in seinen vielfältigen Verflechtungen innerhalb des historischen Prozesses situiert. </p>
+                    <p>Die Rezeption des Decretum Burchardi steht zusammen mit vertiefenden Analysen zu rechts- und kulturgeschichtlich bedeutsamen Sachkomplexen im Mittelpunkt der dritten Projektphase. Denn die breit gestreute Überlieferung ist auch als Zeugnis der Rezeption zu werten, anhand der das Werk zugleich in seinen vielfältigen Verflechtungen innerhalb des historischen Prozesses situiert wird. </p>
                     <div style="text-align: center;">
                         <figure class="figure">
                             <img src="../img/BDD_Zeitstrahl.png" class="figure-img img-fluid" style="width: 60%; object-fit: cover;" alt="Zeitstrahl"/>
                             <figcaption class="figure-caption"><span lang="de">Mittlerstellung der Decretorum Libri Viginti in der Entwicklung des europäischen Rechts</span></figcaption>
                         </figure>
                     </div>
-                    <p>Dabei wird 
-                    (1) die Vermittlung von Burchard-Material an Gratian und die nach-gratianische Kanonistik durch die mit Ivo von Chartres in Verbindung gebrachten Sammlungen in den Blick genommen, 
-                    (2) die bisher weniger systematisch erforschte unmittelbare Rezeption des Dekrets durch Gratian, sowie die neben und nach ihm feststellbare Nachwirkung Burchards aufgearbeitet, 
-                    (3) der Niederschlag der Rezeption in der weiteren Entwicklung des Kirchenrechts bis zum Codex Iuris Canonici des Jahres 1917 untersucht, 
-                    (4) die im 12./13. Jahrhundert auf Grundlage des der Buße gewidmeten Buches XIX entstandenen Bußbücher in die Digitale Edition aufgenommen.
+                    <p>Ziel ist es 
+                    (1) die Vermittlung von Burchard-Material an Gratian und die nach-gratianische Kanonistik durch die mit Ivo von Chartres in Verbindung gebrachten Sammlungen in den Blick zu nehmen, 
+                    (2) die bisher weniger systematisch erforschte unmittelbare Rezeption des Dekrets durch Gratian, sowie die neben und nach ihm feststellbaren Nachwirkungen Burchards zu analysieren, 
+                    (3) den Niederschlag der Rezeption in der weiteren Entwicklung des Kirchenrechts bis zum Codex Iuris Canonici des Jahres 1917 zu untersuchen sowie 
+                    (4) die im 12. und 13. Jahrhundert auf Grundlage von Buch XIX entstandenen Bußbücher in die Digitale Edition einzubeziehen.
                     </p>
-                    <p>Mit Blick auf die Untersuchung der späteren Überlieferung wird die Digitale Edition die Visualisierung der philologischen Beziehung zwischen den verschiedenen Handschriften und Überlieferungszweigen darstellen.</p>
+                    <p>Mit Blick auf spätere Überlieferung wird die Digitale Edition eine Visualisierung der philologischen Beziehung zwischen den verschiedenen Handschriften und Überlieferungszweigen leisten.</p>
                 </span>
                 <span lang="en"/>
             </div>

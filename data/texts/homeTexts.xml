@@ -47,17 +47,18 @@
                         europäischer Perspektive. Im Rahmen der digitalen Edition entsteht eine
                         Arbeitsumgebung, die zukünftige Projekte nachnutzen können. </p>  
             <h1 style="margin-top:40px;">MATERIALIEN</h1>
-            <p>Als Basis der Edition fungieren die Transkriptionen der 20 Bücher von Burchards Dekret,
-                die über die jeweilige <a href="html/mss.html">Handschrift</a> aufrufbar sind. Jede
-                Transkription kann auch auf den virtuellen <a href="html/desktop.html">Schreibtisch</a> 
-                gelegt werden, um sie mit anderen
-                Textzeugen zu vergleichen – entweder Kapitel für Kapitel oder Inskription für Inskription. 
-                Die <a href="html/documentation.html">Dokumentation</a> gibt Auskunft über die technische
-                Infrastruktur des Projektes und die TEI-Codierung der Daten. Unter <a href="html/mss.html">Handschriften</a> findet sich die im Entstehen
-                begriffene Handschriftendatenbank mit allen Textzeugen. Die
-                kuratierte <a href="html/bibl.html">Bibliographie</a> umfasst fast 400 Beiträge.
-                Ein erster thematischer Einstieg zum Dekret mit weiterführender Literatur ist möglich unter 
-                <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.</p>    
+            <p>Als Basis der Edition fungieren die Transkriptionen der 20 Bücher von Burchards
+                        Dekret, die über die jeweilige <a href="html/mss.html">Handschrift</a>
+                        aufrufbar sind. Jede Transkription kann auch auf den virtuellen <a href="html/desktop.html">Schreibtisch</a> gelegt werden, um sie mit anderen
+                        Textzeugen zu vergleichen – entweder Kapitel für Kapitel oder Inskription
+                        für Inskription. Die Transkriptionen der Bücher werden sukzessive ergänzt.
+                        Buch XIII ist bereits exemplarisch freigeschaltet. Die <a href="html/documentation.html">Dokumentation</a> gibt Auskunft über die
+                        technische Infrastruktur des Projektes und die TEI-Codierung der Daten.
+                        Unter <a href="html/mss.html">Handschriften</a> findet sich die im Entstehen
+                        begriffene Handschriftendatenbank mit allen Textzeugen. Die kuratierte <a href="html/bibl.html">Bibliographie</a> umfasst fast 400 Beiträge. Ein
+                        erster thematischer Einstieg zum Dekret mit weiterführender Literatur ist
+                        möglich unter <a href="html/decretorumLibriViginti.html">Decretorum Libri
+                        Viginti</a>.</p>    
           </span>
       
           <span lang="en"> 
@@ -85,7 +86,7 @@
         </div>                        
         
         <div class="col-md-4 text-center justify-content-center align-items-center d-flex">
-          <figure class="figure" style="width: 50%!important;">
+          <figure class="figure" style="width:50%!important">
             <img src="img/BambergBook.jpg" class="figure-img img-fluid" alt="Bamebrg Buch"/>
             <figcaption class="figure-caption">Bamberger Handschrift des Decretum Burchardi
                         (Bamberg, Staatsbibliothek, Can. 6)</figcaption> 
