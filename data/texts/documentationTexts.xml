@@ -8,7 +8,7 @@
 
             <div style="text-align: center;">
                 <figure class="figure">
-                    <img src="../img/pillars.png" class="figure-img img-fluid" style="height: 100%; object-fit: cover;" alt="The nine pillars"/>
+                    <img src="../img/pillars.png" class="figure-img img-fluid" alt="The nine pillars"/>
                     <figcaption class="figure-caption"><span lang="de">Die Neun Säulen</span></figcaption>
                 </figure>
             </div>
@@ -16,7 +16,7 @@
             <p>Auf Basis dieser Infrastruktur wurde hierfür ein modularer und halbautomatisierter Workflow entwickelt, der aus der automatisierten Layouterkennung und Transkription in Transkribus, Postprocessing, Speicherung in exist-db, Frameworkgestützter TEI-Codierung in OxygenXML sowie der Kollation in Collatex besteht. Daran schließt sich die Transformation der Daten für Druck und Webpräsentation an sowie die <a href="https://github.com/michaelscho/bdd-coordinates" target="_blank">automatisierte Generierung Ground Truth</a> für Finetuning und Neutraining von Deep Learning-Modellen für unterschiedliche Zusammenhänge. Die generierten TEI-Dateien werden über ein <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Datenrepositorium</a> vorgehalten und durch Javascript in die Webansicht der Edition geladen. Die Anzeige der Handschriften und erzeugter Annotationen erfolgt über IIIF in Mirador Viewer.</p>
             <div style="text-align: center;">
                 <figure class="figure">
-                    <img src="../img/workflow.png" class="figure-img img-fluid" style="width: 50%; object-fit: cover;" alt="BDD process chart"/>
+                    <img src="../img/workflow.png" class="figure-img img-fluid" alt="BDD process chart"/>
                     <figcaption class="figure-caption"><span lang="de">Workflow</span></figcaption>  
                     <figcaption class="figure-caption"><span lang="en">Workflow</span></figcaption> 
                 </figure>
@@ -31,7 +31,7 @@
 
             <div style="text-align: center;">
                 <figure class="figure">
-                    <img src="../img/mirador.png" class="figure-img img-fluid" style="width:50%; object-fit: cover;" alt="Mirador viewer"/>
+                    <img src="../img/mirador.png" class="figure-img img-fluid" alt="Mirador viewer"/>
                     <figcaption class="figure-caption"><span lang="de">Mirador viewer</span></figcaption>  
                     <figcaption class="figure-caption"><span lang="en">Mirador viewer</span></figcaption> 
                 </figure>

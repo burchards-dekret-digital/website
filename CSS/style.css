@@ -125,6 +125,23 @@ h5{
 
 
 
+.figure {
+    width: 33%; /* Set desired width for the figure container */
+    margin: 0 auto; /* Center the figure within the parent div */
+    display: inline-block; /* Ensure inline behavior for centering */
+    text-align: center; /* Center-align text within the figure */
+}
+
+.figure-img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio by setting height to auto */
+    display: block; /* Remove any inline spacing */
+}
+
+.figure-caption {
+    margin-top: 8px; /* Add some space between the image and the caption */
+}
+
 
 /* MAP */
 .mss-map-head {
@@ -335,7 +352,7 @@ font-family: Andron-Scriptor-Web;
                 padding-top: 60px; 
                 padding-bottom: 60px; 
                 margin:0 auto; 
-                text-align:justify;}
+                }
 
             /* Parallax */
             .parallax-one {
@@ -397,6 +414,8 @@ font-family: Andron-Scriptor-Web;
                 background-repeat: no-repeat; 
                 background-position: center center;}
 
+            
+
 
             /* Media Queries*/ 
             @media screen and (max-width: 959px) and (min-width: 768px) {
@@ -414,6 +433,7 @@ font-family: Andron-Scriptor-Web;
             #scroll-down{display:none;}
             #book-image {height: 40%!important;}
             .table-strukturansicht {table-layout: auto;}
+            .figure{width:100%}
             }
             
             @media screen and (max-width: 767px) {
@@ -435,6 +455,7 @@ font-family: Andron-Scriptor-Web;
                 margin-bottom:10px;
                 margin-left:10px;
             }
+            .figure{width:100%}
             
             }
             
@@ -461,6 +482,7 @@ font-family: Andron-Scriptor-Web;
             }
             
             .back-button{display:none;}
+            .figure{width:100%}
             }
             
 
@@ -558,8 +580,7 @@ font-family: Andron-Scriptor-Web;
             }
             
             
-            #map2 {
-    width: 90%;
-    
-}
+            #map2 {width: 90%;}
+
+            .figure{width:100%}
         }
