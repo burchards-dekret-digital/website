@@ -85,8 +85,8 @@
         </div>                        
         
         <div class="col-md-4 text-center justify-content-center align-items-center d-flex">
-          <figure class="figure">
-            <img src="img/BambergBook.jpg" class="figure-img img-fluid" style="width:60%; object-fit: cover;" alt="Bamebrg Buch"/>
+          <figure class="figure" style="width: 50%!important;">
+            <img src="img/BambergBook.jpg" class="figure-img img-fluid" alt="Bamebrg Buch"/>
             <figcaption class="figure-caption">Bamberger Handschrift des Decretum Burchardi
                         (Bamberg, Staatsbibliothek, Can. 6)</figcaption> 
           </figure>
