@@ -28,6 +28,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
         <script src="../js/language.js" defer></script>
+
+        <style>
+          .sort-arrow {
+            color: #ccc;
+          }
+        </style>
     </head>
     <body>
         <div id="navbar-placeholder"></div>
@@ -44,18 +50,18 @@
                 <thead>
                   <tr>
                     <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
-                    <th scope="col"><span lang="de">Autor</span><span lang="en">Author</span></th>
-                    <th scope="col"><span lang="de">Editor</span><span lang="en">Editor</span></th>
-                    <th scope="col"><span lang="de">Titel</span><span lang="en">Title</span></th>
-                    <th scope="col">In</th>
+                    <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                    <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                    <th scope="col" onclick="sortTable(3)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                    <th scope="col" onclick="sortTable(4)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                    <!--<th scope="col">Edition</th>-->
-                    <th scope="col"><span lang="de">Jahr</span><span lang="en">Year</span></th>
-                    <th scope="col"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span></th>
+                    <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                    <th scope="col" onclick="sortTable(6)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                     <!--<th scope="col">Publisher</th>
                     <th scope="col">ID</th>
                     <th scope="col">Note</th>
                     <th scope="col" style="width: 50%;">Page range</th>-->
-                    <th scope="col"><span lang="de">Serie</span><span lang="en">Series</span></th>
+                    <th scope="col" onclick="sortTable(7)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                   </tr>
                   <tr>
                       <th scope="col">
@@ -329,6 +335,73 @@
       }
     }, 200);
   };
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const table = document.getElementById("literatureTable");
+  const headers = table.querySelectorAll("th");
+  let sortOrder = {};  // Object to keep track of sort order for each column
+
+  headers.forEach((header, index) => {
+    if (index > 0) {  // Avoid sorting by the first column which is 'Type'
+      header.addEventListener("click", () => {
+        sortTable(index);
+      });
+    }
+  });
+
+  function sortTable(columnIndex) {
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const isYearColumn = columnIndex === 5;
+    const isQuoteSensitiveColumn = columnIndex === 3 || columnIndex === 4; // Titel and In columns
+    let sortDirection = sortOrder[columnIndex] === "asc" ? "desc" : "asc";
+    sortOrder[columnIndex] = sortDirection;
+
+    rows.sort((rowA, rowB) => {
+      let cellA = rowA.children[columnIndex].innerText.trim();
+      let cellB = rowB.children[columnIndex].innerText.trim();
+
+      if (isQuoteSensitiveColumn) {
+        cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+        cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+      }
+
+      if (cellA === "" || cellB === "") {
+        return cellA === "" ? 1 : -1;
+      }
+
+      if (isYearColumn) {
+        return sortDirection === "asc" ? cellA - cellB : cellB - cellA;
+      } else {
+        return sortDirection === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      }
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+
+    // Update arrow icons
+    updateArrowIcons(columnIndex, sortDirection);
+  }
+
+  function updateArrowIcons(columnIndex, sortDirection) {
+    headers.forEach((header, index) => {
+      const upArrow = header.querySelector(".fa-arrow-up");
+      const downArrow = header.querySelector(".fa-arrow-down");
+      if (upArrow && downArrow) {
+        if (index === columnIndex) {
+          upArrow.style.color = sortDirection === "asc" ? "black" : "#ccc";
+          downArrow.style.color = sortDirection === "desc" ? "black" : "#ccc";
+        } else {
+          upArrow.style.color = "#ccc";
+          downArrow.style.color = "#ccc";
+        }
+      }
+    });
+  }
+});
+
 </script>
 
 
