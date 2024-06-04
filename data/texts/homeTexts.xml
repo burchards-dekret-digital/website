@@ -1,11 +1,11 @@
 <?xml-stylesheet type="text/css" href="test-text.css"?><form>
     <title>BDD Homepage Texts</title>
-    
-    
+
+
     <div id="introduction" class="block">
-      <span lang="de">
-        <h1>DAS PROJEKT</h1>
-        <p>Das Projekt Burchards Dekret Digital (BDD) beschäftigt sich mit der einflussreichen
+        <span lang="de">
+            <h1>DAS PROJEKT</h1>
+            <p>Das Projekt Burchards Dekret Digital (BDD) beschäftigt sich mit der einflussreichen
                 Kirchenrechtssammlung des Bischofs Burchard von Worms (1000-1025), die im hohen
                 Mittelalter als das kirchliche Rechtsbuch par excellence galt. Die Sammlung entstand
                 Anfang des 11. Jahrhunderts und enthält detaillierte Regeln und
@@ -16,221 +16,178 @@
                 Decretum Burchardi. Innovativ ist BDD hinsichtlich der digitalen Erschließung ebenso
                 wie bei der rezeptionsgeschichtlichen Ausrichtung, die einen Eindruck von der
                 gewaltigen Dynamik europäischer Rechtskulturen vermittelt.</p>
-            
-      </span>
-      <span lang="en">
-        <h1>THE PROJECT</h1>
-        <p>The Burchard's Decree Digital (BDD) project deals with the influential collection of
+
+        </span>
+        <span lang="en">
+            <h1>THE PROJECT</h1>
+            <p>The Burchard's Decree Digital (BDD) project deals with the influential collection of
                 canon law by Bishop Burchard of Worms (1000-1025), which was regarded as the
                 ecclesiastical law book par excellence in the High Middle Ages. The collection was
                 written at the beginning of the 11th century and contains detailed rules and
-                behavioural instructions for clergy and laity. Burchard collected, organised and
-                standardised the existing ecclesiastical law in a trend-setting manner. BDD makes
-                the important manuscript tradition accessible, compiles a reliable, critical edition
-                for the first time and analyses the wide distribution and reception of the Decretum
-                Burchardi. BDD is innovative in terms of digital cataloguing as well as in its focus
-                on the history of reception, which conveys an impression of the enormous dynamics of
-                European legal cultures.</p>
-      </span>
+                instructions for clergy and laity. Burchard played a pioneering role in collecting,
+                sorting and standardizing the existing ecclesiastical law. BDD is in the process of
+                making this important manuscript tradition accessible, compiling the first reliable,
+                critical edition of the collection and examining the wide dissemination and
+                reception of the Decretum Burchardi. BDD is innovative in both its digital indexing
+                and its focus on the history of reception, which gives an impression of the
+                tremendous dynamism of European legal cultures.</p>
+        </span>
     </div>
 
     <div class="block" id="description">
-      <div class="row">
-        <div class="col-md-8">
-          <span lang="de">
-            <h1>PROJEKTZIELE</h1> 
-            <p>BDD erarbeitet eine historisch-kritische Edition. Sie basiert auf den in Worms Anfang
-                        des 11. Jahrhunderts entstandenen Handschriften des Dekrets und erscheint
-                        als Printausgabe und Digitale Edition. Die Digitale Edition präsentiert
-                        darüber hinaus die zeitlich und regional zu gruppierenden Zeugnisse der
-                        Gesamtüberlieferung. BDD analysiert die Rezeption des Dekrets in
-                        europäischer Perspektive. Im Rahmen der digitalen Edition entsteht eine
-                        Arbeitsumgebung, die zukünftige Projekte nachnutzen können. </p>  
-            <h1 style="margin-top:40px;">MATERIALIEN</h1>
-            <p>Als Basis der Edition fungieren die Transkriptionen der 20 Bücher von Burchards
-                        Dekret, die über die jeweilige <a href="html/mss.html">Handschrift</a>
-                        aufrufbar sind. Jede Transkription kann auch auf den virtuellen <a href="html/desktop.html">Schreibtisch</a> gelegt werden, um sie mit anderen
-                        Textzeugen zu vergleichen – entweder Kapitel für Kapitel oder Inskription
-                        für Inskription. Die Transkriptionen der Bücher werden sukzessive ergänzt.
-                        Buch XIII ist bereits exemplarisch freigeschaltet. Die <a href="html/documentation.html">Dokumentation</a> gibt Auskunft über die
+        <div class="row">
+            <div class="col-md-8">
+                <span lang="de">
+                    <h1>PROJEKTZIELE</h1>
+                    <p>BDD erarbeitet eine historisch-kritische Edition. Sie basiert auf den in
+                        Worms Anfang des 11. Jahrhunderts entstandenen Handschriften des Dekrets und
+                        erscheint als Printausgabe und Digitale Edition. Die Digitale Edition
+                        präsentiert darüber hinaus die zeitlich und regional zu gruppierenden
+                        Zeugnisse der Gesamtüberlieferung. BDD analysiert die Rezeption des Dekrets
+                        in europäischer Perspektive. Im Rahmen der digitalen Edition entsteht eine
+                        Arbeitsumgebung, die zukünftige Projekte nachnutzen können. </p>
+                    <h1 style="margin-top:40px;">MATERIALIEN</h1>
+                    <p>Als Basis der Edition fungieren die Transkriptionen der 20 Bücher von
+                        Burchards Dekret, die über die jeweilige <a href="html/mss.html">Handschrift</a> aufrufbar sind. Jede Transkription kann auch auf den
+                        virtuellen <a href="html/desktop.html">Schreibtisch</a> gelegt werden, um
+                        sie mit anderen Textzeugen zu vergleichen – entweder Kapitel für Kapitel
+                        oder Inskription für Inskription. Die Transkriptionen der Bücher werden
+                        sukzessive ergänzt. Buch XIII ist bereits exemplarisch freigeschaltet. Die
+                        <a href="html/documentation.html">Dokumentation</a> gibt Auskunft über die
                         technische Infrastruktur des Projektes und die TEI-Codierung der Daten.
                         Unter <a href="html/mss.html">Handschriften</a> findet sich die im Entstehen
                         begriffene Handschriftendatenbank mit allen Textzeugen. Die kuratierte <a href="html/bibl.html">Bibliographie</a> umfasst fast 400 Beiträge. Ein
                         erster thematischer Einstieg zum Dekret mit weiterführender Literatur ist
                         möglich unter <a href="html/decretorumLibriViginti.html">Decretorum Libri
-                        Viginti</a>.</p>    
-          </span>
-      
-          <span lang="en"> 
-            <h1>PROJECT GOALS</h1> 
-            <p>BDD is developing a historical-critical
-                    edition based on the manuscripts of the decree produced in Worms at the
-                    beginning of the 11th century (print edition and digital edition). The digital
-                    edition also presents the chronologically and regionally grouped evidence of the
-                    entire tradition. BDD analyses the reception of the decree from a European
-                    perspective. The digital edition creates a working environment that can be
-                    utilised in future projects.</p>
-            <h1 style="margin-top:40px;">RESOURCES</h1>
-            <p>The transcriptions of the 20 books of Burchard's decree form the basis of the edition. 
-            They can be accessed via the <a href="html/mss.html">manuscripts</a>. The transcription of a book can also be 
-            placed virtually on the <a href="html/desktop.html">desk</a> for comparison with other textual witnesses - either 
-            chapter by chapter or inscription by inscription. The <a href="html/documentation.html">documentation</a> provides 
-            information about the technical infrastructure of the project, the TEI coding of the 
-            data and the <a href="html/mss.html">manuscript database</a> currently being created . In addition to the 
-            history, description and further information on the Worms manuscripts recorded to 
-            date, all accompanying texts are also clearly listed there. The curated <a href="html/bibl.html">bibliography</a> 
-            contains almost 400 articles. A first thematic introduction to the decree with 
-            further literature can be found under <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.
-        </p>
-          </span>
-        </div>                        
-        
-        <div class="col-md-4 text-center justify-content-center align-items-center d-flex">
-          <figure class="figure" style="width:50%!important">
-            <img src="img/BambergBook.jpg" class="figure-img img-fluid" alt="Bamebrg Buch"/>
-            <figcaption class="figure-caption">Bamberger Handschrift des Decretum Burchardi
-                        (Bamberg, Staatsbibliothek, Can. 6)</figcaption> 
-          </figure>
+                        Viginti</a>.</p>
+                </span>
+
+                <span lang="en">
+                    <h1>PROJECT GOALS</h1>
+                    <p>BDD is compiling a historical-critical edition based on the manuscripts of
+                        the decree produced in Worms at the beginning of the 11th century. It will
+                        be published as a print edition and a digital edition. The Digital Edition
+                        also presents evidence of the entire tradition, grouped chronologically and
+                        regionally. BDD analyses the reception of the decree from a European
+                        perspective. The Digital Edition creates a working environment that can be
+                        used in future projects.</p>
+                    <h1 style="margin-top:40px;">RESOURCES</h1>
+                    <p>The edition is based on the transcriptions of the 20 books of Burchard's decree,
+                        which can be accessed via the respective <a href="html/mss.html">manuscripts</a>. Each transcription can
+                        also be placed on the virtual <a href="html/desktop.html">desk</a> in order to compare it with other textual
+                        witnesses – either chapter by chapter or inscription by inscription. The
+                        transcriptions of the books will be added successively; currently book XIII
+                        is available as an example. The <a href="html/documentation.html">documentation</a> provides information about the
+                        technical infrastructure of the project and the TEI coding of the data. The
+                        manuscripts section contains the <a href="html/mss.html">manuscript database</a>, which is currently
+                        being created and includes all textual witnesses. The curated <a href="html/bibl.html">bibliography</a>
+                        contains almost 400 articles. An initial thematic introduction to the decree
+                        with further reading is available at <a href="html/decretorumLibriViginti.html">Decretorum Libri Viginti</a>.</p>
+                </span>
+            </div>
+
+            <div class="col-md-4 text-center justify-content-center align-items-center d-flex">
+                <figure class="figure" style="width:50%!important">
+                    <img src="img/BambergBook.jpg" class="figure-img img-fluid" alt="Bamebrg Buch"/>
+                    <figcaption class="figure-caption">Bamberger Handschrift des Decretum Burchardi
+                        (Bamberg, Staatsbibliothek, Can. 6)</figcaption>
+                </figure>
+            </div>
+
+
+
         </div>
-
-        
-
-      </div>
     </div>
-    
+
     <!--INFO BLOCK-->
     <div id="summaryTable" class="block">
-      <span lang="de">
-        <h1>PROJEKTINFORMATIONEN</h1>
-      
-        <h3>LAUFZEIT</h3>
-        <p>2020-2037</p>
-        <hr/>
-        <h3>KONTAKTDETAILS</h3>
-        <p>
-          <ul>
-            <li>Ingrid Baumgärtner, <a href="mailto:ibaum@uni-kassel.de">ibaum@uni-kassel.de</a></li>
-            <li>Klaus Herbers, <a href="mailto:klaus.herbers@fau.de">klaus.herbers@fau.de</a></li>
-            <li>Ludger Körntgen, <a href="mailto:koerntge@uni-mainz.de">koerntge@uni-mainz.de</a></li>
-          </ul>
-        </p>
-        <hr/>
-        <h3>KOOPERATIONSPARTNER</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5">
-              <h4>Institutionen</h4>
-                <p>
-                  <ul>
-                    <li>Monumenta Germaniae Historica, München</li>
-                    <li>Digitale Akademie Mainz</li>
-                    <li>Mainzer Zentrum für Digitalität in den Geistes- und Kulturwissenschaften (mainzed)</li>
-                    <li>Zentrum für Datenverarbeitung der Johannes Gutenberg-Universität Mainz</li>
-                    <li>IT Service der Universität Kassel</li>
-                  </ul>
-                </p>
-            </div>
+        <span lang="de">
+            <h1>PROJEKTINFORMATIONEN</h1>
 
-            <div class="col-md-3">
-              <h4>Projektkommission</h4>
-              <h5>Kommissionsvorsitz</h5>
-              <p>
-                <ul>
-                  <li>Prof. Dr. Stephan Dusil </li>
-                </ul>
-              </p>
-                
-              <h5>Kommissionsmitglieder</h5>
-              <p>
-                <ul>
-                  <li>Prof. Orazio Condorelli</li>
-                  <li>Prof. Dr. Thomas Duve</li>
-                  <li>Prof. Dr. Martina Giese</li>
-                  <li>Prof. Dr. Andrea Rapp</li>
-                </ul>
-              </p>
-            </div>
-            
-            <div class="col-md-4">
-              <h4>Einzelpersonen</h4>
-              <p>
-                <ul>
-                  <li>Prof. Greta Austin, Puget Sound</li>
-                  <li>Prof. Sarah Hamilton, Exeter</li>
-                  <li>Prof. Dr. Wilfried Hartmann, Tübingen/München</li>
-                  <li>Dr. Rob Meens, Utrecht</li>
-                  <li>Prof. Dr. Christof Rolker, Bamberg</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>  
-      </span>
+            <h3>LAUFZEIT</h3>
+            <p>2020-2037</p>
+            <hr/>
+            <h3>KONTAKTDETAILS</h3>
+            <p> <ul> <li>Ingrid Baumgärtner, <a href="mailto:ibaum@uni-kassel.de">ibaum@uni-kassel.de</a></li> <li>Klaus Herbers, <a href="mailto:klaus.herbers@fau.de">klaus.herbers@fau.de</a></li> <li>Ludger
+                Körntgen, <a href="mailto:koerntge@uni-mainz.de">koerntge@uni-mainz.de</a></li>
+                </ul> </p>
+            <hr/>
+            <h3>KOOPERATIONSPARTNER</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h4>Institutionen</h4>
+                        <p> <ul> <li>Monumenta Germaniae Historica, München</li> <li>Digitale
+                            Akademie Mainz</li> <li>Mainzer Zentrum für Digitalität in den Geistes-
+                            und Kulturwissenschaften (mainzed)</li> <li>Zentrum für
+                            Datenverarbeitung der Johannes Gutenberg-Universität Mainz</li> <li>IT
+                            Service der Universität Kassel</li> </ul> </p>
+                    </div>
 
-      <span lang="en">
-        <h1>PROJECT INFORMATION</h1>
-      
-        <h3>DURATION</h3>
-        <p>2020-2037</p>
-        <hr/>
-        <h3>CONTACTS</h3>
-        <p>
-          <ul>
-            <li>Ingrid Baumgärtner, <a href="mailto:ibaum@uni-kassel.de">ibaum@uni-kassel.de</a></li>
-            <li>Klaus Herbers, <a href="mailto:klaus.herbers@fau.de">klaus.herbers@fau.de</a></li>
-            <li>Ludger Körntgen, <a href="mailto:koerntge@uni-mainz.de">koerntge@uni-mainz.de</a></li>
-          </ul>
-        </p>
-        <hr/>
-        <h3>COOPERATION PARTNER</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h4>Institutions</h4>
-                <p>
-                  <ul>
-                    <li>Monumenta Germaniae Historica, München</li>
-                    <li>Digitale Akademie Mainz</li>
-                    <li>Mainzer Zentrum für Digitalität in den Geistes- und Kulturwissenschaften (mainzed)</li>
-                    <li>Zentrum für Datenverarbeitung der Johannes Gutenberg-Universität Mainz</li>
-                    <li>IT Service der Universität Kassel</li>
-                  </ul>
-                </p>
-            </div>
+                    <div class="col-md-3">
+                        <h4>Projektkommission</h4>
+                        <h5>Kommissionsvorsitz</h5>
+                        <p> <ul> <li>Prof. Dr. Stephan Dusil </li> </ul> </p>
 
-            <div class="col-md-3">
-              <h4>Project commission</h4>
-              <h5>Commission Presidency</h5>
-              <p>
-                <ul>
-                  <li>Prof. Dr. Stephan Dusil </li>
-                </ul>
-              </p>
-              <h5>Commission member</h5>
-              <p>
-                <ul>
-                  <li>Prof. Orazio Condorelli</li>
-                  <li>Prof. Dr. Thomas Duve</li>
-                  <li>Prof. Dr. Martina Giese</li>
-                  <li>Prof. Dr. Andrea Rapp</li>
-                </ul>
-              </p>
+                        <h5>Kommissionsmitglieder</h5>
+                        <p> <ul> <li>Prof. Orazio Condorelli</li> <li>Prof. Dr. Thomas Duve</li>
+                            <li>Prof. Dr. Martina Giese</li> <li>Prof. Dr. Andrea Rapp</li> </ul>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Einzelpersonen</h4>
+                        <p> <ul> <li>Prof. Greta Austin, Puget Sound</li> <li>Prof. Sarah Hamilton,
+                            Exeter</li> <li>Prof. Dr. Wilfried Hartmann, Tübingen/München</li>
+                            <li>Dr. Rob Meens, Utrecht</li> <li>Prof. Dr. Christof Rolker,
+                            Bamberg</li> </ul> </p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="col-md-3">
-              <h4>Individuals</h4>
-              <p>
-                <ul>
-                  <li>Prof. Greta Austin, Puget Sound</li>
-                  <li>Prof. Sarah Hamilton, Exeter</li>
-                  <li>Prof. Dr. Wilfried Hartmann, Tübingen/München</li>
-                  <li>Dr. Rob Meens, Utrecht</li>
-                  <li>Prof. Dr. Christof Rolker, Bamberg</li>
-                </ul>
-              </p>
+        </span>
+
+        <span lang="en">
+            <h1>PROJECT INFORMATION</h1>
+
+            <h3>DURATION</h3>
+            <p>2020-2037</p>
+            <hr/>
+            <h3>CONTACTS</h3>
+            <p> <ul> <li>Ingrid Baumgärtner, <a href="mailto:ibaum@uni-kassel.de">ibaum@uni-kassel.de</a></li> <li>Klaus Herbers, <a href="mailto:klaus.herbers@fau.de">klaus.herbers@fau.de</a></li> <li>Ludger
+                Körntgen, <a href="mailto:koerntge@uni-mainz.de">koerntge@uni-mainz.de</a></li>
+                </ul> </p>
+            <hr/>
+            <h3>COOPERATION PARTNER</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Institutions</h4>
+                        <p> <ul> <li>Monumenta Germaniae Historica, München</li> <li>Digitale
+                            Akademie Mainz</li> <li>Mainzer Zentrum für Digitalität in den Geistes-
+                            und Kulturwissenschaften (mainzed)</li> <li>Zentrum für
+                            Datenverarbeitung der Johannes Gutenberg-Universität Mainz</li> <li>IT
+                            Service der Universität Kassel</li> </ul> </p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>Project commission</h4>
+                        <h5>Commission Presidency</h5>
+                        <p> <ul> <li>Prof. Dr. Stephan Dusil </li> </ul> </p>
+                        <h5>Commission member</h5>
+                        <p> <ul> <li>Prof. Orazio Condorelli</li> <li>Prof. Dr. Thomas Duve</li>
+                            <li>Prof. Dr. Martina Giese</li> <li>Prof. Dr. Andrea Rapp</li> </ul>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>Individuals</h4>
+                        <p> <ul> <li>Prof. Greta Austin, Puget Sound</li> <li>Prof. Sarah Hamilton,
+                            Exeter</li> <li>Prof. Dr. Wilfried Hartmann, Tübingen/München</li>
+                            <li>Dr. Rob Meens, Utrecht</li> <li>Prof. Dr. Christof Rolker,
+                            Bamberg</li> </ul> </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>  
-      </span>
+        </span>
     </div>
 </form>

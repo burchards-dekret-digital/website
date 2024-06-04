@@ -73,11 +73,8 @@
                   <h1 class="modal-title fs-5" id="desktopModalLabel" style="font-weight: bold;"><span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span></h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  <p>
-                    <span lang="de">Alle Textzeugen des Decretum Burchardi werden skukzessive in einer Hanschriften-Datenbank aufgenommen und verfügbar gemacht. Derzeit umfasst sie die in Worms entstanden Handschriften. Neben basalaen Informationen zu den Manuskripten finden sich auch kurze Informationen zur Geschichte und weiterführende Literatur. Über den Button „Buch zum Schreibtisch hinzufügen“ sind die bereits transkribierten Teile zu finden. Alle Begleittexte des Dekrets werden übersichtlich aufgelistet und mit Literatur- und Editionshinweisen angereichert, da sie Hinweise auf Abhängigkeiten der Handschriften untereinander enthalten können. Ziel ist somit nicht nur eine reine Auflistung der Handschriften, sondern ein Werkzeug die Forschung am Decretum Burchardi voranzubringen.</span>
-                    <span lang="en">All textual witnesses of the Decretum Burchardi will be successively recorded and made available in a manuscript database. It currently includes the manuscripts produced in Worms. In addition to basic information on the manuscripts, there is also brief information on the history and further reading. The already transcribed parts can be found via the button "Add book to desk". All accompanying texts of the decree are clearly listed and enriched with literature and edition notes, as they may contain references to dependencies between the manuscripts. The aim is thus not merely to list the manuscripts, but to provide a tool for advancing research on the Decretum Burchardi.</span>
-                  </p>
+                <div class="modal-body" id="infoHandschriften">
+                  
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
@@ -235,4 +232,33 @@
         // Invoke the function when the page loads
         window.onload = fetchDataAndPopulateTable;
       </script>
+
+
+<script>
+  $(document).ready(function() {
+      // Function to load XML file
+      function loadXMLDoc(filename) {
+          $.ajax({
+              type: "GET",
+              url: filename,
+              dataType: "xml",
+              success: function(xml) {
+                  displayXMLContent(xml);
+              },
+              error: function(xhr, status, error) {
+                  console.error("Error loading XML file:", error);
+              }
+          });
+      }
+  
+      // Function to display XML content in HTML
+      function displayXMLContent(xmlDoc) {
+          $("#infoHandschriften").html($(xmlDoc).find('[id="infoHandschriften"]').html());
+          checkLanguage()         
+      }
+  
+      // Load XML file
+      loadXMLDoc("../data/texts/infoButtonsTexts.xml"); // Adjust the path here
+  });
+  </script>
 </html>

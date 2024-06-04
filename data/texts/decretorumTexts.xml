@@ -1,89 +1,247 @@
-<?xml-stylesheet type="text/css" href="test-text.css"?><form>
+<?xml-stylesheet type="text/css" href="test-text.css"?>
+<form>
     <title>Decretorum Libri Viginti Texte</title>
-    
-    
+
+
     <div id="decretorum" class="block">
-      <span lang="de">
-        <p class="mt-4">Die umfangreiche Kirchenrechtssammlung Decretorum libri viginti bzw.
-                Decretum Burchardi entstand unter Federführung Burchards von Worms im ersten Viertel
-                des 11. Jahrhunderts. Sie basiert auf vorhandenen Sammlungen und sollte eine gut
-                benutzbare, aber auch autoritativ fundierte Sammlung des tradierten Kirchenrechts
-                sein. Die Kompilation aus mehr als 1785 Kapiteln, die sich in 20 thematisch
-                geordnete Bücher gliedern, war so erfolgreich, dass sie sich in kürzester Zeit
-                nördlich und südlich der Alpen weit verbreitete.</p>
-        <p>Als systematische Sammlung versucht sie, die gesamte Breite des kanonischen Rechts
+        <span lang="de">
+            <p class="mt-4">Die umfangreiche Kirchenrechtssammlung <i>Decretorum libri viginti</i>
+                bzw. Decretum Burchardi entstand unter Federführung Burchards von Worms im ersten
+                Viertel des 11. Jahrhunderts. Sie basiert auf vorhandenen Sammlungen und sollte eine
+                gut benutzbare, aber auch autoritativ fundierte Sammlung des tradierten
+                Kirchenrechts sein. Die Kompilation aus mehr als 1785 Kapiteln, die sich in 20
+                thematisch geordnete Bücher gliedern, war so erfolgreich, dass sie sich in kürzester
+                Zeit nördlich und südlich der Alpen verbreitete.</p>
+            <p>Als systematische Sammlung versucht sie, die gesamte Breite des kanonischen Rechts
                 abzudecken. Jedem Buch ist eine Capitulatio vorangestellt, der eine Kurzbeschreibung
                 des Buchinhalts folgt (Argumentum libri). Die Bücher befassen sich mit folgenden
                 Themen - oft in einem weiteren Sinne:</p>
-        <p>
-          <ul style="list-style-type:none;">
-            <li>1. Buch: Kirchliche Hierarchie</li>
-            <li>2. Buch: Aufgaben des Klerus</li>
-            <li>3. Buch: Ausstattung der Kirchen</li>
-            <li>4. Buch: Taufe</li>
-            <li>5. Buch: Eucharistie</li>
-            <li>6. Buch: Tötungsdelikte</li>
-            <li>7. Buch: Inzest</li>
-            <li>8. Buch: Mönche und Nonnen</li>
-            <li>9. Buch: Ehe</li>
-            <li>10. Buch: Deviante Praktiken und Vorstellungen </li>
-            <li>11. Buch: Diebstahl und Exkommunikation</li>
-            <li>12. Buch: Meineid</li>
-            <li>13. Buch: Fasten</li>
-            <li>14. Buch: Völlerei und Trunksucht</li>
-            <li>15. Buch: Laien inklusive Fürsten</li>
-            <li>16. Buch: Gerichtswesen</li>
-            <li>17. Buch: Unzucht</li>
-            <li>18. Buch: Krankensalbung</li>
-            <li>19. Buch: Buße (Corrector sive Medicus)</li>
-            <li>20. Buch: Eschatologie</li>
-          </ul>
-        </p>
-        <p>Abschriften von Burchards Dekret fanden sich kurz nach seiner Entstehung in den meisten Kathedralbibliotheken nördlich der Alpen und wurden auf Synoden verwendet. Offensichtlich schätzten gerade Bischöfe die Sammlung, die auch in Italien bis weit ins 12. Jahrhundert Teil der Klerikerausbildung war. Die Gründe für den Erfolg des Dekrets sind daher wohl darin zu suchen, dass Burchard geschickt einerseits Kapitel grundsätzlicher Art, andererseits jedoch auch individuelle praxisnahe Beispiele auswählte. Hinzu kommt das möglichst weitgehende Ausscheiden einander widersprechender Texte, so dass das Dekret gut anwendbar war und als Rechtsautorität anerkannt wurde.</p>
+            <p> <ul style="list-style-type:none;"> <li>1. Buch: Kirchliche Hierarchie</li> <li>2.
+                Buch: Aufgaben des Klerus</li> <li>3. Buch: Ausstattung der Kirchen</li> <li>4.
+                Buch: Taufe</li> <li>5. Buch: Eucharistie</li> <li>6. Buch: Tötungsdelikte</li>
+                <li>7. Buch: Inzest</li> <li>8. Buch: Mönche und Nonnen</li> <li>9. Buch: Ehe</li>
+                <li>10. Buch: Deviante Praktiken und Vorstellungen </li> <li>11. Buch: Diebstahl und
+                Exkommunikation</li> <li>12. Buch: Meineid</li> <li>13. Buch: Fasten</li> <li>14.
+                Buch: Völlerei und Trunksucht</li> <li>15. Buch: Laien inklusive Fürsten</li>
+                <li>16. Buch: Gerichtswesen</li> <li>17. Buch: Unzucht</li> <li>18. Buch:
+                Krankensalbung</li> <li>19. Buch: Buße (<i>Corrector sive Medicus</i>)</li> <li>20.
+                Buch: Eschatologie (<i>Liber speculationum</i>)</li> </ul> </p>
+            <p>Abschriften von Burchards Dekret fanden sich kurz nach seiner Entstehung in den
+                meisten Kathedralbibliotheken nördlich der Alpen und wurden auf Synoden verwendet.
+                Offensichtlich schätzten gerade Bischöfe die Sammlung, die auch in Italien bis weit
+                ins 12. Jahrhundert Teil der Klerikerausbildung war. Die Gründe für den Erfolg des
+                Dekrets sind daher wohl darin zu suchen, dass Burchard geschickt einerseits Kapitel
+                grundsätzlicher Art, andererseits jedoch auch individuelle praxisnahe Beispiele
+                auswählte. Hinzu kommt, dass einander widersprechender Texte weitgehend
+                ausgeschieden wurden, so dass das Dekret gut anwendbar war und als Rechtsautorität
+                gelten konnte.</p>
 
-        <p>Burchard verwendete für seine Zusammenstellung verschiedene Sammlungen des 8. bis 10.
-                Jahrhunderts als Vorlagen, darunter unter anderem die <a href="https://data.mgh.de/databases/clavis/wiki/index.php/Collectio_Hibernensis" target="_blank">Collectio Hibernensis</a>, die <a href="https://data.mgh.de/databases/clavis/wiki/index.php/Collectio_Anselmo_dedicata" target="_blank">Collectio Anselmo dedicata</a>, die <a href="https://data.mgh.de/databases/clavis/wiki/index.php/Pseudo-Remedius_of_Chur,_Collectio_canonum" target="_blank">Sammlung des Pseudo-Remedius</a> und vor allem das <a href="https://data.mgh.de/databases/clavis/wiki/index.php/Regino_of_Pr%C3%BCm,_Libri_duo_de_synodalibus_causis_et_disciplinis_ecclesiasticis" target="_blank">Sendhandbuch des Regino von Prüm</a>. Aus dem Sendhandbuch stammt
-                fast ein Drittel aller Kapitel des Dekrets. Auch nutze er eine Sammlung von Briefen
-                Gregors des Großen und griff auf eine Kanones-Sammlung früher deutscher Konzilien
-                aus Freising zurück. Das weist auf einen engen Austausch mit dem dortigen Klerus
-                hin. Ob das Dekret eine kirchenpolitische Tendenz enthält, die schon auf die
+            <p>Burchard verwendete für seine Zusammenstellung verschiedene Sammlungen des 8. bis 10.
+                Jahrhunderts als Vorlagen, darunter unter anderem die <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Collectio_Hibernensis"
+                target="_blank">Collectio Hibernensis</a>, die <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Collectio_Anselmo_dedicata"
+                target="_blank">Collectio Anselmo dedicata</a>, die <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Pseudo-Remedius_of_Chur,_Collectio_canonum"
+                target="_blank">Sammlung des Pseudo-Remedius</a> und vor allem das <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Regino_of_Pr%C3%BCm,_Libri_duo_de_synodalibus_causis_et_disciplinis_ecclesiasticis"
+                target="_blank">Sendhandbuch des Regino von Prüm</a>, aus dem fast ein Drittel aller
+                Kapitel des Dekrets stammt. Er nutze auch eine Sammlung von Briefen Gregors des
+                Großen und griff auf eine Kanones-Sammlung früher deutscher Konzilien aus Freising
+                zurück. Dieser Rückgriff verweist auf einen engen Austausch mit dem dortigen Klerus.
+                Ob das Dekret eine kirchenpolitische Tendenz enthält, die schon auf die
                 Frontstellungen der späteren Reformdiskussionen verweist, ist in der Forschung
                 umstritten. </p>
-        <p>Heute sind noch mehr als 80 Handschriften des Dekrets erhalten, die meisten bieten den
-                vollständigen Text. Hinzu kommen 24 Fragmente sowie etwa 15 Teilüberlieferungen, die
-                verkürzte Fassungen mit Exzerpten aus mehreren Büchern oder einzelne Bücher des
+            <p>Heute sind noch mehr als 80 Handschriften des Dekrets erhalten, die meisten bieten
+                den vollständigen Text. Hinzu kommen 24 Fragmente sowie etwa 15 Teilüberlieferungen,
+                die verkürzte Fassungen mit Exzerpten aus mehreren Büchern oder einzelne Bücher des
                 Dekrets enthalten. Das in theoretischer wie praktischer Hinsicht den Bußfragen
                 gewidmete 19. Buch kursierte wegen seiner seelsorgerlichen Bedeutung auch
                 selbständig, so dass es eine Sonderstellung einnimmt.</p>
 
-        <p>Aufgrund unterschiedlicher Anordnung einzelner Kapitel sowie wegen späterer Ergänzungen werden mehrere Hauptüberlieferungsgruppen des Werkes unterschieden. Die <a href="https://www.digitale-sammlungen.de/de/view/bsb10148587?page=41" target="_blank">Editio princeps</a> wurde 1548 auf der Basis einer Handschrift, die dem vatikanischen Doppelkodex nahestand, in Köln veranstaltet (<a href="bibl.html#676ML2JW" target="_blank">nachgedruckt 1992</a>.). 1549/50 erfolgte ein weiterer Druck der Editio princeps, der insgesamt weniger zuverlässig ist. Diesen nutzte Migne für seine Ausgabe des Dekrets in der Patrologia Latina. Die heute vorliegende Fassung in <a href="http://www.documentacatholicaomnia.eu/02m/1000-1025,_Burchardus_Wortatiensis_Episcopus,_Decretorum_Libri_Viginti,_MLT.pdf" target="_blank">PL 140</a> basiert jedoch auf der späteren Ausgabe von 1868, die einen noch unzuverlässigeren Text bietet.</p> 
+            <p>Aufgrund unterschiedlicher Anordnung einzelner Kapitel sowie wegen späterer
+                Ergänzungen werden mehrere Hauptüberlieferungsgruppen des Werkes unterschieden. Die
+                <a href="https://www.digitale-sammlungen.de/de/view/bsb10148587?page=41"
+                target="_blank">Editio princeps</a> wurde 1548 auf der Basis einer Handschrift, die
+                dem vatikanischen Doppelkodex nahestand, in Köln herausgegeben (<a
+                href="bibl.html#676ML2JW" target="_blank">nachgedruckt 1992</a>.). 1549/50 erfolgte
+                ein weiterer Druck der Editio princeps, der insgesamt weniger zuverlässig ist.
+                Diesen nutzte Migne für seine Ausgabe des Dekrets in der Patrologia Latina. Die
+                heute vorliegende Fassung in <a
+                href="http://www.documentacatholicaomnia.eu/02m/1000-1025,_Burchardus_Wortatiensis_Episcopus,_Decretorum_Libri_Viginti,_MLT.pdf"
+                target="_blank">PL 140</a> basiert jedoch auf der späteren Ausgabe von 1868, die
+                einen noch unzuverlässigeren Text bietet.</p>
 
-        <h3 class="mt-4">Literatur</h3>
-          <ul>
-                <li><bibl copyOf="XNH7797P">GRETA AUSTIN, Shaping Church Law Around the Year 1000. The Decretum of Burchard of Worms (Church, Faith and Culture in the Medieval West), Famham, Surrey 2009.</bibl></li>
-                <li><bibl copyOf="5PSR4RZD">PAUL FOURNIER, Études critiques sur le Décret de Burchard de Worms, in: Nouvelle revue historique de droit français et étranger 34 (1910) 41-112.213-221.289-331.564-584.</bibl>
+            <h3 class="mt-4">Literatur</h3>
+            <ul>
+                <li>
+                    <bibl copyOf="XNH7797P">GRETA AUSTIN, Shaping Church Law Around the Year 1000.
+                        The Decretum of Burchard of Worms (Church, Faith and Culture in the Medieval
+                        West), Farnham, Surrey 2009.</bibl>
                 </li>
-                <li><bibl copyOf="MSJUYX97">PAUL FOURNIER, Le décret de Burchard de Worms. Ses caractères, son influence, in: Revue d’histoire écclesiastique 12 (1911) 451-473.670-701.</bibl></li>
-                <li><bibl copyOf="XSGJ8UKX">GÉRARD FRANSEN, Les sources de la Préface du Décret de Burchard de Worms, in: Bulletin of Medieval Canon Law NS 3 (1973) 1-6.</bibl></li>
-                <li><bibl copyOf="ZDJUJTQG">GÉRARD FRANSEN, Le Décret de Burchard de Worms. Valeur du texte de l’édition. Essai de classement des manuscrits, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abteilung 63 (1977) 1-19.</bibl></li>
-                <li><bibl copyOf="6T6XXQ9K">GÉRARD FRANSEN, Le Décret de Burchard, in: Decretorum Libri XX. Ergänzter Neudruck der Editio princeps Köln 1548 (hrsg. von GÉRARD FRANSEN/THEO KÖLZER), Aalen 1992, 25-42.</bibl>
+                <li>
+                    <bibl copyOf="5PSR4RZD">PAUL FOURNIER, Études critiques sur le Décret de
+                        Burchard de Worms, in: Nouvelle revue historique de droit français et
+                        étranger 34 (1910) 41-112, 213-221, 289-331, 564-584.</bibl>
                 </li>
-                <li><bibl copyOf="4BRRNT9V">WILFRIED HARTMANN (Hrsg.), Bischof Burchard von Worms, 1000-1025 (Quellen und Abhandlungen zur mittelrheinischen Kirchengeschichte 100), Mainz 2000.</bibl></li>
-                <li><bibl copyOf="X25FUV2K">HARTMUT HOFFMANN/RUDOLF POKORNY, Das Dekret des Bischofs Burchard von Worms. Textstufen – Frühe Verbreitung – Vorlagen (MGH Hilfsmittel 12), München 1991.</bibl></li>
-                <li><bibl copyOf="232X7IIZ">MAX KERNER, Studien zum Dekret des Bischofs Burchard von Worms (Diss. masch.), Aachen 1969.</bibl></li>
-                <li><bibl copyOf="X8XP3M7L">MAX KERNER/FRANZ KERFF/RUDOLF POKORNY/KARL GEORG SCHON/HUBERT TILLS, Textidentifikation und Provenienzanalyse im Decretum Burchardi, in: Mélanges G. Fransen, Bd. 2 (Studia Gratiana 20), Rom 1976, 17-63.</bibl></li>
-                <li><bibl copyOf="C88VDMAC">LOTTE KÉRY, Canonical Collections of the Early Middle Ages, ca. 400-1140: A Biographical Guide to the Manuscripts and Literature (History of Medieval Canon Law), Washington, D.C. 1999.</bibl></li>
-                <li><bibl copyOf="3R6Q3Z9R">BIRGIT KYNAST, Tradition und Innovation im kirchlichen Recht. Das Bußbuch im Dekret des Bischofs Burchard von Worms (Quellen und Forschungen zum Recht im Mittelalter 10), Ostfildern 2020.</bibl></li>
-                <li><bibl copyOf="SZJD6F72">OTTO MEYER, Überlieferung und Verbreitung des Dekrets des Bischofs Burchard von Worms, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abteilung 24 (1935) 141-183.</bibl></li>
-                <li><bibl copyOf="NRS4ZX63">ÉMILE VAN BALBERGHE: Les éditions du Décret de Burchard de Worms. Avatars d’un texte, in: Recherches de théologie ancienne et médiévale 37 (1970) 5-22.</bibl></li>
-            </ul>  
-            
-      </span>
+                <li>
+                    <bibl copyOf="MSJUYX97">PAUL FOURNIER, Le décret de Burchard de Worms. Ses
+                        caractères, son influence, in: Revue d’histoire écclesiastique 12 (1911)
+                        451-473.670-701.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="XSGJ8UKX">GÉRARD FRANSEN, Les sources de la Préface du Décret de
+                        Burchard de Worms, in: Bulletin of Medieval Canon Law NS 3 (1973)
+                        1-6.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="ZDJUJTQG">GÉRARD FRANSEN, Le Décret de Burchard de Worms. Valeur
+                        du texte de l’édition. Essai de classement des manuscrits, in: Zeitschrift
+                        der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abteilung 63 (1977)
+                        1-19.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="6T6XXQ9K">GÉRARD FRANSEN, Le Décret de Burchard, in: GÉRARD
+                        FRANSEN/THEO KÖLZER (Hrsg.), Decretorum Libri XX. Ergänzter Neudruck der
+                        Editio princeps Köln 1548, Aalen 1992, 25-42.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="4BRRNT9V">WILFRIED HARTMANN (Hrsg.), Bischof Burchard von Worms,
+                        1000-1025 (Quellen und Abhandlungen zur mittelrheinischen Kirchengeschichte
+                        100), Mainz 2000.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="X25FUV2K">HARTMUT HOFFMANN/RUDOLF POKORNY, Das Dekret des Bischofs
+                        Burchard von Worms. Textstufen – Frühe Verbreitung – Vorlagen (MGH
+                        Hilfsmittel 12), München 1991.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="232X7IIZ">MAX KERNER, Studien zum Dekret des Bischofs Burchard von
+                        Worms, Aachen (Diss. masch.) 1969.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="X8XP3M7L">MAX KERNER/FRANZ KERFF/RUDOLF POKORNY/KARL GEORG
+                        SCHON/HUBERT TILLS, Textidentifikation und Provenienzanalyse im Decretum
+                        Burchardi, in: Mélanges G. Fransen, Bd. 2 (Studia Gratiana 20), Rom 1976,
+                        17-63.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="C88VDMAC">LOTTE KÉRY, Canonical Collections of the Early Middle
+                        Ages, ca. 400-1140: A Biographical Guide to the Manuscripts and Literature
+                        (History of Medieval Canon Law), Washington, D.C. 1999.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="3R6Q3Z9R">BIRGIT KYNAST, Tradition und Innovation im kirchlichen
+                        Recht. Das Bußbuch im Dekret des Bischofs Burchard von Worms (Quellen und
+                        Forschungen zum Recht im Mittelalter 10), Ostfildern 2020.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="SZJD6F72">OTTO MEYER, Überlieferung und Verbreitung des Dekrets
+                        des Bischofs Burchard von Worms, in: Zeitschrift der Savigny-Stiftung für
+                        Rechtsgeschichte. Kanonistische Abteilung 24 (1935) 141-183.</bibl>
+                </li>
+                <li>
+                    <bibl copyOf="NRS4ZX63">ÉMILE VAN BALBERGHE: Les éditions du Décret de Burchard
+                        de Worms. Avatars d’un texte, in: Recherches de théologie ancienne et
+                        médiévale 37 (1970) 5-22.</bibl>
+                </li>
+            </ul>
 
-      <span lang="en">
-        <p class="mt-4">zu erledigen</p>
-      </span>
+        </span>
+
+        <span lang="en">
+            <p class="mt-4"> <p class="mt-4">The extensive collection of canon law known as
+                <i>Decretorum libri viginti</i>, or Burchard's Decree, was compiled under the
+                leadership of Burchard of Worms in the first quarter of the 11th century. It was
+                based on existing collections and aimed to be an authoritative but user-friendly
+                compilation of traditional canon law. This compilation, consisting of more than 1785
+                chapters divided into 20 thematically organized books, was so successful that it
+                spread rapidly both north and south of the Alps.</p> <p>As a systematic collection,
+                it attempts to cover the entire breadth of canon law. Each book begins with a
+                "Capitulatio" followed by a brief description of the book’s content (<i>Argumentum
+                libri</i>). The books address the following topics, often in a broader sense:</p>
+                <p> <ol> <li>Ecclesiastical hierarchy</li> <li>Duties of the clergy</li> <li>Church
+                furnishings</li> <li>Baptism</li> <li>Eucharist</li> <li>Homicide</li>
+                <li>Incest</li> <li>Monks and nuns</li> <li>Marriage</li> <li>Deviant practices and
+                beliefs</li> <li>Theft and excommunication</li> <li>Perjury</li> <li>Fasting</li>
+                <li>Gluttony and drunkenness</li> <li>Laity, including princes</li> <li>Judicial
+                matters</li> <li>Fornication</li> <li>Anointing of the sick</li> <li>Penance
+                (<i>Corrector sive Medicus</i>)</li> <li>Eschatology (<i>Liber
+                speculationum</i>)</li> </ol> </p> <p>Copies of Burchard's decree were found in most
+                cathedral libraries north of the Alps shortly after its creation and were used in
+                synods. Bishops, in particular, valued the collection, which remained part of
+                clerical training in Italy well into the 12th century. The success of the decree can
+                probably be attributed to Burchard's skilful selection of both fundamental chapters
+                and practical examples. He also largely excluded contradictory texts, making the
+                decree highly usable and authoritative.</p> <p>Burchard used various collections
+                from the 8th to 10th centuries as sources for his compilation, including the <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Collectio_Hibernensis"
+                target="_blank">Collectio Hibernensis</a>, the <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Collectio_Anselmo_dedicata"
+                target="_blank">Collectio Anselmo dedicata</a>, the <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Pseudo-Remedius_of_Chur,_Collectio_canonum"
+                target="_blank">collection of Pseudo-Remedius</a>, and especially <a
+                href="https://data.mgh.de/databases/clavis/wiki/index.php/Regino_of_Pr%C3%BCm,_Libri_duo_de_synodalibus_causis_et_disciplinis_ecclesiasticis"
+                target="_blank">Regino of Prüm's handbook</a>, which accounts for nearly a third of
+                the decree's chapters. He also utilized a collection of letters by Gregory the Great
+                and drew from a collection of canons from early German councils in Freising,
+                indicating close interaction with the clergy there. Whether the decree contains
+                hints of ecclesiastical politics that foreshadow later reform debates is a matter of
+                scholarly debate.</p> <p>Today there are more than 80 surviving manuscripts of the
+                decree, most of which offer the complete text. There are also 24 fragments and about
+                15 partial transmissions containing either individual books of the decree or
+                abbreviated versions with excerpts from several books. The 19th book, dedicated to
+                questions of penance, circulated independently due to its pastoral significance and
+                thus has a special status.</p> <p>Due to different arrangements of individual
+                chapters and later additions, several main transmission groups of the work are
+                distinguished. The <a
+                href="https://www.digitale-sammlungen.de/de/view/bsb10148587?page=41"
+                target="_blank">Editio princeps</a> was published in 1548, based on a manuscript
+                closely related to the Vatican double codex, with a <a href="bibl.html#676ML2JW"
+                target="_blank">reprint in 1992</a>. A subsequent print of the Editio princeps in
+                1549/50 is generally less reliable and was used by Migne for his edition of the
+                decree in the Patrologia Latina. The version available today in <a
+                href="http://www.documentacatholicaomnia.eu/02m/1000-1025,_Burchardus_Wortatiensis_Episcopus,_Decretorum_Libri_Viginti,_MLT.pdf"
+                target="_blank">PL 140</a>, however, is based on the later 1868 edition, which
+                provides an even less reliable text.</p> <h3 class="mt-4">Literature</h3> <ul>
+                <li><bibl copyOf="XNH7797P">GRETA AUSTIN, Shaping Church Law Around the Year 1000.
+                The Decretum of Burchard of Worms (Church, Faith and Culture in the Medieval West),
+                Farnham, Surrey 2009.</bibl></li> <li><bibl copyOf="5PSR4RZD">PAUL FOURNIER, Études
+                critiques sur le Décret de Burchard de Worms, in: Nouvelle revue historique de droit
+                français et étranger 34 (1910) 41-112, 213-221, 289-331, 564-584.</bibl> </li>
+                <li><bibl copyOf="MSJUYX97">PAUL FOURNIER, Le décret de Burchard de Worms. Ses
+                caractères, son influence, in: Revue d’histoire écclesiastique 12 (1911)
+                451-473.670-701.</bibl></li> <li><bibl copyOf="XSGJ8UKX">GÉRARD FRANSEN, Les sources
+                de la Préface du Décret de Burchard de Worms, in: Bulletin of Medieval Canon Law NS
+                3 (1973) 1-6.</bibl></li> <li><bibl copyOf="ZDJUJTQG">GÉRARD FRANSEN, Le Décret de
+                Burchard de Worms. Valeur du texte de l’édition. Essai de classement des manuscrits,
+                in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte. Kanonistische Abteilung
+                63 (1977) 1-19.</bibl></li> <li><bibl copyOf="6T6XXQ9K">GÉRARD FRANSEN, Le Décret de
+                Burchard, in: GÉRARD FRANSEN/THEO KÖLZER (Hrsg.), Decretorum Libri XX. Ergänzter
+                Neudruck der Editio princeps Köln 1548, Aalen 1992, 25-42.</bibl> </li> <li><bibl
+                copyOf="4BRRNT9V">WILFRIED HARTMANN (Hrsg.), Bischof Burchard von Worms, 1000-1025
+                (Quellen und Abhandlungen zur mittelrheinischen Kirchengeschichte 100), Mainz
+                2000.</bibl></li> <li><bibl copyOf="X25FUV2K">HARTMUT HOFFMANN/RUDOLF POKORNY, Das
+                Dekret des Bischofs Burchard von Worms. Textstufen – Frühe Verbreitung – Vorlagen
+                (MGH Hilfsmittel 12), München 1991.</bibl></li> <li><bibl copyOf="232X7IIZ">MAX
+                KERNER, Studien zum Dekret des Bischofs Burchard von Worms, Aachen (Diss. masch.)
+                1969.</bibl></li> <li><bibl copyOf="X8XP3M7L">MAX KERNER/FRANZ KERFF/RUDOLF
+                POKORNY/KARL GEORG SCHON/HUBERT TILLS, Textidentifikation und Provenienzanalyse im
+                Decretum Burchardi, in: Mélanges G. Fransen, Bd. 2 (Studia Gratiana 20), Rom 1976,
+                17-63.</bibl></li> <li><bibl copyOf="C88VDMAC">LOTTE KÉRY, Canonical Collections of
+                the Early Middle Ages, ca. 400-1140: A Biographical Guide to the Manuscripts and
+                Literature (History of Medieval Canon Law), Washington, D.C. 1999.</bibl></li>
+                <li><bibl copyOf="3R6Q3Z9R">BIRGIT KYNAST, Tradition und Innovation im kirchlichen
+                Recht. Das Bußbuch im Dekret des Bischofs Burchard von Worms (Quellen und
+                Forschungen zum Recht im Mittelalter 10), Ostfildern 2020.</bibl></li> <li><bibl
+                copyOf="SZJD6F72">OTTO MEYER, Überlieferung und Verbreitung des Dekrets des Bischofs
+                Burchard von Worms, in: Zeitschrift der Savigny-Stiftung für Rechtsgeschichte.
+                Kanonistische Abteilung 24 (1935) 141-183.</bibl></li> <li><bibl copyOf="NRS4ZX63"
+                >ÉMILE VAN BALBERGHE: Les éditions du Décret de Burchard de Worms. Avatars d’un
+                texte, in: Recherches de théologie ancienne et médiévale 37 (1970) 5-22.</bibl></li>
+                </ul> </p>
+        </span>
     </div>
 
-   
+
 </form>
