@@ -46,6 +46,7 @@
             <h1 class="section-main-title"><span lang="de">DIE <i>DECRETORUM LIBRI VIGINTI</i> DES BURCHARD VON WORMS</span><span lang="en">THE <i>DECRETORUM LIBRI VIGINTI</i> OF BURCHARD OF WORMS</span></h1>
             
             <div class="container" id="decretorum"></div>
+            <div class="container" id="literature"></div>
         </div>
 
         <div id="footer-placeholder"></div>
@@ -89,35 +90,39 @@
 
 <script>
     $(document).ready(function() {
-        // Function to load XML file
-        function loadXMLDoc(filename) {
+        // Function to load HTML file
+        function loadHTMLDoc(filename) {
             $.ajax({
                 type: "GET",
                 url: filename,
-                dataType: "xml",
-                success: function(xml) {
-                    displayXMLContent(xml);
+                dataType: "html",
+                success: function(html) {
+                    displayHTMLContent(html);
                 },
                 error: function(xhr, status, error) {
                     console.error("Error loading XML file:", error);
                 }
             });
         }
-    
-        // Function to display XML content in HTML
-        function displayXMLContent(xmlDoc) {
-            $("#decretorum").html($(xmlDoc).find('[id="decretorum"]').html());
-            $("#literature").html($(xmlDoc).find('[id="literature"]').html());
+
+
+        function displayHTMLContent(htmlDoc) {
+            let contentDiv = document.createElement('div');
+            contentDiv.innerHTML = htmlDoc;
+            let contentDecretorum = $(contentDiv).find("#decretorum")
+            $("#decretorum").html(contentDecretorum);
+            let contentLiterature = $(contentDiv).find("#literature")
+            $("#literature").html(contentLiterature);
             
-            checkLanguage()
-
-            biblLink(); // Call the biblLink function here
-        }
+                checkLanguage()
+                biblLink(); // Call the biblLink function here
+            }
     
-        // Load XML file
-        loadXMLDoc("../data/texts/decretorumTexts.xml"); // Adjust the path here
-
         
+    
+        // Load HTML file
+        loadHTMLDoc("../data/texts/decretorumTexts.html"); // Adjust the path here
+
 
         function biblLink() {
             var liElements = document.querySelectorAll('ul li');
@@ -138,9 +143,6 @@
                 }
             });
         }
-
-        
-
     });
     </script> 
     

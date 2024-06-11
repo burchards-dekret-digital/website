@@ -114,9 +114,7 @@
                         <span lang="en">See in Mirador</span>
                     </td>
                     <td class="legendFont">
-                        <button class="icon-chapter-mirador">
-                            <i class="fa-solid fa-eye"/>
-                        </button>
+                        <i class="fa-solid fa-eye"/>
                     </td>
                 </tr>
 
@@ -162,15 +160,15 @@
                         <span lang="en">Displaced element</span>
                     </td>
                     <td class="legendFont">
-                        <span class="tei_seg_displaced"><span class="tei_g"></span>initium non
-                            soluatur<span class="tei_g"></span></span>
+                        <span class="tei_seg_displaced">initium non
+                            soluatur</span>
                     </td>
                 </tr>
                 <tr>
                     <td>Supplied</td>
                     <td class="legendFont">
                         <span class="tei_supplied" id="bamberg-sb-c-6-13-supp-001">[initium non
-                            soluatur<span class="tei_g"></span>]</span>
+                            soluatur]</span>
                     </td>
                 </tr>
                 <tr>
@@ -179,8 +177,7 @@
                         <span lang="en">Inscription</span>
                     </td>
                     <td class="legendFont">
-                        <span class="tei_note-inscription">Ex epistola gregorii papae<span
-                            class="tei_g"></span></span>
+                        <span class="tei_note-inscription">Ex epistola gregorii papae</span>
                     </td>
                 </tr>
                 <tr>
@@ -207,10 +204,9 @@
                         <span lang="en">Substitution</span>
                     </td>
                     <td class="legendFont">
-                        <span class="tei_expan">contemp<br class="tei_lb nobreak"
-                            style="display:none"/><span class="tei_subst"><span class="tei_add"
+                        <span class="tei_expan">contemp<span class="tei_subst"><span class="tei_add"
                             >serint</span></span></span>
-                        <span class="tei_g"></span>
+                        
                     </td>
                 </tr>
                 <tr>

@@ -2,7 +2,7 @@
 <form>
     <title>Datenschutz und Imprint Texte</title>
 
-    <div id="dataprivacy" class="block">
+    <div id="imprintDataprivacy" class="block">
         <span lang="de">
             <h3 class="mt-4">Urheberrecht</h3>
             <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber-
@@ -52,7 +52,27 @@
                 (Seitenstruktur, graphische Darstellung, Anordnung der Navigation), so könnte dies
                 daran liegen, dass Sie einen älteren Browser benutzen, der die heute gängigen
                 Techniken nicht oder nur fehlerhaft interpretieren kann.</p>
+
+            <h1 class="mt-5">Kontakte des Akademieprojektes</h1>
+            <h3 class="mt-4">Arbeitsstelle Erlangen</h3>
+            <p>Prof. Dr. Klaus Herbers<br/> Lehrstuhl für Mittelalterliche Geschichte<br/> Senior
+                Professor<br/> Friedrich-Alexander-Universität Erlangen-Nürnberg<br/> Postadresse:
+                Kochstraße 4 BK 9<br/> 91054 Erlangen<br/> </p>
+
+            <h3 class="mt-4">Arbeitsstelle Kassel</h3>
+            <p>Prof. Dr. Ingrid Baumgärtner<br/> FB 05: Gesellschaftswissenschaften<br/>
+                Seniorprofessur für Mittelalterliche Geschichte<br/> Universität Kassel Postadresse:
+                Nora-Platiel-Straße 1<br/> 34109 Kassel<br/> Tel.: <a href="tel:+49 561 804 3104"
+                >+49 561 804 3104</a> </p>
+
+            <h3 class="mt-4">Arbeitsstelle Mainz</h3>
+            <p>Prof. Dr. Ludger Körntgen<br/> Historisches Seminar<br/> Mittelalterliche
+                Geschichte<br/> Johannes Gutenberg-Universität Mainz Jakob-Welder-Weg 18<br/> 55128
+                Mainz<br/> Tel. (Corinna Axt, Sekretariat): <a href="tel:+49 6131 / 39 2 27 75">+ 49
+                6131 / 39 2 27 75</a><br/> Fax: <a href="fax:+49 6131 / 39 2 54 80">+49 6131 / 39 2
+                54 80</a> </p>
         </span>
+
         <span lang="en">
             <h3 class="mt-4">Copyright</h3>
             <p>The content published on this website is subject to German copyright and ancillary
@@ -100,33 +120,7 @@
                 Consortium</a>. If you have problems viewing the pages (page structure, graphical
                 display, navigation layout), this may be due to the fact that you are using an older
                 browser that cannot correctly interpret current technologies.</p>
-        </span>
-    </div>
 
-    <div id="imprint" class="block">
-        <span lang="de">
-            <h1 class="mt-5">Kontakte des Akademieprojektes</h1>
-            <h3 class="mt-4">Arbeitsstelle Erlangen</h3>
-            <p>Prof. Dr. Klaus Herbers<br/> Lehrstuhl für Mittelalterliche Geschichte<br/> Senior
-                Professor<br/> Friedrich-Alexander-Universität Erlangen-Nürnberg<br/> Postadresse:
-                Kochstraße 4 BK 9<br/> 91054 Erlangen<br/> </p>
-
-            <h3 class="mt-4">Arbeitsstelle Kassel</h3>
-            <p>Prof. Dr. Ingrid Baumgärtner<br/> FB 05: Gesellschaftswissenschaften<br/>
-                Seniorprofessur für Mittelalterliche Geschichte<br/> Universität Kassel Postadresse:
-                Nora-Platiel-Straße 1<br/> 34109 Kassel<br/> Tel.: <a href="tel:+49 561 804 3104"
-                >+49 561 804 3104</a> </p>
-
-            <h3 class="mt-4">Arbeitsstelle Mainz</h3>
-            <p>Prof. Dr. Ludger Körntgen<br/> Historisches Seminar<br/> Mittelalterliche
-                Geschichte<br/> Johannes Gutenberg-Universität Mainz Jakob-Welder-Weg 18<br/> 55128
-                Mainz<br/> Tel. (Corinna Axt, Sekretariat): <a href="tel:+49 6131 / 39 2 27 75">+ 49
-                6131 / 39 2 27 75</a><br/> Fax: <a href="fax:+49 6131 / 39 2 54 80">+49 6131 / 39 2
-                54 80</a> </p>
-        </span>
-
-
-        <span lang="en">
             <h1 class="mt-5">Contacts of the Academy project</h1>
             <h3 class="mt-4">Erlangen office</h3>
             <p>Prof. Dr. Klaus Herbers<br/> Lehrstuhl für Mittelalterliche Geschichte<br/> Senior
@@ -145,6 +139,6 @@
                 Mainz<br/> Tel. (Corinna Axt, Sekretariat): <a href="tel:+49 6131 / 39 2 27 75">+ 49
                 6131 / 39 2 27 75</a><br/> Fax: <a href="fax:+49 6131 / 39 2 54 80">+49 6131 / 39 2
                 54 80</a> </p>
-        </span>
+        </span>     
     </div>
 </form>

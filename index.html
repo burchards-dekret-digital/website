@@ -131,22 +131,8 @@
                     <div id="description"></div>
                 </div>
             
-                <!--<div class="parallax-three"></div>
-                <div class="container container-index" id="material"></div>-->
-            
                 <div class="parallax-three"></div>
                 <div class="container container-index" id="summaryTable"></div>
-
-                <!--<div class="parallax-three"></div>
-                <div class="container container-index" id="news">
-                    <div class="container">
-                        <h1><span lang="de">Aktuelles</span><span lang="en">News</span></h1>
-                        <div id="news-container" class="row">
-                        </div>
-                        <div id="pagination-container" class="d-flex justify-content-center">
-                        </div>
-                    </div>
-                </div>-->
             
                 <div class="parallax-four"></div>
         </div>
@@ -206,126 +192,39 @@
 
 <script>
     $(document).ready(function() {
-        // Function to load XML file
-        function loadXMLDoc(filename) {
+        // Function to load HTML file
+        function loadHTMLDoc(filename) {
             $.ajax({
                 type: "GET",
                 url: filename,
-                dataType: "xml",
-                success: function(xml) {
-                    displayXMLContent(xml);
+                dataType: "html",
+                success: function(html) {
+                    displayHTMLContent(html);
                 },
                 error: function(xhr, status, error) {
                     console.error("Error loading XML file:", error);
                 }
             });
         }
+
+        function displayHTMLContent(htmlDoc) {
+            let contentDiv = document.createElement('div');
+            contentDiv.innerHTML = htmlDoc;
+            let contentIntro = $(contentDiv).find("#introduction")
+            $("#introduction").html(contentIntro);
+            let contentDesc = $(contentDiv).find("#description")
+            $("#description").html(contentDesc);
+            let contentTable = $(contentDiv).find("#summaryTable")
+            $("#summaryTable").html(contentTable);
+                checkLanguage()
+            }
     
-        // Function to display XML content in HTML
-        function displayXMLContent(xmlDoc) {
-            $("#introduction").html($(xmlDoc).find('[id="introduction"]').html());
-            $("#book-image").html($(xmlDoc).find('[id="book-image"]').html());
-            $("#description").html($(xmlDoc).find('[id="description"]').html());
-            $("#material").html($(xmlDoc).find('[id="material"]').html());
-            $("#summaryTable").html($(xmlDoc).find('[id="summaryTable"]').html());
-            checkLanguage()
-        }
-    
-        // Load XML file
-        loadXMLDoc("data/texts/homeTexts.xml"); // Adjust the path here
+        // Load HTML file
+        loadHTMLDoc("data/texts/homeTexts.html"); // Adjust the path here
     });
     </script>
 
 
-<!--<script>
-    // Function to fetch news data from external HTML file
-    function fetchNews() {
-      return fetch('data/texts/newsText.html')
-        .then(response => response.text())
-        .then(data => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(data, 'text/html');
-          return Array.from(htmlDoc.querySelectorAll('.news-item')).map(item => {
-            return {
-              title: item.querySelector('.title').textContent,
-              content: item.querySelector('.content').innerHTML
-            };
-          });
-        });
-    }
-
-    // Function to create Bootstrap cards
-    function createCard(title, content) {
-      return `
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">${title}</h3>
-              <p class="card-text">${content}</p>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // Function to display news cards
-    function displayNews(news) {
-      const newsContainer = document.getElementById('news-container');
-      newsContainer.innerHTML = '';
-      news.forEach(({ title, content }) => {
-        newsContainer.innerHTML += createCard(title, content);
-      });
-    }
-
-    // Function to display pagination
-    function displayPagination(totalPages) {
-      const paginationContainer = document.getElementById('pagination-container');
-      paginationContainer.innerHTML = '';
-      for (let i = 1; i <= totalPages; i++) {
-        paginationContainer.innerHTML += `
-          <button class="btn btn-outline-primary mx-1 pagination-btn" data-page="${i}">${i}</button>
-        `;
-      }
-      const paginationButtons = document.querySelectorAll('.pagination-btn');
-      paginationButtons.forEach(btn => {
-        btn.addEventListener('click', () => changePage(parseInt(btn.getAttribute('data-page'))));
-      });
-      highlightCurrentPage(currentPage);
-    }
-
-    // Function to highlight current page
-    function highlightCurrentPage(pageNumber) {
-      const paginationButtons = document.querySelectorAll('.pagination-btn');
-      paginationButtons.forEach(btn => {
-        if (parseInt(btn.getAttribute('data-page')) === pageNumber) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-    }
-
-    // Function to handle page change
-    function changePage(pageNumber) {
-      currentPage = pageNumber;
-      displayNews(news.slice((currentPage - 1) * pageSize, currentPage * pageSize));
-      highlightCurrentPage(currentPage);
-    }
-
-    const pageSize = 3; // Number of news items per page
-    let news = []; // Array to store fetched news data
-    let currentPage = 1; // Current page
-
-    // Initialization
-    fetchNews()
-      .then(data => {
-        news = data;
-        const totalPages = Math.ceil(news.length / pageSize);
-        displayNews(news.slice(0, pageSize)); // Display first page
-        displayPagination(totalPages);
-      })
-      .catch(error => console.error('Error fetching news:', error));
-  </script>-->
 
 
   <script>

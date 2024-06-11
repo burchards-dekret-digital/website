@@ -38,8 +38,8 @@
         <div id="content" class="container" style="flex:1">
             <h1 class="section-main-title"><span lang="de">IMPRESSUM UND DATENSCHUTZHINWEISE</span><span lang="en">IMPRINT AND DATA PRIVACY</span></h1>
             
-            <div id="dataprivacy"></div>
-            <div id="imprint"></div>
+            <div id="imprintDataprivacy"></div>
+            
             
         </div>
 
@@ -101,8 +101,8 @@
     
         // Function to display XML content in HTML
         function displayXMLContent(xmlDoc) {
-            $("#dataprivacy").html($(xmlDoc).find('[id="dataprivacy"]').html());
-            $("#imprint").html($(xmlDoc).find('[id="imprint"]').html());
+            $("#imprintDataprivacy").html($(xmlDoc).find('[id="imprintDataprivacy"]').html());
+            
             checkLanguage()
         }
     
