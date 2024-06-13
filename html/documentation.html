@@ -38,7 +38,7 @@
 
             <h1 class="section-main-title"><span lang="de">DOKUMENTATION</span><span lang="en">DOCUMENTATION</span></h1>
             
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button" role="tab" aria-controls="technical" aria-selected="true"><span lang="de">Technische Dokumentation</span><span lang="en">Technical documentation</span></button>
                 </li>
@@ -114,52 +114,46 @@
 
 <script>
     $(document).ready(function() {
-        //load XML file
-        function loadXMLDoc(filename) {
-            $.ajax({
-                type: "GET",
-                url: filename,
-                dataType: "xml",
-                success: function(xml) {
-                    displayXMLContent(xml);
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error loading XML file:", error);
-                }
-            });
-        }
-        function displayXMLContent(xmlDoc) {
-            $("#technicalDoc").html($(xmlDoc).find('[id="technicalDoc"]').html());
-            $("#teiHandschriftenDBDoc").html($(xmlDoc).find('[id="teiHandschriftenDBDoc"]').html());
-            $("#teiEditionDoc").html($(xmlDoc).find('[id="teiEditionDoc"]').html());
-            $("#webEditionDoc").html($(xmlDoc).find('[id="webEditionDoc"]').html());
-            checkLanguage()
-        }
-        loadXMLDoc("../data/texts/documentationTexts.xml"); // Adjust the path here
-    
-
-        //Retrieve HTML file for texts
-        function loadHTML(filename) {
+       
+        // Retrieve HTML file for texts
+        function loadHTML(filename, callback) {
             $.ajax({
                 url: filename,
                 type: 'GET',
                 dataType: 'html',
                 success: function(html) {
-                    displayHTMLContent(html);
+                    callback(html);
                 },
                 error: function(xhr, status, error) {
-                    console.error('Error loading XML file:', error);
+                    console.error('Error loading HTML file:', error, 'Status:', status, 'XHR:', xhr);
                 }
-            })
+            });
         }
-        function displayHTMLContent(htmlDoc) {
+        // Display content from documentationTexts.html
+        function displayDocumentationContent(htmlDoc) {
             let contentDiv = document.createElement('div');
             contentDiv.innerHTML = htmlDoc;
-            let content = $(contentDiv).find("#teiTranskriptionDoc")
-            $("#teiTranskriptionDoc").html(content);
-                checkLanguage()
-            }
-        loadHTML('../data/texts/docTeiTrascription.html');     
+            let contentTechDoc = $(contentDiv).find("#technicalDoc").html();
+            $("#technicalDoc").html(contentTechDoc);
+            let contentDBDoc = $(contentDiv).find("#teiHandschriftenDBDoc").html();
+            $("#teiHandschriftenDBDoc").html(contentDBDoc);
+            let contentWebEdDoc = $(contentDiv).find("#webEditionDoc").html();
+            $("#webEditionDoc").html(contentWebEdDoc);
+            checkLanguage();
+        }
+
+        // Display content from docTeiTrascription.html
+        function displayTranscriptionContent(htmlDoc) {
+            let contentDiv = document.createElement('div');
+            contentDiv.innerHTML = htmlDoc;
+            let contentTransDoc = $(contentDiv).find("#teiTranskriptionDoc").html();
+            $("#teiTranskriptionDoc").html(contentTransDoc);
+            checkLanguage();
+        }
+
+        // Load both HTML files and display their content
+        loadHTML('../data/texts/documentationTexts.html', displayDocumentationContent);
+        loadHTML('../data/texts/docTeiTrascription.html', displayTranscriptionContent); 
     });
     </script>
 

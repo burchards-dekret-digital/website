@@ -37,10 +37,7 @@
 
         <div id="content" class="container" style="flex:1">
             <h1 class="section-main-title"><span lang="de">IMPRESSUM UND DATENSCHUTZHINWEISE</span><span lang="en">IMPRINT AND DATA PRIVACY</span></h1>
-            
-            <div id="imprintDataprivacy"></div>
-            
-            
+            <div id="imprint"></div>
         </div>
 
         <div id="footer-placeholder"></div>
@@ -84,14 +81,14 @@
 
 <script>
     $(document).ready(function() {
-        // Function to load XML file
-        function loadXMLDoc(filename) {
+        // Function to load HTML file
+        function loadHTMLDoc(filename) {
             $.ajax({
                 type: "GET",
                 url: filename,
-                dataType: "xml",
-                success: function(xml) {
-                    displayXMLContent(xml);
+                dataType: "html",
+                success: function(html) {
+                    displayHTMLContent(html);
                 },
                 error: function(xhr, status, error) {
                     console.error("Error loading XML file:", error);
@@ -99,15 +96,18 @@
             });
         }
     
-        // Function to display XML content in HTML
-        function displayXMLContent(xmlDoc) {
-            $("#imprintDataprivacy").html($(xmlDoc).find('[id="imprintDataprivacy"]').html());
+        // Function to display HTML content       
+        function displayHTMLContent(htmlDoc) {
+            let contentDiv = document.createElement('div');
+            contentDiv.innerHTML = htmlDoc;
+            let contentImprint = $(contentDiv).find("#imprint")
+            $("#imprint").html(contentImprint);
             
-            checkLanguage()
-        }
+                checkLanguage()
+            }
     
-        // Load XML file
-        loadXMLDoc("../data/texts/imprintDataprivacyTexts.xml"); // Adjust the path here
+        // Load HTML file
+        loadHTMLDoc("../data/texts/imprintTexts.html"); // Adjust the path here
     });
     </script>   
 </html>
