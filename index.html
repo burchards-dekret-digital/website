@@ -221,80 +221,76 @@
     
         // Load HTML file
         loadHTMLDoc("data/texts/homeTexts.html"); // Adjust the path here
-    });
-    </script>
-
-
-
-
-  <script>
-    // Function to fetch news data from external HTML file
-    function fetchNews() {
-        return fetch('data/texts/newsText.html')
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const htmlDoc = parser.parseFromString(data, 'text/html');
-                return Array.from(htmlDoc.querySelectorAll('.news-item')).map(item => {
-                    return {
-                        title: item.querySelector('.title').textContent,
-                        date: item.querySelector('.date').textContent,
-                        content: item.querySelector('.content').innerHTML
-                    };
+   
+        // Function to fetch news data from external HTML file
+        function fetchNews() {
+            return fetch('data/texts/newsText.html')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(data, 'text/html');
+                    return Array.from(htmlDoc.querySelectorAll('.news-item')).map(item => {
+                        return {
+                            title: item.querySelector('.title').innerHTML,
+                            date: item.querySelector('.date').innerHTML,
+                            content: item.querySelector('.content').innerHTML
+                        };
+                    });
                 });
-            });
-    }
+        }
 
-    // Function to create Bootstrap card
-    function createCard(title, date, content) {
-        return `
-            <div class="col-md-12 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">${title}</h3>
-                        <h6 class="card-date">${date}</h6>
-                        <p class="card-text">${content}</p>
+        // Function to create Bootstrap card
+        function createCard(title, date, content) {
+            return `
+                <div class="col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">${title}</h3>
+                            <h6 class="card-date">${date}</h6>
+                            <p class="card-text">${content}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-    }
-
-    // Function to display news card
-    function displayNews(newsItem) {
-        const newsContainer = document.getElementById('news-container');
-        newsContainer.innerHTML = createCard(newsItem.title, newsItem.date, newsItem.content);
-    }
-
-    let news = []; // Array to store fetched news data
-    let currentNewsIndex = 0; // Current news index
-
-    // Function to handle next news
-    function nextNews() {
-        currentNewsIndex = (currentNewsIndex + 1) % news.length;
-        displayNews(news[currentNewsIndex]);
-    }
-
-    // Function to handle previous news
-    function prevNews() {
-        currentNewsIndex = (currentNewsIndex - 1 + news.length) % news.length;
-        displayNews(news[currentNewsIndex]);
-    }
-
-    // Initialization
-    fetchNews()
-        .then(data => {
-            news = data;
-            displayNews(news[currentNewsIndex]); // Display first news
-            // Add arrow buttons
-            const paginationContainer = document.getElementById('pagination-container');
-            paginationContainer.innerHTML = `
-                <button class="btn btn-outline-primary mx-1" onclick="prevNews()">&#8592;</button>
-                <button class="btn btn-outline-primary mx-1" onclick="nextNews()">&#8594;</button>
             `;
-        })
-        .catch(error => console.error('Error fetching news:', error));
-</script>
+        }
+
+        // Function to display news card
+        function displayNews(newsItem) {
+            const newsContainer = document.getElementById('news-container');
+            newsContainer.innerHTML = createCard(newsItem.title, newsItem.date, newsItem.content);
+        }
+
+        let news = []; // Array to store fetched news data
+        let currentNewsIndex = 0; // Current news index
+
+        // Function to handle next news
+        function nextNews() {
+            currentNewsIndex = (currentNewsIndex + 1) % news.length;
+            displayNews(news[currentNewsIndex]);
+        }
+
+        // Function to handle previous news
+        function prevNews() {
+            currentNewsIndex = (currentNewsIndex - 1 + news.length) % news.length;
+            displayNews(news[currentNewsIndex]);
+        }
+
+        // Initialization
+        fetchNews()
+            .then(data => {
+                news = data;
+                displayNews(news[currentNewsIndex]); // Display first news
+                // Add arrow buttons
+                const paginationContainer = document.getElementById('pagination-container');
+                paginationContainer.innerHTML = `
+                    <button class="btn btn-outline-primary mx-1" onclick="prevNews()">&#8592;</button>
+                    <button class="btn btn-outline-primary mx-1" onclick="nextNews()">&#8594;</button>
+                `;
+                checkLanguage()
+            })
+            .catch(error => console.error('Error fetching news:', error));
+        });
+        </script>
   
     </body>
 </html>
