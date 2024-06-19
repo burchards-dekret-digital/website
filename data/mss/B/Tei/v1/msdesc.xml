@@ -153,11 +153,14 @@ Die Synode von Seligenstadt dürfte ursprünglich am Ende des Codex gestanden ha
                             </bibl> <bibl type="iiif-manifest"> <title xml:lang="ger">iiif-Manifest</title>
                             <ref>https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/manifest</ref>
                             </bibl> <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
-                            <ref>http://www.manuscripta-mediaevalia.de/dokumente/html/obj90254108,T</ref>
+                            <ref>http://digital.bib-bvb.de/view/bvb_mets/viewer.0.6.5.jsp?folder_id=0&amp;dvs=1718788261097~886&amp;pid=7091635&amp;locale=de&amp;usePid1=true&amp;usePid2=true</ref>
                             </bibl> <bibl type="xml"> <title xml:lang="ger">XML-Datei</title>
                             <idno>bamberg-sb-c-6</idno> </bibl> </surrogates>
                             <listBibl>
                                 <listBibl type="catalogue">
+                                <bibl copyOf="7E2QQZ7K">Suckale-Redlefsen: Die Handschriften des 8.
+                                    bis 11. Jahrhunderts der Staatsbibliothek Bamberg. Wiesbaden
+                                    2004<citedRange/>.</bibl>
                                 <bibl copyOf="S4SDIXUE">Leitschuh/Fischer: Katalog der Handschriften
                                     der Königlichen Bibliothek zu Bamberg. Wiesbaden
                                     1966<citedRange>862–863</citedRange></bibl>

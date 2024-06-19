@@ -126,7 +126,11 @@
                             </bibl>
                         </surrogates>
                         <listBibl>
-                            <listBibl type="catalogue"/>
+                            <listBibl type="catalogue">
+                                <bibl copyOf="GEWTCUA4">Stevenson: Codices Palatini Latini
+                                    Bibliothecae Vaticanae. Rom
+                                    1886<citedRange>197</citedRange>.</bibl>
+                            </listBibl>
                             <listBibl type="secondary-literature">
                                 <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs
                                     Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.

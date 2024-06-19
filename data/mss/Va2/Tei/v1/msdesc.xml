@@ -153,7 +153,11 @@
                             </bibl>
                         </surrogates> 
                         <listBibl>
-                            <listBibl type="catalogue"/>
+                            <listBibl type="catalogue">
+                                <bibl copyOf="GEWTCUA4">Stevenson: Codices Palatini Latini
+                                    Bibliothecae Vaticanae. Rom
+                                    1886<citedRange>197</citedRange>.</bibl>
+                            </listBibl>
                             <listBibl type="secondary-literature">
                                 <bibl copyOf="8B2KAU8F">Migne: Synodus.
                                     <citedRange>1061-1066</citedRange>.</bibl>
