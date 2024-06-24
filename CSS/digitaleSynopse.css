@@ -330,7 +330,10 @@ ol li{
     color: #000;
 }
 
-
+.tei_delSpan {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
 
 .tei_delSpan-written-on-erased {
     text-decoration: underline;

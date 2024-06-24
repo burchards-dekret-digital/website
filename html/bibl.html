@@ -7,33 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="google" content="notranslate"/>
         
-        <!--Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+        <script src="../js/bootstrap.bundle.min.js"></script>
         
-        <!-- // External fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
-        
-        <!-- // === Javascripts === -->
-        <!-- // jquery -->
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        
-        <!-- // CSS -->
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
         
         <!--Fontawesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
         <script src="../js/language.js" defer></script>
-
-        <style>
-          .sort-arrow {
-            color: #ccc;
-          }
-        </style>
+        <script src="../js/navigation.js" defer></script>
     </head>
     <body>
         <div id="navbar-placeholder"></div>
@@ -54,13 +38,8 @@
                     <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                     <th scope="col" onclick="sortTable(3)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                     <th scope="col" onclick="sortTable(4)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                   <!--<th scope="col">Edition</th>-->
                     <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                     <th scope="col" onclick="sortTable(6)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <!--<th scope="col">Publisher</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Note</th>
-                    <th scope="col" style="width: 50%;">Page range</th>-->
                     <th scope="col" onclick="sortTable(7)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                   </tr>
                   <tr>
@@ -91,38 +70,6 @@
         
     </body>
 
-    <!--Navbar, Footer, Back button-->
-    <script>
-        $(function() {
-            function setActiveNavItem() {
-                var path = window.location.pathname; 
-                var currentPage = path.split("/").pop();
-                $(".nav-item a").removeClass("active");
-                
-                $(".nav-item a").each(function() {
-                    var href = $(this).attr("href");
-                    if (href && currentPage === href.split("/").pop()) {
-                        $(this).addClass("active");
-                    }
-                });
-            }
-  
-            $("#navbar-placeholder").load("navbar.html", function() {
-                setActiveNavItem();
-                checkLanguage();
-            });
-        });
-      
-        $(function(){
-            $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
-        });
-      
-    //back button
-        $(".hBack").on("click", function(e){
-            e.preventDefault();
-            window.history.back();
-        });
-    </script>
 
 
 <script>
@@ -213,8 +160,7 @@
                       }
                   });
               var monogr = $(this).find("monogr");
-              //inValue = $(this).find("monogr > title").text() + ", Band " + $(monogr).find("biblScope[unit='volume']").text() + ", Seiten " + $(monogr).find("biblScope[unit='page']").text();
-
+              
               //Display Band and/or Seiten only if present
               var volume = $(monogr).find("biblScope[unit='volume']").text();
               var page = $(monogr).find("biblScope[unit='page']").text();
@@ -224,22 +170,10 @@
             }
 
             id = $(this).attr("xml:id");
-           // edition = $(this).find("edition").text();
             year = $(this).find("imprint > date").text();
             pubPlace = $(this).find("imprint > pubPlace").text();
-           // publisher = $(this).find("imprint > publisher").text();
-           // id = $(this).find("monogr > idno").attr("type") + ": " + $(this).find("monogr > idno").text();
-           // note = $(this).find("imprint > note").text();
-            
-           
-           //biblScope = $(this).find("imprint > biblScope").attr("unit") + ": " + $(this).find("imprint > biblScope").text();
-
-            /*var biblScopeUnit = $(this).find("imprint > biblScope").attr("unit");
-            var biblScopeValue = $(this).find("imprint > biblScope").text();
-            biblScope = biblScopeUnit === "page" ? biblScopeValue : "";*/
-
             series = $(this).find("series > title").text() 
-            //+ " - " + $(this).find("series > biblScope").text(); //To add  the volume number
+            
 
 
         //Create table rows
@@ -249,13 +183,8 @@
             tableRows += "<td>" + editorNames.join(", ") + "</td>";
             tableRows += "<td>" + title + "</td>"; 
             tableRows += "<td>" + inValue + "</td>";
-           // tableRows += "<td>" + edition + "</td>";
             tableRows += "<td>" + year + "</td>";
             tableRows += "<td>" + pubPlace + "</td>";
-           // tableRows += "<td>" + publisher + "</td>";
-           // tableRows += "<td>" + id + "</td>";
-           // tableRows += "<td>" + note + "</td>";
-          //tableRows += "<td>" + biblScope + "</td>";
             tableRows += "<td>" + series + "</td>";
             tableRows += "</tr>";
           });
@@ -338,71 +267,68 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const table = document.getElementById("literatureTable");
-  const headers = table.querySelectorAll("th");
-  let sortOrder = {};  // Object to keep track of sort order for each column
+  document.addEventListener("DOMContentLoaded", function () {
+    const table = document.getElementById("literatureTable");
+    const headers = table.querySelectorAll("th");
+    let sortOrder = {};  // Object to keep track of sort order for each column
 
-  headers.forEach((header, index) => {
-    if (index > 0) {  // Avoid sorting by the first column which is 'Type'
-      header.addEventListener("click", () => {
-        sortTable(index);
+    headers.forEach((header, index) => {
+      if (index > 0) {  // Avoid sorting by the first column which is 'Type'
+        header.addEventListener("click", () => {
+          sortTable(index);
+        });
+      }
+    });
+
+    function sortTable(columnIndex) {
+      const tbody = table.querySelector("tbody");
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const isYearColumn = columnIndex === 5;
+      const isQuoteSensitiveColumn = columnIndex === 3 || columnIndex === 4; // Titel and In columns
+      let sortDirection = sortOrder[columnIndex] === "asc" ? "desc" : "asc";
+      sortOrder[columnIndex] = sortDirection;
+
+      rows.sort((rowA, rowB) => {
+        let cellA = rowA.children[columnIndex].innerText.trim();
+        let cellB = rowB.children[columnIndex].innerText.trim();
+
+        if (isQuoteSensitiveColumn) {
+          cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+          cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+        }
+
+        if (cellA === "" || cellB === "") {
+          return cellA === "" ? 1 : -1;
+        }
+
+        if (isYearColumn) {
+          return sortDirection === "asc" ? cellA - cellB : cellB - cellA;
+        } else {
+          return sortDirection === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        }
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+
+      // Update arrow icons
+      updateArrowIcons(columnIndex, sortDirection);
+    }
+
+    function updateArrowIcons(columnIndex, sortDirection) {
+      headers.forEach((header, index) => {
+        const upArrow = header.querySelector(".fa-arrow-up");
+        const downArrow = header.querySelector(".fa-arrow-down");
+        if (upArrow && downArrow) {
+          if (index === columnIndex) {
+            upArrow.style.color = sortDirection === "asc" ? "black" : "#ccc";
+            downArrow.style.color = sortDirection === "desc" ? "black" : "#ccc";
+          } else {
+            upArrow.style.color = "#ccc";
+            downArrow.style.color = "#ccc";
+          }
+        }
       });
     }
   });
-
-  function sortTable(columnIndex) {
-    const tbody = table.querySelector("tbody");
-    const rows = Array.from(tbody.querySelectorAll("tr"));
-    const isYearColumn = columnIndex === 5;
-    const isQuoteSensitiveColumn = columnIndex === 3 || columnIndex === 4; // Titel and In columns
-    let sortDirection = sortOrder[columnIndex] === "asc" ? "desc" : "asc";
-    sortOrder[columnIndex] = sortDirection;
-
-    rows.sort((rowA, rowB) => {
-      let cellA = rowA.children[columnIndex].innerText.trim();
-      let cellB = rowB.children[columnIndex].innerText.trim();
-
-      if (isQuoteSensitiveColumn) {
-        cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
-        cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
-      }
-
-      if (cellA === "" || cellB === "") {
-        return cellA === "" ? 1 : -1;
-      }
-
-      if (isYearColumn) {
-        return sortDirection === "asc" ? cellA - cellB : cellB - cellA;
-      } else {
-        return sortDirection === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-      }
-    });
-
-    rows.forEach(row => tbody.appendChild(row));
-
-    // Update arrow icons
-    updateArrowIcons(columnIndex, sortDirection);
-  }
-
-  function updateArrowIcons(columnIndex, sortDirection) {
-    headers.forEach((header, index) => {
-      const upArrow = header.querySelector(".fa-arrow-up");
-      const downArrow = header.querySelector(".fa-arrow-down");
-      if (upArrow && downArrow) {
-        if (index === columnIndex) {
-          upArrow.style.color = sortDirection === "asc" ? "black" : "#ccc";
-          downArrow.style.color = sortDirection === "desc" ? "black" : "#ccc";
-        } else {
-          upArrow.style.color = "#ccc";
-          downArrow.style.color = "#ccc";
-        }
-      }
-    });
-  }
-});
-
 </script>
-
-
 </html>

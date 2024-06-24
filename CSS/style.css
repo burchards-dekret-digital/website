@@ -301,6 +301,14 @@ td.bdd-ed-rec::after{
 font-family: Andron-Scriptor-Web;
 }
 
+.sort-arrow {
+    color: #ccc;
+  }
+
+.fa-arrow-up-right-from-square {
+    margin-left: 5px;
+}
+
 /* INDEX CSS */
     .container-index h1 {
                 /*  font-family: Montserrat-ExtraBold; */
