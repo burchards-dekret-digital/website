@@ -94,7 +94,6 @@ function parseXml (xml) {
     name = name[0].innerHTML;
 
     var sigle = $(this).find('msName[type="sigle"]');
-    console.log(sigle)
     sigle = sigle[0].innerHTML;
 
     var origPlace = $(this).find("origPlace").text();

@@ -10,26 +10,18 @@
         <link href="../CSS/bootstrap.min.css" rel="stylesheet">
         <script src="../js/bootstrap.bundle.min.js"></script>
         
-        
-        
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        
-        <!-- // Leaflet-->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-        
-        <!-- // Leaflet subgroup Plugin -->
-        <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
-        
-        <!-- // Leaflet cluster Plugin -->
-        <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js" crossorigin=""></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" crossorigin=""/>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" crossorigin=""/>
+        <!--Leaflet-->
+        <link rel="stylesheet" href="../CSS/leaflet.css">
+        <script src="../js/leaflet.js"></script>
+        <script src="../js/leaflet.featuregroup.subgroup.js"></script>
+        <script src="../js/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" href="../CSS/MarkerCluster.css">
+        <link rel="stylesheet" href="../CSS/MarkerCluster.Default.css">       
          
-        <!--Fontawesome-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    
+        <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
         <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+        
+        <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/bdd_manuscriptdb.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/navigation.js" defer></script>
@@ -48,7 +40,6 @@
                 <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
             </h1>
 
-
             <!-- Modal Info-->
           <div class="modal fade" id="desktopModal" tabindex="-1" aria-labelledby="desktopModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-lg">
@@ -62,60 +53,53 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
-                  
                 </div>
               </div>
             </div>
-          </div>
-
-            
+          </div>           
         
-            <div class="mss-table table-responsive">
-                <table id="mss-table-1" style="width:100%" class="table table-hover">
-                    <!-- Table headers -->
-                    <thead>
-                      <tr>
-                        <th scope="col" class="heading" onclick="sortTable(0)">Signatur</th>
-                        <th scope="col" class="heading" onclick="sortTable(1)">Sigle</th>
-                        <th scope="col" class="heading" onclick="sortTable(2)">Entstehungsort</th>
-                        <th scope="col" class="heading" onclick="sortTable(3)">Entstehungszeit</th>
-                      </tr>
-                    </thead>
-                    <!-- Filter inputs -->
-                    <thead>
-                      <tr>
-                        <th class="mss-filter-table">
-                          <input type="text" class="mss-filter" id="mss-filter-1" onkeyup="filterMss('1')" placeholder="Eingabe für Filter"/>
-                        </th>
-                        <th class="mss-filter-table">
-                          <input type="text" class="mss-filter" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Eingabe für Filter"/>
-                        </th>
-                        <th class="mss-filter-table">
-                          <input type="text" class="mss-filter" id="mss-filter-3" onkeyup="filterMss('3')" placeholder="Eingabe für Filter"/>
-                        </th>
-                        <th class="mss-filter-table">
-                          <input type="text" class="mss-filter" id="mss-filter-4" onkeyup="filterMss('4')" placeholder="Eingabe für Filter"/>
-                        </th>
-                      </tr>
-                    </thead>
-                    <!-- Table body for data -->
-                    <tbody id="table-body">
-                      <!-- Table rows will be dynamically added here -->
-                    </tbody>
-                  </table>
-
-            </div>
+          <div class="mss-table table-responsive">
+              <table id="mss-table-1" style="width:100%" class="table table-hover">
+                  <!-- Table headers -->
+                  <thead>
+                    <tr>
+                      <th scope="col" class="heading" onclick="sortTable(0)">Signatur</th>
+                      <th scope="col" class="heading" onclick="sortTable(1)">Sigle</th>
+                      <th scope="col" class="heading" onclick="sortTable(2)">Entstehungsort</th>
+                      <th scope="col" class="heading" onclick="sortTable(3)">Entstehungszeit</th>
+                    </tr>
+                  </thead>
+                  <!-- Filter inputs -->
+                  <thead>
+                    <tr>
+                      <th class="mss-filter-table">
+                        <input type="text" class="mss-filter" id="mss-filter-1" onkeyup="filterMss('1')" placeholder="Eingabe für Filter"/>
+                      </th>
+                      <th class="mss-filter-table">
+                        <input type="text" class="mss-filter" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Eingabe für Filter"/>
+                      </th>
+                      <th class="mss-filter-table">
+                        <input type="text" class="mss-filter" id="mss-filter-3" onkeyup="filterMss('3')" placeholder="Eingabe für Filter"/>
+                      </th>
+                      <th class="mss-filter-table">
+                        <input type="text" class="mss-filter" id="mss-filter-4" onkeyup="filterMss('4')" placeholder="Eingabe für Filter"/>
+                      </th>
+                    </tr>
+                  </thead>
+                  <!-- Table body for data -->
+                  <tbody id="table-body">
+                    <!-- Table rows will be dynamically added here -->
+                  </tbody>
+                </table>
+          </div>
             
-            <div class="mss-map-head">
-                <h4 style="margin-top:40px; margin-bottom:40px" lang="de">KARTENANSICHT</h4>
-                <h4 style="margin-top:40px; margin-bottom:40px" lang="en">MAP VIEW</h4>
-            </div>
-            <div class="mss-map" id="map2"></div>
-            
+          <div class="mss-map-head">
+              <h4 class="mt-4"><span lang="de">KARTENANSICHT</span><span lang="en">MAP VIEW</span></h4>
+          </div>
+          <div class="mss-map" id="map2"></div>       
         </div>
 
         <div id="footer-placeholder"></div>
-
     </body>
 
 

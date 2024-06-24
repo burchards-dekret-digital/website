@@ -9,18 +9,15 @@
         
         <link href="../CSS/bootstrap.min.css" rel="stylesheet">
         <script src="../js/bootstrap.bundle.min.js"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        
-        <script src="https://unpkg.com/mirador@3.3.0/dist/mirador.min.js"></script>
 
-        <!-- // CSS -->
+        <script src="../js/mirador-3.3.0.min.js"></script>
+        
         <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../CSS/digitaleSynopse.css" media="screen"/>
         
-        <!--Fontawesome-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
         
+        <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/language.js" defer></script>
         <script src="../js//digitaleSynopse.js" defer></script>
         <script src="../js/navigation.js" defer></script>
@@ -922,7 +919,6 @@
 
             msViews.push(await responseEditor.text())
 
-            console.log("async", book)
             let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);           
             container.appendChild(panel);
 
@@ -1168,7 +1164,6 @@
           if (event.data) {
               // add new resource panel to desktop.html
               var selectedBook = event.data;
-              console.log(selectedBook)
               appendSelectedBookToDesktop(selectedBook);
           }
       }
