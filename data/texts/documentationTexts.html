@@ -61,20 +61,85 @@
       <figure class="figure"><img src="../img/mirador.png" class="figure-img img-fluid" alt="Mirador viewer"><figcaption class="figure-caption">Mirador viewer</figcaption>
       </figure>
    </div></span><span lang="en">
-   <p>to do</p></span></div><div id="teiHandschriftenDBDoc" class="block"><span lang="de">
+   <p>Burchard's Decree Digital is developing a hybrid edition (print and web
+      edition) that explores the complex and multi-layered process of the decree's
+      creation and development in close connection with codicological phenomena.
+      To this end, the project utilises a digital infrastructure based on the
+      following nine pillars:</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/pillars.png" class="figure-img img-fluid" alt="The Nine Pillars"><figcaption class="figure-caption">The Nine Pillars</figcaption>
+      </figure>
+   </div>
+   <p>Based on this infrastructure, a modular and semi-automated workflow was
+      developed, consisting of automated layout recognition and transcription in
+      Transkribus, post-processing, storage in exist-db, framework-supported TEI
+      coding in OxygenXML and collation in Collatex. This is followed by the
+      transformation of the data for print and web presentation as well as the
+      <a href="https://github.com/michaelscho/bdd-coordinates" target="_blank">automated generation of ground truth</a> for fine-tuning and retraining
+      of deep learning models for different contexts. The generated TEI files are
+      stored in a <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">data repository</a> and loaded into the web view of the
+      edition using Javascript. The manuscripts and generated annotations are
+      displayed via IIIF in Mirador Viewer.</p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/workflow.png" class="figure-img img-fluid" alt="Workflow"><figcaption class="figure-caption">Workflow</figcaption>
+      </figure>
+   </div>
+   <p>The encoding of the text witnesses in OxygenXML and the automated text
+      recognition by Transkribus are at the centre of the workflow, whereby the
+      transfer of the ATR workflow to Kraken is currently in preparation. As the
+      text witnesses which are closely related to the author all originate from
+      the Worms scriptorium and can be assigned to a small group of scribes, we
+      were able to achieve an efficient ATR model with a character error rate
+      (CER) of around 2% due to training on approx. 100,000 words.</p>
+   <p>A joined model that retains the abbreviations and orthographic variance of
+      the handwriting using <a href="https://mufi.info/" target="_blank">Mufi
+         special characters</a> was deliberately trained. The abbreviations are
+      then resolved by <a href="https://github.com/michaelscho/transpy" target="_blank">Python scripts</a> using defined rules and word lists, or in
+      future by implementing a <a href="https://github.com/michaelscho/MediAbbr" target="_blank">deep learning
+         process</a> that is trained using the data generated in the project.</p>
+   <p>The layout of the manuscripts is also recognised and annotated automatically.
+      For this purpose, a <a href="https://readcoop.eu/de/transkribus/docu/p2pala/" target="_blank">Pa2PaLa model</a> was first trained, which identifies the header and
+      footer of the manuscript, columns, chapter numbers and inscriptions.
+      Currently, a Kraken model is also being trained using the annotated PageXML
+      of seven manuscripts, which is available on <a href="https://github.com/michaelscho/bdd-segmentation-data" target="_blank">Github</a> along with the data used.</p>
+   <p>The material prepared in this way is exported from Transkribus as PageXML via
+      API and post-processed in a Python pipeline. This includes resolving the
+      abbreviations, calculating IIIF-compliant image coordinates of the text
+      lines and converting them into project-compliant TEI. This data then serves
+      as the starting point for the editorial indexing, correction and enrichment
+      in OxygenXML. Once the editorial work has been completed, the corrected
+      material is processed again in a <a href="https://github.com/michaelscho/bdd-coordinates" target="_blank">Python
+         pipeline</a> and automatically converted into ground truth material for
+      training further deep learning models.
+      </p>
+   <p>The encoded text witnesses are now collated in a project-internal <a href="https://github.com/michaelscho/Collation" target="_blank">CollateX
+         implementation</a>; additionally, they are stored as <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">transcription files</a> together with the generated ground
+      truth in the data repository.
+      </p>
+   <p>Finally, the data is retrieved by Javascript and uploaded to the web edition,
+      which is hosted via GitLab Pages. The coordinates that were generated during
+      the layout recognition [phase/stage] are transformed into IIIF format so
+      that they can be used to visually display important phenomena of the
+      manuscripts via the IIIF interface. In the same way, <a href="https://www.w3.org/TR/annotation-model/#annotations" target="_blank">web annotations</a> can be
+      generated to enable the display of complex phenomena in Mirador Viewer. 
+      </p>
+   <div style="text-align: center;">
+      <figure class="figure"><img src="../img/mirador.png" class="figure-img img-fluid" alt="Mirador viewer"><figcaption class="figure-caption">Mirador viewer</figcaption>
+      </figure>
+   </div></span></div><div id="teiHandschriftenDBDoc" class="block"><span lang="de">
    <p>zu erledigen</p></span><span lang="en">
    <p>to do</p></span></div><div id="teiEditionDoc" class="block"><span lang="de">
    <p>zu erledigen</p></span><span lang="en">
    <p>to do</p></span></div><div id="webEditionDoc" class="block"><span lang="de">
    <p>Alle Textzeugen des <i>Decretum Burchardi</i> werden in einer
-      Hanschriften-Datenbank in der Abteilung "Handschriften" aufgenommen und verfügbar
-      gemacht. Über den Button "Buch zum
-      Schreibtisch hinzufügen“ auf jeder Webseite der aufgelisteten Handschriften sind die
-      bereits transkribierten Teile zu finden. Alle
-      Begleittexte des Dekrets werden aufgelistet und mit Literatur- und Editionshinweisen
-      angereichert, da sie gegebenenfalls auch Hinweise auf Abhängigkeiten der
-      Handschriften untereinander sichtbar machen. Ziel ist es, über eine reine Auflistung
-      der Handschriften hinaus ein multifunktionales Werkzeug für die Erforschung des
+      Hanschriften-Datenbank in der Abteilung "Handschriften" aufgenommen und
+      verfügbar gemacht. Über den Button "Buch zum Schreibtisch hinzufügen“ auf
+      jeder Webseite der aufgelisteten Handschriften sind die bereits
+      transkribierten Teile zu finden. Alle Begleittexte des Dekrets werden
+      aufgelistet und mit Literatur- und Editionshinweisen angereichert, da sie
+      gegebenenfalls auch Hinweise auf Abhängigkeiten der Handschriften
+      untereinander sichtbar machen. Ziel ist es, über eine reine Auflistung der
+      Handschriften hinaus ein multifunktionales Werkzeug für die Erforschung des
       <i>Decretum Burchardi</i> bereitzustellen.</p>
    <p>Der Bereich "Schreibtisch" bietet einen Arbeitsbereich, der an Burchards
       Schreibtisch während der Abfassung des Dekrets erinnert. Hier können derzeit
@@ -95,15 +160,15 @@
       einem Kollegen geteilt werden. Die JSON-Datei kann über die Schaltfläche
       "Ressource hinzufügen" hochgeladen werden; dann die Datei zum Öffnen im
       Abschnitt "JSON hochladen" oben auswählen.</p></span><span lang="en">
-   <p>All textual witnesses of the <i>Decretum Burchardi</i> will be
-      gradually included and made available in a manuscript database  in the "Manuscripts"
-      section. The parts that have
-      already been transcribed can be found via the button "Add book to desk" on each web
-      page of the listed manuscripts. All
-      accompanying texts of the decree will be listed and enriched with bibliographical
-      and editorial references, which also reveal any dependencies between the
-      manuscripts. The aim is to provide a multifunctional tool for research into the
-      <i>Decretum Burchardi</i>, which goes beyond a mere listing of the manuscripts.</p>
+   <p>All textual witnesses of the <i>Decretum Burchardi</i> will
+      be gradually included and made available in a manuscript database in the
+      "Manuscripts" section. The parts that have already been transcribed can be
+      found via the button "Add book to desk" on each web page of the listed
+      manuscripts. All accompanying texts of the decree will be listed and
+      enriched with bibliographical and editorial references, which also reveal
+      any dependencies between the manuscripts. The aim is to provide a
+      multifunctional tool for research into the <i>Decretum
+         Burchardi</i>, which goes beyond a mere listing of the manuscripts.</p>
    <p>The "Desktop" area offers a workspace inspired by Burchard's desk during the
       writing of the decree. Here, using the "Add resource" button, you can add
       the transcriptions of the books from the Bamberg, Frankfurt, Cologne and

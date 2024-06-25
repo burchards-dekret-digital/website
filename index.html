@@ -185,7 +185,7 @@
             let contentTable = $(contentDiv).find("#summaryTable")
             $("#summaryTable").html(contentTable);
                 checkLanguage()
-            }
+        }
     
         // Load HTML file
         loadHTMLDoc("data/texts/homeTexts.html"); // Adjust the path here
@@ -235,12 +235,14 @@
         function nextNews() {
             currentNewsIndex = (currentNewsIndex + 1) % news.length;
             displayNews(news[currentNewsIndex]);
+            checkLanguage()
         }
 
         // Function to handle previous news
         function prevNews() {
             currentNewsIndex = (currentNewsIndex - 1 + news.length) % news.length;
             displayNews(news[currentNewsIndex]);
+            checkLanguage()
         }
 
         // Initialization
@@ -249,15 +251,20 @@
                 news = data;
                 displayNews(news[currentNewsIndex]); // Display first news
                 // Add arrow buttons
+
                 const paginationContainer = document.getElementById('pagination-container');
                 paginationContainer.innerHTML = `
-                    <button class="btn btn-outline-primary mx-1" onclick="prevNews()">&#8592;</button>
-                    <button class="btn btn-outline-primary mx-1" onclick="nextNews()">&#8594;</button>
+                    <button id="prevNews" class="btn btn-outline-primary mx-1">&#8592;</button>
+                    <button id="nextNews" class="btn btn-outline-primary mx-1">&#8594;</button>
                 `;
+                
+                document.getElementById('prevNews').addEventListener("click", prevNews);
+                document.getElementById('nextNews').addEventListener("click", nextNews);
                 checkLanguage()
             })
             .catch(error => console.error('Error fetching news:', error));
-        });
+            
+    });
         </script>
   
     </body>

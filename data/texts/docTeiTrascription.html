@@ -459,21 +459,23 @@
       book due to the extent. The graphemic transcriptions fully secure the text of the
       textual witnesses and are progressively published in three increasingly enriched
       versions, distinguished by increasingly comprehensive encoding.</p>
-   <p><b>Version 1</b> is a comprehensive safeguarding of the text of the
-      respective manuscript. It contains text, coded text edits, and
-      structural elements as well as Worms glosses. Each individual capitulation and each
-      chapter has an ID, through which it is synchronized with other transcriptions of the
-      manuscripts of the decree. Highlighted in this
-      version are corrections and erasures as well as text fragments shifted due to lack
-      of space. IIIF data enables the linkage back to digitized versions.</p>
+   <p><b>Version 1</b> is a comprehensive safeguarding of the
+      text of the respective manuscript. It contains text, coded text edits
+      and structural elements as well as Worms glosses. Each individual
+      capitulation and each chapter has an ID, through which it is
+      synchronised with other transcriptions of the manuscripts of the decree.
+      Highlighted in this version are corrections and erasures as well as text
+      fragments shifted due to lack of space. IIIF data enables the linkage
+      back to digitised versions.</p>
    <p><b>Version 2</b> is a text-secured transcription of the
-      document with coded codicological phenomena, for example changes of hand, which
-      are classified via a taxonomy and addressable per IIIF data in the digitized version.</p>
+      document with coded codicological phenomena, for example changes of
+      hand, which are classified via a taxonomy and addressable per IIIF data
+      in the digitised version.</p>
    <p><b>Version 3</b> is a text-secured transcription with
-      codicological phenomena, in which external IDs are referenced.
-      Traces of reception, e.g., nota signs, are highlighted. References to meaningful
+      codicological phenomena, in which external IDs are referenced. Traces of
+      reception, e.g., nota signs, are highlighted. References to meaningful
       variants in other manuscripts of the Decretum Burchardi are made. The
-      transcriptions are also synchronized with the Digital Edition.</p>
+      transcriptions are also synchronised with the Digital Edition.</p>
    <h1>Data Repositories</h1>
    <p>All transcriptions are stored with associated data derivatives on the
       project's own <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Gitlab repository</a>.
@@ -482,9 +484,9 @@
       repository also contains corresponding PageXML and datasets generated from it
       for use in the context of Machine Learning. </p>
    <h1>Markup Guidelines</h1>
-   <p>In the following sections, the markup guidelines are described.
-      A formalized listing of the used elements, attributes, and values
-      can be found under the section <i>schemaSpec</i> at the end of the
+   <p>In the following sections, the markup guidelines are described. A formalised
+      listing of the used elements, attributes and values can be found under
+      the section <i>schemaSpec</i> at the end of the
       document.</p>
    <h2>TEI Header</h2>
    <p>The TEI header of each transcript includes a description of the document
@@ -536,16 +538,19 @@
       concern the version of the data and corrections, always provided with the
       date of the change.</p>
    <h2>Transcription Guidelines</h2>
-   <p>The transcriptions primarily aim at securing the text of the decree,
-      therefore, editorial interventions and interpretations are largely omitted. They reproduce
-      the findings of the individual textual witnesses as accurately as possible, which
-      includes both the text with all edits as well as the layout.</p>Orthography
-   <p>The transcription follows the orthography of the manuscript. Errors in the text
-      are not corrected and only in individual cases highlighted by <code>sic</code>.
-      Capitalization follows the manuscript, but not the use of compound and separate spelling.
-      Here, each meaningful word is separated. Should both compound and separate spelling
-      be correct, the practice of the Worms scriptorium, as reflected in the manuscripts
-      produced there, is followed. Abbreviations are encoded and resolved using a defined
+   <p>The transcriptions primarily aim at securing the text of the decree.
+      Therefore, editorial interventions and interpretations are largely
+      omitted. They reproduce the findings of the individual textual
+      witnesses as accurately as possible, which includes both the text
+      with all edits as well as the layout.</p>Orthography
+   <p>The transcription follows the orthography of the manuscript. Errors
+      in the text are not corrected and only in individual cases
+      highlighted by <code>sic</code>. Capitalisation follows the
+      manuscript, but not the use of compound and separate spelling.
+      Here, each meaningful word is separated. Should both compound
+      and separate spelling be correct, the practice of the Worms
+      scriptorium, as reflected in the manuscripts produced there, is
+      followed. Abbreviations are encoded and resolved using a defined
       set of special characters. Ligatures are silently resolved.</p>Punctuation
    <p>The transcribed manuscripts typically use a uniform and genuinely medieval punctuation,
       which is based on six distinguishable signs that denote speech pauses: Distinctio,
@@ -569,63 +574,70 @@
       </figure>
    </div>
    <p>Layout information includes line breaks, column and page breaks,
-      rubricated chapter numbers, rubricated initials of the capitulations and the
-      chapters, subsequent rubrication of majuscules, versals at the start of a
-      section, as well as headers and footers. Text parts that were written in the
-      preceding or following line due to lack of space and marked with an
-      addition sign are marked with <code>supplied</code> and
-      <code>seg</code>.</p>
+      rubricated chapter numbers, rubricated initials of the capitulations
+      and the chapters, subsequent rubrication of majuscules, large
+      capitals at the start of a section, as well as headers and footers.
+      Text parts that were written in the preceding or following line due
+      to lack of space and marked with an addition sign are marked with
+      <code>supplied</code> and <code>seg</code>.</p>
    <div style="text-align: center;">
       <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Due to lack of space, rubric added above the line (, fol. 27rb)"><figcaption class="figure-caption">Due to lack of space, rubric added above the line (F, fol. 27rb)</figcaption>
       </figure>
    </div>
    <p>Additional text/image information can be queried per <code>xml:id</code> of
-      the respective element via the referenced PageXML of the respective page
-      stored in the data repository. The image digitization of the respective page is stored
-      in the <code>facs</code> attribute of the element <code>pb</code> as an IIIF query, <code>corresp</code> contains the link to the IIIF canvas. IIIF-capable coordinates for each layout element
-      are stored in the respective attribute @facs and allow the retrieval of the corresponding
-      image section via the IIIF query URL of the respective page.</p>
+      the respective element via the referenced PageXML of the respective
+      page stored in the data repository. The image digitisation of the
+      respective page is stored in the <code>facs</code> attribute of the
+      element <code>pb</code> as an IIIF query, <code>corresp</code> contains
+      the link to the IIIF canvas. IIIF-capable coordinates for each
+      layout element are stored in the respective attribute @facs and
+      allow the retrieval of the corresponding image section via the IIIF
+      query URL of the respective page.</p>
    <h2>Column and Page Breaks, Line Breaks</h2>
-   <p>To code the layout, the empty elements <code>pb</code>
-      (page break), <code>cb</code> (column break), <code>lb</code> (line break)
-      and the element <code>fw</code> (page layout) are used. These
-      elements can interrupt the text-immanent structure, thus standing both
-      between and within <code>div</code> and other elements.
-      Each page break is marked with @n with a corresponding folio indication, e.g.
-      204r|v. Optionally, the corresponding image file is stored as
-      <code>facs</code>. In column breaks, the column is marked in
-      <code>n</code> through <code>a|b</code>. Headers are given the specifications <code>fw type="page-header"
-         place="top"</code>. All line breaks are indicated by
-      <code>lb</code> and possibly by <code>lb break="no"</code>
-      if they occur within words. All elements also receive a referencable <code>xml:id</code>, which in the case of layout elements is formed from the filename of the corresponding
-      PageXML and a specific suffix, e.g. <code>"B_0015_header"</code>. This ID
-      allows the corresponding element to be located in the PageXML, where it is referenced
-      by the same ID.</p>
+   <p>To code the layout, the empty elements <code>pb</code> (page break),
+      <code>cb</code> (column break), <code>lb</code> (line break) and the element
+      <code>fw</code> (page layout) are used. These elements can interrupt the
+      text-immanent structure, thus standing both between and within
+      <code>div</code> and other elements. Each page break is marked with @n
+      with a corresponding folio indication, e.g. 204r|v. Optionally, the
+      corresponding image file is stored as <code>facs</code>. In column
+      breaks, the column is marked in <code>n</code> through <code>a|b</code>.
+      Headers are given the specifications <code>fw type="page-header"
+         place="top"</code>. All line breaks are indicated by <code>lb</code> and
+      possibly by <code>lb break="no"</code> if they occur within words. All
+      elements also receive a unique <code>xml:id</code>, which in the case
+      of layout elements is formed from the filename of the corresponding
+      PageXML and a specific suffix, e.g. <code>"B_0015_header"</code>. This
+      ID allows the corresponding element to be located in the PageXML,
+      where it is referenced by the same ID.</p>
    <h2>Syllabification</h2>
    <p>Word separation is performed according to word sense and deviates from the manuscript's
       findings. Since particularly the early manuscripts of the decree do not use contemporary
       hyphens for word separation, the indication of a
       line break is exclusively made by the empty element <code>lb</code> and possibly
       the attribute <code>lb break="no"</code>.</p>
-   <h2>Synchronized Text Structure (IDs, Synchronization and Taxonomy)</h2>
-   <p>The textual witnesses of the Worms redaction can show various deviations in the
-      internal structure as well as the text structure. This includes deliberate
-      restructuring as well as errors by scribes and subsequent text loss. Thus, text elements
-      of a manuscript may be erroneously numbered,
-      shifted, lost, or deleted and create variances in the structure of the decree that
-      are sometimes intentional, sometimes accidental. Therefore, it is important to keep
-      these text-genetic phenomena transparent and machine-readable through appropriate
-      encoding. </p>
-   <p>For this purpose, all textual witnesses undergo synchronization and elements,
-      that can provide information about the text structure and its origin,
-      are detailedly marked. For this purpose, each capitulation (encoded as
-      <code>item</code>) and each individual chapter (encoded as <code>div</code>) receives a
-      unique ID across the entire transmission, formed from the manuscript, the
-      respective book, and the running number of the element, such as
-      <code>bamberg-sb-c-6-01-toc-001</code> for the first capitulation in book 13 in
-      the Bamberg manuscript or <code>bamberg-sb-c-6-01-con-001</code> for the
-      first chapter of the same manuscript. In the attribute <code>corresp</code>, the
-      respective location of the other manuscripts is referenced.</p>
+   <h2>Synchronised Text Structure (IDs, Synchronisation and Taxonomy)</h2>
+   <p>The textual witnesses of the Worms redaction can show various deviations
+      in the internal structure as well as the text structure. This
+      includes deliberate restructuring as well as errors by scribes and
+      subsequent text loss. Thus, text elements of a manuscript may be
+      erroneously numbered, shifted, lost or deleted and create variances
+      in the structure of the decree that are sometimes intentional,
+      sometimes accidental. Therefore, it is important to keep these
+      text-genetic phenomena transparent and machine-readable through
+      appropriate encoding. </p>
+   <p>For this purpose, all textual witnesses undergo synchronisation and
+      elements, that can provide information about the text structure and
+      its origin, are marked in detail. For this purpose, each
+      capitulation (encoded as <code>item</code>) and each individual chapter
+      (encoded as <code>div</code>) receives a unique ID across the entire
+      transmission, formed from the manuscript, the respective book and
+      the running number of the element, such as
+      <code>bamberg-sb-c-6-01-toc-001</code> for the first capitulation in
+      book 13 in the Bamberg manuscript or
+      <code>bamberg-sb-c-6-01-con-001</code> for the first chapter of the
+      same manuscript. In the attribute <code>corresp</code>, the respective
+      location of the other manuscripts is referenced.</p>
    <p>Capitulation and chapter each receive a running number in the attribute
       <code>n</code>, which does not follow the intended numbering, but
       reflects the actual findings of the manuscript. For instance, if the first
@@ -636,19 +648,19 @@
       receives a running number in <code>n</code>, on the other hand, the specified
       Roman numerals are marked as <code>num</code> and the value
       machine-readable recorded in the attribute <code>value</code>.</p>
-   <p>In addition, these processes, where necessary, are also
-      qualitatively explored through a continuously developing taxonomy,
-      through which structural interventions can be further explained. This
-      includes, for example, deliberate or accidental loss of chapters,
-      references to lost elements (such as partially visible inscriptions), markings of
-      canons that were to be deleted,
-      additions by scribes, rearrangements, changes in the order of the
-      capitulations or chapters, missing chapter numbers, and editorially
-      conducted reconstructions. The respective entries of the taxonomy are stored in the
-      <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/lists/taxonomy.xml" target="_blank">file</a>
-      and linked via corresponding IDs in the attribute <code>ana</code>.
-      In this way, the manifold interventions in the text structure in the context of the
-      transmission can be analyzed and represented in a machine-readable manner.</p>
+   <p>In addition, these processes, where necessary, are also qualitatively
+      explored through a continuously developing taxonomy, through which
+      structural interventions can be further explained. This includes,
+      for example, deliberate or accidental loss of chapters, references
+      to lost elements (such as partially visible inscriptions), markings
+      of canons that were to be deleted, additions by scribes,
+      rearrangements, changes in the order of the capitulations or
+      chapters, missing chapter numbers and editorially conducted
+      reconstructions. The respective entries of the taxonomy are stored
+      in the <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/lists/taxonomy.xml" target="_blank">file</a> and linked via corresponding IDs in the attribute
+      <code>ana</code>. In this way, the manifold interventions in the text
+      structure in the context of the transmission can be analysed and
+      represented in a machine-readable manner.</p>
    <div style="text-align: center;">
       <figure class="figure"><img src="../img/image4.png" class="figure-img img-fluid" alt="Partially visible inscriptions on a removed&#xA;                                page (, after fol. 80v)"><figcaption class="figure-caption">Partially visible inscriptions on a removed
             page (Va2, after fol. 80v)</figcaption>
@@ -663,28 +675,34 @@
       </figure>
    </div>
    <h2>Text-Image Linking</h2>
-   <p>Since the edition of the Decretum Burchardi places special emphasis on codicological
-      traces of the text genesis, the intertwining of text and image is of outstanding importance.
-      On one hand, such an intertwining enables the direct visualization of relevant phenomena
-      on the manuscript digitization, on the other hand, it allows the application of data
-      obtained in the course of editorial work for Image2Text and Feature Extraction applications
-      in the context of machine learning. Therefore, the text-image linking in the editorial
-      preparation of the decree takes place on two levels with different technological backgrounds:
-      Based on IIIF as well as through the generation of referenced PageXML.</p>
-   <p><b>IIIF</b>: <a href="https://iiif.io/" target="_blank">IIIF</a> is an
-      interface for digital image delivery that allows querying of
+   <p>Since the edition of the Decretum Burchardi places special emphasis on
+      codicological traces of the text genesis, the intertwining of text
+      and image is of outstanding importance. On one hand, such an
+      intertwining enables the direct visualisation of relevant phenomena
+      on the manuscript digitisation, on the other hand, it allows the
+      application of data obtained in the course of editorial work for
+      Image2Text and Feature Extraction applications in the context of
+      machine learning. Therefore, the text-image linking in the editorial
+      preparation of the decree takes place on two levels with different
+      technological backgrounds: Based on IIIF as well as through the
+      generation of referenced PageXML.</p>
+   <p><b>IIIF</b>: <a href="https://iiif.io/" target="_blank">IIIF</a> is
+      an interface for digital image delivery that allows querying of
       image files in different quality levels, resolution, and section
-      from an image server. Technically, the standard also allows linking these files with
-      annotations, which permits the display of the
+      from an image server. Technically, the standard also allows linking
+      these files with annotations, which permits the display of the
       annotated image in the Mirador Viewer or other solutions. At the
-      center is a query syntax, through which images can be queried in the appropriate
-      form from the image server. Accordingly, each <code>pb</code> element contains a query link to the corresponding image file in the
-      attribute <code>facs</code> and the link to the IIIF canvas in the attribute
-      <code>corresp</code>. The attribute <code>ana</code> contains in this context
-      the link to the annotation file of the respective page. Layout elements below
-      the page level contain in the attribute <code>facs</code> their IIIF coordinates transformed from the layout recognition and can thereby be
-      specifically targeted in
-      connection with the query link to the page.</p>
+      centre is a query syntax, through which images can be queried in the
+      appropriate form from the image server. Accordingly, each
+      <code>pb</code> element contains a query link to the corresponding image
+      file in the attribute <code>facs</code> and the link to the IIIF
+      canvas in the attribute <code>corresp</code>. The attribute
+      <code>ana</code> contains in this context the link to the annotation
+      file of the respective page. Layout elements below the page level
+      contain in the attribute <code>facs</code> their IIIF coordinates
+      transformed from the layout recognition and can thereby be
+      specifically targeted in connection with the query link to the
+      page.</p>
    <p><b>PageXML:</b> For the reuse of the data in the context of
       Machine Learning, all TEI files of the transcriptions
       are transformed into PageXML, which is maintained in the PageXML folder in the data
@@ -712,7 +730,7 @@
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" alt="Versal (, fol. 11rb)"><figcaption class="figure-caption">Versal (B, fol. 11rb)</figcaption>
+      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" alt="Large capital (, fol. 11rb)"><figcaption class="figure-caption">Large capital (B, fol. 11rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
@@ -720,16 +738,17 @@
       </figure>
    </div>
    <h2>Scribe Interventions: Erased Text, Corrections, Additions</h2>
-   <p>Corrections by scribes are made recognizable through appropriate coding. It is necessary
-      to distinguish between deletions <code>del</code> additions <code>add</code>
-      and replacements <code>subst</code>. Deletions are
-      marked regardless of their specific design with the element <code>del</code>.
-      Deletions over several lines / pages / columns, are
+   <p>Corrections by scribes are made recognisable through appropriate coding.
+      It is necessary to distinguish between deletions <code>del</code>
+      additions <code>add</code> and replacements <code>subst</code>. Deletions
+      are marked regardless of their specific design with the element
+      <code>del</code>. Deletions over several lines / pages / columns, are
       marked by the element <code>delSpan</code>, whose end is marked with the
-      element <code>anchor</code>. A specification of the concrete
-      design of the deletion is made by the attribute rend and can be expressed by
-      the values <code>erased</code>, <code>strikethrough</code>, <code>blackout</code>,
-      <code>expunctuation</code> and <code>underlined</code>.</p>
+      element <code>anchor</code>. A specification of the concrete design of
+      the deletion is made by the attribute rend and can be expressed by
+      the values <code>erased</code>, <code>strikethrough</code>,
+      <code>blackout</code>, <code>expunctuation</code> and
+      <code>underlined</code>.</p>
    <div style="text-align: center;">
       <figure class="figure"><img src="../img/image10.png" class="figure-img img-fluid" alt="Correction of an &#34;l&#34; (, fol. 133rb)"><figcaption class="figure-caption">Correction of an "l" (B, fol. 133rb)</figcaption>
       </figure>
@@ -739,7 +758,7 @@
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" alt="Expuncted a (, fol. 44ra)"><figcaption class="figure-caption">Expuncted a (B, fol. 44ra)</figcaption>
+      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" alt="Expunctuated a (, fol. 44ra)"><figcaption class="figure-caption">Expunctuated a (B, fol. 44ra)</figcaption>
       </figure>
    </div>
    <p>A replacement occurs when a deleted or erased spot is supplemented. This is done in
@@ -758,15 +777,17 @@
       <figure class="figure"><img src="../img/image14.png" class="figure-img img-fluid" alt="Gloss in I.26 (, fol. 14rb)"><figcaption class="figure-caption">Gloss in I.26 (B, fol. 14rb)</figcaption>
       </figure>
    </div>
-   <p>If individual letters or whole sentence parts were overlooked during copying,
-      they are usually added at the margin or above the line. Such
-      additions are recorded by the element <code>add</code>, which is further specified through the attributes <code>type</code> with the values
-      <code>contemporary</code>|<code>later</code>|<code>modern</code>. Moreover, the location of the addition must be concretized with <code>place</code> and the
-      values <code>inline</code>, <code>below</code>, <code>above</code>,
-      <code>bottom</code>, <code>margin left|right</code>, <code>overleaf</code>,
-      <code>overstrike</code> or <code>top</code>.
-      Additions by another hand are marked with <code>hand</code>.
-      This element is subsequently provided with an <code>xml:id</code>.</p>
+   <p>If individual letters or whole sentence parts were overlooked during
+      copying, they are usually added at the margin or above the line.
+      Such additions are recorded by the element <code>add</code>, which is
+      further specified through the attributes <code>type</code> with the
+      values <code>contemporary</code>|<code>later</code>|<code>modern</code>.
+      Moreover, the location of the addition must be concretised with
+      <code>place</code> and the values <code>inline</code>, <code>below</code>,
+      <code>above</code>, <code>bottom</code>, <code>margin left|right</code>,
+      <code>overleaf</code>, <code>overstrike</code> or <code>top</code>.
+      Additions by another hand are marked with <code>hand</code>. This
+      element is subsequently provided with an <code>xml:id</code>.</p>
    <div style="text-align: center;">
       <figure class="figure"><img src="../img/image15.png" class="figure-img img-fluid" alt="Two differently extensive additions (, fol. 115ra)"><figcaption class="figure-caption">Two differently extensive additions (K, fol. 115ra)</figcaption>
       </figure>
@@ -827,25 +848,28 @@
             fol. 102rb)</figcaption>
       </figure>
    </div>
-   <p>The <code>handnote</code> links to a central register of scribes, which
-      lists the scribes identified by <a href="bibl.html#X25FUV2K" target="_blank">Hoffmann
-         and Pokorny 1991</a> for further use
-      within the project. The listing of the scribes is done within a <code>listPerson</code> with the attribute <code>listPerson
-         type="scribes"</code> and the <code>xml:id="RegScribes"</code>, wherein
-      related scribes are collected as <code>personGrp</code>, e.g.,
-      scribes of the Worms scriptorium. The distinction is made via an
-      attribute <code>xml:id</code>, e.g., <code>xml:id="Wos"</code>. The individual
-      scribes are marked as <code>person</code>, noting that here not hands, but exclusively actual scribes
-      are listed. These scribes also receive a unique
-      <code>xml:id</code>. Additionally, a designation as <code>name</code> and,
-      if known, an <code>affiliation</code> is verbalized.</p>
+   <p>The <code>handnote</code> links to a central register of scribes, which lists the
+      scribes identified by <a href="bibl.html#X25FUV2K" target="_blank">Hoffmann and
+         Pokorny 1991</a> for further use within the project. The listing
+      of the scribes is done within a <code>listPerson</code> with the
+      attribute <code>listPerson type="scribes"</code> and the
+      <code>xml:id="RegScribes"</code>, wherein related scribes are
+      collected as <code>personGrp</code>, e.g., scribes of the Worms
+      scriptorium. The distinction is made via an attribute
+      <code>xml:id</code>, e.g., <code>xml:id="Wos"</code>. The individual
+      scribes are marked as <code>person</code>, noting that here not hands,
+      but exclusively actual scribes are listed. These scribes also
+      receive a unique <code>xml:id</code>. Additionally, a designation as
+      <code>name</code> and, if known, an <code>affiliation</code> is
+      verbalised.</p>
    <h2>Numbers</h2>
    <p>The Roman numeral system widely used in the manuscripts is adopted in the
-      transcription and reproduced in lowercase. Unreadable chapter numerations are supplemented.
-      The running chapter number is expressed there through
-      <code>n</code> attribute, numbers and verbalized numbers occurring in the text are marked by the
-      element <code>num</code> with the
-      numerical value indicated in the attribute <code>value</code>.</p>
+      transcription and reproduced in lowercase. Unreadable chapter
+      numerations are supplemented. The running chapter number is
+      expressed there through <code>n</code> attribute, numbers and
+      verbalised numbers occurring in the text are marked by the element
+      <code>num</code> with the numerical value indicated in the attribute
+      <code>value</code>.</p>
    <h1>BDD Transcription: schemaSpec</h1>
    <p>TEI All-based customisation for transcriptions in the Burchard's Decree Digital project
       to generate relaxng validation files.</p></span><div id="bdd-documentation-schemaspec">
