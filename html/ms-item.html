@@ -346,17 +346,15 @@
                         var catalogueText = Array.from(item.childNodes)
                         .filter(node => node.nodeName !== 'citedRange')
                         .map(node => node.textContent.trim())
-                        .join(' ');
-                        
-                        var catalogueText = Array.from(item.childNodes)
-                        .filter(node => node.nodeName !== 'citedRange')
-                        .map(node => node.textContent.trim())
                         .join(' ')
                         .replace(/<\/citedRange>[^<]*/, ''); // Remove content after </citedRange>, including the period
 
                         var citedRange = item.querySelector('citedRange').textContent;
                         var copyOfValue = item.getAttribute('copyOf');
-                        var finalText = catalogueText + ", S. " + citedRange;
+                        var finalText = catalogueText;
+                        if (citedRange) {
+                            finalText += ", S. " + citedRange;
+                        }
 
                         // Create an <i> element for the link icon
                         var icon = document.createElement('i');
@@ -387,7 +385,10 @@
 
                         var citedRange = item.querySelector('citedRange').textContent;
                         var copyOfValue = item.getAttribute('copyOf');
-                        var finalText = literatureText + ", S. " + citedRange;
+                        var finalText = literatureText;
+                        if (citedRange) {
+                            finalText += ", S. " + citedRange;
+                        }
 
                         // Create an <i> element for the icon
                         var icon = document.createElement('i');
