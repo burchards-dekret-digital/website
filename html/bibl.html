@@ -1,332 +1,328 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>BDD Bibliographie</title>
-        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="google" content="notranslate"/>
-        
-        <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-        <script src="../js/bootstrap.bundle.min.js"></script>
+  <head>
+      <title>BDD Bibliographie</title>
+      <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="google" content="notranslate"/>
+      
+      <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+      <script src="../js/bootstrap.bundle.min.js"></script>
 
-        <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+      <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
+      <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
 
-        <script src="../js/jquery-3.7.1.min.js"></script>
-        <script src="../js/language.js" defer></script>
-        <script src="../js/navigation.js" defer></script>
-    </head>
-    <body>
-        <div id="navbar-placeholder"></div>
+      <script src="../js/jquery-3.7.1.min.js"></script>
+      <script src="../js/navigation.js" defer></script>
+      <script src="../js/language.js" defer></script>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
 
-        <div class="back-button ps-4" style="margin-top:40px;">
-          <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+    <div class="back-button ps-4" style="margin-top:40px;">
+      <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+    </div>
+
+    <div id="content" class="container" style="flex:1">
+        <h1 class="section-main-title"><span lang="de">BIBLIOGRAPHIE</span><span lang="en">BIBLIOGRAPHY</span></h1>
+        <div class="table-responsive">
+          <table id="literatureTable" class="table table-hover" style="width: 100%;">
+            <thead>
+              <tr>
+                <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
+                <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(3)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(4)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(6)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(7)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+              </tr>
+              <tr>
+                  <th scope="col">
+                    <select id="filter0" onchange="filter(0)" class="form-select" aria-label="Search type">
+                      <option value=""></option>
+                      <option value="Buch">Buch</option>
+                      <option value="Zeitschriftenartikel">Zeitschriftenartikel</option>
+                      <option value="Buchbeitrag">Buchbeitrag</option>
+                      <option value="Lexikonartikel">Lexikonartikel</option>
+                    </select>
+                  </th>
+                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Search" class="form-control" aria-label="Search Author"></th>
+                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Search" class="form-control" aria-label="Search Editor"></th>
+                  <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Search" class="form-control" aria-label="Search Title"></th>
+                  <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Search" class="form-control" aria-label="Search In"></th>
+                  <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Search" class="form-control" aria-label="Search Year"></th>
+                  <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Search" class="form-control" aria-label="Search Publication Place"></th>
+                  <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Search" class="form-control" aria-label="Search Series"></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-        <div id="content" class="container" style="flex:1">
-            
-            <h1 class="section-main-title"><span lang="de">BIBLIOGRAPHIE</span><span lang="en">BIBLIOGRAPHY</span></h1>
-            
-            <div class="table-responsive">
-              <table id="literatureTable" class="table table-hover" style="width: 100%;">
-                <thead>
-                  <tr>
-                    <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
-                    <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <th scope="col" onclick="sortTable(3)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <th scope="col" onclick="sortTable(4)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <th scope="col" onclick="sortTable(6)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                    <th scope="col" onclick="sortTable(7)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                  </tr>
-                  <tr>
-                      <th scope="col">
-                        <select id="filter0" onchange="filter(0)" class="form-select" aria-label="Search type">
-                          <option value=""></option>
-                          <option value="Buch">Buch</option>
-                          <option value="Zeitschriftenartikel">Zeitschriftenartikel</option>
-                          <option value="Buchbeitrag">Buchbeitrag</option>
-                          <option value="Lexikonartikel">Lexikonartikel</option>
-                        </select>
-                      </th>
-                      <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Search" class="form-control" aria-label="Search Author"></th>
-                      <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Search" class="form-control" aria-label="Search Editor"></th>
-                      <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Search" class="form-control" aria-label="Search Title"></th>
-                      <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Search" class="form-control" aria-label="Search In"></th>
-                      <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Search" class="form-control" aria-label="Search Year"></th>
-                      <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Search" class="form-control" aria-label="Search Publication Place"></th>
-                      <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Search" class="form-control" aria-label="Search Series"></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-        </div>
+    </div>
 
-        <div id="footer-placeholder"></div>
-        
-    </body>
+    <div id="footer-placeholder"></div>
+      
+    <script>
+        $(document).ready(function() {
+          $.ajax({
+            type: "GET",
+            url: "../data/register/literature.xml",
+            dataType: "xml",
+            success: function(xml) {
+              // Generate table rows
+              var tableRows = "";
+                $(xml).find('biblStruct').each(function() {
+                    var typeLabels = {
+                    "book": "Buch",
+                    "journalArticle": "Zeitschriftenartikel",
+                    "bookSection": "Buchbeitrag",
+                    "encyclopediaArticle": "Lexikonartikel"
+                    };
+                var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
+                var title, authorNames, editorNames, inValue, edition, year, pubPlace, series;
 
-
-
-<script>
-    $(document).ready(function() {
-      $.ajax({
-        type: "GET",
-        url: "../data/register/literature.xml",
-        dataType: "xml",
-        success: function(xml) {
-          // Generate table rows
-          var tableRows = "";
-            $(xml).find('biblStruct').each(function() {
-                var typeLabels = {
-                "book": "Buch",
-                "journalArticle": "Zeitschriftenartikel",
-                "bookSection": "Buchbeitrag",
-                "encyclopediaArticle": "Lexikonartikel"
-                };
-            var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
-            var title, authorNames, editorNames, inValue, edition, year, pubPlace, series;
-
-            //books have only <monogr> element
-            if (type === "Buch") { 
-              title = $(this).find("monogr > title").text();
-                  authorNames = [];
-                  $(this).find("monogr > author").each(function () {
-                      var forename = $(this).find("forename").text();
-                      var surname = $(this).find("surname").text();
-                      if (forename && surname) {
-                          authorNames.push(forename + " " + surname);
-                      } 
-                      //if forename or surname in author are not available, find name
-                      else { 
-                          var name = $(this).find("name").text();
-                          if (name) {
-                              authorNames.push(name);
+                //books have only <monogr> element
+                if (type === "Buch") { 
+                  title = $(this).find("monogr > title").text();
+                      authorNames = [];
+                      $(this).find("monogr > author").each(function () {
+                          var forename = $(this).find("forename").text();
+                          var surname = $(this).find("surname").text();
+                          if (forename && surname) {
+                              authorNames.push(forename + " " + surname);
+                          } 
+                          //if forename or surname in author are not available, find name
+                          else { 
+                              var name = $(this).find("name").text();
+                              if (name) {
+                                  authorNames.push(name);
+                              }
                           }
-                      }
-                  });
-                  editorNames = [];
-                  $(this).find("monogr > editor").each(function () {
-                      var forename = $(this).find("forename").text();
-                      var surname = $(this).find("surname").text();
-                      if (forename && surname) {
-                          editorNames.push(forename + " " + surname);
-                      } 
-                      //if forename or surname in editor are not available, find name
-                      else {
-                          var name = $(this).find("name").text();
-                          if (name) {
-                              editorNames.push(name);
+                      });
+                      editorNames = [];
+                      $(this).find("monogr > editor").each(function () {
+                          var forename = $(this).find("forename").text();
+                          var surname = $(this).find("surname").text();
+                          if (forename && surname) {
+                              editorNames.push(forename + " " + surname);
+                          } 
+                          //if forename or surname in editor are not available, find name
+                          else {
+                              var name = $(this).find("name").text();
+                              if (name) {
+                                  editorNames.push(name);
+                              }
                           }
-                      }
-                  });
-                  inValue = "";
-              }
-              //for all other elements that have also <analytic>
-              else {
-                  title = $(this).find("analytic > title").text();
-                  authorNames = [];
-                  $(this).find("analytic > author").each(function () {
-                      var forename = $(this).find("forename").text();
-                      var surname = $(this).find("surname").text();
-                      if (forename && surname) {
-                          authorNames.push(forename + " " + surname);
-                      } 
-                      //if forename or surname in author are not available, find name
-                      else {
-                          var name = $(this).find("name").text();
-                          if (name) {
-                              authorNames.push(name);
+                      });
+                      inValue = "";
+                  }
+                  //for all other elements that have also <analytic>
+                  else {
+                      title = $(this).find("analytic > title").text();
+                      authorNames = [];
+                      $(this).find("analytic > author").each(function () {
+                          var forename = $(this).find("forename").text();
+                          var surname = $(this).find("surname").text();
+                          if (forename && surname) {
+                              authorNames.push(forename + " " + surname);
+                          } 
+                          //if forename or surname in author are not available, find name
+                          else {
+                              var name = $(this).find("name").text();
+                              if (name) {
+                                  authorNames.push(name);
+                              }
                           }
-                      }
-                  });
-                  editorNames = [];
-                  $(this).find("monogr > editor").each(function () {
-                      var forename = $(this).find("forename").text();
-                      var surname = $(this).find("surname").text();
-                      if (forename && surname) {
-                          editorNames.push(forename + " " + surname);
-                      } 
-                      //if forename or surname in editor are not available, find name
-                      else {
-                          var name = $(this).find("name").text();
-                          if (name) {
-                              editorNames.push(name);
+                      });
+                      editorNames = [];
+                      $(this).find("monogr > editor").each(function () {
+                          var forename = $(this).find("forename").text();
+                          var surname = $(this).find("surname").text();
+                          if (forename && surname) {
+                              editorNames.push(forename + " " + surname);
+                          } 
+                          //if forename or surname in editor are not available, find name
+                          else {
+                              var name = $(this).find("name").text();
+                              if (name) {
+                                  editorNames.push(name);
+                              }
                           }
-                      }
-                  });
-              var monogr = $(this).find("monogr");
-              
-              //Display Band and/or Seiten only if present
-              var volume = $(monogr).find("biblScope[unit='volume']").text();
-              var page = $(monogr).find("biblScope[unit='page']").text();
-              var volumeText = volume ? ", Band " + volume : "";
-              var pageText = page ? ", Seiten " + page : "";
-              inValue = $(this).find("monogr > title").text() + volumeText + pageText;
+                      });
+                  var monogr = $(this).find("monogr");
+                  
+                  //Display Band and/or Seiten only if present
+                  var volume = $(monogr).find("biblScope[unit='volume']").text();
+                  var page = $(monogr).find("biblScope[unit='page']").text();
+                  var volumeText = volume ? ", Band " + volume : "";
+                  var pageText = page ? ", Seiten " + page : "";
+                  inValue = $(this).find("monogr > title").text() + volumeText + pageText;
+                }
+
+                id = $(this).attr("xml:id");
+                year = $(this).find("imprint > date").text();
+                pubPlace = $(this).find("imprint > pubPlace").text();
+                series = $(this).find("series > title").text() 
+                
+
+
+            //Create table rows
+                tableRows += "<tr id='" + id + "'>";
+                tableRows += "<td>" + type + "</td>";
+                tableRows += "<td>" + authorNames.join(", ") + "</td>";
+                tableRows += "<td>" + editorNames.join(", ") + "</td>";
+                tableRows += "<td>" + title + "</td>"; 
+                tableRows += "<td>" + inValue + "</td>";
+                tableRows += "<td>" + year + "</td>";
+                tableRows += "<td>" + pubPlace + "</td>";
+                tableRows += "<td>" + series + "</td>";
+                tableRows += "</tr>";
+              });
+
+              $("#literatureTable tbody").append(tableRows);          
+            },
+
+            error: function(xhr, status, error) {
+              console.error("Error loading XML file:", error);
             }
-
-            id = $(this).attr("xml:id");
-            year = $(this).find("imprint > date").text();
-            pubPlace = $(this).find("imprint > pubPlace").text();
-            series = $(this).find("series > title").text() 
-            
-
-
-        //Create table rows
-            tableRows += "<tr id='" + id + "'>";
-            tableRows += "<td>" + type + "</td>";
-            tableRows += "<td>" + authorNames.join(", ") + "</td>";
-            tableRows += "<td>" + editorNames.join(", ") + "</td>";
-            tableRows += "<td>" + title + "</td>"; 
-            tableRows += "<td>" + inValue + "</td>";
-            tableRows += "<td>" + year + "</td>";
-            tableRows += "<td>" + pubPlace + "</td>";
-            tableRows += "<td>" + series + "</td>";
-            tableRows += "</tr>";
           });
+        });
 
-          $("#literatureTable tbody").append(tableRows);          
-        },
+        // Add search functionality
+        const searchInputs = document.querySelectorAll('.search-input');
+            searchInputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    const searchText = input.value.trim().toLowerCase();
+                    const filterColumn = input.dataset.column;
+                    const rows = table.querySelectorAll('tr');
 
-        error: function(xhr, status, error) {
-          console.error("Error loading XML file:", error);
-        }
-      });
-    });
-
-    // Add search functionality
-    const searchInputs = document.querySelectorAll('.search-input');
-        searchInputs.forEach(input => {
-            input.addEventListener('input', () => {
-                const searchText = input.value.trim().toLowerCase();
-                const filterColumn = input.dataset.column;
-                const rows = table.querySelectorAll('tr');
-
-                rows.forEach(row => {
-                    const cells = row.querySelectorAll('td');
-                    let found = false;
-                    cells.forEach(cell => {
-                        if (cell.dataset.column === filterColumn && cell.textContent.toLowerCase().includes(searchText)) {
-                            found = true;
+                    rows.forEach(row => {
+                        const cells = row.querySelectorAll('td');
+                        let found = false;
+                        cells.forEach(cell => {
+                            if (cell.dataset.column === filterColumn && cell.textContent.toLowerCase().includes(searchText)) {
+                                found = true;
+                            }
+                        });
+                        if (found) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
                         }
                     });
-                    if (found) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
                 });
             });
-        });
 
-        //Activate search filtering
-    function filter(key) {
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("filter"+key);
-      filter = input.value.toLowerCase();
-      table = document.getElementById("literatureTable");
-      tr = table.getElementsByTagName("tr");
-    
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[key];
-        if (td) {
-          txtValue = (td.textContent || td.innerText).replace("\n","").replace(/\s+/g, " ") //delete whitespaces
-          if (txtValue.toLowerCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
+            //Activate search filtering
+        function filter(key) {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("filter"+key);
+          filter = input.value.toLowerCase();
+          table = document.getElementById("literatureTable");
+          tr = table.getElementsByTagName("tr");
+        
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[key];
+            if (td) {
+              txtValue = (td.textContent || td.innerText).replace("\n","").replace(/\s+/g, " ") //delete whitespaces
+              if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
           }
         }
-      }
-    }
-</script>
+    </script>
 
-<!--scroll to the selected ID and highlights the row-->
-<script>
-  window.onload = function() {
-    function scrollToAndHighlight(targetId) {
-      var targetRow = document.getElementById(targetId);
-      if (targetRow) {
-        targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        targetRow.style.backgroundColor = 'lightgrey'; // or any other highlighting style
-      }
-    }
-
-    // Execute the function after a short delay to ensure the DOM is fully loaded
-    setTimeout(function() {
-      var targetId = window.location.hash.substring(1);
-      if (targetId) {
-        scrollToAndHighlight(targetId);
-      }
-    }, 200);
-  };
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const table = document.getElementById("literatureTable");
-    const headers = table.querySelectorAll("th");
-    let sortOrder = {};  // Object to keep track of sort order for each column
-
-    headers.forEach((header, index) => {
-      if (index > 0) {  // Avoid sorting by the first column which is 'Type'
-        header.addEventListener("click", () => {
-          sortTable(index);
-        });
-      }
-    });
-
-    function sortTable(columnIndex) {
-      const tbody = table.querySelector("tbody");
-      const rows = Array.from(tbody.querySelectorAll("tr"));
-      const isYearColumn = columnIndex === 5;
-      const isQuoteSensitiveColumn = columnIndex === 3 || columnIndex === 4; // Titel and In columns
-      let sortDirection = sortOrder[columnIndex] === "asc" ? "desc" : "asc";
-      sortOrder[columnIndex] = sortDirection;
-
-      rows.sort((rowA, rowB) => {
-        let cellA = rowA.children[columnIndex].innerText.trim();
-        let cellB = rowB.children[columnIndex].innerText.trim();
-
-        if (isQuoteSensitiveColumn) {
-          cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
-          cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
-        }
-
-        if (cellA === "" || cellB === "") {
-          return cellA === "" ? 1 : -1;
-        }
-
-        if (isYearColumn) {
-          return sortDirection === "asc" ? cellA - cellB : cellB - cellA;
-        } else {
-          return sortDirection === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-        }
-      });
-
-      rows.forEach(row => tbody.appendChild(row));
-
-      // Update arrow icons
-      updateArrowIcons(columnIndex, sortDirection);
-    }
-
-    function updateArrowIcons(columnIndex, sortDirection) {
-      headers.forEach((header, index) => {
-        const upArrow = header.querySelector(".fa-arrow-up");
-        const downArrow = header.querySelector(".fa-arrow-down");
-        if (upArrow && downArrow) {
-          if (index === columnIndex) {
-            upArrow.style.color = sortDirection === "asc" ? "black" : "#ccc";
-            downArrow.style.color = sortDirection === "desc" ? "black" : "#ccc";
-          } else {
-            upArrow.style.color = "#ccc";
-            downArrow.style.color = "#ccc";
+    <!--scroll to the selected ID and highlights the row-->
+    <script>
+      window.onload = function() {
+        function scrollToAndHighlight(targetId) {
+          var targetRow = document.getElementById(targetId);
+          if (targetRow) {
+            targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            targetRow.style.backgroundColor = 'lightgrey'; // or any other highlighting style
           }
         }
+
+        // Execute the function after a short delay to ensure the DOM is fully loaded
+        setTimeout(function() {
+          var targetId = window.location.hash.substring(1);
+          if (targetId) {
+            scrollToAndHighlight(targetId);
+          }
+        }, 200);
+      };
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const table = document.getElementById("literatureTable");
+        const headers = table.querySelectorAll("th");
+        let sortOrder = {};  // Object to keep track of sort order for each column
+
+        headers.forEach((header, index) => {
+          if (index > 0) {  // Avoid sorting by the first column which is 'Type'
+            header.addEventListener("click", () => {
+              sortTable(index);
+            });
+          }
+        });
+
+        function sortTable(columnIndex) {
+          const tbody = table.querySelector("tbody");
+          const rows = Array.from(tbody.querySelectorAll("tr"));
+          const isYearColumn = columnIndex === 5;
+          const isQuoteSensitiveColumn = columnIndex === 3 || columnIndex === 4; // Titel and In columns
+          let sortDirection = sortOrder[columnIndex] === "asc" ? "desc" : "asc";
+          sortOrder[columnIndex] = sortDirection;
+
+          rows.sort((rowA, rowB) => {
+            let cellA = rowA.children[columnIndex].innerText.trim();
+            let cellB = rowB.children[columnIndex].innerText.trim();
+
+            if (isQuoteSensitiveColumn) {
+              cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+              cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+            }
+
+            if (cellA === "" || cellB === "") {
+              return cellA === "" ? 1 : -1;
+            }
+
+            if (isYearColumn) {
+              return sortDirection === "asc" ? cellA - cellB : cellB - cellA;
+            } else {
+              return sortDirection === "asc" ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            }
+          });
+
+          rows.forEach(row => tbody.appendChild(row));
+
+          // Update arrow icons
+          updateArrowIcons(columnIndex, sortDirection);
+        }
+
+        function updateArrowIcons(columnIndex, sortDirection) {
+          headers.forEach((header, index) => {
+            const upArrow = header.querySelector(".fa-arrow-up");
+            const downArrow = header.querySelector(".fa-arrow-down");
+            if (upArrow && downArrow) {
+              if (index === columnIndex) {
+                upArrow.style.color = sortDirection === "asc" ? "black" : "#ccc";
+                downArrow.style.color = sortDirection === "desc" ? "black" : "#ccc";
+              } else {
+                upArrow.style.color = "#ccc";
+                downArrow.style.color = "#ccc";
+              }
+            }
+          });
+        }
       });
-    }
-  });
-</script>
+    </script>
+  </body>
 </html>

@@ -1,1252 +1,1251 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>BDD Schreibtisch</title>
-        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="google" content="notranslate"/>
-        
-        <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-        <script src="../js/bootstrap.bundle.min.js"></script>
+  <head>
+      <title>BDD Schreibtisch</title>
+      <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="google" content="notranslate"/>
+      
+      <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+      <script src="../js/bootstrap.bundle.min.js"></script>
 
-        <script src="../js/mirador-3.3.0.min.js"></script>
-        
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
-        <link rel="stylesheet" type="text/css" href="../CSS/digitaleSynopse.css" media="screen"/>
-        
-        <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
-        
-        <script src="../js/jquery-3.7.1.min.js"></script>
-        <script src="../js/language.js" defer></script>
-        <script src="../js//digitaleSynopse.js" defer></script>
-        <script src="../js/navigation.js" defer></script>
+      <script src="../js/mirador-3.3.0.min.js"></script>
+      
+      <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../CSS/digitaleSynopse.css" media="screen"/>
+      
+      <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
+      
+      <script src="../js/jquery-3.7.1.min.js"></script>
+      <script src="../js/language.js" defer></script>
+      <script src="../js//digitaleSynopse.js" defer></script>
+      <script src="../js/navigation.js" defer></script>
 
-        <style>
-            .row {
-                overflow-x: auto;
-            }
+      <style>
+          .row {
+              overflow-x: auto;
+          }
 
-            #resourcePanel {
-                display: flex;
-            }
+          #resourcePanel {
+              display: flex;
+          }
 
-            .resource-panel-item {
-                flex: 0 0 auto; /* Prevent panels from growing */
-                margin-right: 10px; /* Adjust margin between panels */
-            }
+          .resource-panel-item {
+              flex: 0 0 auto; /* Prevent panels from growing */
+              margin-right: 10px; /* Adjust margin between panels */
+          }
 
-            .resource-panel-item.only-child {
-                flex: 1; /* Expand the single panel to fill the space */
-            }
+          .resource-panel-item.only-child {
+              flex: 1; /* Expand the single panel to fill the space */
+          }
 
-            .resource-panel-item.full-width {
-                width: 100%;
-            }
+          .resource-panel-item.full-width {
+              width: 100%;
+          }
 
-            .resource-panel-item.three-quarter-width {
-                width: 75%;
-            }
+          .resource-panel-item.three-quarter-width {
+              width: 75%;
+          }
 
-            .resource-panel-item.half-width {
-                width: 50%;
-            }
+          .resource-panel-item.half-width {
+              width: 50%;
+          }
 
-            .btn-outline-primary {
-            background-color: transparent;
-            color: #0d6efd;
-            border-color: #0d6efd;
-            }
+          .btn-outline-primary {
+          background-color: transparent;
+          color: #0d6efd;
+          border-color: #0d6efd;
+          }
 
-            .move-left, .move-right {
-                transition: all 0.3s; /* Add transition for smooth effect */
-            }
-            .move-left:hover, .move-right:hover {
-                transform: scale(1.1); /* Make the icon slightly bigger on hover */
-                color: blue; /* Change the color to blue on hover */
-                cursor: pointer; /* Change cursor to pointer on hover */
-                filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.2));
-            }
-        </style>
-    </head>
-    <body>
+          .move-left, .move-right {
+              transition: all 0.3s; /* Add transition for smooth effect */
+          }
+          .move-left:hover, .move-right:hover {
+              transform: scale(1.1); /* Make the icon slightly bigger on hover */
+              color: blue; /* Change the color to blue on hover */
+              cursor: pointer; /* Change cursor to pointer on hover */
+              filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.2));
+          }
+      </style>
+  </head>
+  <body>
 
-        <div id="navbar-placeholder"></div>
-        <div class="back-button ps-4" style="margin-top:40px;">
-          <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
-        </div>
+      <div id="navbar-placeholder"></div>
+      <div class="back-button ps-4" style="margin-top:40px;">
+        <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+      </div>
 
-        <div id="content" class="container" style="flex:1">
-            <h1 class="section-main-title" style="margin-bottom:20px!important;">
-              <span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span> 
-              <span style="vertical-align: super;"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#desktopModal" style="padding: 0;">
-                <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
-            </h1>
+      <div id="content" class="container" style="flex:1">
+          <h1 class="section-main-title" style="margin-bottom:20px!important;">
+            <span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span> 
+            <span style="vertical-align: super;"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#desktopModal" style="padding: 0;">
+              <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
+          </h1>
 
-          <!-- Modal -->
-          <div class="modal fade" id="desktopModal" tabindex="-1" aria-labelledby="desktopModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="desktopModalLabel" style="font-weight: bold;"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="infoSchreibtisch"></div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
-                  
-                </div>
+        <!-- Modal -->
+        <div class="modal fade" id="desktopModal" tabindex="-1" aria-labelledby="desktopModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="desktopModalLabel" style="font-weight: bold;"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="infoSchreibtisch"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                
               </div>
             </div>
           </div>
-            <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
-            <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>
-            <button class="btn btn-warning" id="clearAll"><span lang="de">Alle löschen</span><span lang="en">Clear all</span></button>
-            
-            <div class="dropdown" style="float: right;">
-              <button lang="de" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Transkriptionsansichten
-              </button>
-              <button lang="en" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Transcription views
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" onclick="showElement('tei_lb')">Original</a></li>
-                <li><a class="dropdown-item" onclick="hideElement('tei_lb'); hideElement('tei_seg_displaced'); toggleTextWrap()">Lesefassung</a></li>
-                <hr/>
-                <li><a class="dropdown-item" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
-                <li><a class="dropdown-item" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
-                <!--<hr/>
-                <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
-                <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>-->
-              </ul>
-            </div>
+        </div>
+          <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
+          <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>
+          <button class="btn btn-warning" id="clearAll"><span lang="de">Alle löschen</span><span lang="en">Clear all</span></button>
+          
+          <div class="dropdown" style="float: right;">
+            <button lang="de" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Transkriptionsansichten
+            </button>
+            <button lang="en" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Transcription views
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" onclick="showElement('tei_lb')">Original</a></li>
+              <li><a class="dropdown-item" onclick="hideElement('tei_lb'); hideElement('tei_seg_displaced'); toggleTextWrap()">Lesefassung</a></li>
+              <hr/>
+              <li><a class="dropdown-item" onclick="showElement('tei_abbr');hideElement('tei_expan')">Abkurzüngen anzeigen</a></li>
+              <li><a class="dropdown-item" onclick="showElement('tei_expan');hideElement('tei_abbr')">Auflösungen anzeigen</a></li>
+              <!--<hr/>
+              <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
+              <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>-->
+            </ul>
+          </div>
 
-            
-            <div class="row mt-3 panelsWindow" style="overflow-x: auto;">
-                <div class="col">
-                    <div class="d-flex" id="resourcePanel"></div>
-                </div>
-            </div>
+          
+          <div class="row mt-3 panelsWindow" style="overflow-x: auto;">
+              <div class="col">
+                  <div class="d-flex" id="resourcePanel"></div>
+              </div>
+          </div>
 
 
-            <!-- Modal for selecting resources -->
-            <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="resourceModalLabel"><span lang="de">Ressourcen auswählen</span><span lang="en">Select Resources</span></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
+          <!-- Modal for selecting resources -->
+          <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="resourceModalLabel"><span lang="de">Ressourcen auswählen</span><span lang="en">Select Resources</span></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
                       <div class="modal-body">
-                        <div class="modal-body">
-                            <h6><span lang="de">JSON Hochladen</span><span lang="en">Load JSON</span></h6>
-                            <input type="file" class="form-control" id="jsonFileInput" accept=".json">   
+                          <h6><span lang="de">JSON Hochladen</span><span lang="en">Load JSON</span></h6>
+                          <input type="file" class="form-control" id="jsonFileInput" accept=".json">   
+                      </div>
+                      <div class="accordion" id="accordionManuscripts">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="BambergHeader">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBamberg" aria-expanded="false" aria-controls="collapseBamberg">
+                                Bamberg, Staatsbibliothek, Can. 6
+                                </button>
+                            </h2>
+                            <div id="collapseBamberg" class="accordion-collapse collapse" aria-labelledby="BambergHeader" data-bs-parent="#accordionManuscripts">
+                                <div class="accordion-body">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_00" id="BambergBook00">
+                                        <label class="form-check-label" for="BambergBook00">
+                                        Buch 00
+                                        </label>
+                                      </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_01" id="BambergBook01">
+                                            <label class="form-check-label" for="BambergBook01">
+                                            Buch 01
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_02" id="BambergBook02">
+                                            <label class="form-check-label" for="BambergBook02">
+                                            Buch 02
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_03" id="BambergBook03">
+                                            <label class="form-check-label" for="BambergBook03">
+                                            Buch 03
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_04" id="BambergBook04">
+                                          <label class="form-check-label" for="BambergBook04">
+                                          Buch 04
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_05" id="BambergBook05">
+                                          <label class="form-check-label" for="BambergBook05">
+                                          Buch 05
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_06" id="BambergBook06">
+                                          <label class="form-check-label" for="BambergBook06">
+                                          Buch 06
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_07" id="BambergBook07">
+                                          <label class="form-check-label" for="BambergBook07">
+                                          Buch 07
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_08" id="BambergBook08">
+                                          <label class="form-check-label" for="BambergBook08">
+                                          Buch 08
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_09" id="BambergBook09">
+                                          <label class="form-check-label" for="BambergBook09">
+                                          Buch 09
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_10" id="BambergBook10">
+                                          <label class="form-check-label" for="BambergBook10">
+                                          Buch 10
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_11" id="BambergBook11">
+                                        <label class="form-check-label" for="BambergBook11">
+                                        Buch 11
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_012" id="BambergBook12">
+                                        <label class="form-check-label" for="BambergBook12">
+                                        Buch 12
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_13" id="BambergBook13">
+                                        <label class="form-check-label" for="BambergBook13">
+                                        Buch 13
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_14" id="BambergBook14">
+                                        <label class="form-check-label" for="BambergBook14">
+                                        Buch 14
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_15" id="BambergBook15">
+                                        <label class="form-check-label" for="BambergBook15">
+                                        Buch 15
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_16" id="BambergBook16">
+                                        <label class="form-check-label" for="BambergBook16">
+                                        Buch 16
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_17" id="BambergBook17">
+                                        <label class="form-check-label" for="BambergBook17">
+                                        Buch 17
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_18" id="BambergBook18">
+                                        <label class="form-check-label" for="BambergBook18">
+                                        Buch 18
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_19" id="BambergBook19">
+                                        <label class="form-check-label" for="BambergBook19">
+                                        Buch 19
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_20" id="BambergBook20">
+                                        <label class="form-check-label" for="BambergBook20">
+                                        Buch 20
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="accordion" id="accordionManuscripts">
-                          <div class="accordion-item">
-                              <h2 class="accordion-header" id="BambergHeader">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBamberg" aria-expanded="false" aria-controls="collapseBamberg">
-                                  Bamberg, Staatsbibliothek, Can. 6
-                                  </button>
-                              </h2>
-                              <div id="collapseBamberg" class="accordion-collapse collapse" aria-labelledby="BambergHeader" data-bs-parent="#accordionManuscripts">
-                                  <div class="accordion-body">
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_00" id="BambergBook00">
-                                          <label class="form-check-label" for="BambergBook00">
-                                          Buch 00
-                                          </label>
-                                        </div>
-                                          <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="Bamberg_B_01" id="BambergBook01">
-                                              <label class="form-check-label" for="BambergBook01">
-                                              Buch 01
-                                              </label>
-                                          </div>
-                                          <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="Bamberg_B_02" id="BambergBook02">
-                                              <label class="form-check-label" for="BambergBook02">
-                                              Buch 02
-                                              </label>
-                                          </div>
-                                          <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" value="Bamberg_B_03" id="BambergBook03">
-                                              <label class="form-check-label" for="BambergBook03">
-                                              Buch 03
-                                              </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_04" id="BambergBook04">
-                                            <label class="form-check-label" for="BambergBook04">
-                                            Buch 04
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_05" id="BambergBook05">
-                                            <label class="form-check-label" for="BambergBook05">
-                                            Buch 05
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_06" id="BambergBook06">
-                                            <label class="form-check-label" for="BambergBook06">
-                                            Buch 06
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_07" id="BambergBook07">
-                                            <label class="form-check-label" for="BambergBook07">
-                                            Buch 07
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_08" id="BambergBook08">
-                                            <label class="form-check-label" for="BambergBook08">
-                                            Buch 08
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_09" id="BambergBook09">
-                                            <label class="form-check-label" for="BambergBook09">
-                                            Buch 09
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bamberg_B_10" id="BambergBook10">
-                                            <label class="form-check-label" for="BambergBook10">
-                                            Buch 10
-                                            </label>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_11" id="BambergBook11">
-                                          <label class="form-check-label" for="BambergBook11">
-                                          Buch 11
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_012" id="BambergBook12">
-                                          <label class="form-check-label" for="BambergBook12">
-                                          Buch 12
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_13" id="BambergBook13">
-                                          <label class="form-check-label" for="BambergBook13">
-                                          Buch 13
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_14" id="BambergBook14">
-                                          <label class="form-check-label" for="BambergBook14">
-                                          Buch 14
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_15" id="BambergBook15">
-                                          <label class="form-check-label" for="BambergBook15">
-                                          Buch 15
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_16" id="BambergBook16">
-                                          <label class="form-check-label" for="BambergBook16">
-                                          Buch 16
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_17" id="BambergBook17">
-                                          <label class="form-check-label" for="BambergBook17">
-                                          Buch 17
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_18" id="BambergBook18">
-                                          <label class="form-check-label" for="BambergBook18">
-                                          Buch 18
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_19" id="BambergBook19">
-                                          <label class="form-check-label" for="BambergBook19">
-                                          Buch 19
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Bamberg_B_20" id="BambergBook20">
-                                          <label class="form-check-label" for="BambergBook20">
-                                          Buch 20
-                                          </label>
-                                        </div>
-                                      </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="FrankfurtHeader">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFrankfurt" aria-expanded="false" aria-controls="collapseFrankfurt">
+                              Frankfurt am Main, Stadt - und Universitätsbibliothek, Barth. 50
+                              </button>
+                          </h2>
+                          <div id="collapseFrankfurt" class="accordion-collapse collapse" aria-labelledby="FrankfurtHeader" data-bs-parent="#accordionManuscripts">
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_00" id="FrankfurtBook00">
+                                      <label class="form-check-label" for="FrankfurtBook0">
+                                      Buch 00
+                                      </label>
                                     </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="FrankfurtHeader">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFrankfurt" aria-expanded="false" aria-controls="collapseFrankfurt">
-                                Frankfurt am Main, Stadt - und Universitätsbibliothek, Barth. 50
-                                </button>
-                            </h2>
-                            <div id="collapseFrankfurt" class="accordion-collapse collapse" aria-labelledby="FrankfurtHeader" data-bs-parent="#accordionManuscripts">
-                                <div class="accordion-body">
-                                  <div class="row">
-                                    <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_00" id="FrankfurtBook00">
-                                        <label class="form-check-label" for="FrankfurtBook0">
-                                        Buch 00
-                                        </label>
-                                      </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Frankfurt_F_01" id="FrankfurtBook01">
-                                            <label class="form-check-label" for="FrankfurtBook01">
-                                            Buch 01
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Frankfurt_F_02" id="FrankfurtBook02">
-                                            <label class="form-check-label" for="FrankfurtBook02">
-                                            Buch 02
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Frankfurt_F_03" id="FrankfurtBook03">
-                                            <label class="form-check-label" for="FrankfurtBook03">
-                                            Buch 03
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_04" id="FrankfurtBook04">
-                                          <label class="form-check-label" for="FrankfurtBook04">
-                                          Buch 04
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_05" id="FrankfurtBook05">
-                                          <label class="form-check-label" for="FrankfurtBook05">
-                                          Buch 05
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_06" id="FrankfurtBook06">
-                                          <label class="form-check-label" for="FrankfurtBook06">
-                                          Buch 06
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_07" id="FrankfurtBook07">
-                                          <label class="form-check-label" for="FrankfurtBook07">
-                                          Buch 07
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_08" id="FrankfurtBook08">
-                                          <label class="form-check-label" for="FrankfurtBook08">
-                                          Buch 08
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_09" id="FrankfurtBook09">
-                                          <label class="form-check-label" for="FrankfurtBook09">
-                                          Buch 09
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_10" id="FrankfurtBook10">
-                                          <label class="form-check-label" for="FrankfurtBook10">
-                                          Buch 10
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_11" id="FrankfurtBook11">
-                                        <label class="form-check-label" for="FrankfurtBook11">
-                                        Buch 11
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_12" id="FrankfurtBook12">
-                                        <label class="form-check-label" for="FrankfurtBook12">
-                                        Buch 12
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_13" id="FrankfurtBook13">
-                                        <label class="form-check-label" for="FrankfurtBook13">
-                                        Buch 13
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_14" id="FrankfurtBook14">
-                                        <label class="form-check-label" for="FrankfurtBook14">
-                                        Buch 14
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_15" id="FrankfurtBook15">
-                                        <label class="form-check-label" for="FrankfurtBook15">
-                                        Buch 15
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_16" id="FrankfurtBook16">
-                                        <label class="form-check-label" for="FrankfurtBook16">
-                                        Buch 16
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_17" id="FrankfurtBook17">
-                                        <label class="form-check-label" for="FrankfurtBook17">
-                                        Buch 17
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_18" id="FrankfurtBook18">
-                                        <label class="form-check-label" for="FrankfurtBook18">
-                                        Buch 18
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_19" id="FrankfurtBook19">
-                                        <label class="form-check-label" for="FrankfurtBook19">
-                                        Buch 19
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_20" id="FrankfurtBook20">
-                                        <label class="form-check-label" for="FrankfurtBook20">
-                                        Buch 20
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div> 
-                                </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="KölnHeader">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKöln" aria-expanded="false" aria-controls="collapseKöln">
-                                  Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod. 119
-                                </button>
-                            </h2>
-                            <div id="collapseKöln" class="accordion-collapse collapse" aria-labelledby="KölnHeader" data-bs-parent="#accordionManuscripts">
-                                <div class="accordion-body">
-                                  <div class="row">
-                                    <div class="col-md-6">
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_00" id="KölnBook00">
-                                        <label class="form-check-label" for="KölnBook00">
-                                        Buch 00
-                                        </label>
-                                      </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Köln_K_01" id="KölnBook01">
-                                            <label class="form-check-label" for="KölnBook01">
-                                            Buch 01
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Köln_K_02" id="KölnBook02">
-                                            <label class="form-check-label" for="KölnBook02">
-                                            Buch 02
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Köln_K_03" id="KölnBook03">
-                                            <label class="form-check-label" for="KölnBook03">
-                                            Buch 03
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_04" id="KölnBook04">
-                                          <label class="form-check-label" for="KölnBook04">
-                                          Buch 04
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_05" id="KölnBook05">
-                                          <label class="form-check-label" for="KölnBook05">
-                                          Buch 05
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_06" id="KölnBook06">
-                                          <label class="form-check-label" for="KölnBook06">
-                                          Buch 06
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_07" id="KölnBook07">
-                                          <label class="form-check-label" for="KölnBook07">
-                                          Buch 07
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_08" id="KölnBook08">
-                                          <label class="form-check-label" for="KölnBook08">
-                                          Buch 08
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_09" id="KölnBook09">
-                                          <label class="form-check-label" for="KölnBook09">
-                                          Buch 09
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Köln_K_10" id="KölnBook10">
-                                          <label class="form-check-label" for="KölnBook10">
-                                          Buch 10
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_11" id="KölnBook11">
-                                        <label class="form-check-label" for="KölnBook11">
-                                        Buch 11
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_12" id="KölnBook12">
-                                        <label class="form-check-label" for="KölnBook12">
-                                        Buch 12
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_13" id="KölnBook13">
-                                        <label class="form-check-label" for="KölnBook13">
-                                        Buch 13
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_14" id="KölnBook14">
-                                        <label class="form-check-label" for="KölnBook14">
-                                        Buch 14
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_15" id="KölnBook15">
-                                        <label class="form-check-label" for="KölnBook15">
-                                        Buch 15
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_16" id="KölnBook16">
-                                        <label class="form-check-label" for="KölnBook16">
-                                        Buch 16
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_17" id="KölnBook17">
-                                        <label class="form-check-label" for="KölnBook17">
-                                        Buch 17
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_18" id="KölnBook18">
-                                        <label class="form-check-label" for="KölnBook18">
-                                        Buch 18
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_19" id="KölnBook19">
-                                        <label class="form-check-label" for="KölnBook19">
-                                        Buch 19
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Köln_K_20" id="KölnBook20">
-                                        <label class="form-check-label" for="KölnBook20">
-                                        Buch 20
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="Vatikan585Header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVatikan585" aria-expanded="false" aria-controls="collapseVatikan585">
-                                  Vatikanstadt (Va2), Biblioteca Apostolica Vaticana, Pal. Lat. 585
-                                </button>
-                            </h2>
-                            <div id="collapseVatikan585" class="accordion-collapse collapse" aria-labelledby="Vatikan585Header" data-bs-parent="#accordionManuscripts">
-                                <div class="accordion-body">
-                                  <div class="row">
-                                    <div class="col-md-6">
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_00" id="Vatikan585Book00">
-                                        <label class="form-check-label" for="Vatikan585Book00">
-                                        Buch 00
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_01" id="Vatikan585Book01">
-                                          <label class="form-check-label" for="Vatikan585Book01">
+                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_01" id="FrankfurtBook01">
+                                          <label class="form-check-label" for="FrankfurtBook01">
                                           Buch 01
                                           </label>
                                       </div>
                                       <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_02" id="Vatikan585Book02">
-                                          <label class="form-check-label" for="Vatikan585Book02">
+                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_02" id="FrankfurtBook02">
+                                          <label class="form-check-label" for="FrankfurtBook02">
                                           Buch 02
                                           </label>
                                       </div>
                                       <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_03" id="Vatikan585Book03">
-                                          <label class="form-check-label" for="Vatikan585Book03">
+                                          <input class="form-check-input" type="checkbox" value="Frankfurt_F_03" id="FrankfurtBook03">
+                                          <label class="form-check-label" for="FrankfurtBook03">
                                           Buch 03
                                           </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_04" id="Vatikan585Book04">
-                                        <label class="form-check-label" for="Vatikan585Book04">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_04" id="FrankfurtBook04">
+                                        <label class="form-check-label" for="FrankfurtBook04">
                                         Buch 04
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_05" id="FrankfurtBook05">
+                                        <label class="form-check-label" for="FrankfurtBook05">
+                                        Buch 05
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_06" id="FrankfurtBook06">
+                                        <label class="form-check-label" for="FrankfurtBook06">
+                                        Buch 06
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_07" id="FrankfurtBook07">
+                                        <label class="form-check-label" for="FrankfurtBook07">
+                                        Buch 07
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_08" id="FrankfurtBook08">
+                                        <label class="form-check-label" for="FrankfurtBook08">
+                                        Buch 08
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_09" id="FrankfurtBook09">
+                                        <label class="form-check-label" for="FrankfurtBook09">
+                                        Buch 09
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Frankfurt_F_10" id="FrankfurtBook10">
+                                        <label class="form-check-label" for="FrankfurtBook10">
+                                        Buch 10
+                                        </label>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_11" id="FrankfurtBook11">
+                                      <label class="form-check-label" for="FrankfurtBook11">
+                                      Buch 11
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_12" id="FrankfurtBook12">
+                                      <label class="form-check-label" for="FrankfurtBook12">
+                                      Buch 12
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_13" id="FrankfurtBook13">
+                                      <label class="form-check-label" for="FrankfurtBook13">
+                                      Buch 13
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_14" id="FrankfurtBook14">
+                                      <label class="form-check-label" for="FrankfurtBook14">
+                                      Buch 14
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_15" id="FrankfurtBook15">
+                                      <label class="form-check-label" for="FrankfurtBook15">
+                                      Buch 15
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_16" id="FrankfurtBook16">
+                                      <label class="form-check-label" for="FrankfurtBook16">
+                                      Buch 16
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_17" id="FrankfurtBook17">
+                                      <label class="form-check-label" for="FrankfurtBook17">
+                                      Buch 17
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_18" id="FrankfurtBook18">
+                                      <label class="form-check-label" for="FrankfurtBook18">
+                                      Buch 18
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_19" id="FrankfurtBook19">
+                                      <label class="form-check-label" for="FrankfurtBook19">
+                                      Buch 19
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Frankfurt_F_20" id="FrankfurtBook20">
+                                      <label class="form-check-label" for="FrankfurtBook20">
+                                      Buch 20
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div> 
+                              </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="KölnHeader">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKöln" aria-expanded="false" aria-controls="collapseKöln">
+                                Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod. 119
+                              </button>
+                          </h2>
+                          <div id="collapseKöln" class="accordion-collapse collapse" aria-labelledby="KölnHeader" data-bs-parent="#accordionManuscripts">
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_00" id="KölnBook00">
+                                      <label class="form-check-label" for="KölnBook00">
+                                      Buch 00
+                                      </label>
+                                    </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Köln_K_01" id="KölnBook01">
+                                          <label class="form-check-label" for="KölnBook01">
+                                          Buch 01
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Köln_K_02" id="KölnBook02">
+                                          <label class="form-check-label" for="KölnBook02">
+                                          Buch 02
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="Köln_K_03" id="KölnBook03">
+                                          <label class="form-check-label" for="KölnBook03">
+                                          Buch 03
+                                          </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_04" id="KölnBook04">
+                                        <label class="form-check-label" for="KölnBook04">
+                                        Buch 04
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_05" id="KölnBook05">
+                                        <label class="form-check-label" for="KölnBook05">
+                                        Buch 05
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_06" id="KölnBook06">
+                                        <label class="form-check-label" for="KölnBook06">
+                                        Buch 06
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_07" id="KölnBook07">
+                                        <label class="form-check-label" for="KölnBook07">
+                                        Buch 07
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_08" id="KölnBook08">
+                                        <label class="form-check-label" for="KölnBook08">
+                                        Buch 08
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_09" id="KölnBook09">
+                                        <label class="form-check-label" for="KölnBook09">
+                                        Buch 09
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_10" id="KölnBook10">
+                                        <label class="form-check-label" for="KölnBook10">
+                                        Buch 10
+                                        </label>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_11" id="KölnBook11">
+                                      <label class="form-check-label" for="KölnBook11">
+                                      Buch 11
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_12" id="KölnBook12">
+                                      <label class="form-check-label" for="KölnBook12">
+                                      Buch 12
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_13" id="KölnBook13">
+                                      <label class="form-check-label" for="KölnBook13">
+                                      Buch 13
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_14" id="KölnBook14">
+                                      <label class="form-check-label" for="KölnBook14">
+                                      Buch 14
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_15" id="KölnBook15">
+                                      <label class="form-check-label" for="KölnBook15">
+                                      Buch 15
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_16" id="KölnBook16">
+                                      <label class="form-check-label" for="KölnBook16">
+                                      Buch 16
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_17" id="KölnBook17">
+                                      <label class="form-check-label" for="KölnBook17">
+                                      Buch 17
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_18" id="KölnBook18">
+                                      <label class="form-check-label" for="KölnBook18">
+                                      Buch 18
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_19" id="KölnBook19">
+                                      <label class="form-check-label" for="KölnBook19">
+                                      Buch 19
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Köln_K_20" id="KölnBook20">
+                                      <label class="form-check-label" for="KölnBook20">
+                                      Buch 20
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="Vatikan585Header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVatikan585" aria-expanded="false" aria-controls="collapseVatikan585">
+                                Vatikanstadt (Va2), Biblioteca Apostolica Vaticana, Pal. Lat. 585
+                              </button>
+                          </h2>
+                          <div id="collapseVatikan585" class="accordion-collapse collapse" aria-labelledby="Vatikan585Header" data-bs-parent="#accordionManuscripts">
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_00" id="Vatikan585Book00">
+                                      <label class="form-check-label" for="Vatikan585Book00">
+                                      Buch 00
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_01" id="Vatikan585Book01">
+                                        <label class="form-check-label" for="Vatikan585Book01">
+                                        Buch 01
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_02" id="Vatikan585Book02">
+                                        <label class="form-check-label" for="Vatikan585Book02">
+                                        Buch 02
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_03" id="Vatikan585Book03">
+                                        <label class="form-check-label" for="Vatikan585Book03">
+                                        Buch 03
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_04" id="Vatikan585Book04">
+                                      <label class="form-check-label" for="Vatikan585Book04">
+                                      Buch 04
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_05" id="Vatikan585Book05">
+                                      <label class="form-check-label" for="Vatikan585Book05">
+                                      Buch 05
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_06" id="Vatikan585Book06">
+                                      <label class="form-check-label" for="Vatikan585Book06">
+                                      Buch 06
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_07" id="Vatikan585Book07">
+                                      <label class="form-check-label" for="Vatikan585Book07">
+                                      Buch 07
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_08" id="Vatikan585Book08">
+                                      <label class="form-check-label" for="Vatikan585Book08">
+                                      Buch 08
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="Vatikan586Header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVatikan586" aria-expanded="false" aria-controls="collapseVatikan586">
+                                  Vatikanstadt (Va3), Biblioteca Apostolica Vaticana, Pal. Lat. 586
+                                </button>
+                            </h2>
+                            <div id="collapseVatikan586" class="accordion-collapse collapse" aria-labelledby="Vatikan586Header" data-bs-parent="#accordionManuscripts">
+                                <div class="accordion-body">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_09" id="Vatikan586Book09">
+                                        <label class="form-check-label" for="Vatikan586Book09">
+                                        Buch 09
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_10" id="Vatikan586Book10">
+                                        <label class="form-check-label" for="Vatikan586Book10">
+                                        Buch 10
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_11" id="Vatikan586Book11">
+                                        <label class="form-check-label" for="Vatikan586Book11">
+                                        Buch 11
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_12" id="Vatikan586Book12">
+                                        <label class="form-check-label" for="Vatikan586Book12">
+                                        Buch 12
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_13" id="Vatikan586Book13">
+                                        <label class="form-check-label" for="Vatikan586Book13">
+                                        Buch 13
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_14" id="Vatikan586Book14">
+                                        <label class="form-check-label" for="Vatikan586Book14">
+                                        Buch 14
                                         </label>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_05" id="Vatikan585Book05">
-                                        <label class="form-check-label" for="Vatikan585Book05">
-                                        Buch 05
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_15" id="Vatikan586Book15">
+                                        <label class="form-check-label" for="Vatikan586Book15">
+                                        Buch 15
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_06" id="Vatikan585Book06">
-                                        <label class="form-check-label" for="Vatikan585Book06">
-                                        Buch 06
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_16" id="Vatikan586Book16">
+                                        <label class="form-check-label" for="Vatikan586Book16">
+                                        Buch 16
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_07" id="Vatikan585Book07">
-                                        <label class="form-check-label" for="Vatikan585Book07">
-                                        Buch 07
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_17" id="Vatikan586Book17">
+                                        <label class="form-check-label" for="Vatikan586Book17">
+                                        Buch 17
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 585_Va2_08" id="Vatikan585Book08">
-                                        <label class="form-check-label" for="Vatikan585Book08">
-                                        Buch 08
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_18" id="Vatikan586Book18">
+                                        <label class="form-check-label" for="Vatikan586Book18">
+                                        Buch 18
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_19" id="Vatikan586Book19">
+                                        <label class="form-check-label" for="Vatikan586Book19">
+                                        Buch 19
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_20" id="Vatikan586Book20">
+                                        <label class="form-check-label" for="Vatikan586Book20">
+                                        Buch 20
                                         </label>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                              <h2 class="accordion-header" id="Vatikan586Header">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVatikan586" aria-expanded="false" aria-controls="collapseVatikan586">
-                                    Vatikanstadt (Va3), Biblioteca Apostolica Vaticana, Pal. Lat. 586
-                                  </button>
-                              </h2>
-                              <div id="collapseVatikan586" class="accordion-collapse collapse" aria-labelledby="Vatikan586Header" data-bs-parent="#accordionManuscripts">
-                                  <div class="accordion-body">
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_09" id="Vatikan586Book09">
-                                          <label class="form-check-label" for="Vatikan586Book09">
-                                          Buch 09
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_10" id="Vatikan586Book10">
-                                          <label class="form-check-label" for="Vatikan586Book10">
-                                          Buch 10
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_11" id="Vatikan586Book11">
-                                          <label class="form-check-label" for="Vatikan586Book11">
-                                          Buch 11
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_12" id="Vatikan586Book12">
-                                          <label class="form-check-label" for="Vatikan586Book12">
-                                          Buch 12
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_13" id="Vatikan586Book13">
-                                          <label class="form-check-label" for="Vatikan586Book13">
-                                          Buch 13
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_14" id="Vatikan586Book14">
-                                          <label class="form-check-label" for="Vatikan586Book14">
-                                          Buch 14
-                                          </label>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_15" id="Vatikan586Book15">
-                                          <label class="form-check-label" for="Vatikan586Book15">
-                                          Buch 15
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_16" id="Vatikan586Book16">
-                                          <label class="form-check-label" for="Vatikan586Book16">
-                                          Buch 16
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_17" id="Vatikan586Book17">
-                                          <label class="form-check-label" for="Vatikan586Book17">
-                                          Buch 17
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_18" id="Vatikan586Book18">
-                                          <label class="form-check-label" for="Vatikan586Book18">
-                                          Buch 18
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_19" id="Vatikan586Book19">
-                                          <label class="form-check-label" for="Vatikan586Book19">
-                                          Buch 19
-                                          </label>
-                                        </div>
-                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="Vatikanstadt 586_Va3_20" id="Vatikan586Book20">
-                                          <label class="form-check-label" for="Vatikan586Book20">
-                                          Buch 20
-                                          </label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
-                          
                         </div>
+                        
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
-                        <button type="button" class="btn btn-primary" id="confirmSelectionBtn"><span lang="de">Auswahl bestätigen</span><span lang="en">Confirm Selection</span></button>
-                      </div>
-                  </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                      <button type="button" class="btn btn-primary" id="confirmSelectionBtn"><span lang="de">Auswahl bestätigen</span><span lang="en">Confirm Selection</span></button>
+                    </div>
                 </div>
+              </div>
+          </div>
+
+      </div>
+
+      <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
+      <div class="modal fade" id="legendModal" tabindex="-1" aria-labelledby="legendModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="legendModalLabel" style="font-weight: bold;"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h1>
             </div>
-
-        </div>
-
-        <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
-        <div class="modal fade" id="legendModal" tabindex="-1" aria-labelledby="legendModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="legendModalLabel" style="font-weight: bold;"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h1>
-              </div>
-              <div class="modal-body" id="infoStyleTranscriptions">
-                
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
-              </div>
+            <div class="modal-body" id="infoStyleTranscriptions">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="footer-placeholder"></div>
-        
-    </body>
+      <div id="footer-placeholder"></div>
+      
+  </body>
 
-    <script>
-    //open the modal to select books  
-      const activeOptions = ["13"]
-      document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
-        if (!activeOptions.some(element => checkbox.value.includes(element))){ //todo remove "!" when active options will be longer than non active options
-          checkbox.disabled = true;
-        }
-      })
-      document.getElementById('addResourceBtn').addEventListener('click', function() {
-        $('#resourceModal').modal('show');
+  <script>
+  //open the modal to select books  
+    const activeOptions = ["13"]
+    document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
+      if (!activeOptions.some(element => checkbox.value.includes(element))){ //todo remove "!" when active options will be longer than non active options
+        checkbox.disabled = true;
+      }
+    })
+    document.getElementById('addResourceBtn').addEventListener('click', function() {
+      $('#resourceModal').modal('show');
 
-        // Deselect all checkboxes
-        let checkboxes = document.querySelectorAll('#resourceModal input[type="checkbox"]');
-        checkboxes.forEach(function(checkbox) {
-            checkbox.checked = false;
-        });
+      // Deselect all checkboxes
+      let checkboxes = document.querySelectorAll('#resourceModal input[type="checkbox"]');
+      checkboxes.forEach(function(checkbox) {
+          checkbox.checked = false;
       });
+    });
 
-      document.getElementById('jsonFileInput').addEventListener('change', function() {
-        const file = this.files[0];
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          const jsonData = JSON.parse(event.target.result);
-          displayResourcesFromJson(jsonData);
-          saveResourceState(); // Save resource panel status after uploading data from Json
+    document.getElementById('jsonFileInput').addEventListener('change', function() {
+      const file = this.files[0];
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const jsonData = JSON.parse(event.target.result);
+        displayResourcesFromJson(jsonData);
+        saveResourceState(); // Save resource panel status after uploading data from Json
+      };
+      reader.readAsText(file);
+    });
+
+    document.getElementById('confirmSelectionBtn').addEventListener('click', function(e) {
+      e.preventDefault()
+      $('#resourceModal').modal('hide');
+      displaySelectedResources();
+      adjustPanelWidth()
+    });
+
+    
+
+    // After function displaySelectedResources() --> save resource panel status in local storage
+    function saveResourceState() {
+      let resourcePanels = document.querySelectorAll('.resource-panel-item');
+      let resourceState = [];
+      resourcePanels.forEach(panel => {
+        let bookId = panel.getAttribute("data-ms");
+        let view = {
+          transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
+          structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
+          mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary'),
+          editor: panel.querySelector('.editor-btn').classList.contains('btn-primary')
         };
-        reader.readAsText(file);
+        resourceState.push({ bookId, view });
       });
 
-      document.getElementById('confirmSelectionBtn').addEventListener('click', function(e) {
-        e.preventDefault()
-        $('#resourceModal').modal('hide');
-        displaySelectedResources();
-        adjustPanelWidth()
-      });
+      localStorage.setItem('resourceState', JSON.stringify(resourceState));
+      adjustPanelWidth()
+    }
 
+    // Upload source panel status from local storage
+    async function loadResourceState() {
+      const resourceState = JSON.parse(localStorage.getItem('resourceState'));
+      if (resourceState) {
+        displayResourcesFromJson(resourceState)
+      }
+      adjustPanelWidth()
+    }
+
+    // Call function loadResourceState() when loading the page
+    window.addEventListener('load', loadResourceState);
+
+    async function displayResourcesFromJson(jsonData) {
+      let container = document.getElementById('resourcePanel');
+      container.innerHTML = '';
+      for (let resource of jsonData) {
+        let selectedViews = [false, false, false, false]
+        if (resource.view.transcription) {
+          selectedViews[0] = true
+        }
+        if (resource.view.structure) {
+          selectedViews[1] = true
+        }
+        if (resource.view.mirador) {
+          selectedViews[2] = true
+        }
+        if (resource.view.editor) {
+          selectedViews[3] = true
+        }
+        await initializeMirador(container, resource.bookId, selectedViews)
+      }
+    }
       
 
-      // After function displaySelectedResources() --> save resource panel status in local storage
-      function saveResourceState() {
-        let resourcePanels = document.querySelectorAll('.resource-panel-item');
-        let resourceState = [];
-        resourcePanels.forEach(panel => {
-          let bookId = panel.getAttribute("data-ms");
-          let view = {
-            transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
-            structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
-            mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary'),
-            editor: panel.querySelector('.editor-btn').classList.contains('btn-primary')
-          };
-          resourceState.push({ bookId, view });
-        });
+    //display resources after selecting them in the modal
+    function displaySelectedResources() {
+      let resourcePanel = document.getElementById('resourcePanel');
 
-        localStorage.setItem('resourceState', JSON.stringify(resourceState));
-        adjustPanelWidth()
-      }
+      let BambergBooks = document.querySelectorAll('#collapseBamberg input[type="checkbox"]:checked');
+      let FrankfurtBooks = document.querySelectorAll('#collapseFrankfurt input[type="checkbox"]:checked');
+      let KölnBooks = document.querySelectorAll('#collapseKöln input[type="checkbox"]:checked');
+      let Vatikan585Books = document.querySelectorAll('#collapseVatikan585 input[type="checkbox"]:checked');
+      let Vatikan586Books = document.querySelectorAll('#collapseVatikan586 input[type="checkbox"]:checked');
+      // Add new panel without removing the ones already present
+      appendBooks(resourcePanel, BambergBooks);
+      appendBooks(resourcePanel, FrankfurtBooks);
+      appendBooks(resourcePanel, KölnBooks);
+      appendBooks(resourcePanel, Vatikan585Books);
+      appendBooks(resourcePanel, Vatikan586Books);
 
-      // Upload source panel status from local storage
-      async function loadResourceState() {
-        const resourceState = JSON.parse(localStorage.getItem('resourceState'));
-        if (resourceState) {
-          displayResourcesFromJson(resourceState)
-        }
-        adjustPanelWidth()
-      }
+      adjustPanelWidth();
+    }
 
-      // Call function loadResourceState() when loading the page
-      window.addEventListener('load', loadResourceState);
+    async function initializeMirador(container, book, selectedViews){
+      return new Promise(async (resolve, reject) => {
+        let [msName, msAbbr, bookN] = book.split('_');
+        let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
+        let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
+        let folderPathEditor = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'editor.html';
 
-      async function displayResourcesFromJson(jsonData) {
-        let container = document.getElementById('resourcePanel');
-        container.innerHTML = '';
-        for (let resource of jsonData) {
-          let selectedViews = [false, false, false, false]
-          if (resource.view.transcription) {
-            selectedViews[0] = true
-          }
-          if (resource.view.structure) {
-            selectedViews[1] = true
-          }
-          if (resource.view.mirador) {
-            selectedViews[2] = true
-          }
-          if (resource.view.editor) {
-            selectedViews[3] = true
-          }
-          await initializeMirador(container, resource.bookId, selectedViews)
-        }
-      }
-       
+        let response = await fetch(folderPath);
+        let htmlContent = await response.text();
+        let responseStructure = await fetch(folderPathStructure);
+        let responseEditor = await fetch(folderPathEditor);
 
-      //display resources after selecting them in the modal
-      function displaySelectedResources() {
-        let resourcePanel = document.getElementById('resourcePanel');
+        if (response.ok && responseStructure.ok && responseEditor.ok) {
+          let msViews = []
+          msViews.push(htmlContent)
+          msViews.push(await responseStructure.text())
+          
+          let mirID = "mirador"+ msAbbr + bookN
+          let manifestId = '';
+          let catalog = [
+              { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
+              { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
+              { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
+              { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
+              { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
+          ];
 
-        let BambergBooks = document.querySelectorAll('#collapseBamberg input[type="checkbox"]:checked');
-        let FrankfurtBooks = document.querySelectorAll('#collapseFrankfurt input[type="checkbox"]:checked');
-        let KölnBooks = document.querySelectorAll('#collapseKöln input[type="checkbox"]:checked');
-        let Vatikan585Books = document.querySelectorAll('#collapseVatikan585 input[type="checkbox"]:checked');
-        let Vatikan586Books = document.querySelectorAll('#collapseVatikan586 input[type="checkbox"]:checked');
-        // Add new panel without removing the ones already present
-        appendBooks(resourcePanel, BambergBooks);
-        appendBooks(resourcePanel, FrankfurtBooks);
-        appendBooks(resourcePanel, KölnBooks);
-        appendBooks(resourcePanel, Vatikan585Books);
-        appendBooks(resourcePanel, Vatikan586Books);
+          //select data-canvas from html trascription
+          let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
+          let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
 
-        adjustPanelWidth();
-      }
-
-      async function initializeMirador(container, book, selectedViews){
-        return new Promise(async (resolve, reject) => {
-          let [msName, msAbbr, bookN] = book.split('_');
-          let folderPath = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'.html';
-          let folderPathStructure = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'structure.html';
-          let folderPathEditor = '../data/mss/' + msAbbr + '/Tei/v1/' + bookN +'editor.html';
-
-          let response = await fetch(folderPath);
-          let htmlContent = await response.text();
-          let responseStructure = await fetch(folderPathStructure);
-          let responseEditor = await fetch(folderPathEditor);
-
-          if (response.ok && responseStructure.ok && responseEditor.ok) {
-            let msViews = []
-            msViews.push(htmlContent)
-            msViews.push(await responseStructure.text())
-            
-            let mirID = "mirador"+ msAbbr + bookN
-            let manifestId = '';
-            let catalog = [
-                { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-                { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-                { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
-                { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
-                { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
-            ];
-
-            //select data-canvas from html trascription
-            let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
-            let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
-
-            // Iterate over catalog to find a matching sigle
-            for (let i = 0; i < catalog.length; i++) {
-                if (catalog[i].sigle === msAbbr) {
-                    manifestId = catalog[i].manifestId;
-                    
-                }
-            }
-            msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
-
-            msViews.push(await responseEditor.text())
-
-            let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);           
-            container.appendChild(panel);
-
-            //show/hide columns in Structure tables
-            let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
-            dropdownsStruct.forEach(dropdown => {
-              let checkboxes = dropdown.querySelectorAll('.toggle-column');
-              let table = dropdown.nextElementSibling;
-              checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                  let columnIndex = parseInt(checkbox.dataset.column);
-                  let cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
-                  cells.forEach(cell => {
-                    cell.style.display = checkbox.checked ? '' : 'none';
-                  })
-                });
-              });
-            });
-
-            panel.querySelectorAll('.move-left').forEach(function(element) {
-                element.addEventListener('click', function() {
-                  let card = $(this).closest('.card').parent();
-                  card.insertBefore(card.prev());
-                  saveResourceState()
-                });
-            });
-
-            panel.querySelectorAll('.move-right').forEach(function(element) {
-                element.addEventListener('click', function() {
-                  let card = $(this).closest('.card').parent();
-                  card.insertAfter(card.next());
-                  saveResourceState()
-                });
-            });
-
-
-            // Delay execution to ensure Mirador can properly initialize
-            setTimeout(() => {
-              let windowsID = mirID + Date.now()
-              let miradorInstance = Mirador.viewer({
-                      id: mirID,
-                      language: 'de',
-                      window: { //global window defaults
-                          allowClose: false, // Configure if windows can be closed or not
-                          defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
-                          highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
-                          panels: { // Configure which panels are visible in WindowSideBarButtons
-                              info: true,
-                              attribution: true,
-                              canvas: true,
-                              annotations: true,
-                              search: true,
-                              layers: true
-                          },
-                          views: [
-                              { key: 'single', behaviors: ['individuals'] },
-                              { key: 'book', behaviors: ['paged'] }
-                              
-                      ] },
-                      windows: [{
-                          id: windowsID,
-                          manifestId: manifestId,
-                          canvasId : canvasId
-                      }],
-                      
-                      thumbnails: {
-                        enabled: false
-                          },
-                      catalog:catalog
-                  });
-              //Eye icon: open the chapter in mirador 
-              document.querySelectorAll(".icon-chapter-mirador").forEach(function(icon) {
-                icon.addEventListener("click", function() {
-                  let canvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
-                  let action = Mirador.actions.setCanvas(windowsID, canvasId)
-                  miradorInstance.store.dispatch(action);
-                });
-              });
-              saveResourceState(); // Save resource panel status after selection
-              adjustPanelWidth()
-              resolve();
-            }, 1000);
-
-            
-          }
-          else{
-            resolve()
-          }
-        })
-      }
-
-      async function appendBooks(container, books) {
-        for (let book of books) {
-          let selectedViews = [true, false, true, false]
-          await initializeMirador(container, book.value, selectedViews);
-        }
-      }
-
-        
-      function createResourcePanel(idVal, title, views, selectedViews) {
-        
-        const panel = document.createElement('div');
-        panel.classList.add('resource-panel-item');
-        panel.setAttribute('data-ms', idVal);
-        const panelContent = `
-          <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center" style="font-weight:bold">
-              <i class="fas fa-arrow-left move-left"></i>
-              <span>${title}<button type="button" class="btn ms-2" data-bs-toggle="modal" data-bs-target="#legendModal" style="padding: 0; color: #46b65f;"><i class="fa-solid fa-circle-info fa-lg"></i></button></span>
-              <i class="fas fa-arrow-right move-right"></i>
-              <div> 
-                
-                <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transkription</button>
-                <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
-                <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn">Mirador</button>
-                <button type="button" class="btn btn-outline-primary btn-sm editor-btn">Info</button>
-              </div>
-              <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <div class="card-body row">
-              <div class="col border m-1 transcription-col d-none" style="overflow-y: scroll; max-height: 600px; white-space: nowrap"></div>
-              <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap; padding-left:0;"></div>
-              <div class="col m-1 mirador-col d-none" style="max-height: 600px;"></div>
-              <div class="col border m-1 editor-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: wrap"></div>
-            </div>
-          </div>
-        `
-        panel.innerHTML = panelContent;
-
-        panel.querySelector('.transcription-col').innerHTML = views[0]
-        panel.querySelector('.structure-col').innerHTML = views[1]
-        panel.querySelector('.mirador-col').innerHTML = views[2]
-        panel.querySelector('.editor-col').innerHTML = views[3]
-
-        panel.querySelector('.btn-close').addEventListener('click', function() {
-          panel.remove();
-          adjustPanelWidth();
-          saveResourceState(); //Save source panel status after removing one panel
-        });
-
-        let [transcriptionAdded, structureAdded, miradorAdded, editorAdded] = selectedViews
-
-        var viewsElements = panel.getElementsByClassName('col');
-        const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
-        const addStructureBtn = panel.querySelector('.add-structure-btn');
-        const miradorBtn = panel.querySelector('.mirador-btn');
-        const editorBtn = panel.querySelector('.editor-btn');
-
-        if (transcriptionAdded){
-            viewsElements[0].classList.remove('d-none');
-            addTranscriptionBtn.classList.remove('btn-outline-primary');
-            addTranscriptionBtn.classList.add('btn-primary');
-        }
-        if (structureAdded){
-          viewsElements[1].classList.remove('d-none');
-          addStructureBtn.classList.remove('btn-outline-primary');
-          addStructureBtn.classList.add('btn-primary');
-        }
-        if (miradorAdded){
-          viewsElements[2].classList.remove('d-none');
-          miradorBtn.classList.remove('btn-outline-primary');
-          miradorBtn.classList.add('btn-primary');
-        }
-
-        if (editorAdded){
-          viewsElements[3].classList.remove('d-none');
-          editorBtn.classList.remove('btn-outline-primary');
-          editorBtn.classList.add('btn-primary');
-        }
-
-        addTranscriptionBtn.addEventListener('click', function() {
-          if (!transcriptionAdded) {
-            viewsElements[0].classList.remove('d-none');
-            transcriptionAdded = true;
-            addTranscriptionBtn.classList.remove('btn-outline-primary');
-            addTranscriptionBtn.classList.add('btn-primary');
-          } else {
-            viewsElements[0].classList.add('d-none');
-            transcriptionAdded = false;
-            addTranscriptionBtn.classList.remove('btn-primary');
-            addTranscriptionBtn.classList.add('btn-outline-primary');
-          }
-          saveResourceState(); // Save resource panel status after addition/deletion transcription
-          adjustPanelWidth()
-        });
-
-        addStructureBtn.addEventListener('click', function() {
-          if (!structureAdded) {
-            viewsElements[1].classList.remove('d-none');
-            structureAdded = true;
-            addStructureBtn.classList.remove('btn-outline-primary');
-            addStructureBtn.classList.add('btn-primary');
-          } else {
-            viewsElements[1].classList.add('d-none');
-            structureAdded = false;
-            addStructureBtn.classList.remove('btn-primary');
-            addStructureBtn.classList.add('btn-outline-primary');
-          }
-          saveResourceState(); //Save resource panel status after addtion/deletion structure
-          adjustPanelWidth()
-        });
-
-        miradorBtn.addEventListener('click', function() {
-          if (!miradorAdded) {
-            viewsElements[2].classList.remove('d-none');
-            miradorAdded = true;
-            miradorBtn.classList.remove('btn-outline-primary');
-            miradorBtn.classList.add('btn-primary');
-          } else {
-            viewsElements[2].classList.add('d-none');
-            miradorAdded = false;
-            miradorBtn.classList.remove('btn-primary');
-            miradorBtn.classList.add('btn-outline-primary');
-          }
-          saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
-          adjustPanelWidth()
-        });
-
-        editorBtn.addEventListener('click', function() {
-          if (!editorAdded) {
-            viewsElements[3].classList.remove('d-none');
-            editorAdded = true;
-            editorBtn.classList.remove('btn-outline-primary');
-            editorBtn.classList.add('btn-primary');
-          } else {
-            viewsElements[3].classList.add('d-none');
-            editorAdded = false;
-            editorBtn.classList.remove('btn-primary');
-            editorBtn.classList.add('btn-outline-primary');
-          }
-          saveResourceState(); //Save resource panel status after addtion/deletion structure
-          adjustPanelWidth()
-        });
-
-        return panel;
-      }
-
-
-      // Add a listener for messages from ms-item
-      window.addEventListener("message", receiveMessage, false);
-      function receiveMessage(event) {
-          if (event.origin !== window.location.origin) return;
-          if (event.data) {
-              // add new resource panel to desktop.html
-              var selectedBook = event.data;
-              appendSelectedBookToDesktop(selectedBook);
-          }
-      }
-
-      async function appendSelectedBookToDesktop(selectedBook) {
-        msAbbrList = {
-          "B": "Bamberg",
-          "F": "Frankfurt",
-          "K": "Köln",
-          "Va2": "Vatikan 585",
-          "Va3": "Vatikan 586"
-        }
-        var msAbbr = selectedBook.split('-')[0];
-        var bookN = selectedBook.split('-')[1];
-        let book = [msAbbrList[msAbbr], msAbbr, bookN].join('_');
-        let container = document.getElementById('resourcePanel'); 
-        let selectedViews = [true, false, true]
-        await initializeMirador(container, book, selectedViews)
-      }
-        
-    //function to handle panel width behaviour
-    function adjustPanelWidth() {
-    const resourcePanel = document.getElementById('resourcePanel');
-    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-      Array.from(panels).forEach(panel => {
-          const cardBody = panel.querySelector('.card-body');
-          const hiddenDivs = cardBody.querySelectorAll('.d-none');
-
-          if (panels.length === 1) {
-              panel.classList.add('only-child', 'full-width');
-          } else {
-              panel.classList.remove('only-child', 'full-width', 'three-quarter-width', 'half-width');
-              if (hiddenDivs.length === 3) {
-                  panel.classList.add('half-width');
-              } else if (hiddenDivs.length === 2) {
-                  panel.classList.add('three-quarter-width');
-              } else {
-                  panel.classList.add('full-width');
+          // Iterate over catalog to find a matching sigle
+          for (let i = 0; i < catalog.length; i++) {
+              if (catalog[i].sigle === msAbbr) {
+                  manifestId = catalog[i].manifestId;
+                  
               }
           }
+          msViews.push("<div class='mirDesktop' id='" + mirID +"'></div>")
+
+          msViews.push(await responseEditor.text())
+
+          let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);           
+          container.appendChild(panel);
+
+          //show/hide columns in Structure tables
+          let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
+          dropdownsStruct.forEach(dropdown => {
+            let checkboxes = dropdown.querySelectorAll('.toggle-column');
+            let table = dropdown.nextElementSibling;
+            checkboxes.forEach(checkbox => {
+              checkbox.addEventListener('change', function() {
+                let columnIndex = parseInt(checkbox.dataset.column);
+                let cells = table.querySelectorAll(`tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`);
+                cells.forEach(cell => {
+                  cell.style.display = checkbox.checked ? '' : 'none';
+                })
+              });
+            });
+          });
+
+          panel.querySelectorAll('.move-left').forEach(function(element) {
+              element.addEventListener('click', function() {
+                let card = $(this).closest('.card').parent();
+                card.insertBefore(card.prev());
+                saveResourceState()
+              });
+          });
+
+          panel.querySelectorAll('.move-right').forEach(function(element) {
+              element.addEventListener('click', function() {
+                let card = $(this).closest('.card').parent();
+                card.insertAfter(card.next());
+                saveResourceState()
+              });
+          });
+
+
+          // Delay execution to ensure Mirador can properly initialize
+          setTimeout(() => {
+            let windowsID = mirID + Date.now()
+            let miradorInstance = Mirador.viewer({
+                    id: mirID,
+                    language: 'de',
+                    window: { //global window defaults
+                        allowClose: false, // Configure if windows can be closed or not
+                        defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
+                        highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
+                        panels: { // Configure which panels are visible in WindowSideBarButtons
+                            info: true,
+                            attribution: true,
+                            canvas: true,
+                            annotations: true,
+                            search: true,
+                            layers: true
+                        },
+                        views: [
+                            { key: 'single', behaviors: ['individuals'] },
+                            { key: 'book', behaviors: ['paged'] }
+                            
+                    ] },
+                    windows: [{
+                        id: windowsID,
+                        manifestId: manifestId,
+                        canvasId : canvasId
+                    }],
+                    
+                    thumbnails: {
+                      enabled: false
+                        },
+                    catalog:catalog
+                });
+            //Eye icon: open the chapter in mirador 
+            document.querySelectorAll(".icon-chapter-mirador").forEach(function(icon) {
+              icon.addEventListener("click", function() {
+                let canvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
+                let action = Mirador.actions.setCanvas(windowsID, canvasId)
+                miradorInstance.store.dispatch(action);
+              });
+            });
+            saveResourceState(); // Save resource panel status after selection
+            adjustPanelWidth()
+            resolve();
+          }, 1000);
+
+          
+        }
+        else{
+          resolve()
+        }
+      })
+    }
+
+    async function appendBooks(container, books) {
+      for (let book of books) {
+        let selectedViews = [true, false, true, false]
+        await initializeMirador(container, book.value, selectedViews);
+      }
+    }
+
+      
+    function createResourcePanel(idVal, title, views, selectedViews) {
+      
+      const panel = document.createElement('div');
+      panel.classList.add('resource-panel-item');
+      panel.setAttribute('data-ms', idVal);
+      const panelContent = `
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center" style="font-weight:bold">
+            <i class="fas fa-arrow-left move-left"></i>
+            <span>${title}<button type="button" class="btn ms-2" data-bs-toggle="modal" data-bs-target="#legendModal" style="padding: 0; color: #46b65f;"><i class="fa-solid fa-circle-info fa-lg"></i></button></span>
+            <i class="fas fa-arrow-right move-right"></i>
+            <div> 
+              
+              <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn">Transkription</button>
+              <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn">Struktur</button>
+              <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn">Mirador</button>
+              <button type="button" class="btn btn-outline-primary btn-sm editor-btn">Info</button>
+            </div>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+          <div class="card-body row">
+            <div class="col border m-1 transcription-col d-none" style="overflow-y: scroll; max-height: 600px; white-space: nowrap"></div>
+            <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap; padding-left:0;"></div>
+            <div class="col m-1 mirador-col d-none" style="max-height: 600px;"></div>
+            <div class="col border m-1 editor-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: wrap"></div>
+          </div>
+        </div>
+      `
+      panel.innerHTML = panelContent;
+
+      panel.querySelector('.transcription-col').innerHTML = views[0]
+      panel.querySelector('.structure-col').innerHTML = views[1]
+      panel.querySelector('.mirador-col').innerHTML = views[2]
+      panel.querySelector('.editor-col').innerHTML = views[3]
+
+      panel.querySelector('.btn-close').addEventListener('click', function() {
+        panel.remove();
+        adjustPanelWidth();
+        saveResourceState(); //Save source panel status after removing one panel
       });
+
+      let [transcriptionAdded, structureAdded, miradorAdded, editorAdded] = selectedViews
+
+      var viewsElements = panel.getElementsByClassName('col');
+      const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
+      const addStructureBtn = panel.querySelector('.add-structure-btn');
+      const miradorBtn = panel.querySelector('.mirador-btn');
+      const editorBtn = panel.querySelector('.editor-btn');
+
+      if (transcriptionAdded){
+          viewsElements[0].classList.remove('d-none');
+          addTranscriptionBtn.classList.remove('btn-outline-primary');
+          addTranscriptionBtn.classList.add('btn-primary');
+      }
+      if (structureAdded){
+        viewsElements[1].classList.remove('d-none');
+        addStructureBtn.classList.remove('btn-outline-primary');
+        addStructureBtn.classList.add('btn-primary');
+      }
+      if (miradorAdded){
+        viewsElements[2].classList.remove('d-none');
+        miradorBtn.classList.remove('btn-outline-primary');
+        miradorBtn.classList.add('btn-primary');
+      }
+
+      if (editorAdded){
+        viewsElements[3].classList.remove('d-none');
+        editorBtn.classList.remove('btn-outline-primary');
+        editorBtn.classList.add('btn-primary');
+      }
+
+      addTranscriptionBtn.addEventListener('click', function() {
+        if (!transcriptionAdded) {
+          viewsElements[0].classList.remove('d-none');
+          transcriptionAdded = true;
+          addTranscriptionBtn.classList.remove('btn-outline-primary');
+          addTranscriptionBtn.classList.add('btn-primary');
+        } else {
+          viewsElements[0].classList.add('d-none');
+          transcriptionAdded = false;
+          addTranscriptionBtn.classList.remove('btn-primary');
+          addTranscriptionBtn.classList.add('btn-outline-primary');
+        }
+        saveResourceState(); // Save resource panel status after addition/deletion transcription
+        adjustPanelWidth()
+      });
+
+      addStructureBtn.addEventListener('click', function() {
+        if (!structureAdded) {
+          viewsElements[1].classList.remove('d-none');
+          structureAdded = true;
+          addStructureBtn.classList.remove('btn-outline-primary');
+          addStructureBtn.classList.add('btn-primary');
+        } else {
+          viewsElements[1].classList.add('d-none');
+          structureAdded = false;
+          addStructureBtn.classList.remove('btn-primary');
+          addStructureBtn.classList.add('btn-outline-primary');
+        }
+        saveResourceState(); //Save resource panel status after addtion/deletion structure
+        adjustPanelWidth()
+      });
+
+      miradorBtn.addEventListener('click', function() {
+        if (!miradorAdded) {
+          viewsElements[2].classList.remove('d-none');
+          miradorAdded = true;
+          miradorBtn.classList.remove('btn-outline-primary');
+          miradorBtn.classList.add('btn-primary');
+        } else {
+          viewsElements[2].classList.add('d-none');
+          miradorAdded = false;
+          miradorBtn.classList.remove('btn-primary');
+          miradorBtn.classList.add('btn-outline-primary');
+        }
+        saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
+        adjustPanelWidth()
+      });
+
+      editorBtn.addEventListener('click', function() {
+        if (!editorAdded) {
+          viewsElements[3].classList.remove('d-none');
+          editorAdded = true;
+          editorBtn.classList.remove('btn-outline-primary');
+          editorBtn.classList.add('btn-primary');
+        } else {
+          viewsElements[3].classList.add('d-none');
+          editorAdded = false;
+          editorBtn.classList.remove('btn-primary');
+          editorBtn.classList.add('btn-outline-primary');
+        }
+        saveResourceState(); //Save resource panel status after addtion/deletion structure
+        adjustPanelWidth()
+      });
+
+      return panel;
     }
 
 
-      //Upload json
-      document.getElementById('downloadJsonBtn').addEventListener('click', function() {
-        saveResourceState(); // Save resource panel status after selection
-        resourceState = JSON.parse(localStorage.getItem('resourceState'));
-        downloadJson(resourceState);
-      });
-
-      //Download json
-      function downloadJson(data) {
-        const filename = 'resources.json';
-        const json = JSON.stringify(data, null, 2);
-        const blob = new Blob([json], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }
-
-
-      // Function to confirm deletion
-      function confirmDelete() {
-        return confirm("Are you sure you want to delete all content?");
-      }
-      // Clear all button
-      document.getElementById('clearAll').addEventListener('click', function() {
-        // Ask for confirmation before deleting
-        if (confirmDelete()) {
-          document.getElementById('resourcePanel').innerHTML = '';
-          saveResourceState();
+    // Add a listener for messages from ms-item
+    window.addEventListener("message", receiveMessage, false);
+    function receiveMessage(event) {
+        if (event.origin !== window.location.origin) return;
+        if (event.data) {
+            // add new resource panel to desktop.html
+            var selectedBook = event.data;
+            appendSelectedBookToDesktop(selectedBook);
         }
-      });      
-    </script>
+    }
+
+    async function appendSelectedBookToDesktop(selectedBook) {
+      msAbbrList = {
+        "B": "Bamberg",
+        "F": "Frankfurt",
+        "K": "Köln",
+        "Va2": "Vatikan 585",
+        "Va3": "Vatikan 586"
+      }
+      var msAbbr = selectedBook.split('-')[0];
+      var bookN = selectedBook.split('-')[1];
+      let book = [msAbbrList[msAbbr], msAbbr, bookN].join('_');
+      let container = document.getElementById('resourcePanel'); 
+      let selectedViews = [true, false, true]
+      await initializeMirador(container, book, selectedViews)
+    }
+      
+  //function to handle panel width behaviour
+  function adjustPanelWidth() {
+  const resourcePanel = document.getElementById('resourcePanel');
+  const panels = resourcePanel.getElementsByClassName('resource-panel-item');
+    Array.from(panels).forEach(panel => {
+        const cardBody = panel.querySelector('.card-body');
+        const hiddenDivs = cardBody.querySelectorAll('.d-none');
+
+        if (panels.length === 1) {
+            panel.classList.add('only-child', 'full-width');
+        } else {
+            panel.classList.remove('only-child', 'full-width', 'three-quarter-width', 'half-width');
+            if (hiddenDivs.length === 3) {
+                panel.classList.add('half-width');
+            } else if (hiddenDivs.length === 2) {
+                panel.classList.add('three-quarter-width');
+            } else {
+                panel.classList.add('full-width');
+            }
+        }
+    });
+  }
 
 
-<script>
+    //Upload json
+    document.getElementById('downloadJsonBtn').addEventListener('click', function() {
+      saveResourceState(); // Save resource panel status after selection
+      resourceState = JSON.parse(localStorage.getItem('resourceState'));
+      downloadJson(resourceState);
+    });
+
+    //Download json
+    function downloadJson(data) {
+      const filename = 'resources.json';
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+
+    // Function to confirm deletion
+    function confirmDelete() {
+      return confirm("Are you sure you want to delete all content?");
+    }
+    // Clear all button
+    document.getElementById('clearAll').addEventListener('click', function() {
+      // Ask for confirmation before deleting
+      if (confirmDelete()) {
+        document.getElementById('resourcePanel').innerHTML = '';
+        saveResourceState();
+      }
+    });      
+  </script>
+
+  <script>
   $(document).ready(function() {
       /// Function to load HTML file
       function loadHTMLDoc(filename) {
@@ -1280,5 +1279,4 @@
       loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
   });
   </script>
-
 </html>

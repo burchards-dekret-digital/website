@@ -16,8 +16,8 @@
         <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
         
         <script src="../js/jquery-3.7.1.min.js"></script>
-        <script src="../js/language.js" defer></script>
         <script src="../js/navigation.js" defer></script>
+        <script src="../js/language.js" defer></script>
     </head>
     <body>
         <div id="navbar-placeholder"></div>
@@ -28,67 +28,65 @@
 
         <div id="content" class="container" style="flex:1">
             <h1 class="section-main-title"><span lang="de">DIE <i>DECRETORUM LIBRI VIGINTI</i> DES BURCHARD VON WORMS</span><span lang="en">THE <i>DECRETORUM LIBRI VIGINTI</i> OF BURCHARD OF WORMS</span></h1>
-            
             <div class="container" id="decretorum"></div>
             <div class="container" id="literature"></div>
         </div>
 
         <div id="footer-placeholder"></div>
+       
+        <script>
+            $(document).ready(function() {
+                // Function to load HTML file
+                function loadHTMLDoc(filename) {
+                    $.ajax({
+                        type: "GET",
+                        url: filename,
+                        dataType: "html",
+                        success: function(html) {
+                            displayHTMLContent(html);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Error loading XML file:", error);
+                        }
+                    });
+                }
         
-    </body>
-
-<script>
-    $(document).ready(function() {
-        // Function to load HTML file
-        function loadHTMLDoc(filename) {
-            $.ajax({
-                type: "GET",
-                url: filename,
-                dataType: "html",
-                success: function(html) {
-                    displayHTMLContent(html);
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error loading XML file:", error);
-                }
-            });
-        }
-
-        function displayHTMLContent(htmlDoc) {
-            let contentDiv = document.createElement('div');
-            contentDiv.innerHTML = htmlDoc;
-            let contentDecretorum = $(contentDiv).find("#decretorum")
-            $("#decretorum").html(contentDecretorum);
-            let contentLiterature = $(contentDiv).find("#literature")
-            $("#literature").html(contentLiterature);
-            
-                checkLanguage()
-                biblLink(); // Call the biblLink function here
-            }
-
-        // Load HTML file
-        loadHTMLDoc("../data/texts/decretorumTexts.html"); // Adjust the path here
-
-
-        function biblLink() {
-            var liElements = document.querySelectorAll('ul li');
-
-            liElements.forEach(function(li) {
-                var biblElement = li.querySelector('bibl');
-                if (biblElement) { // Check if biblElement is not null
-                    var copyOfValue = biblElement.getAttribute('copyOf');
-                    if (copyOfValue) { // Check if copyOfValue has a value
-                        var linkElement = document.createElement('a');
-                        linkElement.setAttribute('href', 'bibl.html#' + copyOfValue);
-                        linkElement.setAttribute('target', '_blank');
-                        var icon = document.createElement('i');
-                        icon.className = 'fas fa-arrow-up-right-from-square fa-sm';
-                        linkElement.appendChild(icon);
-                        biblElement.insertAdjacentElement('afterend', linkElement);
+                function displayHTMLContent(htmlDoc) {
+                    let contentDiv = document.createElement('div');
+                    contentDiv.innerHTML = htmlDoc;
+                    let contentDecretorum = $(contentDiv).find("#decretorum")
+                    $("#decretorum").html(contentDecretorum);
+                    let contentLiterature = $(contentDiv).find("#literature")
+                    $("#literature").html(contentLiterature);
+                    
+                        checkLanguage()
+                        biblLink(); // Call the biblLink function here
                     }
+        
+                // Load HTML file
+                loadHTMLDoc("../data/texts/decretorumTexts.html"); // Adjust the path here
+        
+        
+                function biblLink() {
+                    var liElements = document.querySelectorAll('ul li');
+        
+                    liElements.forEach(function(li) {
+                        var biblElement = li.querySelector('bibl');
+                        if (biblElement) { // Check if biblElement is not null
+                            var copyOfValue = biblElement.getAttribute('copyOf');
+                            if (copyOfValue) { // Check if copyOfValue has a value
+                                var linkElement = document.createElement('a');
+                                linkElement.setAttribute('href', 'bibl.html#' + copyOfValue);
+                                linkElement.setAttribute('target', '_blank');
+                                var icon = document.createElement('i');
+                                icon.className = 'fas fa-arrow-up-right-from-square fa-sm';
+                                linkElement.appendChild(icon);
+                                biblElement.insertAdjacentElement('afterend', linkElement);
+                            }
+                        }
+                    });
                 }
             });
-        }
-    });
-    </script> 
+        </script> 
+    </body>
 </html>

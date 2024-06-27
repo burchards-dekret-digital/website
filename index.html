@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
         
         <script src="js/jquery-3.7.1.min.js"></script>
-        <script src="js/language.js" defer></script>  
+        
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -62,8 +62,8 @@
                        
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <button class="btn btn-outline-success btn-sm language-button" type="submit" type="submit" onclick="changeLanguage('de')">DE</button>
-                        <button class="btn btn-outline-success btn-sm language-button" type="submit" type="submit" onclick="changeLanguage('en')">EN</button>
+                        <button id="btn-de" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('de')">DE</button>
+                        <button id="btn-en" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('en')">EN</button>
                     </ul>
                 </div>
             </div>
@@ -156,117 +156,118 @@
                 <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                     <a class="text-reset fw-bold" href="html/imprint.html"><span lang="de">Impressum und Datenschutz</span><span lang="en">Imprint and data privacy</span></a>  
                 </div>
-            </footer>
-
-<script>
-    $(document).ready(function() {
-        // Function to load HTML file
-        function loadHTMLDoc(filename) {
-            $.ajax({
-                type: "GET",
-                url: filename,
-                dataType: "html",
-                success: function(html) {
-                    displayHTMLContent(html);
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error loading XML file:", error);
-                }
-            });
-        }
-
-        function displayHTMLContent(htmlDoc) {
-            let contentDiv = document.createElement('div');
-            contentDiv.innerHTML = htmlDoc;
-            let contentIntro = $(contentDiv).find("#introduction")
-            $("#introduction").html(contentIntro);
-            let contentDesc = $(contentDiv).find("#description")
-            $("#description").html(contentDesc);
-            let contentTable = $(contentDiv).find("#summaryTable")
-            $("#summaryTable").html(contentTable);
-                checkLanguage()
-        }
-    
-        // Load HTML file
-        loadHTMLDoc("data/texts/homeTexts.html"); // Adjust the path here
-   
-        // Function to fetch news data from external HTML file
-        function fetchNews() {
-            return fetch('data/texts/newsText.html')
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const htmlDoc = parser.parseFromString(data, 'text/html');
-                    return Array.from(htmlDoc.querySelectorAll('.news-item')).map(item => {
-                        return {
-                            title: item.querySelector('.title').innerHTML,
-                            date: item.querySelector('.date').innerHTML,
-                            content: item.querySelector('.content').innerHTML
-                        };
-                    });
+        </footer>       
+        
+        <script src="js/language.js" defer></script>  
+        
+        <script>
+        $(document).ready(function() {
+            // Function to load HTML file
+            function loadHTMLDoc(filename) {
+                $.ajax({
+                    type: "GET",
+                    url: filename,
+                    dataType: "html",
+                    success: function(html) {
+                        displayHTMLContent(html);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error loading XML file:", error);
+                    }
                 });
-        }
+            }
 
-        // Function to create Bootstrap card
-        function createCard(title, date, content) {
-            return `
-                <div class="col-md-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">${title}</h3>
-                            <h6 class="card-date">${date}</h6>
-                            <p class="card-text">${content}</p>
+            function displayHTMLContent(htmlDoc) {
+                let contentDiv = document.createElement('div');
+                contentDiv.innerHTML = htmlDoc;
+                let contentIntro = $(contentDiv).find("#introduction")
+                $("#introduction").html(contentIntro);
+                let contentDesc = $(contentDiv).find("#description")
+                $("#description").html(contentDesc);
+                let contentTable = $(contentDiv).find("#summaryTable")
+                $("#summaryTable").html(contentTable);
+                    checkLanguage()
+            }
+        
+            // Load HTML file
+            loadHTMLDoc("data/texts/homeTexts.html"); // Adjust the path here
+    
+            // Function to fetch news data from external HTML file
+            function fetchNews() {
+                return fetch('data/texts/newsText.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const htmlDoc = parser.parseFromString(data, 'text/html');
+                        return Array.from(htmlDoc.querySelectorAll('.news-item')).map(item => {
+                            return {
+                                title: item.querySelector('.title').innerHTML,
+                                date: item.querySelector('.date').innerHTML,
+                                content: item.querySelector('.content').innerHTML
+                            };
+                        });
+                    });
+            }
+
+            // Function to create Bootstrap card
+            function createCard(title, date, content) {
+                return `
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">${title}</h3>
+                                <h6 class="card-date">${date}</h6>
+                                <p class="card-text">${content}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-        }
-
-        // Function to display news card
-        function displayNews(newsItem) {
-            const newsContainer = document.getElementById('news-container');
-            newsContainer.innerHTML = createCard(newsItem.title, newsItem.date, newsItem.content);
-        }
-
-        let news = []; // Array to store fetched news data
-        let currentNewsIndex = 0; // Current news index
-
-        // Function to handle next news
-        function nextNews() {
-            currentNewsIndex = (currentNewsIndex + 1) % news.length;
-            displayNews(news[currentNewsIndex]);
-            checkLanguage()
-        }
-
-        // Function to handle previous news
-        function prevNews() {
-            currentNewsIndex = (currentNewsIndex - 1 + news.length) % news.length;
-            displayNews(news[currentNewsIndex]);
-            checkLanguage()
-        }
-
-        // Initialization
-        fetchNews()
-            .then(data => {
-                news = data;
-                displayNews(news[currentNewsIndex]); // Display first news
-                // Add arrow buttons
-
-                const paginationContainer = document.getElementById('pagination-container');
-                paginationContainer.innerHTML = `
-                    <button id="prevNews" class="btn btn-outline-primary mx-1">&#8592;</button>
-                    <button id="nextNews" class="btn btn-outline-primary mx-1">&#8594;</button>
                 `;
-                
-                document.getElementById('prevNews').addEventListener("click", prevNews);
-                document.getElementById('nextNews').addEventListener("click", nextNews);
+            }
+
+            // Function to display news card
+            function displayNews(newsItem) {
+                const newsContainer = document.getElementById('news-container');
+                newsContainer.innerHTML = createCard(newsItem.title, newsItem.date, newsItem.content);
+            }
+
+            let news = []; // Array to store fetched news data
+            let currentNewsIndex = 0; // Current news index
+
+            // Function to handle next news
+            function nextNews() {
+                currentNewsIndex = (currentNewsIndex + 1) % news.length;
+                displayNews(news[currentNewsIndex]);
                 checkLanguage()
-            })
-            .catch(error => console.error('Error fetching news:', error));
-            
-    });
+            }
+
+            // Function to handle previous news
+            function prevNews() {
+                currentNewsIndex = (currentNewsIndex - 1 + news.length) % news.length;
+                displayNews(news[currentNewsIndex]);
+                checkLanguage()
+            }
+
+            // Initialization
+            fetchNews()
+                .then(data => {
+                    news = data;
+                    displayNews(news[currentNewsIndex]); // Display first news
+                    // Add arrow buttons
+
+                    const paginationContainer = document.getElementById('pagination-container');
+                    paginationContainer.innerHTML = `
+                        <button id="prevNews" class="btn btn-outline-primary mx-1">&#8592;</button>
+                        <button id="nextNews" class="btn btn-outline-primary mx-1">&#8594;</button>
+                    `;
+                    
+                    document.getElementById('prevNews').addEventListener("click", prevNews);
+                    document.getElementById('nextNews').addEventListener("click", nextNews);
+                    checkLanguage()
+                })
+                .catch(error => console.error('Error fetching news:', error));
+                
+        });
         </script>
-  
     </body>
 </html>
     
