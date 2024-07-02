@@ -41,15 +41,17 @@
                             <!--COLUMN 1: CONTENT-->
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <h1 style="text-transform:uppercase"><div id="ms-title"></div></h1>
+                                    <h1 class="section-main-title" style="text-transform:uppercase"><div id="ms-title"></div></h1>
                                 </div>
-                                <div class="mb-3" style="display: flex; align-items: center;">
-                                    <h4 class="mt-2 me-2" style="text-transform: uppercase;">Buch auswählen</h4>
-                                    <select class="form-select" id="book-selector" style="width: 20%;">
+                                <div class="mb-3 d-flex flex-column flex-md-row">
+                                    <h4 class="mt-2 me-2 text-uppercase">Buch auswählen</h4>
+                                    <select class="form-select" id="book-selector">
                                         <option val="" disabled="" selected=""></option>
                                     </select>
-                                    <button id="addToDesk" type="button" class="btn btn-primary ms-3" disabled><span lang="de">Buch zum Schreibtisch hinzufügen</span><span lang="en">Add book to Desktop</span></button>
+                                    <button id="addToDesk" type="button" class="btn btn-primary mt-3 mt-md-0 ms-md-3" disabled><span lang="de">Buch zum Schreibtisch hinzufügen</span><span lang="en">Add book to Desktop</span></button>
                                 </div>
+
+                                
 
                                 <div class="accordion" id="accordionInfo">
                                     

@@ -313,6 +313,8 @@ font-family: Andron-Scriptor-Web;
     margin-left: 5px;
 }
 
+
+
 /* INDEX CSS */
     .container-index h1 {
                 /*  font-family: Montserrat-ExtraBold; */
@@ -427,7 +429,7 @@ font-family: Andron-Scriptor-Web;
                 background-position: center center;}
 
             
-
+               .form-select{width:20%}
 
             /* Media Queries*/ 
             @media screen and (max-width: 959px) and (min-width: 768px) {
@@ -445,10 +447,13 @@ font-family: Andron-Scriptor-Web;
             #scroll-down{display:none;}
             #book-image {height: 40%!important;}
             .table-strukturansicht {table-layout: auto;}
-            .figure{width:100%}
+            .figure{width:100%;}
             }
             
             @media screen and (max-width: 767px) {
+            #transcription-view-button{margin-top: 20px;}
+            .form-select{width: 100%;}
+            .back-button{display: none;}
             .container-index {padding-top: 30px; padding-bottom: 30px;}
             .container-index h2 {font-size:30px;}
             .parallax-title h1 {letter-spacing: 1px;}
