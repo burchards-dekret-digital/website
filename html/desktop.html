@@ -1245,10 +1245,23 @@
     });      
   </script>
 
+ <!-- <script>
+      function displayHTMLContent(htmlDoc) {
+            let contentDiv = document.createElement('div');
+            contentDiv.innerHTML = htmlDoc;
+            let contentInfo = $(contentDiv).find("#infoSchreibtisch")
+            $("#infoSchreibtisch").html(contentInfo);
+            let contentInfoStyle = $(contentDiv).find("#infoStyleTranscriptions")
+            $("#infoStyleTranscriptions").html(contentInfoStyle);    
+            checkLanguage()
+            }
+});
+  </script>-->
+
   <script>
-  $(document).ready(function() {
-      /// Function to load HTML file
-      function loadHTMLDoc(filename) {
+    $(document).ready(function() {
+        // Function to load HTML file
+        function loadHTMLDoc(filename) {
             $.ajax({
                 type: "GET",
                 url: filename,
@@ -1261,22 +1274,30 @@
                 }
             });
         }
-  
-
-      // Function to display HTML content
-      function displayHTMLContent(htmlDoc) {
+    
+        // Function to display HTML content
+        function displayHTMLContent(htmlDoc) {
             let contentDiv = document.createElement('div');
             contentDiv.innerHTML = htmlDoc;
-            let contentInfo = $(contentDiv).find("#infoSchreibtisch")
-            $("#infoSchreibtisch").html(contentInfo);
-            let contentInfoStyle = $(contentDiv).find("#infoStyleTranscriptions")
-            $("#infoStyleTranscriptions").html(contentInfoStyle);
-                
-            checkLanguage()
+            
+            let isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
+    
+            let contentInfo;
+            if (isMobile) {
+                contentInfo = $(contentDiv).find("#infoSchreibtischMobile");
+            } else {
+                contentInfo = $(contentDiv).find("#infoSchreibtisch");
             }
-  
-      // Load XML file
-      loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
-  });
-  </script>
+            $("#infoSchreibtisch").html(contentInfo.html());
+           
+            let contentInfoStyle = $(contentDiv).find("#infoStyleTranscriptions")
+            $("#infoStyleTranscriptions").html(contentInfoStyle);   
+            checkLanguage();
+        }
+    
+        // Load XML file
+        loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
+    });
+    </script>
+
 </html>

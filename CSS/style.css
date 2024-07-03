@@ -474,6 +474,18 @@ font-family: Andron-Scriptor-Web;
             }
             .figure{width:100%}
             
+            
+            /*desktop*/
+            #downloadJsonBtn{display:none;}
+            #clearAll{display:none;}
+            #transcription-view-button{display:none;}
+            .add-transcription-btn{display:none;}
+            .mirador-btn{display:none;}
+            .add-structure-btn{display:none;}
+            .editor-btn{display:none;}
+            .mirador-col{display:none;}
+            .resource-panel-item.half-width{width:100%}
+            .resource-panel-item.three-quarter-width {width: 100%;}
             }
             
             
