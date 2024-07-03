@@ -486,6 +486,7 @@ font-family: Andron-Scriptor-Web;
             .mirador-col{display:none;}
             .resource-panel-item.half-width{width:100%}
             .resource-panel-item.three-quarter-width {width: 100%;}
+            .json-upload{display:none;}
             }
             
             
