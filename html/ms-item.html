@@ -312,7 +312,8 @@
 
                     mDescArray = xmlDoc.querySelectorAll('msContents msItem')
                     for (let i = 0; i < mDescArray.length; i++) {
-                        const msContent = document.createElement('p');
+                        const msContent = document.createElement('div');
+                        msContent.classList.add('mb-4');
                         msContent.innerHTML += "<b>Text: </b>"+ mDescArray[i].getAttribute("n") +"<br/>"
                         var locusElements = mDescArray[i].querySelectorAll('locusGrp locus');
                         var locusString = "";
@@ -333,7 +334,7 @@
 
                     titleArray = xmlDoc.querySelectorAll('msContents msItemStruct[*|id*="modern"] msItemStruct')
                     for (let i = 0; i < titleArray.length; i++) {
-                        const msContentStructModern = document.createElement('p');
+                        const msContentStructModern = document.createElement('div');
                         msContentStructModern.innerHTML += "<b><span lang='de'>Titel: </span> <span lang='en'>Title: </span> </b>"+ titleArray[i].querySelectorAll('title')[0].innerHTML +"<br/>"
                         document.getElementById("mss-content-struct-modern").appendChild(msContentStructModern)
                     }
