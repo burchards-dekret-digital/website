@@ -42,20 +42,26 @@
               <tr>
                   <th scope="col">
                     <select id="filter0" onchange="filter(0);" class="form-select" aria-label="Search type">
-                      <option value=""></option>
-                      <option value="Buch"><span lang="en">Book</span></option>
-                      <option value="Zeitschriftenartikel"><span lang="en">Journal article</span></option>
-                      <option value="Buchbeitrag"><span lang="en">Book article</span></option>
-                      <option value="Lexikonartikel"><span lang="en">Lexicon article</span></option>
+                      <option value="" lang="de">Alle</option>
+                      <option value="Buch" lang="de">Buch</option>
+                      <option value="Zeitschriftenartikel" lang="de">Zeitschriftenartikel</option>
+                      <option value="Buchbeitrag" lang="de">Buchbeitrag</option>
+                      <option value="Lexikonartikel" lang="de">Lexikonartikel</option>
+
+                      <option value="" lang="en">All</option>
+                      <option value="Buch" lang="en">Book</option>
+                      <option value="Zeitschriftenartikel" lang="en">Journal article</option>
+                      <option value="Buchbeitrag" lang="en">Book article</option>
+                      <option value="Lexikonartikel" lang="en">Lexicon article</option>
                     </select>
                   </th>
-                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Search" class="form-control" aria-label="Search Author"></th>
-                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Search" class="form-control" aria-label="Search Editor"></th>
-                  <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Search" class="form-control" aria-label="Search Title"></th>
-                  <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Search" class="form-control" aria-label="Search In"></th>
-                  <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Search" class="form-control" aria-label="Search Year"></th>
-                  <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Search" class="form-control" aria-label="Search Publication Place"></th>
-                  <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Search" class="form-control" aria-label="Search Series"></th>
+                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter" class="form-control" aria-label="Search Author"></th>
+                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter" class="form-control" aria-label="Search Editor"></th>
+                  <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter" class="form-control" aria-label="Search Title"></th>
+                  <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" class="form-control" aria-label="Search In"></th>
+                  <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" class="form-control" aria-label="Search Year"></th>
+                  <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter" class="form-control" aria-label="Search Publication Place"></th>
+                  <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Filter" class="form-control" aria-label="Search Series"></th>
                 </tr>
             </thead>
             <tbody></tbody>
