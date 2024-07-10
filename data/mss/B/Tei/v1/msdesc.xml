@@ -139,7 +139,7 @@ Die Synode von Seligenstadt dürfte ursprünglich am Ende des Codex gestanden ha
                                 <region ref="https://www.wikidata.org/wiki/Q1200">Rheinland-Pfalz</region> 
                                 <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> 
                             </origPlace>
-                            <origDate notAfter="1000" notBefore="1025">¼ 11. Jh.</origDate>
+                            <origDate notAfter="1000" notBefore="1025">1000-1025</origDate>
                         </origin>
                         <provenance><name ref="https://www.staatsbibliothek-bamberg.de/" type="org">Dombibliothek Bamberg</name> <location>
                             <geo>49.89162, 10.8821</geo>
