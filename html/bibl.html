@@ -106,6 +106,7 @@
                           //if forename or surname in author are not available, find name
                           else { 
                               var name = $(this).find("name").text();
+                              console.log(name)
                               if (name) {
                                   authorNames.push(name);
                               }
@@ -165,20 +166,23 @@
                   var monogr = $(this).find("monogr");
                   
                   //Display Band and/or Seiten only if present
-                  var volume = $(monogr).find("biblScope[unit='volume']").text();
+                  //var volume = $(monogr).find("biblScope[unit='volume']").text();
                   var page = $(monogr).find("biblScope[unit='page']").text();
-                  var volumeText = volume ? " " + volume : "";
+                  //var volumeText = volume ? " " + volume : "";
                   //var pageText = page ? ", S. " + page : "";
                   var pageText = page ? "<span lang='de'>, S. </span><span lang='en'>, pp. </span> " + page : "";
 
-                  inValue = $(this).find("monogr > title").text() + volumeText + pageText;
+                  //inValue = $(this).find("monogr > title").text() + volumeText + pageText;
+                  inValue = $(this).find("monogr > title").text() + pageText;
                   checkLanguage();
                 }
 
+                var volume = $(monogr).find("biblScope[unit='volume']").text();
+                var volumeText = volume ? " " + volume : "";
                 id = $(this).attr("xml:id");
                 year = $(this).find("imprint > date").text();
                 pubPlace = $(this).find("imprint > pubPlace").text();
-                series = $(this).find("series > title").text() 
+                series = $(this).find("series > title").text() + volumeText; 
                 
 
 
