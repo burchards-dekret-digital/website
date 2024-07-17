@@ -437,7 +437,7 @@
                         document.querySelector("#collapseWebressourcen li:nth-child("+(i-startBook+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml";
                         var optionBook = document.createElement('option');
                         optionBook.value = (i < 10) ? "0" + i : i;
-                        optionBook.innerHTML = "Buch " + ((i < 10) ? "0" + i : i);
+                        optionBook.innerHTML = " " + ((i < 10) ? "0" + i : i);
                         if (!activeOptions.includes(i)){
                             optionBook.disabled = true
                         }
