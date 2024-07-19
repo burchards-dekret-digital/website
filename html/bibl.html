@@ -73,110 +73,110 @@
       
     <script>
         $(document).ready(function() {
-          $.ajax({
-            type: "GET",
-            url: "../data/register/literature.xml",
-            dataType: "xml",
-            success: function(xml) {
-              // Generate table rows
-              var tableRows = "";
-                $(xml).find('biblStruct').each(function() {
-                    var typeLabels = {
+    $.ajax({
+        type: "GET",
+        url: "../data/register/literature.xml",
+        dataType: "xml",
+        success: function(xml) {
+            // Generate table rows
+            var tableRows = "";
+            $(xml).find('biblStruct').each(function() {
+                var typeLabels = {
                     "book": "<span lang='de'>Buch</span><span lang='en'>Book</span>",
                     "journalArticle": "<span lang='de'>Zeitschriftenartikel</span><span lang='en'>Journal article</span>",
                     "bookSection": "<span lang='de'>Buchbeitrag</span><span lang='en'>Book article</span>",
                     "encyclopediaArticle": "<span lang='de'>Lexikonartikel</span><span lang='en'>Lexicon article</span>"
-                    };
-                    checkLanguage();
-                    
-                var type = typeLabels[$(this).attr("type")] || $(this).attr("type"); // Use label if available, otherwise use type value
+                };
+                checkLanguage();
+                
+                var type = $(this).attr("type"); // Store original type attribute value
+                var typeLabel = typeLabels[type] || type; // Use label if available, otherwise use type value
                 var title, authorNames, editorNames, inValue, edition, year, pubPlace, series;
                 
                 //books have only <monogr> element
-                if (type === "Buch") { 
-                  
-                  title = $(this).find("monogr > title").text();
-                      authorNames = [];
-                      $(this).find("monogr > author").each(function () {
-                          var forename = $(this).find("forename").text();
-                          var surname = $(this).find("surname").text();
-                          if (forename && surname) {
-                              authorNames.push(forename + " " + surname);
-                          } 
-                          //if forename or surname in author are not available, find name
-                          else { 
-                              var name = $(this).find("name").text();
-                              console.log(name)
-                              if (name) {
-                                  authorNames.push(name);
-                              }
-                          }
-                      });
-                      editorNames = [];
-                      $(this).find("monogr > editor").each(function () {
-                          var forename = $(this).find("forename").text();
-                          var surname = $(this).find("surname").text();
-                          if (forename && surname) {
-                              editorNames.push(forename + " " + surname);
-                          } 
-                          //if forename or surname in editor are not available, find name
-                          else {
-                              var name = $(this).find("name").text();
-                              if (name) {
-                                  editorNames.push(name);
-                              }
-                          }
-                      });
-                      inValue = "";
-                      
-                  }
-                  //for all other elements that have also <analytic>
-                  else {
-                      title = $(this).find("analytic > title").text();
-                      authorNames = [];
-                      $(this).find("analytic > author").each(function () {
-                          var forename = $(this).find("forename").text();
-                          var surname = $(this).find("surname").text();
-                          if (forename && surname) {
-                              authorNames.push(forename + " " + surname);
-                          } 
-                          //if forename or surname in author are not available, find name
-                          else {
-                              var name = $(this).find("name").text();
-                              if (name) {
-                                  authorNames.push(name);
-                              }
-                          }
-                      });
-                      editorNames = [];
-                      $(this).find("monogr > editor").each(function () {
-                          var forename = $(this).find("forename").text();
-                          var surname = $(this).find("surname").text();
-                          if (forename && surname) {
-                              editorNames.push(forename + " " + surname);
-                          } 
-                          //if forename or surname in editor are not available, find name
-                          else {
-                              var name = $(this).find("name").text();
-                              if (name) {
-                                  editorNames.push(name);
-                              }
-                          }
-                      });
-                  var monogr = $(this).find("monogr");
-                  
-                  //Display Band and/or Seiten only if present
-                  //var volume = $(monogr).find("biblScope[unit='volume']").text();
-                  var page = $(monogr).find("biblScope[unit='page']").text();
-                  //var volumeText = volume ? " " + volume : "";
-                  //var pageText = page ? ", S. " + page : "";
-                  var pageText = page ? "<span lang='de'>, S. </span><span lang='en'>, pp. </span> " + page : "";
-
-                  //inValue = $(this).find("monogr > title").text() + volumeText + pageText;
-                  inValue = $(this).find("monogr > title").text() + pageText;
-                  checkLanguage();
+                if (type === "book") { // Compare with original type value
+                    title = $(this).find("monogr > title").text();
+                    authorNames = [];
+                    $(this).find("monogr > author").each(function () {
+                        var forename = $(this).find("forename").text();
+                        var surname = $(this).find("surname").text();
+                        if (forename && surname) {
+                            authorNames.push(forename + " " + surname);
+                        } 
+                        //if forename or surname in author are not available, find name
+                        else { 
+                            var name = $(this).find("name").text();
+                            console.log(name)
+                            if (name) {
+                                authorNames.push(name);
+                            }
+                        }
+                    });
+                    editorNames = [];
+                    $(this).find("monogr > editor").each(function () {
+                        var forename = $(this).find("forename").text();
+                        var surname = $(this).find("surname").text();
+                        if (forename && surname) {
+                            editorNames.push(forename + " " + surname);
+                        } 
+                        //if forename or surname in editor are not available, find name
+                        else {
+                            var name = $(this).find("name").text();
+                            if (name) {
+                                editorNames.push(name);
+                            }
+                        }
+                    });
+                    inValue = "";
+                    
                 }
-
+                //for all other elements that have also <analytic>
+                else {
+                    title = $(this).find("analytic > title").text();
+                    authorNames = [];
+                    $(this).find("analytic > author").each(function () {
+                        var forename = $(this).find("forename").text();
+                        var surname = $(this).find("surname").text();
+                        if (forename && surname) {
+                            authorNames.push(forename + " " + surname);
+                        } 
+                        //if forename or surname in author are not available, find name
+                        else {
+                            var name = $(this).find("name").text();
+                            if (name) {
+                                authorNames.push(name);
+                            }
+                        }
+                    });
+                    editorNames = [];
+                    $(this).find("monogr > editor").each(function () {
+                        var forename = $(this).find("forename").text();
+                        var surname = $(this).find("surname").text();
+                        if (forename && surname) {
+                            editorNames.push(forename + " " + surname);
+                        } 
+                        //if forename or surname in editor are not available, find name
+                        else {
+                            var name = $(this).find("name").text();
+                            if (name) {
+                                editorNames.push(name);
+                            }
+                        }
+                    });
+                    var monogr = $(this).find("monogr");
+                    
+                    //Display Band and/or Seiten only if present
+                    //var volume = $(monogr).find("biblScope[unit='volume']").text();
+                    var page = $(monogr).find("biblScope[unit='page']").text();
+                    //var volumeText = volume ? " " + volume : "";
+                    //var pageText = page ? ", S. " + page : "";
+                    var pageText = page ? "<span lang='de'>, S. </span><span lang='en'>, pp. </span> " + page : "";
+    
+                    //inValue = $(this).find("monogr > title").text() + volumeText + pageText;
+                    inValue = $(this).find("monogr > title").text() + pageText;
+                    checkLanguage();
+                }
+    
                 var volume = $(monogr).find("biblScope[unit='volume']").text();
                 var volumeText = volume ? " " + volume : "";
                 id = $(this).attr("xml:id");
@@ -184,11 +184,9 @@
                 pubPlace = $(this).find("imprint > pubPlace").text();
                 series = $(this).find("series > title").text() + volumeText; 
                 
-
-
-            //Create table rows
+                //Create table rows
                 tableRows += "<tr id='" + id + "'>";
-                tableRows += "<td>" + type + "</td>";
+                tableRows += "<td>" + typeLabel + "</td>"; // Use label for display
                 tableRows += "<td>" + authorNames.join(", ") + "</td>";
                 tableRows += "<td>" + editorNames.join(", ") + "</td>";
                 tableRows += "<td>" + title + "</td>"; 
@@ -197,19 +195,18 @@
                 tableRows += "<td>" + pubPlace + "</td>";
                 tableRows += "<td>" + series + "</td>";
                 tableRows += "</tr>";
-              });
+            });
 
-              $("#literatureTable tbody").append(tableRows);   
-              checkLanguage();   
-            },
+            $("#literatureTable tbody").append(tableRows);   
+            checkLanguage();   
+        },
 
-            error: function(xhr, status, error) {
-              console.error("Error loading XML file:", error);
-            }
+        error: function(xhr, status, error) {
+            console.error("Error loading XML file:", error);
+        }
+    });
+});
 
-          });
-        });
-        
 
         // Add search functionality
         const searchInputs = document.querySelectorAll('.search-input');
