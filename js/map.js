@@ -1,5 +1,3 @@
-//original code that works
-
 /* Michael Schonhardt, Projekt BDD, m.schonhardtATuni-kassel.de
 Laden der Handschriften Koordinaten, besser in eigenes js file, da sonst escapes benutzt werden müssen */
 
@@ -119,10 +117,10 @@ function parseXml (xml) {
     
     // Bildung von Markergruppe
     if (color){
-            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
+            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br><span lang="de">Entstehungsort</span><span lang="en">Place of origin</span>: '+origPlace+'<br><span lang="de">Entstehungszeit</span><span lang="en">Period of origin</span>: '+origDate);
     }
     else{
-            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: greyIcon}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
+            mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: greyIcon}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br><span lang="de">Entstehungsort</span><span lang="en">Place of origin</span>: '+origPlace+'<br><span lang="de">Entstehungszeit</span><span lang="en">Period of origin</span>: '+origDate);
     }
     libraryList.push(mapPoint);
   });
@@ -167,7 +165,7 @@ function parseXml (xml) {
     });
 
     // Bildung von Markergruppe
-    mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br>Entstehungsort: '+origPlace+'<br>Entstehungszeit: '+origDate);
+    mapPoint = L.marker([geodata[0].trim(),geodata[1].trim()],{icon: color}).bindPopup('<b><a href="ms-item.html?document='+ sigle + '">'+name+'</a></b><br><span lang="de">Entstehungsort</span><span lang="en">Place of origin</span>: '+origPlace+'<br><span lang="de">Entstehungszeit</span><span lang="en">Period of origin</span>: '+origDate);
     provenanceList.push(mapPoint);
   });
 
@@ -180,11 +178,14 @@ function parseXml (xml) {
 
   // Bildung der Layer
   var overlayMaps = {
-    "Aufbewahrungsort": libraryMarkers,
-    "Entstehungsort": provenanceMarkers
+    "<span lang='de'>Aufbewahrungsort</span><span lang='en'>Storage location</span>": libraryMarkers,
+    "<span lang='de'>Entstehungsort</span><span lang='en'>Place of origin</span>": provenanceMarkers
   };
 
   // Erstellung der Layercontroll
-  L.control.layers(overlayMaps).addTo(mymap);
+  L.control.layers(overlayMaps).addTo(mymap)
+  mymap.on('layeradd', function() {
+    checkLanguage();
+  });
   libraryMarkers.addTo(mymap);
 }
