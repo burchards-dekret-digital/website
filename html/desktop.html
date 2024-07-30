@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-      <title>BDD Schreibtisch</title>
+      <title>Desktop</title>
+      <meta name="keywords" content="Burchards Dekret Digital Desktop, Manuscript Transcriptions, Manuscripts Comparison, Mirador Viewer">
+      <meta name="description" content="Use the Burchards Dekret Digital Desktop to add, view, and compare transcriptions and digitized images of manuscripts. Customize views and download your workspace in JSON format.">
+
       <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -72,14 +75,14 @@
   <body>
 
       <div id="navbar-placeholder"></div>
-      <div class="back-button ps-4" style="margin-top:40px;">
+      <div class="back-button ps-4 mt-5">
         <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
       </div>
 
       <div id="content" class="container" style="flex:1">
-          <h1 class="section-main-title" style="margin-bottom:20px!important;">
+          <h1 class="section-main-title">
             <span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span> 
-            <span style="vertical-align: super;"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#desktopModal" style="padding: 0;">
+            <span style="vertical-align: super;"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#desktopModal">
               <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
           </h1>
 
@@ -88,7 +91,7 @@
           <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="desktopModalLabel" style="font-weight: bold;"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h1>
+                <h2 class="modal-title fs-5 fw-bold" id="desktopModalLabel"><span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span></h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body" id="infoSchreibtisch"></div>
@@ -103,7 +106,7 @@
           <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>
           <button class="btn btn-warning" id="clearAll"><span lang="de">Alle löschen</span><span lang="en">Clear all</span></button>
           
-          <div id ="transcription-view-button" class="dropdown" style="float: right;">
+          <div id ="transcription-view-button" class="dropdown float-end">
             <button lang="de" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Transkriptionsansichten
             </button>
@@ -123,7 +126,7 @@
           </div>
 
           
-          <div class="row mt-3 panelsWindow" style="overflow-x: auto;">
+          <div class="row mt-3 panelsWindow overflow-auto">
               <div class="col">
                   <div class="d-flex" id="resourcePanel"></div>
               </div>
@@ -751,7 +754,7 @@
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="legendModalLabel" style="font-weight: bold;"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h1>
+              <h2 class="modal-title fs-5 fw-bold" id="legendModalLabel"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h2>
             </div>
             <div class="modal-body" id="infoStyleTranscriptions">
               
@@ -1026,9 +1029,9 @@
       panel.setAttribute('data-ms', idVal);
       const panelContent = `
         <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-center" style="font-weight:bold">
+          <div class="card-header d-flex justify-content-between align-items-center fw-bold">
             <i class="fas fa-arrow-left move-left"></i>
-            <span>${title}<button type="button" class="btn ms-2" data-bs-toggle="modal" data-bs-target="#legendModal" style="padding: 0; color: #46b65f;"><i class="fa-solid fa-circle-info fa-lg"></i></button></span>
+            <span>${title}<button type="button" class="btn ms-2 p-0" data-bs-toggle="modal" data-bs-target="#legendModal" style="color: #46b65f;"><i class="fa-solid fa-circle-info fa-lg"></i></button></span>
             <i class="fas fa-arrow-right move-right"></i>
             <div> 
               

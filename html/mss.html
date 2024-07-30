@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>BDD Handschriften</title>
+        <title>Manuscripts</title>
+        <meta name="keywords" content="Decretum Burchardi Manuscripts, Manuscripts Database">
+        <meta name="description" content="Explore the manuscript database of the Decretum Burchardi. Access metadata, transcriptions, and a map of available manuscripts for in-depth research.">
         <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
@@ -30,13 +32,13 @@
 
     <body>
         <div id="navbar-placeholder"></div>
-        <div class="back-button ps-4" style="margin-top:40px;">
+        <div class="back-button ps-4 mt-5">
           <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
         </div>
         <div class="container" style="flex:1">
             <h1 class="section-main-title">
               <span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span>
-              <span style="vertical-align: super;"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#desktopModal" style="padding: 0;">
+              <span style="vertical-align: super;"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#desktopModal">
                 <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
             </h1>
 
@@ -45,7 +47,7 @@
             <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="desktopModalLabel" style="font-weight: bold;"><span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span></h1>
+                  <h2 class="modal-title fs-5 fw-bold" id="desktopModalLabel"><span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span></h2>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="infoHandschriften">
@@ -59,7 +61,7 @@
           </div>           
         
           <div class="mss-table table-responsive">
-              <table id="mss-table-1" style="width:100%" class="table table-hover">
+              <table id="mss-table-1" class="table table-hover w-100">
                   <!-- Table headers -->
                   <thead>
                     <tr>

@@ -183,7 +183,8 @@ li{
 }
 
 .section-main-title{
-    margin-bottom:20px
+    margin-bottom:20px;
+    text-transform:uppercase;
 }
 
 .team-title {
@@ -196,6 +197,8 @@ li{
     margin-bottom:20px;
     letter-spacing:2px; 
 }
+
+.member-name{text-transform: uppercase;}
 
 
 
@@ -316,8 +319,7 @@ font-family: Andron-Scriptor-Web;
 
 
 /* INDEX CSS */
-    .container-index h1 {
-                /*  font-family: Montserrat-ExtraBold; */
+    .container-index h2 {
                 font-family: BrandonGrotesqueBlack;
                 font-size:24px; 
                 font-weight:400; 
@@ -328,7 +330,7 @@ font-family: Andron-Scriptor-Web;
                 letter-spacing:2px; 
             }
 
-            .container-index h2 {
+           /* .container-index h2 {
                 font-family: Montserrat-Regular;
                 font-size:70px; 
                 letter-spacing:10px; 
@@ -338,7 +340,7 @@ font-family: Andron-Scriptor-Web;
                 text-transform:uppercase; 
                 z-index:10; 
                 opacity:.9;
-            }
+            }*/
 
             .container-index h3 {
                 font-family: BrandonGrotesqueLight;
@@ -355,9 +357,10 @@ font-family: Andron-Scriptor-Web;
             }
 
             /* Title */
-            .parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; }
+            .parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; text-transform: uppercase;}
             .parallax-title h1 {font-size:40px; color:white; font-weight:800; margin-bottom:0; font-family: Montserrat-ExtraBold; }
-            .parallax-title h3 {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }
+            /*.parallax-title h3 {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }*/
+            .home-subtitle {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }
             
             .short-text {display: none;}
         
@@ -437,8 +440,9 @@ font-family: Andron-Scriptor-Web;
             .container-index {padding-top: 30px; padding-bottom: 30px;}
             .container-index h2 {font-size:30px;}
             .parallax-title h1 {letter-spacing: 1px;}
-            .parallax-title h3 {font-size: 20px;}
-            .container-indexh1 {letter-spacing: 0px; font-size:22px;}
+            /*.parallax-title h3 {font-size: 20px;}*/
+            .home-subtitle {font-size: 20px;}
+            .container-index h2 {letter-spacing: 0px; font-size:22px;}
             .short-text { display: inline-block; }
             .full-text { display: none; }
             .parallax-one, .parallax-three {padding-top:200px; padding-bottom:200px; background-attachment: initial;}
@@ -455,10 +459,11 @@ font-family: Andron-Scriptor-Web;
             .form-select{width: 100%;}
             .back-button{display: none;}
             .container-index {padding-top: 30px; padding-bottom: 30px;}
-            .container-index h2 {font-size:30px;}
+            /*.container-index h2 {font-size:30px;}*/
             .parallax-title h1 {letter-spacing: 1px;}
-            .parallax-title h3 {font-size: 18px;}
-            .container-index h1 {letter-spacing: 0px; font-size:22px;}
+            /*.parallax-title h3 {font-size: 18px;}*/
+            .home-subtitle {font-size: 18px;}
+            .container-index h2 {letter-spacing: 0px; font-size:22px;}
             .short-text { display: inline-block; }
             .full-text { display: none; }
             .parallax-one, .parallax-two, .parallax-three, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
@@ -494,10 +499,11 @@ font-family: Andron-Scriptor-Web;
             @media screen and (max-width: 479px) {
             .container-index {padding: 30px 15px;}
             .container-index {padding-top: 30px; padding-bottom: 30px;}
-            .container-index h2 {font-size:30px;}
+            /*.container-index h2 {font-size:30px;}*/
             .parallax-title h1 {letter-spacing: 1px; font-size: 30px;}
-            .parallax-title h3 {font-size: 13px;}
-            .container-index h1 {letter-spacing: 0px; font-size:22px;}
+            /*.parallax-title h3 {font-size: 13px;}*/
+            .home-subtitle {font-size: 13px;}
+            .container-index h2 {letter-spacing: 0px; font-size:22px;}
             .short-text { display: inline-block; }
             .full-text { display: none; }
             .parallax-one, .parallax-two, .parallax-three, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}

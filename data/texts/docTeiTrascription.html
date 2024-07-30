@@ -1,5 +1,5 @@
 <div id="teiTranskriptionDoc" class="block"><span lang="de">
-   <h1>Allgemeine Beschreibung</h1>
+   <h2>Allgemeine Beschreibung</h2>
    <p>Die Basis digitaler Editionen stellt die sorgfältige Erhebung und Codierung der
       Datengrundlage dar. Im Projekt BDD liegen diese Daten in zwei aufeinander
       aufbauenden Kategorien vor: <i>deskriptive Daten</i> und <i>interpretative Daten</i>. Während die Ebene der deskriptiven
@@ -29,19 +29,19 @@
       Rezeptionsspuren, z.B. nota-Zeichen, sind ausgezeichnet. Auf sinntragende
       Varianten in anderen Handschriften des Decretum Burchardi wird hingewiesen. Die
       Transkriptionen sind überdies mit der Digitalen Edition synchronisiert.</p>
-   <h1>Datenrepositorien</h1>
+   <h2>Datenrepositorien</h2>
    <p>Alle Transkriptionen werden mit dazugehörenden Datenderivaten auf dem
       Projekteigenen <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Gitlab-Repositorium</a>
       gespeichert. Nach Abschluss der jeweiligen Versionen werden die Dateien
       ebenfalls über Zenodo archiviert. Neben den Transkriptionen enthalt dieses
       Repositorium außerdem entsprechendes PageXML sowie daraus generiete Datensätze
       zur Verwendung im Kontext von Machine Learning. </p>
-   <h1>Auszeichnungsrichtlinien</h1>
+   <h2>Auszeichnungsrichtlinien</h2>
    <p>In den folgenden Abschnitten werden die Auszeichnungsrichtlinien geschildert.
       Eine formalisierte Auslistung der Verwendeten Elemente, Attribute und Werte
       findet sich unter dem Abschnitt <i>schemaSpec</i> am Ende des
       Dokuments.</p>
-   <h2>TEI Header</h2>
+   <h3>TEI Header</h3>
    <p>Der TEI-Header jedes Transkripts umfasst eine Beschreibung des Dokuments
       (<code>fileDesc</code>), eine Darlegung der Codierung (<code>encodingDesc</code>)
       und eine Angabe über Version und Datierung der Datei
@@ -90,7 +90,7 @@
       Datei dokumentiert (<code>listChange</code>). Die aufgeführten Änderungen
       betreffen die Version der Daten und Korrekturen, immer versehen mit dem
       Datum der Änderung.</p>
-   <h2>Transkriptionsrichtlinien</h2>
+   <h3>Transkriptionsrichtlinien</h3>
    <p>Die Transkriptionen zielen in erster Linie auf die Textsicherung des Dekrets,
       daher wird weitestgehend auf editorische Eingriffe und Interpretation
       verzichtet. Sie geben den Befund der einzelnen Textzeugen möglichst genau
@@ -116,7 +116,7 @@
       <code>distinctio</code>,<code>p-versus</code>, <code>p-elevatus</code>,
       <code>p-flexus</code>, <code>p-interrogativus</code> oder
       <code>p-interrogativus-positura</code> näher spezifiziert werden.</p>
-   <h2>Auszeichnung Textstruktur/Layout</h2>
+   <h3>Auszeichnung Textstruktur/Layout</h3>
    <p>Das Layout der Handschriften ist ein wichtiger Informationsträger und
       gliedert den Text in verschiedene Hierarchiestufen. Daher wird es in den
       Transkriptionen ausgezeichnet. Neben der Auszeichnung der textimmanenten
@@ -126,7 +126,7 @@
       zu ermöglichen sowie das Training von Handschriftenmodellen und
       Maschinenlesbarkeit zu ermöglichen.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image2.png" class="figure-img img-fluid" alt="Typisches Seitenlayout, Auszeichnung in Transkribus"><figcaption class="figure-caption">Typisches Seitenlayout, Auszeichnung in Transkribus</figcaption>
+      <figure class="figure"><img src="../img/image2.png" class="figure-img img-fluid" alt="Typisches Seitenlayout, Auszeichnung in Transkribus " title=""><figcaption class="figure-caption">Typisches Seitenlayout, Auszeichnung in Transkribus</figcaption>
       </figure>
    </div>
    <p>Zu den Layoutinformationen zählen Zeilenumbrüche, Spalten- und Seitenwechsel,
@@ -137,7 +137,7 @@
       Hinzufügungszeichen markiert sind, werden mit <code>supplied</code> und
       <code>seg</code> ausgezeichnet.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (, fol. 27rb)"><figcaption class="figure-caption">Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (F, fol. 27rb)</figcaption>
+      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (, fol. 27rb) " title=""><figcaption class="figure-caption">Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035675" target="_blank">F</a>, fol. 27rb)</figcaption>
       </figure>
    </div>
    <p>Darüberhinausgehende Text-/Bildinformationen können per <code>xml:id</code> des
@@ -149,7 +149,7 @@
       sind im jeweiligen Attribut @facs hinterlegt und erlauben das Abrufen des
       entsprechenden Bildausschnitts über in Verbindung mit der IIIF-query-URL der
       jeweiligen Seite.</p>
-   <h2>Spalten- und Seitenwechsel, Zeilenumbrüche</h2>
+   <h3>Spalten- und Seitenwechsel, Zeilenumbrüche</h3>
    <p>Zur Codierung des Layouts wird auf die leeren Elemente <code>pb</code>
       (Seitenumbruch), <code>cb</code> (Spaltenumbruch), <code>lb</code> (Zeilenumbruch)
       sowie auf das Element <code>fw</code> (Seitenlayout) zurückgegriffen. Diese
@@ -168,13 +168,13 @@
       spezifischen Suffix gebildet wird, z.B. <code>"B_0015_header"</code>. Diese ID
       erlaubt das Auffinden des entsprechenden Elements im PageXML, das dort durch
       dieselbe ID referenziert ist.</p>
-   <h2>Silbentrennung</h2>
+   <h3>Silbentrennung</h3>
    <p>Die Worttrennung erfolgt nach Wortsinn und weicht vom Befund der Handschrift
       ab. Da besonders die frühen Handschriften des Dekrets keine zeitgenössischen
       Bindestriche zur Worttrennung nutzen, erfolgt die Angabe eines
       Zeilenumbruchs ausschließlich durch das leere Element <code>lb</code> und ggf.
       dem Attribut <code>lb break="no"</code>.</p>
-   <h2>Synchronisierte Textstruktur (IDs, Synchronisation und Taxonomie)</h2>
+   <h3>Synchronisierte Textstruktur (IDs, Synchronisation und Taxonomie)</h3>
    <p>Die Textzeugen der Wormser Redaktion können vielfältige Abweichungen in der
       Binnengliederung sowie der Textstruktur aufweisen. Dies umfasst bewusste
       Umstrukturierungen ebenso wie Fehler durch Schreiber und nachträglichen
@@ -218,19 +218,19 @@
       Auf diese Weise lassen sich die vielfachen Eingriffe in die Textstruktur im
       Spiegel der Überlieferung maschinenlesbar analysieren und darstellen.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image4.png" class="figure-img img-fluid" alt="Nur noch teilweise sichtbare Inskriptionen auf herausgetrennter&#xA;                                    Seite (, nach fol. 80v)"><figcaption class="figure-caption">Nur noch teilweise sichtbare Inskriptionen auf herausgetrennter
-            Seite (Va2, nach fol. 80v)</figcaption>
+      <figure class="figure"><img src="../img/image4.png" class="figure-img img-fluid" alt="Nur noch teilweise sichtbare Inskriptionen auf herausgetrennter&#xA;                                    Seite (, nach fol. 80v) " title=""><figcaption class="figure-caption">Nur noch teilweise sichtbare Inskriptionen auf herausgetrennter
+            Seite (<a href="https://digi.vatlib.it/view/MSS_Pal.lat.585/0171" target="_blank">Va2</a>, nach fol. 80v)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image5.png" class="figure-img img-fluid" alt="Markierte und durchgestrichenes Kapitel (, fol. 34rb)"><figcaption class="figure-caption">Markierte und durchgestrichenes Kapitel (F, fol. 34rb)</figcaption>
+      <figure class="figure"><img src="../img/image5.png" class="figure-img img-fluid" alt="Markierte und durchgestrichenes Kapitel (, fol. 34rb) " title=""><figcaption class="figure-caption">Markierte und durchgestrichenes Kapitel (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035689" target="_blank">F</a>, fol. 34rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" alt="Fehlende Kapitelnummer (, fol. 44vb)"><figcaption class="figure-caption">Fehlende Kapitelnummer (B, fol. 44vb)</figcaption>
+      <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" alt="Fehlende Kapitelnummer (, fol. 44vb) " title=""><figcaption class="figure-caption">Fehlende Kapitelnummer (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=92" target="_blank">B</a>, fol. 44vb)</figcaption>
       </figure>
    </div>
-   <h2>Text-Bildverknüpfung</h2>
+   <h3>Text-Bildverknüpfung</h3>
    <p>Da die Edition des Decretum Burchardi besonderes Augenmerk auf kodikologische
       Spuren der Textgenese wirft, kommt der Verschränkung von Text und Bild eine
       herausgehobene Bedeutung zu. Zum einen ermöglicht eine solche Verschränkung
@@ -265,8 +265,8 @@
       geteilte IDs mit den Layoutelementen der TEI-Transkriptionen referenzieren.
       Auf diese Weise können in Zukunft auch weitergehende Phänomene, etwa
       Rasuren, in PageXML transformiert werden.</p>
-   <h2>Initialen, Majuskel, Versalien, Hervorhebungen (graphische
-      Auszeichnungen)</h2>
+   <h3>Initialen, Majuskel, Versalien, Hervorhebungen (graphische
+      Auszeichnungen)</h3>
    <p>Ein wichtiges Strukturelement stellen die vielfachen Auszeichnungen dar, die
       den Text in verschiedene Hierarchien gliedern. Diese graphischen
       Hervorhebungen betreffen inbesondere Kapitelzahlen, Initialen der
@@ -280,18 +280,18 @@
       Elemente oder die Kombination mehrerer <code>rend</code>-Werte notwendig ist.
       Majuskeln am Kapitelanfang werden transkribiert, aber nicht kodiert.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image7.png" class="figure-img img-fluid" alt="Beginn Buch 1 mit verschiedenen Auszeichnungen (, fol. 10va)"><figcaption class="figure-caption">Beginn Buch 1 mit verschiedenen Auszeichnungen (B, fol. 10va)</figcaption>
+      <figure class="figure"><img src="../img/image7.png" class="figure-img img-fluid" alt="Beginn Buch 1 mit verschiedenen Auszeichnungen (, fol. 10va) " title=""><figcaption class="figure-caption">Beginn Buch 1 mit verschiedenen Auszeichnungen (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=24" target="_blank">B</a>, fol. 10va)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" alt="Versalie (, fol. 11rb)"><figcaption class="figure-caption">Versalie (B, fol. 11rb)</figcaption>
+      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" alt="Versalie (, fol. 11rb) " title=""><figcaption class="figure-caption">Versalie (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=25" target="_blank">B</a>, fol. 11rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" alt="Rubrizierte Majuskeln (, fol. 56rb)"><figcaption class="figure-caption">Rubrizierte Majuskeln (K, fol. 56rb)</figcaption>
+      <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" alt="Rubrizierte Majuskeln (, fol. 56rb) " title=""><figcaption class="figure-caption">Rubrizierte Majuskeln (<a href="https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343" target="_blank">K</a>, fol. 56rb)</figcaption>
       </figure>
    </div>
-   <h2>Schreibereingriffe: getilgter Text, Korrekturen, Hinzufügungen</h2>
+   <h3>Schreibereingriffe: getilgter Text, Korrekturen, Hinzufügungen</h3>
    <p>Korrekturen durch Schreiber werden durch entsprechende Codierung kenntlich
       gemacht. Dabei ist zwischen Löschungen <code>del</code>, Ergänzungen <code>add</code>
       und Ersetzungen <code>subst</code> zur unterscheiden. Löschungen werden
@@ -303,15 +303,15 @@
       die Werte <code>erased</code>, <code>strikethrough</code>, <code>blackout</code>,
       <code>expunctuation</code> und <code>underlined</code> ausgedrückt werden.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image10.png" class="figure-img img-fluid" alt="Korrektur eines &#34;l&#34; (, fol. 133rb)"><figcaption class="figure-caption">Korrektur eines "l" (B, fol. 133rb)</figcaption>
+      <figure class="figure"><img src="../img/image10.png" class="figure-img img-fluid" alt="Korrektur eines &#34;l&#34; (, fol. 133rb) " title=""><figcaption class="figure-caption">Korrektur eines "l" (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=269" target="_blank">B</a>, fol. 133rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image11.png" class="figure-img img-fluid" alt="Streichung in Capitulatio Buch 13 (, fol. 203va)"><figcaption class="figure-caption">Streichung in Capitulatio Buch 13 (B, fol. 203va)</figcaption>
+      <figure class="figure"><img src="../img/image11.png" class="figure-img img-fluid" alt="Streichung in Capitulatio Buch 13 (, fol. 203va) " title=""><figcaption class="figure-caption">Streichung in Capitulatio Buch 13 (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=410" target="_blank">B</a>, fol. 203va)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" alt="Expunktiertes a (, fol. 44ra)"><figcaption class="figure-caption">Expunktiertes a (B, fol. 44ra)</figcaption>
+      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" alt="Expunktiertes a (, fol. 44ra) " title=""><figcaption class="figure-caption">Expunktiertes a (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=91" target="_blank">B</a>, fol. 44ra)</figcaption>
       </figure>
    </div>
    <p>Eine Ersetzung liegt vor, wenn eine getilgte oder gelöschte Stelle ergänzt
@@ -327,11 +327,11 @@
       verzeichnet und mit dem Attribut <code>place</code> und dem Wert <code>margin
          left|right</code> verortet.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image13.png" class="figure-img img-fluid" alt="Spätere Marginalie (, fol. 263v)"><figcaption class="figure-caption">Spätere Marginalie (F, fol. 263v)</figcaption>
+      <figure class="figure"><img src="../img/image13.png" class="figure-img img-fluid" alt="Spätere Marginalie (, fol. 263v) " title=""><figcaption class="figure-caption">Spätere Marginalie (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2036148" target="_blank">F</a>, fol. 263v)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image14.png" class="figure-img img-fluid" alt="Glosse in I.26 (, fol. 14rb)"><figcaption class="figure-caption">Glosse in I.26 (B, fol. 14rb)</figcaption>
+      <figure class="figure"><img src="../img/image14.png" class="figure-img img-fluid" alt="Glosse in I.26 (, fol. 14rb) " title=""><figcaption class="figure-caption">Glosse in I.26 (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=31" target="_blank">B</a>, fol. 14rb)</figcaption>
       </figure>
    </div>
    <p>Wurden einzelne Buchstaben oder ganze Satzteile beim Abschreiben übersehen,
@@ -346,7 +346,7 @@
       Hinzufügungen von anderer Hand werden mit <code>hand</code> ausgezeichnet.
       Dieses Element erhält nachträglich eine <code>xml:id</code>.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image15.png" class="figure-img img-fluid" alt="Zwei unterschiedlich umfangreiche Hinzufügung (, fol. 115ra)"><figcaption class="figure-caption">Zwei unterschiedlich umfangreiche Hinzufügung (K, fol. 115ra)</figcaption>
+      <figure class="figure"><img src="../img/image15.png" class="figure-img img-fluid" alt="Zwei unterschiedlich umfangreiche Hinzufügung (, fol. 115ra) " title=""><figcaption class="figure-caption">Zwei unterschiedlich umfangreiche Hinzufügung (<a href="https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343" target="_blank">K</a>, fol. 115ra)</figcaption>
       </figure>
    </div>
    <p>Das häufige Phänomen, dass über die Zeile reichende Wortteile in einer
@@ -361,7 +361,7 @@
       Element <code>seg</code> enthält das Attribut <code>corresp</code>, indem auf die
       zuvor gesetzte supplied-ID verwiesen wird (<code>#supplied-ID</code>) sowie
       <code>type</code> mit dem Wert <code>pos-of-displaced</code>.</p>
-   <h2>Unklare Lesarten, beschädigte oder fragmentierte Textstellen</h2>
+   <h3>Unklare Lesarten, beschädigte oder fragmentierte Textstellen</h3>
    <p>Ist ein Text nicht sicher zu entziffern, wird dieser durch das Element
       <code>unclear</code> ausgezeichnet und so nachvollziehbar gehalten. Dabei muss
       das Element <code>unclear</code> die Attribute <code>resp</code> (mit der
@@ -372,7 +372,7 @@
       spezifiziert werden. Unleserlicher Text wird in den Transkriptionen nicht
       ergänzt.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image16.png" class="figure-img img-fluid" alt="Eingebundene Nummerierung und Inskription (, fol. 20ra)"><figcaption class="figure-caption">Eingebundene Nummerierung und Inskription (F, fol. 20ra)</figcaption>
+      <figure class="figure"><img src="../img/image16.png" class="figure-img img-fluid" alt="Eingebundene Nummerierung und Inskription (, fol. 20ra) " title=""><figcaption class="figure-caption">Eingebundene Nummerierung und Inskription (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035661" target="_blank">F</a>, fol. 20ra)</figcaption>
       </figure>
    </div>
    <p>Häufig resultiert eine schwere Lesbarkeit oder gar Unleserlichkeit
@@ -389,18 +389,18 @@
       das Element <code>damage</code> um die beschädigte Stelle gesetzt, um den
       Schaden zu dokumentieren.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image17.png" class="figure-img img-fluid" alt="Ausgeschnittener Wortteil, , fol. 8ra"><figcaption class="figure-caption">Ausgeschnittener Wortteil, B, fol. 8ra</figcaption>
+      <figure class="figure"><img src="../img/image17.png" class="figure-img img-fluid" alt="Ausgeschnittener Wortteil, , fol. 8ra " title=""><figcaption class="figure-caption">Ausgeschnittener Wortteil, <a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=19" target="_blank">B</a>, fol. 8ra</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image18.png" class="figure-img img-fluid" alt="Verblasste Textstelle mit Korrekturen (, fol. 28vb)"><figcaption class="figure-caption">Verblasste Textstelle mit Korrekturen (B, fol. 28vb)</figcaption>
+      <figure class="figure"><img src="../img/image18.png" class="figure-img img-fluid" alt="Verblasste Textstelle mit Korrekturen (, fol. 28vb) " title=""><figcaption class="figure-caption">Verblasste Textstelle mit Korrekturen (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=60" target="_blank">B</a>, fol. 28vb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" alt="Unleserlicher Text (, fol. 136vb)"><figcaption class="figure-caption">Unleserlicher Text (B, fol. 136vb)</figcaption>
+      <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" alt="Unleserlicher Text (, fol. 136vb) " title=""><figcaption class="figure-caption">Unleserlicher Text (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=276" target="_blank">B</a>, fol. 136vb)</figcaption>
       </figure>
    </div>
-   <h2>Schreiber, Schrift- und Schriftbildwechsel</h2>
+   <h3>Schreiber, Schrift- und Schriftbildwechsel</h3>
    <p>Wechselt der Schreiber im Text, so wird an der Position des Wechsels das
       Element <code>handShift</code> eingefügt. Es verweist durch das Attribut
       <code>new</code> durch entsprechende ID auf eine der im Element
@@ -417,7 +417,7 @@
       dazugehörenden <code>handDesc</code> im <code>teiHeader</code> zu verweisen, um eine
       textgenetische Analyse der Kodizes zu ermöglichen.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image20.png" class="figure-img img-fluid" alt="Schreiberwechsel (,&#xA;                                    fol. 102rb)"><figcaption class="figure-caption">Schreiberwechsel (Va3,
+      <figure class="figure"><img src="../img/image20.png" class="figure-img img-fluid" alt="Schreiberwechsel (,&#xA;                                    fol. 102rb) " title=""><figcaption class="figure-caption">Schreiberwechsel (<a href="https://digi.vatlib.it/view/MSS_Pal.lat.586/0210" target="_blank">Va3</a>,
             fol. 102rb)</figcaption>
       </figure>
    </div>
@@ -435,17 +435,17 @@
       aufgeführt werden. Auch diese Schreiber erhalten eine eindeutige
       <code>xml:id</code>. Außerdem wird eine Bezeichnung als <code>name</code> sowie,
       wenn bekannt, eine <code>affiliation</code> verbalisiert.</p>
-   <h2>Zahlen</h2>
+   <h3>Zahlen</h3>
    <p>Das in den Handschriften weitgehend genutzte römische Zahlensystem wird in
       der Transkription übernommen und in Kleinbuchstaben wiedergegeben. Unlesbare
       Kapitelzählungen werden ergänzt. Die laufende Kapitelnummer wird dort durch
       <code>n</code> Attribut ausgedrückt, im Text auftretende Ziffern und
       verbalisierte Zahlen werden durch das Element <code>num</code> unter Angabe des
       Zahlenwertes im Attribut <code>value</code> ausgezeichnet.</p>
-   <h1>BDD Transkription: schemaSpec</h1>
+   <h2>BDD Transkription: schemaSpec</h2>
    <p>Auf TEI All basierende Anpassung für Transkriptionen im Projekt Burchards
       Dekret Digital zur Generierung von relaxng Validierungsdateien.</p></span><span lang="en">
-   <h1>General Description</h1>
+   <h2>General Description</h2>
    <p>The foundation of digital editions is the careful collection and encoding of
       the data basis. In the BDD project, this data is presented in two successive
       categories: <i>descriptive data</i> and <i>interpretative data</i>. While the level of descriptive
@@ -476,19 +476,19 @@
       reception, e.g., nota signs, are highlighted. References to meaningful
       variants in other manuscripts of the Decretum Burchardi are made. The
       transcriptions are also synchronised with the Digital Edition.</p>
-   <h1>Data Repositories</h1>
+   <h2>Data Repositories</h2>
    <p>All transcriptions are stored with associated data derivatives on the
       project's own <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Gitlab repository</a>.
       Upon completion of the respective versions, the files
       are also archived via Zenodo. In addition to the transcriptions, this
       repository also contains corresponding PageXML and datasets generated from it
       for use in the context of Machine Learning. </p>
-   <h1>Markup Guidelines</h1>
+   <h2>Markup Guidelines</h2>
    <p>In the following sections, the markup guidelines are described. A formalised
       listing of the used elements, attributes and values can be found under
       the section <i>schemaSpec</i> at the end of the
       document.</p>
-   <h2>TEI Header</h2>
+   <h3>TEI Header</h3>
    <p>The TEI header of each transcript includes a description of the document
       (<code>fileDesc</code>), an exposition of the encoding (<code>encodingDesc</code>)
       and an indication of the version and dating of the file
@@ -537,7 +537,7 @@
       file (<code>listChange</code>). The listed changes
       concern the version of the data and corrections, always provided with the
       date of the change.</p>
-   <h2>Transcription Guidelines</h2>
+   <h3>Transcription Guidelines</h3>
    <p>The transcriptions primarily aim at securing the text of the decree.
       Therefore, editorial interventions and interpretations are largely
       omitted. They reproduce the findings of the individual textual
@@ -561,7 +561,7 @@
       <code>distinctio</code>,<code>p-versus</code>, <code>p-elevatus</code>,
       <code>p-flexus</code>, <code>p-interrogativus</code> or
       <code>p-interrogativus-positura</code>.</p>
-   <h2>Markup Text Structure/Layout</h2>
+   <h3>Markup Text Structure/Layout</h3>
    <p>The layout of the manuscripts is an important carrier of information and
       structures the text into various hierarchical levels. Therefore, it is marked in the
       transcriptions. In addition to marking the text-immanent
@@ -570,7 +570,7 @@
       digital edition as well as the training of manuscript models and
       machine readability.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image2.png" class="figure-img img-fluid" alt="Typical page layout, marking in Transkribus"><figcaption class="figure-caption">Typical page layout, marking in Transkribus</figcaption>
+      <figure class="figure"><img src="../img/image2.png" class="figure-img img-fluid" alt="Typical page layout, marking in Transkribus " title=""><figcaption class="figure-caption">Typical page layout, marking in Transkribus</figcaption>
       </figure>
    </div>
    <p>Layout information includes line breaks, column and page breaks,
@@ -581,7 +581,7 @@
       to lack of space and marked with an addition sign are marked with
       <code>supplied</code> and <code>seg</code>.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Due to lack of space, rubric added above the line (, fol. 27rb)"><figcaption class="figure-caption">Due to lack of space, rubric added above the line (F, fol. 27rb)</figcaption>
+      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Due to lack of space, rubric added above the line (, fol. 27rb) " title=""><figcaption class="figure-caption">Due to lack of space, rubric added above the line (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035675" target="_blank">F</a>, fol. 27rb)</figcaption>
       </figure>
    </div>
    <p>Additional text/image information can be queried per <code>xml:id</code> of
@@ -593,7 +593,7 @@
       layout element are stored in the respective attribute @facs and
       allow the retrieval of the corresponding image section via the IIIF
       query URL of the respective page.</p>
-   <h2>Column and Page Breaks, Line Breaks</h2>
+   <h3>Column and Page Breaks, Line Breaks</h3>
    <p>To code the layout, the empty elements <code>pb</code> (page break),
       <code>cb</code> (column break), <code>lb</code> (line break) and the element
       <code>fw</code> (page layout) are used. These elements can interrupt the
@@ -610,13 +610,13 @@
       PageXML and a specific suffix, e.g. <code>"B_0015_header"</code>. This
       ID allows the corresponding element to be located in the PageXML,
       where it is referenced by the same ID.</p>
-   <h2>Syllabification</h2>
+   <h3>Syllabification</h3>
    <p>Word separation is performed according to word sense and deviates from the manuscript's
       findings. Since particularly the early manuscripts of the decree do not use contemporary
       hyphens for word separation, the indication of a
       line break is exclusively made by the empty element <code>lb</code> and possibly
       the attribute <code>lb break="no"</code>.</p>
-   <h2>Synchronised Text Structure (IDs, Synchronisation and Taxonomy)</h2>
+   <h3>Synchronised Text Structure (IDs, Synchronisation and Taxonomy)</h3>
    <p>The textual witnesses of the Worms redaction can show various deviations
       in the internal structure as well as the text structure. This
       includes deliberate restructuring as well as errors by scribes and
@@ -662,19 +662,19 @@
       structure in the context of the transmission can be analysed and
       represented in a machine-readable manner.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image4.png" class="figure-img img-fluid" alt="Partially visible inscriptions on a removed&#xA;                                page (, after fol. 80v)"><figcaption class="figure-caption">Partially visible inscriptions on a removed
-            page (Va2, after fol. 80v)</figcaption>
+      <figure class="figure"><img src="../img/image4.png" class="figure-img img-fluid" alt="Partially visible inscriptions on a removed&#xA;                                page (, after fol. 80v) " title=""><figcaption class="figure-caption">Partially visible inscriptions on a removed
+            page (<a href="https://digi.vatlib.it/view/MSS_Pal.lat.585/0171" target="_blank">Va2</a>, after fol. 80v)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image5.png" class="figure-img img-fluid" alt="Marked and crossed-out chapter (, fol. 34rb)"><figcaption class="figure-caption">Marked and crossed-out chapter (F, fol. 34rb)</figcaption>
+      <figure class="figure"><img src="../img/image5.png" class="figure-img img-fluid" alt="Marked and crossed-out chapter (, fol. 34rb) " title=""><figcaption class="figure-caption">Marked and crossed-out chapter (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035689" target="_blank">F</a>, fol. 34rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" alt="Missing chapter number (, fol. 44vb)"><figcaption class="figure-caption">Missing chapter number (B, fol. 44vb)</figcaption>
+      <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" alt="Missing chapter number (, fol. 44vb) " title=""><figcaption class="figure-caption">Missing chapter number (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=92" target="_blank">B</a>, fol. 44vb)</figcaption>
       </figure>
    </div>
-   <h2>Text-Image Linking</h2>
+   <h3>Text-Image Linking</h3>
    <p>Since the edition of the Decretum Burchardi places special emphasis on
       codicological traces of the text genesis, the intertwining of text
       and image is of outstanding importance. On one hand, such an
@@ -711,8 +711,8 @@
       shared IDs with the layout elements of the TEI transcriptions.
       In this way, further phenomena, such as erasures, can also be transformed into PageXML
       in the future.</p>
-   <h2>Initials, Majuscule, Versals, Emphasis (graphical
-      Markings)</h2>
+   <h3>Initials, Majuscule, Versals, Emphasis (graphical
+      Markings)</h3>
    <p>An important structural element are the multiple markings that
       divide the text into various hierarchies. These graphical
       highlights concern especially chapter numbers, initials of the
@@ -726,18 +726,18 @@
       elements or the combination of several <code>rend</code> values is necessary.
       Majuscules at the beginning of a chapter are transcribed, but not encoded.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image7.png" class="figure-img img-fluid" alt="Start of book 1 with various markings (, fol. 10va)"><figcaption class="figure-caption">Start of book 1 with various markings (B, fol. 10va)</figcaption>
+      <figure class="figure"><img src="../img/image7.png" class="figure-img img-fluid" alt="Start of book 1 with various markings (, fol. 10va) " title=""><figcaption class="figure-caption">Start of book 1 with various markings (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=24" target="_blank">B</a>, fol. 10va)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" alt="Large capital (, fol. 11rb)"><figcaption class="figure-caption">Large capital (B, fol. 11rb)</figcaption>
+      <figure class="figure"><img src="../img/image8.png" class="figure-img img-fluid" alt="Large capital (, fol. 11rb) " title=""><figcaption class="figure-caption">Large capital (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=25" target="_blank">B</a>, fol. 11rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" alt="Rubricated majuscules (, fol. 56rb)"><figcaption class="figure-caption">Rubricated majuscules (K, fol. 56rb)</figcaption>
+      <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" alt="Rubricated majuscules (, fol. 56rb) " title=""><figcaption class="figure-caption">Rubricated majuscules (<a href="https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343" target="_blank">K</a>, fol. 56rb)</figcaption>
       </figure>
    </div>
-   <h2>Scribe Interventions: Erased Text, Corrections, Additions</h2>
+   <h3>Scribe Interventions: Erased Text, Corrections, Additions</h3>
    <p>Corrections by scribes are made recognisable through appropriate coding.
       It is necessary to distinguish between deletions <code>del</code>
       additions <code>add</code> and replacements <code>subst</code>. Deletions
@@ -750,15 +750,15 @@
       <code>blackout</code>, <code>expunctuation</code> and
       <code>underlined</code>.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image10.png" class="figure-img img-fluid" alt="Correction of an &#34;l&#34; (, fol. 133rb)"><figcaption class="figure-caption">Correction of an "l" (B, fol. 133rb)</figcaption>
+      <figure class="figure"><img src="../img/image10.png" class="figure-img img-fluid" alt="Correction of an &#34;l&#34; (, fol. 133rb) " title=""><figcaption class="figure-caption">Correction of an "l" (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=269" target="_blank">B</a>, fol. 133rb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image11.png" class="figure-img img-fluid" alt="Deletion in capitulation book 13 (, fol. 203va)"><figcaption class="figure-caption">Deletion in capitulation book 13 (B, fol. 203va)</figcaption>
+      <figure class="figure"><img src="../img/image11.png" class="figure-img img-fluid" alt="Deletion in capitulation book 13 (, fol. 203va) " title=""><figcaption class="figure-caption">Deletion in capitulation book 13 (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=410" target="_blank">B</a>, fol. 203va)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" alt="Expunctuated a (, fol. 44ra)"><figcaption class="figure-caption">Expunctuated a (B, fol. 44ra)</figcaption>
+      <figure class="figure"><img src="../img/image12.png" class="figure-img img-fluid" alt="Expunctuated a (, fol. 44ra) " title=""><figcaption class="figure-caption">Expunctuated a (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=91" target="_blank">B</a>, fol. 44ra)</figcaption>
       </figure>
    </div>
    <p>A replacement occurs when a deleted or erased spot is supplemented. This is done in
@@ -770,11 +770,11 @@
       of a line, in the running text and located with the attribute <code>place</code> and the value <code>margin
          left|right</code>.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image13.png" class="figure-img img-fluid" alt="Later marginalia (, fol. 263v)"><figcaption class="figure-caption">Later marginalia (F, fol. 263v)</figcaption>
+      <figure class="figure"><img src="../img/image13.png" class="figure-img img-fluid" alt="Later marginalia (, fol. 263v) " title=""><figcaption class="figure-caption">Later marginalia (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2036148" target="_blank">F</a>, fol. 263v)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image14.png" class="figure-img img-fluid" alt="Gloss in I.26 (, fol. 14rb)"><figcaption class="figure-caption">Gloss in I.26 (B, fol. 14rb)</figcaption>
+      <figure class="figure"><img src="../img/image14.png" class="figure-img img-fluid" alt="Gloss in I.26 (, fol. 14rb) " title=""><figcaption class="figure-caption">Gloss in I.26 (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=31" target="_blank">B</a>, fol. 14rb)</figcaption>
       </figure>
    </div>
    <p>If individual letters or whole sentence parts were overlooked during
@@ -789,14 +789,14 @@
       Additions by another hand are marked with <code>hand</code>. This
       element is subsequently provided with an <code>xml:id</code>.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image15.png" class="figure-img img-fluid" alt="Two differently extensive additions (, fol. 115ra)"><figcaption class="figure-caption">Two differently extensive additions (K, fol. 115ra)</figcaption>
+      <figure class="figure"><img src="../img/image15.png" class="figure-img img-fluid" alt="Two differently extensive additions (, fol. 115ra) " title=""><figcaption class="figure-caption">Two differently extensive additions (<a href="https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343" target="_blank">K</a>, fol. 115ra)</figcaption>
       </figure>
    </div>
    <p>The common phenomenon that word parts extending over the line are added in another
       line is represented through the elements <code>supplied</code>
       and <code>seg</code>. It is important to note that the shifted
       word is first recorded by <code>seg</code> at the location of its actual occurrence. Then, it is inserted by <code>supplied</code> at the location of its logical belonging. The element <code>supplied</code> necessarily contains the <code>type</code> with the value <code>displaced</code>, an attribute <code>reason</code> with the value <code>over-the-line</code> and a unique <code>xml:id</code>, which must be entered by hand. The element <code>seg</code> contains the attribute <code>corresp</code>, referring to the previously set supplied-ID (<code>#supplied-ID</code>) as well as <code>type</code> with the value <code>pos-of-displaced</code>.</p>
-   <h2>Unclear Readings, Damaged or Fragmented Text Spots</h2>
+   <h3>Unclear Readings, Damaged or Fragmented Text Spots</h3>
    <p>If a text is not clearly decipherable, it is marked by the element
       <code>unclear</code> and thus kept traceable. The element <code>unclear</code> must contain the attributes <code>resp</code> (with the
       respective person-ID as value) and <code>cert</code> (with the values
@@ -805,7 +805,7 @@
       <code>rubbed</code>, <code>erased</code> or <code>folded-parchment</code>.
       Illegible text is not supplemented in the transcriptions.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image16.png" class="figure-img img-fluid" alt="Embedded numbering and inscription (, fol. 20ra)"><figcaption class="figure-caption">Embedded numbering and inscription (F, fol. 20ra)</figcaption>
+      <figure class="figure"><img src="../img/image16.png" class="figure-img img-fluid" alt="Embedded numbering and inscription (, fol. 20ra) " title=""><figcaption class="figure-caption">Embedded numbering and inscription (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035661" target="_blank">F</a>, fol. 20ra)</figcaption>
       </figure>
    </div>
    <p>Often, heavy readability or even illegibility of affected text spots results from
@@ -819,18 +819,18 @@
       with the element <code>gap</code>. If the text is clearly legible, only the element <code>damage</code> is set around the damaged spot to document the
       damage.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image17.png" class="figure-img img-fluid" alt="Cut-out word part , fol. 8ra"><figcaption class="figure-caption">Cut-out word part B, fol. 8ra</figcaption>
+      <figure class="figure"><img src="../img/image17.png" class="figure-img img-fluid" alt="Cut-out word part , fol. 8ra " title=""><figcaption class="figure-caption">Cut-out word part <a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=19" target="_blank">B</a>, fol. 8ra</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image18.png" class="figure-img img-fluid" alt="Faded text spot with corrections (, fol. 28vb)"><figcaption class="figure-caption">Faded text spot with corrections (B, fol. 28vb)</figcaption>
+      <figure class="figure"><img src="../img/image18.png" class="figure-img img-fluid" alt="Faded text spot with corrections (, fol. 28vb) " title=""><figcaption class="figure-caption">Faded text spot with corrections (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=60" target="_blank">B</a>, fol. 28vb)</figcaption>
       </figure>
    </div>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" alt="Illegible text (, fol. 136vb)"><figcaption class="figure-caption">Illegible text (B, fol. 136vb)</figcaption>
+      <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" alt="Illegible text (, fol. 136vb) " title=""><figcaption class="figure-caption">Illegible text (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=276" target="_blank">B</a>, fol. 136vb)</figcaption>
       </figure>
    </div>
-   <h2>Scribe, Script and Script Image Changes</h2>
+   <h3>Scribe, Script and Script Image Changes</h3>
    <p>When the scribe changes in the text, the element <code>handShift</code> is inserted at the position of the change. It refers by the attribute
       <code>new</code> through the corresponding ID to one of the hands listed in the element
       <code>handNote</code>. In addition, the attributes
@@ -844,7 +844,7 @@
       <code>hand</code> to the corresponding <code>xml:id</code> in the
       associated <code>handDesc</code> in the <code>teiHeader</code>, to enable a text-genetic analysis of the codices.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image20.png" class="figure-img img-fluid" alt="Scribe change (,&#xA;                            fol. 102rb)"><figcaption class="figure-caption">Scribe change (Va3,
+      <figure class="figure"><img src="../img/image20.png" class="figure-img img-fluid" alt="Scribe change (,&#xA;                            fol. 102rb) " title=""><figcaption class="figure-caption">Scribe change (<a href="https://digi.vatlib.it/view/MSS_Pal.lat.586/0210" target="_blank">Va3</a>,
             fol. 102rb)</figcaption>
       </figure>
    </div>
@@ -862,7 +862,7 @@
       receive a unique <code>xml:id</code>. Additionally, a designation as
       <code>name</code> and, if known, an <code>affiliation</code> is
       verbalised.</p>
-   <h2>Numbers</h2>
+   <h3>Numbers</h3>
    <p>The Roman numeral system widely used in the manuscripts is adopted in the
       transcription and reproduced in lowercase. Unreadable chapter
       numerations are supplemented. The running chapter number is
@@ -870,7 +870,7 @@
       verbalised numbers occurring in the text are marked by the element
       <code>num</code> with the numerical value indicated in the attribute
       <code>value</code>.</p>
-   <h1>BDD Transcription: schemaSpec</h1>
+   <h2>BDD Transcription: schemaSpec</h2>
    <p>TEI All-based customisation for transcriptions in the Burchard's Decree Digital project
       to generate relaxng validation files.</p></span><div id="bdd-documentation-schemaspec">
    <div class="accordion" id="accordionDocumentation">
