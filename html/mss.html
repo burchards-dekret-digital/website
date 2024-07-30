@@ -51,7 +51,6 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="infoHandschriften">
-                  
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
@@ -92,7 +91,358 @@
                   <tbody id="table-body">
                     <!-- Table rows will be dynamically added here -->
                   </tbody>
+                  <!--<tfoot>
+                    <tr>
+                      <td>
+                        <span lang="de">Die aktuelle Siglenliste aller Burchards-Handschriften, die im Projekt von Relevanz sind, finden sie hier</span><span lang="en">The current siglum list of all Burchard manuscripts that are relevant to the project can be found here</span>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tfoot>-->
                 </table>
+          </div>
+
+          <div class="mb-5 mt-2">
+            <p><span lang="de">Die aktuelle Siglenliste aller Burchards-Handschriften, die im Projekt von Relevanz sind, finden sie <a href="#" data-bs-toggle="modal" data-bs-target="#sigleModal">hier</a>.</span><span lang="en">The current siglum list of all Burchard manuscripts that are relevant to the project can be found <a href="#" data-bs-toggle="modal" data-bs-target="#sigleModal">here</a>.</span></p>
+          </div>
+          <!-- sigle Modal -->
+          <div class="modal fade" id="sigleModal" tabindex="-1" aria-labelledby="sigleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sigleModalLabel"><span lang="de">Siglenliste</span><span lang="en">Siglum list</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sigle</th>
+                            <th scope="col"><span lang="de">Handschrift</span><span lang="en">Manuscript</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>An</td>
+                            <td>Angers, Médiathèque Toussaint, 368</td>
+                          </tr>
+                          <tr>
+                            <td>B</td>
+                            <td>Bamberg, Staatsbibliothek, Can. 6</td>
+                          </tr>
+                          <tr>
+                            <td>Bo</td>
+                            <td>Bologna, Biblioteca Universitaria, 2239</td>
+                          </tr>
+                          <tr>
+                            <td>Br</td>
+                            <td>Brüssel, Bibliothèque royale de Belgique, 3819-20</td>
+                          </tr>
+                          <tr>
+                            <td>Bu</td>
+                            <td>El Burgo de Osma, Biblioteca de la Santa Iglesia Catedral, 157</td>
+                          </tr>
+                          <tr>
+                            <td>C</td>
+                            <td>Chartres, Médiathèque l’Apostrophe, 161</td>
+                          </tr>
+                          <tr>
+                            <td>Co</td>
+                            <td>Cortona, Biblioteca Comunale e dell’Accademia Etrusca, 75</td>
+                          </tr>
+                          <tr>
+                            <td>Du</td>
+                            <td>Durham, Cathedral Library, B.IV.17</td>
+                          </tr>
+                          <tr>
+                            <td>E</td>
+                            <td>Eichstätt, Universitätsbibliothek, Cod. st. 772</td>
+                          </tr>
+                          <tr>
+                            <td>Es</td>
+                            <td>El Escorial, Real Biblioteca del Monasterio de San Lorenzo, T.I.14</td>
+                          </tr>
+                          <tr>
+                            <td>F</td>
+                            <td>Frankfurt, Universitätsbibliothek Johann Christian Senckenberg, Barth. 50</td>
+                          </tr>
+                          <tr>
+                            <td>Fl<sub>1</sub></td>
+                            <td>Florenz, Biblioteca Medicea Laurenziana, Calci, 11</td>
+                          </tr>
+                          <tr>
+                            <td>Fl<sub>2</sub></td>
+                            <td>Florenz, Biblioteca Medicea Laurenziana, Plut. 16.21</td>
+                          </tr>
+                          <tr>
+                            <td>Fl<sub>3</sub></td>
+                            <td>Florenz, Biblioteca Nazionale Centrale, Conv. soppr. F.IV.255</td>
+                          </tr>
+                          <tr>
+                            <td>Fl<sub>4</sub></td>
+                            <td>Florenz, Biblioteca Riccardiana, 240</td>
+                          </tr>
+                          <tr>
+                            <td>Fr</td>
+                            <td>Freiburg im Breisgau, Universitätsbibliothek, 7</td>
+                          </tr>
+                          <tr>
+                            <td>Iv</td>
+                            <td>Ivrea, Archivio Storico Diocesano e Biblioteca Capitolare, XCIV</td>
+                          </tr>
+                          <tr>
+                            <td>K</td>
+                            <td>Köln, Erzbischöfliche Diözesan- und Dombibliothek, 119</td>
+                          </tr>
+                          <tr>
+                            <td>La</td>
+                            <td>Lambach, Stiftsarchiv, Cod. memb. XVI</td>
+                          </tr>
+                          <tr>
+                            <td>Li</td>
+                            <td>Lissabon, Biblioteca Nacional de Portugal, Alcobaça CCCIII/365</td>
+                          </tr>
+                          <tr>
+                            <td>Lo</td>
+                            <td>London, British Library, Cotton Claudius C VI, fol. 1–165</td>
+                          </tr>
+                          <tr>
+                            <td>Lu</td>
+                            <td>Lucca, Biblioteca Capitolare Feliniana e Biblioteca Arcivescovile, 124</td>
+                          </tr>
+                          <tr>
+                            <td>Ma<sub>1</sub></td>
+                            <td>Mailand, Archivio Storico Civico e Biblioteca Trivulziana, 601</td>
+                          </tr>
+                          <tr>
+                            <td>Ma<sub>2</sub></td>
+                            <td>Mailand, Biblioteca Ambrosiana, E 144 sup.</td>
+                          </tr>
+                          <tr>
+                            <td>Md<sub>1</sub></td>
+                            <td>Madrid, Biblioteca Nacional de España, 386</td>
+                          </tr>
+                          <tr>
+                            <td>Md<sub>2</sub></td>
+                            <td>Madrid, Biblioteca Nacional de España, 391</td>
+                          </tr>
+                          <tr>
+                            <td>Mh<sub>1</sub></td>
+                            <td>Manchester, John Rylands University Library, ms. lat. 42</td>
+                          </tr>
+                          <tr>
+                            <td>Mh<sub>2</sub></td>
+                            <td>Manchester, John Rylands University Library, ms. lat. 96</td>
+                          </tr>
+                          <tr>
+                            <td>Mn</td>
+                            <td>Mantua, Biblioteca Comunale Teresiana, ms. 461 </td>
+                          </tr>
+                          <tr>
+                            <td>Mo</td>
+                            <td>Modena, Biblioteca Capitolare, O.II.15</td>
+                          </tr>
+                          <tr>
+                            <td>Mp</td>
+                            <td>Montpellier, Bibliothèque municipale, 7</td>
+                          </tr>
+                          <tr>
+                            <td>Mt<sub>1</sub></td>
+                            <td>Montecassino, Archivio dell’Abbazia, 44</td>
+                          </tr>
+                          <tr>
+                            <td>Mt<sub>2</sub></td>
+                            <td>Montecassino, Archivio dell’Abbazia, 45</td>
+                          </tr>
+                          <tr>
+                            <td>Mu<sub>1</sub></td>
+                            <td>München, Bayerische Staatsbibliothek, Clm 4570</td>
+                          </tr>
+                          <tr>
+                            <td>Mu<sub>2</sub></td>
+                            <td>München, Bayerische Staatsbibliothek, Clm 5801c</td>
+                          </tr>
+                          <tr>
+                            <td>Mu<sub>3</sub></td>
+                            <td>München, Bayerische Staatsbibliothek, Clm 18094</td>
+                          </tr>
+                          <tr>
+                            <td>Mz<sub>1</sub></td>
+                            <td>Monza, Biblioteca Capitolare, d-10/152</td>
+                          </tr>
+                          <tr>
+                            <td>Mz<sub>2</sub></td>
+                            <td>Monza, Biblioteca Capitolare, h-5/154</td>
+                          </tr>
+                          <tr>
+                            <td>Ne</td>
+                            <td>Neapel, Biblioteca Nazionale Vittorio Emanuele III, Vind. lat. 23</td>
+                          </tr>
+                          <tr>
+                            <td>No<sub>1</sub></td>
+                            <td>Novara, Biblioteca Capitolare, 16</td>
+                          </tr>
+                          <tr>
+                            <td>No<sub>2</sub></td>
+                            <td>Novara, Biblioteca Capitolare, 17</td>
+                          </tr>
+                          <tr>
+                            <td>Or</td>
+                            <td>Orléans, Médiathèque municipale, 229</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>1</sub></td>
+                            <td>Paris, Bibliothèque de l’Arsenal, 678</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>2</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 3860</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>3</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 3861</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>4</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 3862</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>5</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 3863</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>6</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 9630</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>7</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 11578</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>8</sub></td>
+                            <td>Paris, Bibliothèque nationale de France, lat. 12449</td>
+                          </tr>
+                          <tr>
+                            <td>Pa</td>
+                            <td>Parma, Biblioteca Palatina, Parm. 3777</td>
+                          </tr>
+                          <tr>
+                            <td>Pd</td>
+                            <td>Padua, Biblioteca del Seminario Vescovile, 529</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>1</sub></td>
+                            <td>Pistoia, Archivio Capitolare, C. 125</td>
+                          </tr>
+                          <tr>
+                            <td>P<sub>2</sub></td>
+                            <td>Pistoia, Archivio Capitolare, C. 140</td>
+                          </tr>
+                          <tr>
+                            <td>Po</td>
+                            <td>Pommersfelden, Gräflich Schönbornsche Schloßbibliothek, 198</td>
+                          </tr>
+                          <tr>
+                            <td>Pr</td>
+                            <td>Prato, Biblioteca Roncioniana, Q.VIII.4 (3)</td>
+                          </tr>
+                          <tr>
+                            <td>Re<sub>1</sub></td>
+                            <td>Reims, Bibliothèque municipale, 673</td>
+                          </tr>
+                          <tr>
+                            <td>Re<sub>2</sub></td>
+                            <td>Reims, Bibliothèque municipale, 674</td>
+                          </tr>
+                          <tr>
+                            <td>Ro</td>
+                            <td>Rom, Biblioteca Vallicelliana, A.20</td>
+                          </tr>
+                          <tr>
+                            <td>Sg</td>
+                            <td>Sankt Gallen, Stiftsbibliothek, 674</td>
+                          </tr>
+                          <tr>
+                            <td>So</td>
+                            <td>Saint-Omer, Bibliothèque d’Agglomération, 194</td>
+                          </tr>
+                          <tr>
+                            <td>Tr</td>
+                            <td>Troyes, Médiathèque Jacques Chirac, 1386</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>1</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Barb. lat. 1450</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>2</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Pal. lat. 585</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>3</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Pal. lat. 586</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>4</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Reg. lat. 979</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>5</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Urb. lat. 180</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>6</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 1355</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>7</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 3809</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>8</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 4880</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>9</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 4981</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>10</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 7790</td>
+                          </tr>
+                          <tr>
+                            <td>Va<sub>11</sub></td>
+                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 14731</td>
+                          </tr>
+                          <tr>
+                            <td>Vc<sub>1</sub></td>
+                            <td>Vercelli, Biblioteca Capitolare, XLI</td>
+                          </tr>
+                          <tr>
+                            <td>Vc<sub>2</sub></td>
+                            <td>Vercelli, Biblioteca Capitolare, XCIV</td>
+                          </tr>
+                          <tr>
+                            <td>Wz<sub>1</sub></td>
+                            <td>Würzburg, Universitätsbibliothek, M.p.th.f. 86</td>
+                          </tr>
+                          <tr>
+                            <td>Wz<sub>2</sub></td>
+                            <td>Würzburg, Universitätsbibliothek, M.p.th.f. 167</td>
+                          </tr>
+
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                    </div>
+                </div>
+            </div>
           </div>
             
           <div class="mss-map-head">
