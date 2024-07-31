@@ -32,18 +32,25 @@
           <table id="literatureTable" class="table table-hover w-100">
             <thead>
               <tr>
+                <th scope="col" onclick="sortTable(0)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(3)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(4)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(6)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
-                <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(3)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(4)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(6)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(7)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
               </tr>
               <tr>
+                  <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter" class="form-control" aria-label="Search Author"></th>
+                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter" class="form-control" aria-label="Search Editor"></th>
+                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter" class="form-control" aria-label="Search Title"></th>
+                  <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter" class="form-control" aria-label="Search In"></th>
+                  <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" class="form-control" aria-label="Search Year"></th>
+                  <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" class="form-control" aria-label="Search Publication Place"></th>
+                  <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter" class="form-control" aria-label="Search Series"></th>
                   <th scope="col">
-                    <select id="filter0" onchange="filter(0);" class="form-select" aria-label="Search type">
+                    <select id="filter7" onchange="filter(7);" class="form-select" aria-label="Search type">
                       <option value="" lang="de">Alle</option>
                       <option value="Buch" lang="de">Buch</option>
                       <option value="Zeitschriftenartikel" lang="de">Zeitschriftenartikel</option>
@@ -57,13 +64,6 @@
                       <option value="Lexikonartikel" lang="en">Lexicon article</option>
                     </select>
                   </th>
-                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter" class="form-control" aria-label="Search Author"></th>
-                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter" class="form-control" aria-label="Search Editor"></th>
-                  <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter" class="form-control" aria-label="Search Title"></th>
-                  <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" class="form-control" aria-label="Search In"></th>
-                  <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" class="form-control" aria-label="Search Year"></th>
-                  <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter" class="form-control" aria-label="Search Publication Place"></th>
-                  <th scope="col"><input type="text" id="filter7" onkeyup="filter(7)" placeholder="Filter" class="form-control" aria-label="Search Series"></th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -188,7 +188,6 @@
                 
                 //Create table rows
                 tableRows += "<tr id='" + id + "'>";
-                tableRows += "<td>" + typeLabel + "</td>"; // Use label for display
                 tableRows += "<td>" + authorNames.join(", ") + "</td>";
                 tableRows += "<td>" + editorNames.join(", ") + "</td>";
                 tableRows += "<td>" + title + "</td>"; 
@@ -196,6 +195,7 @@
                 tableRows += "<td>" + year + "</td>";
                 tableRows += "<td>" + pubPlace + "</td>";
                 tableRows += "<td>" + series + "</td>";
+                tableRows += "<td>" + typeLabel + "</td>"; // Use label for display
                 tableRows += "</tr>";
             });
 
@@ -285,7 +285,7 @@
         let sortOrder = {};  // Object to keep track of sort order for each column
 
         headers.forEach((header, index) => {
-          if (index > 0) {  // Avoid sorting by the first column which is 'Type'
+          if (index < 7) {  // Avoid sorting by the first column which is 'Type'
             header.addEventListener("click", () => {
               sortTable(index);
             });

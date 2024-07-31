@@ -481,10 +481,11 @@
                     const msNameFull = xmlDoc.querySelectorAll('msName[type="full"]')[0].innerHTML
                     const msNameSigle = xmlDoc.querySelectorAll('msName[type="sigle"]')[0].innerHTML
                     const origPlaceElement = xmlDoc.querySelector('origPlace');
-                    const origPlaceText = Array.from(origPlaceElement.childNodes)
+                    const origPlaceText = origPlaceElement.childNodes[0].nodeValue.trim();
+                    /*const origPlaceText = Array.from(origPlaceElement.childNodes)
                         .filter(node => node.nodeName !== 'location' || node.nodeName === 'location' && node.childNodes.length === 0)
                         .map(node => node.textContent.trim())
-                        .join(' ');
+                        .join(' ');*/
 
                     const origDate = xmlDoc.querySelectorAll('origDate')[0].innerHTML
             

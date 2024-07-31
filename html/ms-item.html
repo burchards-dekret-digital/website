@@ -275,10 +275,12 @@
 
                     const msHistory = document.createElement('div');
                     const origPlaceElement = xmlDoc.querySelector('origPlace');
-                    const origPlaceText = Array.from(origPlaceElement.childNodes)
+                    const origPlaceText = origPlaceElement.childNodes[0].nodeValue.trim();
+                    /*const origPlaceText = Array.from(origPlaceElement.childNodes)
                         .filter(node => node.nodeName !== 'location' || node.nodeName === 'location' && node.childNodes.length === 0)
                         .map(node => node.textContent.trim())
-                        .join(' ');
+                        .join(' ');*/
+
                     msHistory.innerHTML += "<b><span lang='de'>Schriftheimat: </span> <span lang='en'>Origin: </span> </b>"+ origPlaceText +"<br/>";
 
                     msHistory.innerHTML += "<b><span lang='de'>Entstehungszeitraum: </span> <span lang='en'>Period of origin: </span> </b>"+ xmlDoc.querySelectorAll('origDate')[0].innerHTML +"<br/>"
