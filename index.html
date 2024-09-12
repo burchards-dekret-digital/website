@@ -204,15 +204,78 @@
                     });
             }
 
+            //function to truncate html news
+            function truncateElementContent(element, wordLimit) {
+                let wordCount = 0;
+                const truncatedHTML = [];
+                
+                function traverseNodes(node) {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                    const words = node.textContent.split(/\s+/);
+                    for (const word of words) {
+                        if (wordCount < wordLimit) {
+                        truncatedHTML.push(word);
+                        wordCount++;
+                        } else {
+                        return false; // Stop traversal
+                        }
+                    }
+                    } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    const tagOpen = `<${node.nodeName.toLowerCase()}${Array.from(node.attributes).map(attr => ` ${attr.name}="${attr.value}"`).join('')}>`;
+                    const tagClose = `</${node.nodeName.toLowerCase()}>`;
+
+                    truncatedHTML.push(tagOpen);
+
+                    for (const child of node.childNodes) {
+                        if (traverseNodes(child) === false) {
+                        truncatedHTML.push(tagClose);
+                        return false; // Stop traversal
+                        }
+                    }
+
+                    truncatedHTML.push(tagClose);
+                    }
+                }
+
+                traverseNodes(element);
+                
+                // Add ellipsis if the content is truncated
+                return truncatedHTML.join(' ') + (wordCount >= wordLimit ? '...' : '');
+                }
+
             // Function to create Bootstrap card
             function createCard(title, date, content) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(content, 'text/html');
+                let content_de = doc.querySelector('span[lang="de"]');
+                let short_de =  truncateElementContent(content_de, 20);
+                let content_en = doc.querySelector('span[lang="en"]');
+                let short_en =  truncateElementContent(content_en, 20);
+                let element = `<div class="content">
+                                        <span class="short">
+                                            <span lang="de">${short_de}</span>
+                                            <span lang="en">${short_en}</span>
+                                            <button type="button" class="readMore btn btn-outline-primary btn-sm">
+                                                <span lang="de">Weiterlesen</span>
+                                                <span lang="en">Read more</span>
+                                            </button>
+                                        </span>
+                                        <span class="long" style="display:none">
+                                            <span lang="de">${content_de.innerHTML}</span>
+                                            <span lang="en">${content_en.innerHTML}</span>
+                                            <button type="button" class="readLess btn btn-outline-primary btn-sm">
+                                                <span lang="de">Zuklappen</span>
+                                                <span lang="en">Read less</span>
+                                            </button>
+                                        </span>
+                                    </div>`
                 return `
                     <div class="col-md-12 mb-4">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">${title}</h3>
                                 <h6 class="card-date">${date}</h6>
-                                <p class="card-text">${content}</p>
+                                <p class="card-text">${element}</p>
                             </div>
                         </div>
                     </div>
@@ -223,6 +286,22 @@
             function displayNews(newsItem) {
                 const newsContainer = document.getElementById('news-container');
                 newsContainer.innerHTML = createCard(newsItem.title, newsItem.date, newsItem.content);
+                document.querySelector('.readMore').addEventListener('click', function () {
+                    const parent = this.closest('.content');
+                    const elementToHide = parent.querySelector('.short');
+                    const elementToShow = parent.querySelector('.long');
+                    elementToHide.style.display = 'none'; // Hide the element
+                    elementToShow.style.display = 'block'; // Show the other element
+
+                });
+                document.querySelector('.readLess').addEventListener('click', function () {
+                    const parent = this.closest('.content');
+                    const elementToHide = parent.querySelector('.long');
+                    const elementToShow = parent.querySelector('.short');
+                    elementToHide.style.display = 'none'; // Hide the element
+                    elementToShow.style.display = 'block'; // Show the other element
+
+                });
             }
 
             let news = []; // Array to store fetched news data
