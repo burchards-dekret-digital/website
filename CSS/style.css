@@ -1,19 +1,4 @@
 @font-face {
-  font-family: BrandonGrotesqueLight;
-  src: url(brandon-grotesque-light.otf);
-}
-
-@font-face {
-  font-family: BrandonGrotesqueRegular;
-  src: url(brandon-grotesque-regular.otf);
-}
-
-@font-face {
-  font-family: BrandonGrotesqueBlack;
-  src: url(Brandon_blk.otf);
-}
-
-@font-face {
     font-family: Montserrat-Regular;
     src: url(Montserrat-Regular.ttf);
 }
@@ -29,6 +14,7 @@
     font-style: normal;
 }
 
+
 html{
     scroll-padding-top: 70px;
     height: 100%;
@@ -36,39 +22,89 @@ html{
 body {
     height:100%;
     padding-top: 75px;
-	font-family: BrandonGrotesqueLight;
+    font-family:Montserrat-Regular;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-p{font-size:18px;}
-
- h1, h2, h3, h4, h5, h6 {
-	font-family: BrandonGrotesqueLight;
+h2 {
+    font-family: Montserrat-ExtraBold;
+    font-size:23px;
+    text-transform: uppercase; 
+    color:black; 
+    padding:0; 
+    letter-spacing:1px; 
 }
 
+ h3 {
+    font-family:Montserrat-Regular;
+    font-size:17px; 
+    text-transform: uppercase; 
+    color:black;
+    font-weight: bold;}
+
+
 h4{
-    font-family: BrandonGrotesqueLight;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-family:Montserrat-Regular;
+    font-size: 16px;
     color: black;
     font-weight: bold;
 }
 
 h5{
-    font-family: BrandonGrotesqueLight;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-family:Montserrat-Regular;
+    font-size: 15px;
     color: black;
+    font-weight: bold;
 }
 
+h6{
+    font-family:Montserrat-Regular;
+    font-size: 14px; 
+}
 
+p {
+    font-family:Montserrat-Regular;
+    font-size:15px;
+    line-height: 1.8;
+}
+
+code{font-size:15px;}
+
+li{
+    font-family:Montserrat-Regular;
+    font-size:15px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.section-main-title{
+    font-family:Montserrat-Regular;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+#news-container .content{
+    font-size: 15px;
+    font-family: Montserrat-Regular;
+    line-height: 1.8;
+}
+.team-title {
+    font-family: Montserrat-ExtraBold;
+    font-size:23px; 
+    text-transform: uppercase; 
+    color:black; 
+    padding:0; 
+    margin-bottom:20px;
+    letter-spacing:1px; 
+}
+
+.member-name{text-transform: uppercase;}
+
+
+/*  NAVBAR & FOOTER */
 .navbar{
-    font-family: BrandonGrotesqueLight;
-    font-size: 17px;
+    font-family:Montserrat-Regular;
     background-color:black!important;  
     
 }
@@ -88,16 +124,6 @@ h5{
     font-weight: bold;
   }
 
-.en { display: none; }
-.de { display: initial; }
-.language-button { cursor: pointer; margin-right: 10px; }
-
-
-.footer{
-    bottom: 0;
-    width: 100%;
-}
-
 @media only screen and (min-width: 960px) {
     .navbar {
         padding: 0;
@@ -110,9 +136,29 @@ h5{
     }
 }
 
+.en { display: none; }
+.de { display: initial; }
+.language-button { cursor: pointer; margin-right: 10px; }
+.active-language {
+    background-color: #28a745;
+    color: white;
+}
+
+.footer{
+    bottom: 0;
+    width: 100%;
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+}
+.footer-logo-adw{width:40%}
+.footer-logo-fau{width:100%}
+.footer-logo-kassel{width:90%}
+.footer-logo-jgu{width:100%}
+
+
+
 .collation-table{
-    font-family: BrandonGrotesqueLight;
-	/*font-family:Montserrat-Regular;*/
+	font-family:Montserrat-Regular;
 }
 
 .container-filters-top{
@@ -123,11 +169,8 @@ h5{
     color:lightgrey;
 }
 
-.active-language {
-    background-color: #28a745;
-    color: white;
-}
 
+/*  FIGURE  */
 .figure {
     width: 33%; /* Set desired width for the figure container */
     margin: 0 auto; /* Center the figure within the parent div */
@@ -142,8 +185,9 @@ h5{
 }
 
 .figure-caption {
-    margin-top: 8px; /* Add some space between the image and the caption */
-    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-bottom:10px;
+    font-size: 13px!important;
 }
 
 
@@ -161,7 +205,6 @@ h5{
 	grid-row:2;
 	grid-column: 1;
 }
-
 #map2 {
     position: relative;
     margin-top: 30px;
@@ -169,36 +212,9 @@ h5{
     height: 600px;
     width: 100%;
     display: block;
-    
-    
 }
 
 
-
-li{
-    font-family: BrandonGrotesqueLight;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: left;
-}
-
-.section-main-title{
-    margin-bottom:20px;
-    text-transform:uppercase;
-}
-
-.team-title {
-    font-family: BrandonGrotesqueBlack;
-    font-size:24px; 
-    font-weight:400; 
-    text-transform: uppercase; 
-    color:black; 
-    padding:0; 
-    margin-bottom:20px;
-    letter-spacing:2px; 
-}
-
-.member-name{text-transform: uppercase;}
 
 /* .MuiList is mirador class for styling annotation list*/
  .MuiList-root {
@@ -207,19 +223,8 @@ li{
 .MuiAppBar-root{
     z-index: 1!important;
 }
-      /*.mss-item-view {
-            display:flex;
-            flex-direction:row;
-            width:100%;
-            height:100%;
-        }*/
 
-.mss-data {
-            /*width:50%;*/
-            /*height:50%;*/
-            position:relative;
-            /*flex-basis: auto;*/
-}
+.mss-data {position:relative;}
 
 .fullscreen {
             width: 100%;
@@ -235,10 +240,6 @@ li{
     margin-top:0px;
 }
 
-        
-
-        
-
 /* .viewer class for dosplaying mirador viewer*/
 .viewer {
         width: 50%;
@@ -246,31 +247,19 @@ li{
         position: fixed;
       }
 
-.btn-back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index:1;
-}  
-
-
 .bdd-unin-lost{
     border-style: solid;
   border-color: #A9A9A9;
   border-top: solid #A9A9A9;
     background-color:#F8F8F8;
 }
-
-
 .bdd-ed-rec{
     color:#b300b3;
 }
-
 .table-strukturansicht{
         table-layout: fixed;
         width: 100%;
     }
-
 td[data-content~="bdd-unin-lost"]::after{
 content:"";
     height: 25px;
@@ -289,233 +278,100 @@ td[data-content~="bdd-ed-rec"]::after{
   display: inline-block;
    
 } 
-
 td.bdd-unin-lost::after{
     content:"aa";
 }
-
 td.bdd-ed-rec::after{
     content:"bb";
 }
-
 .legendFont{
 font-family: Andron-Scriptor-Web;
 }
-
 .sort-arrow {
     color: #ccc;
   }
-
 .fa-arrow-up-right-from-square {
     margin-left: 5px;
 }
 
 
 
-/* INDEX CSS */
-    .container-index h2 {
-                font-family: BrandonGrotesqueBlack;
-                font-size:24px; 
-                font-weight:400; 
-                text-transform: uppercase; 
-                color:black; 
-                padding:0; 
-                margin-bottom:20px;
-                letter-spacing:2px; 
-            }
+/* Title */
+.parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; text-transform: uppercase;}
+.parallax-title h1 {font-size:40px; color:white; font-weight:800; margin-bottom:0; font-family: Montserrat-ExtraBold; }
+.home-subtitle {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }
 
-           /* .container-index h2 {
-                font-family: Montserrat-Regular;
-                font-size:70px; 
-                letter-spacing:10px; 
-                text-align:center; 
-                color:white; 
-                font-weight:400; 
-                text-transform:uppercase; 
-                z-index:10; 
-                opacity:.9;
-            }*/
+.short-text {display: none;}
 
-            .container-index h3 {
-                font-family: BrandonGrotesqueLight;
-                font-size:17px; 
-                letter-spacing:1px; 
-                text-transform: uppercase; 
-                color:black;
-                font-weight: bold;}
+.container-index {
+    background: white; 
+    padding-top: 60px; 
+    padding-bottom: 60px; 
+    margin:0 auto; 
+    }
 
-            .container-index p {
-               font-family: BrandonGrotesqueLight;
-                font-weight:400; 
-                font-size:18px;
-            }
+/* Parallax */
+.parallax-one {
+    padding-top: 200px; 
+    padding-bottom: 200px; 
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
+    background-image: url(../img/Dekret_F2cut.jpg); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: top center;
+}
 
-            /* Title */
-            .parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; text-transform: uppercase;}
-            .parallax-title h1 {font-size:40px; color:white; font-weight:800; margin-bottom:0; font-family: Montserrat-ExtraBold; }
-            /*.parallax-title h3 {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }*/
-            .home-subtitle {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }
-            
-            .short-text {display: none;}
-        
-            .container-index {
-                background: white; 
-                padding-top: 60px; 
-                padding-bottom: 60px; 
-                margin:0 auto; 
-                }
+.parallax-two {
+    padding-top: 100px; 
+    padding-bottom: 100px; 
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
+    background-image: url(../img/Dekret_F2cut.jpg); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+}
 
-            /* Parallax */
-            .parallax-one {
-                padding-top: 200px; 
-                padding-bottom: 200px; 
-                overflow: hidden; 
-                position: relative; 
-                width: 100%; 
-                background-image: url(../img/Dekret_F2cut.jpg); 
-                background-attachment: fixed; 
-                background-size: cover; 
-                -moz-background-size: cover; 
-                -webkit-background-size: cover; 
-                background-repeat: no-repeat; 
-                background-position: top center;
-            }
+.parallax-three {
+    padding-top: 100px; 
+    padding-bottom: 100px; 
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
+    background-image: url(../img/xml_19.png); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+}
 
-            .parallax-two {
-                padding-top: 100px; 
-                padding-bottom: 100px; 
-                overflow: hidden; 
-                position: relative; 
-                width: 100%; 
-                background-image: url(../img/Dekret_F2cut.jpg); 
-                background-attachment: fixed; 
-                background-size: cover; 
-                -moz-background-size: cover; 
-                -webkit-background-size: cover; 
-                background-repeat: no-repeat; 
-                background-position: center center;
-            }
+.parallax-four {
+    padding-top: 50px; 
+    padding-bottom: 50px; 
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
+    background-image: url(../img/xml_19.png); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+}
 
-            .parallax-three {
-                padding-top: 100px; 
-                padding-bottom: 100px; 
-                overflow: hidden; 
-                position: relative; 
-                width: 100%; 
-                background-image: url(../img/xml_19.png); 
-                background-attachment: fixed; 
-                background-size: cover; 
-                -moz-background-size: cover; 
-                -webkit-background-size: cover; 
-                background-repeat: no-repeat; 
-                background-position: center center;
-            }
-
-            .parallax-four {
-                padding-top: 50px; 
-                padding-bottom: 50px; 
-                overflow: hidden; 
-                position: relative; 
-                width: 100%; 
-                background-image: url(../img/xml_19.png); 
-                background-attachment: fixed; 
-                background-size: cover; 
-                -moz-background-size: cover; 
-                -webkit-background-size: cover; 
-                background-repeat: no-repeat; 
-                background-position: center center;}
-
-            
-               .form-select{width:20%}
-
-            /* Media Queries*/ 
-            @media screen and (max-width: 959px) and (min-width: 768px) {
-            .container-index {padding-top: 40px; padding-bottom: 40px;}
-            .container-index {padding-top: 30px; padding-bottom: 30px;}
-            .container-index h2 {font-size:30px;}
-            .parallax-title h1 {letter-spacing: 1px;}
-            /*.parallax-title h3 {font-size: 20px;}*/
-            .home-subtitle {font-size: 20px;}
-            .container-index h2 {letter-spacing: 0px; font-size:22px;}
-            .short-text { display: inline-block; }
-            .full-text { display: none; }
-            .parallax-one, .parallax-three {padding-top:200px; padding-bottom:200px; background-attachment: initial;}
-            .parallax-two, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
-            .card{margin-bottom:15px;}
-            #scroll-down{display:none;}
-            #book-image {height: 40%!important;}
-            .table-strukturansicht {table-layout: auto;}
-            .figure{width:100%;}
-            }
-            
-            @media screen and (max-width: 767px) {
-            #transcription-view-button{margin-top: 20px;}
-            .form-select{width: 100%;}
-            .back-button{display: none;}
-            .container-index {padding-top: 30px; padding-bottom: 30px;}
-            /*.container-index h2 {font-size:30px;}*/
-            .parallax-title h1 {letter-spacing: 1px;}
-            /*.parallax-title h3 {font-size: 18px;}*/
-            .home-subtitle {font-size: 18px;}
-            .container-index h2 {letter-spacing: 0px; font-size:22px;}
-            .short-text { display: inline-block; }
-            .full-text { display: none; }
-            .parallax-one, .parallax-two, .parallax-three, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
-            .card{margin-bottom:15px;}
-            #scroll-down{display:none;}
-            .manuscript-title h1{font-size:25px; margin-top:30px;}
-            .table-strukturansicht {table-layout: auto;}
-            .text-container-edition:not(:first-child){margin-top:50px;}
-            .section-main-title{
-                margin-top:60px; 
-                margin-bottom:10px;
-                margin-left:10px;
-            }
-            .figure{width:100%}
-            
-            
-            /*desktop*/
-            #downloadJsonBtn{display:none;}
-            #clearAll{display:none;}
-            #transcription-view-button{display:none;}
-            .add-transcription-btn{display:none;}
-            .mirador-btn{display:none;}
-            .add-structure-btn{display:none;}
-            .editor-btn{display:none;}
-            .mirador-col{display:none;}
-            .resource-panel-item.half-width{width:100%}
-            .resource-panel-item.three-quarter-width {width: 100%;}
-            .json-upload{display:none;}
-            }
-            
-            
-            
-            @media screen and (max-width: 479px) {
-            .container-index {padding: 30px 15px;}
-            .container-index {padding-top: 30px; padding-bottom: 30px;}
-            /*.container-index h2 {font-size:30px;}*/
-            .parallax-title h1 {letter-spacing: 1px; font-size: 30px;}
-            /*.parallax-title h3 {font-size: 13px;}*/
-            .home-subtitle {font-size: 13px;}
-            .container-index h2 {letter-spacing: 0px; font-size:22px;}
-            .short-text { display: inline-block; }
-            .full-text { display: none; }
-            .parallax-one, .parallax-two, .parallax-three, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
-            .card{margin-bottom:15px;}
-            #scroll-down{display:none;}
-            .navbar-brand img{width: 60px!important;}
-            .manuscript-title h1{font-size:25px; margin-top:30px;}
-            .section-main-title{
-                margin-top:60px; 
-                margin-bottom:10px;
-                margin-left:10px;
-            }
-            
-            .back-button{display:none;}
-            .figure{width:100%}
-            }
-            
-
+.form-select{width:20%}
 
 /* INDEX SCROLL-DOWN */
 #scroll-down {
@@ -591,26 +447,108 @@ font-family: Andron-Scriptor-Web;
             }
         }
 
-        
-@media (max-width: 767.98px) {
-            .fullscreen {
-            width: 95%;
-            margin-top: 30px;
-            margin-bottom:30px;
-            }
-            
-            .manuscript-title { 
-            text-align:left;
-            margin-left:20px;
-            }
-            .section-main-title{
-                margin-top:60px; 
-                margin-bottom:10px;
-                margin-left:10px;
-            }
-            
-            
-            #map2 {width: 90%;}
 
-            .figure{width:100%}
-        }
+
+/* Media Queries*/ 
+@media screen and (max-width: 959px) and (min-width: 768px) {
+    .container-index {padding-top: 40px; padding-bottom: 40px;}
+    .container-index {padding-top: 30px; padding-bottom: 30px;}
+    .home-subtitle {font-size: 20px;}
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+    .parallax-one, .parallax-three {padding-top:200px; padding-bottom:200px; background-attachment: initial;}
+    .parallax-two, .parallax-four {padding-top:100px; padding-bottom:100px; background-attachment: initial;}
+    .card{margin-bottom:15px;}
+    #scroll-down{display:none;}
+    #book-image {height: 40%!important;}
+    .table-strukturansicht {table-layout: auto;}
+    .figure{width:100%;}
+}
+    
+@media screen and (max-width: 767px) {
+    #transcription-view-button{margin-top: 20px;}
+    .form-select{width: 100%;}
+    .back-button{display: none;}
+    .container-index {padding-top: 30px; padding-bottom: 30px;}
+    .home-subtitle {font-size: 18px;}
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+    .parallax-one{padding-top:100px; padding-bottom:100px; background-attachment: initial;}
+    .parallax-two, .parallax-three, .parallax-four {display: none;}
+    .card{margin-bottom:15px;}
+    #scroll-down{display:none;}
+    .manuscript-title h1{font-size:25px; margin-top:30px;}
+    .table-strukturansicht {table-layout: auto;}
+    .text-container-edition:not(:first-child){margin-top:50px;}
+    .section-main-title{
+        margin-top:60px; 
+        margin-bottom:10px;
+        margin-left:10px;
+    }
+    .figure{width:100%}
+        
+    /*  DESKTOP7SCHREIBTISCH  */
+    #downloadJsonBtn{display:none;}
+    #clearAll{display:none;}
+    #transcription-view-button{display:none;}
+    .add-transcription-btn{display:none;}
+    .mirador-btn{display:none;}
+    .add-structure-btn{display:none;}
+    .editor-btn{display:none;}
+    .mirador-col{display:none;}
+    .resource-panel-item.half-width{width:100%}
+    .resource-panel-item.three-quarter-width {width: 100%;}
+    .json-upload{display:none;}
+}
+    
+@media (max-width: 767.98px) {
+    .fullscreen {
+    width: 95%;
+    margin-top: 30px;
+    margin-bottom:30px;
+    }
+    
+    .manuscript-title { 
+    text-align:left;
+    margin-left:20px;
+    }
+    .section-main-title{
+        margin-top:60px; 
+        margin-bottom:10px;
+        margin-left:10px;
+    }  
+    #map2 {width: 90%;}
+    .figure{width:100%}
+    .footer-logo-adw{width:30%}
+    .footer-logo-fau{width:60%}
+    .footer-logo-kassel{width:60%}
+    .footer-logo-jgu{width:70%}
+}
+
+@media screen and (max-width: 479px) {
+    .container-index {padding: 30px 15px;}
+    .container-index {padding-top: 30px; padding-bottom: 30px;}
+    .parallax-title h1 {font-size: 30px;}
+    .home-subtitle {font-size: 13px;}
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+    .parallax-one{padding-top:100px; padding-bottom:100px; background-attachment: initial;}
+    .parallax-two, .parallax-three, .parallax-four {display: none;}
+    .card{margin-bottom:15px;}
+    #scroll-down{display:none;}
+    .navbar-brand img{width: 60px!important;}
+    .manuscript-title h1{font-size:25px; margin-top:30px;}
+    .section-main-title{
+        margin-top:60px; 
+        margin-bottom:10px;
+        margin-left:10px;
+    }
+    
+    .back-button{display:none;}
+    .figure{width:100%}
+    .footer-logo-adw{width:30%}
+    .footer-logo-fau{width:60%}
+    .footer-logo-kassel{width:60%}
+    .footer-logo-jgu{width:70%}
+}
+
