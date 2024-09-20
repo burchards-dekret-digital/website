@@ -1,6 +1,6 @@
 @font-face {
-  font-family: BrandonGrotesqueLight;
-  src: url(brandon-grotesque-light.otf);
+    font-family: Jost-Regular;
+    src: url(Jost-Regular.ttf);
 }
 @font-face {
     font-family: 'Andron-Scriptor-Web';
@@ -133,8 +133,9 @@ li + br.tei_lb {
   
   .icon-chapter-mirador:hover::after {
     content: "See in Mirador";
-    font-family: BrandonGrotesqueLight;
-    font-size: 15px;
+    font-family:Jost-Regular;
+    font-size:15px;
+    letter-spacing: 0.5px;
     position: absolute;
     background-color: #000;
     color: #fff;
@@ -191,6 +192,8 @@ ol li{
     margin-left: 0 !important;
     font-family: Andron-Scriptor-Web !important;
     font-size:initial;
+    letter-spacing: unset;
+    line-height: unset;
 }
     
 
@@ -421,7 +424,9 @@ ol li{
 }
 
 .dropdown-item {
-    font-family: BrandonGrotesqueLight!important;
+    font-family:Jost-Regular!important;
+    font-size:15px;
+    letter-spacing: 0.5px;
 }
 
 em{

@@ -1,4 +1,12 @@
 @font-face {
+    font-family: Jost-Regular;
+    src: url(Jost-Regular.ttf);
+}
+@font-face {
+    font-family: Jost-ExtraBold;
+    src: url(Jost-ExtraBold.ttf);
+}
+@font-face {
     font-family: Montserrat-Regular;
     src: url(Montserrat-Regular.ttf);
 }
@@ -22,81 +30,96 @@ html{
 body {
     height:100%;
     padding-top: 75px;
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 h2 {
-    font-family: Montserrat-ExtraBold;
+    font-family: Jost-ExtraBold;
     font-size:23px;
     text-transform: uppercase; 
     color:black; 
     padding:0; 
-    letter-spacing:1px; 
+    letter-spacing:0.5px; 
 }
 
  h3 {
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     font-size:17px; 
-    text-transform: uppercase; 
-    color:black;
-    font-weight: bold;}
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 2;
+    letter-spacing: 0.5px;
+}
 
 
 h4{
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     font-size: 16px;
-    color: black;
     font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 h5{
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     font-size: 15px;
-    color: black;
     font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 h6{
-    font-family:Montserrat-Regular;
-    font-size: 14px; 
+    font-family:Jost-Regular;
+    font-size: 15px;
+    letter-spacing: 0.5px;
 }
 
 p {
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     font-size:15px;
-    line-height: 1.8;
+    line-height: 2;
+    letter-spacing: 0.5px;
 }
 
 code{font-size:15px;}
 
 li{
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     font-size:15px;
-    line-height: 1.8;
+    line-height: 2;
+    letter-spacing: 0.5px;
     text-align: left;
 }
 
+
+
 .section-main-title{
-    font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
     margin-bottom:20px;
     text-transform:uppercase;
+    letter-spacing: 1.5px;
+}
+
+#news-container .card-title{
+    line-height: 1.5;
+}
+#news-container .card-date{
+    line-height: 1;
 }
 #news-container .content{
-    font-size: 15px;
-    font-family: Montserrat-Regular;
-    line-height: 1.8;
+    font-family:Jost-Regular;
+    font-size:15px;
+    line-height: 1.5;
 }
 .team-title {
-    font-family: Montserrat-ExtraBold;
+    font-family: Jost-Regular;
     font-size:23px; 
-    text-transform: uppercase; 
-    color:black; 
+    text-transform: uppercase;
+    font-weight: bold;
     padding:0; 
     margin-bottom:20px;
-    letter-spacing:1px; 
+    letter-spacing:2px; 
 }
 
 .member-name{text-transform: uppercase;}
@@ -104,9 +127,13 @@ li{
 
 /*  NAVBAR & FOOTER */
 .navbar{
-    font-family:Montserrat-Regular;
     background-color:black!important;  
-    
+}
+
+.nav-item{
+    font-family:Jost-Regular;
+    font-size:17px!important;
+    letter-spacing: 0.5px;
 }
 
 .navbar-dark .navbar-nav .nav-link{
@@ -147,18 +174,31 @@ li{
 .footer{
     bottom: 0;
     width: 100%;
-    font-family: Montserrat-Regular;
-    font-size: 15px;
+    font-family:Jost-Regular;
+    font-size:15px;
+    line-height: 2;
+    letter-spacing: 0.5px;
 }
 .footer-logo-adw{width:40%}
 .footer-logo-fau{width:100%}
 .footer-logo-kassel{width:90%}
 .footer-logo-jgu{width:100%}
 
-
+/*Desktop/Schreibtisch Add resource*/
+.accordion-header{
+    font-family: Jost-Regular; 
+}
+.accordion-button{
+    font-size: 15px!important;
+    line-height: 2;
+    letter-spacing: 0.5px;
+}
 
 .collation-table{
-	font-family:Montserrat-Regular;
+    font-family:Jost-Regular;
+    font-size:15px;
+    line-height: 2;
+    letter-spacing: 0.5px;
 }
 
 .container-filters-top{
@@ -190,6 +230,18 @@ li{
     font-size: 13px!important;
 }
 
+#mss-table-1{
+    font-family: Jost-Regular;
+    font-size:15px;
+    letter-spacing: 0.5px;
+    line-height: 2;
+}
+
+#literatureTable {
+    font-family: Jost-Regular;
+    font-size:15px;
+    letter-spacing: 0.5px;
+}
 
 /* MAP */
 .mss-map-head {
@@ -212,6 +264,11 @@ li{
     height: 600px;
     width: 100%;
     display: block;
+}
+.leaflet-popup-content{
+    font-family: Jost-Regular;
+    font-size:12px;
+    letter-spacing: 0.5px;
 }
 
 
@@ -294,10 +351,23 @@ font-family: Andron-Scriptor-Web;
     margin-left: 5px;
 }
 
+#accordionInfo {
+    font-family: Jost-Regular;
+    letter-spacing: 0.5px; 
+    font-size:15px;
+    line-height: 2;
+}
 
 
 /* Title */
-.parallax-title {background: black; padding-top: 45px; padding-bottom: 30px; margin:0 auto; text-align:center;font-family: Montserrat-ExtraBold; text-transform: uppercase;}
+.parallax-title {
+    background: black; 
+    padding-top: 45px; 
+    padding-bottom: 30px; 
+    margin:0 auto; 
+    text-align:center;
+    text-transform: uppercase;
+}
 .parallax-title h1 {font-size:40px; color:white; font-weight:800; margin-bottom:0; font-family: Montserrat-ExtraBold; }
 .home-subtitle {font-size:23px; letter-spacing:3px; color:white; margin-top:10px; font-weight:600; font-family: Montserrat-Regular; }
 
@@ -397,7 +467,7 @@ font-family: Andron-Scriptor-Web;
             transform: translate(0, -50%);
             color: #fff;
             font : normal 400 20px/1;
-            font-family: Montserrat-Regular;
+            font-family: Jost-Regular;
             letter-spacing: .1em;
             text-decoration: none;
             transition: opacity .3s;

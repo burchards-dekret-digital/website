@@ -1,5 +1,5 @@
 <div id="teiTranskriptionDoc" class="block"><span lang="de">
-   <h2>Allgemeine Beschreibung</h2>
+   <h3>Allgemeine Beschreibung</h3>
    <p>Die Basis digitaler Editionen stellt die sorgfältige Erhebung und Codierung der
       Datengrundlage dar. Im Projekt BDD liegen diese Daten in zwei aufeinander
       aufbauenden Kategorien vor: <i>deskriptive Daten</i> und <i>interpretative Daten</i>. Während die Ebene der deskriptiven
@@ -29,19 +29,19 @@
       Rezeptionsspuren, z.B. nota-Zeichen, sind ausgezeichnet. Auf sinntragende
       Varianten in anderen Handschriften des Decretum Burchardi wird hingewiesen. Die
       Transkriptionen sind überdies mit der Digitalen Edition synchronisiert.</p>
-   <h2>Datenrepositorien</h2>
+   <h3>Datenrepositorien</h3>
    <p>Alle Transkriptionen werden mit dazugehörenden Datenderivaten auf dem
       Projekteigenen <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Gitlab-Repositorium</a>
       gespeichert. Nach Abschluss der jeweiligen Versionen werden die Dateien
       ebenfalls über Zenodo archiviert. Neben den Transkriptionen enthalt dieses
       Repositorium außerdem entsprechendes PageXML sowie daraus generiete Datensätze
       zur Verwendung im Kontext von Machine Learning. </p>
-   <h2>Auszeichnungsrichtlinien</h2>
+   <h3>Auszeichnungsrichtlinien</h3>
    <p>In den folgenden Abschnitten werden die Auszeichnungsrichtlinien geschildert.
       Eine formalisierte Auslistung der Verwendeten Elemente, Attribute und Werte
       findet sich unter dem Abschnitt <i>schemaSpec</i> am Ende des
       Dokuments.</p>
-   <h3>TEI Header</h3>
+   <h4>TEI Header</h4>
    <p>Der TEI-Header jedes Transkripts umfasst eine Beschreibung des Dokuments
       (<code>fileDesc</code>), eine Darlegung der Codierung (<code>encodingDesc</code>)
       und eine Angabe über Version und Datierung der Datei
@@ -90,7 +90,7 @@
       Datei dokumentiert (<code>listChange</code>). Die aufgeführten Änderungen
       betreffen die Version der Daten und Korrekturen, immer versehen mit dem
       Datum der Änderung.</p>
-   <h3>Transkriptionsrichtlinien</h3>
+   <h4>Transkriptionsrichtlinien</h4>
    <p>Die Transkriptionen zielen in erster Linie auf die Textsicherung des Dekrets,
       daher wird weitestgehend auf editorische Eingriffe und Interpretation
       verzichtet. Sie geben den Befund der einzelnen Textzeugen möglichst genau
@@ -116,7 +116,7 @@
       <code>distinctio</code>,<code>p-versus</code>, <code>p-elevatus</code>,
       <code>p-flexus</code>, <code>p-interrogativus</code> oder
       <code>p-interrogativus-positura</code> näher spezifiziert werden.</p>
-   <h3>Auszeichnung Textstruktur/Layout</h3>
+   <h4>Auszeichnung Textstruktur/Layout</h4>
    <p>Das Layout der Handschriften ist ein wichtiger Informationsträger und
       gliedert den Text in verschiedene Hierarchiestufen. Daher wird es in den
       Transkriptionen ausgezeichnet. Neben der Auszeichnung der textimmanenten
@@ -149,7 +149,7 @@
       sind im jeweiligen Attribut @facs hinterlegt und erlauben das Abrufen des
       entsprechenden Bildausschnitts über in Verbindung mit der IIIF-query-URL der
       jeweiligen Seite.</p>
-   <h3>Spalten- und Seitenwechsel, Zeilenumbrüche</h3>
+   <h4>Spalten- und Seitenwechsel, Zeilenumbrüche</h4>
    <p>Zur Codierung des Layouts wird auf die leeren Elemente <code>pb</code>
       (Seitenumbruch), <code>cb</code> (Spaltenumbruch), <code>lb</code> (Zeilenumbruch)
       sowie auf das Element <code>fw</code> (Seitenlayout) zurückgegriffen. Diese
@@ -168,13 +168,13 @@
       spezifischen Suffix gebildet wird, z.B. <code>"B_0015_header"</code>. Diese ID
       erlaubt das Auffinden des entsprechenden Elements im PageXML, das dort durch
       dieselbe ID referenziert ist.</p>
-   <h3>Silbentrennung</h3>
+   <h4>Silbentrennung</h4>
    <p>Die Worttrennung erfolgt nach Wortsinn und weicht vom Befund der Handschrift
       ab. Da besonders die frühen Handschriften des Dekrets keine zeitgenössischen
       Bindestriche zur Worttrennung nutzen, erfolgt die Angabe eines
       Zeilenumbruchs ausschließlich durch das leere Element <code>lb</code> und ggf.
       dem Attribut <code>lb break="no"</code>.</p>
-   <h3>Synchronisierte Textstruktur (IDs, Synchronisation und Taxonomie)</h3>
+   <h4>Synchronisierte Textstruktur (IDs, Synchronisation und Taxonomie)</h4>
    <p>Die Textzeugen der Wormser Redaktion können vielfältige Abweichungen in der
       Binnengliederung sowie der Textstruktur aufweisen. Dies umfasst bewusste
       Umstrukturierungen ebenso wie Fehler durch Schreiber und nachträglichen
@@ -230,7 +230,7 @@
       <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" alt="Fehlende Kapitelnummer (, fol. 44vb) " title=""><figcaption class="figure-caption">Fehlende Kapitelnummer (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=92" target="_blank">B</a>, fol. 44vb)</figcaption>
       </figure>
    </div>
-   <h3>Text-Bildverknüpfung</h3>
+   <h4>Text-Bildverknüpfung</h4>
    <p>Da die Edition des Decretum Burchardi besonderes Augenmerk auf kodikologische
       Spuren der Textgenese wirft, kommt der Verschränkung von Text und Bild eine
       herausgehobene Bedeutung zu. Zum einen ermöglicht eine solche Verschränkung
@@ -265,8 +265,8 @@
       geteilte IDs mit den Layoutelementen der TEI-Transkriptionen referenzieren.
       Auf diese Weise können in Zukunft auch weitergehende Phänomene, etwa
       Rasuren, in PageXML transformiert werden.</p>
-   <h3>Initialen, Majuskel, Versalien, Hervorhebungen (graphische
-      Auszeichnungen)</h3>
+   <h4>Initialen, Majuskel, Versalien, Hervorhebungen (graphische
+      Auszeichnungen)</h4>
    <p>Ein wichtiges Strukturelement stellen die vielfachen Auszeichnungen dar, die
       den Text in verschiedene Hierarchien gliedern. Diese graphischen
       Hervorhebungen betreffen inbesondere Kapitelzahlen, Initialen der
@@ -291,7 +291,7 @@
       <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" alt="Rubrizierte Majuskeln (, fol. 56rb) " title=""><figcaption class="figure-caption">Rubrizierte Majuskeln (<a href="https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343" target="_blank">K</a>, fol. 56rb)</figcaption>
       </figure>
    </div>
-   <h3>Schreibereingriffe: getilgter Text, Korrekturen, Hinzufügungen</h3>
+   <h4>Schreibereingriffe: getilgter Text, Korrekturen, Hinzufügungen</h4>
    <p>Korrekturen durch Schreiber werden durch entsprechende Codierung kenntlich
       gemacht. Dabei ist zwischen Löschungen <code>del</code>, Ergänzungen <code>add</code>
       und Ersetzungen <code>subst</code> zur unterscheiden. Löschungen werden
@@ -361,7 +361,7 @@
       Element <code>seg</code> enthält das Attribut <code>corresp</code>, indem auf die
       zuvor gesetzte supplied-ID verwiesen wird (<code>#supplied-ID</code>) sowie
       <code>type</code> mit dem Wert <code>pos-of-displaced</code>.</p>
-   <h3>Unklare Lesarten, beschädigte oder fragmentierte Textstellen</h3>
+   <h4>Unklare Lesarten, beschädigte oder fragmentierte Textstellen</h4>
    <p>Ist ein Text nicht sicher zu entziffern, wird dieser durch das Element
       <code>unclear</code> ausgezeichnet und so nachvollziehbar gehalten. Dabei muss
       das Element <code>unclear</code> die Attribute <code>resp</code> (mit der
@@ -400,7 +400,7 @@
       <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" alt="Unleserlicher Text (, fol. 136vb) " title=""><figcaption class="figure-caption">Unleserlicher Text (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=276" target="_blank">B</a>, fol. 136vb)</figcaption>
       </figure>
    </div>
-   <h3>Schreiber, Schrift- und Schriftbildwechsel</h3>
+   <h4>Schreiber, Schrift- und Schriftbildwechsel</h4>
    <p>Wechselt der Schreiber im Text, so wird an der Position des Wechsels das
       Element <code>handShift</code> eingefügt. Es verweist durch das Attribut
       <code>new</code> durch entsprechende ID auf eine der im Element
@@ -435,17 +435,17 @@
       aufgeführt werden. Auch diese Schreiber erhalten eine eindeutige
       <code>xml:id</code>. Außerdem wird eine Bezeichnung als <code>name</code> sowie,
       wenn bekannt, eine <code>affiliation</code> verbalisiert.</p>
-   <h3>Zahlen</h3>
+   <h4>Zahlen</h4>
    <p>Das in den Handschriften weitgehend genutzte römische Zahlensystem wird in
       der Transkription übernommen und in Kleinbuchstaben wiedergegeben. Unlesbare
       Kapitelzählungen werden ergänzt. Die laufende Kapitelnummer wird dort durch
       <code>n</code> Attribut ausgedrückt, im Text auftretende Ziffern und
       verbalisierte Zahlen werden durch das Element <code>num</code> unter Angabe des
       Zahlenwertes im Attribut <code>value</code> ausgezeichnet.</p>
-   <h2>BDD Transkription: schemaSpec</h2>
+   <h3>BDD Transkription: schemaSpec</h3>
    <p>Auf TEI All basierende Anpassung für Transkriptionen im Projekt Burchards
       Dekret Digital zur Generierung von relaxng Validierungsdateien.</p></span><span lang="en">
-   <h2>General Description</h2>
+   <h3>General Description</h3>
    <p>The foundation of digital editions is the careful collection and encoding of
       the data basis. In the BDD project, this data is presented in two successive
       categories: <i>descriptive data</i> and <i>interpretative data</i>. While the level of descriptive
@@ -476,19 +476,19 @@
       reception, e.g., nota signs, are highlighted. References to meaningful
       variants in other manuscripts of the Decretum Burchardi are made. The
       transcriptions are also synchronised with the Digital Edition.</p>
-   <h2>Data Repositories</h2>
+   <h3>Data Repositories</h3>
    <p>All transcriptions are stored with associated data derivatives on the
       project's own <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Gitlab repository</a>.
       Upon completion of the respective versions, the files
       are also archived via Zenodo. In addition to the transcriptions, this
       repository also contains corresponding PageXML and datasets generated from it
       for use in the context of Machine Learning. </p>
-   <h2>Markup Guidelines</h2>
+   <h3>Markup Guidelines</h3>
    <p>In the following sections, the markup guidelines are described. A formalised
       listing of the used elements, attributes and values can be found under
       the section <i>schemaSpec</i> at the end of the
       document.</p>
-   <h3>TEI Header</h3>
+   <h4>TEI Header</h4>
    <p>The TEI header of each transcript includes a description of the document
       (<code>fileDesc</code>), an exposition of the encoding (<code>encodingDesc</code>)
       and an indication of the version and dating of the file
@@ -537,7 +537,7 @@
       file (<code>listChange</code>). The listed changes
       concern the version of the data and corrections, always provided with the
       date of the change.</p>
-   <h3>Transcription Guidelines</h3>
+   <h4>Transcription Guidelines</h4>
    <p>The transcriptions primarily aim at securing the text of the decree.
       Therefore, editorial interventions and interpretations are largely
       omitted. They reproduce the findings of the individual textual
@@ -561,7 +561,7 @@
       <code>distinctio</code>,<code>p-versus</code>, <code>p-elevatus</code>,
       <code>p-flexus</code>, <code>p-interrogativus</code> or
       <code>p-interrogativus-positura</code>.</p>
-   <h3>Markup Text Structure/Layout</h3>
+   <h4>Markup Text Structure/Layout</h4>
    <p>The layout of the manuscripts is an important carrier of information and
       structures the text into various hierarchical levels. Therefore, it is marked in the
       transcriptions. In addition to marking the text-immanent
@@ -593,7 +593,7 @@
       layout element are stored in the respective attribute @facs and
       allow the retrieval of the corresponding image section via the IIIF
       query URL of the respective page.</p>
-   <h3>Column and Page Breaks, Line Breaks</h3>
+   <h4>Column and Page Breaks, Line Breaks</h4>
    <p>To code the layout, the empty elements <code>pb</code> (page break),
       <code>cb</code> (column break), <code>lb</code> (line break) and the element
       <code>fw</code> (page layout) are used. These elements can interrupt the
@@ -610,13 +610,13 @@
       PageXML and a specific suffix, e.g. <code>"B_0015_header"</code>. This
       ID allows the corresponding element to be located in the PageXML,
       where it is referenced by the same ID.</p>
-   <h3>Syllabification</h3>
+   <h4>Syllabification</h4>
    <p>Word separation is performed according to word sense and deviates from the manuscript's
       findings. Since particularly the early manuscripts of the decree do not use contemporary
       hyphens for word separation, the indication of a
       line break is exclusively made by the empty element <code>lb</code> and possibly
       the attribute <code>lb break="no"</code>.</p>
-   <h3>Synchronised Text Structure (IDs, Synchronisation and Taxonomy)</h3>
+   <h4>Synchronised Text Structure (IDs, Synchronisation and Taxonomy)</h4>
    <p>The textual witnesses of the Worms redaction can show various deviations
       in the internal structure as well as the text structure. This
       includes deliberate restructuring as well as errors by scribes and
@@ -674,7 +674,7 @@
       <figure class="figure"><img src="../img/image6.png" class="figure-img img-fluid" alt="Missing chapter number (, fol. 44vb) " title=""><figcaption class="figure-caption">Missing chapter number (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=92" target="_blank">B</a>, fol. 44vb)</figcaption>
       </figure>
    </div>
-   <h3>Text-Image Linking</h3>
+   <h4>Text-Image Linking</h4>
    <p>Since the edition of the Decretum Burchardi places special emphasis on
       codicological traces of the text genesis, the intertwining of text
       and image is of outstanding importance. On one hand, such an
@@ -711,8 +711,8 @@
       shared IDs with the layout elements of the TEI transcriptions.
       In this way, further phenomena, such as erasures, can also be transformed into PageXML
       in the future.</p>
-   <h3>Initials, Majuscule, Versals, Emphasis (graphical
-      Markings)</h3>
+   <h4>Initials, Majuscule, Versals, Emphasis (graphical
+      Markings)</h4>
    <p>An important structural element are the multiple markings that
       divide the text into various hierarchies. These graphical
       highlights concern especially chapter numbers, initials of the
@@ -737,7 +737,7 @@
       <figure class="figure"><img src="../img/image9.png" class="figure-img img-fluid" alt="Rubricated majuscules (, fol. 56rb) " title=""><figcaption class="figure-caption">Rubricated majuscules (<a href="https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343" target="_blank">K</a>, fol. 56rb)</figcaption>
       </figure>
    </div>
-   <h3>Scribe Interventions: Erased Text, Corrections, Additions</h3>
+   <h4>Scribe Interventions: Erased Text, Corrections, Additions</h4>
    <p>Corrections by scribes are made recognisable through appropriate coding.
       It is necessary to distinguish between deletions <code>del</code>
       additions <code>add</code> and replacements <code>subst</code>. Deletions
@@ -796,7 +796,7 @@
       line is represented through the elements <code>supplied</code>
       and <code>seg</code>. It is important to note that the shifted
       word is first recorded by <code>seg</code> at the location of its actual occurrence. Then, it is inserted by <code>supplied</code> at the location of its logical belonging. The element <code>supplied</code> necessarily contains the <code>type</code> with the value <code>displaced</code>, an attribute <code>reason</code> with the value <code>over-the-line</code> and a unique <code>xml:id</code>, which must be entered by hand. The element <code>seg</code> contains the attribute <code>corresp</code>, referring to the previously set supplied-ID (<code>#supplied-ID</code>) as well as <code>type</code> with the value <code>pos-of-displaced</code>.</p>
-   <h3>Unclear Readings, Damaged or Fragmented Text Spots</h3>
+   <h4>Unclear Readings, Damaged or Fragmented Text Spots</h4>
    <p>If a text is not clearly decipherable, it is marked by the element
       <code>unclear</code> and thus kept traceable. The element <code>unclear</code> must contain the attributes <code>resp</code> (with the
       respective person-ID as value) and <code>cert</code> (with the values
@@ -830,7 +830,7 @@
       <figure class="figure"><img src="../img/image19.png" class="figure-img img-fluid" alt="Illegible text (, fol. 136vb) " title=""><figcaption class="figure-caption">Illegible text (<a href="https://www.digitale-sammlungen.de/de/view/bsb00140701?page=276" target="_blank">B</a>, fol. 136vb)</figcaption>
       </figure>
    </div>
-   <h3>Scribe, Script and Script Image Changes</h3>
+   <h4>Scribe, Script and Script Image Changes</h4>
    <p>When the scribe changes in the text, the element <code>handShift</code> is inserted at the position of the change. It refers by the attribute
       <code>new</code> through the corresponding ID to one of the hands listed in the element
       <code>handNote</code>. In addition, the attributes
@@ -862,7 +862,7 @@
       receive a unique <code>xml:id</code>. Additionally, a designation as
       <code>name</code> and, if known, an <code>affiliation</code> is
       verbalised.</p>
-   <h3>Numbers</h3>
+   <h4>Numbers</h4>
    <p>The Roman numeral system widely used in the manuscripts is adopted in the
       transcription and reproduced in lowercase. Unreadable chapter
       numerations are supplemented. The running chapter number is
@@ -870,7 +870,7 @@
       verbalised numbers occurring in the text are marked by the element
       <code>num</code> with the numerical value indicated in the attribute
       <code>value</code>.</p>
-   <h2>BDD Transcription: schemaSpec</h2>
+   <h3>BDD Transcription: schemaSpec</h3>
    <p>TEI All-based customisation for transcriptions in the Burchard's Decree Digital project
       to generate relaxng validation files.</p></span><div id="bdd-documentation-schemaspec">
    <div class="accordion" id="accordionDocumentation">
