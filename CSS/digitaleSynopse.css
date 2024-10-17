@@ -67,6 +67,7 @@ li + br.tei_lb {
 
 .tei_cb {
     font-weight: bold;
+    font-family: Andron-Scriptor-Web !important;
 }
 
 .tei_cb::after {
@@ -118,44 +119,50 @@ li + br.tei_lb {
     content: "[sic!]";
 }
   
-  .icon-chapter-mirador:focus {
-    outline: none; /* Optional: Removes focus outline */
-  }
 
-  .icon-chapter-mirador {
-    position: relative;
-    background: none;
+.icon-chapter-sync {
+    background-color: #f6f6f6;
     border: none;
-    cursor: pointer;
-    margin-top:30px;
-    padding-left:0;
-  }
-  
-  .icon-chapter-mirador:hover::after {
-    content: "See in Mirador";
-    font-family:Jost-Regular;
-    font-size:15px;
-    letter-spacing: 0.5px;
-    position: absolute;
-    background-color: #000;
-    color: #fff;
-    padding: 5px;
-    border-radius: 4px;
-    bottom: 100%; /* Position it above the icon */
-    text-transform: none!important;
-    white-space: nowrap; /* Prevent line breaks */
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .icon-chapter-mirador:hover::after {
-    opacity: 1;
-  }
+    padding: 2px 8px;
+    margin-right:2px;
+    border-radius: 5px;
+}
+.icon-chapter-sync:hover {
+    background-color: #eaeaea;
+}
 
-  /*.icon-chapter-mirador, .tei_chapter-title{
-  display: inline-block;
-  vertical-align: baseline; 
-}*/
+.icon-chapter-mirador {
+    background-color: #f6f6f6;
+    border: none;
+    padding: 2px 8px;
+    margin-right:2px;
+    border-radius: 5px;
+}
+.icon-chapter-mirador:hover {
+    background-color: #eaeaea;
+}
+
+.prev-chapter{
+    background-color: #f6f6f6;
+    border: none;
+    padding: 2px 8px;
+    margin-right:2px;
+    border-radius: 5px;
+}
+.prev-chapter:hover{
+    background-color: #eaeaea;
+}
+
+.next-chapter{
+    background-color:#f6f6f6;
+    border: none;
+    padding: 2px 8px;
+    margin-right:2px;
+    border-radius: 5px;
+}
+.next-chapter:hover{
+    background-color:#eaeaea;
+}
 
 
 .tei_abbr {
@@ -232,8 +239,8 @@ ol li{
 
 .tei_handShift-info {
     visibility: hidden;
-    background-color: black;
-    color: white;
+    background-color: rgb(221, 221, 221);
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-transform:none;
     font-size:small;

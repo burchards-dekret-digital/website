@@ -20,30 +20,6 @@ function changeCursorToHand(element) {
 }
 
 
-
-// 2.6 Synch chapter up/down Elements
-function synchWitnessesUpDown(currentElement, direction) {
-    const openWitnesses = document.querySelectorAll('.ms');
-    elementParent = currentElement.parentNode.firstChild;
-    console.log(elementParent)
-    let chapterNumber = elementParent.getAttribute('id').split('-')[2];
-    console.log(chapterNumber)
-    if (direction === 'up') {
-        chapterNumber = parseInt(chapterNumber) -1;
-    } else {
-        chapterNumber = parseInt(chapterNumber) + 1;
-    }
-    chapterNumber = chapterNumber.toString();
-    openWitnesses.forEach(i => {
-        let idWitness = '#' + i.getAttribute('id') + '-chapter-' + chapterNumber;
-        console.log(idWitness)
-        const controlWitness = document.querySelector(idWitness);
-        controlWitness.scrollIntoView({
-            block: 'start', behavior: 'smooth'
-        });
-    });
-}
-
 /*function contextMenuChapter(currentElement) {
     if (document.getElementById('context-menu') === null) {
         var menuHTML = document.createElement('div');
@@ -128,7 +104,6 @@ function toggleTextWrap() {
 
 
 // 3.4 Einblenden eines Elements (z.B. abbr)
-
 function showElement(className) {
     var all = document.getElementsByClassName(className);
     for (var i = 0; i < all.length; i++) {

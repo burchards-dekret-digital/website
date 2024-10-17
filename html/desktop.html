@@ -771,6 +771,75 @@
   </body>
 
   <script>
+
+    // Function to extract the chapter number from the ID
+    function getChapterNumber(id) {
+            let regex = /chapter-(\d+)/;
+            let match = id.match(regex);
+            return match ? match[1] : null;
+        }
+
+        // Function to find all corresponding divs from all manuscripts for the same chapter
+        function findAllCorrespondingDivs(chapterNumber) {
+            // Get all divs with a chapter in their ID
+            let allChapters = document.querySelectorAll('[id*="chapter-"]');
+            let correspondingDivs = [];
+
+            allChapters.forEach(function (chapterDiv) {
+                // Check if the chapter number matches
+                if (getChapterNumber(chapterDiv.id) === chapterNumber) {
+                    correspondingDivs.push(chapterDiv);
+                }
+            });
+
+            return correspondingDivs;
+        }
+
+        // Main function to sync chapters across all manuscripts
+        function syncChapters(button) {
+            let manuscriptDiv = button.closest('div');
+            let manuscriptId = manuscriptDiv.id;
+            let chapterNumber = getChapterNumber(manuscriptId);
+
+            if (chapterNumber) {
+                let correspondingDivs = findAllCorrespondingDivs(chapterNumber);
+                correspondingDivs.forEach(div => {
+                  const scrollContainer = div.closest('.transcription-col');
+                  
+                  if (scrollContainer) {
+                    scrollContainer.scrollTo({
+                      top: div.offsetTop - 55,
+                      behavior: "smooth"
+                    });
+                  }
+                });
+            } else {
+                console.log('Chapter number not found');
+            }
+        }
+
+        function navigateChapter(button, direction) {
+            const chapterDiv = button.closest('.tei_chapter'); // Find the closest chapter div
+            const column = chapterDiv.closest('.transcription-col'); // Find the closest transcription column
+            const chapters = column.querySelectorAll('.tei_chapter'); // Select all chapters in the column
+            const currentIndex = Array.from(chapters).indexOf(chapterDiv); // Get the current chapter index
+
+            if (direction === 'prev' && currentIndex > 0) { // Scroll to previous chapter
+                const prevChapter = chapters[currentIndex - 1];
+                column.scrollTo({
+                    top: prevChapter.offsetTop - 55,
+                    behavior: 'smooth'
+                });
+            } else if (direction === 'next' && currentIndex < chapters.length - 1) { // Scroll to next chapter
+                const nextChapter = chapters[currentIndex + 1];
+                column.scrollTo({
+                    top: nextChapter.offsetTop - 55,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+
   //open the modal to select books  
     const activeOptions = ["13"]
     document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
@@ -1299,6 +1368,7 @@
             $("#infoStyleTranscriptions").html(contentInfoStyle);   
             checkLanguage();
         }
+
     
         // Load XML file
         loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
