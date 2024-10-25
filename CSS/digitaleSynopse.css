@@ -318,6 +318,42 @@ ol li{
 
 
 
+
+.tei_ana-taxonomy-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tei_ana-taxonomy-info {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.tei_ana-taxonomy-comment {
+    visibility: hidden;
+    background-color: black!important;
+    color: #fff !important;
+    text-align: left;
+    border-radius: 3px;
+    padding: 0.5em;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    font-family: 'Jost-Regular';
+    font-size: smaller;
+}
+
+.tei_ana-taxonomy-comment p{
+    font-size: small;
+}
+
+.tei_ana-taxonomy-wrapper:hover .tei_ana-taxonomy-comment {
+    visibility: visible;
+}
+
+
+
 .tei_supplied {
     color: #e40ffc;
 }
