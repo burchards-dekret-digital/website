@@ -171,93 +171,173 @@ function endHighlightCorrespElement(currentID, correspID) {
 
 // 4.4 Anzeige der Schreiber durch Farben
 function showScribes() {
-    
-    var dictScribes = {
-        "WoSscribe01": "#A52A2A",
-        "WoSscribe02": "#FFFF00",
-        "WoSscribe03": "#1CE6FF",
-        "WoSscribe04": "#FF34FF",
-        "WoSscribe05": "#FF4A46",
-        "WoSscribe06": "#008941",
-        "WoSscribe07": "#006FA6",
-        "WoSscribe08": "#A30059",
-        "WoSscribe09": "#FFDBE5",
-        "WoSscribe10": "#7A4900",
-        "WoSscribe11": "#0000A6",
-        "WoSscribe12": "#63FFAC",
-        "WoSscribe13": "#B79762",
-        "WoSscribe14": "#004D43",
-        "WoSscribe15": "#8FB0FF",
-        "WoSscribe16": "#997D87",
-        "WoSscribe17": "#5A0007",
-        "WoSscribe18": "#809693",
-        "WoSscribe19": "#FEFFE6",
-        "WoSscribe20": "#1B4400",
-        "WoSscribe21": "#4FC601",
-        "WoSscribe22": "#3B5DFF",
-        "WoSscribe23": "#4A3B53",
-        "WoSscribe24": "#FF2F80",
-        "WoSscribe25": "#61615A",
-        "WoSscribe26": "#BA0900",
-        "WoSscribe27": "#6B7900",
-        "WoSscribe28": "#00C2A0",
-        "WoSscribe29": "#FFAA92",
-        "WoSscribe30": "#FF90C9",
-        "WoSscribe31": "#B903AA",
-        "WoSscribe32": "#D16100",
-        "WoSscribe33": "#DDEFFF",
-        "WoSscribe34": "#000035",
-        "WoSscribe35": "#7B4F4B",
-        "WoSscribe36": "#A1C299",
-        "WoSscribe37": "#300018",
-        "WoSscribe38": "#0AA6D8",
-        "WoSscribe39": "#013349",
-        "WoSscribe40": "#00846F",
-        "WoSscribe41": "#372101",
-        "WoSscribe42": "#FFB500",
-        "WoSscribe43": "#C2FFED",
-        "WoSscribe44": "#A079BF",
-        "WoSscribe45": "#CC0744",
-        "WoSscribe46": "#C0B9B2",
-        "WoSscribe47": "#C2FF99",
-        "WoSscribe48": "#001E09",
-        "WoSscribe49": "#00489C",
-        "WoSscribe50": "#6F0062",
-        "WoSscribe51": "#0CBD66",
-        "WoSscribe52": "#EEC3FF",
-        "WoSscribe53": "#456D75",
-        "WoSscribe54": "#B77B68",
-        "WoSscribe55": "#7A87A1",
-        "WoSscribe56": "#788D66",
-        "WoSscribe57": "#885578",
-        "WoSscribe58": "#FAD09F",
-        "WoSscribe59": "#FF8A9A",
-        "WoSscribe60": "#D157A0",
-        "WoSscribe61": "#BEC459"
-    };
-    
-    for (var i = 1; i < 62; i++) {
-        i = i.toString().padStart(2, '0');
-        name = 'WoSscribe' + i;
-        className = 'ms_scribe-' + name;
-        var allScribes = document.getElementsByClassName(className);
-        for (var e = 0; e < allScribes.length; e++) {
-            // thicknes in textDecoration might be depreciated in the future
-            allScribes[e].style.textDecoration = 'underline 3px';
-            allScribes[e].style.textDecorationColor = dictScribes[name];
+
+    // Helper function to extract the WoSscribe[number] part from the class list
+    function extractScribeClass(classList) {
+        for (let className of classList) {
+          if (className.includes('WoSscribe')) {
+            return className;
+          }
         }
+        return null;
+      }
+
+    // Helper function to check if there are any text nodes recursively in the node or its descendants
+    function hasNonTextDescendants(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            return false; // If it's a text node, return false because we want to ensure no text nodes are present
+        }
+
+        if (node.nodeType === Node.ELEMENT_NODE) {
+            // Recursively check all child nodes
+            return Array.from(node.childNodes).every((child) => hasNonTextDescendants(child));
+        }
+
+        return true; // Non-text and non-element nodes (e.g., comments) are considered fine
     }
+
+      // Get all elements that have the scribe classes
+      const allScribes = document.querySelectorAll('[class*="WoSscribe"]'); //list of elements that have the string WoSscribe in the class
+
+      // Loop through all elements that match the scribe pattern
+      allScribes.forEach((scribe) => {
+        let  handShift = scribe.querySelector('.tei_handShift-wrapper'); // Find the hand shift
+        const scribeClass = extractScribeClass(scribe.classList);
+
+        if (scribeClass) {
+          // Extract the number part of the WoSscribe[number]
+          const scribeNumber = scribeClass.match(/WoSscribe(\d+)/);
+          
+          if (scribeNumber) {
+            const number = parseInt(scribeNumber[1]); //transform string number in integer
+            
+            if (handShift) {
+                //same process for handshift
+                const handShiftClass = extractScribeClass(handShift.classList);
+                const handShiftNumber = handShiftClass.match(/WoSscribe(\d+)/);
+                const handShiftN = parseInt(handShiftNumber[1]);
+
+                let foundHandShift = false; // Flag to track if hand shift has been found
+
+                // Recursive function to traverse and style each node
+                function styleNode(node) {
+                    if (node.nodeName.toUpperCase() === 'INS') {
+                        // Continue processing the children of the <ins> tag
+                        node.childNodes.forEach((child) => styleNode(child));
+                    }
+                    // If the hand shift is found, update the flag
+                    if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('tei_handShift-wrapper')) {
+                        foundHandShift = true;
+                    }
+                    //Handle text nodes
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                        // Create a wrapper span for the text node and apply appropriate styles
+                        const textWrapper = document.createElement('span');
+                        textWrapper.textContent = node.textContent;
+
+                        if (!foundHandShift) {
+                            //if handshift is not found, apply scribe-bg
+                            textWrapper.classList.add(`scribe${number.toString().padStart(2, '0')}-bg`); // Before hand shift
+                        } else {
+                            //else apply bg of the handshift
+                            textWrapper.classList.add(`scribe${handShiftN.toString().padStart(2, '0')}-bg`); // After hand shift
+                        }
+
+                        // Replace the text node with the wrapper span
+                        node.replaceWith(textWrapper);
+                    }
+
+                    // Select html elements that have children
+                    else if (node.nodeType === Node.ELEMENT_NODE) {
+                        // Check if the node contains only text nodes (no element children)
+                        const hasOnlyTextChildren = Array.from(node.childNodes).every((child) => child.nodeType === Node.TEXT_NODE); //i.e. span with text
+                        const hasOnlyNonTextChildren = hasNonTextDescendants(node) //i.e. nested elements without text (like handshift)
+                        const hasNoBRChildren = Array.from(node.childNodes).every((child) => child.nodeName !== 'BR'); //i.e. line break
+
+                        const isButton = node.nodeName === 'BUTTON';
+
+                        if (isButton) {
+                            // Ignore if it's a button
+                            return;
+                        }
+                        else if ((hasOnlyTextChildren && hasNoBRChildren) || hasOnlyNonTextChildren) {
+                            // Apply the style to leaf elements only (no element children)
+                            if (!foundHandShift) {
+                                node.classList.add(`scribe${number.toString().padStart(2, '0')}-bg`); // Style for content before hand shift
+                            } else {
+                                node.classList.add(`scribe${handShiftN.toString().padStart(2, '0')}-bg`); // Style for content after hand shift
+                            }
+                        }
+                        else {
+                            // Recursively process all child nodes
+                            node.childNodes.forEach((child) => styleNode(child));
+                        }
+                    }
+                }
+
+                // Start processing all child nodes of scribe instead of the whole block
+                scribe.childNodes.forEach((child) => styleNode(child));
+            }
+            else {
+                // Recursive function to traverse and style each node
+                function styleNode(node) {
+                    if (node.nodeName.toUpperCase() === 'INS') {
+                        // Continue processing the children of the <ins> tag
+                        node.childNodes.forEach((child) => styleNode(child));
+                    }
+                    // Handle text nodes
+                    else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                        // Create a wrapper span for the text node and apply appropriate styles
+                        const textWrapper = document.createElement('span');
+                        textWrapper.textContent = node.textContent;
+                        textWrapper.classList.add(`scribe${number.toString().padStart(2, '0')}-bg`); // Before hand shift
+                        // Replace the text node with the wrapper span
+                        node.replaceWith(textWrapper);
+                    }
+                    // Handle element nodes that are "leaf" nodes (contain no child elements except text nodes)
+                    else if (node.nodeType === Node.ELEMENT_NODE) {
+                        // Check if the node contains only text nodes (no element children)
+                        const hasOnlyTextChildren = Array.from(node.childNodes).every((child) => child.nodeType === Node.TEXT_NODE);
+                        const hasOnlyNonTextChildren = hasNonTextDescendants(node) //i.e. nested elements without text (like handshift)
+                        const hasNoBRChildren = Array.from(node.childNodes).every((child) => child.nodeName !== 'BR');
+
+                        const isButton = node.nodeName === 'BUTTON';
+
+                        if (isButton) {
+                            // Ignore if it's a button
+                            return;
+                        }
+                        else if ((hasOnlyTextChildren && hasNoBRChildren) || hasOnlyNonTextChildren) {
+                            // Apply the style to leaf elements only (no element children)
+                            node.classList.add(`scribe${number.toString().padStart(2, '0')}-bg`); // Style for content before hand shift
+                        }
+                        else {
+                            // Recursively process all child nodes
+                            node.childNodes.forEach((child) => styleNode(child));
+                        }
+                    }
+                }
+
+                // Start processing all child nodes of scribe
+                scribe.childNodes.forEach((child) => styleNode(child));
+
+                // Apply specific colors based on the scribe number
+                //scribe.classList.add(`scribe${number.toString().padStart(2, '0')}-bg`);
+            }
+          }
+        }
+      });
 }
 
 // 4.5 Ausblenden der Schreiber
 function hideScribes() {
-    for (var i = 1; i < 62; i++) {
-        i = i.toString().padStart(2, '0');
-        name = 'WoSscribe' + i;
-        className = 'ms_scribe-' + name;
-        var allScribes = document.getElementsByClassName(className);
-        for (var e = 0; e < allScribes.length; e++) {
-            allScribes[e].style.textDecoration = 'none';
-        }
-    }
+
+    document.querySelectorAll("[class*='scribe'][class*='-bg']").forEach(element => {
+        // Remove all classes matching the pattern scribe<number>-bg
+        element.classList.forEach(className => {
+            if (/^scribe\d+-bg$/.test(className)) {
+                element.classList.remove(className);
+            }
+        });
+    });
 }

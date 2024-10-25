@@ -119,9 +119,9 @@
               <hr/>
               <li><a class="dropdown-item" onclick="showElement('tei_abbr');hideElement('tei_expan')"><span lang="de">Abkürzungen anzeigen</span><span lang="en">Show abbreviations</span></a></li>
               <li><a class="dropdown-item" onclick="showElement('tei_expan');hideElement('tei_abbr')"><span lang="de">Auflösungen anzeigen</span><span lang="en">Show resolutions</span></a></li>
-              <!--<hr/>
-              <li><a class="dropdown-item" href="#" onclick="showScribes()">Schreiber anzeigen</a></li>
-              <li><a class="dropdown-item" href="#" onclick="hideScribes()">Schreiber ausblenden</a></li>-->
+              <hr/>
+              <li><a class="dropdown-item" onclick="showScribes()"><span lang="de">Schreiber anzeigen</span><span lang="en">Show scribes</span></a></li>
+              <li><a class="dropdown-item" onclick="hideScribes()"><span lang="de">Schreiber ausblenden</span><span lang="en">Hide scribes</span></a></li>
             </ul>
           </div>
 
@@ -840,6 +840,11 @@
         }
 
 
+
+
+        
+
+
   //open the modal to select books  
     const activeOptions = ["13"]
     document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
@@ -1374,5 +1379,6 @@
         loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
     });
     </script>
+
 
 </html>
