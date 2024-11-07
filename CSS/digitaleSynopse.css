@@ -15,6 +15,10 @@
     font-family: Andron-Scriptor-Web!important;
 }
 
+#accordionInfo li{
+    display: list-item!important;
+}
+
 .tei_incipit{
     font-family: Andron-Scriptor-Web;
     font-size: 1.3em;
@@ -478,187 +482,437 @@ em{
     font-style: normal;
 }
 
+
+/*.scribe[n]-bg: background-color in the transcription text | .scribe[n]-info: css rules regarding the scribes in the info panel*/
 .scribe01-bg {
     background-color: #a52a2a3d;
 }
+.scribe01-info {
+    background-color: #a52a2a3d;
+}
+
 .scribe02-bg {
     background-color: #ffff0040;
 }
+.scribe02-info {
+    background-color: #ffff0040;
+}
+
 .scribe03-bg {
     background-color: #1ce6ff36;
+}.scribe03-info {
+    background-color: #1ce6ff36;
 }
+
 .scribe04-bg {
     background-color: #ff34ff3d;
 }
+.scribe04-info {
+    background-color: #ff34ff3d;
+}
+
 .scribe05-bg {
     background-color: #ff4a465c;
 }
+.scribe05-info {
+    background-color: #ff4a465c;
+}
+
 .scribe06-bg {
     background-color: #00894140;
 }
+.scribe06-info {
+    background-color: #00894140;
+}
+
 .scribe07-bg {
     background-color: #006fa645;
 }
+.scribe07-info {
+    background-color: #006fa645;
+}
+
 .scribe08-bg {
     background-color: #a300594d;
 }
+.scribe08-info {
+    background-color: #a300594d;
+}
+
 .scribe09-bg {
     background-color: #FFDBE5;
 }
+.scribe09-info {
+    background-color: #FFDBE5;
+}
+
 .scribe10-bg {
     background-color: #7a490057;
 }
+.scribe10-info {
+    background-color: #7a490057;
+}
+
 .scribe11-bg {
     background-color: #0000a64d;
 }
+.scribe11-info {
+    background-color: #0000a64d;
+}
+
 .scribe12-bg {
     background-color: #63ffac38;
 }
+.scribe12-info {
+    background-color: #63ffac38;
+}
+
 .scribe13-bg {
     background-color: #b797625e;
 }
+.scribe13-info {
+    background-color: #b797625e;
+}
+
 .scribe14-bg {
     background-color: #004d4354;
 }
+.scribe14-info {
+    background-color: #004d4354;
+}
+
 .scribe15-bg {
     background-color: #8fb0ff5c;
 }
+.scribe15-info {
+    background-color: #8fb0ff5c;
+}
+
 .scribe16-bg {
     background-color: #997d8770;
 }
+.scribe16-info {
+    background-color: #997d8770;
+}
+
 .scribe17-bg {
     background-color: #5a000754;
 }
+.scribe17-info {
+    background-color: #5a000754;
+}
+
 .scribe18-bg {
     background-color: #809693ad;
 }
+.scribe18-info {
+    background-color: #809693ad;
+}
+
 .scribe19-bg {
     background-color: #FEFFE6;
 }
+.scribe19-info {
+    background-color: #FEFFE6;
+}
+
 .scribe20-bg {
     background-color: #1b440054;
 }
+.scribe20-info {
+    background-color: #1b440054;
+}
+
 .scribe21-bg {
     background-color: #4fc60129;
 }
+.scribe21-info {
+    background-color: #4fc60129;
+}
+
 .scribe22-bg {
     background-color: #3b5dff21;
 }
+.scribe22-info {
+    background-color: #3b5dff21;
+}
+
 .scribe23-bg {
     background-color: #4a3b533b;
 }
+.scribe23-info {
+    background-color: #4a3b533b;
+}
+
 .scribe24-bg {
     background-color: #ff2f8017;
 }
+.scribe24-info {
+    background-color: #ff2f8017;
+}
+
 .scribe25-bg {
     background-color: #61615a2e;
 }
+.scribe25-info {
+    background-color: #61615a2e;
+}
+
 .scribe26-bg {
     background-color: #ba090021;
 }
+.scribe26-info {
+    background-color: #ba090021;
+}
+
 .scribe27-bg {
     background-color: #6b790047;
 }
+.scribe27-info {
+    background-color: #6b790047;
+}
+
 .scribe28-bg {
     background-color: #00c2a03b;
 }
+.scribe28-info {
+    background-color: #00c2a03b;
+}
+
 .scribe29-bg {
     background-color: #ffaa9221;
 }
+.scribe29-info {
+    background-color: #ffaa9221;
+}
+
 .scribe30-bg {
     background-color: #ff90c93b;
 }
+.scribe30-info {
+    background-color: #ff90c93b;
+}
+
 .scribe31-bg {
     background-color: #b903aa30;
 }
+.scribe31-info {
+    background-color: #b903aa30;
+}
+
 .scribe32-bg {
     background-color: #d1610047;
 }
+.scribe32-info {
+    background-color: #d1610047;
+}
+
 .scribe33-bg {
     background-color: #DDEFFF;
 }
+.scribe33-info {
+    background-color: #DDEFFF;
+}
+
 .scribe34-bg {
     background-color: #0000353b;
 }
+.scribe34-info {
+    background-color: #0000353b;
+}
+
 .scribe35-bg {
     background-color: #7b4f4b63;
 }
+.scribe35-info {
+    background-color: #7b4f4b63;
+}
+
 .scribe36-bg {
     background-color: #a1c29999;
 }
+.scribe36-info {
+    background-color: #a1c29999;
+}
+
 .scribe37-bg {
     background-color: #3000184f;
 }
+.scribe37-info {
+    background-color: #3000184f;
+}
+
 .scribe38-bg {
     background-color: #0aa6d829;
 }
+.scribe38-info {
+    background-color: #0aa6d829;
+}
+
 .scribe39-bg {
     background-color: #01334957;
 }
+.scribe39-info {
+    background-color: #01334957;
+}
+
 .scribe40-bg {
     background-color: #00846f3d;
 }
+.scribe40-info {
+    background-color: #00846f3d;
+}
+
 .scribe41-bg {
     background-color: #3721012e;
 }
+.scribe41-info {
+    background-color: #3721012e;
+}
+
 .scribe42-bg {
     background-color: #ffb5003b;
 }
+.scribe42-info {
+    background-color: #ffb5003b;
+}
+
 .scribe43-bg {
     background-color: #c2ffed63;
 }
+.scribe43-info {
+    background-color: #c2ffed63;
+}
+
 .scribe44-bg {
     background-color: #a079bf52;
 }
+.scribe44-info {
+    background-color: #a079bf52;
+}
+
 .scribe45-bg {
     background-color: #cc074429;
 }
+.scribe45-info {
+    background-color: #cc074429;
+}
+
 .scribe46-bg {
     background-color: #C0B9B2;
 }
+.scribe46-info {
+    background-color: #C0B9B2;
+}
+
 .scribe47-bg {
     background-color: #c2ff996e;
 }
+.scribe47-info {
+    background-color: #c2ff996e;
+}
+
 .scribe48-bg {
     background-color: #001e0945;
 }
+.scribe48-info {
+    background-color: #001e0945;
+}
+
 .scribe49-bg {
     background-color: #00489c57;
 }
+.scribe49-info {
+    background-color: #00489c57;
+}
+
 .scribe50-bg {
     background-color: #6f006257;
 }
+.scribe50-info {
+    background-color: #6f006257;
+}
+
 .scribe51-bg {
     background-color: #0cbd6652;
 }
+.scribe51-info {
+    background-color: #0cbd6652;
+}
+
 .scribe52-bg {
     background-color: #eec3ffb8;
 }
+.scribe52-info {
+    background-color: #eec3ffb8;
+}
+
 .scribe53-bg {
     background-color: #456d7557;
 }
+.scribe53-info {
+    background-color: #456d7557;
+}
+
 .scribe54-bg {
     background-color: #b77b688f;
 }
+.scribe54-info {
+    background-color: #b77b688f;
+}
+
 .scribe55-bg {
     background-color: #7a87a19c;
 }
+.scribe55-info {
+    background-color: #7a87a19c;
+}
+
 .scribe56-bg {
     background-color: #788d666e;
 }
+.scribe56-info {
+    background-color: #788d666e;
+}
+
 .scribe57-bg {
     background-color: #8855786b;
 }
+.scribe57-info {
+    background-color: #8855786b;
+}
+
 .scribe58-bg {
     background-color: #fad09fc2;
 }
+.scribe58-info {
+    background-color: #fad09fc2;
+}
+
 .scribe59-bg {
     background-color: #ff8a9a7d;
 }
+.scribe59-info {
+    background-color: #ff8a9a7d;
+}
+
 .scribe60-bg {
     background-color: #d157a07a;
 }
+.scribe60-info {
+    background-color: #d157a07a;
+}
+
 .scribe61-bg {
     background-color: #bec45994;
 }
+.scribe61-info {
+    background-color: #bec45994;
+}
+
+
+
+
+
+
 
