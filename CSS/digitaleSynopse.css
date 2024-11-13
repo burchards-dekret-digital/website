@@ -430,10 +430,23 @@ ol li{
  background-color: #000;
 }
 
+.tei_del-correction{
+    display: inline;
+  color:  #808080 !important;
+  border: thin solid  #b3b3b3;
+  padding-left:1px;
+  padding-right:1px;
+}
+
 .tei_del-expunctuation{
-    /*border-style: dotted;*/
+    /*border-style: dotted;
     text-decoration: underline;
-    text-decoration-style:dotted;
+    text-decoration-style:dotted;*/
+    display: inline;
+    color:  #808080 !important;
+    border: thin solid  #b3b3b3;
+    padding-left:1px;
+    padding-right:1px;
 }
 
 .tei_del-underlined{
