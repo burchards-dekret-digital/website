@@ -816,7 +816,7 @@
                 <lb n="1" facs="317,278,548,126" xml:id="Vb_0177_column_1_l_01"/>
                 <!-- Beginn Inhaltsverzeichnis -->
                 <div type="toc" xml:id="vatican-bav-pal-lat-586-13-toc">
-                    <head type="incipit" hand="#vatican-bav-pal-lat-586-h01"><hi rend="color:red capitals"><ptr target="vatican-bav-pal-lat-586-12.xml#vatican-bav-pal-lat-586-12-hs-last-handshift" type="previous-handshift"/>INCIPIUNT CAPITULA <lb n="2" facs="314,356,506,123" xml:id="Vb_0177_column_1_l_02"/> <subst><del rend="erasure"/><add type="contemporary" place="overstrike">TERCII
+                    <head type="incipit" hand="#vatican-bav-pal-lat-586-h01"><hi rend="color:red capitals"><ptr target="vatican-bav-pal-lat-586-12.xml#vatican-bav-pal-lat-586-12-hs-last-handshift" type="previous-handshift" corresp="#vatican-bav-pal-lat-586-h01"/>INCIPIUNT CAPITULA <lb n="2" facs="314,356,506,123" xml:id="Vb_0177_column_1_l_02"/> <subst><del rend="erasure"/><add type="contemporary" place="overstrike">TERCII
                         DECIMI</add></subst> LIBRI <lb n="3" facs="304,416,317,110" xml:id="Vb_0177_column_1_l_03"/> <subst><del rend="erasure"/><add type="contemporary" place="overstrike">DE IEIVNIO<pc type="distinctio"><g ref="#char-f1f8"></g></pc></add></subst></hi></head>
                     <lb n="4" facs="270,475,584,118" xml:id="Vb_0177_column_1_l_04"/>
                     <list>

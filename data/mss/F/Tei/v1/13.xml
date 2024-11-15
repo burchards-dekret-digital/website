@@ -820,7 +820,7 @@
                 <lb n="1" facs="988,622,1435,291" xml:id="F_0412_column_1_l_01"/>
                 <!-- Beginn Inhaltsverzeichnis -->
                 <div type="toc" xml:id="frankfurt-ub-b-50-13-toc">
-                    <head hand="#frankfurt-ub-b-50-h03" type="incipit"><hi rend="color:red capitals"><ptr type="previous-handshift" target="frankfurt-ub-b-50-12.xml#frankfurt-ub-b-50-12-hs-last-handshift"/>INCIPIVNT CAPITVLA <num value="13"><choice><abbr>T<g ref="#char-0305">̅</g>CII</abbr><expan>TERCII</expan></choice> <lb n="2" facs="1084,788,1246,208" xml:id="F_0412_column_1_l_02"/>DECIMI</num> LIBRI
+                    <head hand="#frankfurt-ub-b-50-h03" type="incipit"><hi rend="color:red capitals"><ptr type="previous-handshift" target="frankfurt-ub-b-50-12.xml#frankfurt-ub-b-50-12-hs-last-handshift" corresp="#frankfurt-ub-b-50-h03"/>INCIPIVNT CAPITVLA <num value="13"><choice><abbr>T<g ref="#char-0305">̅</g>CII</abbr><expan>TERCII</expan></choice> <lb n="2" facs="1084,788,1246,208" xml:id="F_0412_column_1_l_02"/>DECIMI</num> LIBRI
                         DE IEIVNIO<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
                     <lb n="3" facs="1009,930,1418,218" xml:id="F_0412_column_1_l_03"/>
                     <list>
