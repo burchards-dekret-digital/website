@@ -22,7 +22,7 @@
       
       <script src="../js/jquery-3.7.1.min.js"></script>
       <script src="../js/language.js" defer></script>
-      <script src="../js//digitaleSynopse.js" defer></script>
+      <script src="../js/digitaleSynopse.js" defer></script>
       <script src="../js/navigation.js" defer></script>
 
       <style>
@@ -122,9 +122,9 @@
               <hr/>
               <li><a class="dropdown-item" onclick="showScribes()"><span lang="de">Schreiber anzeigen</span><span lang="en">Show scribes</span></a></li>
               <li><a class="dropdown-item" onclick="hideScribes()"><span lang="de">Schreiber ausblenden</span><span lang="en">Hide scribes</span></a></li>
-              <!--<hr/>
+              <hr/>
               <li><a class="dropdown-item" onclick="showTaxonomies()"><span lang="de">Toxonomien anzeigen</span><span lang="en">Show taxonomies</span></a></li>
-              <li><a class="dropdown-item" onclick="hideTaxonomies()"><span lang="de">Toxonomien ausblenden</span><span lang="en">Hide taxonomies</span></a></li>-->
+              <li><a class="dropdown-item" onclick="hideTaxonomies()"><span lang="de">Toxonomien ausblenden</span><span lang="en">Hide taxonomies</span></a></li>
             </ul>
           </div>
 
@@ -235,7 +235,7 @@
                                         </label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_012" id="BambergBook12">
+                                        <input class="form-check-input" type="checkbox" value="Bamberg_B_12" id="BambergBook12">
                                         <label class="form-check-label" for="BambergBook12">
                                           <span lang="de">Buch</span><span lang="en">Book</span> 12
                                         </label>
@@ -446,7 +446,7 @@
                               <div class="accordion-body">
                                 <div class="row">
                                   <div class="col-md-6">
-                                    <div class="form-check">
+                                    <!--<div class="form-check">
                                       <input class="form-check-input" type="checkbox" value="Köln_K_00" id="KölnBook00">
                                       <label class="form-check-label" for="KölnBook00">
                                         <span lang="de">Buch</span><span lang="en">Book</span> 00
@@ -457,7 +457,7 @@
                                           <label class="form-check-label" for="KölnBook01">
                                             <span lang="de">Buch</span><span lang="en">Book</span> 01
                                           </label>
-                                      </div>
+                                      </div>-->
                                       <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="Köln_K_02" id="KölnBook02">
                                           <label class="form-check-label" for="KölnBook02">
@@ -512,14 +512,15 @@
                                           <span lang="de">Buch</span><span lang="en">Book</span> 10
                                         </label>
                                       </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Köln_K_11" id="KölnBook11">
+                                        <label class="form-check-label" for="KölnBook11">
+                                          <span lang="de">Buch</span><span lang="en">Book</span> 11
+                                        </label>
+                                      </div>
                                   </div>
                                   <div class="col-md-6">
-                                    <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" value="Köln_K_11" id="KölnBook11">
-                                      <label class="form-check-label" for="KölnBook11">
-                                        <span lang="de">Buch</span><span lang="en">Book</span> 11
-                                      </label>
-                                    </div>
+                                    
                                     <div class="form-check">
                                       <input class="form-check-input" type="checkbox" value="Köln_K_12" id="KölnBook12">
                                       <label class="form-check-label" for="KölnBook12">
@@ -842,6 +843,75 @@
             }
         }
 
+//--------------------------------------------------------------------------
+
+// Function to extract the interrogation number from the ID
+        function getInterrogationNumber(id) {
+                    let regex = /interrogation-(\d+)/;
+                    let match = id.match(regex);
+                    return match ? match[1] : null;
+                }
+
+                // Function to find all corresponding divs from all manuscripts for the same interrogation
+                function findAllCorrespondingDivs(interrogationNumber) {
+                    // Get all divs with a interrogation in their ID
+                    let allInterrogations = document.querySelectorAll('[id*="interrogation-"]');
+                    let correspondingDivs = [];
+
+                    allInterrogations.forEach(function (interrogationDiv) {
+                        // Check if the interrogation number matches
+                        if (getInterrogationNumber(interrogationDiv.id) === interrogationNumber) {
+                            correspondingDivs.push(interrogationDiv);
+                        }
+                    });
+
+                    return correspondingDivs;
+                }
+
+        // Function to sync interrogations across all manuscripts
+        function syncInterrogations(button) {
+            let manuscriptDiv = button.closest('div');
+            let manuscriptId = manuscriptDiv.id;
+            let interrogationNumber = getInterrogationNumber(manuscriptId);
+
+            if (interrogationNumber) {
+                let correspondingDivs = findAllCorrespondingDivs(interrogationNumber);
+                correspondingDivs.forEach(div => {
+                  const scrollContainer = div.closest('.transcription-col');
+                  
+                  if (scrollContainer) {
+                    scrollContainer.scrollTo({
+                      top: div.offsetTop - 55,
+                      behavior: "smooth"
+                    });
+                  }
+                });
+            } else {
+                console.log('Interrogation number not found');
+            }
+        }
+
+        function navigateInterrogation(button, direction) {
+            const interrogationDiv = button.closest('.tei_interrogation'); // Find the closest interrogation div
+            const column = interrogationDiv.closest('.transcription-col'); // Find the closest transcription column
+            const interrogations = column.querySelectorAll('.tei_interrogation'); // Select all interrogation in the column
+            const currentIndex = Array.from(interrogations).indexOf(interrogationDiv); // Get the current interrogation index
+
+            if (direction === 'prev' && currentIndex > 0) { // Scroll to previous interrogation
+                const prevInterrogation = interrogations[currentIndex - 1];
+                column.scrollTo({
+                    top: prevInterrogation.offsetTop - 55,
+                    behavior: 'smooth'
+                });
+            } else if (direction === 'next' && currentIndex < interrogations.length - 1) { // Scroll to next interrogation
+                const nextInterrogation = interrogations[currentIndex + 1];
+                column.scrollTo({
+                    top: nextInterrogation.offsetTop - 55,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
 
 
 
@@ -849,7 +919,7 @@
 
 
   //open the modal to select books  
-    const activeOptions = ["13"]
+    const activeOptions = ["13", "01"]
     document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
       if (!activeOptions.some(element => checkbox.value.includes(element))){ //todo remove "!" when active options will be longer than non active options
         checkbox.disabled = true;
@@ -999,7 +1069,11 @@
 
           msViews.push(await responseEditor.text())
 
-          let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);           
+          let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);     
+          addTaxonomyIcon(panel) //Taxonomy icon
+
+          underlineDelSpanAndAnchor(panel); //delSpan 
+          addSpanAndAnchor(panel); //addSpan 
           container.appendChild(panel);
           checkLanguage()
 
@@ -1375,6 +1449,7 @@
             let contentInfoStyle = $(contentDiv).find("#infoStyleTranscriptions")
             $("#infoStyleTranscriptions").html(contentInfoStyle);   
             checkLanguage();
+            
         }
 
     

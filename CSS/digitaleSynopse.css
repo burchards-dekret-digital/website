@@ -30,7 +30,14 @@
 .tei_{
     font-family: Andron-Scriptor-Web !important;
 }
+.tei_paragraph{
+    font-family: Andron-Scriptor-Web !important;
+}
 
+.tei_paratext{
+    font-family: Andron-Scriptor-Web !important;
+    color: grey;
+}
 br:not(.tei_lb):not(.tei_lb.nobreak) {
     display: none;
 }
@@ -257,7 +264,7 @@ ol li{
 
 
 
-.tei_note-editorial-comment-wrapper {
+/*.tei_note-editorial-comment-wrapper {
     position: relative;
     display: inline-block;
 }
@@ -275,7 +282,6 @@ ol li{
     text-align: left;
     border-radius: 3px;
     padding: 0.5em;
-    /* Position the tooltip */
     position: absolute;
     z-index: 1;
     font-family: 'Jost-Regular';
@@ -309,7 +315,6 @@ ol li{
     text-align: left;
     border-radius: 3px;
     padding: 0.5em;
-    /* Position the tooltip */
     position: absolute;
     z-index: 1;
     font-family: 'Jost-Regular';
@@ -318,43 +323,7 @@ ol li{
 
 .tei_note-editorial-question-wrapper:hover .tei_note-editorial-question {
     visibility: visible;
-}
-
-
-
-
-.tei_ana-taxonomy-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.tei_ana-taxonomy-info {
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.tei_ana-taxonomy-comment {
-    visibility: hidden;
-    background-color: black!important;
-    color: #fff !important;
-    text-align: left;
-    border-radius: 3px;
-    padding: 0.5em;
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    font-family: 'Jost-Regular';
-    font-size: smaller;
-}
-
-.tei_ana-taxonomy-comment p{
-    font-size: small;
-}
-
-.tei_ana-taxonomy-wrapper:hover .tei_ana-taxonomy-comment {
-    visibility: visible;
-}
+}*/
 
 
 
@@ -373,7 +342,7 @@ ol li{
 
 
 .tei_add {
-    color: CadetBlue;
+    color: #5f9ea0;
 }
 
 .tei_subst {
@@ -925,7 +894,72 @@ em{
 
 
 
+.taxonomy-icon {
+    margin-left: 7px;
+    display: inline-block;
+    cursor: pointer;
+  }
+.fa-tag{
+    color:blue;
+}
 
+  .tooltip-inner {
+    max-width: 500px;
+    white-space: normal;
+  }
 
+.tei_note-editorial-comment-icon{
+    margin-right: 5px;
+    margin-left: 1px;
+    color:#46b65f;
+}
+.tei_note-editorial-comment-mirador-icon{
+    margin-right: 5px;
+    margin-left: 1px;
+    color: #46b65f;
+}
+.tei_note-editorial-question-icon{
+    margin-right: 5px;
+    margin-left: 1px;
+}
 
+/*Table column size in Structure*/
 
+table {
+    table-layout: fixed; /* Forces equal column width distribution */
+    width: 100%;
+}
+th{
+    width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+td{
+    width: 150px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.chapterNumber{
+    width: 100px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.sequenceNumber{
+    width: 100px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.transmission{
+    width: 110px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.sructure-hand-table{
+    width: 80px;
+    word-wrap: break-word;
+    white-space: normal;
+}

@@ -25,6 +25,7 @@ function changeLanguage(language) {
         });
     }
 
+
     // Set the active class on the corresponding button
     var deButton = document.getElementById('btn-de');
     var enButton = document.getElementById('btn-en');
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var deElements = document.querySelectorAll('[lang="de"]:not(.mirador-viewer)');
     var enElements = document.querySelectorAll('[lang="en"]:not(.mirador-viewer)');
     enElements.forEach(function(element) {
-        console.log(element)
         element.style.display = 'none';
     });
     var storedLanguage = localStorage.getItem('selectedLanguage');

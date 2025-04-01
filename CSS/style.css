@@ -304,7 +304,7 @@ li{
         position: fixed;
       }
 
-.bdd-unin-lost{
+/*.bdd-unin-lost{
     border-style: solid;
   border-color: #A9A9A9;
   border-top: solid #A9A9A9;
@@ -340,7 +340,7 @@ td.bdd-unin-lost::after{
 }
 td.bdd-ed-rec::after{
     content:"bb";
-}
+}*/
 .legendFont{
 font-family: Andron-Scriptor-Web;
 }
