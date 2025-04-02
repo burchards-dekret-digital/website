@@ -892,6 +892,14 @@ em{
     background-color: #bec45994;
 }
 
+.scribe-unidentified-bg {
+    background-color: whitesmoke;
+}
+.scribe-unidentified-info {
+    background-color: whitesmoke;
+}
+
+
 
 
 .taxonomy-icon {
@@ -940,11 +948,11 @@ td{
     white-space: normal;
 }
 
-.chapterNumber{
+/*.chapterNumber{
     width: 100px;
     word-wrap: break-word;
     white-space: normal;
-}
+}*/
 
 .sequenceNumber{
     width: 100px;
@@ -952,11 +960,11 @@ td{
     white-space: normal;
 }
 
-.transmission{
+/*.transmission{
     width: 110px;
     word-wrap: break-word;
     white-space: normal;
-}
+}*/
 
 .sructure-hand-table{
     width: 80px;
