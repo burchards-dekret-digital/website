@@ -328,7 +328,7 @@ ol li{
 
 
 .tei_supplied {
-    color: #e40ffc;
+    /*color: #e40ffc;*/
 }
 
 
@@ -342,13 +342,17 @@ ol li{
 
 
 .tei_add {
-    color: #5f9ea0;
+    /*color: #5f9ea0;*/
+    text-decoration: underline;
+    text-decoration-color: #5ac5fa;
+    text-decoration-thickness: 3px;  
 }
 
-.tei_subst {
+.tei_subst > .tei_add {
     text-decoration: underline;
     text-decoration-style: wavy;
-    color: #000;
+    /*color: #000;*/
+    text-decoration-color: #5ac5fa;
 }
 
 .tei_delSpan {
@@ -359,18 +363,18 @@ ol li{
 .tei_delSpan-written-on-erased {
     text-decoration: underline;
     text-decoration-style: wavy;
-    color: #000;
+    /*color: #000;*/
 }
 
 .tei_delSpan-start-written-on-erased{
     text-decoration: underline;
     text-decoration-style: wavy;
-    color: #000;
+    /*color: #000;*/
 }
 .tei_delSpan-written-on-erased-end{
     text-decoration: underline;
     text-decoration-style: wavy;
-    color: #000;
+    /*color: #000;*/
 }
 
 .tei_delSpan-strikethrough {
@@ -388,7 +392,7 @@ ol li{
     color: transparent;
     text-decoration: underline;
     text-decoration-style: wavy;
-    text-decoration-color: black;
+    text-decoration-color: #b3b3b3;;
 }
 
 .tei_del-strikethrough {

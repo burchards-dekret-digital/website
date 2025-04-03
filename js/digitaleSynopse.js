@@ -297,7 +297,7 @@ const bddDescriptions = {
     "bdd-ed-rec": "Reconstruction: Chapter has been lost, but can be reconstructed and supplied.",
     "bdd-not-on-erasure": "Not written on erasure: Elements such as inscriptions, titles or lines of text have been added on an erased column, but they are not on erasure, but on leaf areas that have not been erased.",
 
-    "bdd-ref-lost": "Reference lost: ....."
+    "bdd-ref-lost": "Reference lost: [missing description]"
   };
 
   // Function to add icons and tooltips
@@ -366,7 +366,7 @@ function underlineDelSpanAndAnchor(panel) {
               let span = document.createElement("span");
               span.style.textDecoration = "underline";
               span.style.textDecorationStyle = "wavy";
-              span.style.textDecorationColor = "#000";
+              span.style.textDecorationColor = "#5ac5fa";
               span.textContent = node.nodeValue;
               node.parentNode.replaceChild(span, node); // Replace text node with span
             }
@@ -408,7 +408,7 @@ function addSpanAndAnchor(panel) {
             if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
               // If it's a text node and we are past the starting point
               let span = document.createElement("span");
-              span.style.backgroundColor = "#e0ebeb";
+              /*span.style.color = "#5f9ea0";*/
               
               span.textContent = node.nodeValue;
               node.parentNode.replaceChild(span, node); // Replace text node with span
