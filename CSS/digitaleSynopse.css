@@ -94,21 +94,23 @@ li + br.tei_lb {
 
 
 .tei_fw-page-header{
-    font-family: Andron-Scriptor-Web;
-    background-color: greenyellow;
+    /*font-family: Andron-Scriptor-Web;
+    background-color: greenyellow;*/
+    display:none;
 }
 .tei_fw-quire-numeral{
-    font-family: Andron-Scriptor-Web;
-    background-color: pink;
+    /*font-family: Andron-Scriptor-Web;
+    background-color: pink;*/
+    display:none;
 }
-.tei_fw-quire-numeral::before{
+/*.tei_fw-quire-numeral::before{
     content:"\a";
     white-space: pre;
 }
 .tei_fw-quire-numeral::after{
     content:"\a";
     white-space: pre;
-}
+}*/
 
 
 .tei_hi-color-red {
