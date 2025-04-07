@@ -784,7 +784,7 @@
         }
 
         // Function to find all corresponding divs from all manuscripts for the same chapter
-        function findAllCorrespondingDivs(chapterNumber) {
+        function findAllCorrespondingDivsChapter(chapterNumber) {
             // Get all divs with a chapter in their ID
             let allChapters = document.querySelectorAll('[id*="chapter-"]');
             let correspondingDivs = [];
@@ -806,7 +806,7 @@
             let chapterNumber = getChapterNumber(manuscriptId);
 
             if (chapterNumber) {
-                let correspondingDivs = findAllCorrespondingDivs(chapterNumber);
+                let correspondingDivs = findAllCorrespondingDivsChapter(chapterNumber);
                 correspondingDivs.forEach(div => {
                   const scrollContainer = div.closest('.transcription-col');
                   
@@ -1134,7 +1134,7 @@
                             
                     ] },
                     windows: [{
-                        id: windowsID,
+                        id: windowsID, //check this 
                         manifestId: manifestId,
                         canvasId : canvasId
                     }],

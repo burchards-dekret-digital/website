@@ -1,5 +1,4 @@
 
-
 // 2.4 Scrolling von TOC Eintrag
 function linkTocToChapter(currentElement) {
     let chapterNumber = currentElement.getAttribute('id').replace('toc', 'chapter');
@@ -168,8 +167,6 @@ function endHighlightCorrespElement(currentID, correspID) {
 
 
 // 4.4 Anzeige der Schreiber durch Farben
-
-
 function showScribes() {
     function extractScribeClass(classList) {
         for (let className of classList) {
@@ -203,7 +200,8 @@ function showScribes() {
             if (scribeNumber || isUnidentified) {
                 const number = scribeNumber ? parseInt(scribeNumber[1]) : null;
 
-                function styleNode(node) {
+                /*ISSUE: buttons had the bg-color. Solved.*/
+                /*function styleNode(node) {
                     if (node.nodeName.toUpperCase() === 'INS') {
                         node.childNodes.forEach((child) => styleNode(child));
                     }
@@ -224,7 +222,34 @@ function showScribes() {
                             node.childNodes.forEach((child) => styleNode(child));
                         }
                     }
+                }*/
+
+                function styleNode(node) {
+                    if (node.nodeName.toUpperCase() === 'INS') {
+                        node.childNodes.forEach((child) => styleNode(child));
+                    }
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                        const textWrapper = document.createElement('span');
+                        textWrapper.textContent = node.textContent;
+                        textWrapper.classList.add(isUnidentified ? 'scribe-unidentified-bg' : `scribe${number.toString().padStart(2, '0')}-bg`);
+                        node.replaceWith(textWrapper);
+                    } else if (node.nodeType === Node.ELEMENT_NODE) {
+                        if (node.nodeName === 'BUTTON') {
+                            return; // Completely ignore buttons and their children
+                        }
+                
+                        const hasOnlyTextChildren = Array.from(node.childNodes).every((child) => child.nodeType === Node.TEXT_NODE);
+                        const hasOnlyNonTextChildren = hasNonTextDescendants(node);
+                        const hasNoBRChildren = Array.from(node.childNodes).every((child) => child.nodeName !== 'BR');
+                
+                        if ((hasOnlyTextChildren && hasNoBRChildren) || hasOnlyNonTextChildren) {
+                            node.classList.add(isUnidentified ? 'scribe-unidentified-bg' : `scribe${number.toString().padStart(2, '0')}-bg`);
+                        } else {
+                            node.childNodes.forEach((child) => styleNode(child));
+                        }
+                    }
                 }
+                
 
                 scribe.childNodes.forEach((child) => styleNode(child));
             }
@@ -244,7 +269,10 @@ function hideScribes() {
             }
         });
     });
+    document.querySelectorAll('.scribe-unidentified-bg').forEach(el => el.classList.remove('scribe-unidentified-bg'));
 }
+
+
 
 
 
@@ -266,39 +294,63 @@ function hideScribes() {
 
 /*TAXONOMY VISUALISATION*/
 const bddDescriptions = {
-    "bdd-unin-loss": "Unintentional Loss of Chapters: Chapters are lost due to a leaf or quire that has been lost unintentionally.",
-    "bdd-delib-loss": "Deliberate Loss of Chapters: Chapters are lost due to a deliberate loss of leaf or quire, for instance, by cutting out.",
+    "bdd-unin-loss": "<span lang=\"de\"></span><span lang=\"en\">Unintentional Loss of Chapters: Chapters are lost due to a leaf or quire that has been lost unintentionally.</span>",
     
-    "bdd-marked-with-cross": "Marked with a cross: Chapters have been marked by a cross, possibly for deletion.",
-    "bdd-strikethrough": "Strikethrough: Chapters have been struck through.",
-    "bdd-permanent-deletion": "Permanent Deletion: Chapters have been deleted permanently.",
-    "bdd-red-line-spacing": "Reduced line spacing: The typeface is crowded due to reduced line spacing.",
-    "bdd-cut-out": "Cut out item: Item, such as leaf or canons, has been cut out.", 
-    "bdd-erased": "Erased item: Item, such as leaf or chapters, has been erased.",
-    "bdd-traces-red-initial": "Traces of red erased Initial: Remains of red erased Initial.",
-    "bdd-traces-black-versalie": "Traces of black erased Versalie: Remains of black erased Versal.",
+    "bdd-delib-loss": "<span lang=\"de\">Blattentfernung: Verlust von Kapiteln aufgrund von Blattentfernung, zum Beispiel wenn ein Blatt weggeschnitten wurde.</span><span lang=\"en\">Deliberate Loss of Chapters: Chapters are lost due to a deliberate loss of leaf or quire, for instance, by cutting out.</span>",
+    
+    
+    "bdd-marked-with-cross": "<span lang=\"de\"></span><span lang=\"en\">Marked with a cross: Chapters have been marked by a cross, possibly for deletion.</span>",
+    
+    "bdd-strikethrough": "<span lang=\"de\"></span><span lang=\"en\">Strikethrough: Chapters have been struck through.</span>",
+    
+    "bdd-permanent-deletion": "<span lang=\"de\"></span><span lang=\"en\">Permanent Deletion: Chapters have been deleted permanently.</span>",
+    
+    "bdd-red-line-spacing": "<span lang=\"de\"></span><span lang=\"en\">Reduced line spacing: The typeface is crowded due to reduced line spacing.</span>",
+    
+    "bdd-cut-out": "<span lang=\"de\"></span><span lang=\"en\">Cut out item: Item, such as leaf or canons, has been cut out.</span>", 
+    
+    "bdd-erased": "<span lang=\"de\"></span><span lang=\"en\">Erased item: Item, such as leaf or chapters, has been erased.</span>",
+    
+    "bdd-traces-red-initial": "<span lang=\"de\"></span><span lang=\"en\">Traces of red erased Initial: Remains of red erased Initial.</span>",
+    
+    "bdd-traces-black-versalie": "<span lang=\"de\"></span><span lang=\"en\">Traces of black erased Versalie: Remains of black erased Versal.</span>",
 
-    "bdd-same-scribe-add": "Same Scribe Addition: Chapters have been added by the same scribe.",
-    "bdd-other-scribe-add": "Other Scribe Addition: Chapter have been added by another scribe.",
 
-    "bdd-relocation": "Relocation: Chapters have been relocated within the text.",
-    "bdd-order-change": "Order Change: The order of chapters have been altered.",
+    "bdd-same-scribe-add": "<span lang=\"de\"></span><span lang=\"en\">Same Scribe Addition: Chapters have been added by the same scribe.</span>",
     
-    "bdd-inc-chap-num": "Inconsistent Chapter Numbering: The given chapter number is inconsistent.",
-    "bdd-change-chap-num-cor": "Change in Chapter Numbering due to Correction: Change in Chapter Numbering is due to Correction.",
-    "bdd-change-chap-num-add": "Change in Chapter Numbering due to Addition of Chapters: Change in Chapter Numbering is due to Addition of Chapters.",
-    "bdd-change-chap-num-del": "Change in Chapter Numbering due to Deletion of Chapters: Change in Chapter Numbering is due to Deletion of Chapters.",
-    "bdd-chap-num-miss": "Chapter Number Missing: No chapter number has been given.",
-    
-    "bdd-no-ins": "Chapter without inscription: The given chapter has no inscription in all main witnesses.",
-    
-    "bdd-sub-int": ". Subsequent Interventions: Interventions by later users in the manuscripts.",
-    
-    "bdd-ed-rec": "Reconstruction: Chapter has been lost, but can be reconstructed and supplied.",
-    "bdd-not-on-erasure": "Not written on erasure: Elements such as inscriptions, titles or lines of text have been added on an erased column, but they are not on erasure, but on leaf areas that have not been erased.",
+    "bdd-other-scribe-add": "<span lang=\"de\"></span><span lang=\"en\">Other Scribe Addition: Chapter have been added by another scribe.</span>",
 
-    "bdd-ref-lost": "Reference lost: [missing description]"
+
+    "bdd-relocation": "<span lang=\"de\"></span><span lang=\"en\">Relocation: Chapters have been relocated within the text.</span>",
+    
+    "bdd-order-change": "<span lang=\"de\"></span><span lang=\"en\">Order Change: The order of chapters have been altered.</span>",
+    
+
+    "bdd-inc-chap-num": "<span lang=\"de\"></span><span lang=\"en\">Inconsistent Chapter Numbering: The given chapter number is inconsistent.</span>",
+    
+    "bdd-change-chap-num-cor": "<span lang=\"de\"></span><span lang=\"en\">Change in Chapter Numbering due to Correction: Change in Chapter Numbering is due to Correction.</span>",
+    
+    "bdd-change-chap-num-add": "<span lang=\"de\"></span><span lang=\"en\">Change in Chapter Numbering due to Addition of Chapters: Change in Chapter Numbering is due to Addition of Chapters.</span>",
+    
+    "bdd-change-chap-num-del": "<span lang=\"de\"></span><span lang=\"en\">Change in Chapter Numbering due to Deletion of Chapters: Change in Chapter Numbering is due to Deletion of Chapters.</span>",
+    
+    "bdd-chap-num-miss": "<span lang=\"de\"></span><span lang=\"en\">Chapter Number Missing: No chapter number has been given.</span>",
+    
+
+    "bdd-no-ins": "<span lang=\"de\"></span><span lang=\"en\">Chapter without inscription: The given chapter has no inscription in all main witnesses.</span>",
+    
+
+    "bdd-sub-int": "<span lang=\"de\"></span><span lang=\"en\">Subsequent Interventions: Interventions by later users in the manuscripts.</span>",
+    
+
+    "bdd-ed-rec": "<span lang=\"de\"></span><span lang=\"en\">Reconstruction: Chapter has been lost, but can be reconstructed and supplied.</span>",
+    
+    "bdd-not-on-erasure": "<span lang=\"de\"></span><span lang=\"en\">Not written on erasure: Elements such as inscriptions, titles or lines of text have been added on an erased column, but they are not on erasure, but on leaf areas that have not been erased.</span>",
+
+
+    "bdd-ref-lost": "<span lang=\"de\"></span><span lang=\"en\">Reference lost: [missing description]</span>"
   };
+
 
   // Function to add icons and tooltips
   function addTaxonomyIcon(column_element) {
@@ -326,6 +378,7 @@ const bddDescriptions = {
         icon.addEventListener('mouseout', () => {
             el.style.backgroundColor = ""; // Remove highlight
         });
+        
 
         if (el.tagName === 'DIV') {
             el.querySelector(':scope > h5').insertAdjacentElement('beforeend', icon);
@@ -339,8 +392,33 @@ const bddDescriptions = {
       }
     });
     tooltipTriggerList = column_element.querySelectorAll('[data-bs-toggle="tooltip"]')
-    tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    //tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => {
+        const tooltip = new bootstrap.Tooltip(tooltipTriggerEl, {
+          html: true
+        });
+        
+        tooltipTriggerEl.addEventListener('show.bs.tooltip', () => {
+            const raw = tooltipTriggerEl.getAttribute('data-bs-title');
+            currentLang = localStorage.getItem('selectedLanguage')
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = raw;
+        
+            // Hide all spans not matching currentLang
+            const spans = tempContainer.querySelectorAll('span[lang]');
+            spans.forEach(span => {
+                if (span.getAttribute('lang') !== currentLang) {
+                    span.remove();
+                }
+            });
+            thistooltip = bootstrap.Tooltip.getInstance(tooltipTriggerEl)
+            thistooltip.setContent({'.tooltip-inner':  tempContainer.innerHTML })
+        });
+    })
   }
+
+
+
 
 
 // Function to underline matching tei_delSpan and tei_anchor elements

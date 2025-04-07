@@ -66,14 +66,14 @@ li + br.tei_lb {
     font-family: Andron-Scriptor-Web !important;
 }
 
-.tei_pb::after {
-    font-weight: bold;
-    content: "]"
-}
-
 .tei_pb::before {
     font-weight: bold;
     content: "["
+}
+
+.tei_pb::after {
+    font-weight: bold;
+    content: "]"
 }
 
 .tei_cb {
@@ -81,18 +81,33 @@ li + br.tei_lb {
     font-family: Andron-Scriptor-Web !important;
 }
 
-.tei_cb::after {
-    font-weight: bold;
-    content: "]"
-}
 
 .tei_cb::before {
     font-weight: bold;
     content: "["
 }
 
-.tei_fw {
-    display: none;
+.tei_cb::after {
+    font-weight: bold;
+    content: "]"
+}
+
+
+.tei_fw-page-header{
+    font-family: Andron-Scriptor-Web;
+    background-color: greenyellow;
+}
+.tei_fw-quire-numeral{
+    font-family: Andron-Scriptor-Web;
+    background-color: pink;
+}
+.tei_fw-quire-numeral::before{
+    content:"\a";
+    white-space: pre;
+}
+.tei_fw-quire-numeral::after{
+    content:"\a";
+    white-space: pre;
 }
 
 
@@ -109,6 +124,10 @@ li + br.tei_lb {
 
 .tei_hi-versal{
     font-weight: bold; /*check this*/
+}
+
+.tei_hi-color-stroked{
+    background-color: #ff4500;
 }
 
 .tei_seg_displaced{
@@ -129,6 +148,94 @@ li + br.tei_lb {
 .tei_sic::after{
     content: "[sic!]";
 }
+
+
+.tei_num {
+    position: relative;
+    cursor: pointer;
+  }
+  .tei_num:hover {
+    background-color:#e6a7c5;
+  }
+  
+  
+  .tei_num::after {
+    content: attr(value);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tei_num:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  .tei_measure {
+    position: relative;
+    cursor: pointer;
+  }
+  .tei_measure:hover {
+    background-color:#b3f0ff;
+  }
+  
+  .tei_measure[type="duration-of-penance"]::after {
+    content: "Duration of penance: " attr(quantity)" " attr(unit);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  .tei_measure[type="fine"]::after {
+    content: "Fine";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tei_measure:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+.tei_unclear{
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #c452f5;
+    /*border-bottom: 1px dotted #c452f5;
+    text-decoration: none;*/
+}
+  
   
 
 .icon-chapter-sync {
@@ -190,18 +297,100 @@ li + br.tei_lb {
     display: block;
 }
 
-tei_note-contemporary-marginalia{
+.tei_note-contemporary-marginalia{
     font-size: smaller;
 }
-tei_note-later-marginalia{
+
+.tei_note-later-marginalia{
     font-size: smaller;
+    position: relative;
+    cursor: pointer;
 }
-tei_note-contemporary-interlinear{
+.tei_note-later-marginalia:hover {
+    background-color:#dcdcdc;
+  }
+  
+.tei_note-later-marginalia::after {
+    content: "Later marginalia.";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+.tei_note-later-marginalia:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+.tei_note-contemporary-interlinear{
     font-size: smaller;
+    position: relative;
+    cursor: pointer;
 }
-tei_note-later-interlinear{
+.tei_note-contemporary-interlinear:hover {
+    background-color:#dcdcdc;
+}
+  
+.tei_note-contemporary-interlinear::after{
+content: "Contemporary interlinear.";
+position: absolute;
+left: 50%;
+bottom: 100%;
+transform: translateX(-50%);
+background-color: black;
+color: white;
+padding: 5px 8px;
+border-radius: 5px;
+white-space: nowrap;
+font-size: 12px;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.2s ease-in-out;
+} 
+.tei_note-contemporary-interlinear:hover::after {
+opacity: 1;
+visibility: visible;
+}
+
+.tei_note-later-interlinear{
     font-size: smaller;
+    position: relative;
+    cursor: pointer;
 }
+.tei_note-later-interlinear:hover {
+    background-color:#dcdcdc;
+  }
+  
+  .tei_note-later-interlinear::after {
+    content: "Later interlinear.";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  } 
+  .tei_note-later-interlinear:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 
 
 ol li{
@@ -327,9 +516,9 @@ ol li{
 
 
 
-.tei_supplied {
-    /*color: #e40ffc;*/
-}
+/*.tei_supplied {
+    color: #e40ffc;
+}*/
 
 
 .controlls {
@@ -409,18 +598,65 @@ ol li{
   border: thin solid  #b3b3b3;
   padding-left:1px;
   padding-right:1px;
-}
+
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .tei_del-correction::after {
+    content: "Correction";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tei_del-correction:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 
 .tei_del-expunctuation{
-    /*border-style: dotted;
-    text-decoration: underline;
-    text-decoration-style:dotted;*/
     display: inline;
     color:  #808080 !important;
     border: thin solid  #b3b3b3;
     padding-left:1px;
     padding-right:1px;
-}
+    
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .tei_del-expunctuation::after {
+    content: "Expunctuation";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tei_del-expunctuation:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
 
 .tei_del-underlined{
     text-decoration: underline;
