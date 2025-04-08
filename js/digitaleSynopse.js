@@ -338,7 +338,7 @@ const bddDescriptions = {
     "bdd-chap-num-miss": "<span lang=\"de\">Keine Kapitelnummer vergeben: Es wurde keine Kapitelnummer vergeben.</span><span lang=\"en\">Chapter Number Missing: No chapter number has been given.</span>",
     
 
-    "bdd-no-ins": "<span lang=\"de\">Kapitel ohne Inskription: Das Kapitel weist in den wichtigsten textzeugen keine Inskription auf.</span><span lang=\"en\">Chapter without inscription: The given chapter has no inscription in all main witnesses.</span>",
+    "bdd-no-ins": "<span lang=\"de\">Kapitel ohne Inskription: Das Kapitel weist in den wichtigsten Textzeuge keine Inskription auf.</span><span lang=\"en\">Chapter without inscription: The given chapter has no inscription in all main witnesses.</span>",
     
 
     "bdd-sub-int": "<span lang=\"de\">Spätere Eingriffe: Interventions by later users in the manuscripts, which may affect both the text and the layout of the codex, such as corrections or changes to the binding.</span><span lang=\"en\">Subsequent Interventions: Interventions by later users in the manuscripts.</span>",
