@@ -103,14 +103,7 @@ li + br.tei_lb {
     background-color: pink;*/
     display:none;
 }
-/*.tei_fw-quire-numeral::before{
-    content:"\a";
-    white-space: pre;
-}
-.tei_fw-quire-numeral::after{
-    content:"\a";
-    white-space: pre;
-}*/
+
 
 
 .tei_hi-color-red {
@@ -160,7 +153,7 @@ li + br.tei_lb {
     background-color:#e6a7c5;
   }
   
-  
+  /*
   .tei_num::after {
     content: attr(value);
     position: absolute;
@@ -181,7 +174,7 @@ li + br.tei_lb {
   .tei_num:hover::after {
     opacity: 1;
     visibility: visible;
-  }
+  }*/
 
 
   .tei_measure {
@@ -191,7 +184,7 @@ li + br.tei_lb {
   .tei_measure:hover {
     background-color:#b3f0ff;
   }
-  
+  /*
   .tei_measure[type="duration-of-penance"]::after {
     content: "Duration of penance: " attr(quantity)" " attr(unit);
     position: absolute;
@@ -228,7 +221,7 @@ li + br.tei_lb {
   .tei_measure:hover::after {
     opacity: 1;
     visibility: visible;
-  }
+  }*/
 
 .tei_unclear{
     text-decoration: underline;
@@ -301,17 +294,25 @@ li + br.tei_lb {
 
 .tei_note-contemporary-marginalia{
     font-size: smaller;
+    position: relative;
+    cursor: pointer;
 }
+
+.tei_note-contemporary-marginalia:hover {
+    background-color:#dcdcdc;
+  }
 
 .tei_note-later-marginalia{
     font-size: smaller;
     position: relative;
     cursor: pointer;
 }
+
 .tei_note-later-marginalia:hover {
     background-color:#dcdcdc;
   }
-  
+ 
+  /*
 .tei_note-later-marginalia::after {
     content: "Later marginalia.";
     position: absolute;
@@ -332,7 +333,7 @@ li + br.tei_lb {
 .tei_note-later-marginalia:hover::after {
     opacity: 1;
     visibility: visible;
-  }
+  }*/
 
 .tei_note-contemporary-interlinear{
     font-size: smaller;
@@ -342,7 +343,7 @@ li + br.tei_lb {
 .tei_note-contemporary-interlinear:hover {
     background-color:#dcdcdc;
 }
-  
+  /*
 .tei_note-contemporary-interlinear::after{
 content: "Contemporary interlinear.";
 position: absolute;
@@ -362,7 +363,7 @@ transition: opacity 0.2s ease-in-out;
 .tei_note-contemporary-interlinear:hover::after {
 opacity: 1;
 visibility: visible;
-}
+}*/
 
 .tei_note-later-interlinear{
     font-size: smaller;
@@ -372,7 +373,7 @@ visibility: visible;
 .tei_note-later-interlinear:hover {
     background-color:#dcdcdc;
   }
-  
+ /* 
   .tei_note-later-interlinear::after {
     content: "Later interlinear.";
     position: absolute;
@@ -394,7 +395,7 @@ visibility: visible;
     visibility: visible;
   }
 
-
+*/
 ol li{
     list-style: none;
     padding-left: 0 !important;
@@ -605,8 +606,8 @@ ol li{
     cursor: pointer;
   }
   
-  .tei_del-correction::after {
-    content: "Correction";
+ /* .tei_del-correction::after {
+    content: "<span lang='de'>Korrektur</span><span lang='en'>Correction</span>";
     position: absolute;
     left: 50%;
     bottom: 100%;
@@ -625,7 +626,7 @@ ol li{
   .tei_del-correction:hover::after {
     opacity: 1;
     visibility: visible;
-  }
+  }*/
 
 .tei_del-expunctuation{
     display: inline;
@@ -637,7 +638,7 @@ ol li{
     position: relative;
     cursor: pointer;
   }
-  
+  /*
   .tei_del-expunctuation::after {
     content: "Expunctuation";
     position: absolute;
@@ -658,7 +659,7 @@ ol li{
   .tei_del-expunctuation:hover::after {
     opacity: 1;
     visibility: visible;
-  }
+  }*/
 
 .tei_del-underlined{
     text-decoration: underline;
