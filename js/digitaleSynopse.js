@@ -294,61 +294,59 @@ function hideScribes() {
 
 /*TAXONOMY VISUALISATION*/
 const bddDescriptions = {
-    "bdd-unin-loss": "<span lang=\"de\"></span><span lang=\"en\">Unintentional Loss of Chapters: Chapters are lost due to a leaf or quire that has been lost unintentionally.</span>",
+    "bdd-unin-loss": "<span lang=\"de\">Blattverlust: Kapitelverlust durch den unbeabsichtigten Verlust eines oder mehrerer Blätter.</span><span lang=\"en\">Unintentional Loss of Chapters: Chapters lost due to the accidental loss of one or more leaves.</span>",
     
-    "bdd-delib-loss": "<span lang=\"de\">Blattentfernung: Verlust von Kapiteln aufgrund von Blattentfernung, zum Beispiel wenn ein Blatt weggeschnitten wurde.</span><span lang=\"en\">Deliberate Loss of Chapters: Chapters are lost due to a deliberate loss of leaf or quire, for instance, by cutting out.</span>",
+    "bdd-delib-loss": "<span lang=\"de\">Blattentfernung: Eintrag des Inhaltsverzeichnisses verweist auf mittlerweile verlorenes Kapitel.</span><span lang=\"en\">Deliberate Loss of Chapters: The entry in the table of contents refers to a chapter that is now lost.</span>",
     
+    "bdd-ref-lost": "<span lang=\"de\">Verlorenes Bezugskapitel: Eintrag des Inhaltsverzeichnisses verweist auf mittlerweile verlorenes Kapitel.</span><span lang=\"en\">Reference to Lost Chapter: The entry in the table of contents refers to a chapter that is now lost.</span>",
     
-    "bdd-marked-with-cross": "<span lang=\"de\"></span><span lang=\"en\">Marked with a cross: Chapters have been marked by a cross, possibly for deletion.</span>",
+    "bdd-marked-with-cross": "<span lang=\"de\">Kreuzmarkierung: Kapitel wurden mit einem Kreuz markiert, möglicherweise als Hinweise zur anstehenden Löschung.</span><span lang=\"en\">Marked with a cross: Chapters have been marked by a cross, possibly for deletion.</span>",
     
-    "bdd-strikethrough": "<span lang=\"de\"></span><span lang=\"en\">Strikethrough: Chapters have been struck through.</span>",
+    "bdd-strikethrough": "<span lang=\"de\">Gestrichen:	Kapitel wurden (durch)gestrichen.</span><span lang=\"en\">Strikethrough: Chapters have been struck through.</span>",
     
-    "bdd-permanent-deletion": "<span lang=\"de\"></span><span lang=\"en\">Permanent Deletion: Chapters have been deleted permanently.</span>",
+    "bdd-permanent-deletion": "<span lang=\"de\">Entfernt: Kapitel wurden endgültig entfernt.</span><span lang=\"en\">Permanent Deletion: Chapters have been deleted permanently.</span>",
     
-    "bdd-red-line-spacing": "<span lang=\"de\"></span><span lang=\"en\">Reduced line spacing: The typeface is crowded due to reduced line spacing.</span>",
+    "bdd-red-line-spacing": "<span lang=\"de\">Verringerter Zeilenabstand: Das Schriftbild ist aufgrund des geringen Zeilenabstands sehr gedrängt.</span><span lang=\"en\">Reduced line spacing: The script is densely packed as a result of narrowed line spacing.</span>",
     
-    "bdd-cut-out": "<span lang=\"de\"></span><span lang=\"en\">Cut out item: Item, such as leaf or canons, has been cut out.</span>", 
+    "bdd-cut-out": "<span lang=\"de\">Ausgeschnitten: Element, wie Blatt oder Kapitel, wurde rausgeschnitten.</span><span lang=\"en\">Cut out item: Item, such as leaf or canons, has been cut out.</span>", 
     
-    "bdd-erased": "<span lang=\"de\"></span><span lang=\"en\">Erased item: Item, such as leaf or chapters, has been erased.</span>",
+    "bdd-erased": "<span lang=\"de\">Rasur: Ein ganzes Blatt oder ein Kapitel wurde radiert.</span><span lang=\"en\">Erased item: Item, such as leaf or chapters, has been erased.</span>",
     
-    "bdd-traces-red-initial": "<span lang=\"de\"></span><span lang=\"en\">Traces of red erased Initial: Remains of red erased Initial.</span>",
+    "bdd-traces-red-initial": "<span lang=\"de\">Radierte Initiale: Spuren einer ausradierten roten Initiale.</span><span lang=\"en\">Traces of red erased Initial: Remains of red erased Initial.</span>",
     
-    "bdd-traces-black-versalie": "<span lang=\"de\"></span><span lang=\"en\">Traces of black erased Versalie: Remains of black erased Versal.</span>",
+    "bdd-traces-black-versalie": "<span lang=\"de\">Radierte Versalie: Überreste von schwarzer redierter Versalie.</span><span lang=\"en\">Traces of black erased Versalie: Remains of black erased Versal.</span>",
 
 
-    "bdd-same-scribe-add": "<span lang=\"de\"></span><span lang=\"en\">Same Scribe Addition: Chapters have been added by the same scribe.</span>",
+    "bdd-same-scribe-add": "<span lang=\"de\">Hinzugefügt durch denselben Schreiber: Text wurde vom selben Schreiber hinzugefügt.</span><span lang=\"en\">Same Scribe Addition: Chapters have been added by the same scribe.</span>",
     
-    "bdd-other-scribe-add": "<span lang=\"de\"></span><span lang=\"en\">Other Scribe Addition: Chapter have been added by another scribe.</span>",
+    "bdd-other-scribe-add": "<span lang=\"de\">Hinzugefügt durch anderen Schreiber: Text wurde von einem anderen Schreiber hinzugefügt.</span><span lang=\"en\">Other Scribe Addition: Chapter have been added by another scribe.</span>",
 
 
-    "bdd-relocation": "<span lang=\"de\"></span><span lang=\"en\">Relocation: Chapters have been relocated within the text.</span>",
+    "bdd-relocation": "<span lang=\"de\">Verschoben: Kapitel wurde innerhalb des Textes umgestellt.</span><span lang=\"en\">Relocation: Chapters have been relocated within the text.</span>",
     
-    "bdd-order-change": "<span lang=\"de\"></span><span lang=\"en\">Order Change: The order of chapters have been altered.</span>",
-    
-
-    "bdd-inc-chap-num": "<span lang=\"de\"></span><span lang=\"en\">Inconsistent Chapter Numbering: The given chapter number is inconsistent.</span>",
-    
-    "bdd-change-chap-num-cor": "<span lang=\"de\"></span><span lang=\"en\">Change in Chapter Numbering due to Correction: Change in Chapter Numbering is due to Correction.</span>",
-    
-    "bdd-change-chap-num-add": "<span lang=\"de\"></span><span lang=\"en\">Change in Chapter Numbering due to Addition of Chapters: Change in Chapter Numbering is due to Addition of Chapters.</span>",
-    
-    "bdd-change-chap-num-del": "<span lang=\"de\"></span><span lang=\"en\">Change in Chapter Numbering due to Deletion of Chapters: Change in Chapter Numbering is due to Deletion of Chapters.</span>",
-    
-    "bdd-chap-num-miss": "<span lang=\"de\"></span><span lang=\"en\">Chapter Number Missing: No chapter number has been given.</span>",
+    "bdd-order-change": "<span lang=\"de\">Kapitelreihenfolge geändert: Die Reihenfolge von Kapiteln wurde geändert.</span><span lang=\"en\">Order Change: The order of chapters have been altered.</span>",
     
 
-    "bdd-no-ins": "<span lang=\"de\"></span><span lang=\"en\">Chapter without inscription: The given chapter has no inscription in all main witnesses.</span>",
+    "bdd-inc-chap-num": "<span lang=\"de\">Unstimmige Kapitelnummerierung: Es wurde eine unstimmige Nummerierung vergeben.</span><span lang=\"en\">Inconsistent Chapter Numbering: The given chapter number is inconsistent.</span>",
+    
+    "bdd-change-chap-num-cor": "<span lang=\"de\">Änderung der Kapitelnummerierung wegen Korrektur: Die Änderung der Kapitelnummerierung ist auf eine Korrektur zurückzuführen.</span><span lang=\"en\">Change in Chapter Numbering due to Correction: The change in chapter numbering is due to a correction.</span>",
+    
+    "bdd-change-chap-num-add": "<span lang=\"de\">Änderung der Kapitelnummerierung wegen Hinzufügung von Kapiteln: Die Änderung der Kapitelnummerierung ist auf die Hinzufügung von Kapiteln zurückzuführen.</span><span lang=\"en\">Change in Chapter Numbering due to Addition of Chapters: The change in chapter numbering is due to the addition of chapters.</span>",
+    
+    "bdd-change-chap-num-del": "<span lang=\"de\">Änderung der Kapitelnummerierung wegen Streichung von Kapiteln: Die Änderung der Kapitelnummerierung ist auf die Streichung von Kapiteln zurückzuführen.</span><span lang=\"en\">Change in Chapter Numbering due to Deletion of Chapters: The change in chapter numbering is due to the deletion of chapters.</span>",
+    
+    "bdd-chap-num-miss": "<span lang=\"de\">Keine Kapitelnummer vergeben: Es wurde keine Kapitelnummer vergeben.</span><span lang=\"en\">Chapter Number Missing: No chapter number has been given.</span>",
     
 
-    "bdd-sub-int": "<span lang=\"de\"></span><span lang=\"en\">Subsequent Interventions: Interventions by later users in the manuscripts.</span>",
+    "bdd-no-ins": "<span lang=\"de\">Kapitel ohne Inskription: Das Kapitel weist in den wichtigsten textzeugen keine Inskription auf.</span><span lang=\"en\">Chapter without inscription: The given chapter has no inscription in all main witnesses.</span>",
     
 
-    "bdd-ed-rec": "<span lang=\"de\"></span><span lang=\"en\">Reconstruction: Chapter has been lost, but can be reconstructed and supplied.</span>",
+    "bdd-sub-int": "<span lang=\"de\">Spätere Eingriffe: Interventions by later users in the manuscripts, which may affect both the text and the layout of the codex, such as corrections or changes to the binding.</span><span lang=\"en\">Subsequent Interventions: Interventions by later users in the manuscripts.</span>",
     
-    "bdd-not-on-erasure": "<span lang=\"de\"></span><span lang=\"en\">Not written on erasure: Elements such as inscriptions, titles or lines of text have been added on an erased column, but they are not on erasure, but on leaf areas that have not been erased.</span>",
 
-
-    "bdd-ref-lost": "<span lang=\"de\"></span><span lang=\"en\">Reference lost: [missing description]</span>"
+    "bdd-ed-rec": "<span lang=\"de\">Kapitel rekonstruiert: Ein verlorenes Kapitel wurde editorisch rekonstruiert.</span><span lang=\"en\">Reconstruction: Chapter has been lost and was reconstructed by the editors.</span>",
+    
+    "bdd-not-on-erasure": "<span lang=\"de\">Nicht auf Rasur: Titel oder Textzeilen wurden auf einer zuvor radierten Spalte ergänzt, befinden sich jedoch nicht direkt auf der Rasur, sondern auf nicht radierten Bereichen des Blattes.</span><span lang=\"en\">Not written on erasure: Elements such as inscriptions, titles, or lines of text have been added on a previously erased column, but they are not written on the erasure itself, rather on parts of the leaf that were not erased.</span>",
   };
 
 

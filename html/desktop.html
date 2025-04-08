@@ -1112,7 +1112,7 @@
 
           // Delay execution to ensure Mirador can properly initialize
           setTimeout(() => {
-            let windowsID = mirID + Date.now()
+            let windowsID = mirID + crypto.randomUUID()
             let miradorInstance = Mirador.viewer({
                     id: mirID,
                     language: 'de',
@@ -1134,7 +1134,7 @@
                             
                     ] },
                     windows: [{
-                        id: windowsID, //check this 
+                        id: windowsID,
                         manifestId: manifestId,
                         canvasId : canvasId
                     }],
@@ -1147,8 +1147,11 @@
             //Eye icon: open the chapter in mirador 
             document.querySelectorAll(".icon-chapter-mirador").forEach(function(icon) {
               icon.addEventListener("click", function() {
-                let canvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
-                let action = Mirador.actions.setCanvas(windowsID, canvasId)
+                let thisCanvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
+                let thisResourcePanel = $(this).closest('.resource-panel-item');
+                let thisMiradorWindow = thisResourcePanel.find('.mirador-window');
+                let thisWindowId = thisMiradorWindow.attr('id');
+                let action = Mirador.actions.setCanvas(thisWindowId, thisCanvasId)
                 miradorInstance.store.dispatch(action);
               });
             });
