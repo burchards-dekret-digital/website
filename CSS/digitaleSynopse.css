@@ -152,30 +152,6 @@ li + br.tei_lb {
   .tei_num:hover {
     background-color:#e6a7c5;
   }
-  
-  /*
-  .tei_num::after {
-    content: attr(value);
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .tei_num:hover::after {
-    opacity: 1;
-    visibility: visible;
-  }*/
-
 
   .tei_measure {
     position: relative;
@@ -184,45 +160,7 @@ li + br.tei_lb {
   .tei_measure:hover {
     background-color:#b3f0ff;
   }
-  /*
-  .tei_measure[type="duration-of-penance"]::after {
-    content: "Duration of penance: " attr(quantity)" " attr(unit);
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  }
-  .tei_measure[type="fine"]::after {
-    content: "Fine";
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .tei_measure:hover::after {
-    opacity: 1;
-    visibility: visible;
-  }*/
-
+ 
 .tei_unclear{
     text-decoration: underline;
     text-decoration-style: double;
@@ -312,29 +250,6 @@ li + br.tei_lb {
     background-color:#dcdcdc;
   }
  
-  /*
-.tei_note-later-marginalia::after {
-    content: "Later marginalia.";
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-.tei_note-later-marginalia:hover::after {
-    opacity: 1;
-    visibility: visible;
-  }*/
-
 .tei_note-contemporary-interlinear{
     font-size: smaller;
     position: relative;
@@ -343,27 +258,6 @@ li + br.tei_lb {
 .tei_note-contemporary-interlinear:hover {
     background-color:#dcdcdc;
 }
-  /*
-.tei_note-contemporary-interlinear::after{
-content: "Contemporary interlinear.";
-position: absolute;
-left: 50%;
-bottom: 100%;
-transform: translateX(-50%);
-background-color: black;
-color: white;
-padding: 5px 8px;
-border-radius: 5px;
-white-space: nowrap;
-font-size: 12px;
-opacity: 0;
-visibility: hidden;
-transition: opacity 0.2s ease-in-out;
-} 
-.tei_note-contemporary-interlinear:hover::after {
-opacity: 1;
-visibility: visible;
-}*/
 
 .tei_note-later-interlinear{
     font-size: smaller;
@@ -373,29 +267,7 @@ visibility: visible;
 .tei_note-later-interlinear:hover {
     background-color:#dcdcdc;
   }
- /* 
-  .tei_note-later-interlinear::after {
-    content: "Later interlinear.";
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  } 
-  .tei_note-later-interlinear:hover::after {
-    opacity: 1;
-    visibility: visible;
-  }
 
-*/
 ol li{
     list-style: none;
     padding-left: 0 !important;
@@ -456,69 +328,6 @@ ol li{
 
 
 
-/*.tei_note-editorial-comment-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.tei_note-editorial-comment-info {
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.tei_note-editorial-comment {
-    visibility: hidden;
-    background-color: black!important;
-    color: #fff !important;
-    text-align: left;
-    border-radius: 3px;
-    padding: 0.5em;
-    position: absolute;
-    z-index: 1;
-    font-family: 'Jost-Regular';
-    font-size: smaller;
-}
-
-.tei_note-editorial-comment p{
-    font-size: small;
-}
-
-
-.tei_note-editorial-comment-wrapper:hover .tei_note-editorial-comment {
-    visibility: visible;
-}
-
-.tei_note-editorial-question-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.tei_note-editorial-question-qmark {
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.tei_note-editorial-question {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: left;
-    border-radius: 3px;
-    padding: 0.5em;
-    position: absolute;
-    z-index: 1;
-    font-family: 'Jost-Regular';
-    font-size: smaller;
-}
-
-.tei_note-editorial-question-wrapper:hover .tei_note-editorial-question {
-    visibility: visible;
-}*/
-
-
-
 /*.tei_supplied {
     color: #e40ffc;
 }*/
@@ -547,38 +356,31 @@ ol li{
     text-decoration-color: #5ac5fa;
 }
 
-.tei_delSpan {
+/*.tei_delSpan {
     text-decoration: underline;
     text-decoration-style: wavy;
 }
-
 .tei_delSpan-written-on-erased {
     text-decoration: underline;
     text-decoration-style: wavy;
-    /*color: #000;*/
 }
-
 .tei_delSpan-start-written-on-erased{
     text-decoration: underline;
     text-decoration-style: wavy;
-    /*color: #000;*/
 }
 .tei_delSpan-written-on-erased-end{
     text-decoration: underline;
     text-decoration-style: wavy;
-    /*color: #000;*/
 }
-
 .tei_delSpan-strikethrough {
     text-decoration: line-through;
 }
-
 .tei_delSpan-start-strikethrough{
     text-decoration: line-through;
 }
 .tei_delSpan-strikethrough-end{
     text-decoration: line-through;
-}
+}*/
 
 .tei_erasure-without-substitution {
     color: transparent;
@@ -589,6 +391,7 @@ ol li{
 
 .tei_del-strikethrough {
     text-decoration: line-through;
+    text-decoration-thickness: 1px;  
 }
 
 .tei_del-blackout{
@@ -605,28 +408,7 @@ ol li{
     position: relative;
     cursor: pointer;
   }
-  
- /* .tei_del-correction::after {
-    content: "<span lang='de'>Korrektur</span><span lang='en'>Correction</span>";
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .tei_del-correction:hover::after {
-    opacity: 1;
-    visibility: visible;
-  }*/
+
 
 .tei_del-expunctuation{
     display: inline;
@@ -638,28 +420,6 @@ ol li{
     position: relative;
     cursor: pointer;
   }
-  /*
-  .tei_del-expunctuation::after {
-    content: "Expunctuation";
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: black;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .tei_del-expunctuation:hover::after {
-    opacity: 1;
-    visibility: visible;
-  }*/
 
 .tei_del-underlined{
     text-decoration: underline;

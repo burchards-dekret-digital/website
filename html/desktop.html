@@ -70,6 +70,7 @@
               cursor: pointer; /* Change cursor to pointer on hover */
               filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.2));
           }
+
       </style>
   </head>
   <body>
@@ -102,9 +103,11 @@
             </div>
           </div>
         </div>
+
           <button class="btn btn-primary" id="addResourceBtn"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></button>
           <button class="btn btn-success" id="downloadJsonBtn"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></button>
           <button class="btn btn-warning" id="clearAll"><span lang="de">Alle löschen</span><span lang="en">Clear all</span></button>
+          <button type="button" class="btn btn-light" id="listResources"><span lang="de">Was auf meinem Schreibtisch liegt</span><span lang="en">What's on my desk</span></button>
           
           <div id ="transcription-view-button" class="dropdown float-end">
             <button lang="de" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -751,6 +754,30 @@
               </div>
           </div>
 
+
+          <!-- Modal with list of resources on my desk-->
+          <div class="modal fade" id="resourcesList" tabindex="-1" aria-labelledby="resourcesListLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="resourcesListLabel"><span lang="de">Was auf meinem Schreibtisch liegt</span><span lang="en">What's on my desk</span></h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal-body ">
+                        <ul id="resourcesUnorderedList">
+                          
+                        </ul>
+                    </div>
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                  </div>
+              </div>
+            </div>
+        </div>
+
       </div>
 
       <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
@@ -776,51 +803,49 @@
 
   <script>
 
-    // Function to extract the chapter number from the ID
-    function getChapterNumber(id) {
-            let regex = /chapter-(\d+)/;
-            let match = id.match(regex);
-            return match ? match[1] : null;
-        }
+    // Function to find all corresponding divs based on data-corresp
+    function findAllCorrespondingDivsFromDataCorresp(div) {
+        let correspondingDivs = [];
+        
+        // Read data-corresp attribute
+        let corresp = div.getAttribute('data-corresp');
+        
+        if (corresp) {
+            let ids = corresp.split(/\s+/); // Split by space
 
-        // Function to find all corresponding divs from all manuscripts for the same chapter
-        function findAllCorrespondingDivsChapter(chapterNumber) {
-            // Get all divs with a chapter in their ID
-            let allChapters = document.querySelectorAll('[id*="chapter-"]');
-            let correspondingDivs = [];
-
-            allChapters.forEach(function (chapterDiv) {
-                // Check if the chapter number matches
-                if (getChapterNumber(chapterDiv.id) === chapterNumber) {
-                    correspondingDivs.push(chapterDiv);
+            ids.forEach(id => {
+                let correspondingDiv = document.getElementById(id);
+                if (correspondingDiv) {
+                    correspondingDivs.push(correspondingDiv);
                 }
             });
-
-            return correspondingDivs;
         }
 
-        // Main function to sync chapters across all manuscripts
-        function syncChapters(button) {
-            let manuscriptDiv = button.closest('div');
-            let manuscriptId = manuscriptDiv.id;
-            let chapterNumber = getChapterNumber(manuscriptId);
+        return correspondingDivs;
+    }
 
-            if (chapterNumber) {
-                let correspondingDivs = findAllCorrespondingDivsChapter(chapterNumber);
-                correspondingDivs.forEach(div => {
-                  const scrollContainer = div.closest('.transcription-col');
-                  
-                  if (scrollContainer) {
-                    scrollContainer.scrollTo({
-                      top: div.offsetTop - 55,
-                      behavior: "smooth"
-                    });
-                  }
+    // Main function to sync chapters across all manuscripts
+    function syncChapters(button) {
+        let chapterDiv = button.closest('.tei_chapter');
+
+        if (!chapterDiv) {
+            console.log('Chapter div not found');
+            return;
+        }
+
+        let correspondingDivs = findAllCorrespondingDivsFromDataCorresp(chapterDiv);
+
+        correspondingDivs.forEach(div => {
+            const scrollContainer = div.closest('.transcription-col');
+            if (scrollContainer) {
+                scrollContainer.scrollTo({
+                    top: div.offsetTop - 55,
+                    behavior: "smooth"
                 });
-            } else {
-                console.log('Chapter number not found');
             }
-        }
+        });
+    }
+
 
         function navigateChapter(button, direction) {
             const chapterDiv = button.closest('.tei_chapter'); // Find the closest chapter div
@@ -953,7 +978,17 @@
       adjustPanelWidth()
     });
 
-    
+    // What's on my desk - list of resources
+    document.getElementById('listResources').addEventListener('click', function() {
+      $('#resourcesList').modal('show');
+    });
+
+    function removeListItem(id) { // added
+      $("#resourcesUnorderedList li[for='" + id + "']").remove();
+      $("[data-ms='" + id + "']").remove();
+      adjustPanelWidth();
+      saveResourceState();
+    }
 
     // After function displaySelectedResources() --> save resource panel status in local storage
     function saveResourceState() {
@@ -1177,6 +1212,8 @@
 
       
     function createResourcePanel(idVal, title, views, selectedViews) {
+      //create the list of resources open on the desktop
+      $("#resourcesUnorderedList").append("<li for='"+idVal+"'>"+title+" <button class='btn btn-sm btn-danger' onclick='removeListItem(\"" + idVal + "\")'>X</button>" + "</li>")
       
       const panel = document.createElement('div');
       panel.classList.add('resource-panel-item');
@@ -1212,6 +1249,8 @@
       panel.querySelector('.editor-col').innerHTML = views[3]
 
       panel.querySelector('.btn-close').addEventListener('click', function() {
+        let thisDataMS = panel.getAttribute("data-ms")
+        $("#resourcesUnorderedList li[for='" + thisDataMS + "']").remove(); //added
         panel.remove();
         adjustPanelWidth();
         saveResourceState(); //Save source panel status after removing one panel

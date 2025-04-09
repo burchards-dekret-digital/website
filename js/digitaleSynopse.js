@@ -1,12 +1,25 @@
 
 // 2.4 Scrolling von TOC Eintrag
-function linkTocToChapter(currentElement) {
+/*function linkTocToChapter(currentElement) {
     let chapterNumber = currentElement.getAttribute('id').replace('toc', 'chapter');
     chapterNumber = '#' + chapterNumber;
     const controlWitness = document.querySelector(chapterNumber);
     controlWitness.scrollIntoView({
         block: 'start', behavior: 'smooth'
     });
+}*/
+
+// Scroll from TOC item to corresponding chapter using data-sameas
+function linkTocToChapter(currentElement) {
+    const targetId = currentElement.getAttribute('data-sameas');
+    if (!targetId) return; 
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        targetElement.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+        });
+    }
 }
 
 function changeCursorToHand(element) {
@@ -419,90 +432,117 @@ const bddDescriptions = {
 
 
 
-// Function to underline matching tei_delSpan and tei_anchor elements
-function underlineDelSpanAndAnchor(panel) {
+  function underlineDelSpanAndAnchor(panel) {
     const delSpanElements = panel.querySelectorAll('[delSpan_target]');
   
     for (let dse of delSpanElements) {
       const dse_target_id = dse.getAttribute('delSpan_target');
       const dse_target = panel.querySelector("#" + dse_target_id);
-      
+  
       if (dse_target) {
-        let applyStyle = false; // Flag to indicate when to start underlining text
+        let applyStyle = false;
+        const classes = dse.classList;
+  
+        // Determine style rules
+        let style = {};
+        if (classes.contains('strikethrough')) {
+          style = {
+            textDecoration: 'line-through',
+            textDecorationThickness: '1px',  
+          };
+        } else if (classes.contains('loss') || classes.contains('cut-out')) {
+          style = {
+            textDecoration: 'none',
+          };
+        } else if (classes.contains('erased')) {
+          // Check if there's a matching tei_addSpan
+          const matchingAddSpan = panel.querySelector(`[addSpan_target="${dse_target_id}"]`);
+          if (matchingAddSpan) {
+            style = {
+              textDecoration: 'underline',
+              textDecorationStyle: 'wavy',
+              textDecorationColor: '#5ac5fa',
+            };
+          } else {
+            style = {
+              textDecoration: 'underline',
+              textDecorationStyle: 'wavy',
+              textDecorationColor: '#b3b3b3',
+            };
+          }
+        } else {
+          // Default tei_delSpan
+          style = {
+            textDecoration: 'underline',
+            textDecorationStyle: 'wavy',
+            textDecorationColor: '#b3b3b3',
+          };
+        }
   
         function traverseAndWrap(node) {
           if (node.id === dse_target_id) {
-            // Stop when reaching the target element
             applyStyle = false;
           }
   
-          if (applyStyle) {
-            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
-              // If it's a text node and we are past the starting point
-              let span = document.createElement("span");
-              span.style.textDecoration = "underline";
-              span.style.textDecorationStyle = "wavy";
-              span.style.textDecorationColor = "#5ac5fa";
-              span.textContent = node.nodeValue;
-              node.parentNode.replaceChild(span, node); // Replace text node with span
-            }
+          if (applyStyle && node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
+            let span = document.createElement("span");
+            Object.assign(span.style, style);
+            span.textContent = node.nodeValue;
+            node.parentNode.replaceChild(span, node);
           }
   
-          // This is where we need to check for the first valid range start
           if (!applyStyle && node === dse) {
             applyStyle = true;
           }
   
-  
-          // Process child nodes recursively
           Array.from(node.childNodes).forEach(traverseAndWrap);
         }
   
-        traverseAndWrap(panel); // Start processing from the panel
-      } 
+        traverseAndWrap(panel);
+      }
     }
   }
 
-// Function to underline matching tei_delSpan and tei_anchor elements
-function addSpanAndAnchor(panel) {
+  
+  function addSpanAndAnchor(panel) {
     const addSpanElements = panel.querySelectorAll('[addSpan_target]');
   
     for (let ase of addSpanElements) {
       const ase_target_id = ase.getAttribute('addSpan_target');
       const ase_target = panel.querySelector("#" + ase_target_id);
-      
+  
       if (ase_target) {
-        let applyStyle = false; // Flag to indicate when to start underlining text
+        let applyStyle = false;
+  
+        const style = {
+          textDecoration: 'underline',
+          textDecorationStyle: 'wavy',
+          textDecorationColor: '#5ac5fa',
+        };
   
         function traverseAndWrap(node) {
           if (node.id === ase_target_id) {
-            // Stop when reaching the target element
             applyStyle = false;
           }
   
-          if (applyStyle) {
-            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
-              // If it's a text node and we are past the starting point
-              let span = document.createElement("span");
-              /*span.style.color = "#5f9ea0";*/
-              
-              span.textContent = node.nodeValue;
-              node.parentNode.replaceChild(span, node); // Replace text node with span
-            }
+          if (applyStyle && node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
+            let span = document.createElement("span");
+            Object.assign(span.style, style);
+            span.textContent = node.nodeValue;
+            node.parentNode.replaceChild(span, node);
           }
   
-          // This is where we need to check for the first valid range start
           if (!applyStyle && node === ase) {
             applyStyle = true;
           }
   
-  
-          // Process child nodes recursively
           Array.from(node.childNodes).forEach(traverseAndWrap);
         }
   
-        traverseAndWrap(panel); // Start processing from the panel
-      } 
+        traverseAndWrap(panel);
+      }
     }
   }
+  
+
   
