@@ -125,9 +125,9 @@
               <hr/>
               <li><a class="dropdown-item" onclick="showScribes()"><span lang="de">Schreiber anzeigen</span><span lang="en">Show scribes</span></a></li>
               <li><a class="dropdown-item" onclick="hideScribes()"><span lang="de">Schreiber ausblenden</span><span lang="en">Hide scribes</span></a></li>
-              <hr/>
+              <!--<hr/>
               <li><a class="dropdown-item" onclick="showTaxonomies()"><span lang="de">Toxonomien anzeigen</span><span lang="en">Show taxonomies</span></a></li>
-              <li><a class="dropdown-item" onclick="hideTaxonomies()"><span lang="de">Toxonomien ausblenden</span><span lang="en">Hide taxonomies</span></a></li>
+              <li><a class="dropdown-item" onclick="hideTaxonomies()"><span lang="de">Toxonomien ausblenden</span><span lang="en">Hide taxonomies</span></a></li>-->
             </ul>
           </div>
 
@@ -1193,7 +1193,7 @@
             saveResourceState(); // Save resource panel status after selection
             adjustPanelWidth()
             resolve();
-          }, 1000);
+          }, 200);
 
           
         }

@@ -294,6 +294,7 @@ ol li{
 .tei_handShift-wrapper {
     position: relative;
     /*display: inline-block;*/
+    cursor: pointer;
 }
 
 .tei_handShift-wrapper:hover .tei_handShift-info {
@@ -923,15 +924,18 @@ em{
     margin-right: 5px;
     margin-left: 1px;
     color:#46b65f;
+    cursor: pointer;
 }
 .tei_note-editorial-comment-mirador-icon{
     margin-right: 5px;
     margin-left: 1px;
     color: #46b65f;
+    cursor: pointer;
 }
 .tei_note-editorial-question-icon{
     margin-right: 5px;
     margin-left: 1px;
+    cursor: pointer;
 }
 
 /*Table column size in Structure*/
