@@ -351,8 +351,29 @@ function hasNonTextDescendants(node) {
       // Add the unidentified background class
       child.classList.add('scribe-unidentified-bg');
     });
-
   });
+
+  function removeScribeBgClasses(selectors) {
+    selectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el) => {
+        [...el.classList].forEach((cls) => {
+          if (/^scribe\d+-bg$/.test(cls)) {
+            el.classList.remove(cls);
+          }
+        });
+      });
+    });
+  }
+  
+  removeScribeBgClasses([
+    '.taxonomy-icon',
+    '.tei_note-editorial-comment-mirador-icon',
+    '.tei_note-editorial-comment-icon',
+    '.tei_pb',
+    '.tei_cb'
+  ]);
+
+  
 
   
 }
