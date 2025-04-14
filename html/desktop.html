@@ -1213,7 +1213,7 @@
       
     function createResourcePanel(idVal, title, views, selectedViews) {
       //create the list of resources open on the desktop
-      $("#resourcesUnorderedList").append("<li for='"+idVal+"'>"+title+" <button class='btn btn-sm btn-danger' onclick='removeListItem(\"" + idVal + "\")'>X</button>" + "</li>")
+      $("#resourcesUnorderedList").append("<li for='"+idVal+"'>"+title+" <button class='btn btn-sm btn-light' onclick='removeListItem(\"" + idVal + "\")'><i class='fa-solid fa-xmark' style='color: #636363;'></i></button>" + "</li>")
       
       const panel = document.createElement('div');
       panel.classList.add('resource-panel-item');
