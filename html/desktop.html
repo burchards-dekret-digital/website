@@ -872,7 +872,7 @@
 
 // Function to extract the interrogation number from the ID
         function getInterrogationNumber(id) {
-                    let regex = /interrogation-(\d+)/;
+                    let regex = /int-(\d+)/;
                     let match = id.match(regex);
                     return match ? match[1] : null;
                 }
@@ -880,7 +880,7 @@
                 // Function to find all corresponding divs from all manuscripts for the same interrogation
                 function findAllCorrespondingDivs(interrogationNumber) {
                     // Get all divs with a interrogation in their ID
-                    let allInterrogations = document.querySelectorAll('[id*="interrogation-"]');
+                    let allInterrogations = document.querySelectorAll('[id*="int-"]');
                     let correspondingDivs = [];
 
                     allInterrogations.forEach(function (interrogationDiv) {

@@ -383,11 +383,18 @@ ol li{
     text-decoration: line-through;
 }*/
 
+.erased-lb {
+    color: transparent;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #b3b3b3;
+}
+
 .tei_erasure-without-substitution {
     color: transparent;
     text-decoration: underline;
     text-decoration-style: wavy;
-    text-decoration-color: #b3b3b3;;
+    text-decoration-color: #b3b3b3;
 }
 
 .tei_del-strikethrough {
