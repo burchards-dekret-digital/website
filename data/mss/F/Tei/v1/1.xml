@@ -1,4 +1,4 @@
-<?xml-model href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/-/raw/main/schema/bdd-transcription.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-frankfurt-ub-b-50">
+<?xml-model href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/-/raw/main/schema/bdd-transcription.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-frankfurt-ub-b-50-01">
     <teiHeader>
         <fileDesc>
             <titleStmt>

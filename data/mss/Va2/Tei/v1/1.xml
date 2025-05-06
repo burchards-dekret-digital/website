@@ -1,16 +1,16 @@
-<?xml-model href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/-/raw/main/schema/bdd-transcription.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-vatican-bav-pal-lat-585">
+<?xml-model href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/-/raw/main/schema/bdd-transcription.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-vatican-bav-pal-lat-585-01">
     <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title type="main" xml:lang="ger">Decretum Burchardi</title>
                 <title type="unit" xml:lang="ger">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal.
-                    Lat. 586</title>
-                <title type="module" xml:lang="ger">Buch 13</title>
+                    Lat. 585</title>
+                <title type="module" xml:lang="ger">Buch 01</title>
                 <title type="sub" xml:lang="ger">Transkription (Version 1)</title>
                 <title type="main" xml:lang="en">Decretum Burchardi</title>
                 <title type="unit" xml:lang="en">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal.
-                    Lat. 586</title>
-                <title type="module" xml:lang="en">Book 13</title>
+                    Lat. 585</title>
+                <title type="module" xml:lang="en">Book 01</title>
                 <title type="sub" xml:lang="en">Transcription (Version 1)</title>
                 <funder> <orgName ref="https://www.adwmainz.de" instant="false" full="yes">Akademie
                     der Wissenschaften und der Literatur Mainz</orgName> </funder>
