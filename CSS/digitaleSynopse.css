@@ -390,12 +390,22 @@ ol li{
     text-decoration-color: #b3b3b3;
 }
 
+
 .tei_erasure-without-substitution {
     color: transparent;
     text-decoration: underline;
     text-decoration-style: wavy;
     text-decoration-color: #b3b3b3;
 }
+.tei_erasure-visible{
+    display: inline;
+    color:  #808080 !important;
+    border: thin solid  #b3b3b3;
+    padding-left:1px;
+    padding-right:1px;
+    position: relative;
+    cursor: pointer;
+  }
 
 .tei_del-strikethrough {
     text-decoration: line-through;

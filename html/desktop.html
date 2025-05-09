@@ -1405,6 +1405,33 @@
     });
   }
 
+  //Activate tooltip inside Legend Modal
+  document.getElementById('legendModal').addEventListener('shown.bs.modal', function () {
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('#legendModal [data-bs-toggle="tooltip"]'));
+
+      tooltipTriggerList.forEach((tooltipTriggerEl) => {
+          const tooltip = new bootstrap.Tooltip(tooltipTriggerEl, {
+              html: true
+          });
+
+          tooltipTriggerEl.addEventListener('show.bs.tooltip', () => {
+              const raw = tooltipTriggerEl.getAttribute('data-bs-title');
+              const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+              const tempContainer = document.createElement('div');
+              tempContainer.innerHTML = raw;
+
+              const spans = tempContainer.querySelectorAll('span[lang]');
+              spans.forEach(span => {
+                  if (span.getAttribute('lang') !== currentLang) {
+                      span.remove();
+                  }
+              });
+
+              const thistooltip = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+              thistooltip.setContent({ '.tooltip-inner': tempContainer.innerHTML });
+          });
+      });
+  });
 
     //Upload json
     document.getElementById('downloadJsonBtn').addEventListener('click', function() {

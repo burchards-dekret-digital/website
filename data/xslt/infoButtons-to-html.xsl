@@ -130,15 +130,81 @@
         </span>
     </xsl:template>
     
+        
+        <xsl:template match="tei:span[@type='tei_note-later-marginalia']">
+            <span class="{@type}">
+                Ex <span class="tei_abbr" style="display:none">c<span class="tei_g">̅</span>cilio</span><span class="tei_expan">concilio</span> habito <br class="tei_lb "/>Gvardastalli <br class="tei_lb "/>a <span class="tei_abbr" style="display:none">sc<span class="tei_g">đ</span>o</span><span class="tei_expan">secundo</span> paschali<span class="tei_g"></span>
+            </span>
+     </xsl:template>
+    
+    
+    <xsl:template match="tei:span[@type='tei_note-contemporary-interlinear']">
+        <span class="{@type}">
+            <span class="tei_abbr" style="display:none"><span class="tei_g"></span>s<span class="tei_g"></span></span><span class="tei_expan">scilicet</span> tibi
+        </span>
+     </xsl:template>
+    
     <xsl:template match="tei:graphic">
-        <img src="{@url}" style="width: 4%"/>
+        <img src="{@url}" style="width: 7%"/>
     </xsl:template>
     
     <xsl:template match="tei:figure[@type='eye']">
         <i class="fa-solid fa-eye"/>
     </xsl:template>
-
-
+    
+    <xsl:template match="tei:figure[@type='prev']">
+        <i class="fa-solid fa-arrow-up-long"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:figure[@type='next']">
+        <i class="fa-solid fa-arrow-down-long"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:figure[@type='sync']">
+        <i class="fa-solid fa-arrows-left-right"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:figure[@type='circle-info']">
+        <i class="fa-solid fa-circle-info"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:span[@type='tei_handShift-wrapper']">
+        <span class="tei_handShift-wrapper" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Informationen zum Schreiber.&lt;/span&gt;&lt;span lang='en'&gt;Information on the scribe.&lt;/span&gt;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="tei:figure[@type='taxonomy']">
+         <span class="taxonomy-icon" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Informationen zur Taxonomie.&lt;/span&gt;&lt;span lang='en'&gt;Information on taxonomy.&lt;/span&gt;">
+            <i class="fa-solid fa-tag fa-lg"/>
+         </span>
+    </xsl:template>
+    
+    
+    <xsl:template match="tei:span[@type='editorial-comment']">
+        <span class="tei_note-editorial-comment-icon" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Redaktioneller Kommentar.&lt;/span&gt;&lt;span lang='en'&gt;Editorial comment.&lt;/span&gt;">
+            <i class="fa-solid fa-circle-info"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="tei:span[@type='tei_erasure-visible']">
+        <span class="tei_erasure-visible" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Rasur&lt;/span&gt;&lt;span lang='en'&gt;Erasure&lt;/span&gt;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="tei:span[@type='tei_del-correction']">
+        <span class="tei_del-correction" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Korrektur&lt;/span&gt;&lt;span lang='en'&gt;Correction&lt;/span&gt;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="tei:span[@type='tei_del-expunctuation']">
+        <span class="tei_del-expunctuation" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Expunktion&lt;/span&gt;&lt;span lang='en'&gt;Expunctuation&lt;/span&gt;">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
     <!--hi rend="bold" and italic -->
     <xsl:template match="//tei:hi[@rend='bold']">
         <b>
@@ -151,4 +217,5 @@
             <xsl:apply-templates/>
         </i>
     </xsl:template>
+
 </xsl:stylesheet>

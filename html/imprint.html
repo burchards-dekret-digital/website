@@ -65,5 +65,30 @@
         // Load HTML file
         loadHTMLDoc("../data/texts/imprintTexts.html"); // Adjust the path here
     });
+
+    function copyCitationCode(codeId, buttonId) {
+        var codeElement = document.getElementById(codeId);
+        var buttonElement = document.getElementById(buttonId);
+        var text = codeElement.innerText;
+
+        navigator.clipboard.writeText(text).then(function() {
+            // Check the current language of the button
+            var originalText = buttonElement.innerText.trim();
+
+            if (originalText === "Kopieren") {
+                buttonElement.innerText = "Kopiert";
+            } else {
+                buttonElement.innerText = "Copied";
+            }
+
+            // After 2 seconds, revert back to original
+            setTimeout(function() {
+                buttonElement.innerText = originalText;
+            }, 2000);
+        }, function(err) {
+            console.error('Error copying text: ', err);
+        });
+    }
+
     </script>   
 </html>
