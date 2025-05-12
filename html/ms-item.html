@@ -416,11 +416,7 @@
                     document.getElementById("webResourceDigitalisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="digi"] ref')[0].innerHTML
                     document.getElementById("webResourceKatalogisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="cat"] ref')[0].innerHTML
 
-                    for (var i = 0; i <= 20; i++) { 
-                        document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
-                    }
-
-                    //Book selection: display the correct number of book in V1 and V2, and K
+                    //Book selection: display the correct number of books in V1 and V2, and K
                     var startBook = 0;
                     var endBook = 20;
 
@@ -431,17 +427,25 @@
                         case "Va3":
                             startBook = 9;
                             break;
-                        /*case "K":
+                        case "K":
                             startBook = 2;
-                            break;*/
+                            break;
                         default:
                             break;
                     }
 
+                    //Hide books in "XML file" dropdown list (Web resources) that are not pesent (K 00 and 01, Va2 from 09 to 20, and Va3 from 00 to 08)
+                    for (var i = 0; i <= 20; i++) { 
+                        document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
+                        if(i < startBook || i > endBook){
+                            document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").hidden = true
+                        }
+                    }
+
+
+                    //List of active (available) books in "Select a book" dropdown
                     const activeOptions = [13, 1]
-                    
                     for (var i = startBook; i <= endBook; i++) { 
-                        document.querySelector("#collapseWebressourcen li:nth-child("+(i-startBook+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml";
                         var optionBook = document.createElement('option');
                         optionBook.value = (i < 10) ? "0" + i : i;
                         optionBook.innerHTML = " " + ((i < 10) ? "0" + i : i);
