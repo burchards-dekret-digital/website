@@ -36,6 +36,34 @@ body {
     min-height: 100vh;
 }
 
+#load {
+    width: 100%;
+    height: calc(100% - 100px);  /* Adjust this according to the height of your navbar */
+    position: fixed;
+    top: 100px;  /* Ensure it starts after the navbar */
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#load i {
+    font-size: 3rem;
+    color: #46b65f;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Content in Desktop page*/
+#contents {
+    visibility: hidden;
+}
+
 h2 {
     font-family: Jost-ExtraBold;
     font-size:23px;

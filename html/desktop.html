@@ -80,7 +80,11 @@
         <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
       </div>
 
-      <div id="content" class="container" style="flex:1">
+      <div id="load">
+        <i class="fa-solid fa-spinner"></i>
+      </div>
+
+      <div id="contents" class="container" style="flex:1">
           <h1 class="section-main-title">
             <span lang="de">SCHREIBTISCH</span><span lang="en">DESKTOP</span> 
             <span style="vertical-align: super;"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#desktopModal">
@@ -778,31 +782,55 @@
             </div>
         </div>
 
-      </div>
+      
 
-      <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
-      <div class="modal fade" id="legendModal" tabindex="-1" aria-labelledby="legendModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title fs-5 fw-bold" id="legendModalLabel"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h3>
-            </div>
-            <div class="modal-body" id="infoStyleTranscriptions">
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+        <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
+        <div class="modal fade" id="legendModal" tabindex="-1" aria-labelledby="legendModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title fs-5 fw-bold" id="legendModalLabel"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h3>
+              </div>
+              <div class="modal-body" id="infoStyleTranscriptions">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
       <div id="footer-placeholder"></div>
-      
   </body>
 
   <script>
+    // Initial page load handling
+    document.onreadystatechange = function () {
+      if (document.readyState === 'interactive') {
+        document.getElementById('contents').style.visibility = "hidden";
+      } else if (document.readyState === 'complete') {
+        setTimeout(function () {
+          document.getElementById('load').style.display = "none";
+          document.getElementById('contents').style.visibility = "visible";
+        }, 1000); // Optional delay
+      }
+    };
 
+    document.getElementById('confirmSelectionBtn').addEventListener('click', function () {
+      // Show loader
+      document.getElementById('load').style.display = "flex";
+      document.getElementById('contents').style.visibility = "hidden";
+
+      setTimeout(function () {
+        // Hide loader again
+        document.getElementById('load').style.display = "none";
+        document.getElementById('contents').style.visibility = "visible";
+      }, 2000); // Simulated delay
+    });
+  </script>
+
+  <script>
     // Function to find all corresponding divs based on data-corresp
     function findAllCorrespondingDivsFromDataCorresp(div) {
         let correspondingDivs = [];
