@@ -119,7 +119,7 @@
                 <date when="2025-04-22" xml:lang="ger">Publiziert am 22.04.2025</date>
                </publicationStmt>
             <sourceDesc>
-                <msDesc>
+                <msDesc xml:id="frankfurt-ub-b-50-msdesc">
                     <msIdentifier xml:id="frankfurt-ub-b-50">
                         <repository ref="https://www.ub.uni-frankfurt.de/">Universitätsbibliothek
                             Johann Christian Senckenberg <location instant="false">
@@ -731,7 +731,7 @@
         </revisionDesc>
     </teiHeader>
     <!-- Beginn der Transkription -->
-    <text>
+     <text>
         <!-- Achtung, ggf. pagebreak vor Buch setzen -->
         <body xml:lang="lat">
             <div type="book" n="01" part="N" org="uniform" sample="complete">
@@ -1605,17 +1605,17 @@
                         <lb n="25" facs="1490,3833,1378,200" xml:id="F_0015_column_2_l_25"/>
                         <item n="219" xml:id="frankfurt-ub-b-50-01-toc-219" sameAs="#frankfurt-ub-b-50-01-con-214" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-toc-219 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-toc-219" hand="#frankfurt-ub-b-50-h01"><label place="margin right" type="chapter-number" facs="3023,3693,765,233" n="219" xml:id="F_0015_chapter_count_031"><hi rend="color:red"><num value="219">ccxviiii</num></hi> </label><hi rend="color:red">D</hi>e eadem re<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <seg corresp="#frankfurt-ub-b-50-01-supp-047" type="pos-of-displaced" part="N"><hi rend="color-stroked"><g ref="#char-f1e1"></g></hi>rit <choice><abbr>ep<g ref="#char-a749">ꝉ</g>am</abbr><expan>epistolam</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></seg></item>
                         <lb n="26" facs="1486,3958,1505,200" xml:id="F_0015_column_2_l_26"/>
-                        <note type="editorial-comment"><seg xml:lang="de">Die c. 220 bis 234 wurden
+                        <note type="editorial-comment"><seg xml:lang="de">C. 220 bis c. 234 wurden
                             in einer späteren Redaktion hinzugefügt und waren zunächst nicht Teil
                             des Dekrets. Darauf verweisen Handwechsel an den entsprechenden Stellen
                             von Capitulatio und Korpus von F. Im Korpus wurden für das zusätzliche
                             Material fol. 44 und 45 (die außerhalb der Quaternionenordnung stehen)
                             eingefügt. Die Hinweise auf eine spätere Hinzufügung finden sich auch in
-                            Va2, jedoch nicht in der später entstandenen Handschrift B.</seg><seg xml:lang="en">Chapters 220 to 234 were added in a later redaction and
+                            Va2, jedoch nicht in der später entstandenen Handschrift B.</seg><seg xml:lang="en">C. 220 to c. 234 were added in a later redaction and
                             were not originally part of the decree. This is indicated by changes of
-                            hand at the relevant points in the *Capitulatio* and the corpus of
+                            hand at the relevant points in the Capitulatio and corpus of
                             manuscript F. In the corpus, fols. 44 and 45 (which lie outside the
-                            quire structure) were inserted to accommodate the additional material.
+                            quire structure) have been inserted to accommodate the additional material.
                             Indications of a later addition are also found in Va2, but not in the
                             later manuscript B.</seg></note>
                         <item n="220" ana="../../lists/taxonomy.xml#bdd-add-chap" xml:id="frankfurt-ub-b-50-01-toc-220" sameAs="#frankfurt-ub-b-50-01-con-215" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-toc-220 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-toc-220" hand="#frankfurt-ub-b-50-h04"><handShift new="#frankfurt-ub-b-50-h04" cert="high" xml:id="bdd-frankfurt-ub-b-50-hs-006"/><label place="margin right" type="chapter-number" facs="3023,3896,765,195" n="220" xml:id="F_0015_chapter_count_032"><hi rend="color:red"><num value="220">ccxx</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></label> <hi rend="color:red">D</hi>e eo siquis ab
@@ -6469,42 +6469,42 @@
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s001" sameAs="#frankfurt-ub-b-50-01-toc-153" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-153 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-153" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="147" xml:id="F_0070_chapter_count_006"><num value="153"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s002" sameAs="#frankfurt-ub-b-50-01-toc-154" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-154 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-154" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="148" xml:id="F_0070_chapter_count_007"><num value="154"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s003" sameAs="#frankfurt-ub-b-50-01-toc-155" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-155 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-155" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="149" xml:id="F_0070_chapter_count_008"><num value="155"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s004" sameAs="#frankfurt-ub-b-50-01-toc-156" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-156 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-156" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="150" xml:id="F_0070_chapter_count_009"><num value="156"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s005" sameAs="#frankfurt-ub-b-50-01-toc-157" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-157 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-157" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="151" xml:id="F_0070_chapter_count_010"><num value="157"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s006" sameAs="#frankfurt-ub-b-50-01-toc-158" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-158 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-158" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="152" xml:id="F_0070_chapter_count_011"><num value="158"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s007" sameAs="#frankfurt-ub-b-50-01-toc-159" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-159 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-159" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="153" xml:id="F_0070_chapter_count_012"><num value="159"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s008" sameAs="#frankfurt-ub-b-50-01-toc-160" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-160 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-160" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="154" xml:id="F_0070_chapter_count_013"><num value="160"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
                             lost.</seg></note></num></label></head>
-                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter no longer extant.</seg></note></p>
+                        <p part="N"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitel verloren.</seg><seg xml:lang="en" part="N">Chapter lost.</seg></note></p>
                     </div>
                     <div type="chapter" xml:id="frankfurt-ub-b-50-01-con-s009" sameAs="#frankfurt-ub-b-50-01-toc-161" ana="../../lists/taxonomy.xml#bdd-unin-loss ../../lists/taxonomy.xml#bdd-ed-rec" n="153" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-161 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-161" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><label place="margin" type="chapter-number" n="155" xml:id="F_0070_chapter_count_014"><num value="161"><note type="editorial-comment" anchored="true"><seg xml:lang="de" part="N">Kapitelnummer verloren.</seg><seg xml:lang="en" part="N">Chapter number
@@ -6682,15 +6682,15 @@
                         <lb n="12" facs="2419,2261,1385,200" xml:id="F_0072_column_2_l_12"/>
                     </div>
                     <delSpan spanTo="#frankfurt-ub-b-50-01-delSpan-001" rend="strikethrough" status="unremarkable" instant="false"/>
-                    <note type="editorial-comment" resp="#CoS" anchored="true"><seg xml:lang="de" part="N">Löschung eines Kapitels durch Streichung. Das Kapitel wurde nach
+                    <note type="editorial-comment" resp="#CoS" anchored="true"><seg xml:lang="de" part="N">Löschung eines Kapitels durch Streichung. Das Kapitel wurde in
                         Buch XVI verschoben und erscheint als c. 30. In der offensichtlich
                         nachträglich hinzugefügten Capitulatio findet das gestrichene Kapitel keine
                         Berücksichtigung mehr, im Gegensatz zu Va2, wo an der Stelle eine größere
                         Rasur zu finden ist.</seg><seg xml:lang="en" part="N">Deletion of a chapter
-                        by strikethrough. The chapter was moved to Book XVI and appears there as c.
+                        by strikethrough. The chapter has been moved to Book XVI and appears there as c.
                         30. In the Capitulatio, which was clearly added later, the deleted chapter
                         is no longer included, in contrast to Va2, where a larger erasure is visible
-                        at the same place.</seg></note>
+                        at the relevant place.</seg></note>
                     <div n="162" type="chapter" rend="strikethrough" xml:id="frankfurt-ub-b-50-01-con-162" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-s001" ana="../../lists/taxonomy.xml#bdd-strikethrough ../../lists/taxonomy.xml#bdd-relocation ../../lists/taxonomy.xml#bdd-marked-with-cross ../../lists/taxonomy.xml#bdd-chap-num-miss" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><hi rend="color:red">Ut iudex <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> prius obuiet
                             sua <lb n="13" facs="2400,2384,1452,200" xml:id="F_0072_column_2_l_13"/>sententia <choice><abbr>litigantib<g ref="#char-f1ac"></g></abbr><expan>litigantibus</expan></choice></hi><add type="contemporary" place="inline" xml:id="frankfurt-ub-b-50-add-116"><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc></add><hi rend="color:red"> <choice><abbr>qua<g ref="#char-0304">̄</g>diu</abbr><expan>quamdiu</expan></choice> <lb n="14" facs="2403,2514,1480,200" xml:id="F_0072_column_2_l_14"/>ipsi habent
@@ -6755,14 +6755,14 @@
                     </div>
                     <delSpan spanTo="#frankfurt-ub-b-50-01-delSpan-002" rend="strikethrough" status="unremarkable" instant="false"/>
                     <note type="editorial-comment" resp="#CoS" anchored="true"><seg xml:lang="de" part="N">Löschung von zwei Kapiteln durch Streichung. Das Kapitel aus dem
-                        Brief des Damasus wurde nach Buch XVI verschoben und erscheint als c. 31. In
+                        Brief des Damasus wurde in Buch XVI verschoben und erscheint als c. 31. In
                         der offensichtlich nachträglich hinzugefügten Capitulatio finden die
                         gestrichenen Kapitel keine Berücksichtigung mehr, im Gegensatz zu Va2, wo an
                         der Stelle eine größere Rasur zu finden ist.</seg><seg xml:lang="en" part="N">Deletion of two chapters by strikethrough. The chapter from the
-                        letter of Damasus was moved to Book XVI and appears there as c. 31. In the
+                        letter of Damasus has been moved to Book XVI and appears there as c. 31. In the
                         Capitulatio, which was evidently added later, the deleted chapters are no
                         longer included, in contrast to Va2, where a larger erasure is visible at
-                        the same location.</seg></note>
+                        the relevant place.</seg></note>
                     <div n="164" type="chapter" rend="strikethrough" xml:id="frankfurt-ub-b-50-01-con-164" ana="../../lists/taxonomy.xml#bdd-marked-with-cross ../../lists/taxonomy.xml#bdd-strikethrough ../../lists/taxonomy.xml#bdd-chap-num-miss" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
                         <head type="chapter-title"><hi rend="color:red"><choice><abbr>Q<g ref="#char-0111">đ</g></abbr><expan>Quod</expan></choice> nemo simul sit
                             accusator<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="27" facs="334,4161,782,200" xml:id="F_0073_column_1_l_27"/>testis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et iudex<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi> </head>
@@ -8264,17 +8264,16 @@
                             <choice><abbr>ep<g ref="#char-a749">ꝉ</g>am</abbr><expan>epistolam</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></seg></p>
                         <lb n="12" facs="1620,2159,1420,200" xml:id="F_0091_column_2_l_12"/>
                     </div>
-                    <note type="editorial-comment"><seg xml:lang="de">Die c. 220 bis 234 wurden in
+                    <note type="editorial-comment"><seg xml:lang="de">C. 220 bis c. 234 wurden in
                         einer späteren Redaktion hinzugefügt und waren zunächst nicht Teil des
                         Dekrets. Darauf verweisen Handwechsel an den entsprechenden Stellen von
                         Capitulatio und Korpus von F. Im Korpus wurden für das zusätzliche Material
                         fol. 44 und 45 (die außerhalb der Quaternionenordnung stehen) eingefügt. Die
                         Hinweise auf eine spätere Hinzufügung finden sich auch in Va2, jedoch nicht
-                        in der später entstandenen Handschrift B.</seg><seg xml:lang="en">Chapters
-                        220 to 234 were added in a later redaction and were not originally part of
+                        in der später entstandenen Handschrift B.</seg><seg xml:lang="en">C. 220 to c. 234 were added in a later redaction and were not originally part of
                         the decree. This is indicated by changes of hand at the relevant points in
-                        the Capitulatio* and the corpus of manuscript F. In the corpus, fols. 44 and
-                        45 (which lie outside the quire structure) were inserted to accommodate the
+                        the Capitulatio and corpus of manuscript F. In the corpus, fols. 44 and
+                        45 (which lie outside the quire structure) have been inserted to accommodate the
                         additional material. Indications of a later addition are also found in Va2,
                         but not in the later manuscript B.</seg></note>
                     <div n="215" ana="../../lists/taxonomy.xml#bdd-add-chap" type="chapter" xml:id="frankfurt-ub-b-50-01-con-215" sameAs="#frankfurt-ub-b-50-01-toc-220" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-220 ../bamberg-sb-c-6/bamberg-sb-c-6-01.xml#bamberg-sb-c-6-01-con-220" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h04">
@@ -8449,8 +8448,7 @@
                             uiris subscripserunt<pc type="p-versus"><g ref="#char-f1ea"></g></pc></add></subst></p>
                         <note type="editorial-comment" resp="#CoS" anchored="true"><seg xml:lang="de" part="N">Das Kapitel ist gedrängt geschrieben und steht
                             auf Rasur. Das gleiche Phänomen findet sich auch im selben Kapitel von
-                            Va2.</seg><seg xml:lang="en" part="N">The chapter is written in a
-                            compressed manner and appears on an erasure. The same phenomenon is
+                            Va2.</seg><seg xml:lang="en" part="N">The chapter is closely written and appears on an erasure. The same phenomenon is
                             found in the corresponding chapter of Va2.</seg></note>
                         <lb n="29" facs="173,3342,1489,200" xml:id="F_0093_column_1_l_29"/>
                     </div>
@@ -8712,4 +8710,5 @@
             <!-- Ende der Transkription -->
         </body>
     </text>
+
 </TEI>

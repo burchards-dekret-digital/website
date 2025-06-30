@@ -972,7 +972,7 @@
 
 
   //open the modal to select books  
-    const activeOptions = ["13", "01"]
+    const activeOptions = ["13", "01", "06"]
     document.querySelectorAll('#resourceModal input[type="checkbox"]').forEach(function(checkbox) {
       if (!activeOptions.some(element => checkbox.value.includes(element))){ //todo remove "!" when active options will be longer than non active options
         checkbox.disabled = true;
