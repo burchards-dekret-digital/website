@@ -191,7 +191,7 @@
                                 K.</handNote>
                             <handNote xml:id="vatican-bav-pal-lat-586-h11" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe11" source="../../register/literature.xml#X25FUV2K|31" cert="high">Hand
                                 L.</handNote>
-                            <handNote xml:id="vatican-bav-pal-lat-586-hunidentified" scope="minor" scribeRef="../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #frankfurt-ub-b-50-hunidentified #vatican-bav-pal-lat-585-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
+                            <handNote xml:id="vatican-bav-pal-lat-586-hunidentified" scope="minor" scribeRef="../../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #frankfurt-ub-b-50-hunidentified #vatican-bav-pal-lat-585-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
                         </handDesc>
                     </physDesc>
 

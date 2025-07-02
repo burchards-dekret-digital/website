@@ -201,7 +201,7 @@
                             <handNote xml:id="frankfurt-ub-b-50-h09" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe17" source="../../register/literature.xml#X25FUV2K|38" cert="high">Hand
                                 I.<note type="editorial-comment" anchored="true">Ohne Bezug zum
                                 Dekret 2. Viertel des 11. Jahrhunderts.</note></handNote>
-                            <handNote xml:id="frankfurt-ub-b-50-hunidentified" scope="minor" scribeRef="../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #vatican-bav-pal-lat-585-hunidentified #vatican-bav-pal-lat-586-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
+                            <handNote xml:id="frankfurt-ub-b-50-hunidentified" scope="minor" scribeRef="../../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #vatican-bav-pal-lat-585-hunidentified #vatican-bav-pal-lat-586-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
                         </handDesc>
                     </physDesc>
                     <history>

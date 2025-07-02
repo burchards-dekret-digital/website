@@ -133,7 +133,7 @@
                 <date when="2024-01-29" xml:lang="ger">Publiziert am 29.01.2024</date>
             </publicationStmt>
             <sourceDesc>
-                <msDesc xml:id="bamberg-sb-c-6-13-msdesc">
+                <msDesc xml:id="bamberg-sb-c-6-msdesc">
                     <msIdentifier xml:id="bamberg-sb-c-6">
                         <repository ref="https://www.staatsbibliothek-bamberg.de/">Staatsbibliothek<location> <geo>49.890972,10.894102</geo> </location>
                             <settlement ref="https://www.wikidata.org/wiki/Q3936">Bamberg</settlement> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </repository>
@@ -238,7 +238,7 @@
                                 KK.</handNote>
                             <handNote xml:id="bamberg-sb-c-6-h36" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-msdesc.xml#vatican-bav-pal-lat-585-h10 ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-msdesc.xml#vatican-bav-pal-lat-586-h10 ../frankfurt-ub-b-50/frankfurt-ub-b-50-13.xml01 ../koeln-edd-c-119/koeln-edd-c-119-msdesc.xml#koeln-edd-c-119-h06" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe10" source="../../register/literature.xml#X25FUV2K|18" cert="high">Hand
                                 LL.</handNote>
-                            <handNote xml:id="bamberg-sb-c-6-hunidentified" scope="minor" scribeRef="../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#frankfurt-ub-b-50-hunidentified #vatican-bav-pal-lat-585-hunidentified #vatican-bav-pal-lat-586-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-hunidentified" scope="minor" scribeRef="../../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#frankfurt-ub-b-50-hunidentified #vatican-bav-pal-lat-585-hunidentified #vatican-bav-pal-lat-586-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
                         </handDesc>
                     </physDesc>
                     <history>

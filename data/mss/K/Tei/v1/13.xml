@@ -192,7 +192,7 @@
                                 L.</handNote>
                             <handNote xml:id="koeln-edd-c-119-h12" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-msdesc.xml#vatican-bav-pal-lat-585-h01 ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-msdesc.xml#vatican-bav-pal-lat-586-h01 ../frankfurt-ub-b-50/frankfurt-ub-b-50-msdec.xml#frankfurt-ub-b-50-h03 ../bamberg-sb-c-6/bamberg-sb-c-6-msdesc.xml#bamberg-sb-c-6-h01" scope="major" scribeRef="../../register/scribes.xml#WoSscribe01" source="../../register/literature.xml#X25FUV2K|20" cert="high">Hand
                                 M.</handNote>
-                           <handNote xml:id="koeln-edd-c-119-hunidentified" scope="minor" scribeRef="../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #frankfurt-ub-b-50-hunidentified #vatican-bav-pal-lat-586-hunidentified #vatican-bav-pal-lat-585-hunidentified">Nicht identifizierte Hand</handNote>
+                           <handNote xml:id="koeln-edd-c-119-hunidentified" scope="minor" scribeRef="../../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #frankfurt-ub-b-50-hunidentified #vatican-bav-pal-lat-586-hunidentified #vatican-bav-pal-lat-585-hunidentified">Nicht identifizierte Hand</handNote>
                         </handDesc>
                     </physDesc>
                     <history>

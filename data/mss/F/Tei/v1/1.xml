@@ -165,7 +165,7 @@
                             <handNote xml:id="frankfurt-ub-b-50-h09" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe17" source="../../register/literature.xml#X25FUV2K|38" cert="high">Hand
                                 I.<note type="editorial-comment" anchored="true">Ohne Bezug zum
                                 Dekret 2. Viertel des 11. Jahrhunderts.</note></handNote>
-                            <handNote xml:id="frankfurt-ub-b-50-hunidentified" scope="minor" scribeRef="../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #vatican-bav-pal-lat-585-hunidentified #vatican-bav-pal-lat-586-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
+                            <handNote xml:id="frankfurt-ub-b-50-hunidentified" scope="minor" scribeRef="../../register/scribes.xml#WoSunidentified" source="http://zotero.org/groups/2856754/items/X25FUV2K|S. NN" cert="unknown" corresp="#bamberg-sb-c-6-hunidentified #vatican-bav-pal-lat-585-hunidentified #vatican-bav-pal-lat-586-hunidentified #koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
                         </handDesc>
                     </physDesc>
                     <history>
@@ -1613,7 +1613,7 @@
                             eingefügt. Die Hinweise auf eine spätere Hinzufügung finden sich auch in
                             Va2, jedoch nicht in der später entstandenen Handschrift B.</seg><seg xml:lang="en">C. 220 to c. 234 were added in a later redaction and
                             were not originally part of the decree. This is indicated by changes of
-                            hand at the relevant points in the Capitulatio and corpus of
+                            hand at the relevant points in the capitulatio and corpus of
                             manuscript F. In the corpus, fols. 44 and 45 (which lie outside the
                             quire structure) have been inserted to accommodate the additional material.
                             Indications of a later addition are also found in Va2, but not in the
@@ -6688,7 +6688,7 @@
                         Berücksichtigung mehr, im Gegensatz zu Va2, wo an der Stelle eine größere
                         Rasur zu finden ist.</seg><seg xml:lang="en" part="N">Deletion of a chapter
                         by strikethrough. The chapter has been moved to Book XVI and appears there as c.
-                        30. In the Capitulatio, which was clearly added later, the deleted chapter
+                        30. In the capitulatio, which was clearly added later, the deleted chapter
                         is no longer included, in contrast to Va2, where a larger erasure is visible
                         at the relevant place.</seg></note>
                     <div n="162" type="chapter" rend="strikethrough" xml:id="frankfurt-ub-b-50-01-con-162" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-01.xml#vatican-bav-pal-lat-585-01-con-s001" ana="../../lists/taxonomy.xml#bdd-strikethrough ../../lists/taxonomy.xml#bdd-relocation ../../lists/taxonomy.xml#bdd-marked-with-cross ../../lists/taxonomy.xml#bdd-chap-num-miss" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
@@ -6760,7 +6760,7 @@
                         gestrichenen Kapitel keine Berücksichtigung mehr, im Gegensatz zu Va2, wo an
                         der Stelle eine größere Rasur zu finden ist.</seg><seg xml:lang="en" part="N">Deletion of two chapters by strikethrough. The chapter from the
                         letter of Damasus has been moved to Book XVI and appears there as c. 31. In the
-                        Capitulatio, which was evidently added later, the deleted chapters are no
+                        capitulatio, which was evidently added later, the deleted chapters are no
                         longer included, in contrast to Va2, where a larger erasure is visible at
                         the relevant place.</seg></note>
                     <div n="164" type="chapter" rend="strikethrough" xml:id="frankfurt-ub-b-50-01-con-164" ana="../../lists/taxonomy.xml#bdd-marked-with-cross ../../lists/taxonomy.xml#bdd-strikethrough ../../lists/taxonomy.xml#bdd-chap-num-miss" part="N" org="uniform" sample="complete" hand="#frankfurt-ub-b-50-h03">
@@ -8272,7 +8272,7 @@
                         Hinweise auf eine spätere Hinzufügung finden sich auch in Va2, jedoch nicht
                         in der später entstandenen Handschrift B.</seg><seg xml:lang="en">C. 220 to c. 234 were added in a later redaction and were not originally part of
                         the decree. This is indicated by changes of hand at the relevant points in
-                        the Capitulatio and corpus of manuscript F. In the corpus, fols. 44 and
+                        the capitulatio and corpus of manuscript F. In the corpus, fols. 44 and
                         45 (which lie outside the quire structure) have been inserted to accommodate the
                         additional material. Indications of a later addition are also found in Va2,
                         but not in the later manuscript B.</seg></note>
@@ -8707,8 +8707,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Ende der Transkription -->
+            <!-- Ende der Transkription  -->
         </body>
     </text>
-
 </TEI>
