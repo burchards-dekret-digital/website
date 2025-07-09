@@ -379,9 +379,14 @@ const bddDescriptions = {
     "bdd-chap-num-miss": "<span lang=\"de\">Keine Kapitelnummer vergeben: Es wurde keine Kapitelnummer vergeben.</span><span lang=\"en\">Chapter Number Missing: No chapter number has been given.</span>",
     
 
-    "bdd-no-ins": "<span lang=\"de\">Kapitel ohne Inskription: Das Kapitel weist in den wichtigsten Textzeuge keine Inskription auf.</span><span lang=\"en\">Chapter without inscription: The given chapter has no inscription in all main witnesses.</span>",
-    
+     "bdd-no-ins-all": "<span lang=\"de\">Kapitel ohne Inskription in allen Textzeugen: Das Kapitel hat keine Inskription in allen Textzeugen.</span><span lang=\"en\">Chapter without inscription in all textual witnesses: The chapter has no inscription in any of the textual witnesses.</span>",
 
+    "bdd-no-ins-single": "<span lang=\"de\">Kapitel ohne Inskription in einem oder mehreren der Textzeugen: Das Kapitel hat keine Inskription in einem oder mehreren Textzeugen.</span><span lang=\"en\">Chapter without inscription in one or more textual witnesses: The chapter has no inscription in one or more textual witnesses.</span>",
+
+    "bdd-no-rubs-all": "<span lang=\"de\">Kapitel ohne Rubrik in allen Textzeugen: Das Kapitel hat keine Rubrik in allen Textzeugen.</span><span lang=\"en\">Chapter without rubric in all textual witnesses: The chapter has no rubric in any of the textual witnesses.</span>",
+
+    "bdd-no-rubs-single": "<span lang=\"de\">Kapitel ohne Rubrik in einem oder mehreren der Textzeugen: Das Kapitel hat keine Rubrik in einem oder mehreren Textzeugen.</span><span lang=\"en\">Chapter without rubric in one or more textual witnesses: The chapter has no rubric in one or more textual witnesses.</span>",
+    
     "bdd-sub-int": "<span lang=\"de\">Spätere Eingriffe: Interventions by later users in the manuscripts, which may affect both the text and the layout of the codex, such as corrections or changes to the binding.</span><span lang=\"en\">Subsequent Interventions: Interventions by later users in the manuscripts.</span>",
     
 
