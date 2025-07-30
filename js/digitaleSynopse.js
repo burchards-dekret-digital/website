@@ -395,6 +395,8 @@ const bddDescriptions = {
     "bdd-not-on-erasure": "<span lang=\"de\">Nicht auf Rasur: Titel oder Textzeilen wurden auf einer zuvor radierten Spalte ergänzt, befinden sich jedoch nicht direkt auf der Rasur, sondern auf nicht radierten Bereichen des Blattes.</span><span lang=\"en\">Not written on erasure: Elements such as inscriptions, titles, or lines of text have been added on a previously erased column, but they are not written on the erasure itself, rather on parts of the leaf that were not erased.</span>",
 
     "bdd-add-chap": "<span lang=\"de\">Hinzufügungen späterer Redaktionsstufen: Hinzufügungen von Kapiteln oder Elementen, die einer späteren Redaktionsstufe zuzuordnen sind.</span><span lang=\"en\">Additions from a Later Redactional Stage: Additions of chapters or elements made in later stages of redaction.</span>",
+
+    "bdd-ann": "<span lang=\"de\">Annotation: Hinweiszeichen am Rand.</span><span lang=\"en\">Annotation: Note sign on the edge.</span>",
   };
 
 
