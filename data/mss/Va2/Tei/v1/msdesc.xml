@@ -2,7 +2,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title xml:lang="ger">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal. Lat. 585</title>
+                <title xml:lang="ger">Vatikan, Biblioteca Apostolica Vaticana, Pal. lat. 585</title>
             </titleStmt>
             <publicationStmt>
                 <p>Test Handschriftendatenbank</p>
@@ -13,11 +13,11 @@
                         <repository ref="https://www.vaticanlibrary.va/">Biblioteca Apostolica Vaticana<location>
                             <geo>41.90145492553711,12.458013534545898</geo>
                             </location> <settlement ref="https://www.wikidata.org/wiki/Q237">Vatikanstadt</settlement> <country ref="https://www.wikidata.org/wiki/Q237">Vatikanstadt</country> </repository>
-                        <collection> <idno type="shelfmark">Pal. Lat. 585</idno> </collection>
+                        <collection> <idno type="shelfmark">Pal. lat. 585</idno> </collection>
                         <altIdentifier type="old-signature">
                             <idno type="shelfmark">unbekannt</idno>
                         </altIdentifier>
-                        <msName type="full">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal. Lat.
+                        <msName type="full">Vatikan, Biblioteca Apostolica Vaticana, Pal. lat.
                             585</msName>
                         <msName type="sigle">Va2</msName>
                     </msIdentifier>
