@@ -33,8 +33,9 @@
             <thead>
               <tr>
                 <th scope="col" onclick="sortTable(0)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                
+                <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col" onclick="sortTable(3)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col" onclick="sortTable(4)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
@@ -43,8 +44,9 @@
               </tr>
               <tr>
                   <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter" class="form-control" aria-label="Search Author"></th>
-                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter" class="form-control" aria-label="Search Editor"></th>
-                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter" class="form-control" aria-label="Search Title"></th>
+                  
+                  <th scope="col"><input type="text" id="filter1" onkeyup="filter(1)" placeholder="Filter" class="form-control" aria-label="Search Title"></th>
+                  <th scope="col"><input type="text" id="filter2" onkeyup="filter(2)" placeholder="Filter" class="form-control" aria-label="Search Editor"></th>
                   <th scope="col"><input type="text" id="filter3" onkeyup="filter(3)" placeholder="Filter" class="form-control" aria-label="Search In"></th>
                   <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" class="form-control" aria-label="Search Year"></th>
                   <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" class="form-control" aria-label="Search Publication Place"></th>
@@ -103,7 +105,7 @@
                         var forename = $(this).find("forename").text();
                         var surname = $(this).find("surname").text();
                         if (forename && surname) {
-                            authorNames.push(forename + " " + surname);
+                            authorNames.push(surname + ", " + forename);
                         } 
                         //if forename or surname in author are not available, find name
                         else { 
@@ -119,7 +121,7 @@
                         var forename = $(this).find("forename").text();
                         var surname = $(this).find("surname").text();
                         if (forename && surname) {
-                            editorNames.push(forename + " " + surname);
+                            editorNames.push(surname + ", " + forename);
                         } 
                         //if forename or surname in editor are not available, find name
                         else {
@@ -140,7 +142,7 @@
                         var forename = $(this).find("forename").text();
                         var surname = $(this).find("surname").text();
                         if (forename && surname) {
-                            authorNames.push(forename + " " + surname);
+                            authorNames.push(surname + ", " + forename);
                         } 
                         //if forename or surname in author are not available, find name
                         else {
@@ -155,7 +157,7 @@
                         var forename = $(this).find("forename").text();
                         var surname = $(this).find("surname").text();
                         if (forename && surname) {
-                            editorNames.push(forename + " " + surname);
+                            editorNames.push(surname + ", " + forename);
                         } 
                         //if forename or surname in editor are not available, find name
                         else {
@@ -189,8 +191,9 @@
                 //Create table rows
                 tableRows += "<tr id='" + id + "'>";
                 tableRows += "<td>" + authorNames.join(", ") + "</td>";
-                tableRows += "<td>" + editorNames.join(", ") + "</td>";
+               
                 tableRows += "<td>" + title + "</td>"; 
+                tableRows += "<td>" + editorNames.join(", ") + "</td>";
                 tableRows += "<td>" + inValue + "</td>";
                 tableRows += "<td>" + year + "</td>";
                 tableRows += "<td>" + pubPlace + "</td>";
@@ -295,8 +298,8 @@
         function sortTable(columnIndex) {
           const tbody = table.querySelector("tbody");
           const rows = Array.from(tbody.querySelectorAll("tr"));
-          const isYearColumn = columnIndex === 5;
-          const isQuoteSensitiveColumn = columnIndex === 3 || columnIndex === 4; // Titel and In columns
+          const isYearColumn = columnIndex === 4;
+          const isQuoteSensitiveColumn = columnIndex === 1 || columnIndex === 3; // Titel and In columns
           let sortDirection = sortOrder[columnIndex] === "asc" ? "desc" : "asc";
           sortOrder[columnIndex] = sortDirection;
 
@@ -305,8 +308,8 @@
             let cellB = rowB.children[columnIndex].innerText.trim();
 
             if (isQuoteSensitiveColumn) {
-              cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
-              cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+              cellA = cellA.replace(/^[\s'"\u2018\u2019\u201C\u201D]+/, "");
+              cellB = cellB.replace(/^[\s'"\u2018\u2019\u201C\u201D]+/, "");
             }
 
             if (cellA === "" || cellB === "") {
