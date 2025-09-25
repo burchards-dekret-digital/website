@@ -444,7 +444,7 @@ ol li{
 }
 
 
-.tei_damage-cut-out{background-color: lightgray;}
+/*.tei_damage-cut-out{background-color: lightgray;}
 .tei_damage-torn-out{background-color: lightgray;}
 .tei_damage-burned{background-color: lightgray;}
 .tei_damage-trimmed{background-color: lightgray;}
@@ -452,7 +452,47 @@ ol li{
 .tei_damage-cut-out::after{content:"[Reason of damage: cut-out]"; background-color: lightgray;}
 .tei_damage-torn-out::after{content:"[Reason of damage: torn-out]"; background-color: lightgray;}
 .tei_damage-burned::after{content:"[Reason of damage: burned]"; background-color: lightgray;}
-.tei_damage-trimmed::after{content:"[Reason of damage: trimmed]"; background-color: lightgray;}
+.tei_damage-trimmed::after{content:"[Reason of damage: trimmed]"; background-color: lightgray;}*/
+
+.tei_damage-cut-out::after{
+    content:"_";
+    display: inline;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #c452f5;
+    color:transparent;
+    cursor: pointer;
+}
+
+.tei_damage-torn-out::after{
+    content:"_";
+    display: inline;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #c452f5;
+    color:transparent;
+    cursor: pointer;
+}
+
+.tei_damage-burned::after{
+    content:"_";
+    display: inline;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #c452f5;
+    color:transparent;
+    cursor: pointer;
+}
+
+.tei_damage-trimmed::after{
+    content:"_";
+    display: inline;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: #c452f5;
+    color:transparent;
+    cursor: pointer;
+}
 
 .canvas {
     display: flex;
