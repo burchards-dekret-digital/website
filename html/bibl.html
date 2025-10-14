@@ -18,8 +18,16 @@
       <script src="../js/jquery-3.7.1.min.js"></script>
       <script src="../js/navigation.js" defer></script>
       <script src="../js/language.js" defer></script>
+      <style>
+      /* make sure the highlight always shows above Bootstrap table colors */
+      #literatureTable tbody tr.highlighted > * {
+        background-color: lightgrey !important;
+        transition: background-color 0.5s ease;
+      }
+      </style>
   </head>
   <body>
+   
     <div id="navbar-placeholder"></div>
 
     <div class="back-button ps-4 mt-5">
@@ -35,12 +43,12 @@
                 <th scope="col" onclick="sortTable(0)" style="cursor: pointer;"><span lang="de">Autor</span><span lang="en">Author</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 
                 <th scope="col" onclick="sortTable(1)" style="cursor: pointer;"><span lang="de">Titel</span><span lang="en">Title</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Editor</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <th scope="col" onclick="sortTable(2)" style="cursor: pointer;"><span lang="de">Hrsg.</span><span lang="en">Editor</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col" onclick="sortTable(3)" style="cursor: pointer;">In <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col" onclick="sortTable(4)" style="cursor: pointer; min-width: 85px;"><span lang="de">Jahr</span><span lang="en">Year</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
                 <th scope="col" onclick="sortTable(5)" style="cursor: pointer; min-width: 150px;"><span lang="de">Erscheinungsort</span><span lang="en">Publication Place</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col" onclick="sortTable(6)" style="cursor: pointer;"><span lang="de">Serie</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
-                <th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>
+                <th scope="col" onclick="sortTable(6)" style="cursor: pointer;"><span lang="de">Reihe</span><span lang="en">Series</span> <i class="fa-solid fa-arrow-up sort-arrow fa-xs"></i> <i class="fa-solid fa-arrow-down sort-arrow fa-xs"></i></th>
+                <!--<th scope="col"><span lang="de">Typ</span><span lang="en">Type</span></th>-->
               </tr>
               <tr>
                   <th scope="col"><input type="text" id="filter0" onkeyup="filter(0)" placeholder="Filter" class="form-control" aria-label="Search Author"></th>
@@ -51,7 +59,7 @@
                   <th scope="col"><input type="text" id="filter4" onkeyup="filter(4)" placeholder="Filter" class="form-control" aria-label="Search Year"></th>
                   <th scope="col"><input type="text" id="filter5" onkeyup="filter(5)" placeholder="Filter" class="form-control" aria-label="Search Publication Place"></th>
                   <th scope="col"><input type="text" id="filter6" onkeyup="filter(6)" placeholder="Filter" class="form-control" aria-label="Search Series"></th>
-                  <th scope="col">
+                  <!--<th scope="col">
                     <select id="filter7" onchange="filter(7);" class="form-select" aria-label="Search type">
                       <option value="" lang="de">Alle</option>
                       <option value="Buch" lang="de">Buch</option>
@@ -65,7 +73,7 @@
                       <option value="Buchbeitrag" lang="en">Book article</option>
                       <option value="Lexikonartikel" lang="en">Lexicon article</option>
                     </select>
-                  </th>
+                  </th>-->
                 </tr>
             </thead>
             <tbody></tbody>
@@ -76,7 +84,7 @@
     <div id="footer-placeholder"></div>
       
     <script>
-        $(document).ready(function() {
+  $(document).ready(function() {
     $.ajax({
         type: "GET",
         url: "../data/register/literature.xml",
@@ -167,50 +175,108 @@
                             }
                         }
                     });
-                    var monogr = $(this).find("monogr");
                     
-                    //Display Band and/or Seiten only if present
-                    //var volume = $(monogr).find("biblScope[unit='volume']").text();
+                    var monogr = $(this).find("monogr");
+                    var journalTitle = $(monogr).find("title[level='j']").text();
+                    var monoTitle = $(monogr).find("title[level='m']").text();
+                    var volume = $(monogr).find("biblScope[unit='volume']").text();
                     var page = $(monogr).find("biblScope[unit='page']").text();
                     //var volumeText = volume ? " " + volume : "";
                     //var pageText = page ? ", S. " + page : "";
                     var pageText = page ? "<span lang='de'>, S. </span><span lang='en'>, pp. </span> " + page : "";
     
                     //inValue = $(this).find("monogr > title").text() + volumeText + pageText;
-                    inValue = $(this).find("monogr > title").text() + pageText;
+                    //inValue = $(this).find("monogr > title").text() + pageText;
+
+                    if (journalTitle && volume) {
+                        // Case: journal article with volume
+                        inValue = journalTitle + " " + volume + pageText;
+                    } else if (journalTitle) {
+                        // Case: journal without volume
+                        inValue = journalTitle + pageText;
+                    } else if (monoTitle && volume) {
+                        // Encyclopedia or monograph with volume number
+                        inValue = monoTitle + " " + volume + pageText;
+                    } else if (monoTitle) {
+                        // Monograph without volume
+                        inValue = monoTitle + pageText;
+                    }  else {
+                        // Fallback for other cases
+                        inValue = $(monogr).find("title").first().text() + pageText;
+                    }
+                    
                     checkLanguage();
                 }
+
+                
     
-                var volume = $(monogr).find("biblScope[unit='volume']").text();
-                var volumeText = volume ? " " + volume : "";
+                //var volume = $(monogr).find("biblScope[unit='volume']").text();
+                //var volumeText = volume ? " " + volume : "";
                 id = $(this).attr("xml:id");
                 year = $(this).find("imprint > date").text();
                 pubPlace = $(this).find("imprint > pubPlace").text();
-                series = $(this).find("series > title").text() + volumeText; 
+                //series = $(this).find("series > title").text() + volumeText; 
+
+                
+                // Handle series column
+                var seriesTitle = $(this).find("series > title").text();
+                var seriesVolume = $(this).find("series > biblScope[unit='volume']").text();
+                
+                // If it's a journal or encyclopedia article (title level j or m) with volume already displayed,
+                // skip showing volume again in the "Serie" column
+                if (journalTitle || (monoTitle && volume)) {
+                    // Journal articles: do NOT show volume number again
+                    series = seriesTitle;
+                } else {
+                    // Other types: show series + volume (if available)
+                    var seriesVolumeText = seriesVolume ? " " + seriesVolume : "";
+                    series = seriesTitle + seriesVolumeText;
+                }
                 
                 //Create table rows
                 tableRows += "<tr id='" + id + "'>";
-                tableRows += "<td>" + authorNames.join(", ") + "</td>";
+                tableRows += "<td>" + authorNames.join("; ") + "</td>";
                
                 tableRows += "<td>" + title + "</td>"; 
-                tableRows += "<td>" + editorNames.join(", ") + "</td>";
+                tableRows += "<td>" + editorNames.join("; ") + "</td>";
                 tableRows += "<td>" + inValue + "</td>";
                 tableRows += "<td>" + year + "</td>";
                 tableRows += "<td>" + pubPlace + "</td>";
                 tableRows += "<td>" + series + "</td>";
-                tableRows += "<td>" + typeLabel + "</td>"; // Use label for display
+                //tableRows += "<td>" + typeLabel + "</td>"; // Use label for display
                 tableRows += "</tr>";
             });
 
             $("#literatureTable tbody").append(tableRows);   
             checkLanguage();   
-        },
 
-        error: function(xhr, status, error) {
-            console.error("Error loading XML file:", error);
-        }
-    });
-});
+            // Highlight and scroll to row from URL hash
+            function highlightFromHash() {
+              const id = decodeURIComponent(location.hash.slice(1));
+              if (!id) return;
+              const row = document.getElementById(id);
+              if (!row) return;
+
+              row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+              // Clear previous highlights
+              document.querySelectorAll('#literatureTable tbody tr').forEach(r => r.classList.remove('highlighted'));
+
+              row.classList.add('highlighted');
+            }
+
+            // Run it once when table is loaded
+            highlightFromHash();
+
+            // Also handle when user navigates between hashes
+            window.addEventListener('hashchange', highlightFromHash);
+          },
+
+          error: function(xhr, status, error) {
+              console.error("Error loading XML file:", error);
+          }
+      });
+  });
 
 
         // Add search functionality
@@ -260,7 +326,7 @@
         }
     </script>
 
-    <!--scroll to the selected ID and highlights the row-->
+    <!--scroll to the selected ID and highlights the row
     <script>
       window.onload = function() {
         function scrollToAndHighlight(targetId) {
@@ -279,7 +345,7 @@
           }
         }, 200);
       };
-    </script>
+    </script>-->
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -306,6 +372,11 @@
           rows.sort((rowA, rowB) => {
             let cellA = rowA.children[columnIndex].innerText.trim();
             let cellB = rowB.children[columnIndex].innerText.trim();
+
+            /*if (isQuoteSensitiveColumn) {
+              cellA = cellA.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+              cellB = cellB.replace(/^['"]|['"]$/g, "");  // Remove leading and trailing single or double quotes
+            }*/
 
             if (isQuoteSensitiveColumn) {
               cellA = cellA.replace(/^[\s'"\u2018\u2019\u201C\u201D]+/, "");

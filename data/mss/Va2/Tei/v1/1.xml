@@ -3,12 +3,12 @@
         <fileDesc>
             <titleStmt>
                 <title type="main" xml:lang="ger">Decretum Burchardi</title>
-                <title type="unit" xml:lang="ger">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal.
+                <title type="unit" xml:lang="ger">Vatikan, Biblioteca Apostolica Vaticana, Pal.
                     Lat. 585</title>
                 <title type="module" xml:lang="ger">Buch 01</title>
                 <title type="sub" xml:lang="ger">Transkription (Version 1)</title>
                 <title type="main" xml:lang="en">Decretum Burchardi</title>
-                <title type="unit" xml:lang="en">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal.
+                <title type="unit" xml:lang="en">Vatikan, Biblioteca Apostolica Vaticana, Pal.
                     Lat. 585</title>
                 <title type="module" xml:lang="en">Book 01</title>
                 <title type="sub" xml:lang="en">Transcription (Version 1)</title>
@@ -113,7 +113,7 @@
                         <altIdentifier type="old-signature">
                             <idno type="shelfmark">unbekannt</idno>
                         </altIdentifier>
-                        <msName type="full">Vatikanstadt, Biblioteca Apostolica Vaticana, Pal. Lat.
+                        <msName type="full">Vatikan, Biblioteca Apostolica Vaticana, Pal. Lat.
                             585</msName>
                         <msName type="sigle">Va2</msName>
                     </msIdentifier>

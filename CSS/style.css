@@ -36,6 +36,8 @@ body {
     min-height: 100vh;
 }
 
+
+
 #load {
     width: 100%;
     height: calc(100% - 100px);  /* Adjust this according to the height of your navbar */
@@ -63,6 +65,8 @@ body {
 #contents {
     visibility: hidden;
 }
+
+
 
 h2 {
     font-family: Jost-ExtraBold;
@@ -207,10 +211,14 @@ li{
     line-height: 2;
     letter-spacing: 0.5px;
 }
-.footer-logo-adw{width:40%}
-.footer-logo-fau{width:100%}
-.footer-logo-kassel{width:90%}
-.footer-logo-jgu{width:100%}
+
+
+.footer img {
+  max-height: 80px; 
+  width: auto;
+  object-fit: contain;
+  margin: 0 15px;
+}
 
 /*Desktop/Schreibtisch Add resource*/
 .accordion-header{
@@ -332,43 +340,6 @@ li{
         position: fixed;
       }
 
-/*.bdd-unin-lost{
-    border-style: solid;
-  border-color: #A9A9A9;
-  border-top: solid #A9A9A9;
-    background-color:#F8F8F8;
-}
-.bdd-ed-rec{
-    color:#b300b3;
-}
-.table-strukturansicht{
-        table-layout: fixed;
-        width: 100%;
-    }
-td[data-content~="bdd-unin-lost"]::after{
-content:"";
-    height: 25px;
-  width: 25px;
-  background-color: blue;
-  border-radius: 50%;
-  display: inline-block; 
-}
-
-td[data-content~="bdd-ed-rec"]::after{
-    content:"";
-    height: 25px;
-  width: 25px;
-  background-color: green;
-  border-radius: 50%;
-  display: inline-block;
-   
-} 
-td.bdd-unin-lost::after{
-    content:"aa";
-}
-td.bdd-ed-rec::after{
-    content:"bb";
-}*/
 .legendFont{
 font-family: Andron-Scriptor-Web;
 }
@@ -585,10 +556,12 @@ font-family: Andron-Scriptor-Web;
     }
     .figure{width:100%}
         
-    /*  DESKTOP7SCHREIBTISCH  */
+    /*  DESKTOP/SCHREIBTISCH  */
     #downloadJsonBtn{display:none;}
     #clearAll{display:none;}
     #transcription-view-button{display:none;}
+    #listResources{display:none;}
+    #welcomeMessage{margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important;}
     .add-transcription-btn{display:none;}
     .mirador-btn{display:none;}
     .add-structure-btn{display:none;}
@@ -616,11 +589,7 @@ font-family: Andron-Scriptor-Web;
         margin-left:10px;
     }  
     #map2 {width: 90%;}
-    .figure{width:100%}
-    .footer-logo-adw{width:30%}
-    .footer-logo-fau{width:60%}
-    .footer-logo-kassel{width:60%}
-    .footer-logo-jgu{width:70%}
+    .figure{width:100%} 
 }
 
 @media screen and (max-width: 479px) {
@@ -644,9 +613,5 @@ font-family: Andron-Scriptor-Web;
     
     .back-button{display:none;}
     .figure{width:100%}
-    .footer-logo-adw{width:30%}
-    .footer-logo-fau{width:60%}
-    .footer-logo-kassel{width:60%}
-    .footer-logo-jgu{width:70%}
 }
 

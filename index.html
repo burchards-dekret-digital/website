@@ -11,16 +11,60 @@
         <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32"> 
         
         <link href="CSS/bootstrap.min.css" rel="stylesheet">
-        
         <script src="js/bootstrap.bundle.min.js"></script>
                
         <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
         
-        
         <script src="js/jquery-3.7.1.min.js"></script>
+
+       <!-- <style>
+     #access-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    </style>-->
         
     </head>
     <body>
+
+    <!--<div id="access-screen">
+        <div class="container text-center p-4 border rounded shadow" style="max-width: 500px;">
+            <div class="d-flex justify-content-end" style="position: absolute; top: 10px; right: 10px;">
+                <button id="button-de" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('de')">DE</button>
+                <button id="button-en" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('en')">EN</button>
+            </div>
+            <h2 class="mb-3 text-warning"><span lang="de">Burchards Dekret Digital Entwicklung Website</span><span lang="en">Burchards Dekret Digital Developing Website</span></h2>
+                <p class="mb-3"><span lang="de">Dies ist eine interne Entwicklungswebseite.<br/> Externe Benutzer werden gebeten, die offizielle Website zu besuchen <a href="https://burchards-dekret-digital.de/" class="link-primary">https://burchards-dekret-digital.de/</a>.</span><span lang="en">This is an internal devoloping website. <br/>If you are an external user, please visit the official website <a href="https://burchards-dekret-digital.de/" class="link-primary">https://burchards-dekret-digital.de/</a>.</span>
+            </p>
+            <p><span lang="de">Geben Sie bitte den Zugangscode ein, um fortzufahren:</span><span lang="en">Please enter the access code to continue:</span></p>
+            <div class="input-group mb-3">
+            <input type="password" class="form-control" id="code-input" placeholder="Access code">
+            <button class="btn btn-primary" onclick="checkCode()">Log in</button>
+            </div>
+        </div>
+    </div>
+
+        <script>
+            const ACCESS_CODE = "bdd-test";
+            function checkCode() {
+                const input = document.getElementById("code-input").value;
+                if (input === ACCESS_CODE) {
+                document.getElementById("access-screen").style.display = "none";
+                } else {
+                alert("Wrong access code. Please visit https://burchards-dekret-digital.de/.");
+                }
+            }
+        </script>-->
+
+
+
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="index.html" style="font-size:18px; letter-spacing: 0.5px;">
@@ -36,35 +80,31 @@
                             <a class="nav-link active" aria-current="page" href="index.html" lang="en">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/project.html" lang="de">Projekt</a>
-                            <a class="nav-link" href="html/project.html" lang="en">Project</a>
+                            <a class="nav-link" href="html/decretum.html">Decretum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/team.html">Team</a>
+                            <a class="nav-link" href="html/desktop.html" lang="de">Arbeitsbereich</a>
+                            <a class="nav-link" href="html/desktop.html" lang="en">Workspace</a>
                         </li>
-                        <li class="nav-item">
+                         <li class="nav-item">
                             <a class="nav-link" href="html/mss.html" lang="de">Handschriften</a>
                             <a class="nav-link" href="html/mss.html" lang="en">Manuscripts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/desktop.html" lang="de">Schreibtisch</a>
-                            <a class="nav-link" href="html/desktop.html" lang="en">Desktop</a>
+                            <a class="nav-link" href="html/bibl.html" lang="de">Bibliographie</a>
+                            <a class="nav-link" href="html/bibl.html" lang="en">Bibliography</a>
                         </li>
-                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/project.html" lang="de">Projekt</a>
+                            <a class="nav-link" href="html/project.html" lang="en">Project</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="html/documentation.html" lang="de">Dokumentation</a>
                             <a class="nav-link" href="html/documentation.html" lang="en">Documentation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/decretorumLibriViginti.html" lang="de">Decretorum Libri Viginti</a>
-                            <a class="nav-link" href="html/decretorumLibriViginti.html" lang="en">Decretorum Libri Viginti</a>
+                            <a class="nav-link" href="html/team.html">Team</a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="html/bibl.html" lang="de">Bibliographie</a>
-                            <a class="nav-link" href="html/bibl.html" lang="en">Bibliography</a>
-                        </li>
-                       
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <button id="btn-de" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('de')">DE</button>
@@ -124,30 +164,34 @@
                 <!-- Section: Uni-logos  -->
                 <div class="d-flex">
                     <div class="container text-center text-md-start mt-4 d-flex justify-content-center">
-                        <div class="row">
-                            <div class="text-center col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                                <a href="https://www.adwmainz.de/startseite.html" target="_blank">
-                                    <img src="img/adw-white.png" alt="Logo of Akademie der Wissenschaften und der Literatur Mainz" title="Logo of Akademie der Wissenschaften und der Literatur Mainz" class="footer-logo-adw"> 
-                                </a>
-                            </div>
-
-                            <div class="text-center col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                                <a href="https://www.fau.eu/" target="_blank">
-                                    <img src="img/fau1.png" alt="Logo of Friedrich-Alexander - Universität Erlangen-Nürnberg" title="Logo of Friedrich-Alexander - Universität Erlangen-Nürnberg" class="footer-logo-fau"> 
-                                </a>
-                            </div>
-                            <div class="text-center col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                                <a href="https://www.uni-kassel.de/uni/" target="_blank">
-                                    <img src="img/kassel3.png" alt="Logo of Universität Kassel" title="Logo of Universität Kassel" class="footer-logo-kassel"> 
-                                </a>
-                            </div>
-                            <div class="text-center col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                                <a href="https://startseite.uni-mainz.de/" target="_blank">
-                                    <img src="img/jgu2.png" alt="Logo of Johannes Gutenberg - Universität Mainz" title="Logo of Johannes Gutenberg - Universität Mainz" class="footer-logo-jgu"> 
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="text-center col-md col-lg col-xl mx-auto mb-4">
+                    <a href="https://www.adwmainz.de/startseite.html" target="_blank">
+                        <img src="img/adw-white.png" alt="Logo of Akademie der Wissenschaften und der Literatur Mainz" title="Logo of Akademie der Wissenschaften und der Literatur Mainz" class="footer-logo-adw"> 
+                    </a>
+                </div>
+                <div class="text-center col-md col-lg col-xl mx-auto mb-4">
+                    <a href="https://www.fau.eu/" target="_blank">
+                        <img src="img/fau1.png" alt="Logo of Friedrich-Alexander - Universität Erlangen-Nürnberg" title="Logo of Friedrich-Alexander - Universität Erlangen-Nürnberg" class="footer-logo-fau"> 
+                    </a>
+                </div>
+                <div class="text-center col-md col-lg col-xl mx-auto mb-4">
+                    <a href="https://www.uni-kassel.de/uni/" target="_blank">
+                        <img src="img/kassel3.png" alt="Logo of Universität Kassel" title="Logo of Universität Kassel" class="footer-logo-kassel"> 
+                    </a>
+                </div>
+                <div class="text-center col-md col-lg col-xl mx-auto mb-4">
+                    <a href="https://startseite.uni-mainz.de/" target="_blank">
+                        <img src="img/jgu2.png" alt="Logo of Johannes Gutenberg - Universität Mainz" title="Logo of Johannes Gutenberg - Universität Mainz" class="footer-logo-jgu"> 
+                    </a>
+                </div>
+                <div class="text-center col-md col-lg col-xl mx-auto mb-4">
+                    <a href="https://www.tu-darmstadt.de/" target="_blank">
+                        <img src="img/tuda.png" alt="Logo of Technische Universität Darmstadt " title="Logo of Technische Universität Darmstadt " class="footer-logo-jgu"> 
+                    </a>
+                </div>
+            </div>
+        </div>
                 </div>
             
                 <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">

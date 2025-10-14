@@ -31,6 +31,7 @@
 
 
     <body>
+        <div id="access-placeholder"></div>
         <div id="navbar-placeholder"></div>
         <div class="back-button ps-4 mt-5">
           <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
@@ -38,16 +39,18 @@
         <div class="container" style="flex:1">
             <h1 class="section-main-title">
               <span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span>
-              <span style="vertical-align: super;"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#desktopModal">
-                <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>
+              <!--<span style="vertical-align: super;"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#mssModal">
+                <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>-->
             </h1>
+            <button type="button" class="btn btn-success mb-3" style="background-color: #28a745!important; border-color: #28a745!important" data-bs-toggle="modal" data-bs-target="#mssModal">Info</button>
+
 
             <!-- Modal Info-->
-          <div class="modal fade" id="desktopModal" tabindex="-1" aria-labelledby="desktopModalLabel" aria-hidden="true">
+          <div class="modal fade" id="mssModal" tabindex="-1" aria-labelledby="mssModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h3 class="modal-title fs-5 fw-bold" id="desktopModalLabel"><span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span></h3>
+                  <h3 class="modal-title fs-5 fw-bold" id="mssModalLabel"><span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span></h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="infoHandschriften">
@@ -99,7 +102,7 @@
           </div>
           <!-- sigle Modal -->
           <div class="modal fade" id="sigleModal" tabindex="-1" aria-labelledby="sigleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="sigleModalLabel"><span lang="de">Siglenliste</span><span lang="en">Siglum list</span></h5>

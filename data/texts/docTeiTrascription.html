@@ -26,19 +26,19 @@
       sind.</p>
    <p><b>Version 3</b> ist eine textgesicherte Transkription mit
       kodikologischen Phänomenen, in der externe IDs referenziert sind.
-      Rezeptionsspuren, z.B. nota-Zeichen, sind ausgezeichnet. Auf sinntragende
-      Varianten in anderen Handschriften des Decretum Burchardi wird hingewiesen. Die
+      Rezeptionsspuren, z. B. nota-Zeichen, sind ausgezeichnet. Auf sinntragende
+      Varianten in anderen Handschriften des <i>Decretum Burchardi</i> wird hingewiesen. Die
       Transkriptionen sind überdies mit der Digitalen Edition synchronisiert.</p>
    <h3>Datenrepositorien</h3>
    <p>Alle Transkriptionen werden mit dazugehörenden Datenderivaten auf dem
       Projekteigenen <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data" target="_blank">Gitlab-Repositorium</a>
       gespeichert. Nach Abschluss der jeweiligen Versionen werden die Dateien
-      ebenfalls über Zenodo archiviert. Neben den Transkriptionen enthalt dieses
-      Repositorium außerdem entsprechendes PageXML sowie daraus generiete Datensätze
+      ebenfalls über Zenodo archiviert. Neben den Transkriptionen enthält dieses
+      Repositorium außerdem entsprechendes PageXML sowie daraus generierten Datensätze
       zur Verwendung im Kontext von Machine Learning. </p>
    <h3>Auszeichnungsrichtlinien</h3>
    <p>In den folgenden Abschnitten werden die Auszeichnungsrichtlinien geschildert.
-      Eine formalisierte Auslistung der Verwendeten Elemente, Attribute und Werte
+      Eine formalisierte Auflistung der verwendeten Elemente, Attribute und Werte
       findet sich unter dem Abschnitt <i>schemaSpec</i> am Ende des
       Dokuments.</p>
    <h4>TEI Header</h4>
@@ -48,8 +48,7 @@
       (<code>revisionDesc</code>).</p>
    <p>Die <code>fileDesc</code> umfasst folgende Elemente: 
       <ul>
-         <li><code>titleStmt</code> enthält den Namen der Quelle (‚Decretum
-            Burchardi‘), den Bibliotheksort der transkribierten Handschrift, das
+         <li><code>titleStmt</code> enthält den Namen der Quelle (<i>Decretum Burchardi</i>), den Bibliotheksort der transkribierten Handschrift, das
             wiedergegebene Buch und im Untertitel den Hinweis, dass es sich um eine
             Transkription handelt, </li>
          <li><code>funder</code> nennt die Akademie der
@@ -58,9 +57,9 @@
             Projekt-ID orcid-ID oder gnd-Normdaten, Name und Institution,</li>
          <li><code>respStmt</code> enthält die Mitarbeiter, identifiziert mit
             Projekt-ID, orcid-ID, Name und Institution sowie ihren spezifizierten
-            Beitrag zur Datei, z.B. Transkription oder Strukturauzeichnung, </li>
+            Beitrag zur Datei, z. B. Transkription oder Strukturauszeichnung, </li>
          <li><code>editionStmt</code> beschreibt die drei
-            Transkriptions-Versionen.</li>
+            Transkriptions-Versionen,</li>
          <li><code>publicationStmt</code> enthält das
             Projekt als <code>publisher</code>, die Lizenz (<code>licence</code>, CC BY 4.0) und
             das Publikationsdatum,</li>
@@ -68,22 +67,22 @@
             wichtigsten Eckdaten zur Handschrift wie Projekt-ID (<code>msIdentifier</code>),
             Bibliotheksort (<code>repository</code>), Sammlung und Signatur
             (<code>collection</code> und <code>idno</code>), eine kurze Beschreibung
-            (<code>physDesc</code>), die Nennung der beiteiligten Hände (<code>handDesc</code>)
+            (<code>physDesc</code>), die Nennung der beteiligten Hände (<code>handDesc</code>)
             und zentrale Daten zur Geschichte des Textzeugen (<code>history</code>) mit
             Entstehungsort (<code>origPlace</code>) und Zeit (<code>origDate</code>).</li>
       </ul>
    </p>
    <p>Die <code>encodingDesc</code> unterteilt sich nach einer Beschreibung der
-      Transkription, Hinweise auf den verwendeten Zeichensatz sowie Hinweisen zur
+      Transkription, Hinweisen auf den verwendeten Zeichensatz sowie Hinweisen zur
       korrekten Darstellung, in drei Teile:</p>
    <ul>
-      <li><code>charDecl</code> listet die benutzten Sonderzeichen auf.</li>
+      <li><code>charDecl</code> listet die benutzten Sonderzeichen auf,</li>
       <li><code>editorialDecl</code> enthält die Transkriptionsrichtlinien mit den
          Punkten <code>normalization</code>, <code>correction</code>,
          <code>hyphenation</code>, <code>segmentation</code>, <code>interpretation</code>,
          <code>punctuation</code> und <code>stdVals</code> zur Codierung von
-         Zahlen.</li>
-      <li><code>projectDesc</code> beschreibt das 'Decretum Burchardi' als Quelle
+         Zahlen,</li>
+      <li><code>projectDesc</code> beschreibt das <i>Decretum Burchardi</i> als Quelle
          und das Projekt 'Burchards Dekret Digital'.</li>
    </ul>
    <p>Die <code>revisionDesc</code> besteht aus einer Liste, die alle Änderungen der
@@ -107,13 +106,13 @@
       codiert und aufgelöst. Ligaturen werden stillschweigend aufgelöst.</p>Interpunktion
    <p>Die transkribierten Handschriften verwenden in der Regel eine
       einheitliche und genuin mittelalterliche Interpunktion, die auf sechs
-      unterscheidbaren Zeichen basiert mit denen Sprechpausen gekennzeichnet
+      unterscheidbaren Zeichen basiert, mit denen Sprechpausen gekennzeichnet
       werden: Distinctio, Punctus versus, Punctus elevatus, Punctus flexus,
       Punctus interrogativus und eine Kombination mit Positura. Die
       Interpunktion der Textzeugen wird als <code>pc</code> Element übernommen und
       durch entsprechende Unicode-Zeichen nachempfunden. Durch das Attribut
       <code>type</code> kann das jeweilige Zeichen durch die Werte
-      <code>distinctio</code>,<code>p-versus</code>, <code>p-elevatus</code>,
+      <code>distinctio</code>, <code>p-versus</code>, <code>p-elevatus</code>,
       <code>p-flexus</code>, <code>p-interrogativus</code> oder
       <code>p-interrogativus-positura</code> näher spezifiziert werden.</p>
    <h4>Auszeichnung Textstruktur/Layout</h4>
@@ -137,17 +136,17 @@
       Hinzufügungszeichen markiert sind, werden mit <code>supplied</code> und
       <code>seg</code> ausgezeichnet.</p>
    <div style="text-align: center;">
-      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (, fol. 27rb) " title=""><figcaption class="figure-caption">Aus Platzgründen oberhalb der Zeile hinzugefügte Rubik (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035675" target="_blank">F</a>, fol. 27rb)</figcaption>
+      <figure class="figure"><img src="../img/image3.png" class="figure-img img-fluid" alt="Aus Platzgründen oberhalb der Zeile hinzugefügte Rubrik (, fol. 27rb) " title=""><figcaption class="figure-caption">Aus Platzgründen oberhalb der Zeile hinzugefügte Rubrik (<a href="https://sammlungen.ub.uni-frankfurt.de/msma/content/pageview/2035675" target="_blank">F</a>, fol. 27rb)</figcaption>
       </figure>
    </div>
    <p>Darüberhinausgehende Text-/Bildinformationen können per <code>xml:id</code> des
       jeweiligen Elements im über das referenzierte PageXML der jeweiligen Seite
       abgefragt werden, das sich im Datenrepositorium befindet. Das
       Bild-Digitalisat der jeweiligen Seite ist im <code>facs</code> Attribut des
-      Elements <code>pb</code> als IIIF-query hinterlegt, <code>corresp</code> enthält
+      Elements <code>pb</code> als IIIF-Query hinterlegt, <code>corresp</code> enthält
       den Link zur IIIF-Canvas. IIIF-fähige Koordinaten zu jedem Layoutelement
       sind im jeweiligen Attribut @facs hinterlegt und erlauben das Abrufen des
-      entsprechenden Bildausschnitts über in Verbindung mit der IIIF-query-URL der
+      entsprechenden Bildausschnitts über in Verbindung mit der IIIF-Query-URL der
       jeweiligen Seite.</p>
    <h4>Spalten- und Seitenwechsel, Zeilenumbrüche</h4>
    <p>Zur Codierung des Layouts wird auf die leeren Elemente <code>pb</code>
@@ -155,7 +154,7 @@
       sowie auf das Element <code>fw</code> (Seitenlayout) zurückgegriffen. Diese
       Elemente können die textimmanente Struktur durchbrechen, also sowohl
       zwischen als auch innerhalb von <code>div</code> und anderen Elementen stehen.
-      Jeder Seitenumbruch wird mit @n mit einer dazugehörigen Folioangabe, z.B.
+      Jeder Seitenumbruch wird mit @n mit einer dazugehörigen Folioangabe, z. B.
       204r|v, versehen. Optional wird die dazugehörige Bilddatei als
       <code>facs</code> hinterlegt. Bei Spaltenumbrüchen wird die Spalte in
       <code>n</code> durch <code>a|b</code> markiert. Kopfzeilen bekommen im Element
@@ -165,7 +164,7 @@
       gekennzeichnet, wenn sie innerhalb von Wörtern erfolgen. Alle Elemente
       erhalten außerdem eine referenzierbare <code>xml:id</code>, die im Falle von
       Layoutelementen aus dem Dateinamen des dazugehörenden PageXML sowie einem
-      spezifischen Suffix gebildet wird, z.B. <code>"B_0015_header"</code>. Diese ID
+      spezifischen Suffix gebildet wird, z. B. <code>"B_0015_header"</code>. Diese ID
       erlaubt das Auffinden des entsprechenden Elements im PageXML, das dort durch
       dieselbe ID referenziert ist.</p>
    <h4>Silbentrennung</h4>
@@ -173,7 +172,7 @@
       ab. Da besonders die frühen Handschriften des Dekrets keine zeitgenössischen
       Bindestriche zur Worttrennung nutzen, erfolgt die Angabe eines
       Zeilenumbruchs ausschließlich durch das leere Element <code>lb</code> und ggf.
-      dem Attribut <code>lb break="no"</code>.</p>
+      das Attribut <code>lb break="no"</code>.</p>
    <h4>Synchronisierte Textstruktur (IDs, Synchronisation und Taxonomie)</h4>
    <p>Die Textzeugen der Wormser Redaktion können vielfältige Abweichungen in der
       Binnengliederung sowie der Textstruktur aufweisen. Dies umfasst bewusste
@@ -208,12 +207,12 @@
       qualitativ über eine kontinuierlich weiterzuentwickelnde Taxonomie
       erschlossen, über die Struktureingriffe näher erläutert werden können. Dies
       umfasst beispielsweise bewussten oder zufälligen Verlust von Kapiteln,
-      Hinweise auf verlorene Elemente (wie z.B. nur noch teilweise sichtbare
+      Hinweise auf verlorene Elemente (wie z. B. nur noch teilweise sichtbare
       Inskriptionen), Markierungen von Kanones, die gelöscht werden sollten,
       Hinzufügungen von Schreibern, Umstellungen, Änderungen der Reihenfolge der
       Capitulationes oder Kapitel, fehlende Kapitelnummern und editorisch
       vorgenommene Rekonstruktionen. Die jeweiligen Einträge der Taxonomie sind in
-      der <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/lists/taxonomy.xml" target="_blank">Datei</a>
+      der <a href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/-/blob/main/lists/taxonomy.xml?ref_type=heads" target="_blank">Datei</a>
       hinterlegt und über entsprechende IDs im Attribut <code>ana</code> hinterlegt.
       Auf diese Weise lassen sich die vielfachen Eingriffe in die Textstruktur im
       Spiegel der Überlieferung maschinenlesbar analysieren und darstellen.</p>
@@ -231,7 +230,7 @@
       </figure>
    </div>
    <h4>Text-Bildverknüpfung</h4>
-   <p>Da die Edition des Decretum Burchardi besonderes Augenmerk auf kodikologische
+   <p>Da die Edition des <i>Decretum Burchardi</i> besonderes Augenmerk auf kodikologische
       Spuren der Textgenese wirft, kommt der Verschränkung von Text und Bild eine
       herausgehobene Bedeutung zu. Zum einen ermöglicht eine solche Verschränkung
       die direkte Visualisierung einschlägiger Phänomene am
@@ -251,7 +250,7 @@
       Zentrum steht dabei eine Abfrage-Syntax, über die Bilder in entsprechender
       Form vom Bildserver abgefragt werden können. Entsprechend enthält jedes
       <code>pb</code> Element einen Abfragelink zur dazugehörigen Bilddatei im
-      Attribut <code>facs</code> bzw. den Link zur IIIF-canvas im Attribut
+      Attribut <code>facs</code> bzw. den Link zur IIIF-Canvas im Attribut
       <code>corresp</code>. Das Attribut <code>ana</code> enthält in diesem Kontext
       den Link zur Annotationsdatei der jeweiligen Seite. Layoutelemente unterhalb
       der Seitenebene enthalten im Attribut <code>facs</code> jeweils ihre aus der
@@ -269,7 +268,7 @@
       Auszeichnungen)</h4>
    <p>Ein wichtiges Strukturelement stellen die vielfachen Auszeichnungen dar, die
       den Text in verschiedene Hierarchien gliedern. Diese graphischen
-      Hervorhebungen betreffen inbesondere Kapitelzahlen, Initialen der
+      Hervorhebungen betreffen insbesondere Kapitelzahlen, Initialen der
       Capitulationes und der Kapitel. Mitunter wurden auch Majuskeln nachträglich
       rubriziert. Auch Versalien innerhalb von Kapiteln gehören dazu. Graphische
       Hervorhebungen werden mit dem Element <code>hi</code> gekennzeichnet und ihre
@@ -294,7 +293,7 @@
    <h4>Schreibereingriffe: getilgter Text, Korrekturen, Hinzufügungen</h4>
    <p>Korrekturen durch Schreiber werden durch entsprechende Codierung kenntlich
       gemacht. Dabei ist zwischen Löschungen <code>del</code>, Ergänzungen <code>add</code>
-      und Ersetzungen <code>subst</code> zur unterscheiden. Löschungen werden
+      und Ersetzungen <code>subst</code> zu unterscheiden. Löschungen werden
       unabhängig von ihrer konkreten Ausgestaltung mit dem Element <code>del</code>
       ausgezeichnet. Löschungen über mehrere Zeilen / Seiten / Spalten, werden
       durch das Element <code>delSpan</code> ausgezeichnet, dessen Ende mit dem
@@ -318,7 +317,7 @@
       wird. Dies erfolgt in einem <code>subst</code>-Element unter Rückgriff auf die
       Elemente <code>del</code> und <code>add</code> mit ihren dazugehörigen Attributen
       (s.o.). Marginalien oder Interlinearglossen werden als <code>note</code>-Element
-      erfasst und durch das Attribut <code>type</code> und den dazugehörenden Werten
+      erfasst und durch das Attribut <code>type</code> und die dazugehörenden Werte
       <code>contemporary-marginalia</code>, <code>later-marginalia</code>,
       <code>contemporary-interlinear</code> und <code>later-interlinear</code> einer
       Anlageschicht zugeordnet sowie durch <code>hand</code> einer Hand zugeordnet
@@ -378,9 +377,9 @@
    <p>Häufig resultiert eine schwere Lesbarkeit oder gar Unleserlichkeit
       betroffener Textstellen aus Beschädigungen, die durch das Element
       <code>damage</code> zu dokumentieren ist. Textverluste oder -fragmentierungen
-      werden Zeile für Zeile über das Element <code>gap</code> unter Angabe einer
-      <code>reason</code><code>cut-out</code>, <code>torn-out</code>, <code>burned</code>
-      oder <code>trimmed</code>. Der verloren gegangene Text wird an dieser Stelle
+      werden Zeile für Zeile über das Element <code>gap</code> dokumentiert, wobei als
+      <code>reason</code> <code>cut-out</code>, <code>torn-out</code>, <code>burned</code>
+      oder <code>trimmed</code> angegeben wird. Der verloren gegangene Text wird an dieser Stelle
       nicht ergänzt. Trennt der Textverlust ein Wort, so wird der folgende
       Zeilenumbruch als <code>lb break="no"</code> gesetzt. Ist der Text zumindest
       teilweise lesbar, so wird er über das im vorhergehenden Abschnitt
@@ -427,9 +426,9 @@
       innerhalb des Projekts verzeichnet. Die Auflistung der Schreiber erfolgt
       innerhalb einer <code>listPerson</code> mit dem Attribut <code>listPerson
          type="scribes"</code> sowie der <code>xml:id="RegScribes"</code>, wobei
-      zusammengehörende Schreiber als <code>personGrp</code> gesammelt werden, z.B.
+      zusammengehörende Schreiber als <code>personGrp</code> gesammelt werden, z. B.
       Schreiber des Wormser Skriptoriums. Die Unterscheidung erfolgt über ein
-      Attribut <code>xml:id</code>, z.B. <code>xml:id="Wos"</code>. Die einzelnen
+      Attribut <code>xml:id</code>, z. B. <code>xml:id="Wos"</code>. Die einzelnen
       Schreiber werden als <code>person</code> ausgezeichnet, wobei zu beachten ist,
       dass hier nicht Hände, sondern ausschließlich tatsächliche Schreiber
       aufgeführt werden. Auch diese Schreiber erhalten eine eindeutige
@@ -474,7 +473,7 @@
    <p><b>Version 3</b> is a text-secured transcription with
       codicological phenomena, in which external IDs are referenced. Traces of
       reception, e.g., nota signs, are highlighted. References to meaningful
-      variants in other manuscripts of the Decretum Burchardi are made. The
+      variants in other manuscripts of the <i>Decretum Burchardi</i> are made. The
       transcriptions are also synchronised with the Digital Edition.</p>
    <h3>Data Repositories</h3>
    <p>All transcriptions are stored with associated data derivatives on the
@@ -495,8 +494,7 @@
       (<code>revisionDesc</code>).</p>
    <p>The <code>fileDesc</code> comprises the following elements: 
       <ul>
-         <li><code>titleStmt</code> contains the name of the source ('Decretum
-            Burchardi'), the location of the library of the transcribed manuscript, the
+         <li><code>titleStmt</code> contains the name of the source (<i>Decretum Burchardi</i>), the location of the library of the transcribed manuscript, the
             represented book and in the subtitle the note that it is a
             transcription, </li>
          <li><code>funder</code> names the Academy of
@@ -507,7 +505,7 @@
             project-ID, orcid-ID, name and institution and their specified
             contribution to the file, e.g., transcription or structural markup, </li>
          <li><code>editionStmt</code> describes the three
-            transcription versions.</li>
+            transcription versions,</li>
          <li><code>publicationStmt</code> contains the
             project as <code>publisher</code>, the license (<code>licence</code>, CC BY 4.0) and
             the publication date,</li>
@@ -524,13 +522,13 @@
       transcription, notes on the used character set and notes on the
       correct display, in three parts:</p>
    <ul>
-      <li><code>charDecl</code> lists the special characters used.</li>
+      <li><code>charDecl</code> lists the special characters used,</li>
       <li><code>editorialDecl</code> contains the transcription guidelines with the
          points <code>normalization</code>, <code>correction</code>,
          <code>hyphenation</code>, <code>segmentation</code>, <code>interpretation</code>,
          <code>punctuation</code> and <code>stdVals</code> for encoding of
-         numbers.</li>
-      <li><code>projectDesc</code> describes 'Decretum Burchardi' as the source
+         numbers,</li>
+      <li><code>projectDesc</code> describes <i>Decretum Burchardi</i> as the source
          and the project 'Burchards Dekret Digital'.</li>
    </ul>
    <p>The <code>revisionDesc</code> consists of a list that documents all changes of the
@@ -675,7 +673,7 @@
       </figure>
    </div>
    <h4>Text-Image Linking</h4>
-   <p>Since the edition of the Decretum Burchardi places special emphasis on
+   <p>Since the edition of the <i>Decretum Burchardi</i> places special emphasis on
       codicological traces of the text genesis, the intertwining of text
       and image is of outstanding importance. On one hand, such an
       intertwining enables the direct visualisation of relevant phenomena
@@ -713,7 +711,7 @@
       in the future.</p>
    <h4>Initials, Majuscule, Versals, Emphasis (graphical
       Markings)</h4>
-   <p>An important structural element are the multiple markings that
+   <p>An important structural element is the multiple markings that
       divide the text into various hierarchies. These graphical
       highlights concern especially chapter numbers, initials of the
       capitulations and the chapters. Sometimes majuscules were also rubricated afterwards.
@@ -780,7 +778,7 @@
    <p>If individual letters or whole sentence parts were overlooked during
       copying, they are usually added at the margin or above the line.
       Such additions are recorded by the element <code>add</code>, which is
-      further specified through the attributes <code>type</code> with the
+      further specified through the attribute <code>type</code> with the
       values <code>contemporary</code>|<code>later</code>|<code>modern</code>.
       Moreover, the location of the addition must be concretised with
       <code>place</code> and the values <code>inline</code>, <code>below</code>,
@@ -800,7 +798,7 @@
    <p>If a text is not clearly decipherable, it is marked by the element
       <code>unclear</code> and thus kept traceable. The element <code>unclear</code> must contain the attributes <code>resp</code> (with the
       respective person-ID as value) and <code>cert</code> (with the values
-      <code>low</code>, <code>middle</code> or <code>high</code> included as well as an
+      <code>low</code>, <code>middle</code> or <code>high</code> included as well as a
       <code>reason</code> specified by the values <code>tight-binding</code>,
       <code>rubbed</code>, <code>erased</code> or <code>folded-parchment</code>.
       Illegible text is not supplemented in the transcriptions.</p>
@@ -811,7 +809,7 @@
    <p>Often, heavy readability or even illegibility of affected text spots results from
       damage, which is to be documented by the element
       <code>damage</code>. Text losses or fragmentations are documented line by line through the element <code>gap</code> stating a
-      <code>reason</code><code>cut-out</code>, <code>torn-out</code>, <code>burned</code>
+      <code>reason</code> <code>cut-out</code>, <code>torn-out</code>, <code>burned</code>
       or <code>trimmed</code>. The lost text is not supplemented at this location. If the text loss divides a word,
       then the following
       line break is set as <code>lb break="no"</code>. If the text is at least

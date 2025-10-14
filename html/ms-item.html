@@ -30,6 +30,7 @@
             <script src="../js/navigation.js" defer></script>
         </head>
         <body>
+            <div id="access-placeholder"></div>
             <div id="navbar-placeholder"></div>
 
             <div class="back-button ps-4 mt-5">
@@ -50,7 +51,7 @@
                                     <select class="form-select" id="book-selector">
                                         <option val="" disabled="" selected=""></option>
                                     </select>
-                                    <button id="addToDesk" type="button" class="btn btn-primary mt-3 mt-md-0 ms-md-3" disabled><span lang="de">Buch zum Schreibtisch hinzufügen</span><span lang="en">Add book to Desktop</span></button>
+                                    <button id="addToDesk" type="button" class="btn btn-primary mt-3 mt-md-0 ms-md-3" disabled><span lang="de">Buch zum Arbeitsbereich hinzufügen</span><span lang="en">Add book to Workspace</span></button>
                                 </div>
 
                                 
@@ -159,7 +160,7 @@
                                         </div>
                                     </div>
                                     
-                                    <!--WERESSOURCEN-->
+                                    <!--WERESOURCEN-->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingWebressourcen">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebressourcen" aria-expanded="false" aria-controls="collapseWebressourcen">
@@ -184,7 +185,7 @@
                                                                 <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 04</span><span lang="en">Book 04</span></a></li>
                                                                 <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 05</span><span lang="en">Book 05</span></a></li>
                                                                 <li><a class="dropdown-item" href="" target="_blank"><span lang="de">Buch 06</span><span lang="en">Book 06</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 07</span><span lang="en">Book 07</span></a></li>
+                                                                <li><a class="dropdown-item" href="" target="_blank"><span lang="de">Buch 07</span><span lang="en">Book 07</span></a></li>
                                                                 <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 08</span><span lang="en">Book 08</span></a></li>
                                                                 <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 09</span><span lang="en">Book 09</span></a></li>
                                                                 <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 10</span><span lang="en">Book 10</span></a></li>
@@ -235,7 +236,7 @@
             var miradorInstance
             async function fetchDataAndPopulate() {
                 let document_id = new URLSearchParams(window.location.search).get('document');
-                let folderPath = '../data/mss/' + document_id + '/Tei/v1'; // Update this with your XML folder path
+                let folderPath = '../data/mss/' + document_id + '/Tei/v1';
                 let response = await fetch(folderPath + '/msdesc.xml'); // Fetch the XML file
                 
                 if (response.ok) {
@@ -416,6 +417,7 @@
                     document.getElementById("webResourceDigitalisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="digi"] ref')[0].innerHTML
                     document.getElementById("webResourceKatalogisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="cat"] ref')[0].innerHTML
 
+                    
                     //Book selection: display the correct number of books in V1 and V2, and K
                     var startBook = 0;
                     var endBook = 20;
@@ -444,7 +446,7 @@
 
 
                     //List of active (available) books in "Select a book" dropdown
-                    const activeOptions = [13, 1, 6]
+                    const activeOptions = [13, 1, 6, 7]
                     for (var i = startBook; i <= endBook; i++) { 
                         var optionBook = document.createElement('option');
                         optionBook.value = (i < 10) ? "0" + i : i;
@@ -485,8 +487,8 @@
                 }
             }
 
-            //Mirador
-            function initializeMirador(doc_id){
+            //Mirador: commented on 12.05.2025. The next function has been updated to handle error message when images are not loaded due to other website issue
+           /* function initializeMirador(doc_id){
                 const doc_sigle = { 'F':'../data/manifests/frankfurt-ub-b-50-manifest.json',
                                     'Va2': '../data/manifests/vatican-bav-pl-585-manifest.json',
                                     'Va3': '../data/manifests/vatican-bav-pl-586-manifest.json',
@@ -533,7 +535,91 @@
                         { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json'}
                     ]
                 });
-            }
+            }*/
+
+            
+
+//Stand: 12.05.2025 - Function to handle message errors when Mirador doesn't work due to other website issue. Still in test phase
+function initializeMirador(doc_id) {
+  const doc_sigle = {
+    'F': '../data/manifests/frankfurt-ub-b-50-manifest.json',
+    'Va2': '../data/manifests/vatican-bav-pl-585-manifest.json',
+    'Va3': '../data/manifests/vatican-bav-pl-586-manifest.json',
+    'B': '../data/manifests/bamberg-sb-c-6.json',
+    'K': '../data/manifests/koeln-edd-119-manifest.json'
+  };
+
+  const manifestUrl = doc_sigle[doc_id];
+
+  // Show Bootstrap 5 alert
+  function showCustomError(message) {
+    const container = document.getElementById('mirador-singleMS');
+    if (container && !document.getElementById('mirador-error-alert')) {
+      const alertDiv = document.createElement('div');
+      alertDiv.className = 'alert alert-warning alert-dismissible fade show';
+      alertDiv.role = 'alert';
+      alertDiv.id = 'mirador-error-alert';
+      alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      `;
+      container.prepend(alertDiv);
+    }
+  }
+
+  // Check if manifest is reachable before loading Mirador
+  fetch(manifestUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Manifest not reachable');
+      return response.json();
+    })
+    .then(() => {
+      miradorInstance = Mirador.viewer({
+        id: "mirador-singleMS",
+        language: 'de',
+        window: {
+          allowClose: false,
+          defaultView: 'single',
+          highlightAllAnnotations: true,
+          panels: {
+            info: true,
+            attribution: true,
+            canvas: true,
+            annotations: true,
+            search: true,
+            layers: true
+          },
+          views: [
+            { key: 'single', behaviors: ['individuals'] },
+            { key: 'book', behaviors: ['paged'] }
+          ]
+        },
+        windows: [{
+          id: 'known-window-id',
+          manifestId: manifestUrl,
+          canvasId: ''
+        }],
+        thumbnails: {
+          preferredFormats: ['jpg', 'png', 'webp', 'tif']
+        },
+        thumbnailNavigation: {
+          defaultPosition: 'far-bottom',
+          displaySettings: true
+        },
+        catalog: [
+          { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
+          { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
+          { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
+          { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
+          { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
+        ]
+      });
+    })
+    .catch(() => {
+      showCustomError('Die Bilder dieses Manuskripts konnten nicht geladen werden, da eine externe Quelle momentan nicht erreichbar ist.');
+    });
+}
+
 
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;
