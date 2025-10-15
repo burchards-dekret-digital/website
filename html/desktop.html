@@ -136,7 +136,7 @@
             </ul>
           </div>
         
-          <div id ="transcription-view-button" class="dropdown float-end" style="display: none;">
+          <div id="transcription-view-button" class="dropdown float-end" style="display: none;">
             <button lang="de" class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Transkriptionsansichten
             </button>
@@ -1766,11 +1766,12 @@ You can then view the transcription and the text in the digitized original manus
             let isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
     
             let contentInfo;
-            if (isMobile) {
+            /*if (isMobile) {
                 contentInfo = $(contentDiv).find("#infoSchreibtischMobile");
             } else {
                 contentInfo = $(contentDiv).find("#infoSchreibtisch");
-            }
+            }*/
+           contentInfo = $(contentDiv).find("#infoSchreibtisch");
             $("#infoSchreibtisch").html(contentInfo.html());
            
             let contentInfoStyle = $(contentDiv).find("#infoStyleTranscriptions")

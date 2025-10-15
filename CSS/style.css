@@ -557,16 +557,23 @@ font-family: Andron-Scriptor-Web;
     .figure{width:100%}
         
     /*  DESKTOP/SCHREIBTISCH  */
-    #downloadJsonBtn{display:none;}
-    #clearAll{display:none;}
+    /*#downloadJsonBtn{display:none;}
+    #clearAll{display:none;}*/
     #transcription-view-button{display:none;}
-    #listResources{display:none;}
+    /*#listResources{display:none;}*/
     #welcomeMessage{margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important;}
     .add-transcription-btn{display:none;}
     .mirador-btn{display:none;}
-    .add-structure-btn{display:none;}
-    .editor-btn{display:none;}
     .mirador-col{display:none;}
+    .add-structure-btn{display:none;}
+    .structure-col{display:none;}
+    .editor-btn{display:none;}
+    .editor-col{display:none;}
+    .scribe-btn{display:none;}
+    .scribe-col{display:none;}
+    #transcription-view-button{display:none!important;}
+    
+
     .resource-panel-item.half-width{width:100%}
     .resource-panel-item.three-quarter-width {width: 100%;}
     .json-upload{display:none;}
