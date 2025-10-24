@@ -1766,11 +1766,7 @@ You can then view the transcription and the text in the digitized original manus
             let isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
     
             let contentInfo;
-            /*if (isMobile) {
-                contentInfo = $(contentDiv).find("#infoSchreibtischMobile");
-            } else {
-                contentInfo = $(contentDiv).find("#infoSchreibtisch");
-            }*/
+            
            contentInfo = $(contentDiv).find("#infoSchreibtisch");
             $("#infoSchreibtisch").html(contentInfo.html());
            
