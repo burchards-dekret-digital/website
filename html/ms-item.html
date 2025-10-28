@@ -445,6 +445,20 @@
                     }
 
 
+                    // Add msdesc.xml link at the end of the dropdown
+                    const msdescLi = document.createElement('li');
+                    const msdescLink = document.createElement('a');
+                    msdescLink.className = 'dropdown-item';
+                    msdescLink.href = '../data/mss/' + document_id + '/Tei/v1/msdesc.xml';
+                    msdescLink.target = '_blank';
+                    msdescLink.innerHTML = '<span lang="de">Handschriftbeschreibung</span><span lang="en">Manuscript description</span>';
+                    msdescLi.appendChild(msdescLink);
+
+                    // Append to the dropdown menu
+                    document.querySelector('#collapseWebressourcen ul.dropdown-menu').appendChild(msdescLi);
+
+
+
                     //List of active (available) books in "Select a book" dropdown
                     const activeOptions = [13, 1, 6, 7]
                     for (var i = startBook; i <= endBook; i++) { 
