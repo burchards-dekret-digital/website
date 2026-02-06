@@ -121,7 +121,7 @@ function parseXml(xml) {
 
     var popupContent = "<b>";
     if (isCore) {
-        popupContent += '<a href="ms-item-new.html?document=' + sigle + '">' + name + "</a>";
+        popupContent += '<a href="ms-item.html?document=' + sigle + '">' + name + "</a>";
       } else {
         popupContent += name;
       }
@@ -184,7 +184,7 @@ function parseXml(xml) {
 
       var popupContent = "<b>";
      if (isCore) {
-        popupContent += '<a href="ms-item-new.html?document=' + sigle + '">' + name + "</a>";
+        popupContent += '<a href="ms-item.html?document=' + sigle + '">' + name + "</a>";
       } else {
         popupContent += name;
       }
