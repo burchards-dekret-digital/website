@@ -1,0 +1,64 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-modena-bc-o-II-15">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Modena, Biblioteca Capitolare, O.II.15</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 28.10.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 28.10.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="modena-bc-o-II-15-msdesc" type="full">
+                        <msIdentifier xml:id="modena-bc-o-II-15-ident">
+                        <repository ref="https://archiviodiocesano.mo.it/archivio-capitolare">Biblioteca Capitolare<location>
+                            <geo>44.6463459,10.9250343,19</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q279">Modena</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q38">Italien</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">O.II.15</idno>
+                        </collection>
+                        <msName type="full">Modena, Biblioteca Capitolare, O.II.15</msName>
+                        <msName type="sigle">Mo</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1099" notBefore="1050">2. Hälfte des 11. Jahrhunderts</origDate>
+                            </origin>
+                        </history>
+                        
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref/>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

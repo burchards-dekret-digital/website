@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>News Archive</title>
+      <meta name="keywords" content="BDD News archive">
+      <meta name="description" content="">
+      <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
+      <meta name="google" content="notranslate"/>
+      
+      <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+      <script src="../js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+      <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
+      <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+      
+      <script src="../js/jquery-3.7.1.min.js"></script>
+      
+      <script src="../js/language.js"></script>
+      <script src="../js/navigation.js" defer></script>
+    </head>
+
+
+    <body>
+
+        <div id="navbar-placeholder"></div>
+        <div class="back-button ps-4 mt-5">
+          <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+        </div>
+        <div class="container" style="flex:1">
+          <h1 class="section-main-title">
+            <span lang="de">NACHRICHTENARCHIV</span><span lang="en">NEWS ARCHIVE</span>
+          </h1>
+
+          
+          <!-- Modal Info -->
+        <div class="modal fade" id="newsInfoModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5 fw-bold">
+                    <span lang="de">NACHRICHTENARCHIV</span><span lang="en">NEWS ARCHIVE</span>
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="infoNewsArchive"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <span lang="de">Schließen</span><span lang="en">Close</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Read -->
+        <div class="modal fade" id="newsReadModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                    <h3 class="modal-title fs-5 fw-bold mb-1" id="newsReadTitle"></h3>
+                    <div class="text-muted" id="newsReadDate"></div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="newsReadBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <span lang="de">Schließen</span><span lang="en">Close</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+          <!-- Toolbar -->
+            <div class="d-flex align-items-center gap-2 mb-4 flex-wrap">
+                <button type="button" class="btn btn-success btn-sm"
+                        data-bs-toggle="modal" data-bs-target="#newsInfoModal" style="background-color: #28a745!important; border-color: #28a745!important">
+                    Info
+                </button>
+
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="newsYearDropdownBtn"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                    <span lang="de">Zeit: Alle</span><span lang="en">Date: All</span>
+                    </button>
+                    <ul class="dropdown-menu" id="newsYearMenu" aria-labelledby="newsYearDropdownBtn"></ul>
+                </div>
+            </div>
+                 
+          
+          <!-- Table -->
+            <div class="table-responsive" style="max-height: 650px; overflow-y:auto;">
+                <table class="table table-hover w-100">
+                    <colgroup>
+                    <col style="width: 55%">
+                    <col style="width: 30%">
+                    <col style="width: 15%">
+                    </colgroup>
+
+                    <thead id="header" style="position: sticky; top: 0; background: white; z-index: 5;">
+                    <tr>
+                        <th><span lang="de">Nachricht</span><span lang="en">News</span></th>
+                        <th class="text-center"><span lang="de">Datum</span><span lang="en">Date</span></th>
+                        <th class="text-center"><span lang="de">Lesen</span><span lang="en">Read</span></th>
+                    </tr>
+                    </thead>
+
+                    <thead>
+                    <tr>
+                        <th>
+                        <input id="newsSearchTitle" type="text" class="form-control" placeholder="Search...">
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="newsArchiveTableBody"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="footer-placeholder"></div>
+    </body>
+
+ 
+<script>
+  window.newsFilters = { year: "all", q: "" };
+  window.NEWS_ITEMS = [];
+
+  function parseDate(dateStr) {
+    // "dd.mm.yyyy" -> Date
+    const m = (dateStr || "").trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+    if (!m) return new Date(0);
+    const [_, dd, mm, yyyy] = m;
+    return new Date(`${yyyy}-${mm}-${dd}`);
+  }
+
+  async function fetchNewsItems() {
+    const html = await fetch("../data/texts/newsArchiveText.html").then(r => r.text());
+    const doc = new DOMParser().parseFromString(html, "text/html");
+
+    const items = Array.from(doc.querySelectorAll(".news-item")).map((el, idx) => {
+      const title = el.querySelector(".title")?.innerHTML || "";
+      const dateStr = el.querySelector(".date")?.textContent?.trim() || "";
+      const content = el.querySelector(".content")?.innerHTML || "";
+      const d = parseDate(dateStr);
+      const year = String(d.getFullYear() || "");
+      return { id: idx, title, dateStr, content, d, year };
+    });
+
+    items.sort((a,b) => b.d - a.d);
+    return items;
+  }
+
+  function populateYearMenu(items) {
+    const years = Array.from(new Set(items.map(x => x.year).filter(Boolean)))
+      .sort((a,b) => b.localeCompare(a));
+
+    const menu = document.getElementById("newsYearMenu");
+    menu.innerHTML = `
+      <li><a class="dropdown-item news-year-option" data-year="all">
+        <span lang="de">Alle</span><span lang="en">All</span>
+      </a></li>
+      <li><hr class="dropdown-divider"></li>
+      ${years.map(y => `
+        <li><a class="dropdown-item news-year-option" data-year="${y}">${y}</a></li>
+      `).join("")}
+    `;
+
+    menu.querySelectorAll(".news-year-option").forEach(a => {
+      a.addEventListener("click", () => {
+        const y = a.dataset.year;
+        window.newsFilters.year = y;
+
+        const btn = document.getElementById("newsYearDropdownBtn");
+        const de = (y === "all") ? "Zeit: Alle" : `Zeit: ${y}`;
+        const en = (y === "all") ? "Date: All" : `Date: ${y}`;
+        btn.innerHTML = `<span lang="de">${de}</span><span lang="en">${en}</span>`;
+
+        renderNewsTable();
+        if (typeof checkLanguage === "function") checkLanguage();
+      });
+    });
+  }
+
+  function passesFilters(item) {
+    const { year, q } = window.newsFilters;
+    if (year !== "all" && item.year !== year) return false;
+
+    if (q) {
+      const txt = (item.title + " " + item.content).toLowerCase();
+      if (!txt.includes(q.toLowerCase())) return false;
+    }
+    return true;
+  }
+
+  function renderNewsTable() {
+    const body = document.getElementById("newsArchiveTableBody");
+    const rows = window.NEWS_ITEMS.filter(passesFilters).map(item => `
+      <tr>
+        <td>${item.title}</td>
+        <td class="text-center">${item.dateStr}</td>
+        <td class="text-center">
+          <button class="btn btn-outline-primary btn-sm news-read-btn" data-id="${item.id}">
+            <i class="bi bi-eye"></i>
+          </button>
+        </td>
+      </tr>
+    `).join("");
+
+    body.innerHTML = rows;
+
+    // modal open
+    body.querySelectorAll(".news-read-btn").forEach(btn => {
+      btn.addEventListener("click", () => openNewsModal(parseInt(btn.dataset.id, 10)));
+    });
+
+    if (typeof checkLanguage === "function") checkLanguage();
+  }
+
+  function openNewsModal(id) {
+    const item = window.NEWS_ITEMS.find(x => x.id === id);
+    if (!item) return;
+
+    document.getElementById("newsReadTitle").innerHTML = item.title;
+    document.getElementById("newsReadDate").textContent = item.dateStr;
+    document.getElementById("newsReadBody").innerHTML = item.content;
+
+    const modal = new bootstrap.Modal(document.getElementById("newsReadModal"));
+    modal.show();
+
+    if (typeof checkLanguage === "function") checkLanguage();
+  }
+
+  // Info modal content
+  function loadInfoHtml() {
+    fetch("../data/texts/infoButtonsTexts.html")
+      .then(r => r.text())
+      .then(html => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        
+        const info = doc.querySelector("#infoNewsArchive") || doc.body;
+        document.getElementById("infoNewsArchive").innerHTML = info.innerHTML;
+        if (typeof checkLanguage === "function") checkLanguage();
+      })
+      .catch(console.error);
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    loadInfoHtml();
+
+    window.NEWS_ITEMS = await fetchNewsItems();
+    populateYearMenu(window.NEWS_ITEMS);
+    renderNewsTable();
+
+    const search = document.getElementById("newsSearchTitle");
+    search.addEventListener("input", () => {
+      window.newsFilters.q = search.value.trim();
+      renderNewsTable();
+    });
+  });
+</script>
+
+</html>

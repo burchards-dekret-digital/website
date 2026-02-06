@@ -1,0 +1,59 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-pistoia-ac-c-125">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Pistoia, Archivio Capitolare, C. 125</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 28.10.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 28.10.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="pistoia-ac-c-125-msdesc" type="full">
+                        <msIdentifier xml:id="pistoia-ac-c-125-ident">
+                        <repository ref="https://www.archiviocapitolaredipistoia.it/">Archivio Capitolare<location>
+                            <geo>43.9333039,10.9158686,17</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q13376">Pistoia</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q38">Italien</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">C. 125</idno>
+                        </collection>
+                        <msName type="full">Pistoia, Archivio Capitolare, C. 125</msName>
+                        <msName type="sigle">Pi1</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notBefore="1100" notAfter="1125">1. Viertel des 12. Jahrhunderts</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref>https://www.archiviocapitolaredipistoia.it/burcardo_di_worms_decretum_pt_ac_c125-idm192.php</ref>
+                                </bibl> 
+                              </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

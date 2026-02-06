@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-vic-ac-frag-XV">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Vic, Archivo Capitular, Fragmenta XV</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 09.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 09.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="vic-ac-frag-XV-msdesc" type="fragment">
+                        <msIdentifier xml:id="vic-ac-frag-XV-ident">
+                        <repository ref="">Archivo Capitular<location>
+                            <geo>41.928125666710194, 2.254907081488072</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q13855">Vic</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q29">Spanien</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Fragmenta XV</idno>
+                        </collection>
+                        <msName type="full">Vic, Archivo Capitular, Fragmenta XV</msName>
+                        <msName type="sigle">Vi1</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1199" notBefore="1100">12. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref/>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

@@ -37,19 +37,19 @@
         
     </xsl:template>
 
-    <!-- Handle head as h1 -->
+    <!-- Handle head as h2 -->
     <xsl:template match="//tei:body/tei:div/tei:div/tei:div/tei:head">
-        <h1>
+        <h3>
             <xsl:apply-templates/>
-        </h1>
+        </h3>
     </xsl:template>
     
 
-<!-- Handle head as h2 -->
+<!-- Handle head as h3 -->
     <xsl:template match="//tei:body/tei:div/tei:div/tei:div/tei:div/tei:head">
-        <h2>
+        <h4>
             <xsl:apply-templates/>
-        </h2>
+        </h4>
     </xsl:template>
 
 
@@ -93,14 +93,20 @@
     <xsl:template match="//tei:div//tei:figure">
         <div style="text-align: center;">
             <figure class="figure">
-                <img src="{tei:graphic/@url}" class="figure-img img-fluid" alt="{tei:figDesc/text()}"/>
+                <img src="{tei:graphic/@url}" class="figure-img img-fluid" alt="{tei:figDesc/text()} " title="{../tei:figDesc/text()}"/>
                 <figcaption class="figure-caption">
-                    <xsl:value-of select="./tei:figDesc"/>
-                    <!-- TODO: doesn't display link -->
+                    <xsl:apply-templates select="tei:figDesc"/>
+                    <!-- <xsl:value-of select="./tei:figDesc"/>
+                    TODO: doesn't display link -->
                 </figcaption>
             </figure>
         </div>
     </xsl:template>
+    
+    <!-- Handle figDesc -->
+<xsl:template match="tei:figDesc">
+    <xsl:apply-templates/>
+</xsl:template>
     
     <!--hi rend="bold" and italic -->
     <xsl:template match="//tei:hi[@rend='bold']">

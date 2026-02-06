@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Manuscripts</title>
-        <meta name="keywords" content="Decretum Burchardi Manuscripts, Manuscripts Database">
-        <meta name="description" content="Explore the manuscript database of the Decretum Burchardi. Access metadata, transcriptions, and a map of available manuscripts for in-depth research.">
-        <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
-        <meta name="google" content="notranslate"/>
+      <title>Manuscripts</title>
+      <meta name="keywords" content="Decretum Burchardi Manuscripts, Manuscripts Database">
+      <meta name="description" content="Explore the manuscript database of the Decretum Burchardi. Access metadata, transcriptions, and a map of available manuscripts for in-depth research.">
+      <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
+      <meta name="google" content="notranslate"/>
+      
+      <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+      <script src="../js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+      
+      <!--Leaflet-->
+      <link rel="stylesheet" href="../CSS/leaflet.css">
+      <script src="../js/leaflet.js"></script>
+      <script src="../js/leaflet.featuregroup.subgroup.js"></script>
+      <script src="../js/leaflet.markercluster.js"></script>
+      <link rel="stylesheet" href="../CSS/MarkerCluster.css">
+      <link rel="stylesheet" href="../CSS/MarkerCluster.Default.css">       
         
-        <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-        <script src="../js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
+      <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+      
+      <script src="../js/jquery-3.7.1.min.js"></script>
+      <script src="../js/bdd_manuscriptdb.js"></script>
+      <script src="../js/language.js"></script>
+      <script src="../js/navigation.js" defer></script>
+      <script src="../js/bdd_mss_list.js"></script>
+
+      <style>
+        /*Scrollable table*/
+        .mss-table {
+            max-height: 600px;  /* choose height you prefer */
+            overflow-y: auto;
+        }
+        #header {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 5;
+        }
         
-        <!--Leaflet-->
-        <link rel="stylesheet" href="../CSS/leaflet.css">
-        <script src="../js/leaflet.js"></script>
-        <script src="../js/leaflet.featuregroup.subgroup.js"></script>
-        <script src="../js/leaflet.markercluster.js"></script>
-        <link rel="stylesheet" href="../CSS/MarkerCluster.css">
-        <link rel="stylesheet" href="../CSS/MarkerCluster.Default.css">       
-         
-        <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
-        
-        <script src="../js/jquery-3.7.1.min.js"></script>
-        <script src="../js/bdd_manuscriptdb.js"></script>
-        <script src="../js/language.js"></script>
-        <script src="../js/navigation.js" defer></script>
+
+
+        /* Time filter wrapper */
+        .year-slider-wrap{
+          position: relative;
+          height: 22px;
+        }
+
+        /*visible line */
+        .year-track{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 50%;
+          height: 4px;
+          transform: translateY(-50%);
+          background: #dee2e6;      
+          border-radius: 999px;
+          z-index: 0;
+        }
+
+        /* Overlay sliders */
+        .year-range{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          margin: 0;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        /* Make thumbs clickable */
+        .year-range::-webkit-slider-thumb{ pointer-events: auto; }
+        .year-range::-moz-range-thumb{ pointer-events: auto; }
+
+        .year-range::-webkit-slider-runnable-track{
+          background: transparent;
+          border: 0;
+        }
+        .year-range::-moz-range-track{
+          background: transparent;
+          border: 0;
+        }
+
+        #yearMax{ z-index: 3; }
+        #yearMin{ z-index: 2; }
+
+        .dropdown-menu .year-slider-wrap { margin-top: 6px; }
+
+      </style>
     </head>
 
 
     <body>
-        <div id="access-placeholder"></div>
+
         <div id="navbar-placeholder"></div>
         <div class="back-button ps-4 mt-5">
           <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
         </div>
         <div class="container" style="flex:1">
-            <h1 class="section-main-title">
-              <span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span>
-              <!--<span style="vertical-align: super;"><button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#mssModal">
-                <i class="fa-solid fa-circle-info fa-xl" style="color: #46b65f; "></i></button></span>-->
-            </h1>
-            <button type="button" class="btn btn-success mb-3" style="background-color: #28a745!important; border-color: #28a745!important" data-bs-toggle="modal" data-bs-target="#mssModal">Info</button>
+          <h1 class="section-main-title">
+            <span lang="de">HANDSCHRIFTEN</span><span lang="en">MANUSCRIPTS</span>
+          </h1>
 
-
-            <!-- Modal Info-->
+          <!-- Modal Info-->
           <div class="modal fade" id="mssModal" tabindex="-1" aria-labelledby="mssModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
@@ -60,34 +125,147 @@
                 </div>
               </div>
             </div>
-          </div>           
-        
+          </div> 
+          
+          <div class="d-flex align-items-center gap-2 mb-4 flex-wrap">
+            
+            <button type="button" class="btn btn-success btn-sm" style="background-color: #28a745!important; border-color: #28a745!important" data-bs-toggle="modal" data-bs-target="#mssModal">Info</button>
+
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="filterDropdown" data-bs-toggle="dropdown">
+                <span lang="de">Typ: Alle Handschriften</span><span lang="en">Type: All manuscripts</span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                <li>
+                  <a class="dropdown-item filter-option" data-filter="all">
+                    <span lang="de">Alle Handschriften</span>
+                    <span lang="en">All manuscripts</span>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a class="dropdown-item filter-option" data-filter="core">
+                    <span lang="de">Beschriebene Handschriften</span>
+                    <span lang="en">Described manuscripts</span>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a class="dropdown-item filter-option" data-filter="type-full">
+                    <span lang="de">Vollständige Handschrift</span>
+                    <span lang="en">Full manuscript</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item filter-option" data-filter="type-fragment">
+                    <span lang="de">Fragment</span>
+                    <span lang="en">Fragment</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item filter-option" data-filter="type-excerpt">
+                    <span lang="de">Exzerpt</span>
+                    <span lang="en">Excerpt</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item filter-option" data-filter="type-separate-transmission">
+                    <span lang="de">Separatüberlieferung</span>
+                    <span lang="en">Separate transmission</span>
+                  </a>
+                </li>
+              </ul>
+            </div> 
+
+            <!-- Date dropdown (NEW) -->
+            <div class="dropdown">
+              <button
+                class="btn btn-primary dropdown-toggle btn-sm" type="button" id="yearDropdownBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                <span lang="de">Zeit: Alle</span><span lang="en">Date: All</span>
+              </button>
+
+              <div class="dropdown-menu p-3" aria-labelledby="yearDropdownBtn" style="min-width: 340px;">
+                <div class="fw-semibold mb-2">
+                  <span lang="de">Entstehungszeit</span><span lang="en">Date of origin</span>
+                </div>
+
+                <div class="position-relative year-slider-wrap">
+                  <div class="year-track"></div>
+                  <input id="yearMin" type="range" class="form-range year-range" />
+                  <input id="yearMax" type="range" class="form-range year-range" />
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 align-items-center mt-2">
+                  <div class="input-group input-group-sm" style="max-width: 130px;">
+                    <span class="input-group-text">From</span>
+                    <input id="yearMinInput" type="number" class="form-control" />
+                  </div>
+
+                  <div class="input-group input-group-sm" style="max-width: 130px;">
+                    <span class="input-group-text">To</span>
+                    <input id="yearMaxInput" type="number" class="form-control" />
+                  </div>
+
+                  <button id="yearResetBtn" type="button" class="btn btn-outline-secondary btn-sm">
+                    <span lang="de">Zurücksetzen</span><span lang="en">Reset</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ms-auto">
+              <button id="exportMsdescJsonBtn" type="button" class="btn btn-outline-primary btn-sm">
+                <span lang="de">Handschriftendaten exportieren</span>
+                <span lang="en">Export manuscripts data</span>
+              </button>
+            </div>
+          </div>
+
+                 
           <div class="mss-table table-responsive">
               <table id="mss-table-1" class="table table-hover w-100">
+                <colgroup>
+                  <col style="width: 40%">
+                  <col style="width: 15%">
+                  <col style="width: 10%">
+                  <col style="width: 30%">
+                  <col style="width: 5%">
+                </colgroup>
                   <!-- Table headers -->
-                  <thead>
+                  <thead id="header">
                     <tr>
-                      <th scope="col" class="heading" onclick="sortTable(0)"><span lang="de">Signatur</span><span lang="en">Signature</span></th>
-                      <th scope="col" class="heading" onclick="sortTable(1)"><span lang="de">Sigle</span><span lang="en">Sigle</span></th>
-                      <th scope="col" class="heading" onclick="sortTable(2)"><span lang="de">Entstehungsort</span><span lang="en">Place of origin</span></th>
-                      <th scope="col" class="heading" onclick="sortTable(3)"><span lang="de">Entstehungszeit</span><span lang="en">Date of origin</span></th>
+                      <th scope="col" class="heading"><span lang="de">Signatur</span><span lang="en">Signature</span></th>
+                      <!--Temporarily hide Sigle column -->
+                      <!--<th scope="col" class="heading"><span lang="de">Sigle</span><span lang="en">Sigle</span></th>-->
+                      <th scope="col" class="heading"><span lang="de">Typ</span><span lang="en">Type</span></th>
+                      <th scope="col" class="heading text-center"><span lang="de">Entstehungsort</span><span lang="en">Place of origin</span></th>
+                      <th scope="col" class="heading"><span lang="de">Entstehungszeit</span><span lang="en">Date of origin</span></th>
+                      <th scope="col" class="heading text-center"><span lang="de">Export</span><span lang="en">Export</span></th>
                     </tr>
                   </thead>
                   <!-- Filter inputs -->
                   <thead>
                     <tr>
                       <th class="mss-filter-table" scope="col">
-                        <input type="text" class="form-control" id="mss-filter-1" onkeyup="filterMss('1')" placeholder="Filter"/>
+                        <input type="text" class="form-control" id="mss-filter-1" onkeyup="filterMss('1')" placeholder="Search..."/>
                       </th>
-                      <th class="mss-filter-table" scope="col">
+                      <!--Temporarily hide Sigle column and filter. Remember: to reactivate it, remove all comments (also for cell2 and in the map) and change the numbering of filters. -->
+                      <!--<th class="mss-filter-table" scope="col">
                         <input type="text" class="form-control" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Filter"/>
+                      </th>-->
+                      <th class="mss-filter-table" scope="col">
+                        <!--<input type="text" class="form-control" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Filter"/>-->
                       </th>
                       <th class="mss-filter-table" scope="col">
-                        <input type="text" class="form-control" id="mss-filter-3" onkeyup="filterMss('3')" placeholder="Filter"/>
+                        <input type="text" class="form-control text-center" id="mss-filter-3" onkeyup="filterMss('3')" placeholder="Search..."/>
                       </th>
                       <th class="mss-filter-table" scope="col">
-                        <input type="text" class="form-control" id="mss-filter-4" onkeyup="filterMss('4')" placeholder="Filter"/>
+                        <!--<input type="text" class="form-control" id="mss-filter-4" onkeyup="filterMss('4')" placeholder="Filter"/>-->
                       </th>
+                      <th class="mss-filter-table" scope="col"></th>
                     </tr>
                   </thead>
                   <!-- Table body for data -->
@@ -95,366 +273,101 @@
                     <!-- Table rows will be dynamically added here -->
                   </tbody>
                 </table>
+              
           </div>
 
-          <div class="mb-5 mt-2">
-            <p><span lang="de">Die aktuelle Siglenliste aller Burchard-Handschriften, die im Projekt von Relevanz sind, finden sie <a href="#" data-bs-toggle="modal" data-bs-target="#sigleModal">hier</a>.</span><span lang="en">The current siglum list of all Burchard manuscripts that are relevant to the project can be found <a href="#" data-bs-toggle="modal" data-bs-target="#sigleModal">here</a>.</span></p>
-          </div>
-          <!-- sigle Modal -->
-          <div class="modal fade" id="sigleModal" tabindex="-1" aria-labelledby="sigleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="sigleModalLabel"><span lang="de">Siglenliste</span><span lang="en">Siglum list</span></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Sigle</th>
-                            <th scope="col"><span lang="de">Handschrift</span><span lang="en">Manuscript</span></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>An</td>
-                            <td>Angers, Médiathèque Toussaint, 368</td>
-                          </tr>
-                          <tr>
-                            <td>B</td>
-                            <td>Bamberg, Staatsbibliothek, Can. 6</td>
-                          </tr>
-                          <tr>
-                            <td>Bo</td>
-                            <td>Bologna, Biblioteca Universitaria, 2239</td>
-                          </tr>
-                          <tr>
-                            <td>Br</td>
-                            <td>Brüssel, Bibliothèque royale de Belgique, 3819-20</td>
-                          </tr>
-                          <tr>
-                            <td>Bu</td>
-                            <td>El Burgo de Osma, Biblioteca de la Santa Iglesia Catedral, 157</td>
-                          </tr>
-                          <tr>
-                            <td>C</td>
-                            <td>Chartres, Médiathèque l’Apostrophe, 161</td>
-                          </tr>
-                          <tr>
-                            <td>Co</td>
-                            <td>Cortona, Biblioteca Comunale e dell’Accademia Etrusca, 75</td>
-                          </tr>
-                          <tr>
-                            <td>Du</td>
-                            <td>Durham, Cathedral Library, B.IV.17</td>
-                          </tr>
-                          <tr>
-                            <td>E</td>
-                            <td>Eichstätt-Ingolstadt, Universitätsbibliothek, Cod. st. 772</td>
-                          </tr>
-                          <tr>
-                            <td>Es</td>
-                            <td>El Escorial, Real Biblioteca del Monasterio de San Lorenzo, T.I.14</td>
-                          </tr>
-                          <tr>
-                            <td>F</td>
-                            <td>Frankfurt am Main, Universitätsbibliothek Johann Christian Senckenberg, Barth. 50</td>
-                          </tr>
-                          <tr>
-                            <td>Fl<sub>1</sub></td>
-                            <td>Florenz, Biblioteca Medicea Laurenziana, Calci, 11</td>
-                          </tr>
-                          <tr>
-                            <td>Fl<sub>2</sub></td>
-                            <td>Florenz, Biblioteca Medicea Laurenziana, Plut. 16.21</td>
-                          </tr>
-                          <tr>
-                            <td>Fl<sub>3</sub></td>
-                            <td>Florenz, Biblioteca Nazionale Centrale, Conv. soppr. F.IV.255</td>
-                          </tr>
-                          <tr>
-                            <td>Fl<sub>4</sub></td>
-                            <td>Florenz, Biblioteca Riccardiana, 240</td>
-                          </tr>
-                          <tr>
-                            <td>Fr</td>
-                            <td>Freiburg im Breisgau, Universitätsbibliothek, 7</td>
-                          </tr>
-                          <tr>
-                            <td>Iv</td>
-                            <td>Ivrea, Archivio Storico Diocesano e Biblioteca Capitolare, XCIV</td>
-                          </tr>
-                          <tr>
-                            <td>K</td>
-                            <td>Köln, Erzbischöfliche Diözesan- und Dombibliothek, 119</td>
-                          </tr>
-                          <tr>
-                            <td>La</td>
-                            <td>Lambach, Stiftsarchiv, Cod. memb. XVI</td>
-                          </tr>
-                          <tr>
-                            <td>Li</td>
-                            <td>Lissabon, Biblioteca Nacional de Portugal, Alcobaça CCCIII/365</td>
-                          </tr>
-                          <tr>
-                            <td>Lo</td>
-                            <td>London, British Library, Cotton Claudius C VI, fol. 1–165</td>
-                          </tr>
-                          <tr>
-                            <td>Lu</td>
-                            <td>Lucca, Biblioteca Capitolare Feliniana e Biblioteca Arcivescovile, 124</td>
-                          </tr>
-                          <tr>
-                            <td>Ma<sub>1</sub></td>
-                            <td>Mailand, Archivio Storico Civico e Biblioteca Trivulziana, 601</td>
-                          </tr>
-                          <tr>
-                            <td>Ma<sub>2</sub></td>
-                            <td>Mailand, Biblioteca Ambrosiana, E 144 sup.</td>
-                          </tr>
-                          <tr>
-                            <td>Md<sub>1</sub></td>
-                            <td>Madrid, Biblioteca Nacional de España, 386</td>
-                          </tr>
-                          <tr>
-                            <td>Md<sub>2</sub></td>
-                            <td>Madrid, Biblioteca Nacional de España, 391</td>
-                          </tr>
-                          <tr>
-                            <td>Mh<sub>1</sub></td>
-                            <td>Manchester, John Rylands University Library, ms. lat. 42</td>
-                          </tr>
-                          <tr>
-                            <td>Mh<sub>2</sub></td>
-                            <td>Manchester, John Rylands University Library, ms. lat. 96</td>
-                          </tr>
-                          <tr>
-                            <td>Mn</td>
-                            <td>Mantua, Biblioteca Comunale Teresiana, ms. 461 </td>
-                          </tr>
-                          <tr>
-                            <td>Mo</td>
-                            <td>Modena, Biblioteca Capitolare, O.II.15</td>
-                          </tr>
-                          <tr>
-                            <td>Mp</td>
-                            <td>Montpellier, Bibliothèque municipale, 7</td>
-                          </tr>
-                          <tr>
-                            <td>Mt<sub>1</sub></td>
-                            <td>Montecassino, Archivio dell’Abbazia, 44</td>
-                          </tr>
-                          <tr>
-                            <td>Mt<sub>2</sub></td>
-                            <td>Montecassino, Archivio dell’Abbazia, 45</td>
-                          </tr>
-                          <tr>
-                            <td>Mu<sub>1</sub></td>
-                            <td>München, Bayerische Staatsbibliothek, Clm 4570</td>
-                          </tr>
-                          <tr>
-                            <td>Mu<sub>2</sub></td>
-                            <td>München, Bayerische Staatsbibliothek, Clm 5801c</td>
-                          </tr>
-                          <tr>
-                            <td>Mu<sub>3</sub></td>
-                            <td>München, Bayerische Staatsbibliothek, Clm 18094</td>
-                          </tr>
-                          <tr>
-                            <td>Mz<sub>1</sub></td>
-                            <td>Monza, Biblioteca Capitolare, d-10/152</td>
-                          </tr>
-                          <tr>
-                            <td>Mz<sub>2</sub></td>
-                            <td>Monza, Biblioteca Capitolare, h-5/154</td>
-                          </tr>
-                          <tr>
-                            <td>Ne</td>
-                            <td>Neapel, Biblioteca Nazionale Vittorio Emanuele III, Vind. lat. 23</td>
-                          </tr>
-                          <tr>
-                            <td>No<sub>1</sub></td>
-                            <td>Novara, Biblioteca Capitolare, 16</td>
-                          </tr>
-                          <tr>
-                            <td>No<sub>2</sub></td>
-                            <td>Novara, Biblioteca Capitolare, 17</td>
-                          </tr>
-                          <tr>
-                            <td>Or</td>
-                            <td>Orléans, Médiathèque municipale, 229</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>1</sub></td>
-                            <td>Paris, Bibliothèque de l’Arsenal, 678</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>2</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 3860</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>3</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 3861</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>4</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 3862</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>5</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 3863</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>6</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 9630</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>7</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 11578</td>
-                          </tr>
-                          <tr>
-                            <td>P<sub>8</sub></td>
-                            <td>Paris, Bibliothèque nationale de France, lat. 12449</td>
-                          </tr>
-                          <tr>
-                            <td>Pa</td>
-                            <td>Parma, Biblioteca Palatina, Parm. 3777</td>
-                          </tr>
-                          <tr>
-                            <td>Pd</td>
-                            <td>Padua, Biblioteca del Seminario Vescovile, 529</td>
-                          </tr>
-                          <tr>
-                            <td>Pi<sub>1</sub></td>
-                            <td>Pistoia, Archivio Capitolare, C. 125</td>
-                          </tr>
-                          <tr>
-                            <td>Pi<sub>2</sub></td>
-                            <td>Pistoia, Archivio Capitolare, C. 140</td>
-                          </tr>
-                          <tr>
-                            <td>Po</td>
-                            <td>Pommersfelden, Gräflich Schönbornsche Schloßbibliothek, 198</td>
-                          </tr>
-                          <tr>
-                            <td>Pr</td>
-                            <td>Prato, Biblioteca Roncioniana, Q.VIII.4 (3)</td>
-                          </tr>
-                          <tr>
-                            <td>Re<sub>1</sub></td>
-                            <td>Reims, Bibliothèque municipale, 673</td>
-                          </tr>
-                          <tr>
-                            <td>Re<sub>2</sub></td>
-                            <td>Reims, Bibliothèque municipale, 674</td>
-                          </tr>
-                          <tr>
-                            <td>Ro</td>
-                            <td>Rom, Biblioteca Vallicelliana, A.20</td>
-                          </tr>
-                          <tr>
-                            <td>Sg</td>
-                            <td>Sankt Gallen, Stiftsbibliothek, 674</td>
-                          </tr>
-                          <tr>
-                            <td>So</td>
-                            <td>Saint-Omer, Bibliothèque d’Agglomération, 194</td>
-                          </tr>
-                          <tr>
-                            <td>Tr</td>
-                            <td>Troyes, Médiathèque Jacques Chirac, 1386</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>1</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Barb. lat. 1450</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>2</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Pal. lat. 585</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>3</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Pal. lat. 586</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>4</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Reg. lat. 979</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>5</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Urb. lat. 180</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>6</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 1355</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>7</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 3809</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>8</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 4880</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>9</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 4981</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>10</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 7790</td>
-                          </tr>
-                          <tr>
-                            <td>Va<sub>11</sub></td>
-                            <td>Vatikan, Biblioteca Apostolica Vaticana, Vat. lat. 14731</td>
-                          </tr>
-                          <tr>
-                            <td>Vc<sub>1</sub></td>
-                            <td>Vercelli, Biblioteca Capitolare, XLI</td>
-                          </tr>
-                          <tr>
-                            <td>Vc<sub>2</sub></td>
-                            <td>Vercelli, Biblioteca Capitolare, XCIV</td>
-                          </tr>
-                          <tr>
-                            <td>Wz<sub>1</sub></td>
-                            <td>Würzburg, Universitätsbibliothek, M.p.th.f. 86</td>
-                          </tr>
-                          <tr>
-                            <td>Wz<sub>2</sub></td>
-                            <td>Würzburg, Universitätsbibliothek, M.p.th.f. 167</td>
-                          </tr>
+          
+            
+          <div class="mss-map-head mt-5">
+            <h4 class="mt-4"><span lang="de">KARTENANSICHT ALLER DEKRETHANDSCHRIFTEN</span><span lang="en">MAP VIEW OF ALL DECREE MANUSCRIPTS</span></h4>
 
+              <!--Show dropdown for marker types with icons -->
+              <div class="map-type-dropdown">
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="mapTypeFilterDropdown" data-bs-toggle="dropdown">
+                    <span lang="de">Typ: Alle Handschriften</span>
+                    <span lang="en">Type: All manuscripts</span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="mapTypeFilterDropdown">
+                    <!-- All -->
+                    <li>
+                      <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="all">
+                        <span lang="de">Alle Handschriften</span>
+                        <span lang="en">All manuscripts</span>
+                      </a>
+                    </li>
 
+                    <!-- Full manuscript (blue) -->
+                    <li>
+                      <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="full">
+                        <img
+                          src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png" alt="" width="14" height="23" class="me-2">
+                        <span lang="de">Vollständige Handschrift</span>
+                        <span lang="en">Full manuscript</span>
+                      </a>
+                    </li>
 
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
-                    </div>
+                    <!-- Fragment (orange) -->
+                    <li>
+                      <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="fragment">
+                        <img
+                          src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png" alt="" width="14" height="23" class="me-2">
+                        <span lang="de">Fragment</span>
+                        <span lang="en">Fragment</span>
+                      </a>
+                    </li>
+
+                    <!-- Excerpt (yellow) -->
+                    <li>
+                      <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="excerpt">
+                        <img
+                          src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png" alt="" width="14" height="23" class="me-2">
+                        <span lang="de">Exzerpt</span>
+                        <span lang="en">Excerpt</span>
+                      </a>
+                    </li>
+
+                    <!-- Separate transmission (violet) -->
+                    <li>
+                      <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="separate-transmission">
+                        <img
+                          src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png" alt="" width="14" height="23" class="me-2">
+                        <span lang="de">Seperatüberlieferung</span>
+                        <span lang="en">Separate transmission</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
+              </div>
+          </div>
+          
+          <div class="row g-3 align-items-start mt-3">
+            <!-- Map column -->
+            <div class="col-12 col-lg-9">
+              <div class="mss-map" id="map2"></div>
+            </div>
+
+            <!-- Legend column -->
+            <div class="col-12 col-lg-3">
+              <div id="map-legend-outside" class="border rounded p-3 bg-white shadow-sm">
+                <!-- Legend content gets inserted here -->
+              </div>
             </div>
           </div>
-            
-          <div class="mss-map-head">
-              <h4 class="mt-4"><span lang="de">KARTENANSICHT</span><span lang="en">MAP VIEW</span></h4>
-          </div>
-          <div class="mss-map" id="map2"></div>       
         </div>
 
         <div id="footer-placeholder"></div>
     </body>
 
-
+    
     <!--Embedding map--> 
     <script type="text/javascript">
-      var mymap = L.map('map2').setView([48.00, 12], 5);
+      //var mymap = L.map('map2').setView([48.00, 12], 5);
+      var mymap = L.map('map2').setView([48.00, 8], 5);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(mymap);
     </script>
-    <script src="../js/map.js"></script>
+    <script src="../js/map-typeMarker.js"></script>
 
     
 
@@ -462,10 +375,9 @@
     <script>
         async function fetchDataAndPopulateTable() {
           try {
-            const list_ms = ["B", "F", "K", "Va2", "Va3"]
-            for (var ms in list_ms){
-                const folderPath = '../data/mss/' + list_ms[ms] + '/Tei/v1'; // Update this with your XML folder path
-                const response = await fetch(folderPath + '/msdesc.xml'); // Fetch the XML file
+            const list_ms = window.BDD_MSS || [];
+            for (const ms of list_ms) {
+                const response = await fetch(msPath(ms), { cache: "no-cache" });
                 if (response.ok) {
                     const xmlText = await response.text();
                     const parser = new DOMParser();
@@ -473,31 +385,185 @@
 
                     const msNameFull = xmlDoc.querySelectorAll('msName[type="full"]')[0].innerHTML
                     const msNameSigle = xmlDoc.querySelectorAll('msName[type="sigle"]')[0].innerHTML
-                    const origPlaceElement = xmlDoc.querySelector('origPlace');
-                    const origPlaceText = origPlaceElement.childNodes[0].nodeValue.trim();
+                    //const origPlaceElement = xmlDoc.querySelector('origPlace');
+                    //const origPlaceText = origPlaceElement.childNodes[0].nodeValue.trim();
                     /*const origPlaceText = Array.from(origPlaceElement.childNodes)
                         .filter(node => node.nodeName !== 'location' || node.nodeName === 'location' && node.childNodes.length === 0)
                         .map(node => node.textContent.trim())
                         .join(' ');*/
 
-                    const origDate = xmlDoc.querySelectorAll('origDate')[0].innerHTML
+                    //Include also additional mss in the table
+                    let origPlaceElement = xmlDoc.querySelector('origPlace');
+                    let origPlaceText = "";
+
+                    if (origPlaceElement) {
+                        origPlaceText = origPlaceElement.childNodes[0].nodeValue.trim();
+                    }
+
+                    // Digitisation link
+                    const digiRefEl = xmlDoc.querySelector('bibl[type="digi"] ref');
+                    const digiLink = digiRefEl ? digiRefEl.textContent.trim() : "";
+
+
+
+                    // Read manuscript type from <msDesc type="">
+                    const msDescElement = xmlDoc.querySelector("msDesc");
+                    let msType = "";
+                    let msTypeLabelDE = "";
+                    let msTypeLabelEN = "";
+
+                    if (msDescElement) {
+                      msType = msDescElement.getAttribute("type") || "";
+                    }
+
+                    // Map internal values → human-readable labels
+                    switch (msType) {
+                      case "full":
+                        msTypeLabelDE = "Vollständige Handschrift";
+                        msTypeLabelEN = "Full manuscript";
+                        break;
+                      case "fragment":
+                        msTypeLabelDE = "Fragment";
+                        msTypeLabelEN = "Fragment";
+                        break;
+                      case "excerpt":
+                        msTypeLabelDE = "Exzerpt";
+                        msTypeLabelEN = "Excerpt";
+                        break;
+                      case "separate-transmission":
+                        msTypeLabelDE = "Separatüberlieferung";
+                        msTypeLabelEN = "Separate transmission";
+                        break;
+                      default:
+                        msTypeLabelDE = "";
+                        msTypeLabelEN = "";
+                    }
+
+
+                    //const origDate = xmlDoc.querySelectorAll('origDate')[0].innerHTML
+                    const origDateElement = xmlDoc.querySelector('origDate');
+                    
+                    //Display values of notBefore-notAfter in the column "Origin date"
+                    let notBefore = "";
+                    let notAfter = "";
+                    let dateDisplay = "";
+                    let dateText = "";
+
+                    // read attributes if they exist
+                    if (origDateElement) {
+                        // textual content inside <origDate> (e.g. "12. Jahrhundert")
+                        dateText = origDateElement.textContent.trim();
+
+                        // extract attributes if present
+                        notBefore = origDateElement.getAttribute('notBefore') || "";
+                        notAfter  = origDateElement.getAttribute('notAfter')  || "";
+
+                        // 1) both attributes exist AND are equal → show single value
+                        if (notBefore !== "" && notBefore === notAfter) {
+                            dateDisplay = `${dateText} (${notBefore})`;
+
+                        // 2) both attributes exist AND differ → show range
+                        } else if (notBefore !== "" || notAfter !== "") {
+                            dateDisplay = `${dateText} (${notBefore}–${notAfter})`;
+
+                        // 3) fallback if no attributes
+                        } else {
+                            dateDisplay = dateText;
+                        }
+                    }
             
                     const tableBody = document.getElementById('table-body');
                     const row = document.createElement('tr');
+
+                    // Store numeric bounds for filtering
+                    row.dataset.notBefore = notBefore;
+                    row.dataset.notAfter  = notAfter;
+
                     const cell1 = document.createElement('td');
-                    const cell2 = document.createElement('td');
+
+                    /*Temporarily hide Sigle column */
+                    /*const cell2 = document.createElement('td');*/
+                    
                     const cell3 = document.createElement('td');
                     const cell4 = document.createElement('td');
+                    const cell5 = document.createElement('td');
+                    const cell6 = document.createElement('td');
             
-                    cell1.innerHTML = "<a href='ms-item.html?document="+ list_ms[ms] + "'>" + msNameFull + "</a>";
-                    cell2.textContent = msNameSigle;
-                    cell3.textContent = origPlaceText;
-                    cell4.textContent = origDate;
+                    
+                   let digiIconHTML = "";
+
+                    // Create icon only if a digitisation link exists
+                    if (digiLink !== "") {
+                      digiIconHTML = `
+                        <a href="${digiLink}" target="_blank"
+                          class="me-2 text-decoration-none"
+                          title="View digitisation">
+                          <i class="bi bi-book"></i>
+                        </a>
+                      `;
+                    }
+
+                 
+
+                    // Active vs inactive manuscript link (logic via bdd_mss_list.js)
+                    const isCore = ms.kind === "core";
+
+                    if (isCore) {
+                      cell1.innerHTML = `
+                        ${digiIconHTML}
+                        <a href="ms-item.html?document=${ms.sigle}">${msNameFull}</a>
+                      `;
+                    } else {
+                      cell1.innerHTML = `
+                        ${digiIconHTML}
+                        <span class="text-muted">${msNameFull}</span>
+                      `;
+                    }
+
+
+
+                    // tag row to hide/show (logic via bdd_mss_list.js)
+                    if (ms.kind === "core") {
+                      row.classList.add("core-ms");  
+                    } else {
+                      row.classList.add("additional-ms");
+                    }
+
+
+                    // tag row with manuscript type 
+                    if (msType !== "") {
+                      row.classList.add("type-" + msType);
+                    }
+
+                    /*Temporarily hide Sigle column */
+                    /*cell2.textContent = msNameSigle;*/
+
+                    cell3.innerHTML = `
+                      <span lang="de">${msTypeLabelDE}</span>
+                      <span lang="en">${msTypeLabelEN}</span>
+                    `;
+                    cell4.textContent = origPlaceText; // empty for basic manuscripts
+                    cell5.textContent = dateDisplay;
+
+                    const msdescUrl = msPath(ms);
+                    const downloadName = `${ms.msId}-msdesc.xml`;
+
+                    cell6.innerHTML = `
+                      <a href="${msdescUrl}" download="${downloadName}" class="text-decoration-none" title="Download ${downloadName}" aria-label="Download ${downloadName}"> <i class="bi bi-download"></i></a>
+                    `;
+
             
                     row.appendChild(cell1);
-                    row.appendChild(cell2);
+
+                    /*Temporarily hide Sigle column */
+                    /*row.appendChild(cell2);*/
+                    
                     row.appendChild(cell3);
                     row.appendChild(cell4);
+                    cell4.classList.add("text-center");
+                    row.appendChild(cell5);
+                    row.appendChild(cell6);
+                    cell6.classList.add("text-center");
             
                     tableBody.appendChild(row);
                 } else {
@@ -507,6 +573,9 @@
           } catch (error) {
             console.error('Error:', error);
           }
+          // After table is populated, initialize the dual slider filter
+          initYearRangeFilter();
+          applyAllMssFilters();
         }
     
         // Invoke the function when the page loads
@@ -545,4 +614,410 @@
       loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
   });
   </script>
+
+
+  
+  <!-- Dropdown filter (combined with all other filters) -->
+  <script>
+    // Global filter state
+    window.mssFilters = window.mssFilters || {
+      dropdown: "all",            // all | described | type-full | type-fragment | ...
+      yearMin: null,              // number
+      yearMax: null,              // number
+      text: { 1: "", 2: "", 3: "", 4: "" }  // per column
+    };
+
+    document.querySelectorAll(".filter-option").forEach(item => {
+      item.addEventListener("click", function () {
+        const filter = this.dataset.filter;
+        const dropdown = document.getElementById("filterDropdown");
+
+        const newDE = this.querySelector('[lang="de"]').textContent;
+        const newEN = this.querySelector('[lang="en"]').textContent;
+
+        dropdown.innerHTML =
+          `<span lang="de">Typ: ${newDE}</span>
+          <span lang="en">Type: ${newEN}</span>`;
+
+        window.mssFilters.dropdown = filter;
+
+        // Apply ALL filters together
+        applyAllMssFilters();
+
+        if (typeof checkLanguage === "function") checkLanguage();
+      });
+    });
+  </script>
+
+
+
+<!-- Bootstrap dropdown to filter map markers by manuscript type -->
+<script>
+  document.querySelectorAll(".map-type-filter").forEach(item => {
+    item.addEventListener("click", function () {
+
+      const type = this.dataset.type;  // all, full, fragment, excerpt, separate-transmission, not-specified
+
+      // Update dropdown label text
+      const dropdown = document.getElementById("mapTypeFilterDropdown");
+      const newDE = this.querySelector('[lang="de"]').textContent;
+      const newEN = this.querySelector('[lang="en"]').textContent;
+
+      dropdown.innerHTML =
+        `<span lang="de">Typ: ${newDE}</span>
+         <span lang="en">Type: ${newEN}</span>`;
+
+      // Call the global filter function defined in map-typeMarker.js
+      if (typeof applyTypeFilter === "function") {
+        applyTypeFilter(type);
+      } else {
+        console.warn("applyTypeFilter is not defined yet.");
+      }
+
+      if (typeof checkLanguage === "function") {
+        checkLanguage();
+      }
+    });
+  });
+</script>
+
+
+<script>
+  //Combined filtering engine
+
+  // Helper: safe parse
+  function toIntOrNull(v) {
+    const n = parseInt(v, 10);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function applyAllMssFilters() {
+    const state = window.mssFilters || {};
+    const rows = document.querySelectorAll("#table-body tr");
+
+    rows.forEach(row => {
+      let visible = true;
+
+      // 1) Dropdown filter: all / described / type
+      if (state.dropdown === "core") {
+        if (!row.classList.contains("core-ms")) visible = false;
+      } else if (typeof state.dropdown === "string" && state.dropdown.startsWith("type-")) {
+        if (!row.classList.contains(state.dropdown)) visible = false;
+      }
+
+      // 2) Year range filter
+      if (visible && state.yearMin !== null && state.yearMax !== null) {
+        let nb = toIntOrNull(row.dataset.notBefore);
+        let na = toIntOrNull(row.dataset.notAfter);
+
+        // If missing one bound, treat it as the other bound
+        if (nb === null && na !== null) nb = na;
+        if (na === null && nb !== null) na = nb;
+
+        // If no usable date at all: keep visible
+        if (nb !== null && na !== null) {
+          const overlaps = (na >= state.yearMin) && (nb <= state.yearMax);
+          if (!overlaps) visible = false;
+        }
+      }
+
+      // 3) Text filters per column
+      // 1 Signature, 3 Place, 
+      if (visible && state.text) {
+        for (const col of [1, 3,]) {
+          const q = (state.text[col] || "").trim().toLowerCase();
+          if (!q) continue;
+
+          const cell = row.cells[col - 1];
+          const cellText = (cell ? cell.textContent : "").trim().toLowerCase();
+
+          if (!cellText.includes(q)) {
+            visible = false;
+            break;
+          }
+        }
+      }
+
+      row.style.display = visible ? "" : "none";
+    });
+
+    if (typeof checkLanguage === "function") checkLanguage();
+  }
+
+
+  function filterMss(colIndex) {
+    window.mssFilters = window.mssFilters || { dropdown: "all", yearMin: null, yearMax: null, text: {1:"",2:"",3:"",4:""} };
+
+    for (const i of [1, 2, 3, 4]) {
+      const el = document.getElementById(`mss-filter-${i}`);
+      window.mssFilters.text[i] = el ? el.value : "";
+    }
+
+    applyAllMssFilters();
+  }
+
+  //year-range slider
+  function initYearRangeFilter() {
+    const rows = Array.from(document.querySelectorAll("#table-body tr"));
+    if (!rows.length) return;
+
+    const bounds = rows
+      .map(r => ({
+        nb: toIntOrNull(r.dataset.notBefore),
+        na: toIntOrNull(r.dataset.notAfter)
+      }))
+      .filter(x => x.nb !== null || x.na !== null)
+      .map(x => ({
+        nb: x.nb !== null ? x.nb : x.na,
+        na: x.na !== null ? x.na : x.nb
+      }))
+      .filter(x => x.nb !== null && x.na !== null);
+
+    if (!bounds.length) {
+      const card = document.querySelector(".year-slider-wrap")?.closest(".card");
+      if (card) card.style.display = "none";
+      return;
+    }
+
+    const globalMin = Math.min(...bounds.map(b => b.nb));
+    //const globalMax = Math.max(...bounds.map(b => b.na));
+    const dataMax   = Math.max(...bounds.map(b => b.na));
+    const globalMax = Math.max(1550, dataMax);
+
+    const yearMin = document.getElementById("yearMin");
+    const yearMax = document.getElementById("yearMax");
+    const yearMinInput = document.getElementById("yearMinInput");
+    const yearMaxInput = document.getElementById("yearMaxInput");
+    const yearResetBtn = document.getElementById("yearResetBtn");
+
+    [yearMin, yearMax].forEach(el => {
+      el.min = String(globalMin);
+      el.max = String(globalMax);
+      el.step = "1";
+    });
+
+    yearMin.value = String(globalMin);
+    yearMax.value = String(globalMax);
+
+    yearMinInput.min = String(globalMin);
+    yearMinInput.max = String(globalMax);
+    yearMaxInput.min = String(globalMin);
+    yearMaxInput.max = String(globalMax);
+
+    yearMinInput.value = String(globalMin);
+    yearMaxInput.value = String(globalMax);
+
+    // Ensure state exists
+    window.mssFilters = window.mssFilters || { dropdown: "all", yearMin: null, yearMax: null, text: {1:"",2:"",3:"",4:""} };
+
+    function isDefaultRange(a, b) {
+      return a === globalMin && b === globalMax;
+    }
+
+    function updateStateAndApply(a, b) {
+      window.mssFilters.yearMin = a;
+      window.mssFilters.yearMax = b;
+      applyAllMssFilters();
+      updateYearDropdownLabel(a, b, isDefaultRange(a, b));
+    }
+
+
+    function clampHandles() {
+      let a = parseInt(yearMin.value, 10);
+      let b = parseInt(yearMax.value, 10);
+
+      if (a > b) {
+        const activeId = document.activeElement?.id;
+        if (activeId === "yearMin") a = b;
+        else b = a;
+      }
+
+      yearMin.value = String(a);
+      yearMax.value = String(b);
+      yearMinInput.value = String(a);
+      yearMaxInput.value = String(b);
+
+      updateStateAndApply(a, b);
+    }
+
+    function clampInputs() {
+      let a = toIntOrNull(yearMinInput.value);
+      let b = toIntOrNull(yearMaxInput.value);
+
+      if (a === null) a = globalMin;
+      if (b === null) b = globalMax;
+
+      a = Math.max(globalMin, Math.min(globalMax, a));
+      b = Math.max(globalMin, Math.min(globalMax, b));
+
+      if (a > b) a = b;
+
+      yearMin.value = String(a);
+      yearMax.value = String(b);
+      yearMinInput.value = String(a);
+      yearMaxInput.value = String(b);
+
+      updateStateAndApply(a, b);
+    }
+
+    yearMin.addEventListener("input", clampHandles);
+    yearMax.addEventListener("input", clampHandles);
+    yearMinInput.addEventListener("change", clampInputs);
+    yearMaxInput.addEventListener("change", clampInputs);
+
+    yearResetBtn.addEventListener("click", () => {
+      yearMin.value = String(globalMin);
+      yearMax.value = String(globalMax);
+      yearMinInput.value = String(globalMin);
+      yearMaxInput.value = String(globalMax);
+      updateStateAndApply(globalMin, globalMax);
+    });
+
+    // Initial state
+    updateStateAndApply(globalMin, globalMax);
+  }
+
+  function updateYearDropdownLabel(min, max, isDefault) {
+    const btn = document.getElementById("yearDropdownBtn");
+    if (!btn) return;
+
+    // If default (full range) show "all"
+    const de = isDefault ? "Zeit: Alle" : `Zeit: ${min}–${max}`;
+    const en = isDefault ? "Date: All" : `Date: ${min}–${max}`;
+
+    btn.innerHTML = `<span lang="de">${de}</span><span lang="en">${en}</span>`;
+    if (typeof checkLanguage === "function") checkLanguage();
+  }
+
+</script>
+
+<!--Export manuscripts data button-->
+<script>
+  const MS_LIST = window.BDD_MSS || [];
+
+  //helpers
+  function downloadJson(obj, filename) {
+    const json = JSON.stringify(obj, null, 2);
+    const blob = new Blob([json], { type: "application/json;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function isWhitespaceTextNode(node) {
+    return node.nodeType === Node.TEXT_NODE && !node.nodeValue.trim();
+  }
+
+  function attrsToObject(el) {
+    const out = {};
+    for (const attr of Array.from(el.attributes || [])) {
+      // Keep exact attribute names
+      out[attr.name] = attr.value;
+    }
+    return Object.keys(out).length ? out : undefined;
+  }
+
+  function xmlNodeToJson(node) {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const obj = {
+        element: node.tagName
+      };
+
+      const attrs = attrsToObject(node);
+      if (attrs) obj.attributes = attrs;
+
+      // Gather children in order, excluding whitespace-only text nodes
+      const childNodes = Array.from(node.childNodes || []).filter(n => !isWhitespaceTextNode(n));
+
+      // If there is exactly one text child, store it as "text"
+      // Otherwise store children (elements + mixed text) as array.
+      if (childNodes.length === 1 && childNodes[0].nodeType === Node.TEXT_NODE) {
+        const t = childNodes[0].nodeValue.trim();
+        if (t) obj.text = t;
+      } else if (childNodes.length > 0) {
+        obj.children = childNodes.map(xmlNodeToJson).filter(Boolean);
+      }
+
+      return obj;
+    }
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      const t = node.nodeValue.trim();
+      if (!t) return null;
+      return { text: t };
+    }
+
+    return null;
+  }
+
+  function getTeiXmlId(msDescEl) {
+    return msDescEl?.getAttribute?.("xml:id") || null;
+  }
+
+  async function fetchAndParseMsDesc(ms) {
+    const path = msPath(ms);
+    const res = await fetch(path, { cache: "no-cache" });
+    if (!res.ok) return null;
+
+    const xmlText = await res.text();
+    const doc = new DOMParser().parseFromString(xmlText, "text/xml");
+    if (doc.querySelector("parsererror")) return null;
+
+    const msDescEl = doc.querySelector("msDesc");
+    if (!msDescEl) return null;
+
+    return {
+      sigle: ms.sigle,
+      msId: ms.msId || undefined,
+      kind: ms.kind || undefined,
+      source: path,
+      teiXmlId: getTeiXmlId(msDescEl) || undefined,
+      msDesc: xmlNodeToJson(msDescEl)
+    };
+  }
+
+
+  //main export
+  async function exportAllMsDescJson() {
+    const btn = document.getElementById("exportMsdescJsonBtn");
+
+    if (btn) {
+      btn.disabled = true;
+    }
+
+    try {
+      const results = await Promise.all(MS_LIST.map(fetchAndParseMsDesc));
+      const manuscripts = results.filter(Boolean);
+
+      const payload = {
+        exportedAt: new Date().toISOString(),
+        exportedFrom: window.location.href,
+        manuscripts
+      };
+
+      downloadJson(payload, "bdd_msdesc_export.json");
+    } catch (e) {
+      console.error(e);
+      alert("Export failed.");
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+      }
+      if (typeof checkLanguage === "function") checkLanguage();
+    }
+  }
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("exportMsdescJsonBtn");
+    if (btn) btn.addEventListener("click", exportAllMsDescJson);
+  });
+</script>
 </html>

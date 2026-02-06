@@ -1,0 +1,64 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-eichstaett-ub-c-s-772">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Eichstätt, Universitätsbibliothek, Cod. st. 772</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 28.10.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 28.10.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="eichstaett-ub-c-s-772-msdesc" type="full">
+                        <msIdentifier xml:id="eichstaett-ub-c-s-772-ident">
+                        <repository ref="https://www.ku.de/bibliothek">Universitätsbibliothek<location>
+                            <geo>48.8888146,11.1830715,16</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q252772">Eichstätt</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Cod. st. 772</idno>
+                        </collection>
+                        <msName type="full">Eichstätt, Universitätsbibliothek, Cod. st. 772</msName>
+                        <msName type="sigle">E</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1050" notBefore="1050">Mitte des 11. Jahrhunderts</origDate>
+                            </origin>
+                        </history>
+                        
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref/>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

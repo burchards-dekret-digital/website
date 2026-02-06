@@ -27,7 +27,6 @@
       </style>
   </head>
   <body>
-   
     <div id="navbar-placeholder"></div>
 
     <div class="back-button ps-4 mt-5">
@@ -325,27 +324,6 @@
           }
         }
     </script>
-
-    <!--scroll to the selected ID and highlights the row
-    <script>
-      window.onload = function() {
-        function scrollToAndHighlight(targetId) {
-          var targetRow = document.getElementById(targetId);
-          if (targetRow) {
-            targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            targetRow.style.backgroundColor = 'lightgrey'; // or any other highlighting style
-          }
-        }
-
-        // Execute the function after a short delay to ensure the DOM is fully loaded
-        setTimeout(function() {
-          var targetId = window.location.hash.substring(1);
-          if (targetId) {
-            scrollToAndHighlight(targetId);
-          }
-        }, 200);
-      };
-    </script>-->
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

@@ -31,6 +31,18 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="//tei:body/tei:div[@xml:id='infoDownloadJSON']">
+        <div id="{@xml:id}" class="block">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="//tei:body/tei:div[@xml:id='infoNewsArchive']">
+        <div id="{@xml:id}" class="block">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
 
     <!-- Handle language -->
     <xsl:template match="//tei:body/tei:div/tei:div">
@@ -205,6 +217,12 @@
         </span>
     </xsl:template>
     
+     <xsl:template match="//damage//gap[@reason='trimmed']">
+        <span class="tei_damage-trimmed" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Beschädigung: beschnitten&lt;/span&gt;&lt;span lang='en'&gt;Damage: trimmed&lt;/span&gt;">
+           <xsl:apply-templates/>
+           </span>
+    </xsl:template>
+    
     <!--hi rend="bold" and italic -->
     <xsl:template match="//tei:hi[@rend='bold']">
         <b>
@@ -217,5 +235,25 @@
             <xsl:apply-templates/>
         </i>
     </xsl:template>
+    
+    <!-- Handle TEI lists -->
+<xsl:template match="tei:list[@type='bulleted']">
+  <ul>
+    <xsl:apply-templates/>
+  </ul>
+</xsl:template>
+
+<xsl:template match="tei:list[@type='ordered']">
+  <ol>
+    <xsl:apply-templates/>
+  </ol>
+</xsl:template>
+
+<xsl:template match="tei:item">
+  <li>
+    <xsl:apply-templates/>
+  </li>
+</xsl:template>
+
 
 </xsl:stylesheet>

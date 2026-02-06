@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-pommersfelden-gss-198">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Pommersfelden, Gräflich Schönbornsche Schloßbibliothek, 198</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 28.10.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 28.10.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="pommersfelden-gss-198-msdesc" type="full">
+                        <msIdentifier xml:id="pommersfelden-gss-198-ident">
+                        <repository ref="">Gräflich Schönbornsche Schloßbibliothek<location>
+                            <geo>49.763164577241874,10.820889060585813</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q627521">Pommersfelden</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">198</idno>
+                        </collection>
+                        <msName type="full">Pommersfelden, Gräflich Schönbornsche Schloßbibliothek, 198</msName>
+                        <msName type="sigle">Po</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1199" notBefore="1000">11./12. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref/>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

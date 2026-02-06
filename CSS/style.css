@@ -266,12 +266,6 @@ li{
     font-size: 13px!important;
 }
 
-#mss-table-1{
-    font-family: Jost-Regular;
-    font-size:15px;
-    letter-spacing: 0.5px;
-    line-height: 2;
-}
 
 #literatureTable {
     font-family: Jost-Regular;
@@ -279,11 +273,19 @@ li{
     letter-spacing: 0.5px;
 }
 
+
+
+
+
 /* MAP */
 .mss-map-head {
 	grid-row:3;
 	grid-column: 2;
+    position: relative;
 }
+.mss-map-head .dropdown-menu {
+    z-index: 1100;
+  }
 #map1 {
 	height: 70vh;
 	grid-row: 4;
@@ -295,8 +297,6 @@ li{
 }
 #map2 {
     position: relative;
-    margin-top: 30px;
-    margin-bottom:30px;
     height: 600px;
     width: 100%;
     display: block;
@@ -306,6 +306,36 @@ li{
     font-size:12px;
     letter-spacing: 0.5px;
 }
+
+/*New map legend*/
+.info.legend {
+background: white;
+padding: 10px;
+line-height: 22px;
+color: #333;
+border-radius: 6px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+font-size: 14px;
+}
+.info.legend h4 {
+margin: 0 0 6px;
+font-size: 15px;
+}
+
+/* Force cluster icons always to be green */
+.marker-cluster-small, 
+.marker-cluster-medium, 
+.marker-cluster-large {
+background-color: rgba(110, 204, 57, 0.6) !important;
+}
+
+.marker-cluster-small div, 
+.marker-cluster-medium div, 
+.marker-cluster-large div {
+background-color: rgba(110, 204, 57, 0.6) !important;
+}
+
+
 
 
 
@@ -595,7 +625,7 @@ font-family: Andron-Scriptor-Web;
         margin-bottom:10px;
         margin-left:10px;
     }  
-    #map2 {width: 90%;}
+    
     .figure{width:100%} 
 }
 

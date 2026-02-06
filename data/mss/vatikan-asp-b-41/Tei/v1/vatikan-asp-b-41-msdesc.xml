@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-vatikan-asp-b-41">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Vatikan, Archivio di San Pietro B.41</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 09.11.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 09.11.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="vatikan-asp-b-41-msdesc" type="fragment">
+                        <msIdentifier xml:id="vatikan-asp-b-41-ident">
+                        <repository ref="">Archivio di San Pietro<location>
+                            <geo>41.9047482,12.4549566</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q237">Vatikan</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q237">Vatikan</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">B.41</idno>
+                        </collection>
+                        <msName type="full">Vatikan, Archivio di San Pietro B.41</msName>
+                        <msName type="sigle">Va12</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1125" notBefore="1100">1. Hälfte 12. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref>https://digi.vatlib.it/view/MSS_Arch.Cap.S.Pietro.B.41</ref>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://archive.org/details/kery-1999-collections/page/144/mode/1up</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

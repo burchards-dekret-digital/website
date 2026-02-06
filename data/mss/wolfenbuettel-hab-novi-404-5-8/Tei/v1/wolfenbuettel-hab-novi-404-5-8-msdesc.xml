@@ -1,0 +1,58 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-wolfenbuettel-hab-novi-404-5-8">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Wolfenbüttel, Herzog August Bibliothek, Novi 404.5 (8)</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 09.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 09.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="wolfenbuettel-hab-novi-404-5-8-msdesc" type="fragment">
+                        <msIdentifier xml:id="wolfenbuettel-hab-novi-404-5-8-ident">
+                        <repository ref="https://www.hab.de/">Herzog August Bibliothek<location>
+                            <geo>52.16435805091991, 10.530309326189482</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q4122">Wolfenbüttel</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Novi 404.5 (8)</idno>
+                        </collection>
+                        <msName type="full">Wolfenbüttel, Herzog August Bibliothek, Novi 404.5 (8)</msName>
+                        <msName type="sigle">Wo1</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1025" notBefore="1000">1. Viertel 11. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> <bibl type="digi"> <title xml:lang="ger">Digitalisat</title>
+                            <ref>https://diglib.hab.de/?db=mss&amp;list=ms&amp;id=404-5-novi-8s</ref>
+                            </bibl> <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
+                            <ref>https://diglib.hab.de/?db=mss&amp;list=ms&amp;id=404-5-novi-8s</ref>
+                            </bibl> </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

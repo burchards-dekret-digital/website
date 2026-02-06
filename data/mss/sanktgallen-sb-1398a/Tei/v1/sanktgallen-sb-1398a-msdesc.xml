@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-sanktgallen-sb-1398a">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Sankt Gallen, Stiftsbibliothek, 1398a</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 09.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 09.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="sanktgallen-sb-1398a-msdesc" type="fragment">
+                        <msIdentifier xml:id="sanktgallen-sb-1398a-ident">
+                        <repository ref="https://www.stiftsbezirk.ch/de/stiftsbibliothek/">Stiftsbibliothek<location>
+                            <geo>47.4227734,9.3721134,16</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q25607">Sankt Gallen</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q39">Schweiz</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">1398a</idno>
+                        </collection>
+                        <msName type="full">Sankt Gallen, Stiftsbibliothek, 1398a</msName>
+                        <msName type="sigle">Sg2</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1125" notBefore="1100">1. Hälfte 12. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://www.trismegistos.org/tm/detail.php?tm=67139</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

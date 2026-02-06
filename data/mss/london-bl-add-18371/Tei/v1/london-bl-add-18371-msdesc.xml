@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-london-bl-add-18371">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">London, British Library, Add. 18371</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 11.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 11.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="london-bl-add-18371-msdesc" type="separate-transmission">
+                        <msIdentifier xml:id="london-bl-add-18371-ident">
+                        <repository ref="https://www.bl.uk/">British Library<location>
+                            <geo>51.5194836,-0.1523986,14</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q84">London</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q145">Großbritannien</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Add. 18371</idno>
+                        </collection>
+                        <msName type="full">London, British Library, Add. 18371</msName>
+                        <msName type="sigle">Lo2</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1299" notBefore="1100">12./13.Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://archive.org/details/kery-1999-collections/page/148/mode/1up</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

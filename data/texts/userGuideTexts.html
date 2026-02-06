@@ -1,0 +1,587 @@
+<div id="userGuide-intro"><span lang="de">
+      <p>Die Plattform <i>Burchards Dekret Digital</i> wurde als eine
+         <b>umfassende digitale Forschungsumgebung</b> zur Untersuchung des
+         <i>Decretum Burchardi</i> und seiner handschriftlichen Überlieferung
+         konzipiert. Sie bietet einen Arbeitsraum, in dem Nutzerinnen und Nutzer
+         aktiv mit den Handschriften arbeiten, deren Inhalte durchsuchen,
+         Strukturen erschließen, Textzeugen vergleichen, Schreiberhände
+         analysieren und editorische Annotationen in interaktiver Form
+         nachvollziehen können.</p>
+      <p>Dieses Benutzerhandbuch stellt die zentralen Funktionen der
+         Weboberfläche vor und erläutert typische Arbeitsabläufe, die unter <i>Arbeitsbereich</i> und <i>Handschriften</i> möglich sind. Im Folgenden
+         findet sich eine <b>Inhaltsübersicht</b> des Benutzerhandbuchs:</p>
+      <div class="row g-3">
+         <div class="col-12 col-lg-3">
+            <div class="p-3 border rounded h-100">
+               <div class="fw-semibold mb-2"><a href="#ug-bdd-overview" class="fw-semibold mb-2">Plattformübersicht</a></div>
+               <ul class="mb-0 ps-3">
+                  <li><a href="#userGuide-bdd-overview-home">Home</a></li>
+                  <li><a href="#userGuide-bdd-overview-decretum">Decretum</a></li>
+                  <li><a href="#userGuide-bdd-overview-workspace">Arbeitsbereich</a></li>
+                  <li><a href="#userGuide-bdd-overview-manuscripts">Handschriften</a></li>
+                  <li><a href="#userGuide-bdd-overview-bibliography">Bibliographie</a></li>
+                  <li><a href="#userGuide-bdd-overview-project">Projekt</a></li>
+                  <li><a href="#userGuide-bdd-overview-documentation">Dokumentation</a></li>
+                  <li><a href="#userGuide-bdd-overview-team">Team</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-12 col-lg-3">
+            <div class="p-3 border rounded h-100">
+               <div class="fw-semibold mb-2"><a href="#ug-workspace">Arbeitsbereich</a></div>
+               <ul class="mb-0 ps-3">
+                  <li><a href="#userGuide-workspace-workmaterial">Arbeitsmaterial</a></li>
+                  <li><a href="#userGuide-workspace-panels">Panels und Ansichten</a></li>
+                  <li><a href="#userGuide-workspace-views">Transkriptionsansichten</a></li>
+                  <li><a href="#userGuide-workspace-json">Sitzung speichern und wiederherstellen</a></li>
+                  <li><a href="#userGuide-workspace-manage">Geöffnete Ressourcen verwalten</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-12 col-lg-3">
+            <div class="p-3 border rounded h-100">
+               <div class="fw-semibold mb-2"><a href="#ug-manuscripts">Handschriften</a></div>
+               <ul class="mb-0 ps-3">
+                  <li><a href="#userGuide-mss-table">Tabellenansicht</a></li>
+                  <li><a href="#userGuide-mss-filtering">Filtersystem</a></li>
+                  <li><a href="#userGuide-mss-export">Datei-Export</a></li>
+                  <li><a href="#userGuide-mss-map">Kartenansicht</a></li>
+                  <li><a href="#userGuide-manuscriptPage">Handschriftenseite</a></li>
+               </ul>
+            </div>
+         </div>
+      </div></span><span lang="en">
+      <p>The <i>Burchards Dekret Digital</i> platform has been conceived as a <b>comprehensive digital environment</b> dedicated to the study of the <i>Decretum Burchardi</i> and its manuscript tradition. The platform is designed as a space where users can
+         work actively with the manuscripts, navigate their contents, explore their structures,
+         compare textual witnesses, analyse scribal practices, and follow editorial annotations
+         in an interactive way.</p>
+      <p>This user guide introduces the main features of the web interface and illustrates
+         typical workflows of the sections <i>Workspace</i> and <i>Manuscripts</i>. Here the <b>content overview</b> of this user guide:</p>
+      <div class="row g-3">
+         <div class="col-12 col-lg-3">
+            <div class="p-3 border rounded h-100">
+               <div class="fw-semibold mb-2"><a href="#ug-bdd-overview">Platform Overview</a></div>
+               <ul class="mb-0 ps-3">
+                  <li><a href="#userGuide-bdd-overview-home">Home</a></li>
+                  <li><a href="#userGuide-bdd-overview-decretum">Decretum</a></li>
+                  <li><a href="#userGuide-bdd-overview-workspace">Workspace</a></li>
+                  <li><a href="#userGuide-bdd-overview-manuscripts">Manuscripts</a></li>
+                  <li><a href="#userGuide-bdd-overview-bibliography">Bibliography</a></li>
+                  <li><a href="#userGuide-bdd-overview-project">Project</a></li>
+                  <li><a href="#userGuide-bdd-overview-documentation">Documentation</a></li>
+                  <li><a href="#userGuide-bdd-overview-team">Team</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-12 col-lg-3">
+            <div class="p-3 border rounded h-100">
+               <div class="fw-semibold mb-2"><a href="#ug-workspace">Workspace</a></div>
+               <ul class="mb-0 ps-3">
+                  <li><a href="#userGuide-workspace-workmaterial">Work material</a></li>
+                  <li><a href="#userGuide-workspace-panels">Panels and views</a></li>
+                  <li><a href="#userGuide-workspace-views">Transcription views</a></li>
+                  <li><a href="#userGuide-workspace-json">Save and restore session</a></li>
+                  <li><a href="#userGuide-workspace-manage">Manage open resources</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-12 col-lg-3">
+            <div class="p-3 border rounded h-100">
+               <div class="fw-semibold mb-2"><a href="#ug-manuscripts">Manuscripts</a></div>
+               <ul class="mb-0 ps-3">
+                  <li><a href="#userGuide-mss-table">Table visualisation</a></li>
+                  <li><a href="#userGuide-mss-filtering">Filtering system</a></li>
+                  <li><a href="#userGuide-mss-export">File export</a></li>
+                  <li><a href="#userGuide-mss-map">Map visualisation</a></li>
+                  <li><a href="#userGuide-manuscriptPage">Manuscript dedicated page</a></li>
+               </ul>
+            </div>
+         </div>
+      </div></span></div><div id="userGuide-bdd-overview"><span lang="de">
+      <p>Die Plattformübersicht bietet einen kurzen Überblick über die einzelnen Bereiche
+         der Website und ihre jeweiligen Funktionen. Jeder Abschnitt erfüllt eine klar
+         definierte Rolle innerhalb der digitalen Forschungsumgebung und trägt dazu bei,
+         Inhalte, Werkzeuge und Hintergrundinformationen strukturiert zugänglich zu machen.</p></span><span lang="en">
+      <p>The platform overview provides a brief introduction to the main sections of the
+         website and their respective functions. Each section fulfils a specific role
+         within the digital research environment and helps structure content, tools, and
+         background information across the platform.</p></span></div><div id="userGuide-bdd-overview-home"><span lang="de">
+      <p>Die <a href="../index.html">Startseite</a> bietet einen ersten Einstieg in das Projekt
+         <i>Burchards Dekret Digital</i>. Sie stellt Zielsetzung, Laufzeit und
+         institutionellen Rahmen des Projekts vor und vermittelt einen Überblick über
+         die Inhalte und Möglichkeiten der digitalen Edition.</p>
+      <p>Sie enthält eine Sektion <b>Aktuelles</b>, in der  regelmäßig aktuelle
+         Informationen zum Projekt veröffentlicht werden. Dazu gehören Hinweise auf
+         bevorstehende Veranstaltungen, Projektfortschritte sowie sonstige Neuigkeiten
+         im Zusammenhang mit <i>Burchards Dekret Digital</i>. 
+         Darüber hinaus besteht die Möglichkeit, den <a href="https://lists.uni-mainz.de/sympa/subscribe/bdd-newsletter">Projekt-Newsletter</a> zu
+         abonnieren. Über den Newsletter werden Interessierte in regelmäßigen Abständen
+         über neue Inhalte, Entwicklungen und Veranstaltungen informiert. 
+         Ältere Meldungen bleiben über das <a href="news-archive.html">Nachrichtenarchiv</a> zugänglich. Das Archiv
+         ermöglicht es, vergangene Ankündigungen und Projektneuigkeiten auch nach Ablauf
+         ihrer Aktualität weiterhin nachzuvollziehen.</p></span><span lang="en">
+      <p>The <a href="../index.html">homepage</a> introduces the <i>Burchards Dekret Digital</i> project. It presents
+         the aims, duration, and institutional framework of the project and provides an
+         initial overview of the content and possibilities offered by the digital edition.</p>
+      <p>It includes a <b>news</b> section that provides up-to-date information
+         about the project. This includes announcements of upcoming events, reports on
+         project developments, and other news related to <i>Burchards Dekret Digital</i>. 
+         Users can also subscribe to the <a href="https://lists.uni-mainz.de/sympa/subscribe/bdd-newsletter">project newsletter</a> in order to receive
+         regular updates. The newsletter informs subscribers about new content, recent
+         developments, and forthcoming events. 
+         Past announcements remain accessible through the <a href="news-archive.html">news archive</a>, which
+         provides access to older project news after it is no longer displayed on the
+         homepage.</p></span></div><div id="userGuide-bdd-overview-decretum"><span lang="de">
+      <p>Der Abschnitt <a href="decretum.html">Decretum</a> bietet Hintergrundinformationen zum
+         <i>Decretum Burchardi</i>. Er führt in Aufbau, Inhalte und historische Bedeutung
+         des Werkes ein und präsentiert zentrale Forschungsliteratur. Der Bereich dient als
+         kontextueller Rahmen für die Arbeit mit den
+         Handschriften und Transkriptionen.</p></span><span lang="en">
+      <p>The <a href="decretum.html">Decretum</a> section provides background information on the
+         <i>Decretum Burchardi</i>. It introduces the structure, contents, and historical
+         significance of the work and presents key research literature. This section serves
+         as a contextual framework for working with the
+         manuscripts and transcriptions.</p></span></div><div id="userGuide-bdd-overview-workspace"><span lang="de">
+      <p>Der <a href="workspace.html">Arbeitsbereich</a> bildet den zentralen Ort für die aktive Arbeit mit den
+         Texten. Hier können transkribierte Bücher geöffnet, parallel gelesen und
+         miteinander verglichen werden. Verschiedene Panels und Ansichten unterstützen
+         die Analyse von Struktur, Digitalisat, Schreiberhänden und Metadaten.</p>
+      <p>Eine ausführliche Beschreibung der Funktionen und Arbeitsabläufe im
+         <i>Arbeitsbereich</i> findet sich in einem eigenen Abschnitt dieses
+         Benutzerhandbuchs weiter unten.</p></span><span lang="en">
+      <p>The <a href="workspace.html">Workspace</a> is the central environment for active work with the texts.
+         Here, transcribed books can be opened, read in parallel, and compared. Different
+         panels and views support the analysis of structure, facsimiles, scribes, and
+         metadata.</p>
+      <p>A detailed description of the functionalities and workflows of the
+         <i>Workspace</i> is provided in a dedicated section later in this user guide.</p></span></div><div id="userGuide-bdd-overview-manuscripts"><span lang="de">
+      <p>Der Abschnitt <a href="mss.html">Handschriften</a> fungiert als Datenbank aller bekannten
+         Textzeugen des <i>Decretum Burchardi</i>. Eine Tabellen- und Kartenansicht
+         ermöglichen den Zugang zu Metadaten, Filtern nach verschiedenen Kriterien sowie
+         den direkten Wechsel zu einzelnen Handschriftenseiten und in den Arbeitsbereich.</p>
+      <p>Eine ausführliche Beschreibung der Funktionen und Arbeitsabläufe im
+         <i>Handschriften</i> findet sich in einem eigenen Abschnitt dieses
+         Benutzerhandbuchs weiter unten.</p></span><span lang="en">
+      <p>The <a href="mss.html">Manuscripts</a> section functions as a database of all known textual
+         witnesses of the <i>Decretum Burchardi</i>. Table and map views provide access to
+         metadata, filtering options, and direct links to individual manuscript pages and
+         the <i>Workspace</i>.</p>
+      <p>A detailed description of the functionalities and workflows of the
+         <i>Manuscripts</i> section is provided in a dedicated section later in this user guide.</p></span></div><div id="userGuide-bdd-overview-bibliography"><span lang="de">
+      <p>Die <a href="bibl.html">Bibliographie</a> versammelt Forschungsliteratur zum
+         <i>Decretum Burchardi</i>. Sie dient als
+         Referenzsammlung und unterstützt die wissenschaftliche Arbeit mit der Edition.</p></span><span lang="en">
+      <p>The <a href="bibl.html">Bibliography</a> brings together scholarly literature on the
+         <i>Decretum Burchardi</i>. It serves as a reference
+         collection supporting academic work with the edition.</p></span></div><div id="userGuide-bdd-overview-project"><span lang="de">
+      <p>Der Bereich <a href="project.html">Projekt</a> dokumentiert die Entstehung und Entwicklung von
+         <i>Burchards Dekret Digital</i>. Er informiert über Projektphasen, beteiligte
+         Institutionen, Förderzusammenhänge und organisatorische Rahmenbedingungen.</p></span><span lang="en">
+      <p>The <a href="project.html">Project</a> section documents the development of
+         <i>Burchards Dekret Digital</i>. It provides information on project phases, organisational framework and goals.</p></span></div><div id="userGuide-bdd-overview-documentation"><span lang="de">
+      <p>Der Bereich <i>Dokumentation</i> stellt Benutzerhandbuch, technische
+         und TEI-Dokumentation zur Verfügung. Er richtet sich sowohl an
+         Nutzerinnen und Nutzer der Plattform als auch an Personen, die sich für die
+         editorischen und technischen Grundlagen der Edition interessieren.</p></span><span lang="en">
+      <p>The <i>Documentation</i> section provides this user guide, the technical and TEI documentation. It addresses
+         both users of the platform and those interested
+         in the editorial and technical foundations of the digital edition.</p></span></div><div id="userGuide-bdd-overview-team"><span lang="de">
+      <p>Der Abschnitt <a href="team.html">Team</a> stellt die am Projekt beteiligten Personen vor. Er gibt
+         Auskunft über Funktionen, institutionelle Anbindungen und Zuständigkeiten
+         innerhalb von <i>Burchards Dekret Digital</i>.</p></span><span lang="en">
+      <p>The <a href="team.html">Team</a> section introduces the people involved in the project. It provides
+         information on roles, institutional affiliations, and responsibilities within
+         <i>Burchards Dekret Digital</i>.</p></span></div><div id="userGuide-infoWorkspace"><span lang="de">
+      <p>Der <a href="workspace.html">Arbeitsbereich</a> ist das zentrale Arbeitsumfeld der Plattform. Hier können
+         Nutzerinnen und Nutzer transkribierte Bücher des <i>Decretum Burchardi</i> öffnen,
+         parallel lesen und miteinander vergleichen. Sobald ein Buch geladen wurde, stehen
+         verschiedene Ansichten zur Verfügung, die den Text, seine Struktur, das Digitalisat,
+         Schreiberinformationen und Metadaten miteinander verbinden.</p>
+      <p>Der <i>Arbeitsbereich</i> bleibt zunächst leer. Erst wenn Ressourcen hinzugefügt werden,
+         erscheinen die entsprechenden Panels auf dem digitalen Schreibtisch.</p></span><span lang="en">
+      <p>The <a href="workspace.html">Workspace</a> is the central working environment of the platform. Here, users can
+         open transcribed books of the <i>Decretum Burchardi</i>, read them in parallel, and
+         compare witnesses. Once a book has been loaded, several visualisations become available,
+         connecting the text with its structure, the digital facsimile, scribal information,
+         and metadata.</p>
+      <p>The <i>Workspace</i> is initially empty. Panels appear only after resources have been added
+         to the digital desk.</p></span></div><div id="userGuide-workspace-workmaterial"><span lang="de">
+      <p>Das Menü <b>Arbeitsmaterial</b> dient als zentrale Schaltstelle für das Arbeiten im
+         <i>Arbeitsbereich</i>. Von hier aus können Ressourcen hinzugefügt und verwaltet,
+         der aktuelle Arbeitsstand gesichert oder der Arbeitsbereich zurückgesetzt werden.</p>
+      <p>
+         <ul>
+            <li>Über <b>Ressource hinzufügen</b> können Nutzerinnen und Nutzer verfügbare Bücher aus
+               unterschiedlichen Handschriften auswählen und in den Arbeitsbereich laden. Jedes
+               ausgewählte Buch wird anschließend als eigenes Panel angezeigt.</li>
+            <li>In der <b>Legende zur Transkription</b> werden die in der Transkription verwendeten Symbole,
+               Farben und Konventionen erläutert (z. B. Abkürzungen, Ergänzungen, Korrekturen,
+               Handwechsel). Die Legende unterstützt das Verständnis der editorischen Darstellung.</li>
+            <li>Mit <b>JSON herunterladen</b> kann die aktuelle Sitzung als Datei gespeichert werden.
+               Eine ausführliche Erklärung hierzu findet sich im Abschnitt <i>Sitzung speichern und wiederherstellen</i> weiter unten in diesem Benutzerhandbuch.</li>
+            <li>Die Funktion <b>Was auf meinem Arbeitsbereich liegt</b> zeigt eine kompakte Übersicht aller aktuell
+               geladenen Bücher. Von dort aus können einzelne Ressourcen gezielt entfernt werden.</li>
+            <li>Mit <b>Alle löschen</b> wird der gesamte Arbeitsbereich zurückgesetzt: Alle offenen Panels
+               werden geschlossen und die Ansicht kehrt in den Ausgangszustand zurück.</li>
+         </ul>
+      </p>
+      <div class="row">
+         <div class="col-12 col-md-6 text-center">
+            <figure class="my-3 text-center"><img src="../img/ws-add-resources-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Menü Ressource hinzufügen"><figcaption class="small text-muted mt-2">Menü Ressource hinzufügen</figcaption>
+            </figure>
+         </div>
+         <div class="col-12 col-md-6 text-center">
+            <figure class="my-3 text-center"><img src="../img/ws-transcription-legend-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Legende zur Transkription"><figcaption class="small text-muted mt-2">Legende zur Transkription</figcaption>
+            </figure>
+         </div>
+      </div></span><span lang="en">
+      <p>The <b>Work material</b> menu is the main entry point for working in the <i>Workspace</i>.
+         It allows users to add and manage resources, save their current session, or reset
+         the
+         Workspace entirely.</p>
+      <p>
+         <ul>
+            <li>Using <b>Add resource</b>, users can select available books from different manuscripts
+               and load them into the Workspace. Each selected book is displayed as its own panel.</li>
+            <li>The <b>Transcription legend</b> explains the symbols, colours, and conventions used in
+               the transcription (e.g. abbreviations, additions, corrections, hand shifts). It helps
+               users interpret the editorial representation of the text.</li>
+            <li>With <b>Download JSON</b>, users can save the current Workspace session as a file.
+               A detailed explanation is provided in the accordion item <i>Save and restore session</i> further below.</li>
+            <li>The option <b>What's on my workspace</b> opens an overview of all currently loaded
+               books. From there, individual resources can be removed with a single click.</li>
+            <li>The <b>Clear all</b> function resets the Workspace by closing all open panels and
+               returning the interface to its initial state.</li>
+         </ul>
+      </p>
+      <div class="row">
+         <div class="col-12 col-md-6 text-center">
+            <figure class="my-3 text-center"><img src="../img/ws-add-resources.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Add resource menu"><figcaption class="small text-muted mt-2">Add resource menu</figcaption>
+            </figure>
+         </div>
+         <div class="col-12 col-md-6 text-center">
+            <figure class="my-3 text-center"><img src="../img/ws-transcription-legend.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Transcription legend"><figcaption class="small text-muted mt-2">Transcription legend</figcaption>
+            </figure>
+         </div>
+      </div></span></div><div id="userGuide-workspace-panels"><span lang="de">
+      <p>Sobald ein Buch im Arbeitsbereich geöffnet wurde, erscheint es als eigenes Panel.
+         Am oberen Rand des Panels können die verfügbaren Ansichten ein- oder ausgeblendet
+         werden. Standardmäßig sind <i>Transkription</i> und <i>Digitalisat</i> aktiv.</p>
+      <p>
+         <ul>
+            <li><b>Transkription</b> zeigt den edierten Text und macht editorische Phänomene sichtbar
+               (z. B. Abkürzungen, Korrekturen, Ergänzungen, Handwechsel und Kommentare). Navigations-
+               und
+               Verknüpfungsfunktionen ermöglichen den Wechsel zwischen Inhaltsübersicht, Textstelle
+               und
+               Digitalisat.</li>
+            <li><b>Struktur</b> bietet eine strukturierte Übersicht über die interne Gliederung des Buches
+               (Capitula und Corpus). Tabellenansichten unterstützen das gezielte Auffinden von Kapiteln
+               und erleichtern den Vergleich der Textorganisation zwischen Handschriften.</li>
+            <li><b>Digitalisat</b> stellt das Digitalisat in einem integrierten Viewer bereit. So kann der
+               Text direkt mit den Manuskriptbildern verglichen werden. Über Verknüpfungen aus der
+               Transkription (z. B. per Icon) lässt sich die zugehörige Seite im Digitalisat schnell
+               öffnen.</li>
+            <li><b>Schreiber</b> informiert über die beteiligten Schreiberhände. Die im Panel verwendete Farbkodierung
+               entspricht der Hervorhebung in der Transkription, wenn die Anzeige der Schreiber aktiviert
+               ist.</li>
+            <li><b>Info</b> bündelt Metadaten und Hinweise zur wissenschaftlichen Nachnutzung, insbesondere
+               Zitationsangaben sowie Informationen zu Redaktion und Zuständigkeiten.</li>
+         </ul>
+      </p>
+      <p>Zusätzlich befindet sich neben dem Titel des Buches ein <b>Info-Icon</b>, über das sich jederzeit die
+         <b>Legende zur Transkription</b> öffnen lässt, in der alle verwendeten Symbole und Konventionen erläutert werden.</p>
+      <figure class="my-3 text-center"><img src="../img/ws-book-panel-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Buch Panel"><figcaption class="small text-muted mt-2">Buch Panel</figcaption>
+      </figure></span><span lang="en">
+      <p>Once a book has been opened in the Workspace, it appears as its own panel. At the
+         top of the panel,
+         users can activate or deactivate the available views. By default, <i>Transcription</i> and
+         <i>Digital copy</i> are enabled.</p>
+      <p>
+         <ul>
+            <li>The <b>Transcription</b> view displays the edited text and makes editorial phenomena visible
+               (e.g. abbreviations, corrections, additions, hand shifts, and comments). Navigation
+               and linking tools
+               support moving between table of contents, text passages, and the facsimile.</li>
+            <li>The <b>Structure</b> view provides a structured overview of the internal organisation of the book
+               (Capitula and Corpus). Table views support targeted navigation and facilitate comparisons
+               of textual
+               organisation across manuscripts.</li>
+            <li>The <b>Digital copy</b> view provides access to the digitised manuscript pages in an integrated viewer.
+               This allows users to compare the text directly with the manuscript images. Links from
+               the transcription
+               (e.g. via an icon) open the corresponding page in the facsimile.</li>
+            <li>The <b>Scribe</b> view presents information on the scribal hands involved. Its colour coding matches
+               the
+               highlighting in the transcription when the scribal display is enabled.</li>
+            <li>The <b>Info</b> view brings together metadata and guidance for scholarly reuse, including citation
+               information and details on editorial responsibilities.</li>
+         </ul>
+      </p>
+      <p>In addition, an <b>info icon</b> next to the book title provides direct access to the
+         <b>transcription legend</b>, which explains all symbols and conventions used in the transcription.</p>
+      <figure class="my-3 text-center"><img src="../img/ws-book-panel.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Book panel"><figcaption class="small text-muted mt-2">Book panel</figcaption>
+      </figure></span></div><div id="userGuide-workspace-views"><span lang="de">
+      <p>Über das Menü <b>Transkriptionsansichten</b> lässt sich die Darstellung der Transkription an unterschiedliche
+         Arbeitsbedürfnisse anpassen. Die Einstellungen betreffen Layout, Abkürzungsdarstellung
+         und die Hervorhebung
+         von Schreiberhänden.</p>
+      <p>
+         <ul>
+            <li><b>Original / Lesefassung</b>: Mit <i>Original</i> wird die Transkription in einer manuskriptnahen Ansicht angezeigt.
+               Die Option <i>Lesefassung</i> entfernt Zeilenumbrüche und stellt den Text als fortlaufenden Lesetext dar,
+               was besonders für kontinuierliches Lesen hilfreich ist.</li>
+            <li><b>Abkürzungen / Auflösungen anzeigen</b>: <i>Abkürzungen anzeigen</i> zeigt Abkürzungen so, wie sie im Manuskript stehen. <i>Auflösungen anzeigen</i>
+               stellt dagegen die aufgelösten Formen dar, wie sie von der Edition angeboten werden.</li>
+            <li><b>Schreiber anzeigen / ausblenden</b>: Mit <i>Schreiber anzeigen</i> wird der Text entsprechend der beteiligten Schreiber farblich hervorgehoben.
+               <i>Schreiber ausblenden</i> entfernt diese Markierung und kehrt zur neutralen Ansicht zurück.</li>
+         </ul>
+      </p></span><span lang="en">
+      <p>The <b>Transcription views</b> menu allows users to adapt the visual presentation of the transcription to
+         different research needs. The settings affect layout, the display of abbreviations,
+         and scribal highlighting.</p>
+      <p>
+         <ul>
+            <li><b>Original / Reading version</b>: In <i>Original</i> mode, the transcription is displayed in a manuscript-oriented layout.
+               The <i>Reading version</i> option removes line breaks and shows the text as continuous running prose,
+               which supports uninterrupted reading.</li>
+            <li><b>Show abbreviations / resolutions</b>: <i>Show abbreviations</i> displays abbreviations exactly as they appear in the manuscript.
+               <i>Show resolutions</i> restores the expanded forms provided by the edition.</li>
+            <li><b>Show / hide scribes</b>: When <i>Show scribes</i> is activated, the text is colour-coded according to scribal hands.
+               The <i>Hide scribes</i> option removes the highlighting and returns to the neutral view.</li>
+         </ul>
+      </p></span></div><div id="userGuide-workspace-json"><span lang="de">
+      <p>Da die Plattform ohne Benutzerkonten arbeitet und keine Daten auf externen Servern
+         speichert,
+         verbleibt die Workspace-Konfiguration vollständig lokal auf dem eigenen Gerät.</p>
+      <p>Über <b>JSON herunterladen</b> wird eine JSON-Datei erzeugt, die alle aktuell geöffneten Bücher sowie die
+         aktivierten Ansichten enthält. Eine gespeicherte Sitzung kann später über die Upload-Funktion
+         im
+         <b>Ressource hinzufügen</b>-Dialog wiederhergestellt werden.</p>
+      <p>Auf diese Weise lässt sich eine Arbeitssitzung unterbrechen und zu einem späteren
+         Zeitpunkt fortsetzen
+         oder mit anderen Personen teilen.</p></span><span lang="en">
+      <p>Since the platform does not use user accounts and does not store data on external
+         servers, the Workspace
+         configuration remains entirely local on the user's device.</p>
+      <p>Using <b>Download JSON</b>, the system generates a JSON file containing all currently open books as well as
+         the active views. A saved session can later be restored via the upload option in the
+         <b>Add resource</b>
+         dialog.</p>
+      <p>This makes it possible to pause and resume work at a later time or to share a Workspace
+         configuration with
+         others.</p></span></div><div id="userGuide-workspace-manage"><span lang="de">
+      <p>Wenn mehrere Bücher gleichzeitig geöffnet sind, helfen zwei Funktionen dabei, den
+         Arbeitsbereich übersichtlich zu halten.</p>
+      <p><b>Was auf meinem Arbeitsbereich liegt</b> öffnet eine Übersicht aller aktuell geladenen Ressourcen. Dort können einzelne Bücher
+         gezielt
+         entfernt werden, ohne die übrige Konfiguration zu verlieren.</p>
+      <p><b>Alle löschen</b> setzt den Arbeitsbereich vollständig zurück. Alle geöffneten Panels werden geschlossen
+         und die Oberfläche kehrt
+         in den Ausgangszustand zurück.</p></span><span lang="en">
+      <p>When working with several books at once, two tools help keep the Workspace organised.</p>
+      <p><b>What's on my workspace</b> opens an overview of all currently loaded resources. From there, individual books
+         can be removed
+         while keeping the rest of the Workspace configuration unchanged.</p>
+      <p><b>Clear all</b> resets the Workspace completely by closing all open panels and returning the interface
+         to its initial state.</p></span></div><div id="userGuide-infoManuscripts"><span lang="de">
+      <p>Der Abschnitt <a href="mss.html">Handschriften</a> bildet den zentralen Zugang zu allen im Projekt
+         erfassten Textzeugen des <i>Decretum Burchardi</i>. Er bietet einen strukturierten
+         Überblick über die Überlieferung und ermöglicht es, die Handschriften mithilfe
+         einer Tabellenansicht, verschiedener Filter, Exportfunktionen und einer
+         geografischen Kartenansicht zu erschließen.</p>
+      <p>Von hier aus können Nutzerinnen und Nutzer gezielt Handschriften identifizieren,
+         grundlegende Metadaten einsehen, verfügbare digitale Ressourcen aufrufen und,
+         sofern vorhanden, direkt zur jeweiligen Handschriftenseite wechseln oder bereits
+         transkribierte Bücher in den Arbeitsbereich laden.</p></span><span lang="en">
+      <p>The <a href="mss.html">Manuscripts</a> section serves as the central access point to all textual witnesses of the <i>Decretum Burchardi</i> included in the project. It offers a structured overview of the manuscript tradition
+         and allows users to explore the witnesses through a combination of tabular data, filters,
+         export functions, and a geographical map.</p>
+      <p>From this section, users can identify manuscripts of interest, examine their basic
+         metadata, access available digital resources, and, where applicable, move directly
+         to a dedicated manuscript page or load transcribed books into the Workspace.</p></span></div><div id="userGuide-mss-table"><span lang="de">
+      <p>Die Handschriftentabelle bietet einen Überblick über alle derzeit in der Datenbank
+         enthaltenen Textzeugen. Jede Zeile repräsentiert eine Handschrift und enthält
+         grundlegende Angaben wie <b>Signatur</b>, <b>Überlieferungstyp</b>,
+         <b>Entstehungsort</b> und <b>Entstehungszeit</b>.</p>
+      <p>Einige Handschriften sind mit einem <b>Buch-Icon</b> versehen. Dieses Symbol zeigt
+         an, dass ein Digitalisat verfügbar ist, und verlinkt direkt zur Online-Digitalisierung
+         der jeweiligen Institution. Darüber hinaus sind Handschriften, deren Signatur
+         anklickbar dargestellt ist, mit einer <b>eigenen Handschriftenseite</b> innerhalb
+         der Plattform verknüpft. Diese Seiten enthalten ausführlichere kodikologische
+         Informationen und ermöglichen die Arbeit mit bereits transkribierten Büchern der
+         jeweiligen Handschrift. Weitere Details hierzu finden sich im Abschnitt
+         <i>Handschriftenseite</i> dieses Benutzerhandbuchs. Auch Handschriften, für die derzeit noch keine vollständige
+         Beschreibung vorliegt,
+         werden in der Tabelle aufgeführt, um einen möglichst umfassenden Überblick über die
+         Überlieferung zu gewährleisten. Im Verlauf des Projekts werden diese Einträge
+         schrittweise ergänzt und erweitert, sodass die Datenbank kontinuierlich wächst.</p>
+      <p>Zusätzlich enthält die Tabelle eine <b>Export</b>-Spalte. Über das jeweilige
+         Download-Symbol können die verfügbaren Metadaten einer Handschrift als Datei
+         heruntergeladen werden. Diese Funktion unterstützt die Weiterverwendung der Daten
+         für Forschung und Dokumentation. Eine detaillierte Beschreibung der Exportoptionen
+         findet sich im Abschnitt <i>Datei-Export</i>.</p>
+      <figure class="my-3 text-center"><img src="../img/mss-table-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Übersicht der Handschriftentabelle mit Metadaten und Exportoptionen"><figcaption class="small text-muted mt-2">Übersicht der Handschriftentabelle mit Metadaten und Exportoptionen</figcaption>
+      </figure></span><span lang="en">
+      <p>The manuscripts table provides an overview of all witnesses currently included in
+         the database. Each row represents a manuscript and lists essential information such
+         as <b>signature</b>, <b>transmission type</b>, <b>place of origin</b>, and <b>date of origin</b>.</p>
+      <p>Some manuscripts are preceded by a <b>book icon</b>. This icon indicates that a digital facsimile is available and links directly to
+         the online digitisation hosted by the holding institution. In addition, manuscripts
+         whose signature appears as a clickable link provide access to a <b>dedicated manuscript page</b> within the platform. These pages contain extended codicological information and allow
+         users to work with already transcribed books of the manuscript. For more details,
+         see the section <i>Manuscript page</i> in this user guide. Witnesses that do not yet have a full description are nevertheless
+         included in the table to ensure a comprehensive overview of the transmission. As the
+         project progresses, these entries will be expanded and enriched with additional information,
+         ensuring the continuous growth of the database.</p>
+      <p>The table also includes an <b>export</b> column. For each manuscript, a download icon allows users to export the available
+         manuscript metadata as a file. This function supports reuse of the data for further
+         research and documentation. A detailed explanation of the available export options
+         is provided in the section <i>File export</i> below.</p>
+      <figure class="my-3 text-center"><img src="../img/mss-table.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Overview of the manuscripts table with metadata and export options"><figcaption class="small text-muted mt-2">Overview of the manuscripts table with metadata and export options</figcaption>
+      </figure></span></div><div id="userGuide-mss-filtering"><span lang="de">
+      <p>Über ein Dropdown-Menü mit der Bezeichnung <b>Typ</b> kann die Tabelle nach
+         unterschiedlichen Kategorien gefiltert werden, die den Charakter und den
+         Bearbeitungsstand der Textzeugen widerspiegeln. Dabei wird zwischen
+         <b>beschriebenen Handschriften</b>, die über eine vollständige kodikologische
+         Beschreibung und eine eigene Handschriftenseite verfügen, und
+         <b>weiteren Zeugen</b> unterschieden, zu denen bislang nur eingeschränkte
+         Informationen vorliegen.</p>
+      <p>Weitere Filteroptionen ermöglichen eine Einschränkung nach der
+         Überlieferungsform, etwa nach <b>vollständigen Handschriften</b>,
+         <b>Fragmenten</b>, <b>Exzerpten</b> oder <b>Separatüberlieferungen</b>.</p>
+      <ul>
+         <li>Vollständige Handschrift: vollständiger Textzeuge des <i>Decretum Burchardi</i></li>
+         <li>Fragment: einzelne Blätter oder kleinere erhaltene Textteile</li>
+         <li>Exzerpt: ausgewählte, eigenständig überlieferte Textpassagen</li>
+         <li>Separatüberlieferung</li>
+      </ul>
+      <figure class="my-3 text-center"><img src="../img/mss-table-typeFilter-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Typenfilter zur Einschränkung der Handschriftentabelle nach Überlieferungsform"><figcaption class="small text-muted mt-2">Typenfilter zur Einschränkung der Handschriftentabelle nach Überlieferungsform</figcaption>
+      </figure>
+      <p>Zusätzlich verfügt die Handschriftentabelle über einen <b>Zeitfilter</b>, mit dem
+         die angezeigten Zeugen nach ihrer Entstehungszeit eingegrenzt werden können.
+         Nutzerinnen und Nutzer können einen Zeitraum entweder über einen Schieberegler
+         oder durch die Eingabe konkreter Jahreszahlen festlegen. Eine Handschrift wird angezeigt,
+         sobald sich ihr geschätzter Entstehungszeitraum
+         mit dem ausgewählten Zeitintervall überschneidet. Der Zeitfilter kann mit allen
+         weiteren Filteroptionen kombiniert werden, sodass sich die Überlieferung sowohl
+         chronologisch als auch materiell differenziert untersuchen lässt.</p>
+      <figure class="my-3 text-center"><img src="../img/mss-table-dateFilter-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Zeitfilter zur Auswahl der Handschriften nach Entstehungszeit"><figcaption class="small text-muted mt-2">Zeitfilter zur Auswahl der Handschriften nach Entstehungszeit</figcaption>
+      </figure></span><span lang="en">
+      <p>A dropdown menu labelled <b>Type</b> allows users to filter the table according to different categories reflecting the
+         nature and current state of the witnesses. The available options distinguish between
+         the <b>described manuscripts</b>, which have a full codicological description and a dedicated manuscript page within
+         the platform, and <b>additional witnesses</b>, for which only limited information is currently available.</p>
+      <p>Further options allow users to refine the list by transmission type, such as <b>full manuscripts</b>, <b>fragments</b>, <b>excerpts</b>, or <b>separate transmissions</b>.</p>
+      <ul>
+         <li>Full manuscript, complete witness of the <i>Decretum Burchardi</i></li>
+         <li>Fragment, single leaves or small portions preserved</li>
+         <li>Excerpt, select passages transmitted independently</li>
+         <li>Separate transmission</li>
+      </ul>
+      <figure class="my-3 text-center"><img src="../img/mss-table-typeFilter.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Type filter for restricting the manuscripts table by transmission category"><figcaption class="small text-muted mt-2">Type filter for restricting the manuscripts table by transmission category</figcaption>
+      </figure>
+      <p>The manuscripts table also includes a <b>time filter</b> that allows users to restrict the displayed witnesses according to their date of
+         origin. Users can select a chronological range either by moving the slider or by entering
+         specific years in the input fields. A manuscript is displayed whenever its estimated
+         period of production falls within or overlaps with the selected time span. The time
+         filter can be combined with all other available filters, ensuring that users can progressively
+         refine their search and explore the manuscript tradition from both a chronological
+         and material perspective.</p>
+      <figure class="my-3 text-center"><img src="../img/mss-table-dateFilter.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Time filter for selecting manuscripts by date of origin"><figcaption class="small text-muted mt-2">Time filter for selecting manuscripts by date of origin</figcaption>
+      </figure></span></div><div id="userGuide-mss-export"><span lang="de">
+      <p>Die Exportfunktionen der Handschriftentabelle ermöglichen den Download
+         strukturierter Informationen zu den in der Datenbank enthaltenen Zeugen. Durch
+         Anklicken des <b>Download-Icons</b> in der Export-Spalte können die verfügbaren
+         Metadaten einer Handschrift im XML-Format heruntergeladen werden.</p>
+      <p>Darüber hinaus steht eine globale Exportfunktion <b>Export manuscripts data</b>
+         zur Verfügung, mit der die Metadaten aller aktuell in der Tabelle angezeigten
+         Handschriften gesammelt als JSON-Datei exportiert werden können. Dies eignet sich
+         insbesondere für Dokumentationszwecke, die Offline-Nutzung oder weiterführende
+         Analysen außerhalb der Plattform.</p></span><span lang="en">
+      <p>The export functions in the manuscripts table allow users to download structured information
+         about the witnesses included in the database. By clicking the <b>download icon</b> in the Export column, users can retrieve a file containing the available metadata
+         for the selected manuscript in XML format.</p>
+      <p>In addition, a global export option, <b>Export manuscripts data</b> allows users to download the metadata of all manuscripts currently listed in the
+         table as a single JSON file. This is particularly useful for documentation, offline
+         consultation, or further analysis outside the platform.</p></span></div><div id="userGuide-mss-map"><span lang="de">
+      <p>Unterhalb der Tabelle visualisiert eine Karte die geografische Verteilung aller
+         Handschriftenzeugen. Jede Handschrift wird durch einen Marker dargestellt, dessen
+         Farbe der jeweiligen Überlieferungsform entspricht. Diese visuelle Kodierung
+         erleichtert es, räumliche Muster und Schwerpunkte der Überlieferung auf einen Blick
+         zu erkennen. Die folgenden Kategorien werden unterschieden:</p>
+      <ul>
+         <li>Vollständige Handschrift: vollständiger Textzeuge des <i>Decretum Burchardi</i></li>
+         <li>Fragment: einzelne Blätter oder kleinere erhaltene Textteile</li>
+         <li>Exzerpt: ausgewählte, eigenständig überlieferte Textpassagen</li>
+         <li>Separatüberlieferung</li>
+      </ul>
+      <figure class="my-3 text-center"><img src="../img/mss-map-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Kartenansicht zur geografischen Verteilung der Handschriftenzeugen"><figcaption class="small text-muted mt-2">Kartenansicht zur geografischen Verteilung der Handschriftenzeugen</figcaption>
+      </figure>
+      <p>Durch Anklicken eines Markers öffnet sich ein <b>Popup</b>, das zentrale Metadaten
+         zur Handschrift anzeigt und, sofern vorhanden, einen direkten Link zur
+         entsprechenden Handschriftenseite bietet. Über den oberhalb der Karte verfügbaren
+         <b>Typ</b>-Filter können gezielt bestimmte Kategorien von Zeugen ein- oder
+         ausgeblendet werden, etwa nur Fragmente oder nur vollständige Handschriften. Auf
+         diese Weise lässt sich die geografische und kodikologische Erkundung des Korpus
+         gezielt steuern.</p>
+      <figure class="my-3 text-center"><img src="../img/mss-map-popup-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Marker-Popup mit Handschriftenmetadaten und Link zur Handschriftenseite"><figcaption class="small text-muted mt-2">Marker-Popup mit Handschriftenmetadaten und Link zur Handschriftenseite</figcaption>
+      </figure></span><span lang="en">
+      <p>Below the table, a map visualises the geographical distribution of all manuscript
+         witnesses. Each manuscript is represented by a marker whose colour corresponds to
+         its transmission type. This visual coding helps users recognise patterns in the distribution
+         and character of the manuscripts at a glance. The following categories are used:</p>
+      <ul>
+         <li>Full manuscript: complete witness of the <i>Decretum Burchardi</i></li>
+         <li>Fragment: single leaves or small portions preserved</li>
+         <li>Excerpt: select passages transmitted independently</li>
+         <li>Separate transmission</li>
+      </ul>
+      <figure class="my-3 text-center"><img src="../img/mss-map.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Map view showing the geographical distribution of manuscript witnesses"><figcaption class="small text-muted mt-2">Map view showing the geographical distribution of manuscript witnesses</figcaption>
+      </figure>
+      <p>Selecting a marker opens a <b>popup</b> displaying essential metadata about the manuscript and, where available, a direct
+         link to its dedicated manuscript page. Above the map, a <b>Type</b> filter allows users to display only specific categories of witnesses, such as fragments
+         or full manuscripts. This filtering enables a focused geographical and codicological
+         exploration of the corpus.</p>
+      <figure class="my-3 text-center"><img src="../img/mss-map-popup.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Marker popup displaying manuscript metadata and link to the manuscript page"><figcaption class="small text-muted mt-2">Marker popup displaying manuscript metadata and link to the manuscript page</figcaption>
+      </figure></span></div><div id="userGuide-manuscriptPage"><span lang="de">
+      <p>Jede <b>beschriebene Handschrift</b> verfügt über eine eigene Handschriftenseite.
+         Diese bündelt die Metadaten und die kodikologische Beschreibung der Handschrift,
+         verweist auf externe Ressourcen und bietet direkten Zugriff auf die Projektdateien.
+         Zugleich fungiert die Handschriftenseite als Schnittstelle zum
+         <i>Arbeitsbereich</i>: Bereits transkribierte Bücher können von hier aus direkt zur
+         weiteren Bearbeitung geöffnet werden.</p>
+      <p>Der obere Bereich der Handschriftenseite bietet einen strukturierten Überblick über
+         den Zeugen sowie das <b>Digitalisat</b>, sodass Originalabbildungen und Beschreibung
+         parallel konsultiert werden können. Die Beschreibung umfasst Angaben zu
+         <b>Entstehungsort</b> und <b>Provenienz</b>, <b>Datierung</b>,
+         <b>Material und Umfang</b>, <b>Inhalt</b> und <b>Bibliographie</b>.
+         Ergänzend stehen direkte Links zu den Projektdateien zur Verfügung, etwa zu den
+         <b>TEI-XML-Dateien der transkribierten Bücher</b>.</p>
+      <p>Über den Bereich <b>Buch auswählen</b> können Nutzerinnen und Nutzer verfügbare
+         Transkriptionen direkt in den <i>Arbeitsbereich</i> laden. Zur Auswahl stehen
+         ausschließlich bereits transkribierte und veröffentlichte Bücher. Nach der Auswahl
+         wird das Buch über die Schaltfläche <b>Buch zum Arbeitsbereich hinzufügen</b> als neues Panel
+         geöffnet, von wo aus auf Transkription, Struktur, Digitalisat,
+         Schreiberinformationen und den Info-Bereich zugegriffen werden kann.</p>
+      <p>Darüber hinaus enthält die Handschriftenseite dieselbe interaktive Kartenansicht
+         wie der Abschnitt <i>Handschriften</i>, sodass die geografische Einordnung des
+         Zeugen jederzeit nachvollzogen werden kann.</p>
+      <figure class="my-3 text-center"><img src="../img/ms-item-de.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Handschriftenseite mit Metadaten, Digitalisat und Zugriff auf Transkriptionen"><figcaption class="small text-muted mt-2">Handschriftenseite mit Metadaten, Digitalisat und Zugriff auf Transkriptionen</figcaption>
+      </figure></span><span lang="en">
+      <p>Each <b>described manuscript</b> has its own dedicated manuscript page. This page brings together the manuscript's
+         metadata and codicological description, links to external resources, and direct access
+         to the project files. The manuscript page also serves as a gateway into the <i>Workspace</i>: users can select a transcribed book and open it directly in the Workspace for further
+         reading and comparison.</p>
+      <p>The upper part of the manuscript page provides a structured overview of the witness
+         and the <b>digital facsimile</b>, allowing users to consult the original manuscript images alongside the manuscript
+         description. This section includes information on <b>origin</b> and <b>provenance</b>, <b>dating</b>, <b>material and extent</b>, <b>contents</b>, and <b>bibliography</b>. The page also provides direct links to the project's source files, such as the <b>TEI-XML files of transcribed books</b>.</p>
+      <p>The manuscript page allows users to open available transcriptions directly in the
+         <i>Workspace</i>. In the section <b>Select a book</b>, users can select a book from the dropdown list. Only books that have already been
+         transcribed and published are available for selection. After selecting a book, clicking
+         <b>Add book to Workspace</b> loads the transcription into the <i>Workspace</i> as a new panel. From there, users can access the transcription itself, its structure,
+         the digital facsimile, scribal information, and the info panel.</p>
+      <p>In addition, the manuscript page includes the same interactive map interface used
+         in the main <i>Manuscripts</i> section, allowing users to locate the witness geographically.</p>
+      <figure class="my-3 text-center"><img src="../img/ms-item.png" class="img-fluid rounded border" loading="lazy" width="70%" alt="Dedicated manuscript page with metadata, facsimile, and access to transcriptions"><figcaption class="small text-muted mt-2">Dedicated manuscript page with metadata, facsimile, and access to transcriptions</figcaption>
+      </figure></span></div>

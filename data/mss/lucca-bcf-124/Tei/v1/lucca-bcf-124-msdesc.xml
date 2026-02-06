@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-lucca-bcf-124">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Lucca, Biblioteca Capitolare Feliniana e Biblioteca Arcivescovile, 124</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 28.10.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 28.10.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="lucca-bcf-124-msdesc" type="full">
+                        <msIdentifier xml:id="lucca-bcf-124-ident">
+                        <repository ref="https://www.diocesilucca.it/archivio/biblioteche/">Biblioteca Capitolare Feliniana e Biblioteca Arcivescovile<location>
+                            <geo>43.840864,10.5045222,17</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q13373">Lucca</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q38">Italien</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">124</idno>
+                        </collection>
+                        <msName type="full">Lucca, Biblioteca Capitolare Feliniana e Biblioteca Arcivescovile, 124</msName>
+                        <msName type="sigle">Lu</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1099" notBefore="1075">4. Viertel des 11. Jahrhunderts</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://www.mirabileweb.it/CODEX/lucca-biblioteca-capitolare-feliniana-124/222803</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

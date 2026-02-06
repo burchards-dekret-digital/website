@@ -67,7 +67,7 @@
     </xsl:template>
     
     <xsl:template match="tei:div[@type='desc-content']">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -75,15 +75,15 @@
     
     
     <xsl:template match="tei:figure">
-        <div class="col-md-4 text-center justify-content-center align-items-center d-flex">
-            <figure class="figure" style="width:50%!important">
+        <div class="col-md-3 mt-4 mt-md-0 d-flex align-items-center justify-content-center">
+            <figure class="figure w-100 m-0">
                 <xsl:apply-templates/>
             </figure>
         </div>
     </xsl:template>
     
     <xsl:template match="tei:graphic">
-        <img src="{@url}" class="figure-img img-fluid"/>
+        <img src="{@url}" class="figure-img img-fluid w-100"/>
     </xsl:template>
     
     <xsl:template match="tei:figDesc">
@@ -123,9 +123,9 @@
     
     
     <xsl:template match="tei:head">
-        <h1>
+        <h2>
             <xsl:apply-templates/>
-        </h1>
+        </h2>
     </xsl:template>
     
     <xsl:template match="tei:head[@type='subtitle']">

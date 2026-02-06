@@ -60,7 +60,7 @@
     </xsl:template>
     
     <xsl:template match="tei:graphic">
-        <img src="{@url}" class="figure-img img-fluid" alt="{../tei:figDesc}"/>
+        <img src="{@url}" class="figure-img img-fluid" alt="{../tei:figDesc}" title="{../tei:figDesc}"/>
     </xsl:template>
     
     <xsl:template match="tei:figDesc">

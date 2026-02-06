@@ -19,57 +19,353 @@
         <script src="../js/jquery-3.7.1.min.js"></script>
         <script src="../js/language.js" defer></script>
         <script src="../js/navigation.js" defer></script>
+        <style>
+            :root {
+            --navbar-offset: 100px;
+            }
+
+            [id^="userGuide-"] {
+            scroll-margin-top: var(--navbar-offset);
+            }
+
+            /* Floating TOC button */
+            .ug-toc{
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            z-index: 1050;
+            width: 42px;
+            height: 42px;
+            display: none;            
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            }
+
+            /* Only on large screens */
+            @media (min-width: 992px){
+            .ug-toc.show { display: inline-flex; }
+            }
+        </style>
     </head>
     <body>
-        
         <div id="navbar-placeholder"></div>
         <div class="back-button ps-4 mt-5">
             <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
         </div>
-        <div id="content" class="container" style="flex:1">
 
+        <div id="content" class="container" style="flex:1">
             <h1 class="section-main-title"><span lang="de">DOKUMENTATION</span><span lang="en">DOCUMENTATION</span></h1>
-            
             <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button" role="tab" aria-controls="technical" aria-selected="true"><span lang="de">Technische Dokumentation</span><span lang="en">Technical documentation</span></button>
+                  <button class="nav-link active" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false"><span lang="de">Benutzerhandbuch</span><span lang="en">User Guide</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="teiTranskription-tab" data-bs-toggle="tab" data-bs-target="#teiTranskription" type="button" role="tab" aria-controls="tei" aria-selected="false"><span lang="de">TEI Transkription</span><span lang="en">TEI Transcription</span></button>
+                  <button class="nav-link" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button" role="tab" aria-controls="technical" aria-selected="true"><span lang="de">Technische Dokumentation</span><span lang="en">Technical Documentation</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="teiHandschriftenDB-tab" data-bs-toggle="tab" data-bs-target="#teiHandschriftenDB" type="button" role="tab" aria-controls="tei" aria-selected="false" disabled style="color:grey"><span lang="de">TEI Handschriften DB</span><span lang="en">TEI Manuscripts DB</span></button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="teiEdition-tab" data-bs-toggle="tab" data-bs-target="#teiEdition" type="button" role="tab" aria-controls="tei" aria-selected="false" disabled style="color:grey"><span lang="de">TEI Edition</span><span lang="en">TEI Edition</span></button>
-                  </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-controls="web" aria-selected="false"><span lang="de">Webedition</span><span lang="en">Web Edition</span></button>
+                  <button class="nav-link" id="teiTranskription-tab" data-bs-toggle="tab" data-bs-target="#teiTranskription" type="button" role="tab" aria-controls="tei" aria-selected="false"><span lang="de">TEI Dokumentation</span><span lang="en">TEI Documentation</span></button>
                 </li>
-              </ul>
-              <!-- Contenuto delle tabs -->
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="technical" role="tabpanel" aria-labelledby="technical-tab">
+            </ul>
+              
+            <!-- Tabs content -->              
+            <div class="tab-content" id="userGuide-TOC">
+                <div class="tab-pane fade show active container" id="web" role="tabpanel" aria-labelledby="web-tab">
+                    <!--<div class="container" id="webEditionDoc"></div>-->
+                    
+                    <section id="userGuide" class="block">
+                        <!-- INTRO USER GUIDE -->
+                        <div id="userGuide-intro"></div>
+                   
+                        <!-- WORKSPACE -->                      
+                        <div class="my-5">
+                            <h3 class="h5 mb-3" id="ug-bdd-overview">
+                                <span lang="de">Plattformübersicht</span>
+                                <span lang="en">Platform Overview</span>
+                            </h3>
+                            <div id="userGuide-bdd-overview"></div>
+
+                            <div class="accordion" id="acc-bdd-overview">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-1" aria-expanded="false" aria-controls="bdd-overview-collapse-1">
+                                        <span lang="de">Home</span><span lang="en">Home</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-1" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-1">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-home"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-2" aria-expanded="false" aria-controls="bdd-overview-collapse-2">
+                                        <span lang="de">Decretum</span><span lang="en">Decretum</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-2" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-2">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-decretum"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-3" aria-expanded="false" aria-controls="bdd-overview-collapse-3">
+                                        <span lang="de">Arbeitsbereich</span>
+                                        <span lang="en">Workspace</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-3" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-3">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-workspace"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-4" aria-expanded="false" aria-controls="bdd-overview-collapse-4">
+                                        <span lang="de">Handschriften</span><span lang="en">Manuscripts</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-4" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-4">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-manuscripts"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-5" aria-expanded="false" aria-controls="bdd-overview-collapse-5">
+                                        <span lang="de">Bibliographie</span><span lang="en">Bibliography</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-5" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-5">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-bibliography"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-6" aria-expanded="false" aria-controls="bdd-overview-collapse-6">
+                                        <span lang="de">Projekt</span><span lang="en">Project</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-6" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-6">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-project"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-7">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-7" aria-expanded="false" aria-controls="bdd-overview-collapse-7">
+                                        <span lang="de">Dokumentation</span><span lang="en">Documentation</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-7" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-7">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-documentation"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="bdd-overview-heading-8">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdd-overview-collapse-8" aria-expanded="false" aria-controls="bdd-overview-collapse-8">
+                                        <span lang="de">Team</span><span lang="en">Team</span>
+                                    </button>
+                                    </h2>
+                                    <div id="bdd-overview-collapse-8" class="accordion-collapse collapse" aria-labelledby="bdd-overview-heading-8">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-bdd-overview-team"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WORKSPACE -->                      
+                        <div class="my-5">
+                            <h3 class="h5 mb-3" id="ug-workspace">
+                                <span lang="de">Arbeitsbereich</span>
+                                <span lang="en">Workspace</span>
+                            </h3>
+                            <div id="userGuide-infoWorkspace"></div>
+
+                            <div class="accordion" id="acc-workspace">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="ws-heading-1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ws-collapse-1" aria-expanded="false" aria-controls="ws-collapse-1">
+                                        <span lang="de">Arbeitsmaterial</span><span lang="en">Work material</span>
+                                    </button>
+                                    </h2>
+                                    <div id="ws-collapse-1" class="accordion-collapse collapse" aria-labelledby="ws-heading-1">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-workspace-workmaterial"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="ws-heading-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ws-collapse-3" aria-expanded="false" aria-controls="ws-collapse-3">
+                                        <span lang="de">Panels und Ansichten</span>
+                                        <span lang="en">Panels and Views</span>
+                                    </button>
+                                    </h2>
+                                    <div id="ws-collapse-3" class="accordion-collapse collapse" aria-labelledby="ws-heading-3">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-workspace-panels"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="ws-heading-4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ws-collapse-4" aria-expanded="false" aria-controls="ws-collapse-4">
+                                        <span lang="de">Transkriptionsansichten</span><span lang="en">Transcription views</span>
+                                    </button>
+                                    </h2>
+                                    <div id="ws-collapse-4" class="accordion-collapse collapse" aria-labelledby="ws-heading-4">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-workspace-views"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="ws-heading-5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ws-collapse-5" aria-expanded="false" aria-controls="ws-collapse-5">
+                                        <span lang="de">Sitzung speichern und wiederherstellen</span><span lang="en">Save and restore session</span>
+                                    </button>
+                                    </h2>
+                                    <div id="ws-collapse-5" class="accordion-collapse collapse" aria-labelledby="ws-heading-5">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-workspace-json"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="ws-heading-6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ws-collapse-6" aria-expanded="false" aria-controls="ws-collapse-6">
+                                        <span lang="de">Geöffnete Ressourcen verwalten</span><span lang="en">Manage open resources</span>
+                                    </button>
+                                    </h2>
+                                    <div id="ws-collapse-6" class="accordion-collapse collapse" aria-labelledby="ws-heading-6">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-workspace-manage"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--MANUSCRIPTS -->                       
+                        <div class="mb-5">
+                            <h3 class="h5 mb-3" id="ug-manuscripts">
+                                <span lang="de">Handschriften</span>
+                                <span lang="en">Manuscripts</span>
+                            </h3>
+
+                            <div id="userGuide-infoManuscripts"></div>
+                            
+                            <div class="accordion" id="acc-mss">
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="mss-heading-1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mss-collapse-1" aria-expanded="false" aria-controls="mss-collapse-1">
+                                        <span lang="de">Tabellenansicht</span><span lang="en">Table visualisation</span>
+                                    </button>
+                                    </h2>
+                                    <div id="mss-collapse-1" class="accordion-collapse collapse" aria-labelledby="mss-heading-1">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-mss-table"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="mss-heading-2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mss-collapse-2" aria-expanded="false" aria-controls="mss-collapse-2">
+                                        <span lang="de">Filtersystem</span><span lang="en">Filtering system</span>
+                                    </button>
+                                    </h2>
+                                    <div id="mss-collapse-2" class="accordion-collapse collapse" aria-labelledby="mss-heading-2">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-mss-filtering"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="mss-heading-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mss-collapse-3" aria-expanded="false" aria-controls="mss-collapse-3">
+                                        <span lang="de">Datei-Export</span><span lang="en">File export</span>
+                                    </button>
+                                    </h2>
+                                    <div id="mss-collapse-3" class="accordion-collapse collapse" aria-labelledby="mss-heading-3">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-mss-export"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="mss-heading-4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mss-collapse-4" aria-expanded="false" aria-controls="mss-collapse-4">
+                                        <span lang="de">Kartenansicht</span><span lang="en">Map visualisation</span>
+                                    </button>
+                                    </h2>
+                                    <div id="mss-collapse-4" class="accordion-collapse collapse" aria-labelledby="mss-heading-4">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-mss-map"></div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="mss-heading-5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mss-collapse-5" aria-expanded="false" aria-controls="mss-collapse-5">
+                                        <span lang="de">Handschriftenseite</span><span lang="en">Manuscript dedicated page</span>
+                                    </button>
+                                    </h2>
+                                    <div id="mss-collapse-5" class="accordion-collapse collapse" aria-labelledby="mss-heading-5">
+                                    <div class="accordion-body">
+                                        <div id="userGuide-manuscriptPage"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="technical-tab">
                     <div class="container" id="technicalDoc"></div>
                 </div>
+
                 <div class="tab-pane fade" id="teiTranskription" role="tabpanel" aria-labelledby="teiTranskription-tab">
                     <div class="container" id="teiTranskriptionDoc"></div>
                 </div>
-                <div class="tab-pane fade" id="teiHandschriftenDB" role="tabpanel" aria-labelledby="teiHandschriftenDB-tab">
-                    <div class="container" id="teiHandschriftenDBDoc"></div>
-                </div>
-                <div class="tab-pane fade" id="teiEdition" role="tabpanel" aria-labelledby="teiEdition-tab">
-                    <div class="container" id="teiEditionDoc"></div>
-                </div>
-                <div class="tab-pane fade" id="web" role="tabpanel" aria-labelledby="web-tab">
-                    <div class="container" id="webEditionDoc"></div>
-                </div>
-              </div>
-            
+            </div>            
         </div>
 
+       
+
         <div id="footer-placeholder"></div>
-        
+
+        <a href="#userGuide-TOC" id="ug-toc" class="btn btn-secondary rounded-circle ug-toc" title="Back to contents">
+            <i class="fas fa-list"></i>
+        </a>
+
     </body>
 
 <script>
@@ -93,12 +389,11 @@
         function displayDocumentationContent(htmlDoc) {
             let contentDiv = document.createElement('div');
             contentDiv.innerHTML = htmlDoc;
-            let contentTechDoc = $(contentDiv).find("#technicalDoc").html();
-            $("#technicalDoc").html(contentTechDoc);
-            let contentDBDoc = $(contentDiv).find("#teiHandschriftenDBDoc").html();
-            $("#teiHandschriftenDBDoc").html(contentDBDoc);
             let contentWebEdDoc = $(contentDiv).find("#webEditionDoc").html();
             $("#webEditionDoc").html(contentWebEdDoc);
+            let contentTechDoc = $(contentDiv).find("#technicalDoc").html();
+            $("#technicalDoc").html(contentTechDoc);
+            
             checkLanguage();
         }
 
@@ -114,7 +409,74 @@
         // Load both HTML files and display their content
         loadHTML('../data/texts/documentationTexts.html', displayDocumentationContent);
         loadHTML('../data/texts/docTeiTrascription.html', displayTranscriptionContent); 
+        
     });
     </script>
+
+  <script>
+(async function loadUserGuideTexts() {
+  const URL = '../data/texts/userGuideTexts.html';
+
+  try {
+    const res = await fetch(URL, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+
+    // Fill every placeholder in this page whose id starts with "userGuide"
+    document.querySelectorAll('[id^="userGuide"]').forEach((target) => {
+      const source = doc.getElementById(target.id);
+      if (source) target.innerHTML = source.innerHTML;
+    });
+    if (typeof checkLanguage === 'function') checkLanguage();
+
+  } catch (err) {
+    console.error('User guide text loading failed:', err);
+  }
+})();
+</script>
+
+<script>
+document.addEventListener('click', function (e) {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+
+  const hash = link.getAttribute('href');
+  if (!hash || hash.length < 2) return;
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  // Is the target inside a collapsed accordion panel?
+  const collapseEl = target.closest('.accordion-collapse');
+  if (!collapseEl) return; // normal anchor behaviour is fine
+
+  e.preventDefault();
+
+  // Open the panel
+  const inst = bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false });
+  collapseEl.addEventListener('shown.bs.collapse', () => {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', hash); // keeps the URL hash in sync
+  }, { once: true });
+
+  inst.show();
+});
+</script>
+
+
+<script>
+(function tocFab(){
+  const btn = document.getElementById('ug-toc');
+  if (!btn) return;
+
+  function onScroll(){
+    btn.classList.toggle('show', window.scrollY > 400);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 
 </html>

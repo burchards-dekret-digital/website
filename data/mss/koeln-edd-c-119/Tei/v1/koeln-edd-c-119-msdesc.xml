@@ -1,0 +1,140 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-koeln-edd-c-119">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="ger">Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod.
+                    119</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Test Handschriftendatenbank</p>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="koeln-edd-c-119-msdesc" type="full">
+                    <msIdentifier xml:id="koeln-edd-c-119-ident">
+                        <repository ref="https://dombibliothek-koeln.de/">Erzbischöfliche Diözesan-
+                            und Dombibliothek<location>
+                            <geo>50.943987,6.951235</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q365">Köln</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Dombibliothek Cod. 119</idno>
+                        </collection>
+                        <altIdentifier type="old-signature">
+                            <idno type="shelfmark">Darmst. 2118</idno>
+                        </altIdentifier>
+                        <msName type="full">Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod.
+                            119</msName>
+                        <msName type="sigle">K</msName>
+                    </msIdentifier>
+                    
+                    <msContents>
+                        <summary/>
+                        
+                        <msItem n="1" corresp="#decretum" class="main-text" facs="#">
+                            <locusGrp>
+                                <locus from="1r" to="204v"/>
+                            </locusGrp>
+                            <author>
+                                <persName ref="https://viaf.org/viaf/111045814/">Burchard von
+                                    Worms</persName>
+                            </author>
+                            <title xml:lang="lat">Decretum</title>
+                            <incipit>[de ecclesiasticis ordinibus] ut nullatenus aliquis pręsumat in concilio uel synodali conuentu. […]</incipit>
+                            <explicit>[…]Quando hanc et ipsi mortuorum […]</explicit>
+                            <note type="textual-family">Wormser Ordnung B</note>
+                            <note type="textual-subfamily"/>
+                            <note type="text-genre"/>
+                            <textLang>Latein</textLang>
+                        </msItem>
+                        
+                        <msItemStruct xml:id="koeln-edd-c-119-msItemStruct-modern">
+                            <msItemStruct corresp="#decretum">
+                                <locus from="1r" to="204v"/>
+                                <title xml:lang="lat">Decretum</title>
+                            </msItemStruct>
+                        </msItemStruct>
+                    </msContents>
+                    
+                    <physDesc>
+                        <objectDesc form="codex">
+                            <supportDesc material="parchment">
+                                <extent> <dimensions type="leaf">
+                                    <height quantity="35.9" unit="cm"/>
+                                    <width quantity="28.0" unit="cm"/>
+                                    </dimensions> <measure unit="leaves" quantity="204"/> </extent>
+                                <condition>Die Lagen I - IX und XXIV sowie der Schluss von Buch XX sind nicht mehr vorhanden.</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="2" writtenLines="31"/>
+                            </layoutDesc>
+                        </objectDesc>
+                        
+                        <!-- hand note needs to be inserted after preparing transcription files 
+                        <handDesc hands="" xml:id="">
+                            <summary>Das auf 201r am unteren Rand nachgetragene surgit könnte nach Hoffmann / Pokorny von einer Kölner Hand stammen und dafür sprechen, dass Dom Hs. 119 schon in der 1. Hälfte des 11. Jahrhunderts in der Kölner Dombibliothek war.</summary>
+                            <handNote xml:id="" script="" medium="" scope="" scribeRef="" source=""/>
+                        </handDesc>-->
+                        
+                        <scriptDesc>
+                            <scriptNote>Karolingische Minuskel</scriptNote>
+                        </scriptDesc>
+                    </physDesc>
+                    
+                    <history>
+                        <summary>Geschrieben in Worms im ¼ d. 11. Jahrhunderts. Köln Dombibliothek, Köln.</summary>
+                        
+                        <origin>
+                            <origPlace ref="https://www.wikidata.org/wiki/Q3852">Worms<location>
+                                <geo>49.630167, 8.359789</geo>
+                                </location> <region ref="https://www.wikidata.org/wiki/Q1200">Rheinland-Pfalz</region> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </origPlace>
+                            <origDate notBefore="1000" notAfter="1025">1. Viertel des 11. Jahrhunderts</origDate>
+                        </origin>
+                        <provenance><name ref="https://dombibliothek-koeln.de/" type="org">Köln
+                            Dombibliothek</name> <location>
+                            <geo>50.9424365,6.9555472</geo>
+                            </location> <settlement ref="https://www.wikidata.org/wiki/Q365">Köln</settlement> <region ref="https://www.wikidata.org/wiki/Q1198">Nordrhein-Westfalen</region> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </provenance>
+                    </history>
+                    
+                    <additional>
+                        <surrogates> <bibl type="digi">
+                            <title xml:lang="ger">Digitalisat</title>
+                            <ref>https://digital.dombibliothek-koeln.de/hs/content/zoom/284348</ref>
+                            </bibl><bibl type="iiif-manifest">
+                            <title xml:lang="ger">iiif-Manifest</title>
+                            <ref>https://digital.dombibliothek-koeln.de/hs/i3f/v20/284343/manifest</ref>
+                            </bibl><bibl type="cat">
+                            <title xml:lang="ger">Katalog</title>
+                            <ref>https://digital.dombibliothek-koeln.de/hs/content/titleinfo/284343</ref>
+                            </bibl><bibl type="xml">
+                            <title xml:lang="ger">XML Datei</title>
+                            <ref/>
+                            </bibl> 
+                        </surrogates> 
+                        <listBibl>
+                            <listBibl type="catalogue">
+                                <bibl copyOf="5BQWHI4G">Jaffé/Wattenbach: Ecclesiae Metropolitanae
+                                    Coloniensis codices manuscripti descripserunt. Berlin
+                                    1874<citedRange>49</citedRange></bibl>
+                                <bibl copyOf="HFKDBBV5">Finger/Riethmüller: Handschriftencensus
+                                    Rheinland: Erfassung mittelalterlicher Handschriften im
+                                    rheinischen Landesteil von Nordrhein-Westfalen. Wiesbaden
+                                    1993<citedRange>643</citedRange></bibl>
+                                <bibl copyOf="ZJBTC6PV">Euw: Glaube und Wissen im Mittelalter.
+                                    Katalogbuch zur Ausstellung. München
+                                    1998<citedRange>256</citedRange></bibl>
+                            </listBibl>
+                            <listBibl type="secondary-literature">
+                                <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs
+                                    Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.
+                                    München 1991<citedRange>20-21</citedRange></bibl>
+                            </listBibl>
+                        </listBibl>
+                    </additional>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text><body xml:lang=""><p>test</p></body></text>
+</TEI>

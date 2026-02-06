@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-paris-bnf-lat-8922">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Paris, Bibliothéque nationale de France, lat. 8922</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 11.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 11.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="paris-bnf-lat-8922-msdesc" type="excerpt">
+                        <msIdentifier xml:id="paris-bnf-lat-8922-ident">
+                        <repository ref="https://www.bnf.fr/fr">Bibliothèque nationale de France<location>
+                            <geo>48.8347667,2.3707196,16</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q90">Paris</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q142">Frankreich</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">lat. 8922</idno>
+                        </collection>
+                        <msName type="full">Paris, Bibliothéque nationale de France, lat. 8922</msName>
+                        <msName type="sigle">P10</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1081" notBefore="1051">1051—1081</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref>https://gallica.bnf.fr/ark:/12148/btv1b9078274q</ref>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://data.mgh.de/databases/clavis/wiki/index.php/Paris,_BnF,_lat._8922</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

@@ -1,0 +1,58 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-losangeles-uc-1-XI-ITA-15">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Los Angeles, University of California, University Research Library, Department of Special Collections, Collection of Loose Leaves, 1/XI/ITA/15</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 09.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 09.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="losangeles-uc-1-XI-ITA-15-msdesc" type="fragment">
+                        <msIdentifier xml:id="losangeles-uc-1-XI-ITA-15-ident">
+                        <repository ref="https://www.ucla.edu/">University of California<location>
+                            <geo>34.070309212577605, -118.44383877467465</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q65">Los Angeles</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q30">United States</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">1/XI/ITA/15</idno>
+                        </collection>
+                        <msName type="full">Los Angeles, University of California, University Research Library, Department of Special Collections, Collection of Loose Leaves, 1/XI/ITA/15</msName>
+                        <msName type="sigle">LosA</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1099" notBefore="1000">11. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> <bibl type="digi"> <title xml:lang="ger">Digitalisat</title>
+                            <ref>https://digital.library.ucla.edu/catalog/ark:/21198/zz00157r96</ref>
+                            </bibl> <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
+                            <ref>https://digital.library.ucla.edu/catalog.html?f%5Brepository_sim%5D%5B%5D=University+of+California%2C+Los+Angeles.+Library.+Department+of+Special+Collections&amp;per_page=50&amp;range%5Byear_isim%5D%5Bbegin%5D=1100&amp;range%5Byear_isim%5D%5Bend%5D=1119&amp;search_field=dummy_range&amp;sort=date_dtsort+asc&amp;view=gallery</ref>
+                            </bibl> </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

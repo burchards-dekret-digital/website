@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-augsburg-ub-cod-1-2-2-42">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Augsburg, Universitätsbibliothek, Cod. 1.2.2° 42 </title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2025-10-28" xml:lang="en">Date of publication: 09.12.2025</date>
+                    <date when="2025-10-28" xml:lang="ger">Publiziert am 09.12.2025</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="augsburg-ub-cod-1-2-2-42-msdesc" type="fragment">
+                        <msIdentifier xml:id="augsburg-ub-cod-1-2-2-42-ident">
+                        <repository ref="https://www.uni-augsburg.de/de/organisation/bibliothek/">Universitätsbibliothek<location>
+                            <geo>48.33465873072083, 10.895100523560506</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q2749">Augsburg</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">Cod. 1.2.2° 42</idno>
+                        </collection>
+                        <msName type="full">Augsburg, Universitätsbibliothek, Cod. 1.2.2° 42</msName>
+                        <msName type="sigle">Au</msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1099" notBefore="1075">4. Viertel 11. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref>https://opus.bibliothek.uni-augsburg.de/opus4/frontdoor/deliver/index/docId/78955/file/pid_14689142.pdf</ref>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://www.uni-augsburg.de/de/organisation/bibliothek/sondersammlungen/oettingen-wallersteinsche-bibliothek/handschriftenkataloge/</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

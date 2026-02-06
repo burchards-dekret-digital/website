@@ -15,66 +15,19 @@
                
         <link rel="stylesheet" type="text/css" href="CSS/style.css" media="screen"/>
         
-        <script src="js/jquery-3.7.1.min.js"></script>
-
-       <!-- <style>
-     #access-screen {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: white;
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    </style>-->
-        
+        <script src="js/jquery-3.7.1.min.js"></script>    
     </head>
     <body>
-
-    <!--<div id="access-screen">
-        <div class="container text-center p-4 border rounded shadow" style="max-width: 500px;">
-            <div class="d-flex justify-content-end" style="position: absolute; top: 10px; right: 10px;">
-                <button id="button-de" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('de')">DE</button>
-                <button id="button-en" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('en')">EN</button>
-            </div>
-            <h2 class="mb-3 text-warning"><span lang="de">Burchards Dekret Digital Entwicklung Website</span><span lang="en">Burchards Dekret Digital Developing Website</span></h2>
-                <p class="mb-3"><span lang="de">Dies ist eine interne Entwicklungswebseite.<br/> Externe Benutzer werden gebeten, die offizielle Website zu besuchen <a href="https://burchards-dekret-digital.de/" class="link-primary">https://burchards-dekret-digital.de/</a>.</span><span lang="en">This is an internal devoloping website. <br/>If you are an external user, please visit the official website <a href="https://burchards-dekret-digital.de/" class="link-primary">https://burchards-dekret-digital.de/</a>.</span>
-            </p>
-            <p><span lang="de">Geben Sie bitte den Zugangscode ein, um fortzufahren:</span><span lang="en">Please enter the access code to continue:</span></p>
-            <div class="input-group mb-3">
-            <input type="password" class="form-control" id="code-input" placeholder="Access code">
-            <button class="btn btn-primary" onclick="checkCode()">Log in</button>
-            </div>
-        </div>
-    </div>
-
-        <script>
-            const ACCESS_CODE = "bdd-test";
-            function checkCode() {
-                const input = document.getElementById("code-input").value;
-                if (input === ACCESS_CODE) {
-                document.getElementById("access-screen").style.display = "none";
-                } else {
-                alert("Wrong access code. Please visit https://burchards-dekret-digital.de/.");
-                }
-            }
-        </script>-->
-
-
-
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="index.html" style="font-size:18px; letter-spacing: 0.5px;">
-                    <img src="img/LogoGreen.png" alt="Logo of Burchards Dekret Digital project" title="Logo of Burchards Dekret Digital project" width="70"> Burchards Dekret Digital
+                    <img src="img/LogoGreen.png" class="me-2" alt="Logo of Burchards Dekret Digital project" title="Logo of Burchards Dekret Digital project" width="70">Burchards Dekret Digital
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-start align-items-lg-center">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html" lang="de">Home</a>
                             <a class="nav-link active" aria-current="page" href="index.html" lang="en">Home</a>
@@ -83,8 +36,8 @@
                             <a class="nav-link" href="html/decretum.html">Decretum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/desktop.html" lang="de">Arbeitsbereich</a>
-                            <a class="nav-link" href="html/desktop.html" lang="en">Workspace</a>
+                            <a class="nav-link" href="html/workspace.html" lang="de">Arbeitsbereich</a>
+                            <a class="nav-link" href="html/workspace.html" lang="en">Workspace</a>
                         </li>
                          <li class="nav-item">
                             <a class="nav-link" href="html/mss.html" lang="de">Handschriften</a>
@@ -101,12 +54,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="html/documentation.html" lang="de">Dokumentation</a>
                             <a class="nav-link" href="html/documentation.html" lang="en">Documentation</a>
-                        </li>
+                        </li>                       
                         <li class="nav-item">
                             <a class="nav-link" href="html/team.html">Team</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row gap-2">
                         <button id="btn-de" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('de')">DE</button>
                         <button id="btn-en" class="btn btn-outline-success btn-sm language-button" type="button" onclick="changeLanguage('en')">EN</button>
                     </ul>
@@ -126,13 +79,34 @@
                 </div>
                 <div class="container container-index" id="projekt">
                     <div class="row">
-                        <div class="col-md-8" id="introduction"></div>                        
-                        <div class="col-md-4">
+                        <div class="col-md-7" id="introduction"></div>                        
+                        <div class="col-md-5">
+                          
                             <div class="container">
-                                <h2><span lang="de">Aktuelles</span><span lang="en">News</span></h2>
-                                <div class="mb-3"><a href="https://lists.uni-mainz.de/sympa/subscribe/bdd-newsletter" target="_blank"><span lang="de">Anmeldung zum Newsletter</span><span lang="en">Subscribe to the newsletter</span></a></div>
-                                <div id="news-container" class="row"></div>
-                                <div id="pagination-container" class="d-flex justify-content-center"></div>
+                                <div class="card"> <!--To hide the card border add "border-0 shadow-none bg-transparent" to the class here-->
+                                    <div class="card-body px-4">
+                                        <h2 class="card-title mb-3"><span lang="de">Aktuelles</span><span lang="en">News</span></h2>
+                                        
+                                        <div id="news-container" class="row"></div>                                     
+                                        <div id="pagination-container" class="d-flex justify-content-center mb-4"></div>
+                                        
+                                        <!-- CTA buttons-->
+                                        <div class="row g-2">
+                                            <div class="col-md-6">
+                                                <a href="https://lists.uni-mainz.de/sympa/subscribe/bdd-newsletter" target="_blank" class="btn btn-success w-100 text-center" style="background-color: #28a745!important; border-color: #28a745!important">
+                                                    <span lang="de">Anmeldung zum Newsletter</span>
+                                                    <span lang="en">Subscribe to the newsletter</span>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="html/news-archive.html" class="btn btn-outline-primary w-100 text-center" >
+                                                    <span lang="de">Nachrichtenarchiv besuchen</span>
+                                                    <span lang="en">Visit news archive</span>
+                                                </a>
+                                            </div>
+                                        </div>                                           
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         

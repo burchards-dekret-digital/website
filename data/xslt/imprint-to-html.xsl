@@ -20,14 +20,14 @@
     </xsl:template>
        
 
-    <!-- Handle language -->
+    <!-- Handle language 
     <xsl:template match="tei:div[@xml:lang]">
         <xsl:for-each select=".">
             <span lang="{@xml:lang}">
                 <xsl:apply-templates/>
             </span>
         </xsl:for-each>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="tei:head[@type='title']">
         <h1 class="mt-5">
@@ -48,12 +48,7 @@
         </p>
     </xsl:template>
     
-    <!-- Handle ref -->
-    <xsl:template match="tei:ref">
-        <a href="{@target}">
-            <xsl:apply-templates/>
-        </a>
-    </xsl:template>
+    
     
     <!--hi rend="bold" and italic -->
     <xsl:template match="//tei:hi[@rend='bold']">
@@ -67,4 +62,128 @@
             <xsl:apply-templates/>
         </i>
     </xsl:template>
+    
+
+    
+    
+  <xsl:template match="//tei:div[@xml:id='citation_de']">
+    <p>
+      <b>
+        <xsl:value-of select="//tei:p[@xml:id='howToCite_de']"/>
+      </b>
+      <br/>
+      <div class="code-box-container" style="position: relative; margin: 1em 0;">
+        <pre style="background: #f5f5f5; padding: 1em; border-radius: 5px; overflow: auto; max-height: 50px;">
+          <code id="citationBox_de">
+                <xsl:apply-templates select="//tei:p[@xml:id='citationBox_de']"/>
+          </code>
+        </pre>
+        <button class="btn btn-outline-secondary btn-sm" style="position: absolute; top: 10px; right: 30px;">
+          <xsl:attribute name="id">
+            <xsl:text>copyCitationButton_de</xsl:text>
+          </xsl:attribute>
+          <xsl:attribute name="onclick">
+            <xsl:text>copyCitationCode('citationBox_de', 'copyCitationButton_de')</xsl:text>
+          </xsl:attribute>
+          Kopieren
+        </button>
+      </div>
+    </p>
+  </xsl:template>
+    
+   
+    
+    <xsl:template match="//tei:div[@xml:id='citation_en']">
+    <p>
+      <b>
+        <xsl:value-of select="//tei:p[@xml:id='howToCite_en']"/>
+      </b>
+      <br/>
+      <div class="code-box-container" style="position: relative; margin: 1em 0;">
+        <pre style="background: #f5f5f5; padding: 1em; border-radius: 5px; overflow: auto; max-height: 50px;">
+          <code id="citationBox_en">
+            <xsl:apply-templates select="//tei:p[@xml:id='citationBox_en']"/>
+          </code>
+        </pre>
+        <button class="btn btn-outline-secondary btn-sm" style="position: absolute; top: 10px; right: 30px;">
+          <xsl:attribute name="id">
+            <xsl:text>copyCitationButton_en</xsl:text>
+          </xsl:attribute>
+          <xsl:attribute name="onclick">
+            <xsl:text>copyCitationCode('citationBox_en', 'copyCitationButton_en')</xsl:text>
+          </xsl:attribute>
+            Copy
+        </button>
+      </div>
+    </p>
+  </xsl:template>
+    
+    
+    
+
+<!-- Office blocks: render as Bootstrap cards in a responsive grid column -->
+<xsl:template match="tei:div[@type='office']">
+  <div class="col-12 col-lg-4">
+    <div class="card h-100 ">
+      <div class="card-header">
+        
+          <xsl:apply-templates select="tei:head"/>
+        
+      </div>
+      <div class="card-body">
+        <address class="mb-0">
+          <xsl:apply-templates select="tei:p"/>
+        </address>
+      </div>
+    </div>
+  </div>
+</xsl:template>
+    
+    <!-- Wrap all office cards of a language block in a Bootstrap row -->
+<xsl:template match="tei:div[@xml:lang]">
+  <span lang="{@xml:lang}">
+    <!-- everything BEFORE offices -->
+    <xsl:apply-templates select="tei:div[not(@type='office')]"/>
+
+    <!-- offices grid -->
+    <div class="row g-3 mt-2">
+      <xsl:apply-templates select="tei:div[@type='office']"/>
+    </div>
+  </span>
+</xsl:template>
+
+
+    
+    <!-- Compact lines inside office cards (avoid big <p> spacing) -->
+<xsl:template match="tei:div[@type='office']/tei:p">
+  <div class="{if (position() = last()) then 'mb-0' else 'mb-1'}">
+    <xsl:apply-templates/>
+  </div>
+</xsl:template>
+    
+    <xsl:template match="tei:email">
+  <a href="mailto:{normalize-space(.)}">
+    <xsl:value-of select="normalize-space(.)"/>
+  </a>
+</xsl:template>
+    
+    <xsl:template match="tei:ref">
+  <a href="{@target}" class="text-break">
+    <xsl:apply-templates/>
+  </a>
+</xsl:template>
+
+<!-- Handle TEI lists as HTML bullet lists -->
+<xsl:template match="tei:list">
+  <ul class="ms-3">
+    <xsl:apply-templates/>
+  </ul>
+</xsl:template>
+    
+    <xsl:template match="tei:item">
+  <li>
+    <xsl:apply-templates/>
+  </li>
+</xsl:template>
+
 </xsl:stylesheet>

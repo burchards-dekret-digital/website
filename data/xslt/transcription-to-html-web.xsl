@@ -39,8 +39,9 @@
     
     <xsl:template match="//div[@type='toc']">
         <div class="tei_{@type}" id="{@xml:id}" data-canvas="{preceding::pb[1]/@corresp}">
-            <button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
-             <xsl:apply-templates/>
+            <!--<button class="icon-chapter-mirador" title="See in Mirador" ><i class="fa-solid fa-eye"/></button>-->
+            <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-mirador" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;siehe Capitulatio im Digitalisat&lt;/span&gt;&lt;span lang='en'&gt;See Capitulatio in the digital copy&lt;/span&gt;"><i class="fa-solid fa-eye"/></button>
+        <xsl:apply-templates/>
         </div>
     </xsl:template>
         
@@ -51,7 +52,7 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>    
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>    
         
         <!-- Process ana attribute -->
         <xsl:variable name="ana-values" select="tokenize(@ana, ' ')"/>
@@ -61,7 +62,7 @@
         <!-- Extract corresp targets after # -->
             <xsl:variable name="corresp-chapters-ids" select="string-join(                 for $c in tokenize(@corresp, '\s+')                  return substring-after($c, '#'),                  ' '             )"/>
 
-        <div class="tei_{@type} ms_scribe-{$scribe-id} {$taxonomy}" id="{@xml:id}" data-corresp="{$corresp-chapters-ids}" data-canvas="{preceding::pb[1]/@corresp}#xywh={preceding::lb[1]/@facs}">
+        <div class="tei_{@type} ms_scribe-{$scribe-id} {$taxonomy} mt-4" id="{@xml:id}" data-corresp="{$corresp-chapters-ids}" data-canvas="{preceding::pb[1]/@corresp}#xywh={preceding::lb[1]/@facs}">
            <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -75,7 +76,7 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>    
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>    
        
         <div class="tei_{@type} ms_scribe-{$scribe-id}" id="{@xml:id}" data-canvas="{preceding::pb[1]/@corresp}#xywh={preceding::lb[1]/@facs}">
             <ins class="tei_delSpan-written-on-erased">
@@ -90,7 +91,7 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>    
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>    
         <div class="tei_{@type} ms_scribe-{$scribe-id}" id="{//msIdentifier/@xml:id}-{//div[@type='book']/@n}-{@type}-{@n}" data-canvas="{preceding::pb[1]/@corresp}#xywh={preceding::lb[1]/@facs}">
             <ins class="tei_delSpan-strikethrough">
                 <xsl:apply-templates/>
@@ -105,7 +106,7 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>    
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>    
        
         <div class="tei_{@type} ms_scribe-{$scribe-id}" id="{@xml:id}">
                 <xsl:apply-templates/>
@@ -126,17 +127,22 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>    
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>    
             <h6 class="tei_{@type} ms_scribe-{$scribe-id}">
                 <xsl:apply-templates/>
             </h6>
     </xsl:template>
     
     <xsl:template match="//head[@type='chapter-title']">
-        <button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
-        <button class="chapter-nav prev-chapter mt-4" title="Previous chapter" onclick="navigateChapter(this, 'prev')"><i class="fa-solid fa-arrow-up-long"/></button>
-        <button class="chapter-nav next-chapter mt-4" title="Next chapter" onclick="navigateChapter(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
-        <button class="icon-chapter-sync mt-4" title="Sync chapters" onclick="syncChapters(this)"><i class="fa-solid fa-arrows-left-right"/></button>
+        <!--<button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
+            <button class="chapter-nav prev-chapter mt-4" title="Previous chapter" onclick="navigateChapter(this, 'prev')"><i class="fa-solid fa-arrow-up-long"/></button>
+            <button class="chapter-nav next-chapter mt-4" title="Next chapter" onclick="navigateChapter(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
+            <button class="icon-chapter-sync mt-4" title="Sync chapters" onclick="syncChapters(this)"><i class="fa-solid fa-arrows-left-right"/></button>
+        -->
+        <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-mirador" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;siehe Kapitel im Digitalisat&lt;/span&gt;&lt;span lang='en'&gt;See chapter in the digital copy&lt;/span&gt;"><i class="fa-solid fa-eye"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 chapter-nav prev-chapter" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;zum vorherigen Kapitel gehen&lt;/span&gt;&lt;span lang='en'&gt;Go to the previous chapter&lt;/span&gt;" onclick="navigateChapter(this, 'prev')"><i class="fa-solid fa-arrow-up-long"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 chapter-nav next-chapter" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;zum nächsten Kapitel gehen&lt;/span&gt;&lt;span lang='en'&gt;Go to the next chapter&lt;/span&gt;" onclick="navigateChapter(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-sync" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;Kapitel aneinander angleichen&lt;/span&gt;&lt;span lang='en'&gt;Align chapters to each other&lt;/span&gt;" onclick="syncChapters(this)"><i class="fa-solid fa-arrows-left-right"/></button>
         
         <xsl:variable name="ana-values" select="tokenize(@ana, ' ')"/>
         <xsl:variable name="taxonomy" select="string-join(for $ana in $ana-values return substring-after($ana, '#'), ' ')"/>
@@ -148,20 +154,31 @@
     
     <!--first interrogation-->
     <xsl:template match="div[@type='interrogation']//head[@type='chapter-title']">
-        <button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
+        <!--<button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
         <button class="chapter-nav next-chapter mt-4" title="Next interrogation" onclick="navigateInterrogation(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
-        <button class="icon-chapter-sync mt-4" title="Sync interrogations" onclick="syncInterrogations(this)"><i class="fa-solid fa-arrows-left-right"/></button>
+        <button class="icon-chapter-sync mt-4" title="Sync interrogations" onclick="syncInterrogations(this)"><i class="fa-solid fa-arrows-left-right"/></button>-->
+        
+        <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-mirador" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;siehe Interrogatio im Digitalisat&lt;/span&gt;&lt;span lang='en'&gt;See interrogation in the digital copy&lt;/span&gt;"><i class="fa-solid fa-eye"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 chapter-nav next-chapter" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;Zur nächsten Interrogatio gehen&lt;/span&gt;&lt;span lang='en'&gt;Go to the next interrogation&lt;/span&gt;" onclick="navigateInterrogation(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-sync" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;Interrogationes aneinander angleichen&lt;/span&gt;&lt;span lang='en'&gt;Align interrogations to each other&lt;/span&gt;" onclick="syncInterrogations(this)"><i class="fa-solid fa-arrows-left-right"/></button>
+       
         <h5 class="tei_{@type}">
             <xsl:apply-templates/>
         </h5>
     </xsl:template>
     
     <xsl:template match="div[@type='interrogation']//label[@type='chapter-number']">
-        <button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
+        <!--<button class="icon-chapter-mirador" title="See in Mirador"><i class="fa-solid fa-eye"/></button>
         <button class="chapter-nav prev-chapter mt-4" title="Previous interrogation" onclick="navigateInterrogation(this, 'prev')"><i class="fa-solid fa-arrow-up-long"/></button>
         <button class="chapter-nav next-chapter mt-4" title="Next interrogation" onclick="navigateInterrogation(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
-        <button class="icon-chapter-sync mt-4" title="Sync interrogations" onclick="syncInterrogations(this)"><i class="fa-solid fa-arrows-left-right"/></button>
-        <h5 class="tei_{@type}">
+        <button class="icon-chapter-sync mt-4" title="Sync interrogations" onclick="syncInterrogations(this)"><i class="fa-solid fa-arrows-left-right"/></button>-->
+        
+        
+        <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-mirador" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;siehe Interrogatio im Digitalisat&lt;/span&gt;&lt;span lang='en'&gt;See interrogation in the digital copy&lt;/span&gt;"><i class="fa-solid fa-eye"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 chapter-nav prev-chapter" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;Zur vorherigen Interrogatio gehen&lt;/span&gt;&lt;span lang='en'&gt;Go to the previous interrogation&lt;/span&gt;" onclick="navigateInterrogation(this, 'prev')"><i class="fa-solid fa-arrow-up-long"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 chapter-nav next-chapter" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;Zur nächsten Interrogatio gehen&lt;/span&gt;&lt;span lang='en'&gt;Go to the next interrogation&lt;/span&gt;" onclick="navigateInterrogation(this, 'next')"><i class="fa-solid fa-arrow-down-long"/></button>
+        <button class="btn btn-light btn-sm mb-1 me-1 icon-chapter-sync" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="&lt;span lang='de'&gt;Interrogationes aneinander angleichen&lt;/span&gt;&lt;span lang='en'&gt;Align interrogations to each other&lt;/span&gt;" onclick="syncInterrogations(this)"><i class="fa-solid fa-arrows-left-right"/></button>
+       <h5 class="tei_{@type}">
             <xsl:apply-templates/>
         </h5>
     </xsl:template>
@@ -179,7 +196,7 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>
         
         <!--taxonomy-->
         <xsl:variable name="ana-values" select="tokenize(@ana, ' ')"/>
@@ -207,7 +224,7 @@
         <xsl:variable name="first-hand-id" select="tokenize($hand-ref, '\s+')[1]"/>
         <xsl:variable name="hand-id" select="replace($first-hand-id, '#', '')"/>
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/> 
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/> 
 
         <xsl:variable name="ana-values" select="tokenize(@ana, ' ')"/>
         <xsl:variable name="taxonomy" select="string-join(for $ana in $ana-values return substring-after($ana, '#'), ' ')"/>
@@ -325,24 +342,24 @@
     
        
     <xsl:template match="//damage//gap[@reason='cut-out']">
-        <span class="tei_damage-cut-out">
-            <xsl:apply-templates/>
+        <span class="tei_damage-cut-out" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Beschädigung: ausgeschnitten&lt;/span&gt;&lt;span lang='en'&gt;Damage: cut-out&lt;/span&gt;">
+         <xsl:apply-templates/>
         </span>
     </xsl:template>
     <xsl:template match="//damage//gap[@reason='torn-out']">
-        <span class="tei_damage-torn-out">
-            <xsl:apply-templates/>
+        <span class="tei_damage-torn-out" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Beschädigung: herausgerissen&lt;/span&gt;&lt;span lang='en'&gt;Damage: torn-out&lt;/span&gt;">
+        <xsl:apply-templates/>
         </span>
     </xsl:template>
     <xsl:template match="//damage//gap[@reason='burned']">
-        <span class="tei_damage-burned">
-            <xsl:apply-templates/>
+        <span class="tei_damage-burned" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Beschädigung: verbrannt&lt;/span&gt;&lt;span lang='en'&gt;Damage: burned&lt;/span&gt;">
+         <xsl:apply-templates/>
         </span>
     </xsl:template>
     <xsl:template match="//damage//gap[@reason='trimmed']">
-        <span class="tei_damage-trimmed">
-            <xsl:apply-templates/>
-        </span>
+        <span class="tei_damage-trimmed" data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="&lt;span lang='de'&gt;Beschädigung: beschnitten&lt;/span&gt;&lt;span lang='en'&gt;Damage: trimmed&lt;/span&gt;">
+           <xsl:apply-templates/>
+           </span>
     </xsl:template>
     
     <xsl:template match="//del[@rend='strikethrough']">
@@ -375,9 +392,14 @@
         </span>
     </xsl:template>
     
+    
     <!-- 3.7 Rasuren ohne Ersetzung als Span mit Scherensymbol -->
     <xsl:template match="//del[@rend='erasure'][not(ancestor::subst) and not(child::lb)]">
-        <span class="tei_erasure-without-substitution">__</span>
+        <!-- Process ana attribute -->
+        <xsl:variable name="ana-values" select="tokenize(@ana, ' ')"/>
+        <xsl:variable name="taxonomy" select="string-join(for $ana in $ana-values return substring-after($ana, '#'), ' ')"/>
+        
+        <span class="tei_erasure-without-substitution {$taxonomy}">__</span>
     </xsl:template>
     
     <!-- 3.8 Rasuren mit Ersetzung als Span (in der Praxis in Kombination mit 3.4)-->
@@ -506,7 +528,7 @@
         
         <!-- get data for scribe Name -->
         <xsl:variable name="scribe-ref" select="//handNote[@xml:id=$hand-id]/@scribeRef"/>
-        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../register/scribes.xml#','')"/>
+        <xsl:variable name="scribe-id" select="replace($scribe-ref,'../../register/scribes.xml#','')"/>
         <xsl:variable name="scribe" select="document('../../../../collections/bdd/data/register/scribes.xml')//person[@xml:id=$scribe-id]"/>
         
         <!-- get iiif coordinats and image link-->
@@ -615,8 +637,8 @@
     
     
     <!-- Table: Tree of consanguinity -->
-  <xsl:template match="tei:table">
-      
+  <!--<xsl:template match="tei:table">
+          
       <table class="table table-bordered table-sm table-tree-of-consanguinity">
           <tbody>
             <xsl:apply-templates select="row"/>
@@ -651,7 +673,114 @@
      </div>
    </div>
  </div>
-  </xsl:template>
+  </xsl:template>-->
+    
+
+<!-- Table: Tree of consanguinity -->
+<xsl:template match="tei:table">
+  <!-- Detect preceding handShift -->
+  <xsl:variable name="new-hand" select="(preceding-sibling::tei:handShift[@new][1]/@new)"/>
+
+  <!--  scribe id if present -->
+  <xsl:variable name="hand-id" select="substring-after($new-hand, '#')"/>
+  <xsl:variable name="scribe-ref" select="//tei:handNote[@xml:id=$hand-id]/@scribeRef"/>
+  <xsl:variable name="scribe-id" select="replace($scribe-ref, '../../register/scribes.xml#', '')"/>
+
+  <xsl:variable name="ms-id" select="/tei:TEI/@xml:id"/>
+  <xsl:variable name="book-n" select="//tei:div[@type='book']/@n"/>
+
+  <!-- Wrap only the table pair (main + modal) in the scribe color -->
+  <xsl:choose>
+    <xsl:when test="$new-hand">
+      <div class="ms_scribe-{$scribe-id}">
+        <!-- main table -->
+        <table class="table table-bordered table-sm table-tree-of-consanguinity">
+          <tbody>
+            <xsl:apply-templates select="row"/>
+          </tbody>
+        </table>
+
+        <!-- modal window -->
+        <div class="modal fade" id="tree-of-consanguinity-{$ms-id}-{$book-n}" tabindex="-1" aria-labelledby="tree-of-consanguinityLabel" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="tree-of-consanguinityLabel">
+                  <span lang="de">Arbor sanguinitates</span>
+                  <span lang="en">Arbor sanguinitates</span>
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+              </div>
+              <div class="modal-body">
+                <table class="table table-bordered table-sm modal-table-tree-of-consanguinity">
+                  <tbody>
+                    <xsl:apply-templates select="row"/>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  <span lang="de">Schließen</span>
+                  <span lang="en">Close</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </xsl:when>
+
+    <!-- Default (no preceding handShift) -->
+    <xsl:otherwise>
+      <div>
+        <table class="table table-bordered table-sm table-tree-of-consanguinity">
+          <tbody>
+            <xsl:apply-templates select="row"/>
+          </tbody>
+        </table>
+
+        <div class="modal fade" id="tree-of-consanguinity-{$ms-id}-{$book-n}" tabindex="-1" aria-labelledby="tree-of-consanguinityLabel" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="tree-of-consanguinityLabel">
+                  <span lang="de">Arbor sanguinitates</span>
+                  <span lang="en">Arbor sanguinitates</span>
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+              </div>
+              <div class="modal-body">
+                <table class="table table-bordered table-sm modal-table-tree-of-consanguinity">
+                  <tbody>
+                    <xsl:apply-templates select="row"/>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  <span lang="de">Schließen</span>
+                  <span lang="en">Close</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </xsl:otherwise>
+  </xsl:choose>
+
+  <!--  button no bg colored -->
+  <button type="button" class="btn btn-primary btn-sm button-show-tree" data-bs-toggle="modal" data-bs-target="#tree-of-consanguinity-{$ms-id}-{$book-n}">
+    <span lang="de">Element größer anzeigen</span>
+    <span lang="en">Display element larger</span>
+  </button>
+  <br class="tei_lb"/>
+</xsl:template>
+
+
+
+    
+
 
   <xsl:template match="row">
     <tr n="{@n}" id="{@xml:id}" data-corresp="{@corresp}">
@@ -694,6 +823,8 @@
       <xsl:apply-templates/>
     </td>
   </xsl:template>
+    
+
     
     <xsl:template match="ab">
         <span class="tei_ab">

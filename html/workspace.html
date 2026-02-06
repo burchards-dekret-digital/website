@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Workspace</title>
+      <meta name="keywords" content="Burchards Dekret Digital, Workspace, Manuscript Transcriptions, Manuscripts Comparison, Mirador Viewer">
+      <meta name="description" content="Use the Burchards Dekret Digital Workspace to add, view, and compare transcriptions and digitized images of manuscripts. Customize views and download your workspace in JSON format.">
+
+      <link rel="icon" type="image/png" href="../img/favicon.png" sizes="32x32">
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="google" content="notranslate"/>
+      
+      <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+      <script src="../js/bootstrap.bundle.min.js"></script>
+
+      <script src="../js/mirador-3.3.0.min.js"></script>
+      
+      <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="../CSS/digitaleSynopse.css" media="screen"/>
+      
+      <link rel="stylesheet" href="../CSS/all.min.css"><!--Fontawesome-->
+      
+      <script src="../js/jquery-3.7.1.min.js"></script>
+      <script src="../js/language.js" defer></script>
+      <script src="../js/digitaleSynopse.js" defer></script>
+      <script src="../js/navigation.js" defer></script>
+      <script src="../js/bdd_mss_list.js"></script>
+      <style>
+          .row {
+              overflow-x: auto;
+          }
+
+          #resourcePanel {
+              display: flex;
+          }
+
+          .resource-panel-item {
+              flex: 0 0 auto; /* Prevent panels from growing */
+              margin-right: 10px; /* Adjust margin between panels */
+          }
+
+          .resource-panel-item.only-child {
+              flex: 1; /* Expand the single panel to fill the space */
+          }
+
+          .resource-panel-item.full-width {
+              width: 100%;
+          }
+
+          .resource-panel-item.three-quarter-width {
+              width: 75%;
+          }
+
+          .resource-panel-item.half-width {
+              width: 50%;
+          }
+
+          .btn-outline-primary {
+          background-color: transparent;
+          color: #0d6efd;
+          border-color: #0d6efd;
+          }
+
+          .move-left, .move-right {
+              transition: all 0.3s; /* Add transition for smooth effect */
+          }
+          .move-left:hover, .move-right:hover {
+              transform: scale(1.1); /* Make the icon slightly bigger on hover */
+              color: blue; /* Change the color to blue on hover */
+              cursor: pointer; /* Change cursor to pointer on hover */
+              filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.2));
+          }
+
+      </style>
+  </head>
+  <body>
+
+      <div id="navbar-placeholder"></div>
+      <div class="back-button ps-4 mt-5">
+        <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
+      </div>
+
+      <div id="load">
+        <i class="fa-solid fa-spinner"></i>
+      </div>
+
+      <div id="contents" class="container" style="flex:1">
+          <h1 class="section-main-title">
+            <span lang="de">ARBEITSBEREICH</span><span lang="en">WORKSPACE</span> 
+          </h1>
+
+        <!-- Modal -->
+        <div class="modal fade" id="desktopModal" tabindex="-1" aria-labelledby="desktopModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title fs-5 fw-bold" id="desktopModalLabel"><span lang="de">ARBEITSBEREICH</span><span lang="en">WORKSPACE</span></h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="infoSchreibtisch"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning alert-dismissible fade show d-md-none" role="alert">
+          <span lang="de"><strong>Hinweis:</strong> Sie sehen diese Website auf einem kleinen Gerät. Einige Funktionen sind daher eingeschränkt. Wir empfehlen Ihnen, einen Computer zu verwenden, um die Website optimal zu nutzen und alle Funktionen auszuschöpfen.</span><span lang="en"><strong>Notice:</strong> You are viewing this website on a small device. Some features are limited. We recommend using a computer for a better experience and to take advantage of all features.</span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+
+          <div class="d-flex justify-content-between align-items-center">
+            
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-success btn-sm" style="background-color: #28a745!important; border-color: #28a745!important" data-bs-toggle="modal" data-bs-target="#desktopModal">Info</button>
+
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span lang="de">Arbeitsmaterial</span>
+                  <span lang="en">Work material</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" id="addResourceBtn" href="#"><span lang="de">Ressource hinzufügen</span><span lang="en">Add Resource</span></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#legendModal"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li style="display: flex;">
+                    <a class="dropdown-item" id="downloadJsonBtn" href="#" data-bs-toggle="modal" data-bs-target="#downloadJsonInfoModal"><span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span></a> 
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" id="listResources" href="#"><span lang="de">Was auf meinem Arbeitsbereich liegt</span><span lang="en">What's on my workspace</span></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" id="clearAll" href="#"><span lang="de">Alle löschen</span><span lang="en">Clear all</span></a></li>
+                </ul>
+              </div>
+
+              <div id="transcription-view-button" class="dropdown" style="display: none;">
+                <button lang="de" class="btn btn-dark dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Transkriptionsansichten
+                </button>
+                <button lang="en" class="btn btn-dark dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Transcription views
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" onclick="showElement('tei_lb')"><span lang="de">Original</span><span lang="en">Original</span></a></li>
+                  <li><a class="dropdown-item" onclick="hideElement('tei_lb'); hideElement('tei_seg_displaced'); toggleTextWrap()"><span lang="de">Lesefassung</span><span lang="en">Reading version</span></a></li>
+                  <hr/>
+                  <li><a class="dropdown-item" onclick="showElement('tei_abbr');hideElement('tei_expan')"><span lang="de">Abkürzungen anzeigen</span><span lang="en">Show abbreviations</span></a></li>
+                  <li><a class="dropdown-item" onclick="showElement('tei_expan');hideElement('tei_abbr')"><span lang="de">Auflösungen anzeigen</span><span lang="en">Show resolutions</span></a></li>
+                  <hr/>
+                  <li><a class="dropdown-item" onclick="showScribes()"><span lang="de">Schreiber anzeigen</span><span lang="en">Show scribes</span></a></li>
+                  <li><a class="dropdown-item" onclick="hideScribes()"><span lang="de">Schreiber ausblenden</span><span lang="en">Hide scribes</span></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!--<div>
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#tutorialModal">Tutorial</button>
+            </div>-->
+          </div>
+
+          
+
+          
+       
+          
+
+          <div id="welcomeMessage" class="m-5">
+            <div class="alert alert-light" role="alert">
+              <h3 class="text-center"><span lang="de">Willkommen in Ihrem Arbeitsbereich!</span><span lang="en">Welcome to your workspace!</span></h3>
+            <span lang="de">
+              <p>Hier können Sie einzelne Bücher des Dekrets auswählen und anzeigen lassen. Klicken Sie dazu auf die Schaltfläche <b>Arbeitsmaterial</b> und wählen Sie die Option <b>Ressource hinzufügen</b>. Dann wählen Sie aus der Liste der Handschriften die derzeit verfügbaren Bücher aus, die Sie konsultieren möchten. Sie können dann die Transkription  und den Text im digitalisierten Originalmanuskript parallel ansehen.</p>
+              <p>Für weitere Informationen zu den Funktionen dieser Seite klicken Sie bitte auf die Schaltfläche <b>Info</b>.</p>
+            </span>
+              <span lang="en"><p>Here you can select and display individual books of the Decree. Click on the <b>Work material</b> button and choose the option <b>Add Resource</b>. Then select from the list of manuscripts the currently available books you would like to consult.
+You can then view the transcription and the text in the digitized original manuscript side by side.</p>
+              
+              <p>For further information about the functions of this page, please click on the <b>Info</b> button.</p>
+            </span>
+            </div>
+            
+            
+          </div>
+
+
+
+          <!-- Modal: Download JSON info -->
+          <div class="modal fade" id="downloadJsonInfoModal" tabindex="-1" aria-labelledby="downloadJsonInfoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title fs-5 fw-bold" id="downloadJsonInfoModalLabel">
+                    <span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span>
+                  </h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- content loaded from infoButtonsTexts.html -->
+                <div class="modal-body" id="infoDownloadJSON"></div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" id="downloadJsonFromModalBtn">
+                    <i class="fa-solid fa-download me-1"></i>
+                    <span lang="de">JSON herunterladen</span><span lang="en">Download JSON</span>
+                  </button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <span lang="de">Schließen</span><span lang="en">Close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="row mt-3 panelsWindow overflow-auto">
+              <div class="col">
+                  <div class="d-flex" id="resourcePanel"></div>
+              </div>
+          </div>
+
+
+          <!-- Modal for selecting resources -->
+          <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="resourceModalLabel"><span lang="de">Ressourcen auswählen</span><span lang="en">Select Resources</span></h3>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <!--<div class="modal-body enter-mss-id">
+                        <h6><span lang="de">Handschrift ID eingeben</span><span lang="en">Enter Manuscript ID</span></h6>
+                        <input type="text" class="form-control form-control-sm" id="mssIdInput" aria-label=".form-control-sm example"> 
+                      </div>-->
+                      <div class="modal-body json-upload">
+                          <h6><span lang="de">JSON Hochladen</span><span lang="en">Load JSON</span></h6>
+                          <input type="file" class="form-control" id="jsonFileInput" accept=".json">   
+                      </div>
+                      <div class="accordion" id="accordionManuscripts">
+                        
+                        
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" id="confirmSelectionBtn"><span lang="de">Auswahl bestätigen</span><span lang="en">Confirm Selection</span></button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                    </div>
+                </div>
+              </div>
+          </div>
+
+
+          <!-- Modal with list of resources on my desk-->
+          <div class="modal fade" id="resourcesList" tabindex="-1" aria-labelledby="resourcesListLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="resourcesListLabel"><span lang="de">Was auf meinem Arbeitsbereich liegt</span><span lang="en">What's on my workspace</span></h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal-body ">
+                        <ul id="resourcesUnorderedList">
+                          
+                        </ul>
+                    </div>
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+      
+
+      <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
+      <div class="modal fade" id="legendModal" tabindex="-1" aria-labelledby="legendModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fs-5 fw-bold" id="legendModalLabel"><span lang="de">Legende zur Transkription</span><span lang="en">Transcription legend</span></h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="infoStyleTranscriptions">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div id="footer-placeholder"></div>
+      
+  </body>
+  
+  <script>
+    //Tooltip
+    document.addEventListener('DOMContentLoaded', function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+    });
+  </script>
+  <script>
+  // Initial page load handling
+  document.onreadystatechange = function () {
+    if (document.readyState === 'interactive') {
+      document.getElementById('contents').style.visibility = "hidden";
+    } else if (document.readyState === 'complete') {
+      setTimeout(function () {
+        document.getElementById('load').style.display = "none";
+        document.getElementById('contents').style.visibility = "visible";
+      }, 1000); // Optional delay
+    }
+  };
+
+  document.getElementById('confirmSelectionBtn').addEventListener('click', function () {
+    // Show loader
+    document.getElementById('load').style.display = "flex";
+    document.getElementById('contents').style.visibility = "hidden";
+
+    setTimeout(function () {
+      // Hide loader again
+      document.getElementById('load').style.display = "none";
+      document.getElementById('contents').style.visibility = "visible";
+    }, 2000); // Simulated delay
+  });
+
+</script>
+
+
+  <script>
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+// Creates the accordion based on BDD_MSS (only core manuscripts with books)
+function buildWorkspaceAccordion() {
+  const acc = document.getElementById("accordionManuscripts");
+  if (!acc) return;
+
+  const list = (window.BDD_MSS || [])
+    .filter(m => m.kind === "core")
+    .filter(m => Array.isArray(m.books) && m.books.length);
+
+  // Sort: by uiGroup/citationLabel
+  list.sort((a, b) => (a.uiGroup || a.sigle).localeCompare(b.uiGroup || b.sigle, "de"));
+
+  acc.innerHTML = list.map(ms => {
+    const headerId = `accHead_${ms.sigle}`;
+    const collapseId = `accCol_${ms.sigle}`;
+
+    const title = ms.citationLabel || ms.uiGroup || ms.sigle;
+    const safeTitle = escapeHtml(title);
+
+    // Build checkboxes only for actually available books
+    const books = ms.books
+      .slice()
+      .sort((x, y) => String(x).localeCompare(String(y), "en", { numeric: true }));
+
+    // Two columns layout
+    const half = Math.ceil(books.length / 2);
+    const colA = books.slice(0, half);
+    const colB = books.slice(half);
+
+    function bookCheckbox(bookN) {
+      const b = String(bookN).padStart(2, "0");
+      const msName = (ms.uiGroup || ms.sigle).replaceAll("_", "-");
+      const value = `${msName}_${ms.sigle}_${b}`;
+      const id = `cb_${ms.sigle}_${b}`;
+
+      return `
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="${escapeHtml(value)}" id="${escapeHtml(id)}">
+          <label class="form-check-label" for="${escapeHtml(id)}">
+            <span lang="de">Buch</span><span lang="en">Book</span> ${escapeHtml(b)}
+          </label>
+        </div>
+      `;
+    }
+
+    const colHtmlA = colA.map(bookCheckbox).join("");
+    const colHtmlB = colB.map(bookCheckbox).join("");
+
+    return `
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="${escapeHtml(headerId)}">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#${escapeHtml(collapseId)}"
+                  aria-expanded="false" aria-controls="${escapeHtml(collapseId)}">
+            ${safeTitle} (${escapeHtml(ms.sigle)})
+          </button>
+        </h2>
+        <div id="${escapeHtml(collapseId)}" class="accordion-collapse collapse"
+             aria-labelledby="${escapeHtml(headerId)}" data-bs-parent="#accordionManuscripts">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-md-6">${colHtmlA}</div>
+              <div class="col-md-6">${colHtmlB}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  buildWorkspaceAccordion();
+});
+
+
+
+    // Function to find all corresponding divs based on data-corresp
+  function findAllCorrespondingDivsFromDataCorresp(div) {
+    let correspondingDivs = [];
+    
+    // Read data-corresp attribute
+    let corresp = div.getAttribute('data-corresp');
+    
+    if (corresp) {
+        let ids = corresp.split(/\s+/); // Split by space
+
+        ids.forEach(id => {
+            let correspondingDiv = document.getElementById(id);
+            if (correspondingDiv) {
+                correspondingDivs.push(correspondingDiv);
+            }
+        });
+    }
+
+    return correspondingDivs;
+  }
+
+  // Main function to sync chapters across all manuscripts
+  function syncChapters(button) {
+    let chapterDiv = button.closest('.tei_chapter');
+
+    if (!chapterDiv) {
+        console.log('Chapter div not found');
+        return;
+    }
+
+    let correspondingDivs = findAllCorrespondingDivsFromDataCorresp(chapterDiv);
+
+    correspondingDivs.forEach(div => {
+        const scrollContainer = div.closest('.transcription-col');
+        if (scrollContainer) {
+            scrollContainer.scrollTo({
+                top: div.offsetTop - 55,
+                behavior: "smooth"
+            });
+        }
+    });
+  }
+
+
+  function navigateChapter(button, direction) {
+    const chapterDiv = button.closest('.tei_chapter'); // Find the closest chapter div
+    const column = chapterDiv.closest('.transcription-col'); // Find the closest transcription column
+    const chapters = column.querySelectorAll('.tei_chapter'); // Select all chapters in the column
+    const currentIndex = Array.from(chapters).indexOf(chapterDiv); // Get the current chapter index
+
+    if (direction === 'prev' && currentIndex > 0) { // Scroll to previous chapter
+        const prevChapter = chapters[currentIndex - 1];
+        column.scrollTo({
+            top: prevChapter.offsetTop - 55,
+            behavior: 'smooth'
+        });
+    } else if (direction === 'next' && currentIndex < chapters.length - 1) { // Scroll to next chapter
+        const nextChapter = chapters[currentIndex + 1];
+        column.scrollTo({
+            top: nextChapter.offsetTop - 55,
+            behavior: 'smooth'
+        });
+    }
+  }
+
+//--------------------------------------------------------------------------
+
+// Function to extract the interrogation number from the ID
+  function getInterrogationNumber(id) {
+      let regex = /int-(\d+)/;
+      let match = id.match(regex);
+      return match ? match[1] : null;
+  }
+
+  // Function to find all corresponding divs from all manuscripts for the same interrogation
+  function findAllCorrespondingDivs(interrogationNumber) {
+      // Get all divs with a interrogation in their ID
+      let allInterrogations = document.querySelectorAll('[id*="int-"]');
+      let correspondingDivs = [];
+
+      allInterrogations.forEach(function (interrogationDiv) {
+          // Check if the interrogation number matches
+          if (getInterrogationNumber(interrogationDiv.id) === interrogationNumber) {
+              correspondingDivs.push(interrogationDiv);
+          }
+      });
+      return correspondingDivs;
+  }
+
+  // Function to sync interrogations across all manuscripts
+  function syncInterrogations(button) {
+      let manuscriptDiv = button.closest('div');
+      let manuscriptId = manuscriptDiv.id;
+      let interrogationNumber = getInterrogationNumber(manuscriptId);
+
+      if (interrogationNumber) {
+          let correspondingDivs = findAllCorrespondingDivs(interrogationNumber);
+          correspondingDivs.forEach(div => {
+            const scrollContainer = div.closest('.transcription-col');
+            
+            if (scrollContainer) {
+              scrollContainer.scrollTo({
+                top: div.offsetTop - 55,
+                behavior: "smooth"
+              });
+            }
+          });
+      } else {
+          console.log('Interrogation number not found');
+      }
+  }
+
+  function navigateInterrogation(button, direction) {
+      const interrogationDiv = button.closest('.tei_interrogation'); // Find the closest interrogation div
+      const column = interrogationDiv.closest('.transcription-col'); // Find the closest transcription column
+      const interrogations = column.querySelectorAll('.tei_interrogation'); // Select all interrogation in the column
+      const currentIndex = Array.from(interrogations).indexOf(interrogationDiv); // Get the current interrogation index
+
+      if (direction === 'prev' && currentIndex > 0) { // Scroll to previous interrogation
+          const prevInterrogation = interrogations[currentIndex - 1];
+          column.scrollTo({
+              top: prevInterrogation.offsetTop - 55,
+              behavior: 'smooth'
+          });
+      } else if (direction === 'next' && currentIndex < interrogations.length - 1) { // Scroll to next interrogation
+          const nextInterrogation = interrogations[currentIndex + 1];
+          column.scrollTo({
+              top: nextInterrogation.offsetTop - 55,
+              behavior: 'smooth'
+          });
+      }
+  }
+
+  //open the modal to select books  
+  
+  document.getElementById('addResourceBtn').addEventListener('click', function() {
+    $('#resourceModal').modal('show');
+
+    // Deselect all checkboxes
+    let checkboxes = document.querySelectorAll('#resourceModal input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+    });
+  });
+
+  document.getElementById('jsonFileInput').addEventListener('change', function() {
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const jsonData = JSON.parse(event.target.result);
+      displayResourcesFromJson(jsonData);
+      saveResourceState(); // Save resource panel status after uploading data from Json
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById('confirmSelectionBtn').addEventListener('click', function(e) {
+    e.preventDefault()
+    $('#resourceModal').modal('hide');
+    displaySelectedResources();
+    adjustPanelWidth()
+  });
+
+  // What's on my desk - list of resources
+  document.getElementById('listResources').addEventListener('click', function() {
+    $('#resourcesList').modal('show');
+  });
+
+  function removeListItem(id) { // added
+    $("#resourcesUnorderedList li[for='" + id + "']").remove();
+    $("[data-ms='" + id + "']").remove();
+    adjustPanelWidth();
+    saveResourceState();
+  }
+
+  // After function displaySelectedResources() --> save resource panel status in local storage
+  function saveResourceState() {
+    let resourcePanels = document.querySelectorAll('.resource-panel-item');
+    let resourceState = [];
+    resourcePanels.forEach(panel => {
+      let bookId = panel.getAttribute("data-ms");
+      let view = {
+        transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
+        structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
+        mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary'),
+        scribe: panel.querySelector('.scribe-btn').classList.contains('btn-primary'),
+        editor: panel.querySelector('.editor-btn').classList.contains('btn-primary')
+        
+      };
+      resourceState.push({ bookId, view });
+    });
+
+    localStorage.setItem('resourceState', JSON.stringify(resourceState));
+    adjustPanelWidth()
+    updateWelcomeMessageVisibility();
+    toggleTranscriptionButtonVisibility();
+  }
+
+  // Upload source panel status from local storage
+  async function loadResourceState() {
+    const resourceState = JSON.parse(localStorage.getItem('resourceState'));
+    if (resourceState) {
+      displayResourcesFromJson(resourceState)
+    }
+    adjustPanelWidth()
+    updateWelcomeMessageVisibility();
+    toggleTranscriptionButtonVisibility()
+  }
+
+  /*Citation code*/
+  // On page load, check for citation hash
+  window.addEventListener('load', async function() {
+    let hash = window.location.hash.replace('#', '').trim();
+
+    if (hash) {
+      // Load citation mode: only the book in the hash
+      let container = document.getElementById('resourcePanel');
+      container.innerHTML = '';
+      let selectedViews = [true, false, true, false, false]; // show transcription + mirador + editor
+      await initializeMirador(container, hash, selectedViews);
+
+      // Hide welcome message and show transcription toggle if needed
+      updateWelcomeMessageVisibility();
+      toggleTranscriptionButtonVisibility();
+    } else {
+      // Default: restore previous workspace from localStorage
+      loadResourceState();
+    }
+  });
+
+
+  // Call function loadResourceState() when loading the page
+  //window.addEventListener('load', loadResourceState);
+
+  async function displayResourcesFromJson(jsonData) {
+    let container = document.getElementById('resourcePanel');
+    container.innerHTML = '';
+    for (let resource of jsonData) {
+      let selectedViews = [false, false, false, false, false]
+      if (resource.view.transcription) {
+        selectedViews[0] = true
+      }
+      if (resource.view.structure) {
+        selectedViews[1] = true
+      }
+      if (resource.view.mirador) {
+        selectedViews[2] = true
+      }
+      
+      if (resource.view.scribe) { 
+        selectedViews[3] = true 
+      }
+      if (resource.view.editor) {
+        selectedViews[4] = true
+      }
+      await initializeMirador(container, resource.bookId, selectedViews)
+    }
+    updateWelcomeMessageVisibility();
+    toggleTranscriptionButtonVisibility();
+  }
+      
+
+  function displaySelectedResources() {
+    const resourcePanel = document.getElementById("resourcePanel");
+
+    // Select all checked checkboxes inside the accordion
+    const selectedBooks = document.querySelectorAll(
+      "#accordionManuscripts input[type='checkbox']:checked"
+    );
+
+    appendBooks(resourcePanel, selectedBooks);
+
+    adjustPanelWidth();
+    updateWelcomeMessageVisibility();
+    toggleTranscriptionButtonVisibility();
+  }
+
+  
+  function toggleTranscriptionButtonVisibility() {
+    const resourcePanel = document.getElementById('resourcePanel');
+    const transcriptionButton = document.getElementById('transcription-view-button');
+
+    if (resourcePanel && resourcePanel.children.length > 0) {
+      transcriptionButton.style.display = 'block';
+    } else {
+      transcriptionButton.style.display = 'none';
+    }
+  }
+
+  
+/*new version*/
+  async function initializeMirador(container, book, selectedViews) {
+    return new Promise(async (resolve, reject) => {
+      let [msName, msAbbr, bookN] = book.split('_');
+
+      // Lookup ms object (BDD_MSS)
+      const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
+      if (!ms || !window.BDD_PATHS) {
+        console.error("BDD_PATHS/ms lookup not available.");
+        return resolve();
+      }
+
+      
+      const prefer = "canonical";
+      
+
+      let folderPath = window.BDD_PATHS.bookHtml(ms, bookN, { prefer });
+      let folderPathStructure = window.BDD_PATHS.bookStructureHtml(ms, bookN, { prefer });
+      let folderPathScribe = window.BDD_PATHS.bookScribeHtml(ms, bookN, { prefer });
+      let folderPathEditor = window.BDD_PATHS.bookEditorHtml(ms, bookN, { prefer });
+
+      
+
+      let response = await fetch(folderPath);
+      let htmlContent = await response.text();
+      let responseStructure = await fetch(folderPathStructure);
+      let responseScribe = await fetch(folderPathScribe);
+      let responseEditor = await fetch(folderPathEditor);
+      
+
+      // check scribe as well
+      if (response.ok && responseStructure.ok && responseScribe.ok && responseEditor.ok) {
+        let msViews = [];
+        msViews.push(htmlContent);                        // 0 transcription
+        msViews.push(await responseStructure.text());     // 1 structure
+        msViews.push("<div class='mirDesktop' id='" + "mirador" + msAbbr + bookN + "'></div>"); // 2 mirador
+        msViews.push(await responseScribe.text());        // 3 scribe
+        msViews.push(await responseEditor.text());        // 4 editor
+
+        let mirID = "mirador" + msAbbr + bookN;
+        const catalog = (window.BDD_MSS || [])
+          .filter(m => m.manifestId)
+          .map(m => ({ sigle: m.sigle, manifestId: m.manifestId }));
+
+        const manifestId = ms.manifestId || "";
+
+
+        let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);
+        addTaxonomyIcon(panel); // Taxonomy icon
+        underlineDelSpanAndAnchor(panel);
+        addSpanAndAnchor(panel);
+        container.appendChild(panel);
+        checkLanguage();
+
+        // show/hide columns in Structure tables
+        let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
+        dropdownsStruct.forEach(dropdown => {
+          let checkboxes = dropdown.querySelectorAll('.toggle-column');
+          let table = dropdown.nextElementSibling;
+          checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+              let columnIndex = parseInt(checkbox.dataset.column);
+              let cells = table.querySelectorAll(
+                `tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`
+              );
+              cells.forEach(cell => {
+                cell.style.display = checkbox.checked ? '' : 'none';
+              });
+            });
+          });
+        });
+
+        panel.querySelectorAll('.move-left').forEach(function (element) {
+          element.addEventListener('click', function () {
+            let card = $(this).closest('.card').parent();
+            card.insertBefore(card.prev());
+            saveResourceState();
+          });
+        });
+
+        panel.querySelectorAll('.move-right').forEach(function (element) {
+          element.addEventListener('click', function () {
+            let card = $(this).closest('.card').parent();
+            card.insertAfter(card.next());
+            saveResourceState();
+          });
+        });
+
+        // Delay execution to ensure Mirador can properly initialize
+        setTimeout(() => {
+          let windowsID = mirID + crypto.randomUUID();
+          let miradorInstance = Mirador.viewer({
+            id: mirID,
+            language: 'de',
+            window: {
+              allowClose: false,
+              defaultView: 'single',
+              highlightAllAnnotations: true,
+              panels: {
+                info: true,
+                attribution: true,
+                canvas: true,
+                annotations: true,
+                search: true,
+                layers: true
+              },
+              views: [
+                { key: 'single', behaviors: ['individuals'] },
+                { key: 'book', behaviors: ['paged'] }
+              ]
+            },
+            windows: [{
+              id: windowsID,
+              manifestId: manifestId,
+              //canvasId: canvasId
+            }],
+            thumbnails: {
+              enabled: false
+            },
+            catalog: catalog
+          });
+
+          // Eye icon: open the chapter in mirador
+          document.querySelectorAll(".icon-chapter-mirador").forEach(function (icon) {
+            icon.addEventListener("click", function () {
+              let thisCanvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
+              let thisResourcePanel = $(this).closest('.resource-panel-item');
+              let thisMiradorWindow = thisResourcePanel.find('.mirador-window');
+              let thisWindowId = thisMiradorWindow.attr('id');
+              let action = Mirador.actions.setCanvas(thisWindowId, thisCanvasId);
+              miradorInstance.store.dispatch(action);
+            });
+          });
+
+          saveResourceState();
+          adjustPanelWidth();
+          resolve();
+        }, 200);
+      } else {
+        //fallback: don’t break if scribe file is missing
+        console.warn("One or more resource files could not be loaded for", book);
+        resolve();
+      }
+    });
+  }
+
+
+ /*New version to prevent books to be uploaded multiple times*/
+ async function appendBooks(container, books) {
+  for (let book of books) {
+    // Check if this book is already on the workspace
+    const existing = container.querySelector(`[data-ms='${book.value}']`);
+    
+    /*if (existing) {
+      console.log(`Book ${book.value} already loaded, skipping.`);
+      continue; // Skip if already added
+    }*/
+    if (existing) {
+      alert(`"${book.value}" is already displayed on your workspace.`);
+      continue;// Skip if already added
+    }
+
+    let selectedViews = [true, false, true, false, false];
+    await initializeMirador(container, book.value, selectedViews);
+  }
+}
+
+
+      
+  function createResourcePanel(idVal, title, views, selectedViews) {
+    //create the list of resources open on the desktop
+    $("#resourcesUnorderedList").append("<li for='"+idVal+"'>"+title+" <button class='btn btn-sm btn-light' onclick='removeListItem(\"" + idVal + "\")'><i class='fa-solid fa-xmark' style='color: #636363;'></i></button>" + "</li>")
+    
+    const panel = document.createElement('div');
+    panel.classList.add('resource-panel-item');
+    panel.setAttribute('data-ms', idVal);
+    const panelContent = `
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center fw-bold">
+          <i class="fas fa-arrow-left move-left"></i>
+          <span>${title}
+            <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Legende zur Transkription</span><span lang='en'>Transcription Legend</span>" data-bs-custom-class="custom-tooltip">
+              <button type="button" class="btn ms-2 p-0" data-bs-toggle="modal" data-bs-target="#legendModal" style="color: #46b65f;">
+                <i class="fa-solid fa-circle-info fa-lg"></i>
+              </button>
+            </span>
+          </span>
+          <i class="fas fa-arrow-right move-right"></i>
+
+          
+          <div> 
+            <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn p-1"><span lang='de'>Transkription</span><span lang='en'>Transcription</span></button>
+            <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn p-1"><span lang='de'>Struktur</span><span lang='en'>Structure</span></button>
+            <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn p-1"><span lang='de'>Digitalisat</span><span lang='en'>Digital copy</span></button>
+            <button type="button" class="btn btn-outline-primary btn-sm me-2 scribe-btn p-1"><span lang='de'>Schreiber</span><span lang='en'>Scribe</span></button>
+            <button type="button" class="btn btn-outline-primary btn-sm editor-btn p-1">Info</button>
+          </div>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="card-body row">
+          <div class="col border m-1 transcription-col d-none" style="overflow-y: scroll; max-height: 600px; white-space: nowrap"></div>
+          <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap; padding-left:0;"></div>
+          <div class="col m-1 mirador-col d-none" style="max-height: 600px;"></div>
+          <div class="col border m-1 scribe-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: wrap"></div>
+          <div class="col border m-1 editor-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: wrap"></div>
+        </div>
+      </div>
+    `
+    panel.innerHTML = panelContent;
+
+    panel.querySelector('.transcription-col').innerHTML = views[0]
+    panel.querySelector('.structure-col').innerHTML = views[1]
+    panel.querySelector('.mirador-col').innerHTML = views[2]
+    panel.querySelector('.scribe-col').innerHTML = views[3]
+    panel.querySelector('.editor-col').innerHTML = views[4]
+
+    
+
+      // Parse manuscript info from idVal
+      let [msName, msAbbr, bookN] = idVal.split('_');
+
+      // Lookup from BDD_MSS
+      const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
+
+      // Use canonical label from list if present, fallback to msName
+      let displayName = (ms && ms.citationLabel) ? ms.citationLabel : msName;
+
+
+      let citationUrl = "https://burchards-dekret-digital.de/html/workspace.html#" + idVal; //CHANGE URL
+      let citationText = `Burchards Dekret Digital, Akademie der Wissenschaften und der Literatur Mainz, 2025. ${displayName}, Transkription Buch ${bookN} (${citationUrl})`;
+      let citationBlock = `
+        <hr class="mt-0">
+        <p>
+          <strong><span lang="de">Zitiervorschlag</span><span lang="en">How to cite</span>:</strong> Burchards Dekret Digital, Akademie der Wissenschaften und der Literatur Mainz, 2025.
+          <i>${displayName},</i> <span lang="de">Transkription</span><span lang="en">Transcription</span> <a href="${citationUrl}" target="_blank"><span lang="de">Buch</span><span lang="en">Book</span> ${bookN}</a>.
+          
+        </p>
+        <button class="btn btn-sm btn-outline-secondary mt-2 mb-5 copy-citation-btn" data-citation="${citationText}">
+          <span lang="de">Zitat kopieren</span><span lang="en">Copy citation</span>
+        </button>
+        <button class="btn btn-sm btn-outline-secondary mt-2 mb-5 copy-link-btn" data-citation="${citationUrl}">
+          <span lang="de">Link kopieren</span><span lang="en">Copy link</span>
+        </button>
+      `;
+      panel.querySelector('.editor-col').insertAdjacentHTML('beforeend', citationBlock);
+
+    function attachCopyHandler(buttonSelector, defaultTextDe, defaultTextEn) {
+      let btn = panel.querySelector(buttonSelector);
+      btn.addEventListener('click', function() {
+        let text = this.getAttribute('data-citation');
+        navigator.clipboard.writeText(text).then(() => {
+          // update both language spans
+          this.querySelector('[lang="de"]').textContent = "Kopiert!";
+          this.querySelector('[lang="en"]').textContent = "Copied!";
+          setTimeout(() => {
+            this.querySelector('[lang="de"]').textContent = defaultTextDe;
+            this.querySelector('[lang="en"]').textContent = defaultTextEn;
+          }, 2000);
+        }).catch(err => console.error("Failed to copy citation:", err));
+      });
+    }
+
+    // usage:
+    attachCopyHandler('.copy-citation-btn', "Zitat kopieren", "Copy citation");
+    attachCopyHandler('.copy-link-btn', "Link kopieren", "Copy link");
+
+    /*Ends of Citation Link in Info Panel*/
+
+
+    panel.querySelector('.btn-close').addEventListener('click', function() {
+      let thisDataMS = panel.getAttribute("data-ms")
+      $("#resourcesUnorderedList li[for='" + thisDataMS + "']").remove(); //added
+      panel.remove();
+      updateWelcomeMessageVisibility();
+      adjustPanelWidth();
+      saveResourceState(); //Save source panel status after removing one panel
+    });
+
+
+    let [transcriptionAdded, structureAdded, miradorAdded, scribeAdded, editorAdded] = selectedViews
+
+    var viewsElements = panel.getElementsByClassName('col');
+    const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
+    const addStructureBtn = panel.querySelector('.add-structure-btn');
+    const miradorBtn = panel.querySelector('.mirador-btn');
+    const scribeBtn = panel.querySelector('.scribe-btn');
+    const editorBtn = panel.querySelector('.editor-btn');
+
+    if (transcriptionAdded){
+        viewsElements[0].classList.remove('d-none');
+        addTranscriptionBtn.classList.remove('btn-outline-primary');
+        addTranscriptionBtn.classList.add('btn-primary');
+    }
+    if (structureAdded){
+      viewsElements[1].classList.remove('d-none');
+      addStructureBtn.classList.remove('btn-outline-primary');
+      addStructureBtn.classList.add('btn-primary');
+    }
+    if (miradorAdded){
+      viewsElements[2].classList.remove('d-none');
+      miradorBtn.classList.remove('btn-outline-primary');
+      miradorBtn.classList.add('btn-primary');
+    }
+    if (scribeAdded){
+      viewsElements[3].classList.remove('d-none');
+      scribeBtn.classList.remove('btn-outline-primary');
+      scribeBtn.classList.add('btn-primary');
+    }
+
+    if (editorAdded){
+      viewsElements[4].classList.remove('d-none');
+      editorBtn.classList.remove('btn-outline-primary');
+      editorBtn.classList.add('btn-primary');
+    }
+
+    addTranscriptionBtn.addEventListener('click', function() {
+      if (!transcriptionAdded) {
+        viewsElements[0].classList.remove('d-none');
+        transcriptionAdded = true;
+        addTranscriptionBtn.classList.remove('btn-outline-primary');
+        addTranscriptionBtn.classList.add('btn-primary');
+      } else {
+        viewsElements[0].classList.add('d-none');
+        transcriptionAdded = false;
+        addTranscriptionBtn.classList.remove('btn-primary');
+        addTranscriptionBtn.classList.add('btn-outline-primary');
+      }
+      saveResourceState(); // Save resource panel status after addition/deletion transcription
+      adjustPanelWidth()
+    });
+
+    addStructureBtn.addEventListener('click', function() {
+      if (!structureAdded) {
+        viewsElements[1].classList.remove('d-none');
+        structureAdded = true;
+        addStructureBtn.classList.remove('btn-outline-primary');
+        addStructureBtn.classList.add('btn-primary');
+      } else {
+        viewsElements[1].classList.add('d-none');
+        structureAdded = false;
+        addStructureBtn.classList.remove('btn-primary');
+        addStructureBtn.classList.add('btn-outline-primary');
+      }
+      saveResourceState(); //Save resource panel status after addtion/deletion structure
+      adjustPanelWidth()
+    });
+
+    miradorBtn.addEventListener('click', function() {
+      if (!miradorAdded) {
+        viewsElements[2].classList.remove('d-none');
+        miradorAdded = true;
+        miradorBtn.classList.remove('btn-outline-primary');
+        miradorBtn.classList.add('btn-primary');
+      } else {
+        viewsElements[2].classList.add('d-none');
+        miradorAdded = false;
+        miradorBtn.classList.remove('btn-primary');
+        miradorBtn.classList.add('btn-outline-primary');
+      }
+      saveResourceState(); //Save resource panel status after addtion/deletion Mirador Viewer
+      adjustPanelWidth()
+    });
+
+    scribeBtn.addEventListener('click', function() {
+      if (!scribeAdded) {
+        viewsElements[3].classList.remove('d-none');
+        scribeAdded = true;
+        scribeBtn.classList.remove('btn-outline-primary');
+        scribeBtn.classList.add('btn-primary');
+      } else {
+        viewsElements[3].classList.add('d-none');
+        scribeAdded = false;
+        scribeBtn.classList.remove('btn-primary');
+        scribeBtn.classList.add('btn-outline-primary');
+      }
+      saveResourceState(); //Save resource panel status after addtion/deletion structure
+      adjustPanelWidth()
+    });
+
+    editorBtn.addEventListener('click', function() {
+      if (!editorAdded) {
+        viewsElements[4].classList.remove('d-none');
+        editorAdded = true;
+        editorBtn.classList.remove('btn-outline-primary');
+        editorBtn.classList.add('btn-primary');
+      } else {
+        viewsElements[4].classList.add('d-none');
+        editorAdded = false;
+        editorBtn.classList.remove('btn-primary');
+        editorBtn.classList.add('btn-outline-primary');
+      }
+      saveResourceState(); //Save resource panel status after addtion/deletion structure
+      adjustPanelWidth()
+    });
+
+    return panel;
+  }
+
+
+  // Add a listener for messages from ms-item
+  window.addEventListener("message", receiveMessage, false);
+  function receiveMessage(event) {
+      if (event.origin !== window.location.origin) return;
+      if (event.data) {
+          // add new resource panel to desktop.html
+          var selectedBook = event.data;
+          appendSelectedBookToDesktop(selectedBook);
+      }
+  }
+
+    async function appendSelectedBookToDesktop(selectedBook) {
+      const msAbbr = selectedBook.split('-')[0];
+      const bookN = selectedBook.split('-')[1];
+
+      const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
+      if (!ms) {
+        console.warn("Unknown manuscript sigle:", msAbbr);
+        return;
+      }
+
+      // Use uiGroup (or fallback to sigle if missing)
+      const msName = ms.uiGroup || ms.sigle;
+
+      const book = [msName, msAbbr, bookN].join('_');
+
+      const container = document.getElementById('resourcePanel');
+      const selectedViews = [true, false, true, false, false];
+      await initializeMirador(container, book, selectedViews);
+    }
+  
+  //function to handle panel width behaviour
+  function adjustPanelWidth() {
+    const resourcePanel = document.getElementById('resourcePanel');
+    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
+      Array.from(panels).forEach(panel => {
+          const cardBody = panel.querySelector('.card-body');
+          const hiddenDivs = cardBody.querySelectorAll('.d-none');
+
+          if (panels.length === 1) {
+              panel.classList.add('only-child', 'full-width');
+          } else {
+              panel.classList.remove('only-child', 'full-width', 'three-quarter-width', 'half-width');
+              if (hiddenDivs.length === 3) {
+                  panel.classList.add('half-width');
+              } else if (hiddenDivs.length === 2) {
+                  panel.classList.add('three-quarter-width');
+              } else {
+                  panel.classList.add('full-width');
+              }
+          }
+      });
+  }
+
+  //Welcome message
+  function updateWelcomeMessageVisibility() {
+  const panel = document.getElementById("resourcePanel");
+  const welcome = document.getElementById("welcomeMessage");
+
+  if (!panel || !welcome) return;
+
+  // If no child resource panels exist
+  if (panel.children.length === 0) {
+    welcome.style.display = "block";
+  } else {
+    welcome.style.display = "none";
+  }
+}
+
+
+  //Activate tooltip inside Legend Modal
+  document.getElementById('legendModal').addEventListener('shown.bs.modal', function () {
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('#legendModal [data-bs-toggle="tooltip"]'));
+
+      tooltipTriggerList.forEach((tooltipTriggerEl) => {
+          const tooltip = new bootstrap.Tooltip(tooltipTriggerEl, {
+              html: true
+          });
+
+          tooltipTriggerEl.addEventListener('show.bs.tooltip', () => {
+              const raw = tooltipTriggerEl.getAttribute('data-bs-title');
+              const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+              const tempContainer = document.createElement('div');
+              tempContainer.innerHTML = raw;
+
+              const spans = tempContainer.querySelectorAll('span[lang]');
+              spans.forEach(span => {
+                  if (span.getAttribute('lang') !== currentLang) {
+                      span.remove();
+                  }
+              });
+
+              const thistooltip = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+              thistooltip.setContent({ '.tooltip-inner': tempContainer.innerHTML });
+          });
+      });
+  });
+
+
+  document.getElementById('downloadJsonFromModalBtn').addEventListener('click', function() {
+    saveResourceState();
+    const resourceState = JSON.parse(localStorage.getItem('resourceState')) || [];
+    downloadJson(resourceState);
+  });
+
+
+
+  //Download json
+  function downloadJson(data) {
+    const filename = 'resources.json';
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+
+  // Function to confirm deletion
+  function confirmDelete() {
+    return confirm("Are you sure you want to delete all content?");
+  }
+  // Clear all button
+  document.getElementById('clearAll').addEventListener('click', function() {
+  if (confirmDelete()) {
+    document.getElementById('resourcePanel').innerHTML = '';
+    document.getElementById('resourcesUnorderedList').innerHTML = '';
+    document.getElementById('transcription-view-button').style.display = 'none';
+    localStorage.removeItem('resourceState');
+    
+    saveResourceState();
+    updateWelcomeMessageVisibility();
+    adjustPanelWidth();
+  }
+});
+</script>
+
+
+  <script>
+    $(document).ready(function() {
+        // Function to load HTML file
+        function loadHTMLDoc(filename) {
+            $.ajax({
+                type: "GET",
+                url: filename,
+                dataType: "html",
+                success: function(html) {
+                    displayHTMLContent(html);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error loading XML file:", error);
+                }
+            });
+        }
+    
+        // Function to display HTML content
+        function displayHTMLContent(htmlDoc) {
+            let contentDiv = document.createElement('div');
+            contentDiv.innerHTML = htmlDoc;
+            
+            let isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
+    
+            let contentInfo;
+            
+           contentInfo = $(contentDiv).find("#infoSchreibtisch");
+            $("#infoSchreibtisch").html(contentInfo.html());
+           
+            let contentInfoStyle = $(contentDiv).find("#infoStyleTranscriptions")
+            $("#infoStyleTranscriptions").html(contentInfoStyle);   
+
+            let contentInfoDownloadJSON = $(contentDiv).find("#infoDownloadJSON");
+            $("#infoDownloadJSON").html(contentInfoDownloadJSON.html());
+            checkLanguage();      
+        }
+
+        // Load XML file
+        loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
+    });
+    </script>
+</html>

@@ -20,7 +20,7 @@
     </xsl:template>
        
     <xsl:template match="//tei:body/tei:div/tei:div">
-        <div class="card">
+        <div class="card h-100 w-100">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -43,7 +43,7 @@
         </h6>
     </xsl:template>
     <xsl:template match="//tei:body/tei:div/tei:div/tei:div/tei:head[@type='name']">
-        <h5 class="card-title">
+        <h5 class="card-title member-name">
             <xsl:apply-templates/>
         </h5>
     </xsl:template>
@@ -79,7 +79,7 @@
 
     <!-- Handle images -->
     <xsl:template match="tei:graphic">
-        <img src="{@url}" class="card-img-top h-100"/>
+        <img src="{@url}" class="card-img-top" alt="{ancestor::tei:div[@type='team-card']/tei:div/tei:head[@type='name']/text()}" title="{ancestor::tei:div[@type='team-card']/tei:div/tei:head[@type='name']/text()}"/>
     </xsl:template>
     
     

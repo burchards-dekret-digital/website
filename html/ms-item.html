@@ -28,9 +28,9 @@
             <script src="../js/jquery-3.7.1.min.js"></script>
             <script src="../js/language.js"></script>
             <script src="../js/navigation.js" defer></script>
+            <script src="../js/bdd_mss_list.js"></script>
         </head>
         <body>
-            <div id="access-placeholder"></div>
             <div id="navbar-placeholder"></div>
 
             <div class="back-button ps-4 mt-5">
@@ -49,7 +49,7 @@
                                 <div class="mb-3 d-flex flex-column flex-md-row">
                                     <h4 class="mt-2 me-2 text-uppercase"><span lang="de">Buch auswählen</span><span lang="en">Select a book</span></h4>
                                     <select class="form-select" id="book-selector">
-                                        <option val="" disabled="" selected=""></option>
+                                        <option value="" disabled="" selected=""></option>
                                     </select>
                                     <button id="addToDesk" type="button" class="btn btn-primary mt-3 mt-md-0 ms-md-3" disabled><span lang="de">Buch zum Arbeitsbereich hinzufügen</span><span lang="en">Add book to Workspace</span></button>
                                 </div>
@@ -216,7 +216,84 @@
                             </div>
                         </div>
 
-                        <div id="map2"></div>
+                       
+                        <div class="mss-map-head mt-5">
+                            <h4 class="mt-4"><span lang="de">KARTENANSICHT ALLER DEKRETHANDSCHRIFTEN</span><span lang="en">MAP VIEW OF ALL DECREE MANUSCRIPTS</span></h4>
+
+                            <!--Show dropdown for marker types with icons -->
+                            <div class="map-type-dropdown">
+                                <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button"
+                                        id="mapTypeFilterDropdown" data-bs-toggle="dropdown">
+                                    <span lang="de">Anzeige: Alle Handschriften</span>
+                                    <span lang="en">Show: All manuscripts</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="mapTypeFilterDropdown">
+                                    <!-- All -->
+                                    <li>
+                                    <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="all">
+                                        <span lang="de">Alle Handschriften</span>
+                                        <span lang="en">All manuscripts</span>
+                                    </a>
+                                    </li>
+
+                                    <!-- Full manuscript (blue) -->
+                                    <li>
+                                    <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="full">
+                                        <img
+                                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png" alt="" width="14" height="23" class="me-2">
+                                        <span lang="de">Vollständige Handschrift</span>
+                                        <span lang="en">Full manuscript</span>
+                                    </a>
+                                    </li>
+
+                                    <!-- Fragment (orange) -->
+                                    <li>
+                                    <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="fragment">
+                                        <img
+                                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png" alt="" width="14" height="23" class="me-2">
+                                        <span lang="de">Fragment</span>
+                                        <span lang="en">Fragment</span>
+                                    </a>
+                                    </li>
+
+                                    <!-- Excerpt (yellow) -->
+                                    <li>
+                                    <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="excerpt">
+                                        <img
+                                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png" alt="" width="14" height="23" class="me-2">
+                                        <span lang="de">Exzerpt</span>
+                                        <span lang="en">Excerpt</span>
+                                    </a>
+                                    </li>
+
+                                    <!-- Separate transmission (violet) -->
+                                    <li>
+                                    <a class="dropdown-item map-type-filter d-flex align-items-center" data-type="separate-transmission">
+                                        <img
+                                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png" alt="" width="14" height="23" class="me-2">
+                                        <span lang="de">Seperatüberlieferung</span>
+                                        <span lang="en">Separate transmission</span>
+                                    </a>
+                                    </li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-3 align-items-start mt-3">
+                            <!-- Map column -->
+                            <div class="col-12 col-lg-9">
+                            <div class="mss-map" id="map2"></div>
+                            </div>
+
+                            <!-- Legend column -->
+                            <div class="col-12 col-lg-3">
+                            <div id="map-legend-outside" class="border rounded p-3 bg-white shadow-sm">
+                                <!-- Legend content gets inserted here -->
+                            </div>
+                            </div>
+                        </div>
                 </div>
             </div>
             
@@ -225,19 +302,82 @@
 
         <!--Embedding map -->
         <script type="text/javascript">
-        var mymap = L.map('map2').setView([48.00, 12], 5);
+        var mymap = L.map('map2').setView([48.00, 8], 5);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(mymap);
         </script>
-        <script src="../js/map.js"></script>
+        <script src="../js/map-typeMarker.js"></script>
 
         <!--Populate accordion in Info tab-->
         <script>
             var miradorInstance
             async function fetchDataAndPopulate() {
-                let document_id = new URLSearchParams(window.location.search).get('document');
-                let folderPath = '../data/mss/' + document_id + '/Tei/v1';
-                let response = await fetch(folderPath + '/msdesc.xml'); // Fetch the XML file
+                const params = new URLSearchParams(window.location.search);
+                let document_id = params.get('document') || params.get('ms') || params.get('sigle');
+                
+                const ms = (typeof getMsBySigle === "function")
+                    ? getMsBySigle(document_id)
+                    : null;
+
+                    /* manuscript not in the list*/
+                    if (!ms) {
+                    const titleEl = document.getElementById("ms-title");
+                    const dataEl  = document.querySelector(".mss-data");
+
+                    if (titleEl) {
+                        titleEl.innerHTML = `
+                        <span class="text-muted">
+                            ${document_id ? document_id : "Unknown manuscript"}
+                        </span>
+                        `;
+                    }
+
+                    if (dataEl) {
+                        dataEl.innerHTML = `
+                        <div class="alert alert-warning">
+                            <span lang="de">Diese Handschrift ist nicht Teil des BDD-Projekts oder wurde nicht gefunden.</span>
+                            <span lang="en">This manuscript is not part of the BDD project or could not be found.</span>
+                        </div>
+                        `;
+                    }
+
+                    if (typeof checkLanguage === "function") checkLanguage();
+                    console.warn("ms-item-new.html: manuscript not in list:", document_id);
+                    return;
+                    }
+
+                    /*additional manuscript*/
+                    if (ms.kind !== "core") {
+                    const titleEl = document.getElementById("ms-title");
+                    const dataEl  = document.querySelector(".mss-data");
+
+                    if (titleEl) {
+                        titleEl.innerHTML = `
+                        <span class="text-muted">${document_id}</span>
+                        `;
+                    }
+
+                    if (dataEl) {
+                        dataEl.innerHTML = `
+                        <div class="alert alert-info">
+                            <span lang="de">Für diese Handschrift liegt derzeit keine vollständige Beschreibung vor.</span>
+                            <span lang="en">No full description is currently available for this manuscript.</span>
+                        </div>
+                        `;
+                    }
+
+                    if (typeof checkLanguage === "function") checkLanguage();
+                    return;
+                    }
+
+                if (!ms || !window.BDD_PATHS) {
+                console.error("Missing ms or BDD_PATHS", document_id);
+                return;
+                }
+
+                const prefer = "canonical"; 
+
+                let response = await fetch(window.BDD_PATHS.msdesc(ms, { prefer }));
                 
                 if (response.ok) {
                     const xmlText = await response.text();
@@ -418,58 +558,36 @@
                     document.getElementById("webResourceKatalogisat").href = xmlDoc.querySelectorAll('surrogates bibl[type="cat"] ref')[0].innerHTML
 
                     
-                    //Book selection: display the correct number of books in V1 and V2, and K
-                    var startBook = 0;
-                    var endBook = 20;
+                    
+                    
+                    // Books available (from BDD_MSS)
+                    const allBooks = Array.from({ length: 21 }, (_, i) => String(i).padStart(2, "0"));
+                    const availableBooks = Array.isArray(ms.books) ? ms.books : []; // e.g. ["01","06","07","13"]
 
-                    switch(document_id) {
-                        case "Va2":
-                            endBook = 8;
-                            break;
-                        case "Va3":
-                            startBook = 9;
-                            break;
-                        case "K":
-                            startBook = 2;
-                            break;
-                        default:
-                            break;
+                    // 1) XML dropdown links + visibility
+                    for (let i = 0; i < allBooks.length; i++) {
+                    const bookN = allBooks[i];
+                    const a = document.querySelector(`#collapseWebressourcen li:nth-child(${i+1}) a`);
+                    if (!a) continue;
+
+                    // always set href (safe even if hidden)
+                    a.href = window.BDD_PATHS.bookXml(ms, bookN, { prefer });
+
+                    // show only if available
+                    a.hidden = !availableBooks.includes(bookN);
                     }
 
-                    //Hide books in "XML file" dropdown list (Web resources) that are not pesent (K 00 and 01, Va2 from 09 to 20, and Va3 from 00 to 08)
-                    for (var i = 0; i <= 20; i++) { 
-                        document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").href =  '../data/mss/' + document_id + '/Tei/v1/' + i + ".xml"
-                        if(i < startBook || i > endBook){
-                            document.querySelector("#collapseWebressourcen li:nth-child("+(i+1)+") a").hidden = true
-                        }
-                    }
+                    // 2) "Select a book" dropdown: show only available
+                    const selector = document.querySelector("#book-selector");
+                    selector.innerHTML = `<option value="" disabled selected></option>`; // keep empty default
 
+                    availableBooks.forEach(bookN => {
+                    const opt = document.createElement("option");
+                    opt.value = bookN;
+                    opt.textContent = bookN;
+                    selector.appendChild(opt);
+                    });
 
-                    // Add msdesc.xml link at the end of the dropdown
-                    const msdescLi = document.createElement('li');
-                    const msdescLink = document.createElement('a');
-                    msdescLink.className = 'dropdown-item';
-                    msdescLink.href = '../data/mss/' + document_id + '/Tei/v1/msdesc.xml';
-                    msdescLink.target = '_blank';
-                    msdescLink.innerHTML = '<span lang="de">Handschriftbeschreibung</span><span lang="en">Manuscript description</span>';
-                    msdescLi.appendChild(msdescLink);
-
-                    // Append to the dropdown menu
-                    document.querySelector('#collapseWebressourcen ul.dropdown-menu').appendChild(msdescLi);
-
-
-
-                    //List of active (available) books in "Select a book" dropdown
-                    const activeOptions = [13, 1, 6, 7]
-                    for (var i = startBook; i <= endBook; i++) { 
-                        var optionBook = document.createElement('option');
-                        optionBook.value = (i < 10) ? "0" + i : i;
-                        optionBook.innerHTML = " " + ((i < 10) ? "0" + i : i);
-                        if (!activeOptions.includes(i)){
-                            optionBook.disabled = true
-                        }
-                        document.querySelector("#book-selector").appendChild(optionBook);
-                    }
                     
                 checkLanguage();
                 }
@@ -493,7 +611,7 @@
                         desktopWindow.postMessage(selected, "*");
                     } else {
                         // if not open, open a new one
-                        desktopWindow = window.open('desktop.html', '_blank');
+                        desktopWindow = window.open('workspace.html', '_blank');
                         desktopWindow.onload = function() {
                             desktopWindow.postMessage(selected, "*");
                         };
@@ -501,96 +619,26 @@
                 }
             }
 
-            //Mirador: commented on 12.05.2025. The next function has been updated to handle error message when images are not loaded due to other website issue
-           /* function initializeMirador(doc_id){
-                const doc_sigle = { 'F':'../data/manifests/frankfurt-ub-b-50-manifest.json',
-                                    'Va2': '../data/manifests/vatican-bav-pl-585-manifest.json',
-                                    'Va3': '../data/manifests/vatican-bav-pl-586-manifest.json',
-                                    'B' : '../data/manifests/bamberg-sb-c-6.json',
-                                    'K' : '../data/manifests/koeln-edd-119-manifest.json'}
-                miradorInstance = Mirador.viewer({
-                    id: "mirador-singleMS",
-                    language: 'de',
-                    window: { //global window defaults
-                        allowClose: false, // Configure if windows can be closed or not
-                        defaultView: 'single',  // Configure which viewing mode (e.g. single, book, gallery) for windows to be opened in
-                        highlightAllAnnotations: true, // Configure whether to display annotations on the canvas by default
-                        panels: { // Configure which panels are visible in WindowSideBarButtons
-                            info: true,
-                            attribution: true,
-                            canvas: true,
-                            annotations: true,
-                            search: true,
-                            layers: true
-                        },
-                        views: [
-                            { key: 'single', behaviors: ['individuals'] },
-                            { key: 'book', behaviors: ['paged'] }
-                            
-                    ] },
-                    windows: [{
-                        id: 'known-window-id',
-                        manifestId: doc_sigle[doc_id],
-                        canvasId: ''
-                    }],
-                    
-                    thumbnails: {
-                            preferredFormats: ['jpg', 'png', 'webp', 'tif']
-                            },
-                    thumbnailNavigation: {
-                        defaultPosition: 'far-bottom', // Which position for the thumbnail navigation to be be displayed. Other possible values are "far-bottom" or "far-right"
-                        displaySettings: true // Display the settings for this in WindowTopMenu
-                        },
-                    catalog: [
-                        { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-                        { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-                        { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json'},
-                        { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json'},
-                        { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json'}
-                    ]
-                });
-            }*/
 
-            
-
-//Stand: 12.05.2025 - Function to handle message errors when Mirador doesn't work due to other website issue. Still in test phase
 function initializeMirador(doc_id) {
-  const doc_sigle = {
-    'F': '../data/manifests/frankfurt-ub-b-50-manifest.json',
-    'Va2': '../data/manifests/vatican-bav-pl-585-manifest.json',
-    'Va3': '../data/manifests/vatican-bav-pl-586-manifest.json',
-    'B': '../data/manifests/bamberg-sb-c-6.json',
-    'K': '../data/manifests/koeln-edd-119-manifest.json'
-  };
+  const ms = (typeof getMsBySigle === "function") ? getMsBySigle(doc_id) : null;
+  const manifestUrl = ms?.manifestId;
 
-  const manifestUrl = doc_sigle[doc_id];
-
-  // Show Bootstrap 5 alert
-  function showCustomError(message) {
-    const container = document.getElementById('mirador-singleMS');
-    if (container && !document.getElementById('mirador-error-alert')) {
-      const alertDiv = document.createElement('div');
-      alertDiv.className = 'alert alert-warning alert-dismissible fade show';
-      alertDiv.role = 'alert';
-      alertDiv.id = 'mirador-error-alert';
-      alertDiv.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      `;
-      container.prepend(alertDiv);
-    }
+  if (!manifestUrl) {
+    console.warn("No manifestId for", doc_id);
+    return;
   }
 
-  // Check if manifest is reachable before loading Mirador
+  const catalog = (window.BDD_MSS || [])
+    .filter(m => m.manifestId)
+    .map(m => ({ sigle: m.sigle, manifestId: m.manifestId }));
+
   fetch(manifestUrl)
-    .then(response => {
-      if (!response.ok) throw new Error('Manifest not reachable');
-      return response.json();
-    })
+    .then(r => { if (!r.ok) throw new Error("Manifest not reachable"); return r.json(); })
     .then(() => {
       miradorInstance = Mirador.viewer({
         id: "mirador-singleMS",
-        language: 'de',
+        language: "de",
         window: {
           allowClose: false,
           defaultView: 'single',
@@ -609,51 +657,77 @@ function initializeMirador(doc_id) {
           ]
         },
         windows: [{
-          id: 'known-window-id',
+          id: "known-window-id",
           manifestId: manifestUrl,
-          canvasId: ''
+          canvasId: ""
         }],
-        thumbnails: {
-          preferredFormats: ['jpg', 'png', 'webp', 'tif']
-        },
-        thumbnailNavigation: {
-          defaultPosition: 'far-bottom',
-          displaySettings: true
-        },
-        catalog: [
-          { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
-          { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
-          { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
-          { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
-          { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
-        ]
+        thumbnails: { preferredFormats: ['jpg','png','webp','tif'] },
+        thumbnailNavigation: { defaultPosition: 'far-bottom', displaySettings: true },
+        catalog: catalog
       });
     })
     .catch(() => {
-      showCustomError('Die Bilder dieses Manuskripts konnten nicht geladen werden, da eine externe Quelle momentan nicht erreichbar ist.');
+      // keep your Bootstrap alert code as-is
     });
 }
-
-
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;
                 document.querySelector("#book-selector").addEventListener("change", async function() {
                     document.querySelector("#addToDesk").removeAttribute('disabled');
                     let selectedMs = new URLSearchParams(window.location.search).get('document');
                     let selectedBook = document.querySelector("#book-selector").value;
-                    let ms_path = '../data/mss/' + selectedMs + '/Tei/v1/' + selectedBook + ".html";
+                    const ms = (typeof getMsBySigle === "function") ? getMsBySigle(selectedMs) : null;
+                    if (!ms || !window.BDD_PATHS) return;
+
+                    const prefer = "canonical";
+                    
+                    let ms_path = window.BDD_PATHS.bookHtml(ms, selectedBook, { prefer });
+
                     let response = await fetch(ms_path);
                     let htmlContent = await response.text();
                     let doc = new DOMParser().parseFromString(htmlContent, 'text/html');
-                    let canvasId = doc.querySelector('[data-canvas]').getAttribute("data-canvas");
+                    let canvasId = doc.querySelector('[data-canvas]')?.getAttribute("data-canvas");
 
-                    var action = Mirador.actions.setCanvas('known-window-id', canvasId)
+                    if (canvasId) {
+                    var action = Mirador.actions.setCanvas('known-window-id', canvasId);
                     miradorInstance.store.dispatch(action);
+                    }
                     
                 });
                 document.querySelector("#addToDesk").addEventListener("click", function() {
                     redirectToTranscription()
                 })
             });
+        </script>
+
+        <!-- Bootstrap dropdown to filter map markers by manuscript type -->
+        <script>
+        document.querySelectorAll(".map-type-filter").forEach(item => {
+            item.addEventListener("click", function () {
+
+            const type = this.dataset.type;  // all, full, fragment, excerpt, separate-transmission, not-specified
+
+            // Update dropdown label text
+            const dropdown = document.getElementById("mapTypeFilterDropdown");
+            const newDE = this.querySelector('[lang="de"]').textContent;
+            const newEN = this.querySelector('[lang="en"]').textContent;
+
+            dropdown.innerHTML =
+                `<span lang="de">Anzeige: ${newDE}</span>
+                <span lang="en">Show: ${newEN}</span>`;
+
+            // Call the global filter function defined in map-typeMarker.js
+            if (typeof applyTypeFilter === "function") {
+                applyTypeFilter(type);
+            } else {
+                console.warn("applyTypeFilter is not defined yet.");
+            }
+
+            // Re-run language visibility
+            if (typeof checkLanguage === "function") {
+                checkLanguage();
+            }
+            });
+        });
         </script>
 </html>
