@@ -31,6 +31,8 @@
             <script src="../js/bdd_mss_list.js"></script>
         </head>
         <body>
+            
+            <div id="access-placeholder"></div>
             <div id="navbar-placeholder"></div>
 
             <div class="back-button ps-4 mt-5">
@@ -175,32 +177,9 @@
                                                         <a id="webResourceKatalogisat" href="" target="_blank" class="btn btn-outline-primary"><span lang="de">Katalogisat</span><span lang="en">Catalogue entry</span></a>
                                                         <div class="btn-group dropup" role="group">
                                                             <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <span lang="de">XML-Datei</span><span lang="en">XML file</span>
+                                                                <span lang="de">XML herunterladen</span><span lang="en">Download XML</span>
                                                             </button>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 00</span><span lang="en">Book 00</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank"><span lang="de">Buch 01</span><span lang="en">Book 01</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 02</span><span lang="en">Book 02</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 03</span><span lang="en">Book 03</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 04</span><span lang="en">Book 04</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 05</span><span lang="en">Book 05</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank"><span lang="de">Buch 06</span><span lang="en">Book 06</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank"><span lang="de">Buch 07</span><span lang="en">Book 07</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 08</span><span lang="en">Book 08</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 09</span><span lang="en">Book 09</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 10</span><span lang="en">Book 10</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 11</span><span lang="en">Book 11</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 12</span><span lang="en">Book 12</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank"><span lang="de">Buch 13</span><span lang="en">Book 13</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 14</span><span lang="en">Book 14</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 15</span><span lang="en">Book 15</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 16</span><span lang="en">Book 16</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 17</span><span lang="en">Book 17</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 18</span><span lang="en">Book 18</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 19</span><span lang="en">Book 19</span></a></li>
-                                                                <li><a class="dropdown-item" href="" target="_blank" hidden><span lang="de">Buch 20</span><span lang="en">Book 20</span></a></li>
-                                                            
-                                                            </ul>
+                                                            <ul class="dropdown-menu" id="xml-file-dropdown"></ul>
                                                         </div>
                                                         </div>
                                                 </div>
@@ -369,6 +348,10 @@
                     if (typeof checkLanguage === "function") checkLanguage();
                     return;
                     }
+
+
+
+
 
                 if (!ms || !window.BDD_PATHS) {
                 console.error("Missing ms or BDD_PATHS", document_id);
@@ -562,20 +545,52 @@
                     
                     // Books available (from BDD_MSS)
                     const allBooks = Array.from({ length: 21 }, (_, i) => String(i).padStart(2, "0"));
-                    const availableBooks = Array.isArray(ms.books) ? ms.books : []; // e.g. ["01","06","07","13"]
+                    const availableBooks = Array.isArray(ms.books) ? ms.books : [];
 
-                    // 1) XML dropdown links + visibility
-                    for (let i = 0; i < allBooks.length; i++) {
-                    const bookN = allBooks[i];
-                    const a = document.querySelector(`#collapseWebressourcen li:nth-child(${i+1}) a`);
-                    if (!a) continue;
+                    
+                   // 1) XML dropdown (build dynamically from ms.books)
+                    const xmlUl = document.getElementById("xml-file-dropdown");
+                    xmlUl.innerHTML = "";
 
-                    // always set href (safe even if hidden)
-                    a.href = window.BDD_PATHS.bookXml(ms, bookN, { prefer });
-
-                    // show only if available
-                    a.hidden = !availableBooks.includes(bookN);
+                    if (!availableBooks.length) {
+                        const li = document.createElement("li");
+                        const a = document.createElement("a");
+                        a.className = "dropdown-item disabled";
+                        a.href = "#";
+                        a.setAttribute("aria-disabled", "true");
+                        a.innerHTML = `<span lang="de">Keine XML-Dateien verfügbar</span><span lang="en">No XML files available</span>`;
+                        li.appendChild(a);
+                        xmlUl.appendChild(li);
+                    } else {
+                        availableBooks.forEach(bookN => {
+                            const li = document.createElement("li");
+                            const a = document.createElement("a");
+                            a.className = "dropdown-item";
+                            a.target = "_blank";
+                            a.href = window.BDD_PATHS.bookXml(ms, bookN);
+                            a.setAttribute("download", "");
+                            a.innerHTML = `<span lang="de">Buch ${bookN}</span><span lang="en">Book ${bookN}</span>`;
+                            li.appendChild(a);
+                            xmlUl.appendChild(li);
+                        });
                     }
+
+                    // Add msdesc.xml
+                    const liDesc = document.createElement("li");
+                    const aDesc = document.createElement("a");
+                    aDesc.className = "dropdown-item";
+                    aDesc.target = "_blank";
+                    
+                    aDesc.href = window.BDD_PATHS.msdesc(ms);
+                    aDesc.setAttribute("download", "");
+                    
+                    aDesc.href = window.BDD_PATHS.msdesc(ms);
+                    aDesc.setAttribute("download", ""); // attempt download
+                    aDesc.innerHTML = `<span lang="de">Handschriftenbeschreibung</span><span lang="en">Manuscript description</span>`;
+                    liDesc.appendChild(aDesc);
+                    xmlUl.appendChild(liDesc);
+
+                    
 
                     // 2) "Select a book" dropdown: show only available
                     const selector = document.querySelector("#book-selector");
@@ -619,6 +634,90 @@
                 }
             }
 
+            
+
+            
+
+//Stand: 12.05.2025 - Function to handle message errors when Mirador doesn't work due to other website issue. Still in test phase
+/*function initializeMirador(doc_id) {
+  const doc_sigle = {
+    'F': '../data/manifests/frankfurt-ub-b-50-manifest.json',
+    'Va2': '../data/manifests/vatican-bav-pl-585-manifest.json',
+    'Va3': '../data/manifests/vatican-bav-pl-586-manifest.json',
+    'B': '../data/manifests/bamberg-sb-c-6.json',
+    'K': '../data/manifests/koeln-edd-119-manifest.json'
+  };
+
+  const manifestUrl = doc_sigle[doc_id];
+
+  // Show Bootstrap 5 alert
+  function showCustomError(message) {
+    const container = document.getElementById('mirador-singleMS');
+    if (container && !document.getElementById('mirador-error-alert')) {
+      const alertDiv = document.createElement('div');
+      alertDiv.className = 'alert alert-warning alert-dismissible fade show';
+      alertDiv.role = 'alert';
+      alertDiv.id = 'mirador-error-alert';
+      alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      `;
+      container.prepend(alertDiv);
+    }
+  }
+
+  // Check if manifest is reachable before loading Mirador
+  fetch(manifestUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Manifest not reachable');
+      return response.json();
+    })
+    .then(() => {
+      miradorInstance = Mirador.viewer({
+        id: "mirador-singleMS",
+        language: 'de',
+        window: {
+          allowClose: false,
+          defaultView: 'single',
+          highlightAllAnnotations: true,
+          panels: {
+            info: true,
+            attribution: true,
+            canvas: true,
+            annotations: true,
+            search: true,
+            layers: true
+          },
+          views: [
+            { key: 'single', behaviors: ['individuals'] },
+            { key: 'book', behaviors: ['paged'] }
+          ]
+        },
+        windows: [{
+          id: 'known-window-id',
+          manifestId: manifestUrl,
+          canvasId: ''
+        }],
+        thumbnails: {
+          preferredFormats: ['jpg', 'png', 'webp', 'tif']
+        },
+        thumbnailNavigation: {
+          defaultPosition: 'far-bottom',
+          displaySettings: true
+        },
+        catalog: [
+          { sigle: 'F', manifestId: '../data/manifests/frankfurt-ub-b-50-manifest.json' },
+          { sigle: 'Va2', manifestId: '../data/manifests/vatican-bav-pl-585-manifest.json' },
+          { sigle: 'Va3', manifestId: '../data/manifests/vatican-bav-pl-586-manifest.json' },
+          { sigle: 'B', manifestId: '../data/manifests/bamberg-sb-c-6.json' },
+          { sigle: 'K', manifestId: '../data/manifests/koeln-edd-119-manifest.json' }
+        ]
+      });
+    })
+    .catch(() => {
+      showCustomError('Die Bilder dieses Manuskripts konnten nicht geladen werden, da eine externe Quelle momentan nicht erreichbar ist.');
+    });
+}*/
 
 function initializeMirador(doc_id) {
   const ms = (typeof getMsBySigle === "function") ? getMsBySigle(doc_id) : null;
@@ -667,9 +766,11 @@ function initializeMirador(doc_id) {
       });
     })
     .catch(() => {
-      // keep your Bootstrap alert code as-is
     });
 }
+
+
+
             document.addEventListener("DOMContentLoaded", function() {                
                 var selectorContainer = document.querySelector("#book-selector").parentNode;
                 document.querySelector("#book-selector").addEventListener("change", async function() {
