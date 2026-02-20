@@ -22,7 +22,7 @@
                 <sourceDesc>
                     <msDesc xml:id="oxford-sjc-125-msdesc" type="separate-transmission">
                         <msIdentifier xml:id="oxford-sjc-125-ident">
-                        <repository ref="https://www.sjc.ox.ac.uk/">[bibl-name]<location>
+                        <repository ref="https://www.sjc.ox.ac.uk/">St. John’s College<location>
                             <geo>51.7560726353516, -1.258985953591934</geo>
                             </location> 
                             <settlement ref="https://www.wikidata.org/wiki/Q34217">Oxford</settlement>
@@ -32,7 +32,7 @@
                             <idno type="shelfmark">125</idno>
                         </collection>
                         <msName type="full">Oxford, St. John’s College, 125</msName>
-                        <msName type="sigle">Ox</msName>
+                        <msName type="sigle">Ox<g type="sub">i</g></msName>
                     </msIdentifier>
 
                         <history>
@@ -45,7 +45,7 @@
                             <surrogates> 
                                 <bibl type="digi"> 
                                     <title xml:lang="ger">Digitalisat</title>
-                                    <ref></ref>
+                                    <ref/>
                                 </bibl> 
                                 <bibl type="cat"> 
                                     <title xml:lang="ger">Katalogisat</title>

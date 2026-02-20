@@ -1,5 +1,10 @@
 window.BDD_MSS = [
   {
+    sigle: "Ad",
+    msId: "adelaide-slsa-b1580485",
+    kind: "additional"
+  },
+  {
     sigle: "An",
     msId: "angers-mt-368",
     kind: "additional"
@@ -57,6 +62,11 @@ window.BDD_MSS = [
   {
     sigle: "Co",
     msId: "cortona-bc-75",
+    kind: "additional"
+  },
+  {
+    sigle: "Dr",
+    msId: "dresden-slub-a-118",
     kind: "additional"
   },
   {
@@ -171,6 +181,11 @@ window.BDD_MSS = [
     kind: "additional"
   },
   {
+    sigle: "Lo1",
+    msId: "london-bl-add-11440",
+    kind: "additional"
+  },
+  {
     sigle: "Lo2",
     msId: "london-bl-add-18371",
     kind: "additional"
@@ -271,6 +286,11 @@ window.BDD_MSS = [
     kind: "additional"
   }, 
   {
+    sigle: "Mu5",
+    msId: "muenchen-bsb-clm-28911",
+    kind: "additional"
+  }, 
+  {
     sigle: "Mu4",
     msId: "muenchen-ub-2-292",
     kind: "additional"
@@ -310,6 +330,11 @@ window.BDD_MSS = [
     msId: "novara-bc-17",
     kind: "additional"
   },
+  {
+    sigle: "Ol",
+    msId: "olomouc-sa-uk-202",
+    kind: "additional"
+  }, 
   {
     sigle: "Or",
     msId: "orleans-mm-229",
@@ -371,13 +396,23 @@ window.BDD_MSS = [
     kind: "additional"
   },
   {
-    sigle: "P10",
-    msId: "paris-bnf-lat-8922",
+    sigle: "P12",
+    msId: "paris-bnf-lat-12270",
+    kind: "additional"
+  },
+  {
+    sigle: "P13",
+    msId: "paris-bnf-lat-12315",
     kind: "additional"
   },
   {
     sigle: "P11",
     msId: "paris-bn-lat-4283",
+    kind: "additional"
+  },
+  {
+    sigle: "P10",
+    msId: "paris-bnf-lat-8922",
     kind: "additional"
   },
   {
@@ -451,8 +486,18 @@ window.BDD_MSS = [
     kind: "additional"
   },
   {
+    sigle: "Spb",
+    msId: "sanktpetersburg-rnb-qv-II-4",
+    kind: "additional"
+  },
+  {
     sigle: "Si",
     msId: "siena-as-a-191-82",
+    kind: "additional"
+  },
+  {
+    sigle: "Sp",
+    msId: "sopron-bdeg-frag-68",
     kind: "additional"
   },
   {
@@ -551,6 +596,11 @@ window.BDD_MSS = [
     kind: "additional"
   },
   {
+    sigle: "Va16",
+    msId: "vatikan-bav-vat-lat-4772",
+    kind: "additional"
+  },
+  {
     sigle: "Vc1",
     msId: "vercelli-bc-XLI",
     kind: "additional"
@@ -568,6 +618,11 @@ window.BDD_MSS = [
   {
     sigle: "Vi2",
     msId: "vic-ac",
+    kind: "additional"
+  },
+  {
+    sigle: "W",
+    msId: "wien-onb-cod-354",
     kind: "additional"
   },
   {

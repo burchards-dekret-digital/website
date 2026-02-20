@@ -1,0 +1,63 @@
+<?xml-model href="https://burchard.adwmainz.net/exist/webdav/db/collections/bdd/data/schemata/bdd-trans-work.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-dresden-slub-a-118">
+<teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title xml:lang="ger">Dresden, Sächsische Landesbibliothek – Staats- und Universitätsbibliothek, A 118</title>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                    <availability>
+                        <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                            <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde digitalisiert durch
+                                das Projekt Burchards Dekret Digital und steht unter einer <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                                Commons Lizenz: Namensnennung 4.0 International (CC BY 4.0)</ref>.</p>
+                            <p xml:lang="en">This work or content, respectively, was digitized by the
+                                Burchards Dekret Digital and is licensed under the terms of a <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                        </licence>
+                    </availability>
+                    <date when="2026-02-20" xml:lang="en">Date of publication: 20.02.2026</date>
+                    <date when="2026-02-20" xml:lang="ger">Publiziert am 20.02.2026</date>
+                </publicationStmt>
+                <sourceDesc>
+                    <msDesc xml:id="dresden-slub-a-118-msdesc" type="separate-transmission">
+                        <msIdentifier xml:id="dresden-slub-a-118-ident">
+                        <repository ref="https://www.slub-dresden.de/">Sächsische Landesbibliothek – Staats- und Universitätsbibliothek<location>
+                            <geo>51.0286249,13.7344421</geo>
+                            </location> 
+                            <settlement ref="https://www.wikidata.org/wiki/Q1731">Dresden</settlement>
+                            <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country>
+                        </repository>
+                        <collection>
+                            <idno type="shelfmark">A 118</idno>
+                        </collection>
+                        <msName type="full">Dresden, Sächsische Landesbibliothek – Staats- und Universitätsbibliothek, A 118</msName>
+                        <msName type="sigle">Dr<g type="sub">i</g></msName>
+                    </msIdentifier>
+
+                        <history>
+                            <origin>
+                                <origDate notAfter="1199" notBefore="1100">12. Jahrhundert</origDate>
+                            </origin>
+                        </history>
+
+                        <additional>
+                            <surrogates> 
+                                <bibl type="digi"> 
+                                    <title xml:lang="ger">Digitalisat</title>
+                                    <ref/>
+                                </bibl> 
+                                <bibl type="cat"> 
+                                    <title xml:lang="ger">Katalogisat</title>
+                                    <ref>https://bilder.manuscripta-mediaevalia.de/hs/katalogseiten/HSK0712_c0053_jpg.htm</ref>
+                                </bibl> 
+                            </surrogates>     
+                        </additional>
+                    </msDesc>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    <text>
+        <body xml:lang=""><p>test</p></body>
+    </text>
+</TEI>

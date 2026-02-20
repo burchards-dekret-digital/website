@@ -32,7 +32,7 @@
                             <idno type="shelfmark"/>
                         </collection>
                         <msName type="full">San Miniato, Biblioteca Comunale</msName>
-                        <msName type="sigle">Sm</msName>
+                        <msName type="sigle">Sm<g type="sub">f</g></msName>
                     </msIdentifier>
 
                         <history>

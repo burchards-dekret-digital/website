@@ -32,7 +32,7 @@
                             <idno type="shelfmark">Novi 404.5 (8)</idno>
                         </collection>
                         <msName type="full">Wolfenbüttel, Herzog August Bibliothek, Novi 404.5 (8)</msName>
-                        <msName type="sigle">Wo1</msName>
+                        <msName type="sigle">Wo<g type="sub">f1</g></msName>
                     </msIdentifier>
 
                         <history>

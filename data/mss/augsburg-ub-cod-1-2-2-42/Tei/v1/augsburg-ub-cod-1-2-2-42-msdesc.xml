@@ -32,7 +32,7 @@
                             <idno type="shelfmark">Cod. 1.2.2° 42</idno>
                         </collection>
                         <msName type="full">Augsburg, Universitätsbibliothek, Cod. 1.2.2° 42</msName>
-                        <msName type="sigle">Au</msName>
+                        <msName type="sigle">Au<g type="sub">f</g></msName>
                     </msIdentifier>
 
                         <history>
