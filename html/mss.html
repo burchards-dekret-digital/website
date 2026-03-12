@@ -37,11 +37,26 @@
             max-height: 600px;  /* choose height you prefer */
             overflow-y: auto;
         }
-        #header {
+        /*#header {
             position: sticky;
             top: 0;
             background: white;
             z-index: 5;
+        }*/
+        .mss-table thead th {
+            position: sticky;
+            background: white;
+            z-index: 5;
+        }
+
+        /* First header row (column titles) */
+        .mss-table thead:nth-of-type(1) th {
+            top: 0;
+        }
+
+        /* Second header row (search + sort buttons) */
+        .mss-table thead:nth-of-type(2) th {
+            top: 42px; /* height of first header row */
         }
         
         td sub { font-size: 0.9em;}
@@ -100,6 +115,8 @@
 
 
     <body>
+        
+      <!--<div id="access-placeholder"></div>-->
         <div id="navbar-placeholder"></div>
         <div class="back-button ps-4 mt-5">
           <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
@@ -252,7 +269,7 @@
                         <input type="text" class="form-control" id="mss-filter-1" onkeyup="filterMss('1')" placeholder="Search..."/>
                       </th>
                       <th class="mss-filter-table" scope="col">
-                        <input type="text" class="form-control text-center" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Filter"/>
+                        <input type="text" class="form-control text-center" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Search..."/>
                       </th>
                       <th class="mss-filter-table" scope="col">
                         <!--<input type="text" class="form-control" id="mss-filter-2" onkeyup="filterMss('2')" placeholder="Filter"/>-->
@@ -262,6 +279,20 @@
                       </th>
                       <th class="mss-filter-table" scope="col">
                         <!--<input type="text" class="form-control" id="mss-filter-4" onkeyup="filterMss('4')" placeholder="Filter"/>-->
+                        
+                        <div class="d-flex gap-2">
+                          <button id="sortDateAsc" type="button" class="btn btn-outline-secondary btn-sm" title="Sort by date ascending" aria-label="Sort by date ascending">
+                            <i class="bi bi-sort-numeric-down"></i>
+                          </button>
+
+                          <button id="sortDateDesc" type="button" class="btn btn-outline-secondary btn-sm" title="Sort by date descending" aria-label="Sort by date descending">
+                            <i class="bi bi-sort-numeric-up-alt"></i>
+                          </button>
+
+                          <button id="sortDateReset" type="button" class="btn btn-outline-secondary btn-sm" title="Reset sorting" aria-label="Reset sorting">
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                          </button>
+                        </div>
                       </th>
                       <th class="mss-filter-table" scope="col"></th>
                     </tr>
@@ -374,6 +405,7 @@
         async function fetchDataAndPopulateTable() {
           try {
             const list_ms = window.BDD_MSS || [];
+            
             for (const ms of list_ms) {
                 const response = await fetch(msPath(ms), { cache: "no-cache" });
                 if (response.ok) {
@@ -462,6 +494,7 @@
                         notBefore = origDateElement.getAttribute('notBefore') || "";
                         notAfter  = origDateElement.getAttribute('notAfter')  || "";
 
+                        /*
                         // 1) both attributes exist AND are equal → show single value
                         if (notBefore !== "" && notBefore === notAfter) {
                             dateDisplay = `${dateText} (${notBefore})`;
@@ -473,8 +506,10 @@
                         // 3) fallback if no attributes
                         } else {
                             dateDisplay = dateText;
-                        }
+                        }*/
+                       dateDisplay = dateText;
                     }
+
             
                     const tableBody = document.getElementById('table-body');
                     const row = document.createElement('tr');
@@ -566,7 +601,9 @@
                     row.appendChild(cell5);
                     row.appendChild(cell6);
                     cell6.classList.add("text-center");
-            
+                    
+                    row.dataset.originalIndex = tableBody.children.length;
+
                     tableBody.appendChild(row);
                 } else {
                     console.error('Failed to fetch XML file.');
@@ -757,6 +794,91 @@
 
     applyAllMssFilters();
   }
+
+  // Sort rows by date bounds (dataset.notBefore / dataset.notAfter)
+  function sortMssByDate(direction) {
+    const tbody = document.getElementById("table-body");
+    if (!tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    function normBounds(row) {
+      let nb = toIntOrNull(row.dataset.notBefore);
+      let na = toIntOrNull(row.dataset.notAfter);
+
+      // If missing one bound, treat it as the other bound
+      if (nb === null && na !== null) nb = na;
+      if (na === null && nb !== null) na = nb;
+
+      return { nb, na };
+    }
+
+    function score(row) {
+      const { nb, na } = normBounds(row);
+
+      // Put “unknown date” at the end in both directions
+      if (nb === null && na === null) {
+        return direction === "asc" ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
+      }
+
+      // Primary: notBefore (start), Secondary: notAfter (end)
+      // If one is still null (should be rare), push it to the end
+      const start = nb !== null ? nb : (direction === "asc" ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY);
+      const end   = na !== null ? na : (direction === "asc" ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY);
+
+      // Combine into tuple-like sortable score
+      return { start, end };
+    }
+
+    rows.sort((a, b) => {
+      const A = score(a);
+      const B = score(b);
+
+      // Handle Infinity/tuple
+      if (typeof A === "number" || typeof B === "number") {
+        return direction === "asc" ? (A - B) : (B - A);
+      }
+
+      if (A.start !== B.start) return direction === "asc" ? (A.start - B.start) : (B.start - A.start);
+      if (A.end !== B.end)     return direction === "asc" ? (A.end - B.end)     : (B.end - A.end);
+
+      return 0;
+    });
+
+    // Re-append in sorted order
+    rows.forEach(r => tbody.appendChild(r));
+
+    // keep language toggles correct
+    if (typeof checkLanguage === "function") checkLanguage();
+  }
+
+  //Reset sorting
+  function resetMssSorting() {
+    const tbody = document.getElementById("table-body");
+    if (!tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    rows.sort((a, b) => {
+      return parseInt(a.dataset.originalIndex, 10) -
+            parseInt(b.dataset.originalIndex, 10);
+    });
+
+    rows.forEach(r => tbody.appendChild(r));
+
+    if (typeof checkLanguage === "function") checkLanguage();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const ascBtn = document.getElementById("sortDateAsc");
+    const descBtn = document.getElementById("sortDateDesc");
+    const resetBtn = document.getElementById("sortDateReset");
+
+    if (ascBtn) ascBtn.addEventListener("click", () => sortMssByDate("asc"));
+    if (descBtn) descBtn.addEventListener("click", () => sortMssByDate("desc"));
+    if (resetBtn) resetBtn.addEventListener("click", resetMssSorting);
+  });
+
 
   //year-range slider
   function initYearRangeFilter() {

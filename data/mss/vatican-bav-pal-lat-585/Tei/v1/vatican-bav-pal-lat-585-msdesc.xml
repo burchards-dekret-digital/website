@@ -97,27 +97,21 @@
                     <physDesc>
                         <objectDesc form="codex">
                             <supportDesc material="parchment">
-                                <extent>
-                                    <dimensions type="leaf">
-                                        <height quantity="34" unit="cm"/>
-                                        <width quantity="26" unit="cm"/>
-                                    </dimensions>
-                                    <measure unit="leaves" quantity="330"/>
-                                </extent>
+                                <extent> <dimensions type="leaf">
+                                    <height quantity="34" unit="cm"/>
+                                    <width quantity="26" unit="cm"/>
+                                    </dimensions> <measure unit="leaves" quantity="330"/> </extent>
                                 <condition>Das 5. Buch auf den Lagen XXXII (fol. 285–292) und die Lagen XXXIII (fol. 293–298) ist falsch eingebunden, sodass die Capitulatio des 5. Buches an dessen Ende steht, nicht an dessen Anfang.</condition>
                             </supportDesc>
-                            
                             <layoutDesc>
                                 <layout columns="2" writtenLines="22"/>
                             </layoutDesc>
                         </objectDesc>
-                        
                         <!-- hand note needs to be inserted after preparring transcription files
                         <handDesc hands="" xml:id="">
                             <summary>Hand A schrieb die beiden Bände zuerst alleine und entspricht dem Hauptschreiber C der Handschrift F.</summary>
                             <handNote xml:id="" script="" medium="" scope="" scribeRef="" source=""/>
                         </handDesc>-->
-                        
                         <scriptDesc>
                             <scriptNote>Karolingische Minuskel</scriptNote>
                         </scriptDesc>
@@ -129,7 +123,7 @@
                             <origPlace ref="https://www.wikidata.org/wiki/Q3852">Worms<location>
                                 <geo>49.630167, 8.359789</geo>
                                 </location> <region ref="https://www.wikidata.org/wiki/Q1200">Rheinland-Pfalz</region> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </origPlace>
-                            <origDate notBefore="1000" notAfter="1025">1. Viertel des 11. Jahrhunderts</origDate>
+                            <origDate notBefore="1000" notAfter="1025">11. Jahrhundert, 1. Viertel</origDate>
                         </origin>
                         <provenance><name ref="https://www.ub.uni-heidelberg.de/" type="org">Stiftsbibliothek Heiliggeistkirche</name> <location>
                             <geo>49.4093582,8.694724</geo>

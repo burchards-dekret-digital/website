@@ -37,7 +37,7 @@
 
                         <history>
                             <origin>
-                                <origDate notAfter="1099" notBefore="1050">2. Hälfte 11. Jahrhundert</origDate>
+                                <origDate notAfter="1099" notBefore="1050">11. Jahrhundert, 2. Hälfte</origDate>
                             </origin>
                         </history>
 
@@ -45,11 +45,11 @@
                             <surrogates> 
                                 <bibl type="digi"> 
                                     <title xml:lang="ger">Digitalisat</title>
-                                    <ref></ref>
+                                    <ref/>
                                 </bibl> 
                                 <bibl type="cat"> 
                                     <title xml:lang="ger">Katalogisat</title>
-                                    <ref></ref>
+                                    <ref/>
                                 </bibl> 
                             </surrogates>     
                         </additional>

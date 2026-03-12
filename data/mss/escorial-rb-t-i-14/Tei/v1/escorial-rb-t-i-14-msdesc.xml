@@ -36,14 +36,12 @@
                     </msIdentifier>
 
                         <history>
-                            <origin>
-                                <origDate notAfter="1100" notBefore="1100">Ende des 11. oder Anfang des 12. Jahrhunderts</origDate>
-                            </origin>
+                            <origin> <origDate notAfter="1120" notBefore="1100">11. Jahrhundert, Ende -
+                            12. Jahrhundert, Anfang</origDate> </origin>
                         </history>
 
                         <additional>
-                            <surrogates> <bibl type="digi"> <title xml:lang="ger"
-                            >Digitalisat</title>
+                            <surrogates> <bibl type="digi"> <title xml:lang="ger">Digitalisat</title>
                             <ref>https://rbme.patrimonionacional.es/s/rbme/item/14104#?xywh=-1852%2C-1%2C5358%2C2338&amp;cv=3</ref>
                             </bibl> <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
                             <ref>https://rbmecat.patrimonionacional.es/cgi-bin/koha/opac-detail.pl?biblionumber=2157</ref>
