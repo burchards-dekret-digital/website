@@ -1038,8 +1038,8 @@
                     <div n="7" hand="#koeln-edd-c-119-h08" type="chapter" xml:id="koeln-edd-c-119-13-con-007" sameAs="koeln-edd-c-119-13-toc-007" corresp="../frankfurt-ub-b-50/frankfurt-ub-b-50-13.xml#frankfurt-ub-b-50-13-con-007 ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-13.xml#vatican-bav-pal-lat-586-13-con-007 ../bamberg-sb-c-6/bamberg-sb-c-6-13.xml#bamberg-sb-c-6-13-con-007">
                         <head type="chapter-title"><label type="chapter-number" place="margin left" facs="135,2450,742,282" n="7" xml:id="K_0244_chapter_count_004"><num value="7"><hi rend="color:red">vii</hi></num></label> <hi rend="color:red">De ieiunio <lb n="23" facs="1050,2606,486,162" xml:id="K_0244_column_1_l_23"/><choice><abbr>Rogationu<g ref="#char-0304">̄</g></abbr><expan>Rogationum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
                         <lb n="24" facs="1019,2701,991,149" xml:id="K_0244_column_1_l_24"/>
-                        <note type="inscription" hand="#koeln-edd-c-119-hunidentified" place="margin left" anchored="false" facs="135,2702,742,334" xml:id="K_0244_inscription_04"><lb xml:id="K_0244_inscription_04_l_01" n="1" facs="463,3716,710,150"/>Ex
-                            <choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan> </choice><sic>aureliano</sic><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="6" type="chapter-number">vi</num></note>
+                        <note type="inscription" hand="#koeln-edd-c-119-hunidentified" place="margin left" anchored="false" facs="135,2702,742,334" xml:id="K_0244_inscription_04"><lb xml:id="K_0244_inscription_04_l_01" n="1" facs="463,3716,710,150"/>Ex <choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan>
+                            </choice> <sic>aureliano</sic><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="6" type="chapter-number">vi</num></note>
                         <p n="1"><choice><abbr><hi rend="color:red initial">C</hi>u<g ref="#char-0304">̄</g></abbr><expan><hi rend="color:red initial">C</hi>um</expan> </choice><choice><abbr>exigentib<g ref="#char-f1ac"></g></abbr><expan>exigentibus</expan></choice> peccatis<pc type="distinctio"><g ref="#char-f1f8"></g></pc><choice><abbr>galliaru<g ref="#char-0304">̄</g></abbr> <expan>galliarum</expan></choice> po<lb n="25" facs="981,2800,993,144" break="no" xml:id="K_0244_column_1_l_25"/>puli <choice><abbr>lupo<g ref="#char-a75D">ꝝ</g></abbr><expan>luporum</expan></choice> rabie <choice><abbr>acrit<g ref="#char-0305">̅</g></abbr><expan>acriter</expan></choice>
                             <choice><abbr>interime<lb n="26" facs="987,2876,1038,157" break="no" xml:id="K_0244_column_1_l_26"/>rent<g ref="#char-f1c2"></g></abbr><expan>interime<lb n="26" facs="987,2876,1038,157" break="no" xml:id="K_0244_column_1_l_26_expan"/>rentur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> nec hui<add place="above" type="contemporary">v</add>s
                             flagelli aliquod <choice><abbr>re<lb n="27" facs="980,2972,1024,161" break="no" xml:id="K_0244_column_1_l_27"/>mediu<g ref="#char-0304">̄</g></abbr><expan>re<lb n="27" facs="980,2972,1024,161" break="no" xml:id="K_0244_column_1_l_27_expan"/>medium</expan></choice> inueniri
@@ -1095,8 +1095,29 @@
                             ieiunio<pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb n="31" facs="2028,3346,1030,139" xml:id="K_0244_column_2_l_31"/></p>
                     </div>
                     <div n="9" hand="#koeln-edd-c-119-h08" type="chapter" xml:id="koeln-edd-c-119-13-con-009" sameAs="koeln-edd-c-119-13-toc-009" corresp="../frankfurt-ub-b-50/frankfurt-ub-b-50-13.xml#frankfurt-ub-b-50-13-con-009 ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-13.xml#vatican-bav-pal-lat-586-13-con-009 ../bamberg-sb-c-6/bamberg-sb-c-6-13.xml#bamberg-sb-c-6-13-con-009">
-                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="3153,3095,330,464" n="9" xml:id="K_0244_chapter_count_006"><num value="9"><hi rend="color:red">viiii</hi></num></label> <hi rend="color:red">Vt in sabbato <choice><abbr>sc<g ref="#char-0305">̅</g>o</abbr><expan>sancto</expan></choice> <choice><abbr>ieiuniu<g ref="#char-0304">̄</g></abbr><expan>ieiunium</expan></choice> ante <pb n="120r" facs="https://digital.dombibliothek-koeln.de/hs/i3f/v20/284586/full/full/0/default.jpg" corresp="https://digital.dombibliothek-koeln.de/hs/i3f/v20/284343/canvas/284586" ana="../../annotations/koeln-edd-c-119-annotation-284586" xml:id="K_0245"/><fw type="page-header" place="top" facs="1440,342,333,100" xml:id="K_0245_header">De ieiunio<pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a" facs="440,413,1157,3043" xml:id="K_0245_column_1"/><lb n="1" facs="565,469,841,199" xml:id="K_0245_column_1_l_01"/><del rend="erasure">noctis <choice><abbr>initiu<g ref="#char-0304">̄</g></abbr><expan>initium</expan></choice> <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice>
-                            <choice><abbr>soluat<g ref="#char-f1c2"></g></abbr><expan>soluatur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></del></hi></head>
+                        <head type="chapter-title"><label type="chapter-number" place="margin right"
+                            facs="3153,3095,330,464" n="9" xml:id="K_0244_chapter_count_006"><num
+                            value="9"><hi rend="color:red">viiii</hi></num></label> <hi
+                            rend="color:red">Vt in sabbato <choice><abbr>sc<g ref="#char-0305"
+                            >̅</g>o</abbr><expan>sancto</expan></choice> <choice><abbr>ieiuniu<g
+                            ref="#char-0304">̄</g></abbr><expan>ieiunium</expan></choice> ante <pb
+                            n="120r"
+                            facs="https://digital.dombibliothek-koeln.de/hs/i3f/v20/284586/full/full/0/default.jpg"
+                            corresp="https://digital.dombibliothek-koeln.de/hs/i3f/v20/284343/canvas/284586"
+                            ana="../../annotations/koeln-edd-c-119-annotation-284586"
+                            xml:id="K_0245"/><fw type="page-header" place="top"
+                            facs="1440,342,333,100" xml:id="K_0245_header">De ieiunio<pc
+                            type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a"
+                            facs="440,413,1157,3043" xml:id="K_0245_column_1"/><lb n="1"
+                            facs="565,469,841,199" xml:id="K_0245_column_1_l_01"/><subst><del
+                            rend="erasure"/><add type="contemporary" place="overstrike"><hi
+                            rend="color:red">noctis <choice><abbr>initiu<g
+                            ref="#char-0304">̄</g></abbr><expan>initium</expan></choice>
+                            <choice><abbr>n<g ref="#char-0305"
+                            >̅</g></abbr><expan>non</expan></choice> <choice><abbr>soluat<g
+                            ref="#char-f1c2"></g></abbr><expan>soluatur</expan></choice><pc
+                            type="distinctio"><g ref="#char-f1f8"
+                            ></g></pc></hi></add></subst></hi></head>
                         <lb n="2" facs="469,615,1091,146" xml:id="K_0245_column_1_l_02"/>
                         <note type="inscription" hand="#koeln-edd-c-119-hunidentified" place="margin left" anchored="false" facs="19,429,477,463" xml:id="K_0245_inscription_01"><lb xml:id="K_0245_inscription_01_l_01" n="1" facs="165,902,502,150"/>Ex
                             <choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan></choice> arausico<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb xml:id="K_0245_inscription_01_l_02" n="2" facs="197,995,263,150"/><choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <num value="2" type="chapter-number">ii</num></note>
