@@ -1,7 +1,7 @@
 {
     "@context": "http://iiif.io/api/presentation/2/context.json",
     "@type": "sc:Manifest",
-    "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/manifests/bamberg-sb-c-6.json",
+    "@id": "../data/manifests/bamberg-sb-c-6.json",
     "label": "B (Bamberg, SB, Msc.Can.6",
     "metadata": [
         {

@@ -12129,7 +12129,7 @@
             "label": "URN"
         }
     ],
-    "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/manifests/koeln-edd-119-manifest.json",
+    "@id": "../data/manifests/koeln-edd-119-manifest.json",
     "@type": "sc:Manifest",
     "seeAlso": {
         "format": "application/xml",

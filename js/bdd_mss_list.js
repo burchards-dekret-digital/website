@@ -334,7 +334,7 @@ window.BDD_MSS = [
     sigle: "Ol",
     msId: "olomouc-sa-uk-202",
     kind: "additional"
-  }, 
+  },  
   {
     sigle: "Or",
     msId: "orleans-mm-229",

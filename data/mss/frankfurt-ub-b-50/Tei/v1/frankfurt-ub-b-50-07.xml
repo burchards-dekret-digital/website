@@ -63,7 +63,7 @@
                         <span xml:lang="en">Transcription</span>
                     </resp>
                 </respStmt>
-                <respStmt xml:id="LoK">
+                <respStmt xml:id="LoK" ref="https://explore.gnd.network/gnd/172673364">
                     <persName>
                         <forename>Lotte</forename>
                         <surname>Kéry</surname>

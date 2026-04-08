@@ -36,7 +36,7 @@
                         <affiliation>Johannes Gutenberg-Universität Mainz</affiliation>
                     </persName>
                 </principal>
-                <respStmt xml:id="MiS">
+                <respStmt xml:id="MiS" ref="https://orcid.org/0000-0002-2750-1900">
                     <persName instant="false" full="yes"> <forename>Michael</forename>
                         <surname>Schonhardt</surname> <affiliation>TU Darmstadt</affiliation> </persName>
                         <resp><span xml:lang="ger">Transformation in XML und TEI-Schema

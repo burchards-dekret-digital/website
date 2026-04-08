@@ -38,7 +38,7 @@
                     </persName>
                 </principal>
 
-                <respStmt xml:id="MiS">
+                <respStmt xml:id="MiS" ref="https://orcid.org/0000-0002-2750-1900">
                     <persName>
                         <forename>Michael</forename>
                         <surname>Schonhardt</surname>
@@ -57,7 +57,7 @@
                         <span xml:lang="en">Change of hands according to Hoffmann/Pokorny</span>
                     </resp>
                 </respStmt>
-                <respStmt xml:id="CoS">
+                <respStmt xml:id="CoS" ref="https://orcid.org/0009-0008-3104-8804">
                     <persName>
                         <forename>Cornelia</forename>
                         <surname>Scherer</surname>
@@ -76,7 +76,7 @@
                         <span xml:lang="en">Structural markup</span>
                     </resp>
                 </respStmt>
-                <respStmt xml:id="DaG">
+                <respStmt xml:id="DaG" ref="https://orcid.org/0000-0002-9639-7334">
                     <persName>
                         <forename>Daniel</forename>
                         <surname>Gneckow</surname>

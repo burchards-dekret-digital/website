@@ -1,6 +1,6 @@
 {
   "@context" : "http://iiif.io/api/presentation/2/context.json",
-  "@id" : "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/manifests/vatican-bav-pl-585-manifest.json",
+  "@id" : "../data/manifests/vatican-bav-pl-585-manifest.json",
   "@type" : "sc:Manifest",
   "metadata" : [ {
     "label" : "Shelfmark",
@@ -5377,13 +5377,7 @@
       "@id" : "https://digi.vatlib.it/iiif/MSS_Pal.lat.585/canvas/p0173",
       "@type" : "sc:Canvas",
       
-                                              "otherContent": [
-    {
-        "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/tests/annotations/vatican-bav-pal-lat-585/annotation-082r.json",
-        "@type": "sc:AnnotationList",
-        "label": "Annotationen"
-    }],
-      
+                                                    
       
       "label" : "82r",
       "width" : 1782,

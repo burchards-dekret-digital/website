@@ -37,7 +37,7 @@
                         <affiliation>Johannes Gutenberg-Universität Mainz</affiliation>
                     </persName>
                 </principal>
-                <respStmt xml:id="MiS">
+                <respStmt xml:id="MiS" ref="https://orcid.org/0000-0002-2750-1900">
                     <persName>
                         <forename>Michael</forename>
                         <surname>Schonhardt</surname>
@@ -52,7 +52,7 @@
                         <span xml:lang="en">Transformation to XML and TEI schema validation</span>
                     </resp>
                 </respStmt>
-                <respStmt xml:id="CoS">
+                <respStmt xml:id="CoS" ref="https://orcid.org/0009-0008-3104-8804">>
                     <persName>
                         <forename>Cornelia</forename>
                         <surname>Scherer</surname>

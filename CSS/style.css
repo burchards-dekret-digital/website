@@ -266,7 +266,22 @@ li{
     font-size: 13px!important;
 }
 
+/*#mss-table-1{
+    font-family: Jost-Regular;
+    font-size:15px;
+    letter-spacing: 0.5px;
+    line-height: 2;
+    table-layout: fixed;
+    width: 100%;
+}
 
+
+#mss-table-1 { font-family: Jost-Regular;
+    font-size:15px;
+    letter-spacing: 0.5px;
+    line-height: 2; table-layout: fixed; width: 100%; }
+#mss-table-1 td:first-child { white-space: normal; overflow-wrap: anywhere; }
+*/
 #literatureTable {
     font-family: Jost-Regular;
     font-size:15px;
@@ -592,6 +607,19 @@ font-family: Andron-Scriptor-Web;
     #transcription-view-button{display:none;}
     /*#listResources{display:none;}*/
     #welcomeMessage{margin-left: 0px!important; margin-right: 0px!important; margin-bottom: 0px!important;}
+
+     /* WORKSPACE: on mobile hide row 2 view buttons */
+    .resource-panel-item .view-buttons {
+        display: none !important;
+    }
+       /* extra safety: these buttons stay hidden and not clickable */
+    .resource-panel-item .add-transcription-btn,
+    .resource-panel-item .add-structure-btn,
+    .resource-panel-item .mirador-btn,
+    .resource-panel-item .scribe-btn {
+        display: none !important;
+        pointer-events: none !important;
+    }
     .add-transcription-btn{display:none;}
     .mirador-btn{display:none;}
     .mirador-col{display:none;}

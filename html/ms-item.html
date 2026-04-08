@@ -31,7 +31,7 @@
             <script src="../js/bdd_mss_list.js"></script>
         </head>
         <body>
-
+ 
             <div id="navbar-placeholder"></div>
 
             <div class="back-button ps-4 mt-5">
@@ -612,24 +612,21 @@
             //keep track of desktop.html window
             var desktopWindow = null;
 
-            //Redirect to Schreibtisch after clicking the button
+            //Redirect to Workspace after clicking the button
             function redirectToTranscription() {
                 let selectedMs = new URLSearchParams(window.location.search).get('document');
                 let selectedBook = document.querySelector("#book-selector").value;
-                let selected = selectedMs + "-" + selectedBook
-                if (selected) {
-                    if (desktopWindow && !desktopWindow.closed) {
-                        // if the window is already open
-                        desktopWindow.focus();
-                        // send message to desktop.html
-                        desktopWindow.postMessage(selected, "*");
-                    } else {
-                        // if not open, open a new one
-                        desktopWindow = window.open('workspace.html', '_blank');
-                        desktopWindow.onload = function() {
-                            desktopWindow.postMessage(selected, "*");
-                        };
-                    }
+
+                if (!selectedMs || !selectedBook) return;
+
+                let selected = selectedMs + "-" + selectedBook;
+                let targetUrl = 'workspace.html?add=' + encodeURIComponent(selected);
+
+                if (desktopWindow && !desktopWindow.closed) {
+                    desktopWindow.location.href = targetUrl;
+                    desktopWindow.focus();
+                } else {
+                    desktopWindow = window.open(targetUrl, '_blank');
                 }
             }
 

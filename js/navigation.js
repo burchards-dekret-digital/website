@@ -24,6 +24,11 @@ $(function(){
         $("#footer-placeholder").load("footer.html", function(){checkLanguage()});
 });
 
+//Access screen
+$(function(){
+        $("#access-placeholder").load("access.html", function(){checkLanguage()});
+});
+
 //back button
 $(".hBack").on("click", function(e){
     e.preventDefault();

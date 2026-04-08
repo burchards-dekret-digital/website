@@ -12,6 +12,7 @@
       
       <link href="../CSS/bootstrap.min.css" rel="stylesheet">
       <script src="../js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
       <script src="../js/mirador-3.3.0.min.js"></script>
       
@@ -39,42 +40,160 @@
               margin-right: 10px; /* Adjust margin between panels */
           }
 
-          .resource-panel-item.only-child {
-              flex: 1; /* Expand the single panel to fill the space */
+                  
+          .resource-panel-item.quarter-width {
+            flex-basis: 25%;
+            width: 25%;
           }
-
+          .resource-panel-item.half-width {
+            flex-basis: 50%;
+              width: 50%;
+          }
+          .resource-panel-item.three-quarter-width {
+            flex-basis: 75%;
+              width: 75%;
+          }
           .resource-panel-item.full-width {
+            flex-basis: 100%;
               width: 100%;
           }
 
-          .resource-panel-item.three-quarter-width {
-              width: 75%;
+          /* Expanded panel mode */
+          .resource-panel-item.panel-expanded {
+            flex-basis: 100% !important;
+            width: 100% !important;
           }
 
-          .resource-panel-item.half-width {
-              width: 50%;
+           
+          /* view buttons layout */
+          .view-buttons{
+            flex-wrap: wrap; /* safe if header is tight */
           }
 
+          /* icon+label buttons */
+          .view-btn{
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            white-space: nowrap;
+            padding: .25rem .5rem;
+          }
+
+          /* icon size */
+          .view-btn i{
+            font-size: 1rem;
+            line-height: 1;
+          }
+
+          /* Default: hide labels (quarter width panels) */
+          .view-btn .view-label{
+            display: none;
+          }
+
+          /* Show labels once panel is >= half width, including expanded panels */
+          .resource-panel-item.half-width .view-btn .view-label,
+          .resource-panel-item.three-quarter-width .view-btn .view-label,
+          .resource-panel-item.full-width .view-btn .view-label,
+          .resource-panel-item.panel-expanded .view-btn .view-label{
+            display: inline;
+          }
+
+          /* Optional: a bit tighter when icons-only */
+          .resource-panel-item.quarter-width .view-btn{
+            padding: .25rem .35rem;
+          }
+
+          .panel-close-row{
+              display:flex;
+              justify-content:space-between;
+              align-items:top;
+              padding:4px 8px;
+              min-height: 70px;
+            }
+
+          
+          .kebab-btn::after{
+            content: "";
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 6px;
+            height: 6px;
+            background: #dc3545;
+            border-radius: 50%;
+          }
+
+          
           .btn-outline-primary {
           background-color: transparent;
           color: #0d6efd;
           border-color: #0d6efd;
           }
+          .expand-panel-btn,
+          .kebab-btn,
+          .move-left,
+          .move-right{
+            border: 1px solid #dee2e6;
+          }
 
-          .move-left, .move-right {
-              transition: all 0.3s; /* Add transition for smooth effect */
+
+          /* right-side actions */
+          .panel-actions{
+            flex-wrap: nowrap;
           }
-          .move-left:hover, .move-right:hover {
-              transform: scale(1.1); /* Make the icon slightly bigger on hover */
-              color: blue; /* Change the color to blue on hover */
-              cursor: pointer; /* Change cursor to pointer on hover */
-              filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.2));
+
+          /* compact layout for narrow panels
+          .resource-panel-item.quarter-width .panel-actions{
+            flex-wrap: wrap;
+            gap: .25rem !important;
+            justify-content: flex-end;
+            max-width: 92px;
+          }*/
+          .resource-panel-item.quarter-width .panel-actions{
+            flex-wrap: nowrap;
+            gap: .35rem !important;
+            justify-content: flex-end;
+            max-width: none;
           }
+
+          /* make buttons a bit tighter in quarter-width panels */
+          .resource-panel-item.quarter-width .panel-actions .btn,
+          .resource-panel-item.quarter-width .panel-actions .btn-close{
+            padding: .2rem .35rem;
+          }
+
+          /* slightly reduce icon size if needed */
+          .resource-panel-item.quarter-width .panel-actions i{
+            font-size: .95rem;
+          }
+
+          /* allow absolute positioning */
+          
+          .panel-close-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:4px 8px;
+  background-color: rgb(247 247 248);
+}
+
+.panel-title{
+  font-weight:600;
+  line-height:1.25;
+  max-width:90%;
+}
+
+          .panel-close-btn{
+            position:static;
+            margin-top:5px;
+            margin-right:5px;
+          }
+         
+
 
       </style>
   </head>
   <body>
-
       <div id="navbar-placeholder"></div>
       <div class="back-button ps-4 mt-5">
         <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
@@ -276,6 +395,42 @@ You can then view the transcription and the text in the digitized original manus
             </div>
         </div>
 
+        <!-- Editorial information modal -->
+        <div class="modal fade" id="editorialModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  <span lang="de">Redaktionelle Informationen</span><span lang="en">Editorial information</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="editorialModalBody"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How to cite modal -->
+        <div class="modal fade" id="citeModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  <span lang="de">Zitiervorschlag</span><span lang="en">How to cite</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="citeModalBody"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span lang="de">Schließen</span><span lang="en">Close</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       
 
       <!--MODAL FOR EXPLAINING THE MEANING OF COLORS AND SYMBOLS IN THE TRANSCRIPTIONS-->
@@ -458,7 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const scrollContainer = div.closest('.transcription-col');
         if (scrollContainer) {
             scrollContainer.scrollTo({
-                top: div.offsetTop - 55,
+                top: div.offsetTop - 180,
                 behavior: "smooth"
             });
         }
@@ -475,13 +630,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (direction === 'prev' && currentIndex > 0) { // Scroll to previous chapter
         const prevChapter = chapters[currentIndex - 1];
         column.scrollTo({
-            top: prevChapter.offsetTop - 55,
+            top: prevChapter.offsetTop - 180,
             behavior: 'smooth'
         });
     } else if (direction === 'next' && currentIndex < chapters.length - 1) { // Scroll to next chapter
         const nextChapter = chapters[currentIndex + 1];
         column.scrollTo({
-            top: nextChapter.offsetTop - 55,
+            top: nextChapter.offsetTop - 180,
             behavior: 'smooth'
         });
     }
@@ -524,7 +679,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (scrollContainer) {
               scrollContainer.scrollTo({
-                top: div.offsetTop - 55,
+                top: div.offsetTop - 180,
                 behavior: "smooth"
               });
             }
@@ -543,13 +698,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (direction === 'prev' && currentIndex > 0) { // Scroll to previous interrogation
           const prevInterrogation = interrogations[currentIndex - 1];
           column.scrollTo({
-              top: prevInterrogation.offsetTop - 55,
+              top: prevInterrogation.offsetTop - 180,
               behavior: 'smooth'
           });
       } else if (direction === 'next' && currentIndex < interrogations.length - 1) { // Scroll to next interrogation
           const nextInterrogation = interrogations[currentIndex + 1];
           column.scrollTo({
-              top: nextInterrogation.offsetTop - 55,
+              top: nextInterrogation.offsetTop - 180,
               behavior: 'smooth'
           });
       }
@@ -631,24 +786,34 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleTranscriptionButtonVisibility()
   }
 
-  /*Citation code*/
+
   // On page load, check for citation hash
-  window.addEventListener('load', async function() {
+  window.addEventListener('load', async function () {
+    const params = new URLSearchParams(window.location.search);
+    const addBook = params.get('add');
     let hash = window.location.hash.replace('#', '').trim();
 
-    if (hash) {
-      // Load citation mode: only the book in the hash
-      let container = document.getElementById('resourcePanel');
-      container.innerHTML = '';
-      let selectedViews = [true, false, true, false, false]; // show transcription + mirador + editor
-      await initializeMirador(container, hash, selectedViews);
+    if (addBook) {
+      await loadResourceState();   
+      await appendSelectedBookToDesktop(addBook);
 
-      // Hide welcome message and show transcription toggle if needed
       updateWelcomeMessageVisibility();
       toggleTranscriptionButtonVisibility();
+
+      const cleanUrl = window.location.pathname + window.location.hash;
+      window.history.replaceState({}, document.title, cleanUrl);
+
+    } else if (hash) {
+      let container = document.getElementById('resourcePanel');
+      container.innerHTML = '';
+      let selectedViews = [true, false, true, false, false];
+      await initializeMirador(container, hash, selectedViews);
+
+      updateWelcomeMessageVisibility();
+      toggleTranscriptionButtonVisibility();
+
     } else {
-      // Default: restore previous workspace from localStorage
-      loadResourceState();
+      await loadResourceState();
     }
   });
 
@@ -746,6 +911,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok && responseStructure.ok && responseScribe.ok && responseEditor.ok) {
         let msViews = [];
         msViews.push(htmlContent);                        // 0 transcription
+
+        // Create a temp DOM to read the transcription
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+
+        // Find first element with data-canvas
+        let firstCanvasEl = tempDiv.querySelector('[data-canvas]');
+
+        let initialCanvasId = null;
+        if (firstCanvasEl) {
+          initialCanvasId = firstCanvasEl
+            .getAttribute('data-canvas')
+            .split('#')[0];
+        }
+
         msViews.push(await responseStructure.text());     // 1 structure
         msViews.push("<div class='mirDesktop' id='" + "mirador" + msAbbr + bookN + "'></div>"); // 2 mirador
         msViews.push(await responseScribe.text());        // 3 scribe
@@ -759,7 +939,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const manifestId = ms.manifestId || "";
 
 
-        let panel = createResourcePanel(book, `${msName} - Buch ${bookN}`, msViews, selectedViews);
+        let panel = createResourcePanel(book, msViews, selectedViews);
         addTaxonomyIcon(panel); // Taxonomy icon
         underlineDelSpanAndAnchor(panel);
         addSpanAndAnchor(panel);
@@ -802,32 +982,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Delay execution to ensure Mirador can properly initialize
         setTimeout(() => {
-          let windowsID = mirID + crypto.randomUUID();
-          let miradorInstance = Mirador.viewer({
-            id: mirID,
-            language: 'de',
-            window: {
-              allowClose: false,
-              defaultView: 'single',
-              highlightAllAnnotations: true,
-              panels: {
-                info: true,
-                attribution: true,
-                canvas: true,
-                annotations: true,
-                search: true,
-                layers: true
-              },
-              views: [
-                { key: 'single', behaviors: ['individuals'] },
-                { key: 'book', behaviors: ['paged'] }
-              ]
+        let windowsID = mirID + crypto.randomUUID();
+        let miradorInstance = Mirador.viewer({
+          id: mirID,
+          language: 'de',
+          window: {
+            allowClose: false,
+            defaultView: 'single',
+            highlightAllAnnotations: true,
+            panels: {
+              info: true,
+              attribution: true,
+              canvas: true,
+              annotations: true,
+              search: true,
+              layers: true
             },
-            windows: [{
-              id: windowsID,
-              manifestId: manifestId,
-              //canvasId: canvasId
-            }],
+            views: [
+              { key: 'single', behaviors: ['individuals'] },
+              { key: 'book', behaviors: ['paged'] }
+            ]
+          },
+          windows: [{
+            id: windowsID,
+            manifestId: manifestId,
+            canvasId: initialCanvasId
+          }],
             thumbnails: {
               enabled: false
             },
@@ -846,10 +1026,15 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           });
 
+          // Force Mirador to recalculate layout after init
+          setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+          }, 100);
+
           saveResourceState();
           adjustPanelWidth();
           resolve();
-        }, 200);
+        }, 400);
       } else {
         //fallback: don’t break if scribe file is missing
         console.warn("One or more resource files could not be loaded for", book);
@@ -859,58 +1044,196 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
- /*New version to prevent books to be uploaded multiple times*/
- async function appendBooks(container, books) {
-  for (let book of books) {
-    // Check if this book is already on the workspace
-    const existing = container.querySelector(`[data-ms='${book.value}']`);
-    
-    /*if (existing) {
-      console.log(`Book ${book.value} already loaded, skipping.`);
-      continue; // Skip if already added
-    }*/
-    if (existing) {
-      alert(`"${book.value}" is already displayed on your workspace.`);
-      continue;// Skip if already added
+  /*New version to prevent books to be uploaded multiple times*/
+  async function appendBooks(container, books) {
+    for (let book of books) {
+      // Check if this book is already on the workspace
+      const existing = container.querySelector(`[data-ms='${book.value}']`);
+      
+      /*if (existing) {
+        console.log(`Book ${book.value} already loaded, skipping.`);
+        continue; // Skip if already added
+      }*/
+      if (existing) {
+        alert(`"${book.value}" is already displayed on your workspace.`);
+        continue;// Skip if already added
+      }
+
+      let selectedViews = [true, false, true, false, false];
+      await initializeMirador(container, book.value, selectedViews);
+    }
+  }
+
+
+  function initTooltip(el, options = {}) {
+    let tip = bootstrap.Tooltip.getInstance(el);
+    if (!tip) {
+      tip = new bootstrap.Tooltip(el, {
+        html: true,
+        trigger: 'hover focus',
+        ...options
+      });
     }
 
-    let selectedViews = [true, false, true, false, false];
-    await initializeMirador(container, book.value, selectedViews);
-  }
-}
+    // Filter language when tooltip opens
+    el.addEventListener('show.bs.tooltip', () => {
+      const raw = el.getAttribute('data-bs-title') || el.getAttribute('title') || '';
+      const currentLang = localStorage.getItem('selectedLanguage') || 'en';
 
+      const temp = document.createElement('div');
+      temp.innerHTML = raw;
+
+      temp.querySelectorAll('span[lang]').forEach(span => {
+        if (span.getAttribute('lang') !== currentLang) span.remove();
+      });
+
+      tip.setContent({ '.tooltip-inner': temp.innerHTML });
+    });
+
+    // Hide tooltip when clicking the element
+    el.addEventListener("click", () => {
+      tip.hide();
+      el.blur();
+    });
+  }
 
       
-  function createResourcePanel(idVal, title, views, selectedViews) {
-    //create the list of resources open on the desktop
-    $("#resourcesUnorderedList").append("<li for='"+idVal+"'>"+title+" <button class='btn btn-sm btn-light' onclick='removeListItem(\"" + idVal + "\")'><i class='fa-solid fa-xmark' style='color: #636363;'></i></button>" + "</li>")
-    
+  function createResourcePanel(idVal, views, selectedViews) {
+
     const panel = document.createElement('div');
     panel.classList.add('resource-panel-item');
     panel.setAttribute('data-ms', idVal);
-    const panelContent = `
-      <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center fw-bold">
-          <i class="fas fa-arrow-left move-left"></i>
-          <span>${title}
-            <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Legende zur Transkription</span><span lang='en'>Transcription Legend</span>" data-bs-custom-class="custom-tooltip">
-              <button type="button" class="btn ms-2 p-0" data-bs-toggle="modal" data-bs-target="#legendModal" style="color: #46b65f;">
-                <i class="fa-solid fa-circle-info fa-lg"></i>
-              </button>
-            </span>
-          </span>
-          <i class="fas fa-arrow-right move-right"></i>
 
-          
-          <div> 
-            <button type="button" class="btn btn-primary btn-sm me-2 add-transcription-btn p-1"><span lang='de'>Transkription</span><span lang='en'>Transcription</span></button>
-            <button type="button" class="btn btn-outline-primary btn-sm me-2 add-structure-btn p-1"><span lang='de'>Struktur</span><span lang='en'>Structure</span></button>
-            <button type="button" class="btn btn-outline-primary btn-sm me-2 mirador-btn p-1"><span lang='de'>Digitalisat</span><span lang='en'>Digital copy</span></button>
-            <button type="button" class="btn btn-outline-primary btn-sm me-2 scribe-btn p-1"><span lang='de'>Schreiber</span><span lang='en'>Scribe</span></button>
-            <button type="button" class="btn btn-outline-primary btn-sm editor-btn p-1">Info</button>
-          </div>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+    let [msName, msAbbr, bookN] = idVal.split('_');
+
+    // Lookup from BDD_MSS
+    const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
+
+    // Use citationLabel if available, otherwise fallback
+    let displayName = (ms && ms.citationLabel) ? ms.citationLabel : msName;
+
+    // Link to manuscript page
+    let msItemUrl = `ms-item.html?document=${encodeURIComponent(msAbbr)}`;
+
+    // Header title HTML
+    let headerTitleHtml = `
+      <a href="${msItemUrl}" target="_blank" class="text-decoration-none">
+        ${displayName}
+      </a> - ${bookN}
+    `;
+
+
+    //create the list of resources open on the desktop
+    $("#resourcesUnorderedList").append(
+      "<li for='"+idVal+"'>" +
+      displayName + " - " + bookN +
+      " <button class='btn btn-sm btn-light' onclick='removeListItem(\"" + idVal + "\")'><i class='fa-solid fa-xmark' style='color: #636363;'></i></button></li>"
+    )
+    
+
+    const panelContent = `
+      <div class="card panel-card">
+        
+        <!-- ROW 1 -->
+        <div class="panel-close-row">
+          <div class="panel-title">${headerTitleHtml}</div>
+          <button type="button" class="btn-close panel-close-btn" aria-label="Close"></button>
         </div>
+        
+        <div class="card-header fw-bold">    
+          <!-- ROW 2 -->
+          <div class="d-flex justify-content-center gap-2 view-buttons">
+            <button type="button" class="btn btn-primary btn-sm view-btn add-transcription-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Transkriptionspanel anzeigen</span><span lang='en'>Display transcription panel</span>" aria-label="Transcription">
+              <i class="bi bi-fonts"></i>
+              <span class="view-label"><span lang='de'>Transkription</span><span lang='en'>Transcription</span></span>
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-sm view-btn add-structure-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Strukturpanel anzeigen</span><span lang='en'>Display structure panel</span>" aria-label="Structure">
+              <i class="bi bi-list-ul"></i>
+              <span class="view-label"><span lang='de'>Struktur</span><span lang='en'>Structure</span></span>
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-sm view-btn mirador-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Digitalisat anzeigen</span><span lang='en'>Display digital copy panel</span>" aria-label="Digital copy">
+              <i class="bi bi-image"></i>
+              <span class="view-label"><span lang='de'>Digitalisat</span><span lang='en'>Digital copy</span></span>
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-sm view-btn scribe-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Schreiberpanel anzeigen</span><span lang='en'>Display scribe panel</span>" aria-label="Scribe">
+              <i class="bi bi-person"></i>
+              <span class="view-label"><span lang='de'>Schreiber</span><span lang='en'>Scribe</span></span>
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-sm editor-btn p-1 d-none">
+              Info
+            </button>
+          </div>
+
+          <!-- ROW 3 -->
+          <div class="d-flex justify-content-center mt-2">
+            <div class="d-flex align-items-center gap-2 panel-actions">
+              <button type="button" class="btn btn-light btn-sm move-left" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Panel nach links verschieben</span><span lang='en'>Move panel left</span>">
+                <i class="bi bi-chevron-double-left"></i>
+              </button>
+
+              <button type="button"class="btn btn-light btn-sm move-right" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Panel nach rechts verschieben</span><span lang='en'>Move panel right</span>">
+                <i class="bi bi-chevron-double-right"></i>
+              </button>
+
+              <button type="button" class="btn btn-light btn-sm expand-panel-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="<span lang='de'>Panel vergrößern</span><span lang='en'>Expand panel</span>">
+                <i class="bi bi-arrows-fullscreen"></i>
+              </button>
+
+              <div class="dropdown">
+                <button type="button" style="padding: .25rem .4rem;" class="btn btn-light kebab-btn"data-bs-toggle="dropdown" data-bs-placement="top" data-bs-title="<span lang='de'>Weitere Optionen</span><span lang='en'>More options</span>" aria-expanded="false">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item open-all-witnesses" href="#">
+                      <span lang="de">Buch <span class="book-n-label"></span> in allen Zeugen öffnen</span>
+                      <span lang="en">Open book <span class="book-n-label"></span> in all witnesses</span>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item open-legend-modal" href="#">
+                      <span lang="de">Legende zur Transkription</span>
+                      <span lang="en">Transcription legend</span>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item open-editorial-modal" href="#">
+                      <span lang="de">Redaktionelle Informationen</span>
+                      <span lang="en">Editorial information</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item open-cite-modal" href="#">
+                      <span lang="de">Zitiervorschlag</span>
+                      <span lang="en">How to cite</span>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item download-book-xml" href="#">
+                      <i class="fa-solid fa-download me-1"></i> 
+                      <span lang="de">XML-Transkription herunterladen</span><span lang="en">Download XML transcription</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item download-msdesc-xml" href="#">
+                      <i class="fa-solid fa-download me-1"></i> 
+                      <span lang="de">XML-Handschriftenbeschreibung herunterladen</span><span lang="en">Download XML manuscript description</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
         <div class="card-body row">
           <div class="col border m-1 transcription-col d-none" style="overflow-y: scroll; max-height: 600px; white-space: nowrap"></div>
           <div class="col border m-1 structure-col d-none" style="overflow-y: scroll; max-height: 600px; text-wrap: nowrap; padding-left:0;"></div>
@@ -922,63 +1245,155 @@ document.addEventListener("DOMContentLoaded", () => {
     `
     panel.innerHTML = panelContent;
 
+    // Auto-close kebab dropdown after any item is clicked
+    const kebabMenu = panel.querySelector('.dropdown-menu-end');
+    const kebabBtn = panel.querySelector('.kebab-btn');
+
+    kebabMenu.addEventListener('click', function(e) {
+      const item = e.target.closest('.dropdown-item');
+      if (!item) return;
+      bootstrap.Dropdown.getOrCreateInstance(kebabBtn).hide();
+    });
+
+    // Initialize tooltips inside this panel
+    panel.querySelectorAll('[data-bs-toggle="tooltip"], .kebab-btn')
+      .forEach(el => initTooltip(el));
+
+  
+
+    function triggerDownload(url) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.setAttribute("download", ""); // hint browser to download
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    const bookXmlLink = panel.querySelector(".download-book-xml");
+    if (bookXmlLink) {
+      bookXmlLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!ms || !window.BDD_PATHS) return;
+
+        const url = window.BDD_PATHS.bookXml(ms, bookN);
+        triggerDownload(url);
+      });
+    }
+
+    const msdescXmlLink = panel.querySelector(".download-msdesc-xml");
+    if (msdescXmlLink) {
+      msdescXmlLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!ms || !window.BDD_PATHS) return;
+
+        const url = window.BDD_PATHS.msdesc(ms);
+        triggerDownload(url);
+      });
+    }
+
     panel.querySelector('.transcription-col').innerHTML = views[0]
     panel.querySelector('.structure-col').innerHTML = views[1]
     panel.querySelector('.mirador-col').innerHTML = views[2]
     panel.querySelector('.scribe-col').innerHTML = views[3]
     panel.querySelector('.editor-col').innerHTML = views[4]
 
-    
-
-      // Parse manuscript info from idVal
-      let [msName, msAbbr, bookN] = idVal.split('_');
-
-      // Lookup from BDD_MSS
-      const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
-
-      // Use canonical label from list if present, fallback to msName
-      let displayName = (ms && ms.citationLabel) ? ms.citationLabel : msName;
+    //added 16.02.26
+    initPopovers(panel);
 
 
-      let citationUrl = "https://burchards-dekret-digital.de/html/workspace.html#" + idVal; //CHANGE URL
+
+      let citationUrl = "https://website-adwmainz-projekte-burchards-dekret-digit-e6182a013bf3cb.pages.gitlab.rlp.net/html/workspace.html#" + idVal; //CHANGE URL
       let citationText = `Burchards Dekret Digital, Akademie der Wissenschaften und der Literatur Mainz, 2025. ${displayName}, Transkription Buch ${bookN} (${citationUrl})`;
       let citationBlock = `
-        <hr class="mt-0">
         <p>
-          <strong><span lang="de">Zitiervorschlag</span><span lang="en">How to cite</span>:</strong> Burchards Dekret Digital, Akademie der Wissenschaften und der Literatur Mainz, 2025.
-          <i>${displayName},</i> <span lang="de">Transkription</span><span lang="en">Transcription</span> <a href="${citationUrl}" target="_blank"><span lang="de">Buch</span><span lang="en">Book</span> ${bookN}</a>.
-          
+          Burchards Dekret Digital, Akademie der Wissenschaften und der Literatur Mainz, 2025.
+          <i>${displayName},</i> <span lang="de">Transkription</span><span lang="en">Transcription</span> <a href="${citationUrl}" target="_blank"><span lang="de">Buch</span><span lang="en">Book</span> ${bookN}</a>.       
         </p>
-        <button class="btn btn-sm btn-outline-secondary mt-2 mb-5 copy-citation-btn" data-citation="${citationText}">
+        <button class="btn btn-sm btn-outline-secondary mt-2 mb-3 copy-citation-btn" data-citation="${citationText}">
           <span lang="de">Zitat kopieren</span><span lang="en">Copy citation</span>
         </button>
-        <button class="btn btn-sm btn-outline-secondary mt-2 mb-5 copy-link-btn" data-citation="${citationUrl}">
+        <button class="btn btn-sm btn-outline-secondary mt-2 mb-3 copy-link-btn" data-citation="${citationUrl}">
           <span lang="de">Link kopieren</span><span lang="en">Copy link</span>
         </button>
       `;
-      panel.querySelector('.editor-col').insertAdjacentHTML('beforeend', citationBlock);
 
-    function attachCopyHandler(buttonSelector, defaultTextDe, defaultTextEn) {
-      let btn = panel.querySelector(buttonSelector);
-      btn.addEventListener('click', function() {
-        let text = this.getAttribute('data-citation');
-        navigator.clipboard.writeText(text).then(() => {
-          // update both language spans
-          this.querySelector('[lang="de"]').textContent = "Kopiert!";
-          this.querySelector('[lang="en"]').textContent = "Copied!";
-          setTimeout(() => {
-            this.querySelector('[lang="de"]').textContent = defaultTextDe;
-            this.querySelector('[lang="en"]').textContent = defaultTextEn;
-          }, 2000);
-        }).catch(err => console.error("Failed to copy citation:", err));
+
+      //Open legend modal
+      const legendTrigger = panel.querySelector('.open-legend-modal');
+      if (legendTrigger) {
+        legendTrigger.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const modal = new bootstrap.Modal(document.getElementById('legendModal'));
+          modal.show();
+        });
+      }
+      
+
+
+      //Open Editorial information modal
+      const editorialTrigger = panel.querySelector('.open-editorial-modal');
+      if (editorialTrigger) {
+        editorialTrigger.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+          const raw = panel.querySelector('.editor-col')?.innerHTML || '';
+
+          const html = (typeof filterLangSpans === "function")
+            ? filterLangSpans(raw, currentLang)
+            : raw;
+
+          document.getElementById('editorialModalBody').innerHTML = html;
+
+          const modal = new bootstrap.Modal(document.getElementById('editorialModal'));
+          modal.show();
+        });
+      }
+
+  //Open How to cite modal
+  const citeTrigger = panel.querySelector(".open-cite-modal");
+    if (citeTrigger) {
+      citeTrigger.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const currentLang = localStorage.getItem("selectedLanguage") || "en";
+        let html = citationBlock;
+
+        if (typeof filterLangSpans === "function") {
+          html = filterLangSpans(html, currentLang);
+        }
+
+        const body = document.getElementById("citeModalBody");
+        body.innerHTML = html;
+
+        // Rebind copy buttons inside the modal content
+        const bindCopy = (selector, de, en) => {
+          const btn = body.querySelector(selector);
+          if (!btn) return;
+          btn.addEventListener("click", function () {
+            const text = this.getAttribute("data-citation");
+            navigator.clipboard.writeText(text).then(() => {
+              this.querySelector('[lang="de"]').textContent = "Kopiert!";
+              this.querySelector('[lang="en"]').textContent = "Copied!";
+              setTimeout(() => {
+                this.querySelector('[lang="de"]').textContent = de;
+                this.querySelector('[lang="en"]').textContent = en;
+              }, 2000);
+            });
+          });
+        };
+
+        bindCopy(".copy-citation-btn", "Zitat kopieren", "Copy citation");
+        bindCopy(".copy-link-btn", "Link kopieren", "Copy link");
+
+        new bootstrap.Modal(document.getElementById("citeModal")).show();
       });
     }
 
-    // usage:
-    attachCopyHandler('.copy-citation-btn', "Zitat kopieren", "Copy citation");
-    attachCopyHandler('.copy-link-btn', "Link kopieren", "Copy link");
-
-    /*Ends of Citation Link in Info Panel*/
+  
 
 
     panel.querySelector('.btn-close').addEventListener('click', function() {
@@ -989,6 +1404,103 @@ document.addEventListener("DOMContentLoaded", () => {
       adjustPanelWidth();
       saveResourceState(); //Save source panel status after removing one panel
     });
+
+
+    // Expand / restore panel
+    const expandBtn = panel.querySelector('.expand-panel-btn');
+
+    expandBtn.addEventListener('click', function () {
+    const allPanels = document.querySelectorAll('.resource-panel-item');
+    const icon = expandBtn.querySelector('i');
+
+    if (!panel.classList.contains('panel-expanded')) {
+
+      panel.classList.remove(
+        'quarter-width',
+        'half-width',
+        'three-quarter-width',
+        'full-width'
+      );
+
+      // expand
+      panel.classList.add('panel-expanded');
+
+      icon.classList.remove('bi-arrows-fullscreen');
+      icon.classList.add('bi-fullscreen-exit');
+
+      expandBtn.setAttribute(
+        "data-bs-title",
+        "<span lang='de'>Panel verkleinern</span><span lang='en'>Restore panel</span>"
+      );
+
+    } else {
+
+      // restore normal
+      panel.classList.remove('panel-expanded');
+
+      icon.classList.remove('bi-fullscreen-exit');
+      icon.classList.add('bi-arrows-fullscreen');
+
+      expandBtn.setAttribute(
+        "data-bs-title",
+        "<span lang='de'>Panel vergrößern</span><span lang='en'>Expand panel</span>"
+      );
+
+      adjustPanelWidth();
+    }
+
+  });
+
+
+  // Open all witnesses for the same book
+  const allWitnessesBtn = panel.querySelector('.open-all-witnesses');
+
+  // Fill in the book number in the label
+  panel.querySelectorAll('.book-n-label').forEach(el => el.textContent = bookN);
+
+  if (allWitnessesBtn) {
+    allWitnessesBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const container = document.getElementById('resourcePanel');
+
+      // Find all core manuscripts that have this book available
+      const candidates = (window.BDD_MSS || [])
+        .filter(m => m.kind === 'core')
+        .filter(m => Array.isArray(m.books) && m.books.includes(bookN));
+
+      let alreadyOpen = 0;
+      let opened = 0;
+
+      for (const m of candidates) {
+        const msName = m.uiGroup || m.sigle;
+        const bookId = `${msName}_${m.sigle}_${bookN}`;
+
+        // Skip if already on the workspace
+        const existing = container.querySelector(`[data-ms='${bookId}']`);
+        if (existing) {
+          alreadyOpen++;
+          continue;
+        }
+
+        const selectedViews = [true, false, true, false, false];
+        await initializeMirador(container, bookId, selectedViews);
+        opened++;
+      }
+
+      adjustPanelWidth();
+      updateWelcomeMessageVisibility();
+      toggleTranscriptionButtonVisibility();
+
+      if (opened === 0) {
+        alert(
+          localStorage.getItem('selectedLanguage') === 'de'
+            ? `Alle verfügbaren Zeugen von Buch ${bookN} sind bereits geöffnet.`
+            : `All available witnesses for book ${bookN} are already open.`
+        );
+      }
+    });
+  }
 
 
     let [transcriptionAdded, structureAdded, miradorAdded, scribeAdded, editorAdded] = selectedViews
@@ -1065,6 +1577,8 @@ document.addEventListener("DOMContentLoaded", () => {
         miradorAdded = true;
         miradorBtn.classList.remove('btn-outline-primary');
         miradorBtn.classList.add('btn-primary');
+        // Force Mirador to recalculate when panel becomes visible
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
       } else {
         viewsElements[2].classList.add('d-none');
         miradorAdded = false;
@@ -1122,6 +1636,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   }
 
+    
     async function appendSelectedBookToDesktop(selectedBook) {
       const msAbbr = selectedBook.split('-')[0];
       const bookN = selectedBook.split('-')[1];
@@ -1132,37 +1647,67 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Use uiGroup (or fallback to sigle if missing)
       const msName = ms.uiGroup || ms.sigle;
-
       const book = [msName, msAbbr, bookN].join('_');
 
       const container = document.getElementById('resourcePanel');
+
+      const existing = container.querySelector(`[data-ms='${book}']`);
+      if (existing) {
+        return;
+      }
+
       const selectedViews = [true, false, true, false, false];
       await initializeMirador(container, book, selectedViews);
+
+      updateWelcomeMessageVisibility();
+      toggleTranscriptionButtonVisibility();
     }
   
   //function to handle panel width behaviour
-  function adjustPanelWidth() {
+ function adjustPanelWidth() {
     const resourcePanel = document.getElementById('resourcePanel');
-    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
-      Array.from(panels).forEach(panel => {
-          const cardBody = panel.querySelector('.card-body');
-          const hiddenDivs = cardBody.querySelectorAll('.d-none');
+    if (!resourcePanel) return;
 
-          if (panels.length === 1) {
-              panel.classList.add('only-child', 'full-width');
-          } else {
-              panel.classList.remove('only-child', 'full-width', 'three-quarter-width', 'half-width');
-              if (hiddenDivs.length === 3) {
-                  panel.classList.add('half-width');
-              } else if (hiddenDivs.length === 2) {
-                  panel.classList.add('three-quarter-width');
-              } else {
-                  panel.classList.add('full-width');
-              }
-          }
-      });
+    const panels = resourcePanel.getElementsByClassName('resource-panel-item');
+    const totalPanels = panels.length;
+
+    Array.from(panels).forEach(panel => {
+
+      if (panel.classList.contains('panel-expanded')) return;
+
+      panel.classList.remove(
+        'only-child',
+        'quarter-width',
+        'half-width',
+        'three-quarter-width',
+        'full-width'
+      );
+
+      // If only one panel exists, always make it full width
+      if (totalPanels === 1) {
+        panel.classList.add('full-width');
+        return;
+      }
+
+      const transcription = panel.querySelector('.transcription-col');
+      const structure     = panel.querySelector('.structure-col');
+      const mirador       = panel.querySelector('.mirador-col');
+      const scribe        = panel.querySelector('.scribe-col');
+
+      const cols = [transcription, structure, mirador, scribe];
+      const activeCount = cols.reduce((n, el) => n + (el && !el.classList.contains('d-none') ? 1 : 0), 0);
+
+      if (activeCount <= 1) {
+        panel.classList.add('quarter-width');
+      } else if (activeCount === 2) {
+        panel.classList.add('half-width');
+      } else if (activeCount === 3) {
+        panel.classList.add('three-quarter-width');
+      } else {
+        panel.classList.add('full-width');
+      }
+    });
   }
 
   //Welcome message
@@ -1209,7 +1754,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-
+  //Upload json
   document.getElementById('downloadJsonFromModalBtn').addEventListener('click', function() {
     saveResourceState();
     const resourceState = JSON.parse(localStorage.getItem('resourceState')) || [];
@@ -1295,4 +1840,72 @@ document.addEventListener("DOMContentLoaded", () => {
         loadHTMLDoc("../data/texts/infoButtonsTexts.html"); // Adjust the path here
     });
     </script>
+
+
+<!--new added 16.02.26, editorial comment popover-->
+<script>
+  function initPopovers(root = document) {
+    root.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => {
+      if (bootstrap.Popover.getInstance(el)) return;
+
+      if (!el.dataset.popoverRaw) {
+        el.dataset.popoverRaw = el.getAttribute('data-bs-content') || '';
+      }
+
+      new bootstrap.Popover(el, {
+        container: 'body',
+        html: true,
+        sanitize: false,
+        placement: 'auto',
+        trigger: 'click',
+
+        content: () => {
+          const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+          return filterLangSpans(el.dataset.popoverRaw, currentLang);
+        }
+      });
+    });
+  }
+
+  // Close any open popovers when clicking outside of them
+  document.addEventListener('click', (e) => {
+    // If click is on a popover trigger or inside the popover itself, do nothing
+    const clickedTrigger = e.target.closest('[data-bs-toggle="popover"]');
+    const clickedInsidePopover = e.target.closest('.popover');
+
+    if (clickedTrigger || clickedInsidePopover) return;
+
+    // Otherwise, hide all open popovers
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach((el) => {
+      const inst = bootstrap.Popover.getInstance(el);
+      if (inst) inst.hide();
+    });
+  });
+
+  function filterLangSpans(html, lang) {
+    if (!html) return html;
+
+    // normalize language codes
+    const norm = (l) => {
+      l = (l || "").toLowerCase();
+      if (l === "ger" || l === "deu" || l === "de-de") return "de";
+      if (l === "eng" || l === "en-us" || l === "en-gb") return "en";
+      return l;
+    };
+
+    const want = norm(lang);
+
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+
+    tmp.querySelectorAll('span[lang]').forEach(span => {
+      const have = norm(span.getAttribute('lang'));
+      if (have !== want) span.remove();
+    });
+
+    return tmp.innerHTML;
+  }
+</script>
+
+
 </html>

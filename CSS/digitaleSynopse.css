@@ -38,6 +38,10 @@
     font-family: Andron-Scriptor-Web !important;
     color: grey;
 }
+.tei_ab{
+    font-family: Andron-Scriptor-Web !important;
+}
+
 br:not(.tei_lb):not(.tei_lb.nobreak) {
     display: none;
 }
@@ -171,7 +175,7 @@ li + br.tei_lb {
   
   
 
-.icon-chapter-sync {
+/*.icon-chapter-sync {
     background-color: #f6f6f6;
     border: none;
     padding: 2px 8px;
@@ -213,7 +217,7 @@ li + br.tei_lb {
 }
 .next-chapter:hover{
     background-color:#eaeaea;
-}
+}*/
 
 
 .tei_abbr {
@@ -344,7 +348,6 @@ ol li{
 
 
 .tei_add {
-    /*color: #5f9ea0;*/
     text-decoration: underline;
     text-decoration-color: #5ac5fa;
     text-decoration-thickness: 3px;  
@@ -353,7 +356,6 @@ ol li{
 .tei_subst > .tei_add {
     text-decoration: underline;
     text-decoration-style: wavy;
-    /*color: #000;*/
     text-decoration-color: #5ac5fa;
 }
 
@@ -390,7 +392,6 @@ ol li{
     text-decoration-color: #b3b3b3;
 }
 
-
 .tei_erasure-without-substitution {
     color: transparent;
     text-decoration: underline;
@@ -418,11 +419,10 @@ ol li{
 
 .tei_del-correction{
     display: inline;
-  color:  #808080 !important;
-  border: thin solid  #b3b3b3;
-  padding-left:1px;
-  padding-right:1px;
-
+    color:  #808080 !important;
+    border: thin solid  #b3b3b3;
+    padding-left:1px;
+    padding-right:1px;
     position: relative;
     cursor: pointer;
   }
@@ -434,7 +434,6 @@ ol li{
     border: thin solid  #b3b3b3;
     padding-left:1px;
     padding-right:1px;
-    
     position: relative;
     cursor: pointer;
   }
@@ -448,7 +447,6 @@ ol li{
 .tei_damage-torn-out{background-color: lightgray;}
 .tei_damage-burned{background-color: lightgray;}
 .tei_damage-trimmed{background-color: lightgray;}
-
 .tei_damage-cut-out::after{content:"[Reason of damage: cut-out]"; background-color: lightgray;}
 .tei_damage-torn-out::after{content:"[Reason of damage: torn-out]"; background-color: lightgray;}
 .tei_damage-burned::after{content:"[Reason of damage: burned]"; background-color: lightgray;}
@@ -1035,4 +1033,40 @@ td{
     width: 80px;
     word-wrap: break-word;
     white-space: normal;
+}
+
+/*Table: tree of consanguinity*/
+.table-tree-of-consanguinity {
+    border-collapse: collapse;
+    table-layout:auto!important;
+    font-size: smaller;
+}
+.table-tree-of-consanguinity td{
+    border: 1px solid black;
+}
+.no-display{
+    border:none!important; 
+}
+
+/*Modal Table Tree of consanguinity*/
+.modal-table-tree-of-consanguinity {
+    border-collapse: collapse;
+    table-layout:auto!important;
+}
+.modal-table-tree-of-consanguinity td{
+    border: 1px solid black;
+}
+
+.button-show-tree{
+    font-family:Jost-Regular;
+}
+[id*="tree-of-consanguinity"] .modal-header,
+[id*="tree-of-consanguinity"] .modal-footer{
+    font-family:Jost-Regular;
+}
+
+.citationTextInfo{
+    background: #f5f5f5; 
+    padding: 1em; 
+    border-radius: 5px;
 }

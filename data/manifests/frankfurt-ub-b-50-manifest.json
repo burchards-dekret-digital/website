@@ -680,31 +680,7 @@
                         }
                     ],
                     
-                              "otherContent": [
                               
-                              
-            {
-              "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/tests/frankfurt-ub-b-50-anno-10r.json",
-              "@type": "sc:AnnotationList",
-              "@label": "Handwechsel"
-            },
-            
-            
-            {
-              "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/tests/frankfurt-ub-b-50-anno-10r2",
-              "@type": "oa:Annotation",
-              "resource": {
-                  "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/tests/frankfurt-ub-b-50-anno-10r223",
-                  "@type": "cnt:ContentAsText",
-                  "format": "text/plain",
-                  "chars": "Schreiberwechsel"
-                    },
-               "on": "https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2035641"
-            }
-            
-            
-            
-          ],
                     
                     "label": "10r",
                     "@id": "https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2035641",
@@ -1979,13 +1955,7 @@
                     
                     
                     
-                                        "otherContent": [
-    {
-        "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/annotations/frankfurt-ub-b-50/annotation-033v.json",
-        "@type": "sc:AnnotationList",
-        "label": "Annotationen"
-    }
-],
+                                        
                     
                     "label": "33v",
                     "@id": "https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2035688",
@@ -2017,13 +1987,7 @@
                     
                     
                     
-                                        "otherContent": [
-    {
-        "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/annotations/frankfurt-ub-b-50/annotation-034r.json",
-        "@type": "sc:AnnotationList",
-        "label": "Annotationen"
-    }
-],
+                                        
                     
                     "label": "34r",
                     "@id": "https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2035689",
@@ -2512,13 +2476,7 @@
                         }
                     ],
                     
-                                        "otherContent": [
-    {
-        "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/annotations/frankfurt-ub-b-50/annotation-043r.json",
-        "@type": "sc:AnnotationList",
-        "label": "Annotationen"
-    }
-],
+                                        
 
                     
                     "label": "43r",
@@ -11277,12 +11235,7 @@
                     
                     
                     
-                                        "otherContent": [
-    {
-        "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/annotations/frankfurt-ub-b-50-annotation-2036031.json",
-        "@type": "sc:AnnotationList",
-        "label": "Annotationen"
-    }],
+                                        
                     
                     "label": "205r",
                     "@id": "https://sammlungen.ub.uni-frankfurt.de/msma/i3f/v20/2035614/canvas/2036031",
@@ -17482,7 +17435,7 @@
             "label": "URN"
         }
     ],
-    "@id": "https://burchard.adwmainz.net/exist/rest/db/collections/bdd/data/manifests/frankfurt-ub-b-50-manifest.json",
+    "@id": "../data/manifests/frankfurt-ub-b-50-manifest.json",
     "@type": "sc:Manifest",
     "seeAlso": {
         "format": "application/xml",
