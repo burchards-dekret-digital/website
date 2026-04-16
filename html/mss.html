@@ -231,11 +231,31 @@
               </div>
             </div>
 
-            <div class="ms-auto">
-              <button id="exportMsdescJsonBtn" type="button" class="btn btn-outline-primary btn-sm">
+            <div class="ms-auto dropdown">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                id="exportDropdownBtn"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <span lang="de">Handschriftendaten exportieren</span>
                 <span lang="en">Export manuscripts data</span>
               </button>
+
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="exportDropdownBtn">
+                <li>
+                  <button id="exportMsdescJsonBtn" class="dropdown-item" type="button">
+                    <span lang="de">Vollständiger Export (JSON)</span>
+                    <span lang="en">Full export (JSON)</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="exportMsdescCsvBtn" class="dropdown-item" type="button">
+                    <span lang="de">Tabellarischer Export (CSV)</span>
+                    <span lang="en">Tabular export (CSV)</span>
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -1141,6 +1161,125 @@
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("exportMsdescJsonBtn");
     if (btn) btn.addEventListener("click", exportAllMsDescJson);
+  });
+</script>
+
+<!--CSV Table export-->
+<script>
+  function csvEscape(value) {
+    const s = String(value ?? "");
+    if (/[;"\n]/.test(s)) {
+      return '"' + s.replace(/"/g, '""') + '"';
+    }
+    return s;
+  }
+
+  function downloadCsv(rows, filename) {
+    const csv = rows.map(row => row.map(csvEscape).join(";")).join("\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function mapMsTypeToGerman(type) {
+    switch (type) {
+      case "full": return "Vollständige Handschrift";
+      case "fragment": return "Fragment";
+      case "excerpt": return "Exzerpt";
+      case "separate-transmission": return "Separatüberlieferung";
+      default: return type || "";
+    }
+  }
+
+  async function fetchMsDescForCsv(ms) {
+    const path = msPath(ms);
+    const res = await fetch(path, { cache: "no-cache" });
+    if (!res.ok) return null;
+
+    const xmlText = await res.text();
+    const doc = new DOMParser().parseFromString(xmlText, "text/xml");
+    if (doc.querySelector("parsererror")) return null;
+
+    const teiEl = doc.querySelector("TEI");
+    const msDescEl = doc.querySelector("msDesc");
+    const sigleEl = doc.querySelector('msName[type="sigle"]');
+    const fullEl = doc.querySelector('msName[type="full"]');
+    const origDateEl = doc.querySelector("origDate");
+    const digiRefEl = doc.querySelector('bibl[type="digi"] ref');
+    const catRefEl = doc.querySelector('bibl[type="cat"] ref');
+
+    const msId = teiEl?.getAttribute("xml:id") || "";
+    const sigle = sigleEl?.textContent.trim() || "";
+    const fullName = fullEl?.textContent.trim() || "";
+    const typeRaw = msDescEl?.getAttribute("type") || "";
+    const typeDe = mapMsTypeToGerman(typeRaw);
+
+    let datierung = "";
+    if (origDateEl) {
+      const dateText = origDateEl.textContent.trim();
+      const notBefore = origDateEl.getAttribute("notBefore") || "";
+      const notAfter = origDateEl.getAttribute("notAfter") || "";
+
+      if (notBefore || notAfter) {
+        datierung = `${dateText} (${notBefore}-${notAfter})`;
+      } else {
+        datierung = dateText;
+      }
+    }
+
+    const digitalisat = digiRefEl?.textContent.trim() || "";
+    const katalogisat = catRefEl?.textContent.trim() || "";
+
+    return [
+      msId,
+      sigle,
+      fullName,
+      typeDe,
+      datierung,
+      digitalisat,
+      katalogisat
+    ];
+  }
+
+  async function exportAllMsDescCsv() {
+    const btn = document.getElementById("exportMsdescCsvBtn");
+    if (btn) btn.disabled = true;
+
+    try {
+      const header = [
+        "ms ID",
+        "Sigle",
+        "Bibliothekssignatur",
+        "Typ",
+        "Datierung",
+        "Digitalisat",
+        "Katalogisat"
+      ];
+
+      const results = await Promise.all((window.BDD_MSS || []).map(fetchMsDescForCsv));
+      const rows = [header, ...results.filter(Boolean)];
+
+      downloadCsv(rows, "bdd_manuscripts_data_export.csv");
+    } catch (e) {
+      console.error(e);
+      alert("CSV export failed.");
+    } finally {
+      if (btn) btn.disabled = false;
+      if (typeof checkLanguage === "function") checkLanguage();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("exportMsdescCsvBtn");
+    if (btn) btn.addEventListener("click", exportAllMsDescCsv);
   });
 </script>
 
