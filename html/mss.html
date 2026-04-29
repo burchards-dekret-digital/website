@@ -115,7 +115,8 @@
 
 
     <body>
-
+        
+      <!--<div id="access-placeholder"></div>-->
         <div id="navbar-placeholder"></div>
         <div class="back-button ps-4 mt-5">
           <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
@@ -244,20 +245,28 @@
 
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="exportDropdownBtn">
                 <li>
-                  <button id="exportMsdescJsonBtn" class="dropdown-item" type="button">
-                    <span lang="de">Vollständiger Export (JSON)</span>
-                    <span lang="en">Full export (JSON)</span>
+                  <button id="exportMsdescCsvBtn" class="dropdown-item" type="button">
+                    <span lang="de">Tabelle (CSV)</span>
+                    <span lang="en">Spreadsheet (CSV)</span>
                   </button>
                 </li>
                 <li>
-                  <button id="exportMsdescCsvBtn" class="dropdown-item" type="button">
-                    <span lang="de">Tabellarischer Export (CSV)</span>
-                    <span lang="en">Tabular export (CSV)</span>
+                  <button id="exportMsdescTeiBtn" class="dropdown-item" type="button">
+                    <span lang="de">Volltextkodierung (TEI-XML)</span>
+                    <span lang="en">Full encoding (TEI-XML)</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="exportMsdescJsonBtn" class="dropdown-item" type="button">
+                    <span lang="de">Strukturierte Daten (JSON)</span>
+                    <span lang="en">Structured data (JSON)</span>
                   </button>
                 </li>
               </ul>
             </div>
           </div>
+
+          
 
                  
           <div class="mss-table table-responsive">
@@ -1112,6 +1121,7 @@
     const xmlText = await res.text();
     const doc = new DOMParser().parseFromString(xmlText, "text/xml");
     if (doc.querySelector("parsererror")) return null;
+    
 
     const msDescEl = doc.querySelector("msDesc");
     if (!msDescEl) return null;
@@ -1145,7 +1155,7 @@
         manuscripts
       };
 
-      downloadJson(payload, "bdd_msdesc_export.json");
+      downloadJson(payload, "bdd_manuscripts_data.json");
     } catch (e) {
       console.error(e);
       alert("Export failed.");
@@ -1267,7 +1277,7 @@
       const results = await Promise.all((window.BDD_MSS || []).map(fetchMsDescForCsv));
       const rows = [header, ...results.filter(Boolean)];
 
-      downloadCsv(rows, "bdd_manuscripts_data_export.csv");
+      downloadCsv(rows, "bdd_manuscripts_table.csv");
     } catch (e) {
       console.error(e);
       alert("CSV export failed.");
@@ -1276,6 +1286,78 @@
       if (typeof checkLanguage === "function") checkLanguage();
     }
   }
+
+  // TEI-XML Corpus export
+  async function exportAllMsDescTei() {
+    const btn = document.getElementById("exportMsdescTeiBtn");
+    if (btn) btn.disabled = true;
+
+    try {
+      // Fetch raw XML text for each manuscript
+      const results = await Promise.all(
+        (window.BDD_MSS || []).map(async (ms) => {
+          const path = msPath(ms);
+          const res = await fetch(path, { cache: "no-cache" });
+          if (!res.ok) return null;
+          const xmlText = await res.text();
+          // Basic sanity check
+          if (xmlText.includes("<parsererror")) return null;
+          return xmlText
+          .trim()
+          .replace(/<\?xml-model[^?]*\?>\s*/g, "")
+          .replace(/<\?xml[^?]*\?>\s*/g, "");
+        })
+      );
+
+      const validTeis = results.filter(Boolean);
+
+      const corpusHeader = `  <teiHeader>
+      <fileDesc>
+        <titleStmt>
+          <title>Burchards Dekret Digital – Manuscript Corpus Export</title>
+        </titleStmt>
+        <publicationStmt>
+          <publisher>Burchards Dekret Digital</publisher>
+          <date when="${new Date().toISOString().slice(0, 10)}"/>
+        </publicationStmt>
+        <sourceDesc>
+          <p>Aggregated export of all manuscript TEI descriptions. Exported from: ${window.location.href}</p>
+        </sourceDesc>
+      </fileDesc>
+    </teiHeader>`;
+
+      const teiCorpus = `<?xml version="1.0" encoding="UTF-8"?>
+  <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+  ${corpusHeader}
+  ${validTeis.join("\n\n")}
+  </teiCorpus>`;
+
+  
+
+      // Download
+      const blob = new Blob([teiCorpus], { type: "application/xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "bdd_manuscripts_corpus.xml";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+    } catch (e) {
+      console.error(e);
+      alert("TEI export failed.");
+    } finally {
+      if (btn) btn.disabled = false;
+      if (typeof checkLanguage === "function") checkLanguage();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("exportMsdescTeiBtn");
+    if (btn) btn.addEventListener("click", exportAllMsDescTei);
+  });
 
   document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("exportMsdescCsvBtn");

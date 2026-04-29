@@ -109,6 +109,12 @@ function toggleTextWrap() {
         div.style.whiteSpace = 'normal';
     });
 }
+function resetTextWrap() {
+    var transcriptionDivs = document.querySelectorAll('.transcription-col');
+    transcriptionDivs.forEach(function(div) {
+        div.style.whiteSpace = 'nowrap';
+    });
+}
 
 
 
