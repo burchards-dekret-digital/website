@@ -194,6 +194,7 @@
       </style>
   </head>
   <body>
+      <!--<div id="access-placeholder"></div>-->
       <div id="navbar-placeholder"></div>
       <div class="back-button ps-4 mt-5">
         <button class="btn btn-outline-secondary rounded-circle hBack" type="button"><i class="fas fa-arrow-left"></i></button>
@@ -264,7 +265,8 @@
                   Display settings
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" onclick="showElement('tei_lb')"><span lang="de">Original</span><span lang="en">Original</span></a></li>
+                  <!--<li><a class="dropdown-item" onclick="showElement('tei_lb')"><span lang="de">Original</span><span lang="en">Original</span></a></li>-->
+                  <li><a class="dropdown-item" onclick="showElement('tei_lb'); showElement('tei_seg_displaced'); resetTextWrap()"><span lang="de">Original</span><span lang="en">Original</span></a></li>
                   <li><a class="dropdown-item" onclick="hideElement('tei_lb'); hideElement('tei_seg_displaced'); toggleTextWrap()"><span lang="de">Lesefassung</span><span lang="en">Reading version</span></a></li>
                   <hr/>
                   <li><a class="dropdown-item" onclick="showElement('tei_abbr');hideElement('tei_expan')"><span lang="de">Abkürzungen anzeigen</span><span lang="en">Show abbreviations</span></a></li>
@@ -762,8 +764,7 @@ document.addEventListener("DOMContentLoaded", () => {
         transcription: panel.querySelector('.add-transcription-btn').classList.contains('btn-primary'),
         structure: panel.querySelector('.add-structure-btn').classList.contains('btn-primary'),
         mirador: panel.querySelector('.mirador-btn').classList.contains('btn-primary'),
-        scribe: panel.querySelector('.scribe-btn').classList.contains('btn-primary'),
-        editor: panel.querySelector('.editor-btn').classList.contains('btn-primary')
+        scribe: panel.querySelector('.scribe-btn').classList.contains('btn-primary')
         
       };
       resourceState.push({ bookId, view });
@@ -835,13 +836,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (resource.view.mirador) {
         selectedViews[2] = true
       }
-      
       if (resource.view.scribe) { 
         selectedViews[3] = true 
       }
-      if (resource.view.editor) {
-        selectedViews[4] = true
-      }
+      
       await initializeMirador(container, resource.bookId, selectedViews)
     }
     updateWelcomeMessageVisibility();
@@ -877,111 +875,108 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   
-/*new version*/
+/*Load single HTML file*/
   async function initializeMirador(container, book, selectedViews) {
-    return new Promise(async (resolve, reject) => {
-      let [msName, msAbbr, bookN] = book.split('_');
+  return new Promise(async (resolve, reject) => {
+    let [msName, msAbbr, bookN] = book.split('_');
 
-      // Lookup ms object (BDD_MSS)
-      const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
-      if (!ms || !window.BDD_PATHS) {
-        console.error("BDD_PATHS/ms lookup not available.");
-        return resolve();
+    // Lookup ms object (BDD_MSS)
+    const ms = (typeof getMsBySigle === "function") ? getMsBySigle(msAbbr) : null;
+    if (!ms || !window.BDD_PATHS) {
+      console.error("BDD_PATHS/ms lookup not available.");
+      return resolve();
+    }
+
+    const prefer = "canonical";
+
+    // ONE single combined HTML file
+    let folderPath = window.BDD_PATHS.bookHtml(ms, bookN, { prefer });
+
+    let response = await fetch(folderPath);
+
+    if (response.ok) {
+      let htmlContent = await response.text();
+
+      // Parse combined HTML
+      let tempDiv = document.createElement('div');
+      tempDiv.innerHTML = htmlContent;
+
+      // Extract the different sections from the combined file
+      let transcriptionHtml = tempDiv.querySelector('.bdd-view.transcription')?.innerHTML || '';
+      let structureHtml = tempDiv.querySelector('.bdd-view.structure')?.innerHTML || '';
+      let scribeHtml = tempDiv.querySelector('.bdd-view.scribe')?.innerHTML || '';
+      let editorHtml = tempDiv.querySelector('.bdd-view.info')?.innerHTML || '';
+
+      let msViews = [];
+      msViews.push(transcriptionHtml); // 0 transcription
+      msViews.push(structureHtml);     // 1 structure
+      msViews.push("<div class='mirDesktop' id='" + "mirador" + msAbbr + bookN + "'></div>"); // 2 mirador
+      msViews.push(scribeHtml);        // 3 scribe
+      msViews.push(editorHtml);        // 4 editorial info (for modal only)
+
+      // Find first element with data-canvas INSIDE transcription
+      let transcriptionTemp = document.createElement('div');
+      transcriptionTemp.innerHTML = transcriptionHtml;
+
+      let firstCanvasEl = transcriptionTemp.querySelector('[data-canvas]');
+
+      let initialCanvasId = null;
+      if (firstCanvasEl) {
+        initialCanvasId = firstCanvasEl
+          .getAttribute('data-canvas')
+          .split('#')[0];
       }
 
-      
-      const prefer = "canonical";
-      
+      let mirID = "mirador" + msAbbr + bookN;
+      const catalog = (window.BDD_MSS || [])
+        .filter(m => m.manifestId)
+        .map(m => ({ sigle: m.sigle, manifestId: m.manifestId }));
 
-      let folderPath = window.BDD_PATHS.bookHtml(ms, bookN, { prefer });
-      let folderPathStructure = window.BDD_PATHS.bookStructureHtml(ms, bookN, { prefer });
-      let folderPathScribe = window.BDD_PATHS.bookScribeHtml(ms, bookN, { prefer });
-      let folderPathEditor = window.BDD_PATHS.bookEditorHtml(ms, bookN, { prefer });
+      const manifestId = ms.manifestId || "";
 
-      
+      let panel = createResourcePanel(book, msViews, selectedViews);
+      addTaxonomyIcon(panel);
+      underlineDelSpanAndAnchor(panel);
+      addSpanAndAnchor(panel);
+      container.appendChild(panel);
+      checkLanguage();
 
-      let response = await fetch(folderPath);
-      let htmlContent = await response.text();
-      let responseStructure = await fetch(folderPathStructure);
-      let responseScribe = await fetch(folderPathScribe);
-      let responseEditor = await fetch(folderPathEditor);
-      
-
-      // check scribe as well
-      if (response.ok && responseStructure.ok && responseScribe.ok && responseEditor.ok) {
-        let msViews = [];
-        msViews.push(htmlContent);                        // 0 transcription
-
-        // Create a temp DOM to read the transcription
-        let tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlContent;
-
-        // Find first element with data-canvas
-        let firstCanvasEl = tempDiv.querySelector('[data-canvas]');
-
-        let initialCanvasId = null;
-        if (firstCanvasEl) {
-          initialCanvasId = firstCanvasEl
-            .getAttribute('data-canvas')
-            .split('#')[0];
-        }
-
-        msViews.push(await responseStructure.text());     // 1 structure
-        msViews.push("<div class='mirDesktop' id='" + "mirador" + msAbbr + bookN + "'></div>"); // 2 mirador
-        msViews.push(await responseScribe.text());        // 3 scribe
-        msViews.push(await responseEditor.text());        // 4 editor
-
-        let mirID = "mirador" + msAbbr + bookN;
-        const catalog = (window.BDD_MSS || [])
-          .filter(m => m.manifestId)
-          .map(m => ({ sigle: m.sigle, manifestId: m.manifestId }));
-
-        const manifestId = ms.manifestId || "";
-
-
-        let panel = createResourcePanel(book, msViews, selectedViews);
-        addTaxonomyIcon(panel); // Taxonomy icon
-        underlineDelSpanAndAnchor(panel);
-        addSpanAndAnchor(panel);
-        container.appendChild(panel);
-        checkLanguage();
-
-        // show/hide columns in Structure tables
-        let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
-        dropdownsStruct.forEach(dropdown => {
-          let checkboxes = dropdown.querySelectorAll('.toggle-column');
-          let table = dropdown.nextElementSibling;
-          checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function () {
-              let columnIndex = parseInt(checkbox.dataset.column);
-              let cells = table.querySelectorAll(
-                `tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`
-              );
-              cells.forEach(cell => {
-                cell.style.display = checkbox.checked ? '' : 'none';
-              });
+      // show/hide columns in Structure tables
+      let dropdownsStruct = container.querySelectorAll('.dropdown-structure');
+      dropdownsStruct.forEach(dropdown => {
+        let checkboxes = dropdown.querySelectorAll('.toggle-column');
+        let table = dropdown.nextElementSibling;
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function () {
+            let columnIndex = parseInt(checkbox.dataset.column);
+            let cells = table.querySelectorAll(
+              `tr > td:nth-child(${columnIndex + 1}), tr > th:nth-child(${columnIndex + 1})`
+            );
+            cells.forEach(cell => {
+              cell.style.display = checkbox.checked ? '' : 'none';
             });
           });
         });
+      });
 
-        panel.querySelectorAll('.move-left').forEach(function (element) {
-          element.addEventListener('click', function () {
-            let card = $(this).closest('.card').parent();
-            card.insertBefore(card.prev());
-            saveResourceState();
-          });
+      panel.querySelectorAll('.move-left').forEach(function (element) {
+        element.addEventListener('click', function () {
+          let card = $(this).closest('.card').parent();
+          card.insertBefore(card.prev());
+          saveResourceState();
         });
+      });
 
-        panel.querySelectorAll('.move-right').forEach(function (element) {
-          element.addEventListener('click', function () {
-            let card = $(this).closest('.card').parent();
-            card.insertAfter(card.next());
-            saveResourceState();
-          });
+      panel.querySelectorAll('.move-right').forEach(function (element) {
+        element.addEventListener('click', function () {
+          let card = $(this).closest('.card').parent();
+          card.insertAfter(card.next());
+          saveResourceState();
         });
+      });
 
-        // Delay execution to ensure Mirador can properly initialize
-        setTimeout(() => {
+      // Delay execution to ensure Mirador can properly initialize
+      setTimeout(() => {
         let windowsID = mirID + crypto.randomUUID();
         let miradorInstance = Mirador.viewer({
           id: mirID,
@@ -1008,40 +1003,40 @@ document.addEventListener("DOMContentLoaded", () => {
             manifestId: manifestId,
             canvasId: initialCanvasId
           }],
-            thumbnails: {
-              enabled: false
-            },
-            catalog: catalog
+          thumbnails: {
+            enabled: false
+          },
+          catalog: catalog
+        });
+
+        // Eye icon: open the chapter in mirador
+        panel.querySelectorAll(".icon-chapter-mirador").forEach(function (icon) {
+          icon.addEventListener("click", function () {
+            let thisCanvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
+            let thisResourcePanel = $(this).closest('.resource-panel-item');
+            let thisMiradorWindow = thisResourcePanel.find('.mirador-window');
+            let thisWindowId = thisMiradorWindow.attr('id');
+            let action = Mirador.actions.setCanvas(thisWindowId, thisCanvasId);
+            miradorInstance.store.dispatch(action);
           });
+        });
 
-          // Eye icon: open the chapter in mirador
-          document.querySelectorAll(".icon-chapter-mirador").forEach(function (icon) {
-            icon.addEventListener("click", function () {
-              let thisCanvasId = icon.parentNode.getAttribute("data-canvas").split("#")[0];
-              let thisResourcePanel = $(this).closest('.resource-panel-item');
-              let thisMiradorWindow = thisResourcePanel.find('.mirador-window');
-              let thisWindowId = thisMiradorWindow.attr('id');
-              let action = Mirador.actions.setCanvas(thisWindowId, thisCanvasId);
-              miradorInstance.store.dispatch(action);
-            });
-          });
+        // Force Mirador to recalculate layout after init
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 100);
 
-          // Force Mirador to recalculate layout after init
-          setTimeout(() => {
-            window.dispatchEvent(new Event('resize'));
-          }, 100);
-
-          saveResourceState();
-          adjustPanelWidth();
-          resolve();
-        }, 400);
-      } else {
-        //fallback: don’t break if scribe file is missing
-        console.warn("One or more resource files could not be loaded for", book);
+        saveResourceState();
+        adjustPanelWidth();
         resolve();
-      }
-    });
-  }
+      }, 400);
+
+    } else {
+      console.warn("Combined resource file could not be loaded for", book, folderPath);
+      resolve();
+    }
+  });
+}
 
 
   /*New version to prevent books to be uploaded multiple times*/
@@ -1050,10 +1045,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Check if this book is already on the workspace
       const existing = container.querySelector(`[data-ms='${book.value}']`);
       
-      /*if (existing) {
-        console.log(`Book ${book.value} already loaded, skipping.`);
-        continue; // Skip if already added
-      }*/
       if (existing) {
         alert(`"${book.value}" is already displayed on your workspace.`);
         continue;// Skip if already added
@@ -1503,14 +1494,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-    let [transcriptionAdded, structureAdded, miradorAdded, scribeAdded, editorAdded] = selectedViews
+    let [transcriptionAdded, structureAdded, miradorAdded, scribeAdded] = selectedViews
 
     var viewsElements = panel.getElementsByClassName('col');
     const addTranscriptionBtn = panel.querySelector('.add-transcription-btn');
     const addStructureBtn = panel.querySelector('.add-structure-btn');
     const miradorBtn = panel.querySelector('.mirador-btn');
     const scribeBtn = panel.querySelector('.scribe-btn');
-    const editorBtn = panel.querySelector('.editor-btn');
 
     if (transcriptionAdded){
         viewsElements[0].classList.remove('d-none');
@@ -1533,11 +1523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scribeBtn.classList.add('btn-primary');
     }
 
-    if (editorAdded){
-      viewsElements[4].classList.remove('d-none');
-      editorBtn.classList.remove('btn-outline-primary');
-      editorBtn.classList.add('btn-primary');
-    }
+   
 
     addTranscriptionBtn.addEventListener('click', function() {
       if (!transcriptionAdded) {
@@ -1600,22 +1586,6 @@ document.addEventListener("DOMContentLoaded", () => {
         scribeAdded = false;
         scribeBtn.classList.remove('btn-primary');
         scribeBtn.classList.add('btn-outline-primary');
-      }
-      saveResourceState(); //Save resource panel status after addtion/deletion structure
-      adjustPanelWidth()
-    });
-
-    editorBtn.addEventListener('click', function() {
-      if (!editorAdded) {
-        viewsElements[4].classList.remove('d-none');
-        editorAdded = true;
-        editorBtn.classList.remove('btn-outline-primary');
-        editorBtn.classList.add('btn-primary');
-      } else {
-        viewsElements[4].classList.add('d-none');
-        editorAdded = false;
-        editorBtn.classList.remove('btn-primary');
-        editorBtn.classList.add('btn-outline-primary');
       }
       saveResourceState(); //Save resource panel status after addtion/deletion structure
       adjustPanelWidth()

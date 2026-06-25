@@ -45,22 +45,30 @@
 br:not(.tei_lb):not(.tei_lb.nobreak) {
     display: none;
 }
+/*br:not(.tei_lb) {
+    display: none;
+}*/
 
-h5 + br.tei_lb {
+
+/*br.tei_lb + br {
     display:none!important;
+}*/
+/*br.tei_lb + br.tei_lb:not(.nobreak) {
+    display: none !important;
+}*/
+
+
+
+h5 + br.tei_lb,
+h6 + br.tei_lb,
+span.tei_note-inscription + br.tei_lb,
+.tei_praefatiuncula + br.tei_lb,
+li + br.tei_lb {
+    display: none !important;
 }
-h6 + br.tei_lb {
-    display:none!important;
-}
-span.tei_note-inscription + br.tei_lb {
-    display: none!important;
-}
-.tei_praefatiuncula + br.tei_lb {
-    display: none!important;
-}
-br.tei_lb + br {
-    display:none!important;
-}
+
+
+
 li + br.tei_lb {
     display:none!important;
 }
@@ -443,46 +451,59 @@ ol li{
 }
 
 
-/*.tei_damage-cut-out{background-color: lightgray;}
-.tei_damage-torn-out{background-color: lightgray;}
-.tei_damage-burned{background-color: lightgray;}
-.tei_damage-trimmed{background-color: lightgray;}
-.tei_damage-cut-out::after{content:"[Reason of damage: cut-out]"; background-color: lightgray;}
-.tei_damage-torn-out::after{content:"[Reason of damage: torn-out]"; background-color: lightgray;}
-.tei_damage-burned::after{content:"[Reason of damage: burned]"; background-color: lightgray;}
-.tei_damage-trimmed::after{content:"[Reason of damage: trimmed]"; background-color: lightgray;}*/
 
-.tei_damage-cut-out::after{
+/*.tei_damage-cut-out::after{
     content:"_";
     display: inline;
     text-decoration: underline;
     text-decoration-style: double;
     text-decoration-color: #c452f5;
     color:transparent;
+    cursor: pointer;
+}*/
+.tei_damage-cut-out::after {
+    content: "\25A2"; /* ▢ */
+    color: #c452f5;
+    display: inline-block;
+    margin-right: 2px;
     cursor: pointer;
 }
 
-.tei_damage-torn-out::after{
+/*.tei_damage-torn-out::after{
     content:"_";
     display: inline;
     text-decoration: underline;
     text-decoration-style: double;
     text-decoration-color: #c452f5;
     color:transparent;
+    cursor: pointer;
+}*/
+.tei_damage-torn-out::after {
+    content: "\2326"; /* ▢ */
+    color: #c452f5;
+    display: inline-block;
+    margin-right: 2px;
     cursor: pointer;
 }
 
-.tei_damage-burned::after{
+/*.tei_damage-burned::after{
     content:"_";
     display: inline;
     text-decoration: underline;
     text-decoration-style: double;
     text-decoration-color: #c452f5;
     color:transparent;
+    cursor: pointer;
+}*/
+.tei_damage-burned::after {
+    content: "\2734"; /* ✴ */
+    color: rgb(255, 123, 0);
+    display: inline-block;
+    margin-right: 2px;
     cursor: pointer;
 }
 
-.tei_damage-trimmed::after{
+/*.tei_damage-trimmed::after{
     content:"_";
     display: inline;
     text-decoration: underline;
@@ -490,6 +511,14 @@ ol li{
     text-decoration-color: #c452f5;
     color:transparent;
     cursor: pointer;
+}*/
+.tei_damage-trimmed::after {
+    content: "\2702"; /* scissors */
+    color: #c452f5;
+    display: inline-block;
+    margin-right: 2px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .canvas {
@@ -1069,4 +1098,10 @@ td{
     background: #f5f5f5; 
     padding: 1em; 
     border-radius: 5px;
+}
+
+
+.tei_paragraph > br.tei_lb,
+.tei_paragraph > br.tei_lb.nobreak {
+    display: inline !important;
 }
