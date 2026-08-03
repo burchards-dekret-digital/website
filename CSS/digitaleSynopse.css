@@ -165,6 +165,11 @@ li + br.tei_lb {
     background-color:#e6a7c5;
   }
 
+.structure-clickable-number .tei_num,
+.structure-clickable-number .tei_num:hover {
+  background-color: transparent !important;
+}
+
   .tei_measure {
     position: relative;
     cursor: pointer;
@@ -172,6 +177,7 @@ li + br.tei_lb {
   .tei_measure:hover {
     background-color:#b3f0ff;
   }
+
  
 .tei_unclear{
     text-decoration: underline;
@@ -181,60 +187,12 @@ li + br.tei_lb {
     text-decoration: none;*/
 }
   
-  
-
-/*.icon-chapter-sync {
-    background-color: #f6f6f6;
-    border: none;
-    padding: 2px 8px;
-    margin-right:2px;
-    border-radius: 5px;
-}
-.icon-chapter-sync:hover {
-    background-color: #eaeaea;
-}
-
-.icon-chapter-mirador {
-    background-color: #f6f6f6;
-    border: none;
-    padding: 2px 8px;
-    margin-right:2px;
-    border-radius: 5px;
-}
-.icon-chapter-mirador:hover {
-    background-color: #eaeaea;
-}
-
-.prev-chapter{
-    background-color: #f6f6f6;
-    border: none;
-    padding: 2px 8px;
-    margin-right:2px;
-    border-radius: 5px;
-}
-.prev-chapter:hover{
-    background-color: #eaeaea;
-}
-
-.next-chapter{
-    background-color:#f6f6f6;
-    border: none;
-    padding: 2px 8px;
-    margin-right:2px;
-    border-radius: 5px;
-}
-.next-chapter:hover{
-    background-color:#eaeaea;
-}*/
 
 
 .tei_abbr {
     display: none;
 }
 
-/*.tei_expan {
-    background-color: white;
-}*/
 
 .tei_note-inscription {
     font-style: italic;
@@ -367,31 +325,6 @@ ol li{
     text-decoration-color: #5ac5fa;
 }
 
-/*.tei_delSpan {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-}
-.tei_delSpan-written-on-erased {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-}
-.tei_delSpan-start-written-on-erased{
-    text-decoration: underline;
-    text-decoration-style: wavy;
-}
-.tei_delSpan-written-on-erased-end{
-    text-decoration: underline;
-    text-decoration-style: wavy;
-}
-.tei_delSpan-strikethrough {
-    text-decoration: line-through;
-}
-.tei_delSpan-start-strikethrough{
-    text-decoration: line-through;
-}
-.tei_delSpan-strikethrough-end{
-    text-decoration: line-through;
-}*/
 
 .erased-lb {
     color: transparent;
@@ -450,17 +383,6 @@ ol li{
     text-decoration: underline;
 }
 
-
-
-/*.tei_damage-cut-out::after{
-    content:"_";
-    display: inline;
-    text-decoration: underline;
-    text-decoration-style: double;
-    text-decoration-color: #c452f5;
-    color:transparent;
-    cursor: pointer;
-}*/
 .tei_damage-cut-out::after {
     content: "\25A2"; /* ▢ */
     color: #c452f5;
@@ -469,15 +391,7 @@ ol li{
     cursor: pointer;
 }
 
-/*.tei_damage-torn-out::after{
-    content:"_";
-    display: inline;
-    text-decoration: underline;
-    text-decoration-style: double;
-    text-decoration-color: #c452f5;
-    color:transparent;
-    cursor: pointer;
-}*/
+
 .tei_damage-torn-out::after {
     content: "\2326"; /* ▢ */
     color: #c452f5;
@@ -486,15 +400,6 @@ ol li{
     cursor: pointer;
 }
 
-/*.tei_damage-burned::after{
-    content:"_";
-    display: inline;
-    text-decoration: underline;
-    text-decoration-style: double;
-    text-decoration-color: #c452f5;
-    color:transparent;
-    cursor: pointer;
-}*/
 .tei_damage-burned::after {
     content: "\2734"; /* ✴ */
     color: rgb(255, 123, 0);
@@ -503,15 +408,6 @@ ol li{
     cursor: pointer;
 }
 
-/*.tei_damage-trimmed::after{
-    content:"_";
-    display: inline;
-    text-decoration: underline;
-    text-decoration-style: double;
-    text-decoration-color: #c452f5;
-    color:transparent;
-    cursor: pointer;
-}*/
 .tei_damage-trimmed::after {
     content: "\2702"; /* scissors */
     color: #c452f5;
@@ -1081,6 +977,7 @@ td{
 .modal-table-tree-of-consanguinity {
     border-collapse: collapse;
     table-layout:auto!important;
+     font-family: Andron-Scriptor-Web !important;
 }
 .modal-table-tree-of-consanguinity td{
     border: 1px solid black;
@@ -1101,7 +998,7 @@ td{
 }
 
 
-.tei_paragraph > br.tei_lb,
+/*.tei_paragraph > br.tei_lb,
 .tei_paragraph > br.tei_lb.nobreak {
     display: inline !important;
-}
+}*/

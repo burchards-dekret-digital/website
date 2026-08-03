@@ -826,7 +826,6 @@
     </teiHeader>
     <!-- Beginn der Transkription -->
     <text>
-        <!-- Achtung, ggf. pagebreak vor Buch setzen -->
         <body xml:lang="lat">
             <div type="book" n="07" part="N" org="uniform" sample="complete">
                 <pb n="139v" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00282/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/282" ana="../../annotations/bamberg-sb-c-6-annotation-282" xml:id="B_0282"/>
@@ -1804,8 +1803,8 @@
                             incestuosis qui admonitiones <lb n="2" facs="263,258,411,82" xml:id="B_0293_column_1_l_02"/><choice><abbr>sacerdotu<g ref="#char-0304">̄</g></abbr><expan>sacerdotum</expan></choice>
                             contempnunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
                         <lb n="3" facs="241,278,436,112" xml:id="B_0293_column_1_l_03"/>
-                        <note type="inscription" place="margin left" anchored="false" facs="97,276,186,401" hand="#bamberg-sb-c-6-hunidentified" xml:id="B_0293_inscription_01"><lb xml:id="B_0293_inscription_01_l_01" n="1" facs="191,299,-71,150"/><unclear cert="high" resp="LeF" reason="rubbed">Ex </unclear><choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan></choice>
-                            Turonen<lb break="no" xml:id="B_0293_inscription_01_l_02" n="2" facs="162,329,-32,150"/><unclear cert="high" resp="LeF" reason=" rubbed">si </unclear><choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="41" type="chapter-number">xli</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <note type="inscription" place="margin left" anchored="false" facs="97,276,186,401" hand="#bamberg-sb-c-6-hunidentified" xml:id="B_0293_inscription_01"><unclear cert="high" resp="LeF" reason="rubbed">...</unclear><choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan></choice>
+                            Turonen<lb break="no" xml:id="B_0293_inscription_01_l_02" n="2" facs="162,329,-32,150"/><unclear cert="high" resp="LeF" reason=" rubbed">...</unclear><choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="41" type="chapter-number">xli</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
                         <p n="1" part="N"><hi rend="color:red initial">I</hi>ncestuosi parricidę
                             homicidę <lb n="4" facs="259,351,413,80" xml:id="B_0293_column_1_l_04"/>multi apud nos <choice><abbr><g ref="#char-a753">ꝓ</g></abbr><expan>pro</expan></choice> dolor <choice><abbr>reperi<lb n="5" facs="258,385,444,93" break="no" xml:id="B_0293_column_1_l_05"/>unt<g ref="#char-f1c2"></g></abbr><expan>reperi<lb n="5" facs="258,385,444,93" break="no" xml:id="B_0293_column_1_l_05_expan"/>untur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> sed aliqui ex illis <choice><abbr>sacerdotu<g ref="#char-0304">̄</g></abbr><expan>sacerdotum</expan></choice> <lb n="6" facs="260,431,430,92" xml:id="B_0293_column_1_l_06"/>nolunt
                             <choice><abbr>admonitionib<g ref="#char-f1ac"></g></abbr><expan>admonitionibus</expan></choice> aurem <lb n="7" facs="250,475,462,90" xml:id="B_0293_column_1_l_07"/><choice><abbr>acco<g ref="#char-0304">̄</g>modare</abbr><expan>accommodare</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> uolentes in pristinis
