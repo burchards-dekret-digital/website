@@ -1320,15 +1320,7 @@ function translateMeasureUnit(unit, lang) {
 }
 
 //Creates Bootstrap tooltips for TEI num elements using their normalized numeric value
-/*function addNumberTooltips(root = document) {
-  root.querySelectorAll('.tei_num[data-value]').forEach(num => {
-    const value = num.dataset.value;
-    if (!value) return;
-    num.setAttribute('data-bs-toggle', 'tooltip');
-    num.setAttribute('data-bs-title', value);
-    initTooltip(num);
-  });
-}*/
+
 function addNumberTooltips(root = document) {
   root.querySelectorAll('.tei_num[data-value]').forEach(num => {
     // Do not create number tooltips inside the Structure table links
@@ -1541,6 +1533,21 @@ function showScribes() {
 
     // Single recursive function that updates currentScribeNumber dynamically
     function styleNode(node) {
+      // Do not apply scribe highlighting to UI elements or popover content
+      if (
+        node.nodeType === Node.ELEMENT_NODE &&
+        node.matches(
+          '.chapter-toolbar, ' +
+          '.tei-popover-content, ' +
+          '.popover, ' +
+          '.popover-body, ' +
+          '.tei_note-editorial-comment-icon, ' +
+          '.tei_note-editorial-comment-mirador-icon'
+        )
+      ) {
+        return;
+      }
+
       if (node.nodeName.toUpperCase() === 'INS') {
         node.childNodes.forEach((child) => styleNode(child));
         return;
@@ -1600,7 +1607,7 @@ function showScribes() {
   });
 
   // Clean up UI elements that shouldn't have scribe background classes
-  function removeScribeBgClasses(selectors) {
+  /*function removeScribeBgClasses(selectors) {
     selectors.forEach((selector) => {
       document.querySelectorAll(selector).forEach((el) => {
         [...el.classList].forEach((cls) => {
@@ -1608,9 +1615,34 @@ function showScribes() {
         });
       });
     });
-  }
+  }*/
+
+    function removeScribeBgClasses(selectors) {
+      selectors.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((container) => {
+          // Clean both the selected element and all its descendants
+          const elements = [
+            container,
+            ...container.querySelectorAll('*')
+          ];
+
+          elements.forEach((el) => {
+            [...el.classList].forEach((cls) => {
+              if (/^scribe\d+-bg$/.test(cls)) {
+                el.classList.remove(cls);
+              }
+            });
+
+            el.classList.remove('scribe-unidentified-bg');
+          });
+        });
+      });
+    }
 
   removeScribeBgClasses([
+    '.chapter-toolbar',
+    '.tei-popover-content',
+    '.popover',
     '.taxonomy-icon',
     '.tei_note-editorial-comment-mirador-icon',
     '.tei_note-editorial-comment-icon',
