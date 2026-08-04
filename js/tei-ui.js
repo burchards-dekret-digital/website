@@ -441,6 +441,14 @@ function enhanceHandShifts(root = document) {
     handShift.dataset.handShiftUiInitialized = 'true';
 
     const icon = createHandShiftIcon();
+
+    icon.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      openScribePanelFromHandShift(handShift);
+    });
+
     handShift.prepend(icon);
   });
 }
@@ -458,6 +466,83 @@ function createHandShiftIcon() {
   icon.appendChild(image);
 
   return icon;
+}
+
+// Opens the Scribe panel and expands its main Scribe accordion
+function openScribePanelFromHandShift(handShift) {
+  const panel = handShift.closest('.resource-panel-item');
+
+  if (!panel) {
+    console.warn('Resource panel not found for handShift.');
+    return;
+  }
+
+  const scribeColumn = panel.querySelector('.scribe-col');
+  const scribeButton = panel.querySelector('.scribe-btn');
+
+  if (!scribeColumn) {
+    console.warn('Scribe column not found.');
+    return;
+  }
+
+  // Open the Scribe view if it is currently hidden
+  if (
+    scribeColumn.classList.contains('d-none') &&
+    scribeButton
+  ) {
+    scribeButton.click();
+  }
+
+  // The Scribe accordion is created dynamically inside this panel
+  const scribeAccordion = scribeColumn.querySelector(
+    '#accordionScribe'
+  );
+
+  if (!scribeAccordion) {
+    console.warn('Scribe accordion not found.');
+    return;
+  }
+
+  // Select the accordion button whose target is the "info" section
+  const infoButton = scribeAccordion.querySelector(
+    '.accordion-button[data-bs-target*="collapse-info-"]'
+  );
+
+  if (!infoButton) {
+    console.warn('Scribe information accordion button not found.');
+    return;
+  }
+
+  const collapseSelector =
+    infoButton.getAttribute('data-bs-target');
+
+  if (!collapseSelector) return;
+
+  const collapseElement =
+    scribeAccordion.querySelector(collapseSelector);
+
+  if (!collapseElement) {
+    console.warn('Scribe information collapse element not found.');
+    return;
+  }
+
+  // Open the accordion with the Bootstrap API
+  const collapse = bootstrap.Collapse.getOrCreateInstance(
+    collapseElement,
+    {
+      toggle: false
+    }
+  );
+
+  collapse.show();
+
+  // Scroll the Scribe column to the opened section
+  setTimeout(() => {
+    infoButton.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }, 200);
 }
 
 
