@@ -24,8 +24,8 @@ const STRUCTURE_CONFIG = {
         className: 'transmission'
       },
       {
-        de: 'Incipit',
-        en: 'Incipit'
+        de: 'Rubrik',
+        en: 'Rubric'
       },
       {
         de: 'Hand',
