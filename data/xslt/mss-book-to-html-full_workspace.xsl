@@ -509,7 +509,11 @@
 
     <xsl:variable name="year" select="normalize-space(($entry//tei:monogr/tei:imprint/tei:date[1])[1])"/>
 
-    <a href="{concat('bibl.html#', $id)}" target="_blank" class="tei_bibl-ref"><xsl:value-of select="$surname"/><xsl:text> </xsl:text><xsl:value-of select="$year"/><xsl:text>, </xsl:text><xsl:apply-templates select="tei:citedRange" mode="editorial-popover"/></a>
+    <a href="{concat('bibl.html#', $id)}" target="_blank" class="tei_bibl-ref"><xsl:value-of select="$surname"/><xsl:text> </xsl:text><xsl:value-of select="$year"/>
+        <xsl:if test="tei:citedRange[normalize-space()]">
+            <xsl:text>, </xsl:text>
+            <xsl:apply-templates select="tei:citedRange[normalize-space()]" mode="editorial-popover"/>
+        </xsl:if></a>
 </xsl:template>
 
 
@@ -673,7 +677,9 @@
     <!-- exclude header text -->
     <xsl:template match="tei:div[@type = 'toc']/tei:head" mode="structure"/>
 
-
+<!-- Exclude chapter-number labels from the incipit, including labels nested inside add, subst, etc. -->
+    <xsl:template match="tei:item//tei:label[@type = 'chapter-number']" mode="structure"/>
+    
     <!-- Key for looking up handNote by @xml:id -->
 <!-- Key for looking up person by @xml:id in scribes.xml -->
 <xsl:template match="tei:item" mode="structure">
