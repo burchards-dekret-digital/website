@@ -156,6 +156,27 @@ li + br.tei_lb {
     content: "[sic!]";
 }
 
+/* Transposition: original word order */
+.tei_sic-transposition {
+    display: inline;
+    color: #808080 !important;
+    border: thin solid #b3b3b3;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Transposition: corrected word order */
+.tei_corr-transposition {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #b7791f;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
 
 .tei_num {
     position: relative;
@@ -341,10 +362,11 @@ ol li{
 }
 .tei_erasure-visible{
     display: inline;
-    color:  #808080 !important;
+    color: #808080 !important;
     border: thin solid  #b3b3b3;
-    padding-left:1px;
-    padding-right:1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
     position: relative;
     cursor: pointer;
   }
@@ -360,10 +382,11 @@ ol li{
 
 .tei_del-correction{
     display: inline;
-    color:  #808080 !important;
+    color: #808080 !important;
     border: thin solid  #b3b3b3;
-    padding-left:1px;
-    padding-right:1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
     position: relative;
     cursor: pointer;
   }
@@ -371,10 +394,11 @@ ol li{
 
 .tei_del-expunctuation{
     display: inline;
-    color:  #808080 !important;
+    color: #808080 !important;
     border: thin solid  #b3b3b3;
-    padding-left:1px;
-    padding-right:1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
     position: relative;
     cursor: pointer;
   }

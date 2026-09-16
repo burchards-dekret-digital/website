@@ -1,0 +1,1263 @@
+<?xml-model href="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/-/raw/main/schema/bdd-transcription.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="bdd-bamberg-sb-c-6-14">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main" xml:lang="ger">Decretum Burchardi</title>
+                <title type="unit" xml:lang="ger">Bamberg, Staatsbibliothek, Can.6</title>
+                <title type="module" xml:lang="ger">Buch 14</title>
+                <title type="sub" xml:lang="ger">Transkription (Version 1)</title>
+                <title type="main" xml:lang="en">Decretum Burchardi</title>
+                <title type="unit" xml:lang="en">Bamberg, Staatsbibliothek, Can. 6</title>
+                <title type="module" xml:lang="en">Book 14</title>
+                <title type="sub" xml:lang="en">Transcription (Version 1)</title>
+                <funder>
+                    <orgName ref="https://www.adwmainz.de">Akademie der
+                        Wissenschaften und der Literatur Mainz</orgName>
+                </funder>
+                <principal xml:id="InB" ref="https://orcid.org/0000-0002-6887-5327">
+                    <persName>
+                        <forename>Ingrid</forename>
+                        <surname>Baumgärtner</surname>
+                        <affiliation>TU Darmstadt</affiliation>
+                    </persName>
+                </principal>
+                <principal xml:id="KlH" ref="https://explore.gnd.network/gnd/120983524">
+                    <persName>
+                        <forename>Klaus</forename>
+                        <surname>Herbers</surname>
+                        <affiliation>Friedrich-Alexander-Universität
+                            Erlangen-Nürnberg</affiliation>
+                    </persName>
+                </principal>
+                <principal xml:id="LuK" ref="https://explore.gnd.network/gnd/131756478">
+                    <persName>
+                        <forename>Ludger</forename>
+                        <surname>Körntgen</surname>
+                        <affiliation>Johannes Gutenberg-Universität Mainz</affiliation>
+                    </persName>
+                </principal>
+                <respStmt xml:id="MiS" ref="https://orcid.org/0000-0002-2750-1900">
+                    <persName> <forename>Michael</forename> <surname>Schonhardt</surname>
+                        <affiliation>TU Darmstadt</affiliation> </persName>
+                    <resp><span xml:lang="ger">Layout- und Texterkennung in Transkribus</span><span xml:lang="en">Layout and text recognition in Transkribus</span></resp>
+                </respStmt>
+                <respStmt xml:id="MiP" ref="https://orcid.org/0000-0003-1959-2897">
+                    <persName> <forename>Michela</forename> <surname>Parma</surname>
+                        <affiliation>Universität Mainz</affiliation> </persName>
+                    <resp><span xml:lang="ger">Transformation in XML und TEI-Schema
+                        Validierung</span><span xml:lang="en">Transformation to XML and TEI schema
+                        validation</span></resp>
+                </respStmt>
+                <respStmt xml:id="CoS" ref="https://orcid.org/0009-0008-3104-8804">
+                    <persName> <forename>Cornelia</forename> <surname>Scherer</surname>
+                        <affiliation>Universität Erlangen</affiliation> </persName>
+                    <resp><span xml:lang="ger">Korrektur</span><span xml:lang="en">Correction</span></resp>
+                    <resp><span xml:lang="ger">Auszeichnung besonderer Elemente</span><span xml:lang="en">Markup of special elements</span></resp>
+                </respStmt>
+                <respStmt xml:id="HeG" ref="https://orcid.org/0009-0005-4541-5298">
+                    <persName> <forename>Helena</forename> <surname>Geitz</surname>
+                        <affiliation>Universität Mainz</affiliation> </persName>
+                    <resp><span xml:lang="ger">Transkription</span><span xml:lang="en">Transcription</span></resp>
+                    <resp><span xml:lang="ger">Strukturauszeichnung</span><span xml:lang="en">Structural markup</span></resp>
+                    <resp><span xml:lang="ger">Handwechsel nach Hoffmann/Pokorny</span><span xml:lang="en">Change of hands according to Hoffmann/Pokorny</span></resp>
+                    <resp><span xml:lang="ger">Korrektur</span><span xml:lang="en">Correction</span></resp>
+                </respStmt>
+                <respStmt xml:id="ChO" ref="https://orcid.org/0009-0001-3910-1832">
+                    <persName> <forename>Christopher</forename> <surname>Oed</surname>
+                        <affiliation>FAU Erlangen Nürnberg</affiliation> </persName>
+                    <resp><span xml:lang="ger">Layout- und Texterkennung in Transkribus</span><span xml:lang="en">Layout and text recognition in Transkribus</span></resp>
+                </respStmt>
+                <respStmt xml:id="AnG" ref="https://orcid.org/0009-0009-0321-9925">
+                    <persName> <forename>Andreas</forename> <surname>Grote</surname>
+                        <affiliation>Akademie der Wissenschaften und Literatur Mainz / Zentrum für
+                        Augustinusstudien Würzburg</affiliation> </persName>
+                    <resp><span xml:lang="ger">Korrektur</span><span xml:lang="en">Correction</span></resp>
+                </respStmt>
+                <respStmt xml:id="MePB" ref="https://orcid.org/0000-0001-9980-9309">
+                    <persName> <forename>Melanie</forename> <surname>Panse-Buchwalter</surname>
+                        <affiliation>TU Darmstadt</affiliation> </persName>
+                    <resp><span xml:lang="ger">Handwechsel nach Hoffmann/Pokorny</span><span xml:lang="en">Change of hands according to Hoffmann/Pokorny</span></resp>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <edition n="version-1">
+                    <note xml:lang="ger" anchored="true">Version 1 (aktuelle Version): Transkription
+                        zur Textsicherung: Diese Version enthält IDs der einzelnen Kapitel und
+                        synchronisiert diese mit anderen Transkriptionen der Handschriften des
+                        Dekrets. Ausgezeichnet sind in dieser Version alle supplied-Elemente,
+                        Korrekturen und Rasuren. IIIF-Daten sind vorhanden.</note>
+                    <note xml:lang="en" anchored="true">Version 1 (current version): Transcription
+                        for securing text-genetic evidence: This version contains IDs of individual
+                        chapters and synchronizes them with other transcriptions of the decree's
+                        manuscripts. Supplied elements, corrections, and erasures are marked up in
+                        this version. IIIF data is available."</note>
+                    <note xml:lang="ger" anchored="true">Version 2: Transkription des Dokuments mit
+                        codierten kodikologischen Phänomen, zum Beispiel Handwechsel. Die
+                        Phänomene sind im Mirador Viewer ausgezeichnet und mittels einer
+                        Taxonomie klassifiziert.</note>
+                    <note xml:lang="en" anchored="true">Version 2: Transcription of the document
+                        with encoded codicological phenomena, such as hand shifts. The phenomena are
+                        highlighted in the Mirador Viewer and classified using a taxonomy.</note>
+                    <note xml:lang="ger" anchored="true">Version 3: Textgesicherte Transkription mit
+                        kodikologischen Phänomenen, in der externe IDs referenziert sind.
+                        Rezeptionsspuren, z.B. nota-Zeichen, sind ausgezeichnet. Auf sinntragende
+                        Varianten in anderen Handschriften des Decretum Burchardi wird hingewiesen.
+                        Die Transkription ist mit der Edition verbunden.</note>
+                    <note xml:lang="en" anchored="true">Version 3: Transcription with secured
+                        text-genetic evidence, codicological phenomena, and IDs referencing to
+                        external sources. Traces of reception, e.g., nota signs, are distinguished.
+                        The transcription points to meaningful variants in other manuscripts of the
+                        Decretum Burchardi and is linked with the edition.</note>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher xml:id="publisher">Burchards Dekret Digital</publisher>
+                <availability default="false">
+                    <licence target="https://creativecommons.org/licenses/by/4.0" n="cc-by-4.0">
+                        <p xml:lang="ger">Dieses Werk bzw. dieser Inhalt wurde
+                            digitalisiert durch das Projekt Burchards Dekret Digital und steht unter
+                            einer <ref target="https://creativecommons.org/licenses/ by/4.0/deed.de">Creative Commons Lizenz: Namensnennung 4.0 International (CC BY
+                            4.0)</ref>.</p>
+                        <p xml:lang="en">This work or content, respectively, was digitized
+                            by the Burchards Dekret Digital and is licensed under the terms of a
+                            <ref target="http://creativecommons.org/licenses/by/4.0/">Creative
+                            Commons Attribution 4.0 International (CC BY 4.0)</ref>.</p>
+                    </licence>
+                </availability>
+                <date when="2026-09-15" xml:lang="en">Date of publication: 15.09.2026</date>
+                <date when="2026-09-15" xml:lang="ger">Publiziert am 15.09.2026</date>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc xml:id="bamberg-sb-c-6-msdesc">
+                    <msIdentifier xml:id="bamberg-sb-c-6">
+                        <repository ref="https://www.staatsbibliothek-bamberg.de/">Staatsbibliothek<location>
+                            <geo>49.890972,10.894102</geo> </location> <settlement ref="https://www.wikidata.org/wiki/Q3936">Bamberg</settlement> <country ref="https://www.wikidata.org/wiki/Q183">Deutschland</country> </repository>
+                        <collection>
+                            <idno type="shelfmark">Can. 6</idno>
+                        </collection>
+                        <altIdentifier type="old-signature">
+                            <idno type="shelfmark">C44</idno>
+                        </altIdentifier>
+                        <msName type="full">Bamberg, Staatsbibliothek, Can. 6</msName>
+                        <msName type="sigle">B</msName>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <p xml:lang="ger">Die Blätter 3–5 dürften mit
+                                einem weiteren, verlorenen Blatt ursprünglich am Ende des Codex
+                                gestanden haben. Durch die heutige Bindung stehen somit spätere
+                                Zusätze, wie die Synode von Seligenstadt (bricht bei Can. 19
+                                ab) und die Admonitio Synodalis, vom Ende zwischen Prolog und
+                                Decretum. Am Anfang des Codex wurde ein neuer Quaternio von
+                                dünnerem, stark abgeriebenen Pergament eingebunden. Es finden
+                                sich kleinere Beschädigungen auf zahlreichen Seiten des
+                                Codex.</p>
+                            <p xml:lang="en">The leaves 3-5 likely originally stood at the
+                                end of the codex along with another, lost leaf. Due to the current
+                                binding, later additions such as the Synod of Seligenstadt (which
+                                ends at Can. 19) and the Admonitio Synodalis are now placed between
+                                the prologue and the decree. At the beginning of the codex, a new
+                                quire of thinner, heavily rubbed parchment was bound in. There are
+                                minor damages on numerous pages of the codex.</p>
+                        </objectDesc>
+                        <handDesc hands="38" xml:id="bamberg-sb-c-6-hands">
+                            <handNote xml:id="bamberg-sb-c-6-h01" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-msdesc.xml#vatican-bav-pal-lat-585-h01 ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-msdesc.xml#vatican-bav-pal-lat-586-h01 ../frankfurt-ub-b-50/frankfurt-ub-b-50-msdesc.xml#frankfurt-ub-b-50-h03 ../koeln-edd-c-119/koeln-edd-c-119-msdesc.xml#koeln-edd-c-119-h12" scope="major" scribeRef="../../register/scribes.xml#WoSscribe01" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                A.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h02" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe18" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                B.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h03" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe19" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                C.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h04" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe20" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                D.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h05" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe21" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                E.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h06" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe22" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                F.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h07" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe23" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                G.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h08" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe24" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                H.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h09" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe25" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                I.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h10" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe26" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                K.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h11" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe27" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                L.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h12" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe28" source="../../register/literature.xml#X25FUV2K|16" cert="high">Hand
+                                M.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h13" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe29" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                N.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h14" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe30" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                O.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h15" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe31" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                P.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h16" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe32" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                Q.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h17" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe33" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                R.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h18" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe34" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                S.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h19" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe35" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                T.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h20" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe36" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                U.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h21" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe37" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                V.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h22" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe38" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                W.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h23" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe39" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                X.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h24" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe40" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                Y.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h25" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe41" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                Z.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h26" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe42" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                AA.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h27" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe43" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                BB.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h28" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe44" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                CC.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h29" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe45" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                DD.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h30" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe46" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                EE.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h31" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe47" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                FF.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h32" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe48" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                GG.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h33" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe49" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                HH.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h34" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe50" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                II.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h35" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe51" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                KK.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h36" corresp="../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-msdesc.xml#vatican-bav-pal-lat-585-h10 ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-msdesc.xml#vatican-bav-pal-lat-586-h10 ../frankfurt-ub-b-50/frankfurt-ub-b-50-msdesc.xml#frankfurt-ub-b-50-h01 ../koeln-edd-c-119/koeln-edd-c-119-msdesc.xml#koeln-edd-c-119-h06" scope="minor" scribeRef="../../register/scribes.xml#WoSscribe10" source="../../register/literature.xml#X25FUV2K|18" cert="high">Hand
+                                LL.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-h37" scope="major" scribeRef="../../register/scribes.xml#WoSscribe62" source="../../register/literature.xml#X25FUV2K|17" cert="high">Hand
+                                J.</handNote>
+                            <handNote xml:id="bamberg-sb-c-6-hunidentified" scope="minor" scribeRef="../../register/scribes.xml#WoSunidentified" cert="unknown" corresp="../frankfurt-ub-b-50/frankfurt-ub-b-50-msdesc.xml#frankfurt-ub-b-50-hunidentified ../vatican-bav-pal-lat-585/vatican-bav-pal-lat-585-msdesc.xml#vatican-bav-pal-lat-585-hunidentified ../vatican-bav-pal-lat-586/vatican-bav-pal-lat-586-msdesc.xml#vatican-bav-pal-lat-586-hunidentified ../koeln-edd-c-119/koeln-edd-c-119-06.xml#koeln-edd-c-119-hunidentified">Nicht identifizierte Hand</handNote>
+                        </handDesc>
+                    </physDesc><history>
+                        <origin>
+                            <origPlace ref="https://www.wikidata.org/wiki/Q3852">Worms</origPlace>
+                            <origDate notBefore="1000" notAfter="1025">1/4 11.
+                                Jh.</origDate>
+                        </origin></history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p xml:lang="ger" n="1">Die vorliegende Datei enthält die diplomatische
+                Transkription (zu den Regeln siehe unten) eines Buches des Decretum Burchardi. Die
+                hierbei verwendeten Sonderzeichen werden über das TEI Modul gaiji nach den
+                Empfehlungen der MUFI (https://folk.uib.no/hnooh/mufi/) in der Version 4.0
+                verzeichnet und als unicode-Zeichen in einem g-Element gesetzt. Zur korrekten
+                Darstellung aller Zeichen ist ggf. ein entsprechender Zeichensatz notwendig, z.B.
+                Andron Scriptor Web (https://folk.uib.no/hnooh/mufi/fonts/index.html#Andron).</p>
+            <p xml:lang="en">This file contains the diplomatic transcription (for the
+                rules, see below) of a book from the Decretum Burchardi. The special characters used
+                here are recorded through the TEI module gaiji, following MUFI recommendations
+                (https://folk.uib.no/hnooh/mufi/) in version 4.0, and are set as Unicode characters
+                in a g-element. To correctly display all characters, a corresponding font may be
+                necessary, for example, Andron Scriptor Web
+                (https://folk.uib.no/hnooh/mufi/fonts/index.html#Andron).</p>
+            <charDecl>
+                <!-- -ur -->
+                <char xml:id="char-f1c2">
+                    <localProp name="name" value="COMBINING ABBREVIATION MARK SUPERSCRIPT UR LEMNISKATE FORM"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1C2</mapping>
+                    <mapping type="standardized">ur</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61890</ref>
+                    </note>
+                </char>
+                <!-- -bus -->
+                <char xml:id="char-f1ac">
+                    <localProp name="name" value="LATIN ABBREVIATION SIGN SEMICOLON"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1AC</mapping>
+                    <mapping type="standardized">;</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61868</ref>
+                    </note>
+                </char>
+                <!-- Distinctio -->
+                <char xml:id="char-f1f8">
+                    <localProp name="name" value="DISTINCTIO"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1F8</mapping>
+                    <mapping type="standardized">,</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61944</ref>
+                    </note>
+                </char>
+                <!-- punctus versus -->
+                <char xml:id="char-f1ea">
+                    <localProp name="name" value="PUNCTUS VERSUS"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1EA</mapping>
+                    <mapping type="standardized">.</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61930</ref>
+                    </note>
+                </char>
+                <!-- punctus flexus -->
+                <char xml:id="char-f1f5">
+                    <localProp name="name" value="PUNCTUS FLEXUS"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1F5</mapping>
+                    <mapping type="standardized">,</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61941</ref>
+                    </note>
+                </char>
+                <!-- punctus elevatus -->
+                <char xml:id="char-f1f0">
+                    <localProp name="name" value="PUNCTUS ELEVATUS DIAGONAL STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1F0</mapping>
+                    <mapping type="standardized">;</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61936</ref>
+                    </note>
+                </char>
+                <!-- punctus interrogativus -->
+                <char xml:id="char-f160">
+                    <localProp name="name" value="PUNCTUS INTERROGATIVUS"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F160</mapping>
+                    <mapping type="standardized">?</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61792</ref>
+                    </note>
+                </char>
+                <!-- punctus interrogativus + positura -->
+                <char xml:id="char-int-posit">
+                    <localProp name="name" value="PUNCTUS INTERROGATIVUS+COMMA POSITURA"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="Combined">U+F160 + U+F1E2</mapping>
+                    <mapping type="standardized">?;</mapping>
+                </char>
+                <!-- punctus + positura -->
+                <char xml:id="char-f1e4">
+                    <localProp name="name" value="PUNCTUS WITH COMMA POSITURA"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="Combined">U+f1e4</mapping>
+                    <mapping type="standardized">.;</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61924</ref>
+                    </note>
+                </char>
+                <!-- paragraphus -->
+                <char xml:id="char-f1e1">
+                    <localProp name="name" value="PARAGRAPHUS"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="PUA">U+F1E1</mapping>
+                    <mapping type="standardized">¶</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/61921</ref>
+                    </note>
+                </char>
+                <!-- b with stroke -->
+                <char xml:id="char-0180">
+                    <localProp name="name" value="LATIN SMALL LETTER B WITH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">ƀ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-B">U+0180</mapping>
+                    <mapping type="standardized">b</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/384</ref>
+                    </note>
+                </char>
+                <!-- d with stroke -->
+                <char xml:id="char-0111">
+                    <localProp name="name" value="LATIN SMALL LETTER D WITH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">đ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-A">U+0111</mapping>
+                    <mapping type="standardized">d</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/273</ref>
+                    </note>
+                </char>
+                <!-- h with stroke -->
+                <char xml:id="char-0127">
+                    <localProp name="name" value="LATIN SMALL LETTER H WITH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">ħ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-A">U+0127</mapping>
+                    <mapping type="standardized">h</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/295</ref>
+                    </note>
+                </char>
+                <!-- K with stroke -->
+                <char xml:id="char-a740">
+                    <localProp name="name" value="LATIN CAPITAL LETTER K WITH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝁ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A740</mapping>
+                    <mapping type="standardized">K</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42816</ref>
+                    </note>
+                </char>
+                <!-- k with stroke -->
+                <char xml:id="char-a741">
+                    <localProp name="name" value="LATIN SMALL LETTER K WITH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝁ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A741</mapping>
+                    <mapping type="standardized">k</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42817</ref>
+                    </note>
+                </char>
+                <!-- L with stroke -->
+                <char xml:id="char-a748">
+                    <localProp name="name" value="LATIN CAPITAL LETTER L WITH HIGH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝉ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A748</mapping>
+                    <mapping type="standardized">L</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42824</ref>
+                    </note>
+                </char>
+                <!-- <num value="50">l</num> with stroke -->
+                <char xml:id="char-a749">
+                    <localProp name="name" value="LATIN SMALL LETTER L WITH HIGH STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝉ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A749</mapping>
+                    <mapping type="standardized">l</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42825</ref>
+                    </note>
+                </char>
+                <!-- e-caudata -->
+                <char xml:id="char-0119">
+                    <localProp name="name" value="LATIN SMALL LETTER E WITH OGONEK"/>
+                    <mapping type="MUFI" subtype="Unicode">ę</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-A">U+0119</mapping>
+                    <mapping type="standardized">ae</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/281</ref>
+                    </note>
+                </char>
+                <!-- Per -->
+                <char xml:id="char-a750">
+                    <localProp name="name" value="LATIN CAPITAL LETTER P WITH STROKE THROUGH DESCENDER"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝑ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A750</mapping>
+                    <mapping type="standardized">Per</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42832</ref>
+                    </note>
+                </char>
+                <!-- per -->
+                <char xml:id="char-a751">
+                    <localProp name="name" value="LATIN SMALL LETTER P WITH STROKE THROUGH DESCENDER"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝑ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A751</mapping>
+                    <mapping type="standardized">per</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42833</ref>
+                    </note>
+                </char>
+                <!-- Pro -->
+                <char xml:id="char-a752">
+                    <localProp name="name" value="LATIN CAPITAL LETTER P WITH FLOURISH"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝓ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A752</mapping>
+                    <mapping type="standardized">Pro</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42834</ref>
+                    </note>
+                </char>
+                <!-- pro -->
+                <char xml:id="char-a753">
+                    <localProp name="name" value="LATIN SMALL LETTER P WITH FLOURISH"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝓ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A753</mapping>
+                    <mapping type="standardized">pro</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42835</ref>
+                    </note>
+                </char>
+                <!-- Nasalstrich -->
+                <char xml:id="char-0304">
+                    <localProp name="name" value="COMBINING MACRON"/>
+                    <mapping type="MUFI" subtype="Unicode">̄</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+0304</mapping>
+                    <mapping type="standardized">m</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/772</ref>
+                    </note>
+                </char>
+                <!-- K&#252;rzungsstrich -->
+                <char xml:id="char-0305">
+                    <localProp name="name" value="COMBINING OVERLINE"/>
+                    <mapping type="MUFI" subtype="Unicode">̅</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+0304</mapping>
+                    <mapping type="standardized"/>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/773</ref>
+                    </note>
+                </char>
+                <!-- q with stroke -->
+                <char xml:id="char-a757">
+                    <localProp name="name" value="LATIN SMALL LETTER Q WITH STROKE THROUGH DESCENDER"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝗ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A757</mapping>
+                    <mapping type="standardized">q</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42839</ref>
+                    </note>
+                </char>
+                <!-- q mit Schlaufe -->
+                <char xml:id="char-a759">
+                    <localProp name="name" value="LATIN SMALL LETTER Q WITH DIAGONAL STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝙ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+A759</mapping>
+                    <mapping type="standardized">q</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42841</ref>
+                    </note>
+                </char>
+                <!-- -rum -->
+                <char xml:id="char-a75D">
+                    <localProp name="name" value="LATIN SMALL LETTER RUM ROTUNDA"/>
+                    <mapping type="MUFI" subtype="Unicode">ꝝ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+a75D</mapping>
+                    <mapping type="standardized">rum</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42845</ref>
+                    </note>
+                </char>
+                <!-- -RUM -->
+                <char xml:id="char-a75C">
+                    <localProp name="name" value="LATIN CAPITAL LETTER RUM ROTUNDA"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝝ</mapping>
+                    <mapping type="MUFI" subtype="Latin-Extended-D">U+a75C</mapping>
+                    <mapping type="standardized">RUM</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42844</ref>
+                    </note>
+                </char>
+                <!-- -us -->
+                <char xml:id="char-1dd2">
+                    <localProp name="name" value="COMBINING US ABOVE"/>
+                    <mapping type="MUFI" subtype="Unicode">᷒</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks-Supplement">U+1DD2</mapping>
+                    <mapping type="standardized">us</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/7634</ref>
+                    </note>
+                </char>
+                <!-- -a (hochgestellt) -->
+                <char xml:id="char-1dd3">
+                    <localProp name="name" value="COMBINING LATIN SMALL LETTER FLATTENED OPEN A ABOVE"/>
+                    <mapping type="MUFI" subtype="Unicode">ᷓ</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks-Supplement">U+1DD3</mapping>
+                    <mapping type="standardized">a</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/7635</ref>
+                    </note>
+                </char>
+                <!-- -i (hochgestellt) -->
+                <char xml:id="char-0365">
+                    <localProp name="name" value="COMBINING LATIN SMALL LETTER I"/>
+                    <mapping type="MUFI" subtype="Unicode">ͥ</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks">U+0365</mapping>
+                    <mapping type="standardized">i</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/869</ref>
+                    </note>
+                </char>
+                <!-- vertikale Tilde -->
+                <char xml:id="char-033e">
+                    <localProp name="name" value="COMBINING VERTICAL TILDE"/>
+                    <mapping type="MUFI" subtype="Unicode">̾</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks">U+033e</mapping>
+                    <mapping type="standardized">s</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/830</ref>
+                    </note>
+                </char>
+                <!-- e hochgestellt -->
+                <char xml:id="char-0364">
+                    <localProp name="name" value="COMBINING LATIN SMALL LETTER E"/>
+                    <mapping type="MUFI" subtype="Unicode">ͤ</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks">U+0364</mapping>
+                    <mapping type="standardized">e</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/868</ref>
+                    </note>
+                </char>
+                <!-- o hochgestellt -->
+                <char xml:id="char-0366">
+                    <localProp name="name" value="COMBINING LATIN SMALL LETTER O"/>
+                    <mapping type="MUFI" subtype="Unicode">ͦ</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks">U+0366</mapping>
+                    <mapping type="standardized">o</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/870</ref>
+                    </note>
+                </char>
+                <!-- u hochgestellt -->
+                <char xml:id="char-0367">
+                    <localProp name="name" value="COMBINING LATIN SMALL LETTER U"/>
+                    <mapping type="MUFI" subtype="Unicode">ͧ</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks">U+0366</mapping>
+                    <mapping type="standardized">u</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/871</ref>
+                    </note>
+                </char>
+                <!-- s hochgestellt -->
+                <char xml:id="char-1de4">
+                    <localProp name="name" value="COMBINING LATIN SMALL LETTER S"/>
+                    <mapping type="MUFI" subtype="Unicode">ᷤ</mapping>
+                    <mapping type="MUFI" subtype="Combining-Diacritical-Marks">U+1de4</mapping>
+                    <mapping type="standardized">s</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/7652</ref>
+                    </note>
+                </char>
+                <!-- Response -->
+                <char xml:id="char-211e">
+                    <localProp name="name" value="PRESCRIPTION TAKE"/>
+                    <mapping type="MUFI" subtype="Unicode">℞</mapping>
+                    <mapping type="MUFI" subtype="letterlike-symbols">U+211E</mapping>
+                    <mapping type="standardized">s</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/8478</ref>
+                    </note>
+                </char>
+                <!-- Q with stroke -->
+                <char xml:id="char-a756">
+                    <localProp name="name" value="LATIN CAPITAL LETTER Q WITH STROKE THROUGH DESCENDER"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝗ</mapping>
+                    <mapping type="MUFI" subtype="latin-extended-d">U+a756</mapping>
+                    <mapping type="standardized">Q</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42838</ref>
+                    </note>
+                </char>
+                <!-- Q with stroke -->
+                <char xml:id="char-a758">
+                    <localProp name="name" value="LATIN CAPITAL LETTER Q WITH DIAGONAL STROKE"/>
+                    <mapping type="MUFI" subtype="Unicode">Ꝙ</mapping>
+                    <mapping type="MUFI" subtype="latin-extended-d">U+a758</mapping>
+                    <mapping type="standardized">Q</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/42838</ref>
+                    </note>
+                </char>
+                <!-- quia -->
+                <char xml:id="char-e8b3">
+                    <localProp name="name" value="LATIN SMALL LETTER Q LIGATED WITH R ROTUNDA"/>
+                    <mapping type="MUFI" subtype="Unicode"></mapping>
+                    <mapping type="MUFI" subtype="latin-extended-d">U+e8b3</mapping>
+                    <mapping type="standardized">Q</mapping>
+                    <note anchored="true">
+                        <ref>https://mufi.info/q.php?p=mufi/chars/unichar/59571</ref>
+                    </note>
+                </char>
+            </charDecl>
+            <editorialDecl default="false">
+                <p xml:lang="ger">Für die Transkiption der Handschriften wurden die
+                    folgenden Richtlinien befolgt. Eine ausführliche Dokumentation der zur
+                    Codierung verwendeten Elemente findet sich unter <ref target="http://www.burchards-dekret-digital.de/html/documentation.html">http://www.burchards-dekret-digital.de/html/documentation.html</ref> bzw. <ref target="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/">https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/</ref>.</p>
+                <p xml:lang="en">For the transcription of the manuscripts, the following
+                    guidelines were followed. Detailed documentation of the elements used for
+                    encoding can be found at <ref target="http://www.burchards-dekret-digital.de/html/documentation.html">http://www.burchards-dekret-digital.de/html/documentation.html</ref> or <ref target="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/">https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/</ref>.</p>
+                <normalization default="false" method="silent">
+                    <p xml:lang="ger">Die Transkription der Textzeugen zielt auf eine
+                        möglichst genaue Wiedergabe des Befunds. Daher folgt die Transkription
+                        der Orthographie der Handschrift. Auch Groß- und Kleinschreibung folgt
+                        der Handschrift, jedoch nicht die Zusammen- und Getrenntschreibung. Hier
+                        wird jedes sinntragende Wort abgetrennt. Sollten sowohl Zusammen- als auch
+                        Getrenntschreibung korrekt sein, wird dem Usus des Wormser Skriptoriums
+                        gefolgt, den die dort entstandenen Handschriften abbilden. Abkürzungen
+                        werden über ein definiertes Set an Sonderzeichen (siehe encodingDesc)
+                        codiert. Die Auflösung orientiert sich orthographisch an der
+                        vorherrschenden Schreibergewohnheit. Ligaturen werden stillschweigend
+                        aufgelöst.</p>
+                    <p xml:lang="en">The transcription of the textual witnesses aims at its
+                        accurate reproduction. Therefore, the transcription follows the orthography
+                        of the manuscript. Capitalization is in accordance with the manuscript, but
+                        not the use of compound and separate spelling. Here, every semantically
+                        significant word is separated. Should both compound and separate spelling be
+                        correct, the practice of the Worms scriptorium is followed, as reflected in
+                        the manuscripts produced there. Abbreviations are encoded using a defined
+                        set of special characters (see encodingDesc). The resolution is
+                        orthographically oriented towards the prevailing habit of the scribe.
+                        Ligatures are silently resolved.</p>
+                </normalization>
+                <correction default="false" method="silent">
+                    <p xml:lang="ger">Fehler im Text werden nicht korrigiert, sondern durch
+                        das Element sic und ggf. eine erklärende note hervorgehoben.
+                        Korrekturen durch Schreiber werden durch entsprechende Codierung kenntlich
+                        gemacht, insbesondere Rasuren (del), Ersetzungen (subst) oder
+                        Ergänzungen (add). Dabei wird versucht, den relativen Zeitpunkt des
+                        Eingriffs zu bestimmen.</p>
+                    <p xml:lang="en">Errors in the text are not corrected but encoded as
+                        sic and highlighted by an explanatory note, if neccessary. Corrections made
+                        by the scribe are marked with appropriate encoding, particularly erasures
+                        (del), replacements (subst), or additions (add). The relative timing of the
+                        intervention is determined, if clear.</p>
+                </correction>
+                <hyphenation default="false" eol="some">
+                    <p xml:lang="ger">Da besonders die frühen Handschriften des
+                        Dekrets keine zeitgenössischen Bindestriche zur Worttrennung nutzen,
+                        erfolgt die Angabe eines Zeilenumbruchs ausschließlich durch das
+                        Element leere lb und dem Attribut @break.</p>
+                    <p xml:lang="en">Since especially the early manuscripts of the decree
+                        do not use contemporary hyphens for word separation, the indication of a
+                        line break is made exclusively through the empty lb element and the @break
+                        attribute.</p>
+                </hyphenation>
+                <segmentation default="false">
+                    <p xml:lang="ger">Da das Layout der Handschriften ein wichtiger
+                        Informationsträger ist, wird es nach Möglichkeit in der
+                        Transkription erhalten bzw. ausgezeichnet. Dazu zählen
+                        Zeilenumbrüche, Spalten- und Seitenwechsel, rubrizierte Kapitelzahlen,
+                        rubrizierte Initialen der capitulationes und der Kapitel, nachträgliche
+                        Rubrizierung von Majuskeln, Versalien am Beginn eines Abschnitts sowie
+                        Kopfzeilen. Die Codierung dieser Phänomene ist unter <ref target="http://www.burchards-dekret-digital.de/html/documentation.html">http://www.burchards-dekret-digital.de/html/documentation.html</ref> bzw.
+                        <ref target="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/">https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/</ref>
+                        dokumentiert. Auszeichnungen durch Majuskeln, z.B. am Beginn des ersten
+                        Kanons, werden nur transkribiert. Textteile, die in die vorhergehende oder
+                        nachfolgende Zeile geschrieben und mit einem Hinzufügungszeichen
+                        markiert sind, werden entsprechend ausgezeichnet. Darüber hinausgehende
+                        Text/Bildinformationen können über das referenzierte PageXML der
+                        jeweiligen Seite abgefragt werden, iiif-fähige Koordinaten zu jedem
+                        Layoutelement sind darüber hinaus im Attribut @facs hinterlegt. Die
+                        Worttrennung erfolgt nach Wortsinn und weicht vom Befund der Handschrift
+                        ab.</p>
+                    <p xml:lang="en">Since the layout of the manuscripts is an important
+                        carrier of information, it is preserved or highlighted in the transcription
+                        wherever possible. This includes line breaks, column and page changes,
+                        rubricated chapter numbers, rubricated initials of the capitulations and
+                        chapters, subsequent rubrication of majuscules, uppercase letters at the
+                        beginning of a section, as well as headers. The encoding of these phenomena
+                        is documented under <ref target="http://www.burchards-dekret-digital.de/html/documentation.html">http://www.burchards-dekret-digital.de/html/documentation.html</ref> or
+                        <ref target="https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/">https://gitlab.rlp.net/adwmainz/projekte/burchards-dekret-digital/data/</ref>.
+                        Emphasis through majuscules, e.g., at the beginning of the first canon, is
+                        only transcribed. Text parts that are written into the preceding or
+                        following line and marked with an addition sign are encoded accordingly.
+                        Further text/image information can be queried via the referenced PageXML of
+                        the respective page; iiif-capable coordinates for each layout element are
+                        also stored in the @facs attribute. Word separation is based on the meaning
+                        of the word and deviates from the findings of the manuscript.</p>
+                </segmentation>
+                <interpretation default="false">
+                    <p xml:lang="ger">Da die Erstellung der Transkription in erster Linie
+                        auf die Textsicherung des Dekrets zielt, wird weitestgehend auf editorische
+                        Eingriffe und Interpretation verzichtet. Eine Ausnahme stellt die
+                        Ergänzung von aus Platzgründen abgetrennten und anderswo
+                        nachgetragenen Wortteilen (ausgezeichnet als seg) am textlogisch korrekten
+                        Ort dar (ausgezeichnet als supplied), um den Lesefluss zu
+                        gewährleisten. Ebenfalls werden aus technischen Gründen durch die
+                        enge Bindung unleserlich gewordene Kapitelnummern ergänzt, soweit die
+                        Reihenfolge unstrittig ist. Unleserlicher Text wird nicht ergänzt.
+                        Interlineare Glossen werden aufgenommen.</p>
+                    <p xml:lang="en">Since the transcription primarily aims at establishing
+                        the text of the decree, editorial interventions and interpretations are
+                        largely avoided. An exception is the supplementation of word parts separated
+                        due to space constraints and noted elsewhere (marked as seg) at the
+                        logically correct place in the text (marked as supplied) to ensure
+                        readability. Also, chapter numbers that have become illegible due to tight
+                        binding are supplemented for technical reasons, as long as the sequence is
+                        undisputed. Illegible text is not supplemented. Interlinear glosses are
+                        included.</p>
+                </interpretation>
+                <punctuation default="false">
+                    <p xml:lang="ger">Die Interpunktion der Handschrift wird
+                        übernommen und durch entsprechende Unicode-Zeichen nachempfunden (siehe
+                        encodingDesc).</p>
+                    <p xml:lang="en">The punctuation of the manuscript is adopted and
+                        replicated using corresponding Unicode characters (see encodingDesc).</p>
+                </punctuation>
+                <stdVals default="false">
+                    <p xml:lang="ger">Das in den Handschriften weitgehend genutzte
+                        römische Zahlensystem wird in der Transkription übernommen und in
+                        Kleinbuchstaben wiedergegeben. Unlesbare Kapitelzählungen werden
+                        ergänzt. Der Zahlenwert wird dort durch @n Attribut ausgedrückt,
+                        im Text auftretende Ziffern durch das Element num unter Angabe des Attributs
+                        @value ausgezeichnet.</p>
+                    <p xml:lang="en">The Roman numeral system widely used in the
+                        manuscripts is adopted in the transcription and rendered in lowercase
+                        letters. Illegible chapter counts are supplemented. The numerical value is
+                        expressed through the @n attribute, while digits appearing in the text are
+                        highlighted using the num element with the specification of the @value
+                        attribute.</p>
+                </stdVals>
+            </editorialDecl>
+            <projectDesc default="false">
+                <p xml:lang="ger">Das sogenannte Decretum des Bischofs Burchard von Worms
+                    (1000-1025) gilt als eines der bedeutendsten und einflussreichsten Werke
+                    kirchlichen Rechts vor dem Decretum Gratiani. Das Werk in 20 Büchern mit
+                    über 1785 Kapiteln enthält detailliere Regeln und
+                    Verhaltensanweisungen für Kleriker und Laien, und sammelte, sortierte und
+                    vereinheitlichte das überlieferte kirchliche Recht in richtungsweisender
+                    Art. Über 80 Handschriften und Fragmenten sind bis heute Zeugen der weiten
+                    Verbreitung und Rezeption des Werkes in West- und Mitteleuropa. Somit stellt das
+                    Decretum zweierlei Herausforderungen an die moderne Editorik: Es ist ein Werk
+                    mit beträchtlichem Umfang und weist zusätzlich eine sehr umfangreiche
+                    Handschriftentradition auf. Das Desiderat einer kritischen Edition soll durch
+                    das Projekt "Burchards Dekret Digital - Arbeitsplattform zu
+                    Texterschließung und Wirkungsgeschichte früh- und
+                    hochmittelalterlicher Rechtskulturen" der Akademie der Wissenschaften und der
+                    Literatur Mainz behoben werden: Das Primärziel des Projektes ist eine
+                    kritische Edition, die zunächst im Rahmen der MGH gedruckt und in
+                    fortlaufender Arbeit als Digitale Edition publiziert werden soll. Im Fokus
+                    stehen hierbei Handschriften, die noch zu Burchards Lebzeiten und vermutlich
+                    unter seiner Aufsicht in Worms entstanden sind. Umfassende Untersuchungen zur
+                    Rezeption des Werkes und seines Einflusses auf mittelalterliches, aber auch
+                    modernes kirchliches Recht, sowie ein Handschriftenkatalog, digital als
+                    Datenbank angelegt, ergänzen die editorische Arbeit. Hierfür werden
+                    unter anderem die mittels TEI/XML ausgezeichneten Transkriptionen einzelner
+                    Bücher des Decretums digital zur Verfügung gestellt.</p>
+                <p xml:lang="en">The so-called Decretum by Bishop Burchard of Worms
+                    (1000-1025) is considered one of the most significant and influential works of
+                    ecclesiastical law before the Decretum Gratiani. The work, consisting of 20
+                    books with over 1785 chapters, contains detailed rules and instructions for
+                    clerics and laypeople, and collected, sorted, and standardized the transmitted
+                    ecclesiastical law in a pioneering manner. More than 80 manuscripts and
+                    fragments bear witness to the wide distribution and reception of the work in
+                    Western and Central Europe. Thus, the Decretum presents two challenges to modern
+                    editorial practices: It is a work of considerable size and also has a very
+                    extensive manuscript tradition. The desideratum of a critical edition is to be
+                    met by the project "Burchard's Decree Digital - Working Platform for Textual
+                    Exploration and the Impact History of Early and High Medieval Legal Cultures" of
+                    the Academy of Sciences and Literature, Mainz: The primary goal of the project
+                    is a critical edition, which is to be printed initially within the framework of
+                    the MGH (Monumenta Germaniae Historica) and published as a digital edition in
+                    ongoing work. The focus is on manuscripts that were created during Burchard's
+                    lifetime and presumably under his supervision in Worms. Comprehensive studies on
+                    the reception of the work and its influence on medieval, but also modern,
+                    ecclesiastical law, as well as a catalog of manuscripts, digitally set up as a
+                    database, complement the editorial work. For this purpose, among other things,
+                    the transcriptions of individual books of the Decretum, marked up using TEI/XML,
+                    are made digitally available.</p>
+            </projectDesc>
+        </encodingDesc>
+        <revisionDesc>
+            <listChange type="book" n="14" xml:id="bdd-bamberg-sb-c-6-14-loc" ordered="true">
+                <listChange type="external" ordered="true">
+                    <change type="version" when="2026-09-15">Version 1
+                        finished.</change>
+                </listChange>
+            </listChange>
+        </revisionDesc>
+    </teiHeader>
+    <!-- Beginn der Transkription -->
+    <text>
+        <body xml:lang="lat">
+            <div type="book" n="14">
+                <pb n="207r" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00417/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/417" ana="/annotations/bamberg-sb-c-6-annotation-417"/>
+                <fw type="page-header" place="top" facs="1888,439,864,100"><choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitula</expan></choice> <num value="14">xiiii</num> <choice><abbr>li<g ref="#char-0180">ƀ</g></abbr><expan>liber</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw>
+                <cb n="a" facs="878,668,1852,3889"/>
+                <lb n="1" facs="954,888,1531,321"/>
+                <!-- Beginn Inhaltsverzeichnis -->
+                <div type="toc" xml:id="bamberg-sb-c-6-14-toc">
+                    <head type="incipit" hand="#bamberg-sb-c-6-h28"><ptr type="previous-handshift" target="bamberg-sb-c-6-13.xml#bamberg-sb-c-6-13-hs-last-handshift" corresp="#bamberg-sb-c-6-h28"/><hi rend="color:red"><hi rend="capitals">INCIPIUNT CAPITULA</hi> <lb n="2" facs="1004,1107,1546,279"/><num value="14">quarti decimi</num> libri de cra<lb n="3" facs="1011,1291,1549,235" break="no"/>pula<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <g ref="#char-0119">ę</g>brietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi> <g ref="#char-f1e1"></g><seg corresp="#bamberg-sb-c-6-14-supp-001" type="pos-of-displaced">ria<pc type="distinctio"><g ref="#char-f1f8"></g></pc></seg></head>
+                    <lb n="4" facs="997,1435,1686,275"/>
+                    <list>
+                        <item n="1" xml:id="bamberg-sb-c-6-14-toc-001" sameAs="#bamberg-sb-c-6-14-con-001" corresp="#frankfurt-ub-b-50-14-toc-001 #koeln-edd-c-119-14-toc-001 #vatican-bav-pal-lat-586-14-toc-001" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="500,1406,408,199" n="1"><num value="1"><hi rend="color:red">i<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <choice><abbr><hi rend="color:red">Q</hi><g ref="#char-0111">đ</g></abbr><expan><hi rend="color:red">Q</hi>uod</expan></choice> crapula <choice><abbr>multu<g ref="#char-0304">̄</g></abbr><expan>multum</expan></choice> sit
+                            <choice><abbr>xp<g ref="#char-0305">̅</g>ianis</abbr><expan>christianis</expan></choice> <choice><abbr>c<g ref="#char-0305">̅</g>tra<supplied xml:id="bamberg-sb-c-6-14-supp-001a" reason="displaced-over-the-line">ria<pc type="distinctio"><g ref="#char-f1f8"></g></pc></supplied></abbr><expan>contra<supplied xml:id="bamberg-sb-c-6-14-supp-001b" reason="displaced-over-the-line">ria<pc type="distinctio"><g ref="#char-f1f8"></g></pc></supplied></expan></choice></item>
+                        <lb n="5" facs="975,1629,1665,210"/>
+                        <item n="2" xml:id="bamberg-sb-c-6-14-toc-002" sameAs="#bamberg-sb-c-6-14-con-002" corresp="#frankfurt-ub-b-50-14-toc-002 #koeln-edd-c-119-14-toc-002 #vatican-bav-pal-lat-586-14-toc-002" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="475,1575,440,203" n="2"><num value="2"><hi rend="color:red">ii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">U</hi>t
+                            <choice><abbr>malu<g ref="#char-0304">̄</g></abbr><expan>malum</expan></choice> ebrietatis omnino
+                            <choice><abbr>uitet<g ref="#char-f1c2"></g></abbr><expan>uitetur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="6" facs="1011,1759,1567,260"/>
+                        <item n="3" xml:id="bamberg-sb-c-6-14-toc-003" sameAs="#bamberg-sb-c-6-14-con-003" corresp="#frankfurt-ub-b-50-14-toc-003 #koeln-edd-c-119-14-toc-003 #vatican-bav-pal-lat-586-14-toc-003" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="439,1748,487,286" n="3"><num value="3"><hi rend="color:red">iii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <choice><abbr><hi rend="color:red">Q</hi><g ref="#char-0111">đ</g></abbr><expan><hi rend="color:red">Q</hi>uod</expan></choice> <choice><abbr>ep<g ref="#char-0305">̅</g>i</abbr><expan>episcopi</expan></choice> et <choice><abbr>eoru<g ref="#char-0304">̄</g></abbr><expan>eorum</expan></choice> ministri<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> crapula <lb n="7" facs="1004,1917,1632,282"/>et ebrietate <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> debeant
+                            grauari<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="8" facs="968,2047,638,257"/>
+                        <item n="4" xml:id="bamberg-sb-c-6-14-toc-004" sameAs="#bamberg-sb-c-6-14-con-004" corresp="#frankfurt-ub-b-50-14-toc-004 #koeln-edd-c-119-14-toc-004 #vatican-bav-pal-lat-586-14-toc-004" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="406,2004,531,246" n="4"><num value="4"><hi rend="color:red">iiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="9" facs="954,2223,667,232"/>
+                        <item n="5" xml:id="bamberg-sb-c-6-14-toc-005" sameAs="#bamberg-sb-c-6-14-con-005" corresp="#frankfurt-ub-b-50-14-toc-005 #koeln-edd-c-119-14-toc-005 #vatican-bav-pal-lat-586-14-toc-005" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="406,2220,538,195" n="5"><num value="5"><hi rend="color:red">v<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="10" facs="946,2400,686,253"/>
+                        <item n="6" xml:id="bamberg-sb-c-6-14-toc-006" sameAs="#bamberg-sb-c-6-14-con-006" corresp="#frankfurt-ub-b-50-14-toc-006 #koeln-edd-c-119-14-toc-006 #vatican-bav-pal-lat-586-14-toc-006" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="424,2385,527,192" n="6"><num value="6"><hi rend="color:red">vi<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="11" facs="1004,2554,1430,272"/>
+                        <item n="7" xml:id="bamberg-sb-c-6-14-toc-007" sameAs="#bamberg-sb-c-6-14-con-007" corresp="#frankfurt-ub-b-50-14-toc-007 #koeln-edd-c-119-14-toc-007 #vatican-bav-pal-lat-586-14-toc-007" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="442,2547,520,228" n="7"><num value="7"><hi rend="color:red">vii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">Q</hi>uales
+                            <choice><abbr>c<g ref="#char-0305">̅</g>uiu<g ref="#char-0119">ę</g></abbr><expan>conuiu<g ref="#char-0119">ę</g></expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            <choice><abbr>sacerdotu<g ref="#char-0304">̄</g></abbr><expan>sacerdotum</expan></choice> epulis <lb n="12" facs="1018,2691,927,210"/><choice><abbr>intere<g ref="#char-02E2">ˢ</g><g ref="#char-02E2">ˢ</g>e</abbr><expan>interesse</expan></choice>
+                            debeant<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="13" facs="968,2803,613,242"/>
+                        <item n="8" xml:id="bamberg-sb-c-6-14-toc-008" sameAs="#bamberg-sb-c-6-14-con-008" corresp="#frankfurt-ub-b-50-14-toc-008 #koeln-edd-c-119-14-toc-008 #vatican-bav-pal-lat-586-14-toc-008" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="468,2745,501,250" n="8"><num value="8"><hi rend="color:red">viii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="14" facs="961,2950,602,250"/>
+                        <item n="9" xml:id="bamberg-sb-c-6-14-toc-009" sameAs="#bamberg-sb-c-6-14-con-009" corresp="#frankfurt-ub-b-50-14-toc-009 #koeln-edd-c-119-14-toc-009 #vatican-bav-pal-lat-586-14-toc-009" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="496,2965,466,203" n="9"><num value="9"><hi rend="color:red">viiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="15" facs="928,3120,1643,249"/>
+                        <item n="10" xml:id="bamberg-sb-c-6-14-toc-010" sameAs="#bamberg-sb-c-6-14-con-010" corresp="#frankfurt-ub-b-50-14-toc-010 #koeln-edd-c-119-14-toc-010 #vatican-bav-pal-lat-586-14-toc-010" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="522,3138,433,195" n="10"><num value="10"><hi rend="color:red">x<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <seg corresp="#bamberg-sb-c-6-14-supp-002" type="pos-of-displaced"><g ref="#char-f1e1"></g>p<g ref="#char-0119">ę</g>niteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc></seg></item>
+                        <lb n="16" facs="1008,3249,1513,239"/>
+                        <item n="11" xml:id="bamberg-sb-c-6-14-toc-011" sameAs="#bamberg-sb-c-6-14-con-011" corresp="#frankfurt-ub-b-50-14-toc-011 #koeln-edd-c-119-14-toc-011 #vatican-bav-pal-lat-586-14-toc-011" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="522,3303,429,192" n="11"><num value="11"><hi rend="color:red">xi<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">Q</hi>ui ebrius
+                            fuerit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ut ordo
+                            patitur <supplied xml:id="bamberg-sb-c-6-14-supp-002" reason="displaced-over-the-line">p<g ref="#char-0119">ę</g>niteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc></supplied></item>
+                        <lb n="17" facs="1004,3433,1495,239"/>
+                        <item n="12" xml:id="bamberg-sb-c-6-14-toc-012" sameAs="#bamberg-sb-c-6-14-con-012" corresp="#frankfurt-ub-b-50-14-toc-012 #koeln-edd-c-119-14-toc-012 #vatican-bav-pal-lat-586-14-toc-012" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="507,3465,441,225" n="12"><num value="12"><hi rend="color:red">xii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <choice><abbr><hi rend="color:red">Q</hi><g ref="#char-0111">đ</g></abbr><expan><hi rend="color:red">Q</hi>uod</expan></choice> uino inebriari <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> liceat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> sed <lb n="18" facs="1018,3555,1532,253"/><choice><abbr>fugiendu<g ref="#char-0304">̄</g></abbr><expan>fugiendum</expan></choice> sit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <seg corresp="#bamberg-sb-c-6-14-supp-003" type="pos-of-displaced"><g ref="#char-f1e1"></g>fecerint<pc type="distinctio"><g ref="#char-f1f8"></g></pc></seg></item>
+                        <lb n="19" facs="1011,3721,1575,249"/>
+                        <item n="13" xml:id="bamberg-sb-c-6-14-toc-013" sameAs="#bamberg-sb-c-6-14-con-013" corresp="#frankfurt-ub-b-50-14-toc-013 #koeln-edd-c-119-14-toc-013 #vatican-bav-pal-lat-586-14-toc-013" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="496,3660,448,220" n="13"><num value="13"><hi rend="color:red">xiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e illis qui
+                            <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> ebrietatem
+                            <choice><abbr>uomitu<g ref="#char-0304">̄</g></abbr><expan>uomitum</expan></choice> <supplied xml:id="bamberg-sb-c-6-14-supp-003" reason="displaced-over-the-line">fecerint<pc type="distinctio"><g ref="#char-f1f8"></g></pc></supplied></item>
+                        <lb n="20" facs="997,3865,595,257"/>
+                        <item n="14" xml:id="bamberg-sb-c-6-14-toc-014" sameAs="#bamberg-sb-c-6-14-con-014" corresp="#frankfurt-ub-b-50-14-toc-014 #koeln-edd-c-119-14-toc-014 #vatican-bav-pal-lat-586-14-toc-014" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="486,3850,454,214" n="14"><num value="14"><hi rend="color:red">xiiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="21" facs="968,4002,1610,282"/>
+                        <item n="15" xml:id="bamberg-sb-c-6-14-toc-015" sameAs="#bamberg-sb-c-6-14-con-015" corresp="#frankfurt-ub-b-50-14-toc-015 #koeln-edd-c-119-14-toc-015 #vatican-bav-pal-lat-586-14-toc-015" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="478,4034,459,167" n="15"><num value="15"><hi rend="color:red">xv<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">D</hi>e illis qui
+                            <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <sic><choice><abbr>su<g ref="#char-0180">ƀ</g>ia<g ref="#char-0304">̄</g></abbr><expan>superbiam</expan></choice></sic> alios inebriant<pc type="distinctio"><g ref="#char-f1f8"></g></pc></item>
+                        <lb n="22" facs="968,4178,1186,239"/>
+                        <item n="16" xml:id="bamberg-sb-c-6-14-toc-016" sameAs="#bamberg-sb-c-6-14-con-016" corresp="#frankfurt-ub-b-50-14-toc-016 #koeln-edd-c-119-14-toc-016 #vatican-bav-pal-lat-586-14-toc-016" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="468,4171,465,195" n="16"><num value="16"><hi rend="color:red">xvi<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <choice><abbr><hi rend="color:red">Q</hi><g ref="#char-0111">đ</g></abbr><expan><hi rend="color:red">Q</hi>uod</expan></choice> fugienda sit ebrietas<pc type="distinctio"><g ref="#char-f1f8"></g></pc><note type="editorial-comment" resp="HeG"><seg xml:lang="de" part="N">Buch 14 endete ursprünglich nach Kapitel
+                            16, Kapitel 17 ist ein Nachtrag. Dies ist erkennbar in der Handschrift
+                            Va3, in der hierfür fol. 95 nachträglich eingefügt wurde und sowohl in
+                            der Capitulatio als auch im Haupttext die Hand vor Kapitel 17 wechselt,
+                            vgl. <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs
+                            Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen. München
+                            1991<citedRange>35 und 41</citedRange></bibl>.</seg><seg xml:lang="en" part="N">Book 14 originally ended after chapter 16; chapter 17 is a
+                            later addition. This is evident in manuscript Va3, where fol. 95 was
+                            inserted retrospectively, and where the hand changes before chapter 17
+                            in both the capitulatio and the main text, cf. <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs Burchard von Worms.
+                            Textstufen – frühe Verbreitung – Vorlagen. München 1991<citedRange>35
+                            und 41</citedRange></bibl>.</seg></note></item>
+                        <lb n="23" facs="946,4311,866,268"/>
+                        <item n="17" xml:id="bamberg-sb-c-6-14-toc-017" sameAs="#bamberg-sb-c-6-14-con-017" corresp="#frankfurt-ub-b-50-14-toc-017 #koeln-edd-c-119-14-toc-017 #vatican-bav-pal-lat-586-14-toc-017" hand="#bamberg-sb-c-6-h28"><label place="margin left" type="chapter-number" facs="468,4336,462,261" n="17"><num value="17"><hi rend="color:red">xvii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <choice><abbr><hi rend="color:red">I</hi>te<g ref="#char-0304">̄</g></abbr><expan><hi rend="color:red">I</hi>tem</expan></choice> de ebrietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Restliche Spalte unbeschrieben.</seg><seg xml:lang="en" part="N">Remaining column left blank.</seg></note> <cb n="b" facs="2833,697,1427,4094"/> <lb n="1" facs="2883,715,1254,210"/><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Spalte unbeschrieben.</seg><seg xml:lang="en" part="N">Column left
+                            blank.</seg></note><pb n="207v" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00418/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/418" ana="/annotations/bamberg-sb-c-6-annotation-418"/><fw type="page-header" place="top"><choice><abbr>li<g ref="#char-0180">ƀ</g></abbr><expan>liber</expan></choice> de crapula<pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a" facs="1026,780,1891,4864"/><lb n="1" facs="1177,938,1614,300"/></item>
+                    </list>
+                </div>
+                <!-- Beginn des Haupttextes  -->
+                <div type="content" xml:id="bamberg-sb-c-6-14-con">
+                    <div xml:id="bamberg-sb-c-6-14-con-000" type="praefatiuncula" hand="#bamberg-sb-c-6-h28 #bamberg-sb-c-6-h29">
+                        <head type="incipit" hand="#bamberg-sb-c-6-h29"><hi rend="color:red "><handShift new="#bamberg-sb-c-6-h29" cert="high" xml:id="bdd-bamberg-sb-c-6-14-hs-001"/><hi rend="initial">I</hi><hi rend="capitals">NCIPIT LIBER</hi> <num value="14"><choice><abbr><hi rend="capitals">QUARTUS</hi><lb n="2" facs="1256,1161,1596,279" break="no"/>decim<g ref="#char-1dd2">᷒</g></abbr><expan><hi rend="capitals">QUARTUS</hi><lb n="2" facs="1256,1161,1596,279" break="no"/>decimus</expan></choice></num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> </hi></head>
+                        <p n="1"><hi rend="color:red">de crapula et ebrie<lb n="3" facs="1270,1305,1496,279" break="no"/>tate<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et de poenitentia <lb n="4" facs="1249,1467,1520,257"/>eorum<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></p>
+                    </div>
+                    <div n="1" type="chapter" xml:id="bamberg-sb-c-6-14-con-001" sameAs="#bamberg-sb-c-6-14-toc-001" corresp="#frankfurt-ub-b-50-14-con-001 #koeln-edd-c-119-14-con-001 #vatican-bav-pal-lat-586-14-con-001" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="763,1424,221,289" n="1"><num value="1"><hi rend="color:red"><pc type="distinctio"><g ref="#char-f1f8"></g></pc>i<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red"><choice><abbr>Q<g ref="#char-0111">đ</g></abbr><expan>Quod</expan></choice> crapula <choice><abbr>multu<g ref="#char-0304">̄</g></abbr><expan>multum</expan></choice> <lb n="5" facs="1270,1640,1218,246"/>sit <choice><abbr>xp<g ref="#char-0305">̅</g>ianis</abbr><expan>christianis</expan></choice> contraria<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="6" facs="1116,1737,1779,315"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="432,1820,728,242" hand="#bamberg-sb-c-6-hunidentified">Ex dictis
+                            benedicti<pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">N</hi>ihil sic
+                            <choice><abbr>contrariu<g ref="#char-0304">̄</g></abbr><expan>contrarium</expan></choice> <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice> homini
+                            <choice><abbr>xp<g ref="#char-0305">̅</g>i<lb n="7" facs="1292,1935,1567,275" break="no"/>ano</abbr><expan>chri<lb n="7" facs="1292,1935,1567,275" break="no"/>stiano</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> quomodo crapula et
+                            e<subst><del rend="erasure"/><add type="contemporary" place="overstrike">b</add></subst>rie<lb n="8" facs="1306,2115,1618,243" break="no"/>tas<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> sicut ait
+                            <choice><abbr>dn<g ref="#char-0305">̅</g>s</abbr><expan>dominus</expan></choice> in <sic>euuang<add place="above" type="contemporary">e</add>lio</sic><pc type="p-versus"><g ref="#char-f1ea"></g></pc> <lb n="9" facs="1227,2263,1596,282"/><hi rend="versal">V</hi>idete ne <choice><abbr>grauent<g ref="#char-f1c2"></g></abbr><expan>grauentur</expan></choice> corda <choice><abbr>ur<g ref="#char-0305">̅</g>a</abbr><expan>uestra</expan></choice> in <lb n="10" facs="1306,2418,1503,224"/>crapula et ebrietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <hi rend="color:red"><seg corresp="#bamberg-sb-c-6-14-supp-004" type="pos-of-displaced"><g ref="#char-f1e1"></g>tur<pc type="distinctio"><g ref="#char-f1f8"></g></pc></seg></hi> <lb n="11" facs="1274,2590,1643,214"/></p>
+                    </div>
+                    <div n="2" type="chapter" xml:id="bamberg-sb-c-6-14-con-002" sameAs="#bamberg-sb-c-6-14-toc-002" corresp="#frankfurt-ub-b-50-14-con-002 #koeln-edd-c-119-14-con-002 #vatican-bav-pal-lat-586-14-con-002" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="723,2547,257,178" n="2"><num value="2"><hi rend="color:red"><pc type="distinctio"><g ref="#char-f1f8"></g></pc>ii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">Ut <choice><abbr>malu<g ref="#char-0304">̄</g></abbr><expan>malum</expan></choice> <g ref="#char-0119">ę</g>brietatis <choice><abbr>om<g ref="#char-0305">̅</g>ino</abbr><expan>omnino</expan></choice> uite<supplied xml:id="bamberg-sb-c-6-14-supp-004" reason="displaced-over-the-line">tur<pc type="distinctio"><g ref="#char-f1f8"></g></pc></supplied></hi></head>
+                        <lb n="12" facs="1234,2706,1539,224"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="349,2569,951,437" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>dec<g ref="#char-0305">̅</g></abbr><expan>decretis</expan></choice> Eutichiani
+                            <choice><abbr>pp<g ref="#char-0305">̅</g></abbr><expan>papae</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <pc type="distinctio"><g ref="#char-f1f8"></g></pc><num value="8">viii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><choice><abbr><hi rend="color:red initial">M</hi>agnu<g ref="#char-0304">̄</g></abbr><expan><hi rend="color:red initial">M</hi>agnum</expan></choice> <choice><abbr>malu<g ref="#char-0304">̄</g></abbr><expan>malum</expan></choice> ebrietatis unde <lb n="13" facs="1314,2857,1509,210"/><choice><abbr>om<g ref="#char-0305">̅</g>a</abbr><expan>omnia</expan></choice> uitia pullulant<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <choice><abbr>xp<g ref="#char-0305">̅</g>ianis</abbr><expan>christianis</expan></choice>
+                            <lb n="14" facs="1299,2997,1557,225"/>modis <choice><abbr>omnib<g ref="#char-f1ac"></g></abbr><expan>omnibus</expan></choice> cauere
+                            <choice><abbr>p<g ref="#char-0304">̄</g>cipimus</abbr><expan>praecipimus</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="15" facs="1310,3170,1470,206"/>qui <choice><abbr>aut<g ref="#char-0305">̅</g></abbr><expan>autem</expan></choice> hoc uitare noluerit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="16" facs="1306,3303,1524,217"/><choice><abbr>exco<g ref="#char-0304">̄</g>municandu<g ref="#char-0304">̄</g></abbr><expan>excommunicandum</expan></choice> <choice><abbr>ee<g ref="#char-0305">̅</g></abbr><expan>esse</expan></choice>
+                            <choice><abbr>decreuim<g ref="#char-1dd2">᷒</g></abbr><expan>decreuimus</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <lb n="17" facs="1306,3465,1449,217"/><choice><abbr>usq<g ref="#char-f1ac"></g></abbr><expan>usque</expan></choice> ad <choice><abbr>congrua<g ref="#char-0304">̄</g></abbr><expan>congruam</expan></choice>
+                            <choice><abbr>em<g ref="#char-0305">̅</g>datione<g ref="#char-0304">̄</g></abbr><expan>emendationem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="18" facs="1231,3541,1740,300"/></p>
+                    </div>
+                    <div n="3" type="chapter" xml:id="bamberg-sb-c-6-14-con-003" sameAs="#bamberg-sb-c-6-14-toc-003" rend="erasure-partly" corresp="#frankfurt-ub-b-50-14-con-003 #koeln-edd-c-119-14-con-003 #vatican-bav-pal-lat-586-14-con-003" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="853,3526,271,210" n="3"><num value="3"><hi rend="color:red">iii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red"><choice><abbr>Q<g ref="#char-0111">đ</g></abbr><expan>Quod</expan></choice> <choice><abbr>ep<g ref="#char-0305">̅</g>i</abbr><expan>episcopi</expan></choice> et eorum
+                            ministri<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> crapu<lb n="19" facs="1281,3742,1773,264" break="no"/>la et ebrietate
+                            <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> debeant grauari<pc type="p-versus"><g ref="#char-f1ea"></g></pc></hi></head>
+                        <lb n="20" facs="1216,3854,1485,329"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="342,3577,843,577" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>decr<g ref="#char-0305">̅</g></abbr><expan>decretis</expan></choice> <choice><abbr>eiusde<g ref="#char-0304">̄</g></abbr><expan>eiusdem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/>
+                            <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="9">viiii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><choice><abbr><hi rend="color:red initial">E</hi>p<g ref="#char-0305">̅</g>i</abbr><expan><hi rend="color:red initial">E</hi>piscopi</expan></choice> et dei ministri <subst><del rend="erasure"/><add type="contemporary" place="overstrike"><choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> debent<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="21" facs="1303,4041,1477,250"/><choice><abbr>co<g ref="#char-0304">̄</g>messationibus</abbr><expan>commessationibus</expan></choice> et
+                            uinolentiis <lb n="22" facs="1328,4128,1567,318"/>nimiis
+                            <choice><abbr>incu<g ref="#char-0304">̄</g>bere</abbr><expan>incumbere</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>s<g ref="#char-f1ac"></g></abbr><expan>sed</expan></choice> <choice><abbr>c<g ref="#char-0305">̅</g>siderent</abbr><expan>considerent</expan></choice>
+                            <choice><abbr>sen<lb n="23" facs="1321,4344,1502,224" break="no"/>tentia<g ref="#char-0304">̄</g></abbr><expan>sen<lb n="23" facs="1321,4344,1502,224" break="no"/>tentiam</expan></choice>
+                            <choice><abbr>dn<g ref="#char-0305">̅</g>i</abbr><expan>domini</expan></choice> dicentis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Attendite <lb n="24" facs="1342,4473,1596,250"/>ne <choice><abbr>grauent<g ref="#char-f1c2"></g></abbr><expan>grauentur</expan></choice> corda <choice><abbr>ur<g ref="#char-0305">̅</g>a</abbr><expan>uestra</expan></choice> in crapu<lb n="25" facs="1314,4646,1646,242" break="no"/>la et ebrietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Moderate
+                            <choice><abbr>eni<g ref="#char-0304">̄</g></abbr><expan>enim</expan></choice> <choice><abbr>cibu<g ref="#char-0304">̄</g></abbr><expan>cibum</expan></choice> <lb n="26" facs="1342,4790,1542,235"/>et <choice><abbr>necessariu<g ref="#char-0304">̄</g></abbr><expan>necessarium</expan></choice>
+                            <choice><abbr>su<g ref="#char-0304">̄</g>ptu<g ref="#char-0304">̄</g></abbr><expan>sumptum</expan></choice> sumant<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="27" facs="1332,4934,1542,253"/>ut
+                            iuxta <choice><abbr>ap<g ref="#char-a749">ꝉ</g>m</abbr><expan>apostolum</expan></choice></add></subst> sobrii
+                            sint<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <lb n="28" facs="1342,5082,1308,278"/>parati ad <choice><abbr>seruiciu<g ref="#char-0304">̄</g></abbr><expan>seruicium</expan></choice>
+                            <choice><abbr>dn<g ref="#char-0305">̅</g>i</abbr><expan>domini</expan></choice><pc type="p-versus"><g ref="#char-f1ea"></g></pc> <lb n="29" facs="1353,5226,678,271"/></p>
+                    </div>
+                    <div n="4" type="chapter" xml:id="bamberg-sb-c-6-14-con-004" sameAs="#bamberg-sb-c-6-14-toc-004" corresp="#frankfurt-ub-b-50-14-con-004 #koeln-edd-c-119-14-con-004 #vatican-bav-pal-lat-586-14-con-004" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="831,5186,297,203" n="4"><num value="4"><hi rend="color:red">iiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="30" facs="1123,5326,1866,369"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="381,5233,577,404" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan></choice> <lb/>Cabillonensi<pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/>
+                            <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <pc type="distinctio"><g ref="#char-f1f8"></g></pc><num value="10">x</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">U</hi>t <choice><abbr>sobrietate<g ref="#char-0304">̄</g></abbr><expan>sobrietatem</expan></choice>
+                            sacerdotes teneant<add type="contemporary" place="inline"><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc></add> <cb n="b" facs="2887,758,1869,4897"/> <lb n="1" facs="2934,920,1660,289"/>et hanc
+                            <choice><abbr>habenda<g ref="#char-0304">̄</g></abbr><expan>habendam</expan></choice> <choice><abbr>fidelib<g ref="#char-f1ac"></g></abbr><expan>fidelibus</expan></choice>
+                            <choice><abbr>p<g ref="#char-0304">̄</g>dicent</abbr><expan>praedicent</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="2" facs="2952,1136,1599,275"/>quia <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> potest libere
+                            <choice><abbr>sobrietate<g ref="#char-0304">̄</g></abbr><expan>sobrietatem</expan></choice> <lb n="3" facs="2962,1305,1571,228"/><choice><abbr>p<g ref="#char-0304">̄</g>dicare</abbr><expan>praedicare</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> qui se mero
+                            <choice><abbr>usq<g ref="#char-f1ac"></g></abbr><expan>usque</expan></choice> ad <choice><abbr>ali<lb n="4" facs="2948,1449,1564,257" break="no"/>enatione<g ref="#char-0304">̄</g></abbr><expan>ali<lb n="4" facs="2948,1449,1564,257" break="no"/>enationem</expan></choice> mentis ingurgitat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="5" facs="2854,1604,1704,257"/><hi rend="versal">H</hi>oc et <add place="above" type="contemporary">de</add> <choice><abbr>comessationib<g ref="#char-f1ac"></g></abbr><expan>comessationibus</expan></choice> et de ceteris <lb n="6" facs="2962,1741,1636,285"/><choice><abbr>pestib<g ref="#char-f1ac"></g></abbr><expan>pestibus</expan></choice> ad <sic>
+                            <choice><abbr>gastrimaria<g ref="#char-0304">̄</g></abbr><expan>gastrimariam</expan></choice></sic> <choice><abbr><g ref="#char-a751">ꝑ</g>tinentib<g ref="#char-f1ac"></g></abbr><expan>pertinentibus</expan></choice> <lb n="7" facs="2962,1942,1553,272"/><choice><abbr>obseruandu<g ref="#char-0304">̄</g></abbr><expan>obseruandum</expan></choice> est<pc type="distinctio"><g ref="#char-f1f8"></g></pc> </p>
+                    </div>
+                    <div n="5" type="chapter" xml:id="bamberg-sb-c-6-14-con-005" sameAs="#bamberg-sb-c-6-14-toc-005" corresp="#frankfurt-ub-b-50-14-con-005 #koeln-edd-c-119-14-con-005 #vatican-bav-pal-lat-586-14-con-005" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4561,1708,429,365" n="5"><num value="5"><hi rend="color:red">v<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="8" facs="2869,2076,1646,253"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4546,2000,516,750" hand="#bamberg-sb-c-6-hunidentified">In
+                            canone<lb/> <choice><abbr>ap<g ref="#char-a749">ꝉ</g>o<g ref="#char-a75D">ꝝ</g></abbr><expan>apostolorum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> titulo<lb/> <num value="42">xlii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><choice><abbr><hi rend="color:red initial">E</hi>p<g ref="#char-0305">̅</g>s</abbr><expan><hi rend="color:red initial">E</hi>piscopus</expan></choice> <choice><abbr>p<g ref="#char-0180">ƀ</g>r</abbr><expan>presbiter</expan></choice> aut diaconus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ale<g ref="#char-0119">ę</g> <choice><abbr>atq<g ref="#char-f1ac"></g></abbr><expan>atque</expan></choice> <lb n="9" facs="2977,2227,1653,203"/>ebrietati deseruiens<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> aut desinat <lb n="10" facs="2962,2396,1564,232"/>aut certe <choice><abbr>da<g ref="#char-0304">̄</g>net<g ref="#char-f1c2"></g></abbr><expan>damnetur</expan></choice><add type="contemporary" place="inline"><pc type="distinctio"><g ref="#char-f1f8"></g></pc></add> Subdiaconus <lb n="11" facs="2962,2544,1532,210"/>aut
+                            lector<pc type="distinctio"><g ref="#char-f1f8"></g></pc> aut cantor<pc type="distinctio"><g ref="#char-f1f8"></g></pc> similia <lb n="12" facs="2970,2688,1650,231"/><sic>fatiens</sic><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> aut desinat aut <choice><abbr>co<g ref="#char-0304">̄</g>muni<lb n="13" facs="2977,2828,1653,260" break="no"/>one</abbr><expan>communi<lb n="13" facs="2977,2828,1653,260" break="no"/>one</expan></choice> <choice><abbr>priuet<g ref="#char-f1c2"></g></abbr><expan>priuetur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>Similit<g ref="#char-0305">̅</g></abbr><expan>Similiter</expan></choice> <choice><abbr>etia<g ref="#char-0304">̄</g></abbr><expan>etiam</expan></choice> laicus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="14" facs="2941,2983,678,242"/></p>
+                    </div>
+                    <div n="6" type="chapter" xml:id="bamberg-sb-c-6-14-con-006" sameAs="#bamberg-sb-c-6-14-toc-006" corresp="#frankfurt-ub-b-50-14-con-006 #koeln-edd-c-119-14-con-006 #vatican-bav-pal-lat-586-14-con-006" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4554,2688,436,451" n="6"><num value="6"><hi rend="color:red">vi<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="15" facs="2905,3094,1646,304"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4510,3058,502,444" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>eode<g ref="#char-0304">̄</g></abbr><expan>eodem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="43">xliii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">S</hi>i quis <choice><abbr>ep<g ref="#char-0305">̅</g>s</abbr><expan>episcopus</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> aut aliquis
+                            <choice><abbr>ordinat<g ref="#char-1dd2">᷒</g></abbr><expan>ordinatus</expan></choice> <lb n="16" facs="2980,3292,1614,225"/>in consuetudine ebriosus fuerit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <lb n="17" facs="2977,3422,1398,250"/>aut desinat aut <choice><abbr>deponat<g ref="#char-f1c2"></g></abbr><expan>deponatur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="18" facs="2962,3541,1618,267"/></p>
+                    </div>
+                    <div n="7" type="chapter" xml:id="bamberg-sb-c-6-14-con-007" sameAs="#bamberg-sb-c-6-14-toc-007" corresp="#frankfurt-ub-b-50-14-con-007 #koeln-edd-c-119-14-con-007 #vatican-bav-pal-lat-586-14-con-007" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4575,3454,415,315" n="7"><num value="7"><hi rend="color:red">vii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">Quales conuiu<g ref="#char-0119">ę</g><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>sacerdotu<g ref="#char-0304">̄</g></abbr><expan>sacerdotum</expan></choice> epu<lb n="19" facs="3024,3728,1268,246" break="no"/>lis<del rend="erasure"><pc type="distinctio"><g ref="#char-f1f8"></g></pc></del> interesse
+                            debeant<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="20" facs="2804,3858,1816,336"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4611,3714,408,480" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>decr<g ref="#char-0305">̅</g></abbr><expan>decretis</expan></choice> Eu<lb break="no"/>sebii
+                            <choice><abbr>pp<g ref="#char-0305">̅</g></abbr><expan>papae</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="10">x</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">O</hi>portet <choice><abbr>ep<g ref="#char-0305">̅</g>m</abbr><expan>episcopum</expan></choice>
+                            moderatis epulis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="21" facs="3006,4023,1552,250"/><choice><abbr>c<g ref="#char-0305">̅</g>tentu<g ref="#char-0304">̄</g></abbr><expan>contentum</expan></choice> <choice><abbr>ee<g ref="#char-0305">̅</g></abbr><expan>esse</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>suosq<g ref="#char-f1ac"></g></abbr><expan>suosque</expan></choice> conuiuas ad
+                            <lb n="22" facs="3013,4178,1495,235"/><choice><abbr>comedendu<g ref="#char-0304">̄</g></abbr><expan>comedendum</expan></choice> et
+                            <choice><abbr>potandu<g ref="#char-0304">̄</g></abbr><expan>potandum</expan></choice> <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> ur<lb n="23" facs="2991,4336,1715,228" break="no"/>gere<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> quin potius <choice><abbr>se<g ref="#char-0304">̄</g><g ref="#char-a751">ꝑ</g></abbr><expan>semper</expan></choice> sobrietatis <lb n="24" facs="2991,4477,1420,249"/><choice><abbr>p<g ref="#char-0304">̄</g>beat</abbr><expan>praebeat</expan></choice> <choice><abbr>exe<g ref="#char-0304">̄</g>plu<g ref="#char-0304">̄</g></abbr><expan>exemplum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>Remoueant<g ref="#char-f1c2"></g></abbr><expan>Remoueantur</expan></choice><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Ab
+                            Buchstabe "u" von "remoueantur" Wechsel zu einer dunkleren Tinte, aber
+                            kein Vermerk eines Schreiberwechsels bei <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs Burchard von Worms.
+                            Textstufen – frühe Verbreitung – Vorlagen. München
+                            1991</bibl>.</seg><seg xml:lang="en" part="N">From the letter “u” in
+                            “remoueantur,” a switch to a darker ink, but no indication of a change
+                            in scribe in <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des
+                            Bischofs Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.
+                            München 1991</bibl>.</seg></note> <lb n="25" facs="3013,4635,1473,214"/>ab eius <choice><abbr>c<g ref="#char-0305">̅</g>uiuio</abbr><expan>conuiuio</expan></choice> cuncta
+                            <choice><abbr>t<g ref="#char-f1c2"></g>pitu<lb n="26" facs="2991,4765,1539,242" break="no"/>dinis</abbr><expan>turpit<lb n="26" facs="2991,4765,1539,242" break="no"/>udinis</expan></choice>
+                            <choice><abbr>argum<g ref="#char-0305">̅</g>ta</abbr><expan>argumenta</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> ludicra specta<lb n="27" facs="3006,4902,1538,246" break="no"/>cula<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> <choice><abbr>acromatu<g ref="#char-0304">̄</g></abbr><expan>acromatum</expan></choice>
+                            uaniloquia<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="28" facs="2991,5020,1632,250"/><choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> <choice><abbr>fatoru<g ref="#char-0304">̄</g></abbr><expan>fatorum</expan></choice>
+                            stultiloquia <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> <choice><abbr>scurriliu<g ref="#char-0304">̄</g></abbr><expan>scurrilium</expan></choice> <lb n="29" facs="3009,5211,1348,268"/><choice><abbr>a<g ref="#char-0304">̄</g>mittant<g ref="#char-f1c2"></g></abbr><expan>ammittantur</expan></choice> prestigia<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Assint <lb n="30" facs="3020,5366,1582,300"/><choice><abbr><g ref="#char-a751">ꝑ</g>egrini</abbr><expan>peregrini</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> et pauperes<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et debiles<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <pb n="208r" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00419/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/419" ana="/annotations/bamberg-sb-c-6-annotation-419"/><fw type="page-header" place="top">et <g ref="#char-0119">ę</g>brietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a" facs="680,877,1920,4857"/><lb n="1" facs="943,873,1459,325"/> <choice><abbr>q<add place="above" type="contemporary"><g ref="#char-0365">ͥ</g></add></abbr><expan>qu<add place="above" type="contemporary">i</add></expan></choice> <subst><del rend="erasure"/><add place="overstrike" type="contemporary">de</add></subst> sacerdotali<del rend="erasure"/> mensa <note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Erster
+                            Bogen des Buchstaben "m" von Korrekturhand nachgezogen.</seg><seg xml:lang="en" part="N">First stroke of the letter 'm' retraced by the
+                            correcting hand.</seg></note> <choice><abbr>xp<g ref="#char-0305">̅</g>m</abbr><expan>christum</expan></choice> <lb n="2" facs="943,1100,1531,304"/>benedicentes<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>benedictione<g ref="#char-0304">̄</g></abbr><expan>benedictionem</expan></choice>
+                            per<lb n="3" facs="964,1302,1496,235" break="no"/>cipiant<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Re<subst><del rend="erasure"/><add place="overstrike" type="contemporary">ci</add></subst>tetur sacra lectio<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="4" facs="943,1464,1592,238"/><choice><abbr>subsequat<g ref="#char-f1c2"></g></abbr><expan>subsequatur</expan></choice> uiu<g ref="#char-0119">ę</g> uocis exhortati<lb n="5" facs="964,1622,1496,232" break="no"/>o<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ut non
+                            <choice><abbr>tantu<g ref="#char-0304">̄</g></abbr><expan>tantum</expan></choice> corporali cibo<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="6" facs="957,1773,1531,239"/>immo <choice><abbr>u<g ref="#char-0305">̅</g>bi</abbr><expan>uerbi</expan></choice> <choice><abbr>sp<g ref="#char-0305">̅</g>italis</abbr><expan>spiritalis</expan></choice>
+                            alimento <choice><abbr>c<g ref="#char-0305">̅</g>ui<lb n="7" facs="964,1935,1539,253" break="no"/>uantes</abbr><expan>conui<lb n="7" facs="964,1935,1539,253" break="no"/>uantes</expan></choice> se refectos
+                            <choice><abbr>gratulent<g ref="#char-f1c2"></g></abbr><expan>gratulentur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> ut <lb n="8" facs="964,2126,1622,174"/>in
+                            omnibus honorificetur deus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="9" facs="914,2238,1276,289"/><choice><abbr><g ref="#char-a750">Ꝑ</g></abbr><expan>Per</expan></choice>
+                            <choice><abbr>i<g ref="#char-0127">ħ</g>m</abbr><expan>iesum</expan></choice> <choice><abbr>xp<g ref="#char-0305">̅</g>m</abbr><expan>christum</expan></choice>
+                            <choice><abbr>dn<g ref="#char-0305">̅</g>m</abbr><expan>dominum</expan></choice> <add place="above" type="contemporary"><choice><abbr>nr<g ref="#char-0305">̅</g>m</abbr><expan>nostrum</expan></choice><pc type="p-versus"><g ref="#char-f1ea"></g></pc></add> <lb n="10" facs="946,2403,772,239"/></p>
+                    </div>
+                    <div n="8" type="chapter" xml:id="bamberg-sb-c-6-14-con-008" sameAs="#bamberg-sb-c-6-14-toc-008" corresp="#frankfurt-ub-b-50-14-con-008 #koeln-edd-c-119-14-con-008 #vatican-bav-pal-lat-586-14-con-008" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="471,2324,437,271" n="8"><num value="8"><hi rend="color:red">viii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De eadem re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="11" facs="986,2450,1592,347"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="435,2547,498,369" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            poeniten<lb break="no"/>tiali Theodori <lb/><choice><abbr>ep<g ref="#char-0305">̅</g>i</abbr><expan>episcopi</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">S</hi>acerdos quislibet si
+                            <choice><abbr>inebriet<g ref="#char-f1c2"></g></abbr><expan>inebrietur</expan></choice> <lb n="12" facs="975,2695,1513,221"/><choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>ignorantia<g ref="#char-0304">̄</g></abbr><expan>ignorantiam</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <num value="7">vii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies
+                            peniteat <lb n="13" facs="957,2853,1639,253"/>in pane et aqua<pc type="distinctio"><g ref="#char-f1f8"></g></pc> si <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice>
+                            <choice><abbr>neglegentia<g ref="#char-0304">̄</g></abbr><expan>neglegentiam</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <lb n="14" facs="972,2990,1495,214"/><num value="15">xv</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies<pc type="distinctio"><g ref="#char-f1f8"></g></pc> si
+                            per <choice><abbr>conte<g ref="#char-0304">̄</g>ptu<g ref="#char-0304">̄</g></abbr><expan>contemptum</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <num value="40">xl</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies<pc type="p-comma-positura"><g ref="#char-f1e4"></g></pc> <lb n="15" facs="896,3148,1542,236"/><hi rend="versal">D</hi>iaconus
+                            <choice><abbr><g ref="#char-a749">ꝉ</g></abbr><expan>uel</expan></choice> monachus <choice><abbr>sc<g ref="#char-0111">đ</g>m</abbr><expan>secundum</expan></choice>
+                            <choice><abbr>ordi<lb n="16" facs="957,3289,1510,231" break="no"/>ne<g ref="#char-0304">̄</g></abbr><expan>ordi<lb n="16" facs="957,3289,1510,231" break="no"/>nem</expan></choice> ut
+                            <choice><abbr>scriptu<g ref="#char-0304">̄</g></abbr><expan>scriptum</expan></choice> <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> seu et reliqui cle<lb n="17" facs="964,3436,1402,232" break="no"/>rici et ministri iuxta
+                            <choice><abbr>ordine<g ref="#char-0304">̄</g></abbr><expan>ordinem</expan></choice> <lb n="18" facs="979,3588,1398,224"/>iudicio sacerdotis poeniteant<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="19" facs="910,3692,1532,293"/><hi rend="versal">L</hi>aici uelut uota non
+                            habentes<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="20" facs="957,3890,1492,239"/>si inebriantur<add place="above" type="contemporary"><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc></add> arguantur a sa<lb n="21" facs="950,4048,1538,250" break="no"/>cerdote quod ebriosi <choice><abbr>regnu<g ref="#char-0304">̄</g></abbr><expan>regnum</expan></choice> <choice><abbr>di<g ref="#char-0305">̅</g></abbr><expan>dei</expan></choice>
+                            <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> <lb n="22" facs="957,4207,1582,242"/>possidebunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et interitus sit ebri<lb n="23" facs="928,4354,1560,236" break="no"/>etas<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et conpellat eos p<g ref="#char-0119">ę</g>nitere<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="24" facs="867,4452,1657,296"/><hi rend="versal">Q</hi>ui cogit
+                            <choice><abbr>homine<g ref="#char-0304">̄</g></abbr><expan>hominem</expan></choice> ut <choice><abbr>inebriet<g ref="#char-f1c2"></g></abbr><expan>inebrietur</expan></choice> hu<lb n="25" facs="943,4646,1549,275" break="no"/>manitatis <choice><abbr>gr<g ref="#char-0305">̅</g>a</abbr><expan>gratia</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> acerrime
+                            <choice><abbr>corri<lb n="26" facs="957,4808,1535,206" break="no"/>piat<g ref="#char-f1c2"></g></abbr><expan>corri<lb n="26" facs="957,4808,1535,206" break="no"/>piatur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <num value="7">vii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies
+                            poeniteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> si
+                            <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <lb n="27" facs="975,4952,1492,228"/><choice><abbr>conte<g ref="#char-0304">̄</g>ptu<g ref="#char-0304">̄</g></abbr><expan>contemptum</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <num value="30">xxx</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Nullus
+                            <choice><abbr>xp<g ref="#char-0305">̅</g>i<lb n="28" facs="957,5125,1459,185" break="no"/>anus</abbr><expan>chri<lb n="28" facs="957,5125,1459,185" break="no"/>stianus</expan></choice>
+                            <choice><abbr>aliu<g ref="#char-0304">̄</g></abbr><expan>alium</expan></choice> <choice><abbr>xp<g ref="#char-0305">̅</g>ianu<g ref="#char-0304">̄</g></abbr><expan>christianum</expan></choice> plus bibere <lb n="29" facs="972,5254,1430,254"/>cogat<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <choice><abbr>qua<g ref="#char-0304">̄</g></abbr><expan>quam</expan></choice> natur<g ref="#char-0119">ę</g>
+                            sufficiat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="30" facs="867,5362,1546,344"/><choice><abbr><hi rend="versal">Q</hi><g ref="#char-0111">đ</g>si</abbr><expan><hi rend="versal">Q</hi>uodsi</expan></choice> fecerit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> iuxta id <choice><abbr>q<g ref="#char-0111">đ</g></abbr><expan>quod</expan></choice> in peni<cb n="b" facs="2383,787,2103,4901"/><lb n="1" facs="2602,927,1557,304" break="no"/>tentiali habetur poeniteat<pc type="p-versus"><g ref="#char-f1ea"></g></pc> <lb n="2" facs="2599,1143,703,253"/></p>
+                    </div>
+                    <div n="9" type="chapter" xml:id="bamberg-sb-c-6-14-con-009" sameAs="#bamberg-sb-c-6-14-toc-009" corresp="#frankfurt-ub-b-50-14-con-009 #koeln-edd-c-119-14-con-009 #vatican-bav-pal-lat-586-14-con-009" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4406,1143,386,203" n="9"><num value="9"><hi rend="color:red">viiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="3" facs="2588,1312,1664,304"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4280,1312,847,376" hand="#bamberg-sb-c-6-hunidentified">Ex dictis
+                            fructuosi<lb/> <choice><abbr>ep<g ref="#char-0305">̅</g>i</abbr><expan>episcopi</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">S</hi>i quis <g ref="#char-0119">ę</g>cclesiastica <choice><abbr>p<g ref="#char-0304">̄</g>ditus</abbr><expan>praeditus</expan></choice> ordi<lb n="4" facs="2646,1489,1606,253" break="no"/>natione<pc type="distinctio"><g ref="#char-f1f8"></g></pc> aut monachus <choice><abbr>re<g ref="#char-a751">ꝑ</g>t<g ref="#char-1dd2">᷒</g></abbr><expan>repertus</expan></choice> <lb n="5" facs="2620,1683,1704,196"/>fuerit ebriosus<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> in pane et aqua <lb n="6" facs="2635,1791,1542,275"/><num value="3">tribus</num> poeniteat
+                            mensibus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="7" facs="2617,1964,699,217"/></p>
+                    </div>
+                    <div n="10" type="chapter" xml:id="bamberg-sb-c-6-14-con-010" sameAs="#bamberg-sb-c-6-14-toc-010" corresp="#frankfurt-ub-b-50-14-con-010 #koeln-edd-c-119-14-con-010 #vatican-bav-pal-lat-586-14-con-010" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4348,2000,261,174" n="10"><num value="10"><hi rend="color:red">x<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De
+                            <choice><abbr>eade<g ref="#char-0304">̄</g></abbr><expan>eadem</expan></choice> re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="8" facs="2556,2094,1657,246"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4287,1993,786,746" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            dictis<lb/> Eutichiani <choice><abbr>pp<g ref="#char-0305">̅</g></abbr><expan>papae</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="13">xiii</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><choice><abbr><hi rend="color:red initial">O</hi>bseruandu<g ref="#char-0304">̄</g></abbr><expan><hi rend="color:red initial">O</hi>bseruandum</expan></choice> <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice> <choice><abbr>uo<g ref="#char-0180">ƀ</g></abbr><expan>uobis</expan></choice> ut <add place="above" type="contemporary">et</add> uos ab <lb n="9" facs="2628,2259,1711,239"/>ebrietate abstineatis<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et ut plebes <lb n="10" facs="2620,2414,1492,235"/>subdit<g ref="#char-0119">ę</g> abstineant
+                            <choice><abbr>p<g ref="#char-0304">̄</g>dicetis</abbr><expan>praedicetis</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="11" facs="2548,2518,1629,286"/><hi rend="versal">E</hi>t <choice><abbr>neq<g ref="#char-f1ac"></g></abbr><expan>neque</expan></choice>
+                            <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> tabernas eatis bibendo <lb n="12" facs="2620,2756,1596,149"/>aut comedendo<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>neq<g ref="#char-f1ac"></g></abbr><expan>neque</expan></choice> domos aut <lb n="13" facs="2635,2864,1830,228"/>uicos curiositate qualibet <choice><abbr><g ref="#char-a751">ꝑ</g>agretis</abbr><expan>peragretis</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="14" facs="2606,3012,1632,206"/><choice><abbr>neq<g ref="#char-f1ac"></g></abbr><expan>neque</expan></choice> <choice><abbr>cu<g ref="#char-0304">̄</g></abbr><expan>cum</expan></choice> feminis aut
+                            <choice><abbr>cu<g ref="#char-0304">̄</g></abbr><expan>cum</expan></choice> <choice><abbr>quib<g ref="#char-f1ac"></g>libet</abbr><expan>quibuslibet</expan></choice>
+                            <lb n="15" facs="2628,3148,1596,239"/><choice><abbr><g ref="#char-a751">ꝑ</g>sonis</abbr><expan>personis</expan></choice> inpuris
+                            <choice><abbr>c<g ref="#char-0305">̅</g>uiuia</abbr><expan>conuiuia</expan></choice> exerceatis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="16" facs="2606,3321,1654,225"/>nisi forte <choice><abbr>pat<g ref="#char-0305">̅</g></abbr><expan>pater</expan></choice> familias
+                            <choice><abbr>q<g ref="#char-0365">ͥ</g>libet</abbr><expan>quilibet</expan></choice> uos <lb n="17" facs="2599,3458,1661,199"/>ad <choice><abbr>domu<g ref="#char-0304">̄</g></abbr><expan>domum</expan></choice> <choice><abbr>sua<g ref="#char-0304">̄</g></abbr><expan>suam</expan></choice> inuitauerit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et <choice><abbr>cu<g ref="#char-0304">̄</g></abbr><expan>cum</expan></choice>
+                            <choice><abbr>c<g ref="#char-0305">̅</g><lb n="18" facs="2613,3602,1776,232" break="no"/>iuge</abbr><expan>con<lb n="18" facs="2613,3602,1776,232" break="no"/>iuge</expan></choice> sua
+                            <choice><sic><metamark function="transposition" place="above"/>uelit et
+                            prole<metamark function="transposition" place="inline"/></sic><corr type="transposition" resp="#bamberg-sb-c-6-h29">et prole
+                            uelit</corr></choice><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Ursprünglich steht in der Handschrift "uelit et
+                            prole". Über den Worten "uelit" und hinter "prole" je ein
+                            Einfügungszeichen von Korrekturhand ergänzt, um die Wortfolge zu
+                            korrigieren. In der Transkription ist die geänderte Wortfolge, die den
+                            anderen Handschriften F, K und Va3 entspricht, abgebildet.</seg><seg xml:lang="en" part="N">Originally, the manuscript reads 'uelit et
+                            prole'. Above the word 'uelit' and after 'prole', insertion marks were
+                            added by the correcting hand to adjust the altered word order. In the
+                            transcription, the altered word order—corresponding to the other
+                            manuscripts F, K, and Va3—is shown.</seg></note> <choice><abbr>uo<g ref="#char-0180">ƀ</g>cu</abbr><expan>uobiscum</expan></choice>
+                            <choice><abbr>sp<g ref="#char-0305">̅</g>itali</abbr><expan>spiritali</expan></choice> <lb n="19" facs="2628,3753,1592,239"/>gaudio l<g ref="#char-0119">ę</g>tari<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <choice><abbr>u<g ref="#char-0305">̅</g>boru<g ref="#char-0304">̄</g></abbr><expan>uerborum</expan></choice> <choice><abbr>ur<g ref="#char-0305">̅</g>oru<g ref="#char-0304">̄</g></abbr><expan>uestrorum</expan></choice> <lb n="20" facs="2606,3908,1661,235"/><choice><abbr>refeccione<g ref="#char-0304">̄</g></abbr><expan>refeccionem</expan></choice> accipere<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et <choice><abbr>uo<g ref="#char-0180">ƀ</g></abbr><expan>uobis</expan></choice>
+                            <choice><abbr>refec<lb n="21" facs="2599,4038,1531,231" break="no"/>tione<g ref="#char-0304">̄</g></abbr><expan>refec<lb n="21" facs="2599,4038,1531,231" break="no"/>tionem</expan></choice>
+                            <choice><abbr>carnale<g ref="#char-0304">̄</g></abbr><expan>carnalem</expan></choice> caritatis offitio <lb n="22" facs="2620,4207,1604,249"/>exhibere<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Oportet <choice><abbr>eni<g ref="#char-0304">̄</g></abbr><expan>enim</expan></choice> ut si <choice><abbr>q<g ref="#char-1dd3">ᷓ</g>ndo</abbr><expan>quando</expan></choice> <lb n="23" facs="2628,4390,1707,232"/><choice><abbr>q<g ref="#char-0365">ͥ</g>slibet</abbr><expan>quislibet</expan></choice>
+                            <choice><abbr>fideliu<g ref="#char-0304">̄</g></abbr><expan>fidelium</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>carnalib<g ref="#char-f1ac"></g></abbr><expan>carnalibus</expan></choice> uos reficit <lb n="24" facs="2620,4506,1604,260"/>epulis<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> a <choice><abbr>uo<g ref="#char-0180">ƀ</g></abbr><expan>uobis</expan></choice> <choice><abbr>reficiat<g ref="#char-f1c2"></g></abbr><expan>reficiatur</expan></choice> epulis
+                            <choice><abbr>spiri<lb n="25" facs="2577,4635,1492,271" break="no"/><subst><del rend="erasure"/><add place="overstrike" type="contemporary">tualib<g ref="#char-f1ac"></g></add></subst></abbr><expan>spiri<lb n="25" facs="2577,4635,1492,271" break="no"/><subst><del rend="erasure"/><add place="overstrike" type="contemporary">tualibus</add></subst></expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></p>
+                    </div>
+                    <div n="11" type="chapter" xml:id="bamberg-sb-c-6-14-con-011" sameAs="#bamberg-sb-c-6-14-toc-011" corresp="#frankfurt-ub-b-50-14-con-011 #koeln-edd-c-119-14-con-011 #vatican-bav-pal-lat-586-14-con-011" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4323,4603,268,188" n="11"><num value="11"><hi rend="color:red">xi<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">Qui ebrius fuerit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> ut <lb n="26" facs="2599,4808,1214,228"/>ordo <choice><abbr>patit<g ref="#char-f1c2"></g></abbr><expan>patitur</expan></choice> poeniteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="27" facs="2498,4902,1852,303"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4294,4560,909,508" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>c<g ref="#char-0305">̅</g>ci<g ref="#char-a749">ꝉ</g></abbr><expan>concilio</expan></choice> Agathen<lb break="no"/>si<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="10">x</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><choice><abbr><hi rend="color:red initial">I</hi>taq<g ref="#char-f1ac"></g></abbr><expan><hi rend="color:red initial">I</hi>taque</expan></choice> <choice><abbr>eu<g ref="#char-0304">̄</g></abbr><expan>eum</expan></choice> <choice><abbr>que<g ref="#char-0304">̄</g></abbr><expan>quem</expan></choice>
+                            <choice><abbr>ebriu<g ref="#char-0304">̄</g></abbr><expan>ebrium</expan></choice> fuisse constiterit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <lb n="28" facs="2606,5092,1610,257"/>ut ordo <choice><abbr>patit<g ref="#char-f1c2"></g></abbr><expan>patitur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> aut <num value="30">xxx</num> <choice><abbr>dieru<g ref="#char-0304">̄</g></abbr><expan>dierum</expan></choice> spa<lb n="29" facs="2602,5247,1593,279" break="no"/>tio a <choice><abbr>co<g ref="#char-0304">̄</g>munione</abbr><expan>communione</expan></choice>
+                            <choice><abbr>statuim<g ref="#char-1dd2">᷒</g></abbr><expan>statuimus</expan></choice> <choice><abbr>submo<lb n="30" facs="2584,5413,1848,332" break="no"/>uendu<g ref="#char-0304">̄</g></abbr><expan>submo<lb n="30" facs="2584,5413,1848,332" break="no"/>uendum</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> aut corporali <choice><abbr>dandu<g ref="#char-0304">̄</g></abbr><expan>dandum</expan></choice> suplicio<pc type="p-comma-positura"><g ref="#char-f1e4"></g></pc> <pb n="208v" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00420/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/420" ana="/annotations/bamberg-sb-c-6-annotation-420"/><fw type="page-header" place="top"><num value="14">xiiii</num> <choice><abbr>li<g ref="#char-0180">ƀ</g></abbr><expan>liber</expan></choice> de crapula<pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a" facs="1152,942,1916,4846"/><lb n="1" facs="1245,891,1553,311"/></p>
+                    </div>
+                    <div n="12" type="chapter" xml:id="bamberg-sb-c-6-14-con-012" sameAs="#bamberg-sb-c-6-14-toc-012" corresp="#frankfurt-ub-b-50-14-con-012 #koeln-edd-c-119-14-con-012 #vatican-bav-pal-lat-586-14-con-012" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="579,1028,401,246" n="12"><num value="12"><hi rend="color:red">xii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red"><choice><abbr>Q<subst><del rend="erasure"/><add place="overstrike" type="contemporary"><g ref="#char-0111">đ</g></add></subst></abbr><expan>Q<subst><del rend="erasure"/><add place="overstrike" type="contemporary">uod</add></subst></expan></choice><subst><del rend="erasure"/><add place="overstrike" type="contemporary"> uino inebriari <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice>
+                            lice</add></subst>at<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            <lb n="2" facs="1393,1140,1254,274"/>sed fugiendum sit<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="3" facs="1350,1327,1556,242"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="558,1194,793,282" hand="#bamberg-sb-c-6-hunidentified">Ex dictis
+                            Augustini<pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">F</hi>uge <choice><abbr>uinu<g ref="#char-0304">̄</g></abbr><expan>uinum</expan></choice> uelut
+                            <choice><abbr>uenenu<g ref="#char-0304">̄</g></abbr><expan>uenenum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> ne e<lb n="4" facs="1278,1467,1632,268" break="no"/>brietas superet te<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <choice><abbr>exspoliatu<g ref="#char-0304">̄</g>q<g ref="#char-f1ac"></g></abbr><expan>exspoliatumque</expan></choice> <lb n="5" facs="1393,1640,1520,242"/><choice><abbr>uirtutib<g ref="#char-f1ac"></g></abbr><expan>uirtutibus</expan></choice> te
+                            <choice><abbr>nudu<g ref="#char-0304">̄</g></abbr><expan>nudum</expan></choice> efficiat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>V<add type="contemporary" place="above">i</add>nu<g ref="#char-0304">̄</g></abbr><expan>V<add type="contemporary" place="above">i</add>num</expan></choice><lb n="6" facs="1386,1784,1545,228"/><choice><abbr>eni<g ref="#char-0304">̄</g></abbr><expan>enim</expan></choice> ut <choice><abbr>sc<g ref="#char-0305">̅</g>a</abbr><expan>sancta</expan></choice> scriptura
+                            dicit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> aposta<lb n="7" facs="1378,1950,1496,231" break="no"/>tare facit
+                            <choice><abbr>etia<g ref="#char-0304">̄</g></abbr><expan>etiam</expan></choice> sapientes<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Atten<lb n="8" facs="1386,2112,1484,246" break="no"/>de noe <choice><abbr>uiru<g ref="#char-0304">̄</g></abbr><expan>uirum</expan></choice>
+                            <choice><abbr>sapiente<g ref="#char-0304">̄</g></abbr><expan>sapientem</expan></choice> et <choice><abbr>sc<g ref="#char-0305">̅</g>m</abbr><expan>sanctum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="9" facs="1400,2256,1474,224"/>quomodo <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>ebrietate<g ref="#char-0304">̄</g></abbr><expan>ebrietatem</expan></choice>
+                            <choice><abbr>nudat<g ref="#char-1dd2">᷒</g></abbr><expan>nudatus</expan></choice> <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice> <lb n="10" facs="1407,2400,1495,264"/>dormiens<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Attende et loth <choice><abbr>patri<lb n="11" facs="1378,2565,1593,217" break="no"/>archa<g ref="#char-0304">̄</g></abbr><expan>patri<lb n="11" facs="1378,2565,1593,217" break="no"/>archam</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> qui <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>ebrietate<g ref="#char-0304">̄</g></abbr><expan>ebrietatem</expan></choice>
+                            <choice><abbr>inpuden<lb n="12" facs="1386,2727,1488,217" break="no"/>t<g ref="#char-0305">̅</g></abbr><expan>inpuden<lb n="12" facs="1386,2727,1488,217" break="no"/>ter</expan></choice> se
+                            <choice><abbr>co<g ref="#char-0304">̄</g>miscuit</abbr><expan>commiscuit</expan></choice> filiabus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Hinc <lb n="13" facs="1386,2846,1524,199"/>beatus basilius dicit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Multi <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>ui<lb n="14" facs="1407,2990,1488,242" break="no"/>nu<g ref="#char-0304">̄</g></abbr><expan>ui<lb n="14" facs="1407,2990,1488,242" break="no"/>num</expan></choice> a <choice><abbr>d<g ref="#char-0119">ę</g>monib<g ref="#char-f1ac"></g></abbr><expan>d<g ref="#char-0119">ę</g>monibus</expan></choice> capti sunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> nec <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice> <lb n="15" facs="1389,3148,1499,243"/>aliud ebrietas <choice><abbr>qua<g ref="#char-0304">̄</g></abbr><expan>quam</expan></choice> manifestis<lb n="16" facs="1400,3292,1488,239" break="no"/>simus demon<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Hinc propheta <lb n="17" facs="1400,3436,1556,239"/>ait<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Fornicatio et ebrietas<add place="above" type="contemporary"><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc></add> aufert <lb n="18" facs="1400,3570,1628,235"/>cor<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ebrietas
+                            <choice><abbr>eni<g ref="#char-0304">̄</g></abbr><expan>enim</expan></choice> <choice><abbr><g ref="#char-a751">ꝑ</g>turbatione<g ref="#char-0304">̄</g></abbr><expan>perturbationem</expan></choice> parit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="19" facs="1400,3739,1560,246"/>gignit mentis <choice><abbr>furore<g ref="#char-0304">̄</g></abbr><expan>furorem</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et <choice><abbr>fla<g ref="#char-0304">̄</g>ma<g ref="#char-0304">̄</g></abbr><expan>flammam</expan></choice> <lb n="20" facs="1414,3890,1380,250"/>suscitat libidinis<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <choice><abbr>ap<g ref="#char-a749">ꝉ</g>o</abbr><expan>apostolo</expan></choice> teste<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="21" facs="1306,4034,1568,253"/><hi rend="versal">N</hi>olite inebriari
+                            uino<pc type="distinctio"><g ref="#char-f1f8"></g></pc> in quo est <lb n="22" facs="1407,4210,1503,232"/>luxuria<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Si quis <choice><abbr>aut<g ref="#char-0305">̅</g></abbr><expan>autem</expan></choice> contra h<g ref="#char-0119">ę</g>c <lb n="23" facs="1414,4347,1467,210"/>fecerit <choice><abbr>sc<g ref="#char-0305">̅</g>o<g ref="#char-a75D">ꝝ</g></abbr><expan>sanctorum</expan></choice> statuta<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <choice><abbr>digna<g ref="#char-0304">̄</g></abbr><expan>dignam</expan></choice> ac <lb n="24" facs="1407,4495,1510,246"/><choice><abbr>longa<g ref="#char-0304">̄</g></abbr><expan>longam<pc type="distinctio"><g ref="#char-f1f8"></g></pc></expan></choice> aga<subst><del rend="erasure"/><add place="overstrike" type="contemporary">t
+                            </add></subst><choice><abbr><subst><del rend="erasure"/><add place="overstrike" type="contemporary">pe</add></subst>nitentia<g ref="#char-0304">̄</g></abbr><expan><subst><del rend="erasure"/><add place="overstrike" type="contemporary">pe</add></subst>nitentiam</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> quia <choice><abbr>ui<lb n="25" facs="1418,4642,1488,246" break="no"/>nu<g ref="#char-0304">̄</g></abbr><expan>ui<lb n="25" facs="1418,4642,1488,246" break="no"/>num</expan></choice><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">In F, K und Va3 steht "unum".</seg><seg xml:lang="en" part="N">In F, K and Va3 it says "unum".</seg></note>
+                            <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice> ex his peccatis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> qu<g ref="#char-0119">ę</g> <choice><abbr>homi<lb n="26" facs="1429,4812,1581,228" break="no"/>ne<g ref="#char-0304">̄</g></abbr><expan>homi<lb n="26" facs="1429,4812,1581,228" break="no"/>nem</expan></choice> a regno dei
+                            separant<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> dicente <lb n="27" facs="1422,4941,1531,250"/><choice><abbr>ap<g ref="#char-a749">ꝉ</g>o</abbr><expan>apostolo</expan></choice> paulo<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>Neq<g ref="#char-f1ac"></g></abbr><expan>Neque</expan></choice> ebriosi
+                            <choice><abbr>regnu<g ref="#char-0304">̄</g></abbr><expan>regnum</expan></choice> <lb n="28" facs="1407,5096,876,246"/><choice><abbr>di<g ref="#char-0305">̅</g></abbr><expan>dei</expan></choice> possidebunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="29" facs="1303,5218,1610,311"/></p>
+                    </div>
+                    <div n="13" type="chapter" xml:id="bamberg-sb-c-6-14-con-013" sameAs="#bamberg-sb-c-6-14-toc-013" corresp="#frankfurt-ub-b-50-14-con-013 #koeln-edd-c-119-14-con-013 #vatican-bav-pal-lat-586-14-con-013" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="655,5348,347,178" n="13"><num value="13"><hi rend="color:red">xiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De illis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> qui per ebrietatem <lb n="30" facs="1414,5413,1240,278"/>uomitum fecerint<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <cb n="b" facs="2880,891,1873,4869"/>
+                        <lb n="1" facs="2901,891,1765,361"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4633,790,415,740" hand="#bamberg-sb-c-6-hunidentified">Ex poeni<lb break="no"/>tentiali<lb/> romano<pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">Q</hi>ui <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice>
+                            <choice><abbr>ebrietate<g ref="#char-0304">̄</g></abbr><expan>ebrietatem</expan></choice> <choice><abbr>uomitu<g ref="#char-0304">̄</g></abbr><expan>uomitum</expan></choice> facit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="2" facs="3034,1129,1560,282"/>si <choice><abbr>p<g ref="#char-0180">ƀ</g>r</abbr><expan>presbiter</expan></choice> aut <sic>diiaconus</sic>
+                            <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <num value="40">xl</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies <lb n="3" facs="3034,1298,1510,232"/>p<g ref="#char-0119">ę</g>niteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Si monachus<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <num value="30">xxx</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="4" facs="3042,1464,1639,235"/>dies<pc type="distinctio"><g ref="#char-f1f8"></g></pc> si clericus<add type="contemporary" place="inline"><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc></add> <num value="20">xx</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies<pc type="distinctio"><g ref="#char-f1f8"></g></pc> si laicus<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <lb n="5" facs="3042,1629,1434,239"/><num value="15">x<subst><del rend="erasure"/><add type="contemporary" place="overstrike">v</add></subst></num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies </p>
+                    </div>
+                    <div n="14" type="chapter" xml:id="bamberg-sb-c-6-14-con-014" sameAs="#bamberg-sb-c-6-14-toc-014" corresp="#frankfurt-ub-b-50-14-con-014 #koeln-edd-c-119-14-con-014 #vatican-bav-pal-lat-586-14-con-014" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4633,1453,408,343" n="14"><num value="14"><hi rend="color:red">xiiii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De eadem re<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="6" facs="2890,1651,1744,393"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4633,1744,415,513" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            poeni<lb break="no"/>tentiali <lb/>Bed<g ref="#char-0119">ę</g><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">L</hi>aicus si <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice>
+                            <choice><abbr>ebrietate<g ref="#char-0304">̄</g></abbr><expan>ebrietatem</expan></choice> uomitum <lb n="7" facs="3034,1953,1485,228"/>facit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <num value="3">iii</num> dies <pc type="distinctio"><g ref="#char-f1f8"></g></pc><add place="above" type="contemporary">a carne<pc type="distinctio"><g ref="#char-f1f8"></g></pc></add> et uino et cer<lb n="8" facs="3034,2101,1510,239" break="no"/>uisa abstineat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <hi rend="color:red"><seg corresp="#bamberg-sb-c-6-14-supp-005" type="pos-of-displaced"><g ref="#char-f1e1"></g>briant<pc type="distinctio"><g ref="#char-f1f8"></g></pc></seg></hi><lb n="9" facs="2962,2234,1650,268"/></p>
+                    </div>
+                    <div n="15" type="chapter" xml:id="bamberg-sb-c-6-14-con-015" sameAs="#bamberg-sb-c-6-14-toc-015" corresp="#frankfurt-ub-b-50-14-con-015 #koeln-edd-c-119-14-con-015 #vatican-bav-pal-lat-586-14-con-015" hand="#bamberg-sb-c-6-h29">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4633,2130,372,231" n="15"><num value="15"><hi rend="color:red">xv<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De illis qui
+                            <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>su<g ref="#char-a751">ꝑ</g>bia<g ref="#char-0304">̄</g></abbr><expan>superbiam</expan></choice> alios ine<supplied xml:id="bamberg-sb-c-6-14-supp-005" reason="displaced-over-the-line">briant<pc type="distinctio"><g ref="#char-f1f8"></g></pc></supplied></hi></head>
+                        <lb n="10" facs="3106,2396,1535,239"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4618,2299,416,300" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>eode<g ref="#char-0304">̄</g></abbr><expan>eodem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">S</hi>i quis per
+                            <choice><abbr>nequicia<g ref="#char-0304">̄</g></abbr><expan>nequiciam</expan></choice> <choice><abbr>aliu<g ref="#char-0304">̄</g></abbr><expan>alium</expan></choice> inebriat<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <lb n="11" facs="2959,2403,1643,509"/><num value="40">xl</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc> dies p<g ref="#char-0119">ę</g>niteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Quodsi in con<lb n="12" facs="3070,2713,1578,228" break="no"/>suetudine habuerit<add type="contemporary" place="inline"><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc></add> <choice><abbr>co<g ref="#char-0304">̄</g>munione</abbr><expan>communione</expan></choice> <lb n="13" facs="3034,2853,1575,232"/><choice><abbr>priuet<g ref="#char-f1c2"></g></abbr><expan>priuetur</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> donec digne peniteat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <lb n="14" facs="3034,2986,1532,196"/><choice><abbr>emendatione<g ref="#char-0304">̄</g></abbr><expan>emendationem</expan></choice> promit<subst><del rend="erasure"/><add type="contemporary" place="overstrike">t</add></subst>at<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            <lb n="15" facs="2955,3134,1301,264"/></p>
+                    </div>
+                    <div n="16" type="chapter" xml:id="bamberg-sb-c-6-14-con-016" sameAs="#bamberg-sb-c-6-14-toc-016" corresp="#frankfurt-ub-b-50-14-con-016 #koeln-edd-c-119-14-con-016 #vatican-bav-pal-lat-586-14-con-016" hand="#bamberg-sb-c-6-h29 #bamberg-sb-c-6-h25">
+                        <head type="chapter-title"><label type="chapter-number" place="margin right" facs="4561,3091,444,231" n="16"><num value="16"><hi rend="color:red">xvi<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red"><choice><abbr>Q<g ref="#char-0111">đ</g></abbr><expan>Quod</expan></choice> fugienda sit
+                            ebrietas<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></head>
+                        <lb n="16" facs="2880,3274,1740,333"/>
+                        <note type="inscription" place="margin right" anchored="false" facs="4568,3231,480,621" hand="#bamberg-sb-c-6-hunidentified">Ex
+                            <choice><abbr>decr<g ref="#char-0305">̅</g></abbr><expan>decretis</expan></choice><lb/> <choice><abbr>clem<g ref="#char-0305">̅</g>tis</abbr><expan>clementis</expan></choice>
+                            <choice><abbr>p<g ref="#char-0305">̅</g>p</abbr><expan>papae</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc><lb/> <choice><abbr>Cap<g ref="#char-0305">̅</g></abbr><expan>Capitulum</expan></choice> <num value="35">xxxv</num><pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><choice><abbr><hi rend="color:red initial">E</hi>brietate<g ref="#char-0304">̄</g></abbr><expan><hi rend="color:red initial">E</hi>brietatem</expan></choice> oppido prohibe<add place="above" type="contemporary">b</add>at <note type="editorial-comment" resp="#CoS"><seg xml:lang="de" part="N">Die Korrektur des Wortes von "prohibeat" zu
+                            "prohibebat" ist auch in F und Va3 erfolgt. In der später entstandenen
+                            Handschrift K steht bereits "prohibebat", vgl. <bibl copyOf="2SGE32EU">Gneckow: Abhängigkeiten entwirren. Zur Handschriftentradition von
+                            Burchards Decretum, in: Burchard von Worms und die vorgratianischen
+                            Sammlungen. Ostfildern 2025,
+                            <citedRange>107</citedRange>.</bibl>.</seg><seg xml:lang="en" part="N">The correction of the word from ‘prohibeat’ to “prohibebat” has also
+                            been made in F and Va3. In the later manuscript K, ‘prohibebat’ already
+                            appears, cf. <bibl copyOf="2SGE32EU">Gneckow: Abhängigkeiten entwirren.
+                            Zur Handschriftentradition von Burchards Decretum, in: Burchard von
+                            Worms und die vorgratianischen Sammlungen. Ostfildern 2025,
+                            <citedRange>107</citedRange>.</bibl>.</seg></note><pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <lb n="17" facs="3045,3436,1510,203"/>ebriosos corpore et animo mor<lb n="18" facs="3045,3577,1578,246" break="no"/>tuos <choice><abbr>ee<g ref="#char-0305">̅</g></abbr><expan>esse</expan></choice> <choice><abbr>p<g ref="#char-0304">̄</g>dicabat</abbr><expan>praedicabat</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> De <choice><abbr>quib<g ref="#char-f1ac"></g></abbr><expan>quibus</expan></choice>
+                            <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>exem<lb n="19" facs="3070,3721,1535,228" break="no"/>plu<g ref="#char-0304">̄</g></abbr><expan>exem<lb n="19" facs="3070,3721,1535,228" break="no"/>plum</expan></choice> aiebat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ve qui consurgitis <lb n="20" facs="3049,3883,1603,242"/>mane ad <choice><abbr>ebrietate<g ref="#char-0304">̄</g></abbr><expan>ebrietatem</expan></choice> <choice><abbr>sectanda<g ref="#char-0304">̄</g></abbr><expan>sectandam</expan></choice> et
+                            <choice><abbr>po<lb n="21" facs="3063,4038,1575,213" break="no"/>tandu<g ref="#char-0304">̄</g></abbr><expan>po<lb n="21" facs="3063,4038,1575,213" break="no"/>tandum</expan></choice> usque ad
+                            <choice><abbr>uespera<g ref="#char-0304">̄</g></abbr><expan>uesperam</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> ut uino <lb n="22" facs="3049,4192,1639,246"/>estuetis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Cithara
+                            et lira et <choice><abbr>timpanu<g ref="#char-0304">̄</g></abbr><expan>timpanum</expan></choice> <lb n="23" facs="3049,4358,1592,174"/>et tibia et <choice><abbr>uinu<g ref="#char-0304">̄</g></abbr><expan>uinum</expan></choice> in conuiuiis
+                            <choice><abbr>ur<g ref="#char-0305">̅</g>is</abbr><expan>uestris</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="24" facs="3063,4480,1654,214"/>et
+                            opus <choice><abbr>dn<g ref="#char-0305">̅</g>i</abbr><expan>domini</expan></choice> <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> respicitis<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> nec opera <lb n="25" facs="3078,4642,1556,203"/><choice><abbr>manuu<g ref="#char-0304">̄</g></abbr><expan>manuum</expan></choice> <choice><abbr>ei<g ref="#char-1dd2">᷒</g></abbr><expan>eius</expan></choice>
+                            <choice><abbr>c<g ref="#char-0305">̅</g>sideratis</abbr><expan>consideratis</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> Et
+                            <choice><abbr>iteru<g ref="#char-0304">̄</g></abbr><expan>iterum</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ve <lb n="26" facs="3078,4808,1509,196"/>qui
+                            potentes estis ad <choice><abbr>bibendu<g ref="#char-0304">̄</g></abbr><expan>bibendum</expan></choice> <choice><abbr>ui<lb n="27" facs="3070,4941,1485,221" break="no"/>nu<g ref="#char-0304">̄</g></abbr><expan>ui<lb n="27" facs="3070,4941,1485,221" break="no"/>num</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> et uiri fortes ad <choice><abbr>miscenda<g ref="#char-0304">̄</g></abbr><expan>miscendam</expan></choice> <choice><abbr>e<lb n="28" facs="3042,5103,1668,221" break="no"/>b<subst><del rend="erasure"/><add type="contemporary" place="overstrike">riet</add></subst>ate<g ref="#char-0304">̄</g></abbr><expan>e<lb n="28" facs="3042,5103,1668,221" break="no"/>b<subst><del rend="erasure"/><add type="contemporary" place="overstrike">riet</add></subst>atem</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> <choice><abbr>q<g ref="#char-0365">ͥ</g></abbr><expan>qui</expan></choice> iustificatis <choice><abbr>i<g ref="#char-0304">̄</g>piu<g ref="#char-0304">̄</g></abbr><expan>impium</expan></choice> <choice><abbr><g ref="#char-a753">ꝓ</g></abbr><expan>pro</expan></choice> mune<lb n="29" facs="3070,5240,1665,250" break="no"/>ribus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <choice><abbr>iusticia<g ref="#char-0304">̄</g></abbr><expan>iusticiam</expan></choice> iusti <subst><del rend="erasure"/><add type="contemporary" place="overstrike">au</add></subst>feretis ab eo<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="30" facs="2941,5384,1675,300"/><choice><abbr><hi rend="versal"><g ref="#char-a752">Ꝓ</g></hi>pt<g ref="#char-0305">̅</g></abbr><expan><hi rend="versal">P</hi>ropter</expan></choice> hoc
+                            sicut deuorat stipulam <fw type="quire-numeral" place="bottom" facs="2"><num value="30">xxx</num><g ref="#char-f1f8"></g></fw> <pb n="209r" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00421/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/421" ana="/annotations/bamberg-sb-c-6-annotation-421"/><fw type="page-header" place="top"><g ref="#char-0119">ę</g>brietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a" facs="903,700,1726,4786"/> <lb n="1" facs="1033,808,1473,297"/> <handShift new="#bamberg-sb-c-6-h25" cert="high" xml:id="bdd-bamberg-sb-c-6-14-hs-002"/>lingua ignis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et calor flamm<g ref="#char-0119">ę</g> <lb n="2" facs="1026,1050,1412,231"/>exu<del rend="erasure"/>rit<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc>
+                            sic radix eorum quasi <lb n="3" facs="1033,1226,1344,203"/>fauilla
+                            erit<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et germen eorum
+                            <lb n="4" facs="1026,1363,1437,221"/>ut puluis ascend<subst><del rend="correction">i</del><add type="contemporary" place="overstrike">e</add></subst>t<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            Abiecerunt <lb n="5" facs="1015,1503,1506,239"/>enim legem
+                            <choice><abbr>dn<g ref="#char-0305">̅</g>i</abbr><expan>domini</expan></choice> exercituum<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et <lb n="6" facs="1026,1647,1581,243"/>eloquium <choice><abbr>sc<g ref="#char-0305">̅</g>i</abbr><expan>sancti</expan></choice> <choice><abbr>isr<g ref="#char-a749">ꝉ</g></abbr><expan>israhel</expan></choice>
+                            blasphemauerunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="7" facs="993,1813,1560,246"/><hi rend="versal">I</hi>deo iratus est
+                            furor domini in popu<lb n="8" facs="1018,2000,1557,167" break="no"/>lo
+                            suo<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et extendit
+                            manum suam <lb n="9" facs="1018,2119,1546,246"/>super eum<pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et percussit
+                            <choice><abbr>eu<g ref="#char-0304">̄</g></abbr><expan>eum</expan></choice><pc type="p-elevatus"><g ref="#char-f1f0"></g></pc> et con<lb n="10" facs="1015,2288,1513,224" break="no"/>turbati sunt montes<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et facti sunt <lb n="11" facs="1029,2475,1488,178"/>morticinia eorum quasi stercus <lb n="12" facs="1018,2630,1449,167"/>in medio platearum<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            In <choice><abbr>omnib<g ref="#char-f1ac"></g></abbr><expan>omnibus</expan></choice> <lb n="13" facs="1033,2738,1452,224"/>his non est auersus furor eius<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>s<g ref="#char-f1ac"></g></abbr><expan>sed</expan></choice> <lb n="14" facs="1047,2871,1582,253"/>adhuc manus eius extenta<pc type="distinctio"><g ref="#char-f1f8"></g></pc> </p>
+                        <note type="editorial-comment" resp="HeG"><seg xml:lang="de" part="N">Buch
+                            14 endete ursprünglich hier, Kapitel 17 ist ein Nachtrag. Dies ist
+                            erkennbar in der Handschrift Va3, in der hierfür fol. 95 nachträglich
+                            eingefügt wurde und sowohl in der Capitulatio als auch im Haupttext die
+                            Hand vor Kapitel 17 wechselt, vgl. <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des Bischofs Burchard von Worms.
+                            Textstufen – frühe Verbreitung – Vorlagen. München 1991<citedRange>35
+                            und 41</citedRange>.</bibl>.</seg><seg xml:lang="en" part="N">Book 14
+                            originally ended here; chapter 17 is a later addition. This is evident
+                            in manuscript Va3, where fol. 95 was inserted retrospectively, and where
+                            the hand changes before chapter 17 in both the capitulatio and the main
+                            text, cf. <bibl copyOf="X25FUV2K">Hoffmann/Pokorny: Das Dekret des
+                            Bischofs Burchard von Worms. Textstufen – frühe Verbreitung – Vorlagen.
+                            München 1991<citedRange>35 und 41</citedRange></bibl>.</seg></note>
+                    </div>
+                    <div n="17" type="chapter" xml:id="bamberg-sb-c-6-14-con-017" sameAs="#bamberg-sb-c-6-14-toc-017" corresp="#frankfurt-ub-b-50-14-con-017 #koeln-edd-c-119-14-con-017 #vatican-bav-pal-lat-586-14-con-017" hand="#bamberg-sb-c-6-h25">
+                        <head type="chapter-title"><label type="chapter-number" place="margin left" facs="540,2846,400,206" n="17"><num value="17"><hi rend="color:red">xvii<pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi></num></label> <hi rend="color:red">De
+                            <choice><abbr>eode<g ref="#char-0304">̄</g></abbr><expan>eodem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc></hi><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">In der Handschrift K dieselbe
+                            Rubrik wie hier, in den Handschriften F und Va3 hingegen "Item de
+                            ebrietate"als Rubrik. In der Capitulatio ebenfalls "Item de ebrietate"
+                            in allen Handschriften.</seg><seg xml:lang="en" part="N">In manuscript
+                            K, the same rubric as here appears; in manuscripts F and Va3, however,
+                            the rubric reads 'Item de ebrietate'. In the capitulatio, it also reads
+                            'Item de ebrietate' in all manuscripts.</seg></note></head>
+                        <lb n="15" facs="896,2994,1657,350"/>
+                        <note type="inscription" place="margin left" anchored="false" facs="468,3001,480,487" hand="#bamberg-sb-c-6-hunidentified">Isidorus<lb/> dicit<pc type="distinctio"><g ref="#char-f1f8"></g></pc></note>
+                        <p n="1"><hi rend="color:red initial">E</hi>sc<g ref="#char-0119">ę</g><pc type="distinctio"><g ref="#char-f1f8"></g></pc> crapulam<pc type="distinctio"><g ref="#char-f1f8"></g></pc> potus<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ebrietatem <lb n="16" facs="1090,3177,1402,257"/>generant<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ebrietas autem <choice><abbr><g ref="#char-a751">ꝑ</g>tur<lb n="17" facs="1004,3332,1488,242" break="no"/>bationem</abbr><expan>pert<lb n="17" facs="1004,3332,1488,242" break="no"/>urbationem</expan></choice> gignit mentis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>furore<g ref="#char-0304">̄</g></abbr><expan>furorem</expan></choice> <lb n="18" facs="1004,3465,1560,264"/>cordis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> flammam libidinis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ebrie<lb n="19" facs="990,3638,1502,210" break="no"/>tas ita mentem alienat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ut ubi sit <lb n="20" facs="1004,3796,1502,214"/>nesciat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Unde etiam malum non <lb n="21" facs="990,3922,1617,200"/>sentitur<pc type="distinctio"><g ref="#char-f1f8"></g></pc> quod <choice><abbr><g ref="#char-a751">ꝑ</g></abbr><expan>per</expan></choice> <choice><abbr>ebrietate<g ref="#char-0304">̄</g></abbr><expan>ebrietatem</expan></choice>
+                            <choice><abbr>co<g ref="#char-0304">̄</g>mittitur</abbr><expan>committitur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="22" facs="946,4066,1604,246"/><hi rend="versal">U</hi>erum est quod iuxta
+                            <choice><abbr><g ref="#char-a753">ꝓ</g>pheta<g ref="#char-0304">̄</g></abbr><expan>prophetam</expan></choice> <choice><abbr>dicit<g ref="#char-f1c2"></g></abbr><expan>dicitur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="23" facs="957,4228,1531,218"/><hi rend="versal">F</hi>ornicatio<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et ebrietas<pc type="distinctio"><g ref="#char-f1f8"></g></pc> auferet cor<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="24" facs="954,4383,1545,196"/><hi rend="versal">F</hi>ornicatio enim<pc type="distinctio"><g ref="#char-f1f8"></g></pc> sicut ait salemon <lb n="25" facs="975,4520,1546,185"/>infatuat sapientem<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ebrietas sicut <lb n="26" facs="975,4668,1503,242"/>in loth sensus rationem captiuat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="27" facs="943,4812,1527,246"/><hi rend="versal">U</hi>nde et in
+                            prouerbiis<pc type="distinctio"><g ref="#char-f1f8"></g></pc> potentes
+                            <lb n="28" facs="975,4966,1524,225"/>inquit qui iracundi sunt
+                            <choice><abbr>uinu<g ref="#char-0304">̄</g></abbr><expan>uinum</expan></choice> <lb n="29" facs="982,5125,1452,192"/>non bibant<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ne cum biberint <lb n="30" facs="975,5265,1251,271"/>obliuiscantur sapientiam<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <cb n="b" facs="2516,722,1999,4836"/>
+                            <lb n="1" facs="2685,812,1585,332"/><choice><abbr>Plerisq<g ref="#char-f1ac"></g></abbr><expan>Plerisque</expan></choice> laus est
+                            multum bibere<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="2" facs="2703,1010,1531,282"/>et non inebriari<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Audiant hi <lb n="3" facs="2710,1212,1539,238"/>aduersum se dicentem <choice><abbr>propheta<g ref="#char-0304">̄</g></abbr><expan>prophetam</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="4" facs="2682,1352,1560,235"/><hi rend="versal">U</hi>e qui potentes estis
+                            ad bibendum <lb n="5" facs="2718,1532,1567,210"/>uinum et uiri fortes
+                            admiscendam <lb n="6" facs="2703,1680,1546,224"/>ebrietatem<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Vino multo deditos<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="7" facs="2689,1816,1531,257"/>et luxuriose uiuentes<pc type="distinctio"><g ref="#char-f1f8"></g></pc> isaias sic <lb n="8" facs="2689,1986,1596,238"/>arguet<pc type="distinctio"><g ref="#char-f1f8"></g></pc> dicens<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Ue qui consurgitis <lb n="9" facs="2696,2140,1607,239"/>mane ad ebrietatem sectandam<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <lb n="10" facs="2696,2284,1610,243"/>potandum <choice><abbr>usq<g ref="#char-f1ac"></g></abbr><expan>usque</expan></choice> ad uesperum<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ut ui<lb n="11" facs="2674,2457,1676,199" break="no"/>no <g ref="#char-0119">ę</g>stuetis<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            D<subst><del rend="erasure"/><add type="contemporary" place="overstrike">e</add></subst> <choice><abbr>talib<g ref="#char-f1ac"></g></abbr><expan>talibus</expan></choice> et alio loco
+                            <choice><abbr>dicit<g ref="#char-f1c2"></g></abbr><expan>dicitur</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="12" facs="2653,2616,1538,188"/><hi rend="versal">U</hi>e tibi ciuitas cuius rex iuuenis <lb n="13" facs="2674,2742,1701,238"/>est<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et cuius principes mane comedent<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="14" facs="2635,2853,1632,246"/><hi rend="versal">M</hi>ulti enim<del rend="erasure"/> a mane
+                            <choice><abbr>usq<g ref="#char-f1ac"></g></abbr><expan>usque</expan></choice> ad solis oc<lb n="15" facs="2674,3058,1618,221" break="no"/>cubitum<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ebrietati <del rend="erasure"/>et gul<g ref="#char-0119">ę</g> uolupta<lb n="16" facs="2667,3199,1611,217" break="no"/>tibus seruiunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> nec intellegunt cur<lb n="17" facs="2674,3354,1701,166"/>nati sunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> sed
+                            consuetudine beluina <lb n="18" facs="2667,3465,1629,264"/>detenti
+                            luxuri<g ref="#char-0119">ę</g> tantum tota die <lb n="19" facs="2674,3634,1611,196"/><choice><abbr>epulisq<g ref="#char-f1ac"></g></abbr><expan>epulisque</expan></choice> inseruiunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Clamat iohel <lb n="20" facs="2631,3822,1596,202"/><choice><abbr><g ref="#char-a753">ꝓ</g>pheta</abbr><expan>propheta</expan></choice> his qui ebrietati
+                            deserui<lb n="21" facs="2667,3926,1582,246" break="no"/>unt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> dicens<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Expergiscimini ebrii<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="22" facs="2667,4077,1596,235"/>et flete<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et ululate<pc type="distinctio"><g ref="#char-f1f8"></g></pc> omnes qui bibi<lb n="23" facs="2653,4246,1603,221" break="no"/>tis uinum in
+                            <choice><abbr>dulcedine<g ref="#char-0304">̄</g></abbr><expan>dulcedinem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> Quo testi<lb n="24" facs="2660,4383,1592,225" break="no"/>monio <choice><abbr>n<g ref="#char-0305">̅</g></abbr><expan>non</expan></choice> ait tantum
+                            flete <choice><abbr>om<g ref="#char-0305">̅</g>s</abbr><expan>omnes</expan></choice> qui <lb n="25" facs="2646,4552,1545,171"/>bibitis <choice><abbr>uinu<g ref="#char-0304">̄</g></abbr><expan>uinum</expan></choice> ut bibere omnino non <lb n="26" facs="2646,4678,1574,239"/>liceat<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>s<g ref="#char-f1ac"></g></abbr><expan>sed</expan></choice> adiecit in
+                            <choice><abbr>dulcedine<g ref="#char-0304">̄</g></abbr><expan>dulcedinem</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> quod <lb n="27" facs="2646,4844,1603,174"/>ad uoluptuosam <choice><abbr><g ref="#char-a751">ꝑ</g>tinet</abbr><expan>pertinet</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <choice><abbr><g ref="#char-a753">ꝓ</g>digam</abbr><expan>prodigam</expan></choice> <lb n="28" facs="2638,4981,1654,203"/>effusionem<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Nam <choice><abbr>quantu<g ref="#char-0304">̄</g></abbr><expan>quantum</expan></choice> satis <choice><abbr>e<g ref="#char-0305">̅</g></abbr><expan>est</expan></choice> neces<lb n="29" facs="2631,5143,1632,195" break="no"/>sitati edocet timotheum bibere
+                            <choice><abbr>ap<g ref="#char-a749">ꝉ</g>s</abbr><expan>apostolus</expan></choice><pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="30" facs="2620,5265,1715,282"/>dicens<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Uino modico
+                            utere<pc type="distinctio"><g ref="#char-f1f8"></g></pc>
+                            <choice><abbr>N<g ref="#char-0305">̅</g></abbr><expan>Non</expan></choice> <choice><abbr>solu<g ref="#char-0304">̄</g></abbr><expan>solum</expan></choice> ex uino <pb n="209v" facs="https://api.digitale-sammlungen.de/iiif/image/v2/bsb00140701_00422/full/full/0/default.jpg" corresp="https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00140701/canvas/422" ana="/annotations/bamberg-sb-c-6-annotation-422"/><fw type="page-header" place="top"><num value="14">xiiii</num> <choice><abbr>li<g ref="#char-0180">ƀ</g></abbr><expan>liber</expan></choice> de crapula<pc type="distinctio"><g ref="#char-f1f8"></g></pc> et <g ref="#char-0119">ę</g>brietate<pc type="distinctio"><g ref="#char-f1f8"></g></pc></fw><cb n="a" facs="1105,765,1909,4548"/><lb n="1" facs="1206,830,1560,275"/>inebriantur homines<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <choice><abbr>s<g ref="#char-f1ac"></g></abbr><expan>sed</expan></choice> <choice><abbr>etia<g ref="#char-0304">̄</g></abbr><expan>etiam</expan></choice> ex ceteris
+                            <lb n="2" facs="1220,1028,1535,242"/>potandi generibus qu<g ref="#char-0119">ę</g> uario modo <lb n="3" facs="1206,1190,1628,217"/>conficiuntur<pc type="distinctio"><g ref="#char-f1f8"></g></pc> Vnde
+                            et nazareis qui <lb n="4" facs="1220,1359,1610,214"/>se sanctificabant
+                            domino preceptum<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="5" facs="1213,1500,1495,249"/>est uinum et siceram non bibere<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="6" facs="1220,1651,1538,249"/><choice><abbr>utraq<g ref="#char-f1ac"></g></abbr><expan>utraque</expan></choice> enim statum mentis
+                            euertunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="7" facs="1191,1820,1546,235"/>et ebriosos faciunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> luxuriam quip<lb n="8" facs="1198,1971,1470,232" break="no"/>pe carnis <choice><abbr>utraq<g ref="#char-f1ac"></g></abbr><expan>utraque</expan></choice> <g ref="#char-0119">ę</g>qualiter gignunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> <lb n="9" facs="1180,2144,1636,174"/><hi rend="versal">Q</hi>uidam continentes sicut panem cum <lb n="10" facs="1220,2256,1632,253"/>pondere edunt<pc type="distinctio"><g ref="#char-f1f8"></g></pc> ita et aquam <choice><abbr>cu<g ref="#char-0304">̄</g></abbr><expan>cum</expan></choice> men<lb n="11" facs="1202,2428,1607,239" break="no"/>sura sumunt a<subst><del rend="erasure"/><add type="contemporary" place="overstrike">ss</add></subst>erentes ad castimoni<lb n="12" facs="1213,2580,1740,274" break="no"/>am carnis <choice><abbr>etiamq<g ref="#char-f1ac"></g></abbr><expan>etiamque</expan></choice>
+                            <choice><abbr>abstinentia<g ref="#char-0304">̄</g></abbr><expan>abstinentiam</expan></choice> conuenire<pc type="p-versus"><g ref="#char-f1ea"></g></pc> <lb n="13" facs="1274,2770,1542,250"/><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Restliche Spalte unbeschrieben.</seg><seg xml:lang="en" part="N">Remaining column left blank.</seg></note> <cb n="b" facs="3103,772,1679,4563"/> <lb n="1" facs="3164,819,1445,217"/><note type="editorial-comment" resp="#HeG"><seg xml:lang="de" part="N">Spalte unbeschrieben.</seg><seg xml:lang="en" part="N">Column left
+                            blank.</seg></note></p>
+                    </div>
+                </div>
+            </div>
+        </body>
+       </text>
+</TEI>

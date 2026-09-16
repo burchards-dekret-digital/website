@@ -167,6 +167,10 @@ const STANDARD_TOOLTIPS = {
     'tei_erasure-visible': {
     de: 'Rasur.',
     en: 'Erasure.'
+    },
+    'tei_sic-transposition': {
+    de: 'Umstellung.',
+    en: 'Transposition.'
     }
 };
 
@@ -440,6 +444,22 @@ function enhanceHandShifts(root = document) {
 
     handShift.dataset.handShiftUiInitialized = 'true';
 
+    const info = handShift.querySelector(':scope > .tei_handShift-info');
+
+    if (info && !info.dataset.rawScribeInfo) {
+      const rawInfo = info.textContent.trim();
+
+      // Preserve the original XSL-generated information
+      info.dataset.rawScribeInfo = rawInfo;
+
+      info.replaceChildren(
+        createLangContent(
+          `Handwechsel: ${rawInfo}`,
+          `Hand change: ${rawInfo}`
+        )
+      );
+    }
+
     const icon = createHandShiftIcon();
 
     icon.addEventListener('click', event => {
@@ -459,7 +479,7 @@ function createHandShiftIcon() {
   icon.className = 'tei_handShift-icon';
 
   const image = document.createElement('img');
-  image.src = 'https://www.svgrepo.com/show/11315/hand-and-pen.svg';
+  image.src = '../img/icons/hand-and-pen.svg';
   image.width = 25;
   image.alt = '';
 

@@ -25,9 +25,9 @@ window.BDD_MSS = [
     kind: "core",
     manifestId: "../data/manifests/bamberg-sb-c-6.json",
     uiGroup: "Bamberg",
-    citationLabel: "Bamberg, Staatsbibliothek, Can. 6",
+    citationLabel: "Bamberg, Staatsbibliothek, Msc.Can. 6",
     // books actually available
-    books: ["01", "06", "07", "11", "12", "13"]
+    books: ["01", "06", "07", "11", "12", "13", "14"]
   },
   {
     sigle: "Bo",
@@ -123,7 +123,7 @@ window.BDD_MSS = [
     uiGroup: "Frankfurt", 
     citationLabel: "Frankfurt am Main, Universitätsbibliothek Johann Christian Senckenberg, Barth. 50",
     // books actually available
-    books: ["01", "06", "07", "11", "12", "13"]
+    books: ["01", "06", "07", "11", "12", "13", "14"]
   },
   {
     sigle: "F2",
@@ -158,7 +158,7 @@ window.BDD_MSS = [
     uiGroup: "Köln", 
     citationLabel: "Köln, Erzbischöfliche Diözesan- und Dombibliothek, Cod. 119",
     // books actually available
-    books: ["06", "07", "11", "12", "13"]
+    books: ["06", "07", "11", "12", "13", "14"]
   },
   {
     sigle: "Kp",
@@ -533,7 +533,7 @@ window.BDD_MSS = [
     uiGroup: "Vatikan 586",
     citationLabel: "Vatikan, Biblioteca Apostolica Vaticana, Pal. lat. 586",
     // books actually available
-    books: ["11", "12", "13"]
+    books: ["11", "12", "13", "14"]
   },
   {
     sigle: "Va4",
