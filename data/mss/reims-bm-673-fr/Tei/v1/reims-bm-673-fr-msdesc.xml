@@ -42,16 +42,12 @@
                         </history>
 
                         <additional>
-                            <surrogates> 
-                                <bibl type="digi"> 
-                                    <title xml:lang="ger">Digitalisat</title>
-                                    <ref>https://portail.biblissima.fr/fr/ark:/43093/mdata1740cc4c25f5489d998eef1c2fa453583c4ed583</ref>
-                                </bibl> 
-                                <bibl type="cat"> 
-                                    <title xml:lang="ger">Katalogisat</title>
-                                    <ref>https://portail.biblissima.fr/fr/ark:/43093/mdata1740cc4c25f5489d998eef1c2fa453583c4ed583</ref>
-                                </bibl> 
-                            </surrogates>     
+                            <surrogates> <bibl type="digi"> <title xml:lang="ger"
+                            >Digitalisat</title>
+                            <ref>https://arca.irht.cnrs.fr/ark:/63955/md11xd07jp9c</ref> </bibl>
+                            <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
+                            <ref>https://portail.biblissima.fr/fr/ark:/43093/mdata1740cc4c25f5489d998eef1c2fa453583c4ed583</ref>
+                            </bibl> </surrogates>     
                         </additional>
                     </msDesc>
                 </sourceDesc>

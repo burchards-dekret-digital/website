@@ -42,9 +42,9 @@
                         </history>
 
                         <additional>
-                            <surrogates> <bibl type="digi"> <title xml:lang="ger">Digitalisat</title>
-                            <ref>https://handschriftenportal.de/workspace?type=undefined&amp;id=https%3A%2F%2Fiiif.ub.uni-leipzig.de%2F0000034901%2Fmanifest.json&amp;page=1</ref>
-                            </bibl> <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
+                            <surrogates> <bibl type="digi"> <title xml:lang="ger"
+                            >Digitalisat</title> <ref/> </bibl> <bibl type="cat"> <title
+                            xml:lang="ger">Katalogisat</title>
                             <ref>https://handschriftenportal.de/workspace?type=undefined&amp;id=https%3A%2F%2Fiiif.ub.uni-leipzig.de%2F0000034901%2Fmanifest.json&amp;page=1</ref>
                             </bibl> </surrogates>     
                         </additional>

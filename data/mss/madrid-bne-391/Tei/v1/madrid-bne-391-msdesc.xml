@@ -42,16 +42,12 @@
                         </history>
 
                         <additional>
-                            <surrogates> 
-                                <bibl type="digi"> 
-                                    <title xml:lang="ger">Digitalisat</title>
-                                    <ref>chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.bne.es/es/Micrositios/Guias/Inventario_Manuscritos/resources/docs/invgenmss01.pdf</ref>
-                                </bibl> 
-                                <bibl type="cat"> 
-                                    <title xml:lang="ger">Katalogisat</title>
-                                    <ref>https://bnedigital.bne.es/bd/card?oid=0000040427&amp;site=bdh</ref>
-                                </bibl> 
-                            </surrogates>     
+                            <surrogates> <bibl type="digi"> <title xml:lang="ger"
+                            >Digitalisat</title>
+                            <ref>https://bnedigital.bne.es/bd/card?oid=0000040427&amp;site=bdh</ref>
+                            </bibl> <bibl type="cat"> <title xml:lang="ger">Katalogisat</title>
+                            <ref>https://bnedigital.bne.es/bd/card?oid=0000040427&amp;site=bdh</ref>
+                            </bibl> </surrogates>     
                         </additional>
                     </msDesc>
                 </sourceDesc>
